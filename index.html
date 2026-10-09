@@ -98,12 +98,93 @@
             color: var(--text-primary);
             font-family: var(--font-sans);
             margin: 0;
-            padding-top: 75px;
+            padding: 0;
             line-height: 1.8;
             letter-spacing: 0.02em;
-            background-image: radial-gradient(circle at 50% 0%, #0d0c0a 0%, var(--bg-canvas) 75%);
-            background-attachment: fixed;
             overflow-x: hidden;
+        }
+
+        /* Corner-to-Corner Full Screen Hero Section */
+        header.full-bleed-hero {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000000;
+        }
+
+        .hero-bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(0.7);
+            z-index: 1;
+        }
+
+        .hero-overlay-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1100px;
+            padding: 0 20px;
+        }
+
+        h1.hero-title-main {
+            font-family: var(--font-serif);
+            font-size: 5.5rem;
+            font-weight: 300;
+            letter-spacing: 0.25em;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+            text-transform: uppercase;
+            line-height: 1;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        .hero-subtitle-main {
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            margin-bottom: 25px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.8);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            color: var(--text-secondary);
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .scroll-indicator:hover { color: var(--accent-gold); }
+
+        .scroll-arrow {
+            width: 12px;
+            height: 12px;
+            border-right: 1px solid var(--accent-gold);
+            border-bottom: 1px solid var(--accent-gold);
+            transform: rotate(45deg);
         }
 
         /* Pinned Navigation Bar */
@@ -178,51 +259,13 @@
             color: #000000;
         }
 
-        /* Hero Monographic Header */
-        header.hero {
-            padding: 90px 20px 60px;
-            text-align: center;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        h1.hero-title {
-            font-family: var(--font-serif);
-            font-size: 4.2rem;
-            font-weight: 300;
-            letter-spacing: 0.2em;
-            margin: 0 0 10px 0;
-            color: #ffffff;
-            text-transform: uppercase;
-            line-height: 1.05;
-        }
-
-        .hero-subtitle {
-            font-size: 0.72rem;
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            letter-spacing: 0.35em;
-            margin-bottom: 30px;
-        }
-
-        .hero-epigraph {
-            font-family: var(--font-serif);
-            font-size: 1.4rem;
-            font-style: italic;
-            color: var(--text-secondary);
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-            line-height: 1.6;
-            font-weight: 300;
-        }
-
         /* Benchmark Callout Box */
         .benchmark-box {
             background: var(--surface-solid);
             border: 1px solid var(--border-gold);
             padding: 25px 35px;
             max-width: 900px;
-            margin: 0 auto;
+            margin: 60px auto 0 auto;
             box-shadow: 0 20px 50px rgba(0,0,0,0.8);
             display: flex;
             flex-direction: column;
@@ -721,7 +764,7 @@
         @media (max-width: 900px) {
             nav.nav-bar { padding: 15px 20px; }
             .nav-links { display: none; }
-            h1.hero-title { font-size: 2.8rem; }
+            h1.hero-title-main { font-size: 3.2rem; }
             .metrics-bar { grid-template-columns: repeat(2, 1fr); }
             .ledger-row { grid-template-columns: 1fr; }
             .texture-inspector { grid-template-columns: 1fr; }
@@ -745,172 +788,179 @@
         </div>
     </nav>
 
-    <!-- Hero Header -->
-    <header class="hero">
-        <h1 class="hero-title">Hesham Malik</h1>
-        <div class="hero-subtitle">Three Decades of Sovereign Art &bull; Global Institutional Archives &bull; Monumental Interventions</div>
-        <div class="hero-epigraph">
-            "Art is not an isolated artifact; it is an active archive of human consciousness, ecological resilience, and ancestral memory."
+    <!-- Corner-to-Corner Full-Bleed Main Hero Photo -->
+    <header class="full-bleed-hero">
+        <img src="hero-full-image.jpg" alt="Hesham Malik Masterwork Canvas" class="hero-bg-img">
+        <div class="hero-overlay-content">
+            <h1 class="hero-title-main">Hesham Malik</h1>
+            <div class="hero-subtitle-main">Three Decades of Sovereign Art &bull; Global Institutional Archives</div>
         </div>
+        <a href="#main-content" class="scroll-indicator">
+            <span>Explore Archive</span>
+            <div class="scroll-arrow"></div>
+        </a>
+    </header>
 
+    <!-- Main Content Portal -->
+    <div id="main-content">
+        <!-- Benchmark Callout Box -->
         <div class="benchmark-box">
             <span class="benchmark-tag">&bull; Documented Historical Benchmark</span>
             <div class="benchmark-text">Single Monograph Transaction Valued at $50M+ USD</div>
             <div class="benchmark-subtext">Permanent State &amp; Museum Repositories: National Museum of History of Ukraine | Museum of Paper (Poland) | Czech Republic State Gallery Network</div>
         </div>
-    </header>
 
-    <!-- Metrics Bar -->
-    <div class="metrics-bar">
-        <div class="metric-card">
-            <div class="metric-number">30+</div>
-            <div class="metric-label">Years Monographic Trajectory</div>
+        <!-- Metrics Bar -->
+        <div class="metrics-bar">
+            <div class="metric-card">
+                <div class="metric-number">30+</div>
+                <div class="metric-label">Years Monographic Trajectory</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">100+</div>
+                <div class="metric-label">Global Solo Retrospectives</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">1,000s</div>
+                <div class="metric-label">Donated Global Words</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">4</div>
+                <div class="metric-label">Sovereign Pillars</div>
+            </div>
         </div>
-        <div class="metric-card">
-            <div class="metric-number">100+</div>
-            <div class="metric-label">Global Solo Retrospectives</div>
-        </div>
-        <div class="metric-card">
-            <div class="metric-number">1,000s</div>
-            <div class="metric-label">Donated Global Words</div>
-        </div>
-        <div class="metric-card">
-            <div class="metric-number">4</div>
-            <div class="metric-label">Sovereign Pillars</div>
-        </div>
+
+        <main>
+            <!-- Live Institutional Word Matrix Terminal -->
+            <section id="word-archive">
+                <div class="word-terminal-box">
+                    <span class="benchmark-tag">&bull; LIVE GLOBAL WORD DONATION MATRIX &bull; NEURO-AESTHETIC ARCHIVE</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0; font-weight: 300; text-transform: uppercase;">Institutional Data Provenance</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Search live word donations from global academics, universities, and participating institutions.</p>
+                    
+                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Donated Words or Institutions (e.g., Ghent, Cambridge, Gratuitous, Harvard, Artas)...">
+                    
+                    <div class="word-pills-container" id="wordPillsContainer">
+                        <span class="word-pill-item">Ghent University / Prof. Dr. Aymon Kreil: <strong>"GRATUITOUS"</strong></span>
+                        <span class="word-pill-item">University of Cambridge / Dr. Sarah Fine: <strong>"MOVEMENT"</strong></span>
+                        <span class="word-pill-item">Artas Foundation (Swiss): <strong>"EQUANIMITY" / "GELASSENHEIT"</strong></span>
+                        <span class="word-pill-item">Harvard University Archive: <strong>"RESILIENCE"</strong></span>
+                        <span class="word-pill-item">Tate London - UK: <strong>"TRANSITION"</strong></span>
+                        <span class="word-pill-item">Ludwig Museum: <strong>"LUMEN"</strong></span>
+                        <span class="word-pill-item">Svalbard Global Seed Vault: <strong>"PRESERVATION"</strong></span>
+                        <span class="word-pill-item">Jane Goodall Institute: <strong>"HARMONY"</strong></span>
+                        <span class="word-pill-item">Czech Red Cross: <strong>"COMPASSION"</strong></span>
+                        <span class="word-pill-item">Nobel Prize Museum: <strong>"KNOWLEDGE"</strong></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Masterwork Provenance Ledger -->
+            <section id="ledger">
+                <h2 class="section-heading">Masterwork Provenance Ledger</h2>
+                
+                <div class="ledger-controls">
+                    <button class="ledger-btn active" onclick="filterLedger('all', event)">All Masterworks</button>
+                    <button class="ledger-btn" onclick="filterLedger('words', event)">Words Project</button>
+                    <button class="ledger-btn" onclick="filterLedger('box', event)">Life of a Box</button>
+                    <button class="ledger-btn" onclick="filterLedger('voices', event)">Voices of the Land</button>
+                    <button class="ledger-btn" onclick="filterLedger('rooh', event)">Rooh-Nawaz</button>
+                </div>
+
+                <div class="ledger-grid">
+                    <!-- Ledger Row 1 -->
+                    <div class="ledger-row" data-category="words">
+                        <div class="ledger-visual">
+                            <img src="words-texture-1.jpg" alt="Equanimity Gelassenheit Canvas">
+                        </div>
+                        <div class="ledger-info">
+                            <span class="ledger-pillar-tag">&bull; Words Project &bull; Featured Masterwork</span>
+                            <h3 class="ledger-title">Equanimity / Gelassenheit</h3>
+                            <div class="ledger-meta-list">
+                                <strong>Medium:</strong> Mixed Media on Canvas (Natural Ground Earth Pigments)<br>
+                                <strong>Provenance / Donation:</strong> Artas Foundation (Swiss Foundation for Art in Regions of Conflict)<br>
+                                <strong>Exhibition History:</strong> Brussels Expo: <i>Empowering Europe’s Creative Industries</i>
+                            </div>
+                        </div>
+                        <div class="ledger-actions">
+                            <button class="action-btn" onclick="openDossier('equanimity')">Read Dossier</button>
+                            <button class="action-btn" onclick="scrollToVault()">Inquire Acquisition</button>
+                        </div>
+                    </div>
+
+                    <!-- Ledger Row 2 -->
+                    <div class="ledger-row" data-category="box">
+                        <div class="ledger-visual">
+                            <img src="box-spatial-1.jpg" alt="Life of a Box Installation">
+                        </div>
+                        <div class="ledger-info">
+                            <span class="ledger-pillar-tag">&bull; Life of a Box &bull; Ecological Sculpture</span>
+                            <h3 class="ledger-title">Monumental Packaging Sculpture</h3>
+                            <div class="ledger-meta-list">
+                                <strong>Medium:</strong> Recycled Industrial Packaging &amp; Gold Leaf<br>
+                                <strong>Donating Institutions:</strong> Nobel Prize Museum, UNICEF, Czech Red Cross, Amazon UK<br>
+                                <strong>Exhibition History:</strong> Museum of West Bohemia, Plzeň &amp; Museum of Paper, Poland
+                            </div>
+                        </div>
+                        <div class="ledger-actions">
+                            <button class="action-btn" onclick="openDossier('box_monograph')">Read Dossier</button>
+                            <button class="action-btn" onclick="scrollToVault()">Inquire Acquisition</button>
+                        </div>
+                    </div>
+
+                    <!-- Ledger Row 3 -->
+                    <div class="ledger-row" data-category="voices">
+                        <div class="ledger-visual">
+                            <img src="land-spatial-2.jpg" alt="Mowicha Voices of the Land">
+                        </div>
+                        <div class="ledger-info">
+                            <span class="ledger-pillar-tag">&bull; Voices of the Land &bull; Sacred Indigenous Knowledge</span>
+                            <h3 class="ledger-title">Mowicha (Living Wisdom)</h3>
+                            <div class="ledger-meta-list">
+                                <strong>Medium:</strong> Natural Earth Pigments on Canvas<br>
+                                <strong>Linguistic Lineage:</strong> Anishinaabemowin (<i>Ankosé</i> - Everything is Connected)<br>
+                                <strong>Institutional Partner:</strong> National Gallery of Canada Knowledge Keepers
+                            </div>
+                        </div>
+                        <div class="ledger-actions">
+                            <button class="action-btn" onclick="openDossier('mowicha')">Read Dossier</button>
+                            <button class="action-btn" onclick="scrollToVault()">Inquire Acquisition</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gigapixel Material Science Inspector -->
+            <section id="materials">
+                <h2 class="section-heading">Material Science &amp; Micro-Texture</h2>
+                <div class="texture-inspector">
+                    <div class="texture-viewer-box" id="textureBox">
+                        <img src="box-texture-1.jpg" id="textureImg" alt="Macro Canvas Texture">
+                    </div>
+                    <div class="texture-details">
+                        <h3>Tactile Material Longevity</h3>
+                        <p>Every canvas combines heavy, hand-ground mineral pigments, raw earth oxides, and structural industrial packaging fibers. Hover over the viewer to inspect micro-texture density and gold leaf adhesion.</p>
+                        <div class="material-pill-list">
+                            <span class="material-pill">24k Gold Pigment</span>
+                            <span class="material-pill">Recycled Industrial Fiber</span>
+                            <span class="material-pill">Earth Oxides</span>
+                            <span class="material-pill">Engraved Linguistic Text</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sovereign Archive Vault -->
+            <section id="vault" class="vault-section">
+                <h3 class="vault-title">The Sovereign Archive Vault</h3>
+                <p class="vault-sub">Restricted access portal for museum directors, biennial curators, and institutional collectors. Enter access keyphrase to review private registers and upcoming museum loans.</p>
+                <div class="vault-form">
+                    <input type="password" class="vault-input" placeholder="Enter Access Keyphrase...">
+                    <button class="vault-submit" onclick="alert('Access Request Submitted to Studio Desk.')">Authenticate</button>
+                </div>
+            </section>
+        </main>
     </div>
-
-    <main>
-
-        <!-- Live Institutional Word Matrix Terminal -->
-        <section id="word-archive">
-            <div class="word-terminal-box">
-                <span class="benchmark-tag">&bull; LIVE GLOBAL WORD DONATION MATRIX &bull; NEURO-AESTHETIC ARCHIVE</span>
-                <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0; font-weight: 300; text-transform: uppercase;">Institutional Data Provenance</h3>
-                <p style="font-size: 0.8rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Search live word donations from global academics, universities, and participating institutions.</p>
-                
-                <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Donated Words or Institutions (e.g., Ghent, Cambridge, Gratuitous, Harvard, Artas)...">
-                
-                <div class="word-pills-container" id="wordPillsContainer">
-                    <span class="word-pill-item">Ghent University / Prof. Dr. Aymon Kreil: <strong>"GRATUITOUS"</strong></span>
-                    <span class="word-pill-item">University of Cambridge / Dr. Sarah Fine: <strong>"MOVEMENT"</strong></span>
-                    <span class="word-pill-item">Artas Foundation (Swiss): <strong>"EQUANIMITY" / "GELASSENHEIT"</strong></span>
-                    <span class="word-pill-item">Harvard University Archive: <strong>"RESILIENCE"</strong></span>
-                    <span class="word-pill-item">Tate London - UK: <strong>"TRANSITION"</strong></span>
-                    <span class="word-pill-item">Ludwig Museum: <strong>"LUMEN"</strong></span>
-                    <span class="word-pill-item">Svalbard Global Seed Vault: <strong>"PRESERVATION"</strong></span>
-                    <span class="word-pill-item">Jane Goodall Institute: <strong>"HARMONY"</strong></span>
-                    <span class="word-pill-item">Czech Red Cross: <strong>"COMPASSION"</strong></span>
-                    <span class="word-pill-item">Nobel Prize Museum: <strong>"KNOWLEDGE"</strong></span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Masterwork Provenance Ledger -->
-        <section id="ledger">
-            <h2 class="section-heading">Masterwork Provenance Ledger</h2>
-            
-            <div class="ledger-controls">
-                <button class="ledger-btn active" onclick="filterLedger('all', event)">All Masterworks</button>
-                <button class="ledger-btn" onclick="filterLedger('words', event)">Words Project</button>
-                <button class="ledger-btn" onclick="filterLedger('box', event)">Life of a Box</button>
-                <button class="ledger-btn" onclick="filterLedger('voices', event)">Voices of the Land</button>
-                <button class="ledger-btn" onclick="filterLedger('rooh', event)">Rooh-Nawaz</button>
-            </div>
-
-            <div class="ledger-grid">
-                <!-- Ledger Row 1 -->
-                <div class="ledger-row" data-category="words">
-                    <div class="ledger-visual">
-                        <img src="words-texture-1.jpg" alt="Equanimity Gelassenheit Canvas">
-                    </div>
-                    <div class="ledger-info">
-                        <span class="ledger-pillar-tag">&bull; Words Project &bull; Featured Masterwork</span>
-                        <h3 class="ledger-title">Equanimity / Gelassenheit</h3>
-                        <div class="ledger-meta-list">
-                            <strong>Medium:</strong> Mixed Media on Canvas (Natural Ground Earth Pigments)<br>
-                            <strong>Provenance / Donation:</strong> Artas Foundation (Swiss Foundation for Art in Regions of Conflict)<br>
-                            <strong>Exhibition History:</strong> Brussels Expo: <i>Empowering Europe’s Creative Industries</i>
-                        </div>
-                    </div>
-                    <div class="ledger-actions">
-                        <button class="action-btn" onclick="openDossier('equanimity')">Read Dossier</button>
-                        <button class="action-btn" onclick="scrollToVault()">Inquire Acquisition</button>
-                    </div>
-                </div>
-
-                <!-- Ledger Row 2 -->
-                <div class="ledger-row" data-category="box">
-                    <div class="ledger-visual">
-                        <img src="box-spatial-1.jpg" alt="Life of a Box Installation">
-                    </div>
-                    <div class="ledger-info">
-                        <span class="ledger-pillar-tag">&bull; Life of a Box &bull; Ecological Sculpture</span>
-                        <h3 class="ledger-title">Monumental Packaging Sculpture</h3>
-                        <div class="ledger-meta-list">
-                            <strong>Medium:</strong> Recycled Industrial Packaging &amp; Gold Leaf<br>
-                            <strong>Donating Institutions:</strong> Nobel Prize Museum, UNICEF, Czech Red Cross, Amazon UK<br>
-                            <strong>Exhibition History:</strong> Museum of West Bohemia, Plzeň &amp; Museum of Paper, Poland
-                        </div>
-                    </div>
-                    <div class="ledger-actions">
-                        <button class="action-btn" onclick="openDossier('box_monograph')">Read Dossier</button>
-                        <button class="action-btn" onclick="scrollToVault()">Inquire Acquisition</button>
-                    </div>
-                </div>
-
-                <!-- Ledger Row 3 -->
-                <div class="ledger-row" data-category="voices">
-                    <div class="ledger-visual">
-                        <img src="land-spatial-2.jpg" alt="Mowicha Voices of the Land">
-                    </div>
-                    <div class="ledger-info">
-                        <span class="ledger-pillar-tag">&bull; Voices of the Land &bull; Sacred Indigenous Knowledge</span>
-                        <h3 class="ledger-title">Mowicha (Living Wisdom)</h3>
-                        <div class="ledger-meta-list">
-                            <strong>Medium:</strong> Natural Earth Pigments on Canvas<br>
-                            <strong>Linguistic Lineage:</strong> Anishinaabemowin (<i>Ankosé</i> - Everything is Connected)<br>
-                            <strong>Institutional Partner:</strong> National Gallery of Canada Knowledge Keepers
-                        </div>
-                    </div>
-                    <div class="ledger-actions">
-                        <button class="action-btn" onclick="openDossier('mowicha')">Read Dossier</button>
-                        <button class="action-btn" onclick="scrollToVault()">Inquire Acquisition</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gigapixel Material Science Inspector -->
-        <section id="materials">
-            <h2 class="section-heading">Material Science &amp; Micro-Texture</h2>
-            <div class="texture-inspector">
-                <div class="texture-viewer-box" id="textureBox">
-                    <img src="box-texture-1.jpg" id="textureImg" alt="Macro Canvas Texture">
-                </div>
-                <div class="texture-details">
-                    <h3>Tactile Material Longevity</h3>
-                    <p>Every canvas combines heavy, hand-ground mineral pigments, raw earth oxides, and structural industrial packaging fibers. Hover over the viewer to inspect micro-texture density and gold leaf adhesion.</p>
-                    <div class="material-pill-list">
-                        <span class="material-pill">24k Gold Pigment</span>
-                        <span class="material-pill">Recycled Industrial Fiber</span>
-                        <span class="material-pill">Earth Oxides</span>
-                        <span class="material-pill">Engraved Linguistic Text</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sovereign Archive Vault -->
-        <section id="vault" class="vault-section">
-            <h3 class="vault-title">The Sovereign Archive Vault</h3>
-            <p class="vault-sub">Restricted access portal for museum directors, biennial curators, and institutional collectors. Enter access keyphrase to review private registers and upcoming museum loans.</p>
-            <div class="vault-form">
-                <input type="password" class="vault-input" placeholder="Enter Access Keyphrase...">
-                <button class="vault-submit" onclick="alert('Access Request Submitted to Studio Desk.')">Authenticate</button>
-            </div>
-        </section>
-    </main>
 
     <!-- Modal Dossier Container -->
     <div class="modal-overlay" id="dossierModal">
