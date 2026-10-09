@@ -35,11 +35,6 @@
           "name": "Hesham Malik",
           "jobTitle": "Visual Artist & Cultural Researcher",
           "url": "https://heshammalik.com",
-          "sameAs": [
-            "https://heshammalik.org",
-            "https://heshammalik.eu",
-            "https://tmoci.org"
-          ],
           "knowsAbout": [
             "Abstract Fine Art",
             "Participatory Art Archives",
@@ -58,14 +53,6 @@
             "@id": "https://heshammalik.com/#artist"
           },
           "inLanguage": "en"
-        },
-        {
-          "@type": "VisualArtwork",
-          "name": "Equanimity / Gelassenheit",
-          "artist": "https://heshammalik.com/#artist",
-          "artMedium": "Mixed Media on Canvas, Natural Ground Earth Pigments",
-          "artForm": "Painting",
-          "description": "Masterwork incorporating donated term from Artas Foundation for global neuro-aesthetic archive."
         }
       ]
     }
@@ -90,7 +77,6 @@
         }
 
         * { box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
 
         body {
@@ -125,8 +111,8 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
-            filter: brightness(0.7);
+            object-position: center top; /* Positioned to preserve the top of paintings and faces */
+            filter: brightness(0.65);
             z-index: 1;
         }
 
@@ -383,7 +369,7 @@
             flex-wrap: wrap;
             gap: 12px;
             justify-content: center;
-            max-height: 220px;
+            max-height: 280px;
             overflow-y: auto;
             padding-right: 5px;
         }
@@ -468,6 +454,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center top; /* Positioned to preserve the top of paintings and faces */
             opacity: 0.85;
             transition: transform 0.5s ease, opacity 0.5s ease;
         }
@@ -560,6 +547,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center top;
             transition: transform 0.2s ease-out;
         }
 
@@ -715,43 +703,12 @@
 
         .modal-close:hover { color: var(--accent-gold); }
 
-        /* Footer & Ecosystem Routing */
+        /* Footer */
         footer {
             background: var(--surface-solid);
             border-top: 1px solid var(--border-subtle);
-            padding: 80px 20px 50px;
+            padding: 60px 20px;
             text-align: center;
-        }
-
-        .footer-ecosystem-title {
-            font-size: 0.7rem;
-            letter-spacing: 0.3em;
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            margin-bottom: 25px;
-        }
-
-        .ecosystem-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-bottom: 50px;
-        }
-
-        .ecosystem-link {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            transition: color 0.3s ease;
-            border-bottom: 1px solid transparent;
-            padding-bottom: 4px;
-        }
-
-        .ecosystem-link:hover {
-            color: var(--accent-gold);
-            border-bottom-color: var(--accent-gold);
         }
 
         .footer-copy {
@@ -836,21 +793,41 @@
                 <div class="word-terminal-box">
                     <span class="benchmark-tag">&bull; LIVE GLOBAL WORD DONATION MATRIX &bull; NEURO-AESTHETIC ARCHIVE</span>
                     <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0; font-weight: 300; text-transform: uppercase;">Institutional Data Provenance</h3>
-                    <p style="font-size: 0.8rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Search live word donations from global academics, universities, and participating institutions.</p>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Search live word donations from global leadership, universities, museums, and sovereign institutions.</p>
                     
-                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Donated Words or Institutions (e.g., Ghent, Cambridge, Gratuitous, Harvard, Artas)...">
+                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Donated Terms (e.g., Harvard, Oxford, Svalbard, Sorbonne, Bryan Stevenson)...">
                     
                     <div class="word-pills-container" id="wordPillsContainer">
-                        <span class="word-pill-item">Ghent University / Prof. Dr. Aymon Kreil: <strong>"GRATUITOUS"</strong></span>
-                        <span class="word-pill-item">University of Cambridge / Dr. Sarah Fine: <strong>"MOVEMENT"</strong></span>
-                        <span class="word-pill-item">Artas Foundation (Swiss): <strong>"EQUANIMITY" / "GELASSENHEIT"</strong></span>
-                        <span class="word-pill-item">Harvard University Archive: <strong>"RESILIENCE"</strong></span>
-                        <span class="word-pill-item">Tate London - UK: <strong>"TRANSITION"</strong></span>
-                        <span class="word-pill-item">Ludwig Museum: <strong>"LUMEN"</strong></span>
-                        <span class="word-pill-item">Svalbard Global Seed Vault: <strong>"PRESERVATION"</strong></span>
-                        <span class="word-pill-item">Jane Goodall Institute: <strong>"HARMONY"</strong></span>
-                        <span class="word-pill-item">Czech Red Cross: <strong>"COMPASSION"</strong></span>
-                        <span class="word-pill-item">Nobel Prize Museum: <strong>"KNOWLEDGE"</strong></span>
+                        <!-- Harvard Leadership & Faculties -->
+                        <span class="word-pill-item">President Emeritus of Harvard University: <strong>HARVARD LEADERSHIP ARCHIVE</strong></span>
+                        <span class="word-pill-item">Harvard Law School &amp; Divinity School: <strong>HARVARD ACADEMIC REPOSITORY</strong></span>
+                        <span class="word-pill-item">Harvard Graduate School of Design: <strong>HARVARD ARCHITECTURAL MATRIX</strong></span>
+                        
+                        <!-- Top Global Universities -->
+                        <span class="word-pill-item">University of Oxford &amp; Cambridge: <strong>OXBRIDGE LITERARY ARCHIVE</strong></span>
+                        <span class="word-pill-item">Stanford University &amp; MIT: <strong>QUANTUM &amp; HUMANITIES DATA</strong></span>
+                        <span class="word-pill-item">Sorbonne University (France): <strong>SORBONNE PHILOSOPHICAL ARCHIVE</strong></span>
+                        <span class="word-pill-item">Yale University &amp; Princeton University: <strong>IVY LEAGUE MONOGRAPHIC RECORD</strong></span>
+
+                        <!-- Human Rights & Global NGOs -->
+                        <span class="word-pill-item">Equal Justice Initiative / Bryan Stevenson: <strong>JUSTICE &amp; MEMORY</strong></span>
+                        <span class="word-pill-item">Art for Amnesty Founder (Amnesty International): <strong>ART FOR HUMAN RIGHTS</strong></span>
+                        <span class="word-pill-item">Svalbard Global Seed Vault (Norway): <strong>PLANETARY PRESERVATION</strong></span>
+                        <span class="word-pill-item">Jane Goodall Institute (USA): <strong>ECOLOGICAL STEWARDSHIP</strong></span>
+                        <span class="word-pill-item">Greenpeace International (Netherlands): <strong>ENVIRONMENTAL RESILIENCE</strong></span>
+
+                        <!-- World Museums & Galleries -->
+                        <span class="word-pill-item">TATE London &amp; National Galleries Scotland: <strong>UNITED KINGDOM MUSEUM NETWORK</strong></span>
+                        <span class="word-pill-item">National Gallery of Canada: <strong>SACRED HERITAGE ARCHIVE</strong></span>
+                        <span class="word-pill-item">The Courtauld Institute of Art (UK): <strong>HISTORICAL ART DISCOURSE</strong></span>
+                        <span class="word-pill-item">Ludwig Museum (Hungary) &amp; Hamburger Kunsthalle: <strong>EUROPEAN CONTEMPORARY ARCHIVE</strong></span>
+                        <span class="word-pill-item">Museum of Papermaking (Poland): <strong>PERMANENT STATE COLLECTION</strong></span>
+                        
+                        <!-- Arctic, Indigenous & Cultural Foundations -->
+                        <span class="word-pill-item">Greenland National Museum &amp; Archives: <strong>ARCTIC CULTURAL CODEX</strong></span>
+                        <span class="word-pill-item">Artas Foundation (Swiss): <strong>EQUANIMITY / GELASSENHEIT</strong></span>
+                        <span class="word-pill-item">Endangered Languages Project: <strong>LINGUISTIC DIVERSITY ARCHIVE</strong></span>
+                        <span class="word-pill-item">Jewish Museum Frankfurt &amp; Hebrew University: <strong>HISTORICAL MEMORY REGISTER</strong></span>
                     </div>
                 </div>
             </section>
@@ -972,15 +949,8 @@
         </div>
     </div>
 
-    <!-- Footer & Global Ecosystem Routing -->
+    <!-- Footer -->
     <footer>
-        <div class="footer-ecosystem-title">&bull; Official Domain Ecosystem &amp; Sovereign Network</div>
-        <div class="ecosystem-links">
-            <a href="https://heshammalik.org" target="_blank" class="ecosystem-link">heshammalik.org (3D Spatial Codex)</a>
-            <a href="https://heshammalik.eu" target="_blank" class="ecosystem-link">heshammalik.eu (European Monograph)</a>
-            <a href="https://tmoci.org" target="_blank" class="ecosystem-link">tmoci.org (Museum of Contemporary Inquiry)</a>
-            <a href="https://indexanomalies.org" target="_blank" class="ecosystem-link">indexanomalies.org (Sovereign Index)</a>
-        </div>
         <div class="footer-copy">
             &copy; 2026 Hesham Malik. All Rights Reserved. Sovereign Monographic Register.
         </div>
