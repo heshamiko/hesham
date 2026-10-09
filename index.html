@@ -335,7 +335,7 @@
             text-align: center;
         }
 
-        /* Precision Canvas Flight Radar Map Container */
+        /* Flight Radar Container */
         .real-map-wrapper {
             background: var(--surface-card);
             border: 1px solid var(--border-gold);
@@ -350,33 +350,53 @@
             width: 100%;
             max-width: 1000px;
             margin: 20px auto 0 auto;
-            aspect-ratio: 1.5 / 1;
+            aspect-ratio: 2 / 1;
             background-color: #000000;
             border: 1px solid var(--border-gold);
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.95), 0 0 30px var(--accent-gold-glow);
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.95), 0 0 25px var(--accent-gold-glow);
             overflow: hidden;
         }
 
-        canvas#mapOutlineCanvas {
+        .radar-grid {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background-image: 
+                linear-gradient(to right, rgba(212, 175, 55, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(212, 175, 55, 0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
             pointer-events: none;
-            z-index: 1;
         }
 
+        .world-map-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .world-map-svg path {
+            fill: rgba(212, 175, 55, 0.03);
+            stroke: #d4af37;
+            stroke-width: 1.2;
+            stroke-linejoin: round;
+            filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.5));
+        }
+
+        /* Radar Nodes */
         .map-node {
             position: absolute;
             width: 10px;
             height: 10px;
-            background: var(--accent-gold);
+            background: #ffffff;
             border-radius: 50%;
             transform: translate(-50%, -50%);
             cursor: pointer;
             z-index: 5;
-            box-shadow: 0 0 12px var(--accent-gold);
+            box-shadow: 0 0 10px var(--accent-gold);
         }
 
         .map-node::after {
@@ -393,7 +413,7 @@
 
         .map-node:hover {
             transform: translate(-50%, -50%) scale(1.6);
-            background: #ffffff;
+            background: var(--accent-gold);
         }
 
         @keyframes pulse-ring {
@@ -878,7 +898,7 @@
         </div>
 
         <main>
-            <!-- Gold Outline Canvas Radar Map Section -->
+            <!-- Airport Flight Radar Map Section -->
             <section id="map-section">
                 <h2 class="section-heading">Interactive Global Footprint Radar</h2>
                 
@@ -887,68 +907,93 @@
                     <p style="font-size:0.8rem; color:var(--text-secondary); margin-top:5px;">Explore solo retrospectives, linguistic provenance partners, and ecological material patrons worldwide.</p>
 
                     <div class="map-canvas-frame">
-                        <!-- Canvas Engine renders world-map-outline.png with pure black bg and gold lines -->
-                        <canvas id="mapOutlineCanvas"></canvas>
+                        <div class="radar-grid"></div>
+
+                        <!-- Embedded Vector Golden Coastlines Vector -->
+                        <svg class="world-map-svg" viewBox="0 0 1000 500">
+                            <!-- North America -->
+                            <path d="M 150 70 L 230 60 L 320 90 L 300 180 L 240 240 L 180 260 L 140 200 L 90 120 Z" />
+                            <!-- Greenland -->
+                            <path d="M 350 30 L 440 20 L 460 100 L 390 110 L 360 60 Z" />
+                            <!-- South America -->
+                            <path d="M 280 270 L 350 280 L 370 380 L 320 470 L 280 400 L 260 320 Z" />
+                            <!-- Europe -->
+                            <path d="M 480 80 L 580 70 L 600 130 L 550 170 L 490 160 L 470 110 Z" />
+                            <!-- British Isles -->
+                            <path d="M 440 95 L 460 85 L 450 115 L 430 105 Z" />
+                            <!-- Africa -->
+                            <path d="M 470 180 L 580 180 L 600 280 L 550 380 L 490 340 L 460 240 Z" />
+                            <!-- Asia -->
+                            <path d="M 590 60 L 880 50 L 930 160 L 830 260 L 710 260 L 600 160 Z" />
+                            <!-- India -->
+                            <path d="M 690 220 L 740 230 L 730 300 L 690 280 Z" />
+                            <!-- Southeast Asia -->
+                            <path d="M 790 250 L 850 260 L 860 310 L 800 300 Z" />
+                            <!-- Australia -->
+                            <path d="M 800 330 L 900 320 L 920 390 L 840 430 L 780 380 Z" />
+                            <!-- New Zealand -->
+                            <path d="M 930 400 L 960 410 L 940 450 L 920 430 Z" />
+                        </svg>
 
                         <!-- Geolocation Hotspots -->
-                        <div class="map-node" style="top: 32%; left: 28%;" onclick="openMapDetails('harvard')">
+                        <div class="map-node" style="top: 28%; left: 24%;" onclick="openMapDetails('harvard')">
                             <span class="node-label">Harvard / MA</span>
                         </div>
-                        <div class="map-node" style="top: 36%; left: 22%;" onclick="openMapDetails('toronto')">
+                        <div class="map-node" style="top: 22%; left: 20%;" onclick="openMapDetails('toronto')">
                             <span class="node-label">Canada</span>
                         </div>
-                        <div class="map-node" style="top: 42%; left: 18%;" onclick="openMapDetails('usa')">
+                        <div class="map-node" style="top: 38%; left: 18%;" onclick="openMapDetails('usa')">
                             <span class="node-label">USA Nodes</span>
                         </div>
-                        <div class="map-node" style="top: 28%; left: 49%;" onclick="openMapDetails('cz_prague')">
+                        <div class="map-node" style="top: 22%; left: 52%;" onclick="openMapDetails('cz_prague')">
                             <span class="node-label">Prague / CZ</span>
                         </div>
-                        <div class="map-node" style="top: 30%; left: 46%;" onclick="openMapDetails('brussels')">
+                        <div class="map-node" style="top: 24%; left: 49%;" onclick="openMapDetails('brussels')">
                             <span class="node-label">Brussels / EU</span>
                         </div>
-                        <div class="map-node" style="top: 27%; left: 51%;" onclick="openMapDetails('poland')">
+                        <div class="map-node" style="top: 20%; left: 54%;" onclick="openMapDetails('poland')">
                             <span class="node-label">Poland</span>
                         </div>
-                        <div class="map-node" style="top: 20%; left: 53%;" onclick="openMapDetails('finland')">
+                        <div class="map-node" style="top: 15%; left: 55%;" onclick="openMapDetails('finland')">
                             <span class="node-label">Finland &amp; Åland</span>
                         </div>
-                        <div class="map-node" style="top: 27%; left: 44%;" onclick="openMapDetails('london')">
+                        <div class="map-node" style="top: 20%; left: 45%;" onclick="openMapDetails('london')">
                             <span class="node-label">London / UK</span>
                         </div>
-                        <div class="map-node" style="top: 31%; left: 48%;" onclick="openMapDetails('germany')">
+                        <div class="map-node" style="top: 24%; left: 51%;" onclick="openMapDetails('germany')">
                             <span class="node-label">Germany</span>
                         </div>
-                        <div class="map-node" style="top: 33%; left: 45%;" onclick="openMapDetails('france')">
+                        <div class="map-node" style="top: 26%; left: 48%;" onclick="openMapDetails('france')">
                             <span class="node-label">France</span>
                         </div>
-                        <div class="map-node" style="top: 37%; left: 51%;" onclick="openMapDetails('athens')">
+                        <div class="map-node" style="top: 30%; left: 53%;" onclick="openMapDetails('athens')">
                             <span class="node-label">Greece</span>
                         </div>
-                        <div class="map-node" style="top: 43%; left: 60%;" onclick="openMapDetails('dubai')">
+                        <div class="map-node" style="top: 40%; left: 62%;" onclick="openMapDetails('dubai')">
                             <span class="node-label">Dubai / UAE</span>
                         </div>
-                        <div class="map-node" style="top: 48%; left: 69%;" onclick="openMapDetails('goa')">
+                        <div class="map-node" style="top: 52%; left: 71%;" onclick="openMapDetails('goa')">
                             <span class="node-label">India</span>
                         </div>
-                        <div class="map-node" style="top: 45%; left: 66%;" onclick="openMapDetails('pakistan')">
+                        <div class="map-node" style="top: 44%; left: 67%;" onclick="openMapDetails('pakistan')">
                             <span class="node-label">Pakistan</span>
                         </div>
-                        <div class="map-node" style="top: 40%; left: 58%;" onclick="openMapDetails('palestine')">
+                        <div class="map-node" style="top: 36%; left: 58%;" onclick="openMapDetails('palestine')">
                             <span class="node-label">Palestine</span>
                         </div>
-                        <div class="map-node" style="top: 54%; left: 77%;" onclick="openMapDetails('malaysia')">
+                        <div class="map-node" style="top: 58%; left: 81%;" onclick="openMapDetails('malaysia')">
                             <span class="node-label">Malaysia</span>
                         </div>
-                        <div class="map-node" style="top: 58%; left: 57%;" onclick="openMapDetails('mombasa')">
+                        <div class="map-node" style="top: 56%; left: 56%;" onclick="openMapDetails('mombasa')">
                             <span class="node-label">Kenya</span>
                         </div>
-                        <div class="map-node" style="top: 76%; left: 88%;" onclick="openMapDetails('nz')">
+                        <div class="map-node" style="top: 84%; left: 94%;" onclick="openMapDetails('nz')">
                             <span class="node-label">New Zealand</span>
                         </div>
-                        <div class="map-node" style="top: 16%; left: 35%;" onclick="openMapDetails('greenland')">
+                        <div class="map-node" style="top: 12%; left: 39%;" onclick="openMapDetails('greenland')">
                             <span class="node-label">Greenland</span>
                         </div>
-                        <div class="map-node" style="top: 11%; left: 50%;" onclick="openMapDetails('svalbard')">
+                        <div class="map-node" style="top: 8%; left: 52%;" onclick="openMapDetails('svalbard')">
                             <span class="node-label">Svalbard</span>
                         </div>
 
@@ -1131,55 +1176,6 @@
     </footer>
 
     <script>
-        // JS Canvas Stroke Engine for world-map-outline.png
-        window.addEventListener('load', function() {
-            const canvas = document.getElementById('mapOutlineCanvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            const img = new Image();
-            img.src = 'world-map-outline.png';
-            
-            img.onload = function() {
-                canvas.width = canvas.parentElement.clientWidth;
-                canvas.height = canvas.parentElement.clientHeight;
-                
-                // Temporary buffer canvas
-                const tempCanvas = document.createElement('canvas');
-                tempCanvas.width = img.width;
-                tempCanvas.height = img.height;
-                const tempCtx = tempCanvas.getContext('2d');
-                tempCtx.drawImage(img, 0, 0);
-                
-                const imgData = tempCtx.getImageData(0, 0, img.width, img.height);
-                const data = imgData.data;
-                
-                // Color Replacement Engine: White background becomes transparent, dark line strokes become glowing 24k gold
-                for (let i = 0; i < data.length; i += 4) {
-                    const r = data[i];
-                    const g = data[i+1];
-                    const b = data[i+2];
-                    const brightness = (r + g + b) / 3;
-                    
-                    if (brightness > 200) {
-                        data[i+3] = 0; // Transparent
-                    } else {
-                        data[i] = 212;     // R (Gold)
-                        data[i+1] = 175;   // G
-                        data[i+2] = 55;    // B
-                        data[i+3] = 230;   // Alpha
-                    }
-                }
-                
-                tempCtx.putImageData(imgData, 0, 0);
-                
-                // Draw pure gold outline onto black canvas
-                ctx.fillStyle = '#000000';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                ctx.drawImage(tempCanvas, 0, 0, canvas.width, canvas.height);
-            };
-        });
-
-        // Interactive Map Node Click Registry
         const mapCityData = {
             harvard: {
                 city: "CAMBRIDGE, MASSACHUSETTS, USA &bull; HARVARD UNIVERSITY",
@@ -1273,7 +1269,6 @@
             }
         }
 
-        // Material Scrubber Switching
         const scrubberImages = {
             "1": "land-texture-2.jpg",
             "2": "words-texture-1.jpg",
@@ -1287,7 +1282,6 @@
             }
         }
 
-        // Modal Dossier Registry
         const dossierData = {
             equanimity: {
                 code: "PROVENANCE DOSSIER · WORDS PROJECT",
@@ -1324,7 +1318,6 @@
             document.getElementById('vault').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Live Word Search Filter
         function filterWords() {
             const input = document.getElementById('wordSearchInput').value.toLowerCase();
             const pills = document.querySelectorAll('.word-pill-item');
@@ -1339,7 +1332,6 @@
             });
         }
 
-        // Ledger Filtering Logic
         function filterLedger(category, event) {
             const buttons = document.querySelectorAll('.ledger-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
