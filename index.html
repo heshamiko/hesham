@@ -335,7 +335,7 @@
             text-align: center;
         }
 
-        /* Repaired High-Contrast PNG World Map Frame */
+        /* Illuminated High-Contrast World Map Container */
         .real-map-wrapper {
             background: var(--surface-card);
             border: 1px solid var(--border-gold);
@@ -350,30 +350,33 @@
             width: 100%;
             max-width: 1000px;
             margin: 20px auto 0 auto;
-            aspect-ratio: 1 / 1;
+            aspect-ratio: 1.8 / 1;
             background-image: url('world-map.png');
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
             border: 1px solid var(--border-gold);
-            background-color: #000000;
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.8), 0 0 25px var(--accent-gold-glow);
-            filter: brightness(0.95) contrast(1.1);
+            background-color: #030303;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.9), 0 0 30px var(--accent-gold-glow);
+            /* Golden Contrast Filter Inverts Dark Background & Golden Illuminates Landmasses */
+            filter: invert(1) sepia(1) hue-rotate(5deg) saturate(3) brightness(0.9);
             overflow: hidden;
         }
 
-        /* Gold Radar Hotspots */
+        /* Pulsing Gold Radar Hotspots */
         .map-node {
             position: absolute;
             width: 12px;
             height: 12px;
-            background: var(--accent-gold);
+            background: #000000;
             border-radius: 50%;
             transform: translate(-50%, -50%);
             cursor: pointer;
-            box-shadow: 0 0 14px var(--accent-gold);
+            box-shadow: 0 0 14px #000000;
             transition: transform 0.3s ease;
             z-index: 5;
+            /* Anti-Filter Compensation so Nodes glow brightly */
+            filter: invert(1);
         }
 
         .map-node::after {
@@ -390,7 +393,7 @@
 
         .map-node:hover {
             transform: translate(-50%, -50%) scale(1.6);
-            background: #ffffff;
+            background: var(--accent-gold);
         }
 
         @keyframes pulse-ring {
@@ -408,7 +411,7 @@
             letter-spacing: 0.15em;
             text-transform: uppercase;
             white-space: nowrap;
-            background: rgba(0, 0, 0, 0.92);
+            background: rgba(0, 0, 0, 0.95);
             padding: 3px 8px;
             border: 1px solid var(--border-gold);
             pointer-events: none;
@@ -420,15 +423,16 @@
             left: 50%;
             transform: translateX(-50%);
             width: 92%;
-            max-width: 620px;
-            background: rgba(8, 8, 8, 0.96);
-            backdrop-filter: blur(15px);
+            max-width: 650px;
+            background: rgba(8, 8, 8, 0.98);
+            backdrop-filter: blur(20px);
             border: 1px solid var(--border-gold);
             padding: 22px 28px;
             text-align: left;
             box-shadow: 0 20px 50px rgba(0,0,0,0.95);
             display: none;
             z-index: 10;
+            filter: invert(1); /* Keeps pop-up text crisp and normal */
         }
 
         .map-popup-card.active { display: block; }
@@ -445,7 +449,7 @@
             font-size: 0.8rem;
             color: var(--text-secondary);
             line-height: 1.8;
-            max-height: 180px;
+            max-height: 200px;
             overflow-y: auto;
             padding-right: 5px;
         }
@@ -876,17 +880,20 @@
         </div>
 
         <main>
-            <!-- Real High-Contrast PNG World Map Section -->
+            <!-- High-Contrast Golden World Map Section -->
             <section id="map-section">
                 <h2 class="section-heading">Interactive Global Footprint Map</h2>
                 
                 <div class="real-map-wrapper">
                     <span class="benchmark-tag">&bull; 30-YEAR GLOBAL TRAJECTORY &bull; CLICK ANY PULSING GOLD NODE</span>
-                    <p style="font-size:0.8rem; color:var(--text-secondary); margin-top:5px;">Explore solo retrospectives, state museum holdings, and ecological material patron repositories worldwide.</p>
+                    <p style="font-size:0.8rem; color:var(--text-secondary); margin-top:5px;">Explore solo retrospectives, linguistic provenance partners, and ecological material patrons worldwide.</p>
 
                     <div class="map-canvas-frame">
-                        <!-- Node Positions Aligned to World Map Canvas -->
-                        <div class="map-node" style="top: 42%; left: 21%;" onclick="openMapDetails('toronto')">
+                        <!-- Precise Geolocation Nodes for Map Canvas -->
+                        <div class="map-node" style="top: 38%; left: 24%;" onclick="openMapDetails('harvard')">
+                            <span class="node-label">Harvard / MA</span>
+                        </div>
+                        <div class="map-node" style="top: 42%; left: 20%;" onclick="openMapDetails('toronto')">
                             <span class="node-label">Canada</span>
                         </div>
                         <div class="map-node" style="top: 48%; left: 16%;" onclick="openMapDetails('usa')">
@@ -896,7 +903,7 @@
                             <span class="node-label">Prague / CZ</span>
                         </div>
                         <div class="map-node" style="top: 45%; left: 49%;" onclick="openMapDetails('brussels')">
-                            <span class="node-label">Brussels / Belgium</span>
+                            <span class="node-label">Brussels / EU</span>
                         </div>
                         <div class="map-node" style="top: 43%; left: 54%;" onclick="openMapDetails('poland')">
                             <span class="node-label">Poland</span>
@@ -905,7 +912,7 @@
                             <span class="node-label">Finland &amp; Åland</span>
                         </div>
                         <div class="map-node" style="top: 43%; left: 47%;" onclick="openMapDetails('london')">
-                            <span class="node-label">London / UK</span>
+                            <span class="node-label">London &amp; UK</span>
                         </div>
                         <div class="map-node" style="top: 47%; left: 51%;" onclick="openMapDetails('germany')">
                             <span class="node-label">Germany</span>
@@ -925,6 +932,9 @@
                         <div class="map-node" style="top: 56%; left: 70%;" onclick="openMapDetails('pakistan')">
                             <span class="node-label">Pakistan</span>
                         </div>
+                        <div class="map-node" style="top: 52%; left: 61%;" onclick="openMapDetails('palestine')">
+                            <span class="node-label">Palestine</span>
+                        </div>
                         <div class="map-node" style="top: 61%; left: 79%;" onclick="openMapDetails('malaysia')">
                             <span class="node-label">Malaysia</span>
                         </div>
@@ -936,6 +946,9 @@
                         </div>
                         <div class="map-node" style="top: 25%; left: 40%;" onclick="openMapDetails('greenland')">
                             <span class="node-label">Greenland</span>
+                        </div>
+                        <div class="map-node" style="top: 22%; left: 52%;" onclick="openMapDetails('svalbard')">
+                            <span class="node-label">Svalbard</span>
                         </div>
 
                         <!-- Popup Glassmorphic Exhibition & Patron Details Box -->
@@ -1087,7 +1100,7 @@
                 </div>
             </section>
 
-            <!-- Sovereign Archive Vault -->
+            <!-- Sovereign Vault -->
             <section id="vault" class="vault-section">
                 <h3 class="vault-title">The Sovereign Archive Vault</h3>
                 <p class="vault-sub">Restricted access portal for museum directors, biennial curators, and institutional collectors. Enter access keyphrase to review private registers and upcoming museum loans.</p>
@@ -1099,7 +1112,7 @@
         </main>
     </div>
 
-    <!-- Modal Dossier Container -->
+    <!-- Modal System -->
     <div class="modal-overlay" id="dossierModal">
         <div class="modal-box">
             <button class="modal-close" onclick="closeDossier()">&times;</button>
@@ -1117,75 +1130,87 @@
     </footer>
 
     <script>
-        // Interactive Map Node Click Registry with Ecological Patrons & Retrospectives
+        // Interactive Map Node Click Registry
         const mapCityData = {
+            harvard: {
+                city: "CAMBRIDGE, MASSACHUSETTS, USA &bull; HARVARD UNIVERSITY",
+                shows: "&bull; <b>Linguistic Provenance Partners:</b> President Emeritus of Harvard University | Dean of Harvard College | Dean of Graduate School of Design | Harvard Law School | Harvard Divinity School | Harvard T.H. Chan School of Public Health | Faculty of Arts and Sciences | Weatherhead Center for International Affairs | Malcolm Wiener Center for Social Policy | Harvard Forest Fellows &amp; Outreach"
+            },
             toronto: {
-                city: "CANADA &bull; ONTARIO, QUEBEC &amp; YUKON",
-                shows: "&bull; <b>Sovereign Solo Retrospective:</b> Seneca College (Toronto), <i>I Am</i><br>&bull; <b>Ecological Material Patrons:</b> University of Waterloo | Museum of Anthropology | Toronto Metropolitan University | Medalta Museum (Alberta) | ODD Gallery (Yukon) | Arteria Gallery (Quebec) | Agora Prep School"
+                city: "CANADA &bull; ONTARIO, QUEBEC, BC &amp; YUKON",
+                shows: "&bull; <b>Sovereign Solo Retrospective:</b> Seneca College (Toronto), <i>I Am</i><br>&bull; <b>Linguistic Provenance Partners:</b> University of Toronto | UBC | McGill University | University of Waterloo | University of Calgary | University of Alberta | Concordia University | Na'kuset Native Women's Shelter Montreal<br>&bull; <b>Ecological Material Patrons:</b> Museum of Anthropology | ODD Gallery Yukon | Arteria Gallery Quebec"
             },
             usa: {
-                city: "UNITED STATES OF AMERICA",
-                shows: "&bull; <b>Sovereign Solo Retrospective:</b> Berkeley Commonplace (California), <i>Twain</i><br>&bull; <b>Ecological Material Patrons:</b> Eco-cycle (Denver) | GENIUS Olympiad (NY) | University of Providence | Florida Gulf Coast University | Georgia Tech | Elmira College | Suffolk University Gallery"
+                city: "UNITED STATES OF AMERICA &bull; ACADEMIC &amp; HUMAN RIGHTS NODES",
+                shows: "&bull; <b>Sovereign Solo Retrospective:</b> Berkeley Commonplace (California), <i>Twain</i><br>&bull; <b>Linguistic Provenance Partners:</b> Equal Justice Initiative (Bryan Stevenson) | Stanford | MIT | Princeton | Yale | Columbia | UChicago | Johns Hopkins | NYU Skirball | American Jewish University | Jane Goodall Institute<br>&bull; <b>Ecological Material Patrons:</b> Eco-cycle Denver | GENIUS Olympiad NY | Georgia Tech"
             },
             cz_prague: {
                 city: "PRAGUE &amp; CZECH REPUBLIC NETWORK",
-                shows: "&bull; <b>Official Patronage:</b> Ministry of the Environment, Prague<br>&bull; <b>State Museum Retrospectives:</b> Prague Municipal Library | Jerusalem Synagogue | Diocese of Pilsen | Museum Jindřichův Hradec | Karlovy Vary Museum | Castle Zruč nad Sázavou<br>&bull; <b>Ecological Material Patrons:</b> National Gallery Prague | ČVUT Prague | Masaryk University | Czech Agricultural University | Red Cross CZ | Artwall Prague | DZS House of Foreign Cooperation | Forest School CZ | Dobříš School | Bystřec School"
+                shows: "&bull; <b>Official Patronage:</b> Ministry of the Environment, Prague<br>&bull; <b>State Museum Retrospectives:</b> Prague Municipal Library | Jerusalem Synagogue | Diocese of Pilsen | Museum Jindřichův Hradec | Karlovy Vary Museum<br>&bull; <b>Linguistic Provenance Partners:</b> Charles University | Masaryk University | Kurt &amp; Ursula Schubert Center for Jewish Studies | IPSOS (Radka Malik)<br>&bull; <b>Ecological Material Patrons:</b> National Gallery Prague | ČVUT Prague | Red Cross CZ | Artwall Prague"
             },
             brussels: {
-                city: "BELGIUM",
-                shows: "&bull; <b>Sovereign Installation:</b> Brussels Expo (European Commission), <i>Life of a Box</i><br>&bull; <b>Ecological Material Patrons:</b> Belgium Museum | Museum Brugge"
+                city: "BELGIUM &amp; EUROPEAN UNION",
+                shows: "&bull; <b>Sovereign Installation:</b> Brussels Expo (European Commission), <i>Life of a Box</i><br>&bull; <b>Linguistic Provenance Partners:</b> KU Leuven | Vrije Universiteit Brussel | Centre for European Policy Studies<br>&bull; <b>Ecological Material Patrons:</b> Museum voor Schone Kunsten | Museum Brugge"
             },
             poland: {
-                city: "POLAND",
-                shows: "&bull; <b>State Museum Monograph:</b> Museum of Paper (Duszniki-Zdrój)<br>&bull; <b>Ecological Material Patron:</b> Jewish Museum Poland Repository"
+                city: "POLAND &bull; DUSZNIKI-ZDRÓJ &amp; KRAKOW",
+                shows: "&bull; <b>State Museum Monograph:</b> Museum of Paper (Muzeum Papiernictwa)<br>&bull; <b>Linguistic Provenance Partners:</b> University of Warsaw | Jewish Community Centre of Krakow | Akademia Sztuk Pięknych"
             },
             finland: {
                 city: "FINLAND &amp; ÅLAND ISLANDS",
-                shows: "&bull; <b>Sovereign Solo Retrospective:</b> Gallery MABD, Oulu (<i>Unknown</i>)<br>&bull; <b>Ecological Material Patron:</b> Åland Islands Cultural Repository"
+                shows: "&bull; <b>Sovereign Solo Retrospective:</b> Gallery MABD, Oulu (<i>Unknown</i>)<br>&bull; <b>Linguistic Provenance Partner:</b> University of Helsinki | Galleria MABD"
             },
             london: {
-                city: "LONDON &amp; UNITED KINGDOM",
-                shows: "&bull; <b>Sovereign Solo Retrospective:</b> Private Monographic Exhibition, London<br>&bull; <b>Ecological Material Patrons:</b> Amazon UK | Hawk Conservancy Trust"
+                city: "UNITED KINGDOM &bull; LONDON, OXFORD &amp; CAMBRIDGE",
+                shows: "&bull; <b>Sovereign Solo Retrospective:</b> Private Monographic Exhibition, London<br>&bull; <b>Linguistic Provenance Partners:</b> University of Oxford | University of Cambridge | TATE London | The Courtauld Institute of Art | London School of Economics | King's College London | Index on Censorship<br>&bull; <b>Ecological Material Patrons:</b> Amazon UK | Hawk Conservancy Trust"
             },
             germany: {
-                city: "GERMANY",
-                shows: "&bull; <b>Ecological Material Patrons:</b> Albrecht Dürer's House (Nuremberg) | City Museum Nuremberg | Galerie Thomas Schulte GMBH | Galerie Green (Berlin) | German National Library (Frankfurt)"
+                city: "GERMANY &bull; FRANKFURT, STUTTGART &amp; BERLIN",
+                shows: "&bull; <b>Linguistic Provenance Partners:</b> Max Planck Institute | Humboldt University | Goethe University Frankfurt | Potsdam Institute for Climate Impact Research | Jewish Museum Frankfurt | European Roma Institute<br>&bull; <b>Ecological Material Patrons:</b> Albrecht Dürer's House Nuremberg | German National Library | Galerie Thomas Schulte"
             },
             france: {
-                city: "FRANCE &amp; GUADELOUPE",
-                shows: "&bull; <b>Ecological Material Patrons:</b> Musée des Augustins | Arts au Pluriailes (Guadeloupe)"
+                city: "FRANCE &bull; PARIS &amp; REGIONS",
+                shows: "&bull; <b>Linguistic Provenance Partners:</b> Sorbonne University Director | Founder of Art for Amnesty | American School of Paris<br>&bull; <b>Ecological Material Patrons:</b> Musée des Augustins | Arts au Pluriailes"
             },
             athens: {
-                city: "GREECE &amp; CANARY ISLANDS",
-                shows: "&bull; <b>Genesis Retrospective:</b> Mediterranean Pigment Research (1990s)<br>&bull; <b>Ecological Material Patrons:</b> Interalia Project (Greece) | César Manrique Foundation (Canary Islands)"
+                city: "GREECE &amp; CYPRUS",
+                shows: "&bull; <b>Genesis Retrospective:</b> Mediterranean Pigment Research (1990s)<br>&bull; <b>Linguistic Provenance Partners:</b> Athens School of Fine Arts | Ministry of Culture Cyprus<br>&bull; <b>Ecological Material Patron:</b> César Manrique Foundation"
             },
             dubai: {
-                city: "DUBAI &amp; UNITED ARAB EMIRATES",
-                shows: "&bull; <b>Sovereign Solo Retrospectives:</b> H Hotel Dubai | Royal Mirage Jumeirah Private Viewings"
+                city: "DUBAI &amp; ABU DHABI, UAE",
+                shows: "&bull; <b>Sovereign Solo Retrospectives:</b> H Hotel Dubai | Royal Mirage Jumeirah Private Viewings<br>&bull; <b>Linguistic Provenance Partners:</b> NYU Arts Center Abu Dhabi | American University in Dubai"
             },
             goa: {
                 city: "INDIA &bull; GOA &amp; MUMBAI",
-                shows: "&bull; <b>Genesis Retrospectives:</b> Carpe Diem Gallery &amp; Mumbai 1990s Spatial Interventions<br>&bull; <b>Ecological Material Patron:</b> Gallery Carpe Diem (Material Vessel Donor)"
+                shows: "&bull; <b>Genesis Retrospectives:</b> Carpe Diem Gallery &amp; Mumbai 1990s Spatial Interventions<br>&bull; <b>Linguistic Provenance Partners:</b> Chatterjee &amp; Lal | Carpe Diem Art and Learning Centre"
             },
             pakistan: {
-                city: "PAKISTAN &bull; KARACHI",
-                shows: "&bull; <b>Ecological Material Patron:</b> Mohatta Palace Museum Repository"
+                city: "PAKISTAN &bull; PESHAWAR &amp; KARACHI",
+                shows: "&bull; <b>Linguistic Provenance Partner:</b> University of Peshawar<br>&bull; <b>Ecological Material Patron:</b> Mohatta Palace Museum Repository"
+            },
+            palestine: {
+                city: "PALESTINE &bull; GAZA &amp; JENIN",
+                shows: "&bull; <b>Linguistic Provenance Partners:</b> ANERA Gaza City | Culture and Free Thought Association | The Freedom Theatre Jenin Camp"
             },
             malaysia: {
                 city: "KUALA LUMPUR, MALAYSIA",
                 shows: "&bull; <b>Sovereign Exhibition:</b> Private Monographic Retrospective"
             },
-            mombassa: {
-                city: "MOMBASA, KENYA",
-                shows: "&bull; <b>Sovereign Exhibition:</b> Private Monographic Spatial Intervention"
+            mombasa: {
+                city: "KENYA &bull; MOMBASA &amp; NAIROBI",
+                shows: "&bull; <b>Sovereign Exhibition:</b> Private Monographic Spatial Intervention<br>&bull; <b>Linguistic Provenance Partner:</b> PAWA254 (Nairobi)"
             },
             nz: {
                 city: "NEW ZEALAND (AOTEAROA)",
-                shows: "&bull; <b>Ecological Material Patrons:</b> Waitangi Museum | Tūhura Otago Museum | From Out of the Blue Studio Gallery (Ōpunakē)"
+                shows: "&bull; <b>Linguistic Provenance Partner:</b> University of Auckland<br>&bull; <b>Ecological Material Patrons:</b> Waitangi Museum | Tūhura Otago Museum"
             },
             greenland: {
-                city: "NUUK, GREENLAND",
-                shows: "&bull; <b>Ecological Material Patron:</b> Nuuk Art Museum Repository"
+                city: "GREENLAND &bull; NUUK &amp; AVANNAATA",
+                shows: "&bull; <b>Linguistic Provenance Partners:</b> Mayor of Avannaata | Greenland National Museum &amp; Archives | Katuaq Cultural Centre | Language Secretariat Greenland<br>&bull; <b>Ecological Material Patron:</b> Nuuk Art Museum"
+            },
+            svalbard: {
+                city: "SVALBARD &amp; NORWAY",
+                shows: "&bull; <b>Linguistic Provenance Partners:</b> Svalbard Global Seed Vault | Innovation Norway Chief Editor"
             }
         };
 
