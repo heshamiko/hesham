@@ -68,7 +68,7 @@
             --text-secondary: #a0a0a0;
             --text-muted: #666666;
             --accent-gold: #d4af37;
-            --accent-gold-glow: rgba(212, 175, 55, 0.12);
+            --accent-gold-glow: rgba(212, 175, 55, 0.15);
             --border-subtle: rgba(255, 255, 255, 0.08);
             --border-gold: rgba(212, 175, 55, 0.35);
             
@@ -111,7 +111,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center top; /* Positioned to preserve the top of paintings and faces */
+            object-position: center top; /* Preserves top of paintings & faces */
             filter: brightness(0.65);
             z-index: 1;
         }
@@ -335,6 +335,102 @@
             text-align: center;
         }
 
+        /* 30-Year Interactive Map & Timeline Module */
+        .map-container-box {
+            background: var(--surface-card);
+            border: 1px solid var(--border-gold);
+            padding: 40px 30px;
+            margin-bottom: 80px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+        }
+
+        .map-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .timeline-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+
+        .tab-btn {
+            background: var(--surface-solid);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 10px 22px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            background: var(--surface-card);
+        }
+
+        .timeline-content-display {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .era-card {
+            background: var(--surface-solid);
+            border: 1px solid var(--border-subtle);
+            padding: 30px;
+            display: none;
+            transition: all 0.4s ease;
+        }
+
+        .era-card.active { display: block; }
+
+        .era-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .era-curatorial-prose {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .exhibition-list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .exhibition-item {
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            padding: 12px 18px;
+            font-size: 0.78rem;
+            color: var(--text-primary);
+            border-left: 2px solid var(--accent-gold);
+        }
+
+        .exhibition-item strong {
+            color: var(--accent-gold);
+            display: block;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
         /* Live Word Search Terminal */
         .word-terminal-box {
             background: var(--surface-card);
@@ -360,9 +456,7 @@
             transition: border-color 0.3s ease;
         }
 
-        .word-search-input:focus {
-            border-color: var(--accent-gold);
-        }
+        .word-search-input:focus { border-color: var(--accent-gold); }
 
         .word-pills-container {
             display: flex;
@@ -384,9 +478,7 @@
             transition: all 0.3s ease;
         }
 
-        .word-pill-item strong {
-            color: var(--accent-gold);
-        }
+        .word-pill-item strong { color: var(--accent-gold); }
 
         .word-pill-item:hover {
             border-color: var(--accent-gold);
@@ -454,7 +546,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center top; /* Positioned to preserve the top of paintings and faces */
+            object-position: center top;
             opacity: 0.85;
             transition: transform 0.5s ease, opacity 0.5s ease;
         }
@@ -522,70 +614,47 @@
             background: var(--surface-solid);
         }
 
-        /* Gigapixel Material Texture Inspector */
-        .texture-inspector {
+        /* Material Scrubber Inspector */
+        .scrubber-inspector-box {
             background: var(--surface-solid);
-            border: 1px solid var(--border-subtle);
+            border: 1px solid var(--border-gold);
             padding: 40px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+            margin-bottom: 80px;
         }
 
-        .texture-viewer-box {
+        .scrubber-view-wrapper {
             position: relative;
             width: 100%;
-            height: 350px;
-            border: 1px solid var(--border-gold);
-            overflow: hidden;
+            height: 420px;
             background: #000;
-            cursor: crosshair;
+            border: 1px solid var(--border-subtle);
+            overflow: hidden;
+            margin-top: 20px;
         }
 
-        .texture-viewer-box img {
+        .scrubber-view-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center top;
-            transition: transform 0.2s ease-out;
+            transition: opacity 0.3s ease;
         }
 
-        .texture-viewer-box:hover img {
-            transform: scale(2.2);
+        .scrubber-range-control {
+            width: 100%;
+            margin-top: 25px;
+            accent-color: var(--accent-gold);
+            cursor: pointer;
         }
 
-        .texture-details h3 {
-            font-family: var(--font-serif);
-            font-size: 1.8rem;
-            color: #ffffff;
-            font-weight: 300;
-            margin-top: 0;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .texture-details p {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            line-height: 1.9;
-        }
-
-        .material-pill-list {
+        .scrubber-labels-bar {
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .material-pill {
-            background: var(--surface-card);
-            border: 1px solid var(--border-subtle);
+            justify-content: space-between;
+            font-size: 0.68rem;
             color: var(--accent-gold);
-            font-size: 0.65rem;
-            padding: 6px 14px;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
+            margin-top: 10px;
         }
 
         /* Sovereign Archive Vault */
@@ -724,7 +793,6 @@
             h1.hero-title-main { font-size: 3.2rem; }
             .metrics-bar { grid-template-columns: repeat(2, 1fr); }
             .ledger-row { grid-template-columns: 1fr; }
-            .texture-inspector { grid-template-columns: 1fr; }
             .vault-form { flex-direction: column; }
         }
     </style>
@@ -738,10 +806,11 @@
             <span class="nav-brand-sub">Sovereign Monographic Portal</span>
         </a>
         <div class="nav-links">
-            <a href="#word-archive" class="nav-link">01 / Word Matrix</a>
-            <a href="#ledger" class="nav-link">02 / Provenance Ledger</a>
-            <a href="#materials" class="nav-link">03 / Material Science</a>
-            <a href="#vault" class="btn-vault-nav">04 / Access Sovereign Vault</a>
+            <a href="#trajectory" class="nav-link">01 / 30-Year Trajectory</a>
+            <a href="#word-archive" class="nav-link">02 / Word Matrix</a>
+            <a href="#ledger" class="nav-link">03 / Provenance Ledger</a>
+            <a href="#materials" class="nav-link">04 / Material Scrubber</a>
+            <a href="#vault" class="btn-vault-nav">05 / Sovereign Vault</a>
         </div>
     </nav>
 
@@ -788,6 +857,83 @@
         </div>
 
         <main>
+            <!-- 30-Year Trajectory & Retrospective Map Module -->
+            <section id="trajectory">
+                <h2 class="section-heading">30-Year Retrospective Trajectory</h2>
+                
+                <div class="map-container-box">
+                    <div class="map-header">
+                        <span class="benchmark-tag">&bull; MONOGRAPHIC TIMELINE &bull; 1990s — 2026</span>
+                        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0; font-weight: 300; text-transform: uppercase;">Curatorial Exhibition Archives</h3>
+                    </div>
+
+                    <div class="timeline-tabs">
+                        <button class="tab-btn active" onclick="switchEra('era-2020s', event)">2020 – 2026 (Museum Era)</button>
+                        <button class="tab-btn" onclick="switchEra('era-2010s', event)">2010 – 2020 (Mid-Career)</button>
+                        <button class="tab-btn" onclick="switchEra('era-2000s', event)">2000 – 2010 (Academic Expansion)</button>
+                        <button class="tab-btn" onclick="switchEra('era-1990s', event)">1990s (Genesis Interventions)</button>
+                    </div>
+
+                    <div class="timeline-content-display">
+                        <!-- 2020-2026 Era -->
+                        <div class="era-card active" id="era-2020s">
+                            <div class="era-title">2020 – 2026: Institutional Monograph &amp; State Museums</div>
+                            <div class="era-curatorial-prose">"A period marked by monumental state museum acquisitions, cathedral interventions, and global participatory sustainability codices across Western &amp; Central Europe."</div>
+                            <div class="exhibition-list-grid">
+                                <div class="exhibition-item"><strong>2026 &bull; Brussels Expo / Amazon</strong>Life of A Box</div>
+                                <div class="exhibition-item"><strong>2026 &bull; Museum Jindřichův Hradec</strong>Silent Encounters</div>
+                                <div class="exhibition-item"><strong>2026 &bull; Diocese of Pilsen Museum</strong>Angels &amp; Demons</div>
+                                <div class="exhibition-item"><strong>2026 &bull; Museum of Mariánská Týnice</strong>Iridescent</div>
+                                <div class="exhibition-item"><strong>2026 &bull; Gallery MABD, Oulu (Finland)</strong>Unknown</div>
+                                <div class="exhibition-item"><strong>2026 &bull; Prague Municipal Library</strong>Life of a Box</div>
+                                <div class="exhibition-item"><strong>2025 &bull; Museum of Paper (Poland)</strong>Life of A Box (Official Monograph)</div>
+                                <div class="exhibition-item"><strong>2025 &bull; Jerusalem Synagogue, Prague</strong>18</div>
+                                <div class="exhibition-item"><strong>2025 &bull; Charles University</strong>Science &amp; Art Encounter</div>
+                                <div class="exhibition-item"><strong>2024 &bull; Museum of Karlovy Vary</strong>Kemet</div>
+                                <div class="exhibition-item"><strong>2024 &bull; Berkeley Commonplace (USA)</strong>Twain</div>
+                                <div class="exhibition-item"><strong>2023 &bull; Kroměříž Museum</strong>Uncertain Vibrations</div>
+                                <div class="exhibition-item"><strong>2022 &bull; Seneca College, Toronto</strong>I Am</div>
+                            </div>
+                        </div>
+
+                        <!-- 2010-2020 Era -->
+                        <div class="era-card" id="era-2010s">
+                            <div class="era-title">2010 – 2020: Capital Retrospectives &amp; Spatial Interventions</div>
+                            <div class="era-curatorial-prose">"Expanding the monographic trajectory into high-prestige architecture, private sovereign viewings, and international cultural capitals."</div>
+                            <div class="exhibition-list-grid">
+                                <div class="exhibition-item"><strong>Dubai &bull; H Hotel</strong>Monographic Retrospective</div>
+                                <div class="exhibition-item"><strong>Dubai &bull; Royal Mirage Jumeirah</strong>Sovereign Private Archive</div>
+                                <div class="exhibition-item"><strong>Europe &amp; Middle East</strong>Capital Retrospective Circuit</div>
+                            </div>
+                        </div>
+
+                        <!-- 2000-2010 Era -->
+                        <div class="era-card" id="era-2000s">
+                            <div class="era-title">2000 – 2010: North American Academic &amp; Gallery Expansion</div>
+                            <div class="era-curatorial-prose">"Bridging fine art with higher education, university gallery research, and prominent regional art centers."</div>
+                            <div class="exhibition-list-grid">
+                                <div class="exhibition-item"><strong>Toronto &bull; Seneca College</strong>Arts &amp; Technology Monograph</div>
+                                <div class="exhibition-item"><strong>Canada &bull; University of Waterloo</strong>Academic Fine Art Research</div>
+                                <div class="exhibition-item"><strong>Goa &bull; Carpe Diem Gallery</strong>Material Grounding</div>
+                            </div>
+                        </div>
+
+                        <!-- 1990s Era -->
+                        <div class="era-card" id="era-1990s">
+                            <div class="era-title">1990s: Genesis &amp; Autonomous Interventions</div>
+                            <div class="era-curatorial-prose">"The foundational period of material investigation—unfolding through raw, independent spatial interventions across historic coastal trading hubs, desert islands, and cultural crossroads."</div>
+                            <div class="exhibition-list-grid">
+                                <div class="exhibition-item"><strong>Mumbai</strong>Early Material Formations</div>
+                                <div class="exhibition-item"><strong>Goa</strong>Pigment &amp; Texture Genesis</div>
+                                <div class="exhibition-item"><strong>Dubai</strong>Emerging Capital Solo</div>
+                                <div class="exhibition-item"><strong>Athens (Greece)</strong>Mediterranean Cultural Exchange</div>
+                                <div class="exhibition-item"><strong>Qeshm City</strong>Island Spatial Installation</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Live Institutional Word Matrix Terminal -->
             <section id="word-archive">
                 <div class="word-terminal-box">
@@ -907,22 +1053,23 @@
                 </div>
             </section>
 
-            <!-- Gigapixel Material Science Inspector -->
+            <!-- Material Scrubber Inspector -->
             <section id="materials">
-                <h2 class="section-heading">Material Science &amp; Micro-Texture</h2>
-                <div class="texture-inspector">
-                    <div class="texture-viewer-box" id="textureBox">
-                        <img src="box-texture-1.jpg" id="textureImg" alt="Macro Canvas Texture">
+                <h2 class="section-heading">Material Lifecycle Scrubber</h2>
+                <div class="scrubber-inspector-box">
+                    <span class="benchmark-tag">&bull; TACTILE MATERIAL SCIENCE &bull; LAYER INSPECTOR</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0 5px 0; font-weight: 300; text-transform: uppercase;">Canvas Material Evolution</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0 0 20px 0;">Slide the control below to inspect the structural transformation from raw ground earth oxides to 24k gold leaf adhesion.</p>
+
+                    <div class="scrubber-view-wrapper">
+                        <img src="box-texture-1.jpg" id="scrubberImage" alt="Material Texture Layer">
                     </div>
-                    <div class="texture-details">
-                        <h3>Tactile Material Longevity</h3>
-                        <p>Every canvas combines heavy, hand-ground mineral pigments, raw earth oxides, and structural industrial packaging fibers. Hover over the viewer to inspect micro-texture density and gold leaf adhesion.</p>
-                        <div class="material-pill-list">
-                            <span class="material-pill">24k Gold Pigment</span>
-                            <span class="material-pill">Recycled Industrial Fiber</span>
-                            <span class="material-pill">Earth Oxides</span>
-                            <span class="material-pill">Engraved Linguistic Text</span>
-                        </div>
+
+                    <input type="range" min="1" max="3" value="3" class="scrubber-range-control" id="materialSlider" oninput="updateScrubberView(this.value)">
+                    <div class="scrubber-labels-bar">
+                        <span>Stage 1: Raw Earth Oxides</span>
+                        <span>Stage 2: Engraved Text</span>
+                        <span>Stage 3: 24k Gold Adhesion</span>
                     </div>
                 </div>
             </section>
@@ -957,6 +1104,33 @@
     </footer>
 
     <script>
+        // Timeline Era Switching
+        function switchEra(eraId, event) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            if (event && event.target) event.target.classList.add('active');
+
+            const eraCards = document.querySelectorAll('.era-card');
+            eraCards.forEach(card => card.classList.remove('active'));
+
+            const activeCard = document.getElementById(eraId);
+            if (activeCard) activeCard.classList.add('active');
+        }
+
+        // Material Scrubber Switching
+        const scrubberImages = {
+            "1": "land-texture-2.jpg",
+            "2": "words-texture-1.jpg",
+            "3": "box-texture-1.jpg"
+        };
+
+        function updateScrubberView(val) {
+            const img = document.getElementById('scrubberImage');
+            if (img && scrubberImages[val]) {
+                img.src = scrubberImages[val];
+            }
+        }
+
         // Modal Dossier Registry
         const dossierData = {
             equanimity: {
@@ -1013,9 +1187,7 @@
         function filterLedger(category, event) {
             const buttons = document.querySelectorAll('.ledger-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
-            if (event && event.target) {
-                event.target.classList.add('active');
-            }
+            if (event && event.target) event.target.classList.add('active');
 
             const rows = document.querySelectorAll('.ledger-row');
             rows.forEach(row => {
@@ -1024,19 +1196,6 @@
                 } else {
                     row.style.display = 'none';
                 }
-            });
-        }
-
-        // Texture Box Pan Effect
-        const textureBox = document.getElementById('textureBox');
-        const textureImg = document.getElementById('textureImg');
-
-        if (textureBox && textureImg) {
-            textureBox.addEventListener('mousemove', (e) => {
-                const rect = textureBox.getBoundingClientRect();
-                const x = ((e.clientX - rect.left) / rect.width) * 100;
-                const y = ((e.clientY - rect.top) / rect.height) * 100;
-                textureImg.style.transformOrigin = `${x}% ${y}%`;
             });
         }
     </script>
