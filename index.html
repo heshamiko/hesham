@@ -335,7 +335,7 @@
             text-align: center;
         }
 
-        /* Pure Dark Pure-SVG Gold Map Section */
+        /* Precision Canvas Flight Radar Map Container */
         .real-map-wrapper {
             background: var(--surface-card);
             border: 1px solid var(--border-gold);
@@ -350,29 +350,21 @@
             width: 100%;
             max-width: 1000px;
             margin: 20px auto 0 auto;
-            aspect-ratio: 2 / 1;
+            aspect-ratio: 1.5 / 1;
             background-color: #000000;
             border: 1px solid var(--border-gold);
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.9), 0 0 25px var(--accent-gold-glow);
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.95), 0 0 30px var(--accent-gold-glow);
             overflow: hidden;
         }
 
-        .world-vector-svg {
+        canvas#mapOutlineCanvas {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             pointer-events: none;
-        }
-
-        .world-vector-svg path {
-            fill: none;
-            stroke: var(--accent-gold);
-            stroke-width: 1.2;
-            stroke-linejoin: round;
-            opacity: 0.75;
-            filter: drop-shadow(0 0 3px var(--accent-gold));
+            z-index: 1;
         }
 
         .map-node {
@@ -384,7 +376,7 @@
             transform: translate(-50%, -50%);
             cursor: pointer;
             z-index: 5;
-            box-shadow: 0 0 10px var(--accent-gold);
+            box-shadow: 0 0 12px var(--accent-gold);
         }
 
         .map-node::after {
@@ -886,7 +878,7 @@
         </div>
 
         <main>
-            <!-- Pure SVG Golden Outline Radar Map Section -->
+            <!-- Gold Outline Canvas Radar Map Section -->
             <section id="map-section">
                 <h2 class="section-heading">Interactive Global Footprint Radar</h2>
                 
@@ -895,92 +887,72 @@
                     <p style="font-size:0.8rem; color:var(--text-secondary); margin-top:5px;">Explore solo retrospectives, linguistic provenance partners, and ecological material patrons worldwide.</p>
 
                     <div class="map-canvas-frame">
-                        <!-- Embedded Vector Golden Coastlines Vector -->
-                        <svg class="world-vector-svg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
-                            <!-- North America -->
-                            <path d="M120,60 L220,50 L310,90 L290,170 L250,230 L190,250 L140,210 L100,120 Z" />
-                            <!-- Greenland -->
-                            <path d="M340,30 L430,30 L450,110 L380,120 L350,70 Z" />
-                            <!-- South America -->
-                            <path d="M270,260 L340,270 L360,370 L310,460 L270,390 L250,310 Z" />
-                            <!-- Europe & British Isles -->
-                            <path d="M470,70 L570,60 L590,120 L540,160 L490,150 L460,100 Z" />
-                            <path d="M440,90 L460,80 L450,110 L430,100 Z" />
-                            <!-- Africa -->
-                            <path d="M460,170 L570,170 L590,270 L540,370 L480,330 L450,230 Z" />
-                            <!-- Asia -->
-                            <path d="M580,50 L870,40 L920,150 L820,250 L700,250 L590,150 Z" />
-                            <!-- India & South East Asia -->
-                            <path d="M680,210 L730,220 L720,290 L680,270 Z" />
-                            <path d="M780,240 L840,250 L850,300 L790,290 Z" />
-                            <!-- Australia & NZ -->
-                            <path d="M790,320 L890,310 L910,380 L830,420 L770,370 Z" />
-                            <path d="M920,390 L950,400 L930,440 L910,420 Z" />
-                        </svg>
+                        <!-- Canvas Engine renders world-map-outline.png with pure black bg and gold lines -->
+                        <canvas id="mapOutlineCanvas"></canvas>
 
-                        <!-- Precise Node Placements -->
-                        <div class="map-node" style="top: 26%; left: 24%;" onclick="openMapDetails('harvard')">
+                        <!-- Geolocation Hotspots -->
+                        <div class="map-node" style="top: 32%; left: 28%;" onclick="openMapDetails('harvard')">
                             <span class="node-label">Harvard / MA</span>
                         </div>
-                        <div class="map-node" style="top: 22%; left: 20%;" onclick="openMapDetails('toronto')">
+                        <div class="map-node" style="top: 36%; left: 22%;" onclick="openMapDetails('toronto')">
                             <span class="node-label">Canada</span>
                         </div>
-                        <div class="map-node" style="top: 36%; left: 18%;" onclick="openMapDetails('usa')">
+                        <div class="map-node" style="top: 42%; left: 18%;" onclick="openMapDetails('usa')">
                             <span class="node-label">USA Nodes</span>
                         </div>
-                        <div class="map-node" style="top: 20%; left: 51%;" onclick="openMapDetails('cz_prague')">
+                        <div class="map-node" style="top: 28%; left: 49%;" onclick="openMapDetails('cz_prague')">
                             <span class="node-label">Prague / CZ</span>
                         </div>
-                        <div class="map-node" style="top: 22%; left: 48%;" onclick="openMapDetails('brussels')">
+                        <div class="map-node" style="top: 30%; left: 46%;" onclick="openMapDetails('brussels')">
                             <span class="node-label">Brussels / EU</span>
                         </div>
-                        <div class="map-node" style="top: 19%; left: 53%;" onclick="openMapDetails('poland')">
+                        <div class="map-node" style="top: 27%; left: 51%;" onclick="openMapDetails('poland')">
                             <span class="node-label">Poland</span>
                         </div>
-                        <div class="map-node" style="top: 14%; left: 54%;" onclick="openMapDetails('finland')">
+                        <div class="map-node" style="top: 20%; left: 53%;" onclick="openMapDetails('finland')">
                             <span class="node-label">Finland &amp; Åland</span>
                         </div>
-                        <div class="map-node" style="top: 19%; left: 45%;" onclick="openMapDetails('london')">
+                        <div class="map-node" style="top: 27%; left: 44%;" onclick="openMapDetails('london')">
                             <span class="node-label">London / UK</span>
                         </div>
-                        <div class="map-node" style="top: 22%; left: 50%;" onclick="openMapDetails('germany')">
+                        <div class="map-node" style="top: 31%; left: 48%;" onclick="openMapDetails('germany')">
                             <span class="node-label">Germany</span>
                         </div>
-                        <div class="map-node" style="top: 24%; left: 47%;" onclick="openMapDetails('france')">
+                        <div class="map-node" style="top: 33%; left: 45%;" onclick="openMapDetails('france')">
                             <span class="node-label">France</span>
                         </div>
-                        <div class="map-node" style="top: 30%; left: 52%;" onclick="openMapDetails('athens')">
+                        <div class="map-node" style="top: 37%; left: 51%;" onclick="openMapDetails('athens')">
                             <span class="node-label">Greece</span>
                         </div>
-                        <div class="map-node" style="top: 38%; left: 62%;" onclick="openMapDetails('dubai')">
+                        <div class="map-node" style="top: 43%; left: 60%;" onclick="openMapDetails('dubai')">
                             <span class="node-label">Dubai / UAE</span>
                         </div>
-                        <div class="map-node" style="top: 48%; left: 70%;" onclick="openMapDetails('goa')">
+                        <div class="map-node" style="top: 48%; left: 69%;" onclick="openMapDetails('goa')">
                             <span class="node-label">India</span>
                         </div>
-                        <div class="map-node" style="top: 41%; left: 67%;" onclick="openMapDetails('pakistan')">
+                        <div class="map-node" style="top: 45%; left: 66%;" onclick="openMapDetails('pakistan')">
                             <span class="node-label">Pakistan</span>
                         </div>
-                        <div class="map-node" style="top: 34%; left: 58%;" onclick="openMapDetails('palestine')">
+                        <div class="map-node" style="top: 40%; left: 58%;" onclick="openMapDetails('palestine')">
                             <span class="node-label">Palestine</span>
                         </div>
-                        <div class="map-node" style="top: 56%; left: 79%;" onclick="openMapDetails('malaysia')">
+                        <div class="map-node" style="top: 54%; left: 77%;" onclick="openMapDetails('malaysia')">
                             <span class="node-label">Malaysia</span>
                         </div>
-                        <div class="map-node" style="top: 55%; left: 57%;" onclick="openMapDetails('mombasa')">
+                        <div class="map-node" style="top: 58%; left: 57%;" onclick="openMapDetails('mombasa')">
                             <span class="node-label">Kenya</span>
                         </div>
-                        <div class="map-node" style="top: 83%; left: 93%;" onclick="openMapDetails('nz')">
+                        <div class="map-node" style="top: 76%; left: 88%;" onclick="openMapDetails('nz')">
                             <span class="node-label">New Zealand</span>
                         </div>
-                        <div class="map-node" style="top: 14%; left: 38%;" onclick="openMapDetails('greenland')">
+                        <div class="map-node" style="top: 16%; left: 35%;" onclick="openMapDetails('greenland')">
                             <span class="node-label">Greenland</span>
                         </div>
-                        <div class="map-node" style="top: 8%; left: 51%;" onclick="openMapDetails('svalbard')">
+                        <div class="map-node" style="top: 11%; left: 50%;" onclick="openMapDetails('svalbard')">
                             <span class="node-label">Svalbard</span>
                         </div>
 
-                        <!-- Glassmorphic Popup Card -->
+                        <!-- Details Box -->
                         <div class="map-popup-card" id="mapPopupCard">
                             <div class="map-popup-city" id="popupCityTitle">City / Region</div>
                             <div class="map-popup-shows" id="popupCityBody">Click any gold node to inspect records...</div>
@@ -1159,6 +1131,54 @@
     </footer>
 
     <script>
+        // JS Canvas Stroke Engine for world-map-outline.png
+        window.addEventListener('load', function() {
+            const canvas = document.getElementById('mapOutlineCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            img.src = 'world-map-outline.png';
+            
+            img.onload = function() {
+                canvas.width = canvas.parentElement.clientWidth;
+                canvas.height = canvas.parentElement.clientHeight;
+                
+                // Temporary buffer canvas
+                const tempCanvas = document.createElement('canvas');
+                tempCanvas.width = img.width;
+                tempCanvas.height = img.height;
+                const tempCtx = tempCanvas.getContext('2d');
+                tempCtx.drawImage(img, 0, 0);
+                
+                const imgData = tempCtx.getImageData(0, 0, img.width, img.height);
+                const data = imgData.data;
+                
+                // Color Replacement Engine: White background becomes transparent, dark line strokes become glowing 24k gold
+                for (let i = 0; i < data.length; i += 4) {
+                    const r = data[i];
+                    const g = data[i+1];
+                    const b = data[i+2];
+                    const brightness = (r + g + b) / 3;
+                    
+                    if (brightness > 200) {
+                        data[i+3] = 0; // Transparent
+                    } else {
+                        data[i] = 212;     // R (Gold)
+                        data[i+1] = 175;   // G
+                        data[i+2] = 55;    // B
+                        data[i+3] = 230;   // Alpha
+                    }
+                }
+                
+                tempCtx.putImageData(imgData, 0, 0);
+                
+                // Draw pure gold outline onto black canvas
+                ctx.fillStyle = '#000000';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(tempCanvas, 0, 0, canvas.width, canvas.height);
+            };
+        });
+
         // Interactive Map Node Click Registry
         const mapCityData = {
             harvard: {
