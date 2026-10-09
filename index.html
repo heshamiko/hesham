@@ -335,7 +335,7 @@
             text-align: center;
         }
 
-        /* Interactive World Map Section */
+        /* Interactive World Map Section with Gold Outline Background */
         .world-map-wrapper {
             background: var(--surface-card);
             border: 1px solid var(--border-gold);
@@ -351,23 +351,41 @@
             max-width: 1000px;
             margin: 20px auto 0 auto;
             aspect-ratio: 2 / 1;
-            background-image: radial-gradient(circle, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
-            background-size: 20px 20px;
+            background-color: #040404;
             border: 1px solid var(--border-subtle);
             overflow: hidden;
+        }
+
+        /* Background Gold Map Overlay */
+        .world-bg-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.28;
+            pointer-events: none;
+        }
+
+        .world-bg-svg path {
+            fill: none;
+            stroke: var(--accent-gold);
+            stroke-width: 1;
+            stroke-linejoin: round;
         }
 
         /* Pulsing Map Hotspots */
         .map-node {
             position: absolute;
-            width: 14px;
-            height: 14px;
+            width: 12px;
+            height: 12px;
             background: var(--accent-gold);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             cursor: pointer;
-            box-shadow: 0 0 10px var(--accent-gold);
+            box-shadow: 0 0 12px var(--accent-gold);
             transition: transform 0.3s ease;
+            z-index: 5;
         }
 
         .map-node::after {
@@ -375,15 +393,15 @@
             position: absolute;
             top: -6px;
             left: -6px;
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             border: 1px solid var(--accent-gold);
             border-radius: 50%;
             animation: pulse-ring 2s infinite ease-out;
         }
 
         .map-node:hover {
-            transform: translate(-50%, -50%) scale(1.4);
+            transform: translate(-50%, -50%) scale(1.5);
             background: #ffffff;
         }
 
@@ -395,17 +413,17 @@
         /* Map City Labels */
         .node-label {
             position: absolute;
-            top: 18px;
+            top: 16px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 0.6rem;
+            font-size: 0.68rem;
             color: #ffffff;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             white-space: nowrap;
-            background: rgba(0, 0, 0, 0.85);
-            padding: 2px 6px;
-            border: 1px solid var(--border-subtle);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 3px 8px;
+            border: 1px solid var(--border-gold);
             pointer-events: none;
         }
 
@@ -416,13 +434,13 @@
             left: 50%;
             transform: translateX(-50%);
             width: 90%;
-            max-width: 550px;
-            background: rgba(8, 8, 8, 0.95);
+            max-width: 580px;
+            background: rgba(8, 8, 8, 0.96);
             backdrop-filter: blur(15px);
             border: 1px solid var(--border-gold);
-            padding: 20px 25px;
+            padding: 22px 28px;
             text-align: left;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.95);
             display: none;
             z-index: 10;
         }
@@ -433,14 +451,14 @@
             font-family: var(--font-serif);
             font-size: 1.5rem;
             color: var(--accent-gold);
-            margin: 0 0 5px 0;
+            margin: 0 0 8px 0;
             font-weight: 300;
         }
 
         .map-popup-shows {
             font-size: 0.8rem;
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         /* Live Word Search Terminal */
@@ -869,7 +887,7 @@
         </div>
 
         <main>
-            <!-- Interactive Visual World Map Module -->
+            <!-- Interactive Visual World Map Module with Gold Background Outline -->
             <section id="map-section">
                 <h2 class="section-heading">Interactive Global Exhibition Map</h2>
                 
@@ -878,32 +896,48 @@
                     <p style="font-size:0.8rem; color:var(--text-secondary); margin-top:5px;">Explore three decades of retrospectives, state museum exhibitions, and spatial installations across the world.</p>
 
                     <div class="map-svg-container">
-                        <!-- Map Pulsing Hotspot Nodes (Positioned geographically) -->
-                        <div class="map-node" style="top: 30%; left: 22%;" onclick="openMapDetails('toronto')">
+                        <!-- Golden World Map Outlines Background -->
+                        <svg class="world-bg-svg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
+                            <!-- North America -->
+                            <path d="M120,80 L220,70 L300,110 L280,180 L240,240 L180,260 L140,220 L100,140 Z" />
+                            <!-- South America -->
+                            <path d="M260,270 L330,280 L350,380 L300,460 L260,400 L240,320 Z" />
+                            <!-- Europe -->
+                            <path d="M460,80 L560,70 L580,130 L530,170 L480,160 L450,110 Z" />
+                            <!-- Africa -->
+                            <path d="M450,180 L560,180 L580,280 L530,380 L470,340 L440,240 Z" />
+                            <!-- Asia -->
+                            <path d="M570,60 L850,50 L900,160 L800,260 L680,260 L580,160 Z" />
+                            <!-- Australia -->
+                            <path d="M780,320 L880,310 L900,380 L820,420 L760,370 Z" />
+                        </svg>
+
+                        <!-- Map Hotspots Positioned Geographically -->
+                        <div class="map-node" style="top: 26%; left: 24%;" onclick="openMapDetails('toronto')">
                             <span class="node-label">Toronto</span>
                         </div>
-                        <div class="map-node" style="top: 34%; left: 26%;" onclick="openMapDetails('california')">
+                        <div class="map-node" style="top: 35%; left: 16%;" onclick="openMapDetails('california')">
                             <span class="node-label">California</span>
                         </div>
-                        <div class="map-node" style="top: 28%; left: 49%;" onclick="openMapDetails('prague')">
+                        <div class="map-node" style="top: 24%; left: 51%;" onclick="openMapDetails('prague')">
                             <span class="node-label">Prague / Czechia</span>
                         </div>
-                        <div class="map-node" style="top: 29%; left: 47%;" onclick="openMapDetails('brussels')">
+                        <div class="map-node" style="top: 25%; left: 48%;" onclick="openMapDetails('brussels')">
                             <span class="node-label">Brussels</span>
                         </div>
-                        <div class="map-node" style="top: 31%; left: 51%;" onclick="openMapDetails('poland')">
+                        <div class="map-node" style="top: 23%; left: 53%;" onclick="openMapDetails('poland')">
                             <span class="node-label">Poland</span>
                         </div>
-                        <div class="map-node" style="top: 20%; left: 53%;" onclick="openMapDetails('finland')">
+                        <div class="map-node" style="top: 15%; left: 54%;" onclick="openMapDetails('finland')">
                             <span class="node-label">Oulu (Finland)</span>
                         </div>
-                        <div class="map-node" style="top: 36%; left: 53%;" onclick="openMapDetails('athens')">
+                        <div class="map-node" style="top: 32%; left: 53%;" onclick="openMapDetails('athens')">
                             <span class="node-label">Athens</span>
                         </div>
-                        <div class="map-node" style="top: 42%; left: 63%;" onclick="openMapDetails('dubai')">
+                        <div class="map-node" style="top: 38%; left: 62%;" onclick="openMapDetails('dubai')">
                             <span class="node-label">Dubai</span>
                         </div>
-                        <div class="map-node" style="top: 50%; left: 70%;" onclick="openMapDetails('goa')">
+                        <div class="map-node" style="top: 44%; left: 70%;" onclick="openMapDetails('goa')">
                             <span class="node-label">Goa / Mumbai</span>
                         </div>
 
