@@ -68,7 +68,7 @@
             --text-secondary: #a0a0a0;
             --text-muted: #666666;
             --accent-gold: #d4af37;
-            --accent-gold-glow: rgba(212, 175, 55, 0.2);
+            --accent-gold-glow: rgba(212, 175, 55, 0.25);
             --border-subtle: rgba(255, 255, 255, 0.08);
             --border-gold: rgba(212, 175, 55, 0.35);
             
@@ -90,7 +90,7 @@
             overflow-x: hidden;
         }
 
-        /* Hero Section */
+        /* Full Bleed Hero */
         header.full-bleed-hero {
             position: relative;
             width: 100vw;
@@ -245,7 +245,7 @@
             color: #000000;
         }
 
-        /* Benchmark Box */
+        /* Benchmark Callout Box */
         .benchmark-box {
             background: var(--surface-solid);
             border: 1px solid var(--border-gold);
@@ -278,7 +278,7 @@
             color: var(--text-secondary);
         }
 
-        /* Metrics Bar */
+        /* Key Metrics Bar */
         .metrics-bar {
             max-width: 1140px;
             margin: 60px auto;
@@ -335,11 +335,11 @@
             text-align: center;
         }
 
-        /* Real PNG Map Container */
+        /* Repaired High-Contrast PNG World Map Frame */
         .real-map-wrapper {
             background: var(--surface-card);
             border: 1px solid var(--border-gold);
-            padding: 40px 20px;
+            padding: 35px 20px;
             position: relative;
             box-shadow: 0 25px 70px rgba(0,0,0,0.9);
             text-align: center;
@@ -355,8 +355,10 @@
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
-            border: 1px solid var(--border-subtle);
-            background-color: #020202;
+            border: 1px solid var(--border-gold);
+            background-color: #000000;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.8), 0 0 25px var(--accent-gold-glow);
+            filter: brightness(0.95) contrast(1.1);
             overflow: hidden;
         }
 
@@ -401,7 +403,7 @@
             top: 16px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             color: #ffffff;
             letter-spacing: 0.15em;
             text-transform: uppercase;
@@ -417,8 +419,8 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 90%;
-            max-width: 580px;
+            width: 92%;
+            max-width: 620px;
             background: rgba(8, 8, 8, 0.96);
             backdrop-filter: blur(15px);
             border: 1px solid var(--border-gold);
@@ -443,6 +445,9 @@
             font-size: 0.8rem;
             color: var(--text-secondary);
             line-height: 1.8;
+            max-height: 180px;
+            overflow-y: auto;
+            padding-right: 5px;
         }
 
         /* Live Word Search Terminal */
@@ -871,48 +876,72 @@
         </div>
 
         <main>
-            <!-- Real PNG Map Section -->
+            <!-- Real High-Contrast PNG World Map Section -->
             <section id="map-section">
-                <h2 class="section-heading">Interactive Global Exhibition Map</h2>
+                <h2 class="section-heading">Interactive Global Footprint Map</h2>
                 
                 <div class="real-map-wrapper">
-                    <span class="benchmark-tag">&bull; 30-YEAR FOOTPRINT &bull; CLICK ANY PULSING GOLD NODE</span>
-                    <p style="font-size:0.8rem; color:var(--text-secondary); margin-top:5px;">Explore three decades of retrospectives, state museum exhibitions, and spatial installations across the world.</p>
+                    <span class="benchmark-tag">&bull; 30-YEAR GLOBAL TRAJECTORY &bull; CLICK ANY PULSING GOLD NODE</span>
+                    <p style="font-size:0.8rem; color:var(--text-secondary); margin-top:5px;">Explore solo retrospectives, state museum holdings, and ecological material patron repositories worldwide.</p>
 
                     <div class="map-canvas-frame">
-                        <!-- Node Positions Aligned to Your PNG Map -->
+                        <!-- Node Positions Aligned to World Map Canvas -->
                         <div class="map-node" style="top: 42%; left: 21%;" onclick="openMapDetails('toronto')">
-                            <span class="node-label">Toronto</span>
+                            <span class="node-label">Canada</span>
                         </div>
-                        <div class="map-node" style="top: 48%; left: 16%;" onclick="openMapDetails('california')">
-                            <span class="node-label">California</span>
+                        <div class="map-node" style="top: 48%; left: 16%;" onclick="openMapDetails('usa')">
+                            <span class="node-label">USA Nodes</span>
                         </div>
-                        <div class="map-node" style="top: 44%; left: 52%;" onclick="openMapDetails('prague')">
-                            <span class="node-label">Prague / Czechia</span>
+                        <div class="map-node" style="top: 44%; left: 52%;" onclick="openMapDetails('cz_prague')">
+                            <span class="node-label">Prague / CZ</span>
                         </div>
                         <div class="map-node" style="top: 45%; left: 49%;" onclick="openMapDetails('brussels')">
-                            <span class="node-label">Brussels</span>
+                            <span class="node-label">Brussels / Belgium</span>
                         </div>
                         <div class="map-node" style="top: 43%; left: 54%;" onclick="openMapDetails('poland')">
                             <span class="node-label">Poland</span>
                         </div>
                         <div class="map-node" style="top: 36%; left: 55%;" onclick="openMapDetails('finland')">
-                            <span class="node-label">Oulu (Finland)</span>
+                            <span class="node-label">Finland &amp; Åland</span>
+                        </div>
+                        <div class="map-node" style="top: 43%; left: 47%;" onclick="openMapDetails('london')">
+                            <span class="node-label">London / UK</span>
+                        </div>
+                        <div class="map-node" style="top: 47%; left: 51%;" onclick="openMapDetails('germany')">
+                            <span class="node-label">Germany</span>
+                        </div>
+                        <div class="map-node" style="top: 48%; left: 48%;" onclick="openMapDetails('france')">
+                            <span class="node-label">France</span>
                         </div>
                         <div class="map-node" style="top: 50%; left: 53%;" onclick="openMapDetails('athens')">
-                            <span class="node-label">Athens</span>
+                            <span class="node-label">Greece</span>
                         </div>
                         <div class="map-node" style="top: 55%; left: 63%;" onclick="openMapDetails('dubai')">
-                            <span class="node-label">Dubai</span>
+                            <span class="node-label">Dubai / UAE</span>
                         </div>
                         <div class="map-node" style="top: 58%; left: 72%;" onclick="openMapDetails('goa')">
-                            <span class="node-label">Goa / Mumbai</span>
+                            <span class="node-label">India</span>
+                        </div>
+                        <div class="map-node" style="top: 56%; left: 70%;" onclick="openMapDetails('pakistan')">
+                            <span class="node-label">Pakistan</span>
+                        </div>
+                        <div class="map-node" style="top: 61%; left: 79%;" onclick="openMapDetails('malaysia')">
+                            <span class="node-label">Malaysia</span>
+                        </div>
+                        <div class="map-node" style="top: 66%; left: 58%;" onclick="openMapDetails('mombasa')">
+                            <span class="node-label">Kenya</span>
+                        </div>
+                        <div class="map-node" style="top: 80%; left: 88%;" onclick="openMapDetails('nz')">
+                            <span class="node-label">New Zealand</span>
+                        </div>
+                        <div class="map-node" style="top: 25%; left: 40%;" onclick="openMapDetails('greenland')">
+                            <span class="node-label">Greenland</span>
                         </div>
 
-                        <!-- Popup Glassmorphic Exhibition Details Box -->
+                        <!-- Popup Glassmorphic Exhibition & Patron Details Box -->
                         <div class="map-popup-card" id="mapPopupCard">
-                            <div class="map-popup-city" id="popupCityTitle">City Name</div>
-                            <div class="map-popup-shows" id="popupCityBody">Click any gold pulsing node on the map to view exhibition records...</div>
+                            <div class="map-popup-city" id="popupCityTitle">City / Region</div>
+                            <div class="map-popup-shows" id="popupCityBody">Click any gold pulsing node on the map to view institutional records...</div>
                         </div>
                     </div>
                 </div>
@@ -1088,43 +1117,75 @@
     </footer>
 
     <script>
-        // Interactive Map Node Click Registry
+        // Interactive Map Node Click Registry with Ecological Patrons & Retrospectives
         const mapCityData = {
             toronto: {
-                city: "TORONTO &amp; ONTARIO, CANADA",
-                shows: "&bull; <b>Seneca College of Applied Arts and Technology:</b> <i>I Am</i> &amp; Monographic Installation<br>&bull; <b>University of Waterloo:</b> Academic Fine Art Research"
+                city: "CANADA &bull; ONTARIO, QUEBEC &amp; YUKON",
+                shows: "&bull; <b>Sovereign Solo Retrospective:</b> Seneca College (Toronto), <i>I Am</i><br>&bull; <b>Ecological Material Patrons:</b> University of Waterloo | Museum of Anthropology | Toronto Metropolitan University | Medalta Museum (Alberta) | ODD Gallery (Yukon) | Arteria Gallery (Quebec) | Agora Prep School"
             },
-            california: {
-                city: "BERKELEY &amp; CALIFORNIA, USA",
-                shows: "&bull; <b>Berkeley Commonplace:</b> <i>Twain</i> Monographic Exhibition"
+            usa: {
+                city: "UNITED STATES OF AMERICA",
+                shows: "&bull; <b>Sovereign Solo Retrospective:</b> Berkeley Commonplace (California), <i>Twain</i><br>&bull; <b>Ecological Material Patrons:</b> Eco-cycle (Denver) | GENIUS Olympiad (NY) | University of Providence | Florida Gulf Coast University | Georgia Tech | Elmira College | Suffolk University Gallery"
             },
-            prague: {
+            cz_prague: {
                 city: "PRAGUE &amp; CZECH REPUBLIC NETWORK",
-                shows: "&bull; <b>Prague Municipal Library:</b> <i>Life of a Box</i><br>&bull; <b>Jerusalem Synagogue:</b> <i>18</i><br>&bull; <b>Charles University:</b> <i>Gesture</i> &amp; <i>Science &amp; Art Encounter</i><br>&bull; <b>Museum Jindřichův Hradec:</b> <i>Silent Encounters</i><br>&bull; <b>Diocese of Pilsen Museum:</b> <i>Angels &amp; Demons</i><br>&bull; <b>Museum of Karlovy Vary:</b> <i>Kemet</i>"
+                shows: "&bull; <b>Official Patronage:</b> Ministry of the Environment, Prague<br>&bull; <b>State Museum Retrospectives:</b> Prague Municipal Library | Jerusalem Synagogue | Diocese of Pilsen | Museum Jindřichův Hradec | Karlovy Vary Museum | Castle Zruč nad Sázavou<br>&bull; <b>Ecological Material Patrons:</b> National Gallery Prague | ČVUT Prague | Masaryk University | Czech Agricultural University | Red Cross CZ | Artwall Prague | DZS House of Foreign Cooperation | Forest School CZ | Dobříš School | Bystřec School"
             },
             brussels: {
-                city: "BRUSSELS, BELGIUM",
-                shows: "&bull; <b>Brussels Expo (European Commission):</b> <i>Life of a Box</i> &amp; <i>Empowering Europe’s Creative Industries</i>"
+                city: "BELGIUM",
+                shows: "&bull; <b>Sovereign Installation:</b> Brussels Expo (European Commission), <i>Life of a Box</i><br>&bull; <b>Ecological Material Patrons:</b> Belgium Museum | Museum Brugge"
             },
             poland: {
-                city: "DUSZNIKI-ZDRÓJ, POLAND",
-                shows: "&bull; <b>Museum of Paper (Muzeum Papiernictwa):</b> <i>Life of a Box</i> Permanent Monographic Catalogue &amp; State Installation"
+                city: "POLAND",
+                shows: "&bull; <b>State Museum Monograph:</b> Museum of Paper (Duszniki-Zdrój)<br>&bull; <b>Ecological Material Patron:</b> Jewish Museum Poland Repository"
             },
             finland: {
-                city: "OULU, FINLAND",
-                shows: "&bull; <b>Gallery MABD:</b> <i>Unknown</i> Solo Retrospective"
+                city: "FINLAND &amp; ÅLAND ISLANDS",
+                shows: "&bull; <b>Sovereign Solo Retrospective:</b> Gallery MABD, Oulu (<i>Unknown</i>)<br>&bull; <b>Ecological Material Patron:</b> Åland Islands Cultural Repository"
+            },
+            london: {
+                city: "LONDON &amp; UNITED KINGDOM",
+                shows: "&bull; <b>Sovereign Solo Retrospective:</b> Private Monographic Exhibition, London<br>&bull; <b>Ecological Material Patrons:</b> Amazon UK | Hawk Conservancy Trust"
+            },
+            germany: {
+                city: "GERMANY",
+                shows: "&bull; <b>Ecological Material Patrons:</b> Albrecht Dürer's House (Nuremberg) | City Museum Nuremberg | Galerie Thomas Schulte GMBH | Galerie Green (Berlin) | German National Library (Frankfurt)"
+            },
+            france: {
+                city: "FRANCE &amp; GUADELOUPE",
+                shows: "&bull; <b>Ecological Material Patrons:</b> Musée des Augustins | Arts au Pluriailes (Guadeloupe)"
             },
             athens: {
-                city: "ATHENS, GREECE",
-                shows: "&bull; <b>Autonomous Spatial Intervention (1990s):</b> Mediterranean Material &amp; Pigment Research"
+                city: "GREECE &amp; CANARY ISLANDS",
+                shows: "&bull; <b>Genesis Retrospective:</b> Mediterranean Pigment Research (1990s)<br>&bull; <b>Ecological Material Patrons:</b> Interalia Project (Greece) | César Manrique Foundation (Canary Islands)"
             },
             dubai: {
-                city: "DUBAI, UNITED ARAB EMIRATES",
-                shows: "&bull; <b>H Hotel:</b> Monographic Retrospective<br>&bull; <b>Royal Mirage Jumeirah:</b> Sovereign Private Archive Viewings"
+                city: "DUBAI &amp; UNITED ARAB EMIRATES",
+                shows: "&bull; <b>Sovereign Solo Retrospectives:</b> H Hotel Dubai | Royal Mirage Jumeirah Private Viewings"
             },
             goa: {
-                city: "GOA &amp; MUMBAI, INDIA",
-                shows: "&bull; <b>Carpe Diem Gallery:</b> Material Grounding<br>&bull; <b>Genesis Interventions (1990s):</b> Early Material Formations &amp; Pigment Genesis"
+                city: "INDIA &bull; GOA &amp; MUMBAI",
+                shows: "&bull; <b>Genesis Retrospectives:</b> Carpe Diem Gallery &amp; Mumbai 1990s Spatial Interventions<br>&bull; <b>Ecological Material Patron:</b> Gallery Carpe Diem (Material Vessel Donor)"
+            },
+            pakistan: {
+                city: "PAKISTAN &bull; KARACHI",
+                shows: "&bull; <b>Ecological Material Patron:</b> Mohatta Palace Museum Repository"
+            },
+            malaysia: {
+                city: "KUALA LUMPUR, MALAYSIA",
+                shows: "&bull; <b>Sovereign Exhibition:</b> Private Monographic Retrospective"
+            },
+            mombassa: {
+                city: "MOMBASA, KENYA",
+                shows: "&bull; <b>Sovereign Exhibition:</b> Private Monographic Spatial Intervention"
+            },
+            nz: {
+                city: "NEW ZEALAND (AOTEAROA)",
+                shows: "&bull; <b>Ecological Material Patrons:</b> Waitangi Museum | Tūhura Otago Museum | From Out of the Blue Studio Gallery (Ōpunakē)"
+            },
+            greenland: {
+                city: "NUUK, GREENLAND",
+                shows: "&bull; <b>Ecological Material Patron:</b> Nuuk Art Museum Repository"
             }
         };
 
@@ -1162,7 +1223,7 @@
             box_monograph: {
                 code: "PROVENANCE DOSSIER · LIFE OF A BOX",
                 title: "Monumental Industrial Packaging Sculpture",
-                body: "A flagship ecological installation utilizing cardboard packaging collected from Amazon UK, Nobel Prize Museum, and UNICEF. Exhibited across Czech state museums and documented in official catalogues from the Museum of Papermaking in Duszniki-Zdrój, Poland."
+                body: "A flagship ecological installation utilizing cardboard packaging collected from Amazon UK, Nobel Prize Museum, and UNICEF. Exhibited across Czech state museums and documented in official catalogues from the Museum of Paper in Duszniki-Zdrój, Poland."
             },
             mowicha: {
                 code: "PROVENANCE DOSSIER · VOICES OF THE LAND",
