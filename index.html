@@ -45,7 +45,7 @@
             "Participatory Art Archives",
             "Ecological Sustainability Initiatives",
             "Indigenous Cultural Heritage",
-            "Persian Diaspora Literature"
+            "Neuro-Aesthetics & Geopolitical Data Visualization"
           ]
         },
         {
@@ -58,6 +58,14 @@
             "@id": "https://heshammalik.com/#artist"
           },
           "inLanguage": "en"
+        },
+        {
+          "@type": "VisualArtwork",
+          "name": "Equanimity / Gelassenheit",
+          "artist": "https://heshammalik.com/#artist",
+          "artMedium": "Mixed Media on Canvas, Natural Ground Earth Pigments",
+          "artForm": "Painting",
+          "description": "Masterwork incorporating donated term from Artas Foundation for global neuro-aesthetic archive."
         }
       ]
     }
@@ -296,6 +304,64 @@
             padding-bottom: 20px;
             margin-bottom: 40px;
             text-align: center;
+        }
+
+        /* Live Word Search Terminal */
+        .word-terminal-box {
+            background: var(--surface-card);
+            border: 1px solid var(--border-gold);
+            padding: 35px 30px;
+            margin-bottom: 60px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .word-search-input {
+            width: 100%;
+            max-width: 650px;
+            padding: 14px 22px;
+            background: #000000;
+            border: 1px solid var(--border-subtle);
+            color: #ffffff;
+            font-size: 0.85rem;
+            letter-spacing: 0.12em;
+            outline: none;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            transition: border-color 0.3s ease;
+        }
+
+        .word-search-input:focus {
+            border-color: var(--accent-gold);
+        }
+
+        .word-pills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            max-height: 220px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .word-pill-item {
+            background: var(--surface-solid);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            font-size: 0.72rem;
+            padding: 8px 16px;
+            letter-spacing: 0.08em;
+            transition: all 0.3s ease;
+        }
+
+        .word-pill-item strong {
+            color: var(--accent-gold);
+        }
+
+        .word-pill-item:hover {
+            border-color: var(--accent-gold);
+            color: #ffffff;
         }
 
         /* Provenance Ledger Section */
@@ -672,9 +738,10 @@
             <span class="nav-brand-sub">Sovereign Monographic Portal</span>
         </a>
         <div class="nav-links">
-            <a href="#ledger" class="nav-link">01 / Provenance Ledger</a>
-            <a href="#materials" class="nav-link">02 / Material Science</a>
-            <a href="#vault" class="btn-vault-nav">03 / Access Sovereign Vault</a>
+            <a href="#word-archive" class="nav-link">01 / Word Matrix</a>
+            <a href="#ledger" class="nav-link">02 / Provenance Ledger</a>
+            <a href="#materials" class="nav-link">03 / Material Science</a>
+            <a href="#vault" class="btn-vault-nav">04 / Access Sovereign Vault</a>
         </div>
     </nav>
 
@@ -714,16 +781,41 @@
     </div>
 
     <main>
+
+        <!-- Live Institutional Word Matrix Terminal -->
+        <section id="word-archive">
+            <div class="word-terminal-box">
+                <span class="benchmark-tag">&bull; LIVE GLOBAL WORD DONATION MATRIX &bull; NEURO-AESTHETIC ARCHIVE</span>
+                <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0; font-weight: 300; text-transform: uppercase;">Institutional Data Provenance</h3>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Search live word donations from global academics, universities, and participating institutions.</p>
+                
+                <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Donated Words or Institutions (e.g., Ghent, Cambridge, Gratuitous, Harvard, Artas)...">
+                
+                <div class="word-pills-container" id="wordPillsContainer">
+                    <span class="word-pill-item">Ghent University / Prof. Dr. Aymon Kreil: <strong>"GRATUITOUS"</strong></span>
+                    <span class="word-pill-item">University of Cambridge / Dr. Sarah Fine: <strong>"MOVEMENT"</strong></span>
+                    <span class="word-pill-item">Artas Foundation (Swiss): <strong>"EQUANIMITY" / "GELASSENHEIT"</strong></span>
+                    <span class="word-pill-item">Harvard University Archive: <strong>"RESILIENCE"</strong></span>
+                    <span class="word-pill-item">Tate London - UK: <strong>"TRANSITION"</strong></span>
+                    <span class="word-pill-item">Ludwig Museum: <strong>"LUMEN"</strong></span>
+                    <span class="word-pill-item">Svalbard Global Seed Vault: <strong>"PRESERVATION"</strong></span>
+                    <span class="word-pill-item">Jane Goodall Institute: <strong>"HARMONY"</strong></span>
+                    <span class="word-pill-item">Czech Red Cross: <strong>"COMPASSION"</strong></span>
+                    <span class="word-pill-item">Nobel Prize Museum: <strong>"KNOWLEDGE"</strong></span>
+                </div>
+            </div>
+        </section>
+
         <!-- Masterwork Provenance Ledger -->
         <section id="ledger">
             <h2 class="section-heading">Masterwork Provenance Ledger</h2>
             
             <div class="ledger-controls">
-                <button class="ledger-btn active" onclick="filterLedger('all')">All Masterworks</button>
-                <button class="ledger-btn" onclick="filterLedger('words')">Words Project</button>
-                <button class="ledger-btn" onclick="filterLedger('box')">Life of a Box</button>
-                <button class="ledger-btn" onclick="filterLedger('voices')">Voices of the Land</button>
-                <button class="ledger-btn" onclick="filterLedger('rooh')">Rooh-Nawaz</button>
+                <button class="ledger-btn active" onclick="filterLedger('all', event)">All Masterworks</button>
+                <button class="ledger-btn" onclick="filterLedger('words', event)">Words Project</button>
+                <button class="ledger-btn" onclick="filterLedger('box', event)">Life of a Box</button>
+                <button class="ledger-btn" onclick="filterLedger('voices', event)">Voices of the Land</button>
+                <button class="ledger-btn" onclick="filterLedger('rooh', event)">Rooh-Nawaz</button>
             </div>
 
             <div class="ledger-grid">
@@ -882,11 +974,28 @@
             document.getElementById('vault').scrollIntoView({ behavior: 'smooth' });
         }
 
+        // Live Word Search Filter
+        function filterWords() {
+            const input = document.getElementById('wordSearchInput').value.toLowerCase();
+            const pills = document.querySelectorAll('.word-pill-item');
+            
+            pills.forEach(pill => {
+                const text = pill.innerText.toLowerCase();
+                if (text.includes(input)) {
+                    pill.style.display = 'inline-block';
+                } else {
+                    pill.style.display = 'none';
+                }
+            });
+        }
+
         // Ledger Filtering Logic
-        function filterLedger(category) {
+        function filterLedger(category, event) {
             const buttons = document.querySelectorAll('.ledger-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
 
             const rows = document.querySelectorAll('.ledger-row');
             rows.forEach(row => {
@@ -902,12 +1011,14 @@
         const textureBox = document.getElementById('textureBox');
         const textureImg = document.getElementById('textureImg');
 
-        textureBox.addEventListener('mousemove', (e) => {
-            const rect = textureBox.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-            textureImg.style.transformOrigin = `${x}% ${y}%`;
-        });
+        if (textureBox && textureImg) {
+            textureBox.addEventListener('mousemove', (e) => {
+                const rect = textureBox.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                textureImg.style.transformOrigin = `${x}% ${y}%`;
+            });
+        }
     </script>
 </body>
 </html>
