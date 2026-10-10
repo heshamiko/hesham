@@ -1159,6 +1159,20 @@
                             <span class="node-label">Aberdeen</span>
                         </div>
 
+                        <!-- Geolocation Hotspots: Swiss Confederation Network -->
+                        <div class="map-node" style="top: 25.2%; left: 49.8%;" onclick="openMapDetails('ch_zurich')">
+                            <span class="node-label">Zurich / CH</span>
+                        </div>
+                        <div class="map-node" style="top: 26.5%; left: 48.8%;" onclick="openMapDetails('ch_geneva')">
+                            <span class="node-label">Geneva / CH</span>
+                        </div>
+                        <div class="map-node" style="top: 25.8%; left: 49.3%;" onclick="openMapDetails('ch_bern')">
+                            <span class="node-label">Bern / CH</span>
+                        </div>
+                        <div class="map-node" style="top: 26.1%; left: 49.6%;" onclick="openMapDetails('ch_ballenberg')">
+                            <span class="node-label">Ballenberg / CH</span>
+                        </div>
+
                         <!-- European, Middle Eastern, Asian & Global Hotspots -->
                         <div class="map-node" style="top: 22%; left: 52%;" onclick="openMapDetails('cz_prague')">
                             <span class="node-label">Prague / CZ</span>
@@ -1225,9 +1239,17 @@
                     <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0; font-weight: 300; text-transform: uppercase;">Institutional Data Provenance</h3>
                     <p style="font-size: 0.8rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Search live word donations from global leadership, universities, museums, and sovereign institutions.</p>
                     
-                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Donated Terms (e.g., Tate, Oxford, Cambridge, Alain de Botton, Conviviality)...">
+                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Donated Terms (e.g., ETH Zurich, Red Cross, Tate, Oxford, Gelassenheit, Prijateljstvo)...">
                     
                     <div class="word-pills-container" id="wordPillsContainer">
+                        <!-- Swiss Confederation Institutional Network -->
+                        <span class="word-pill-item">ETH Zurich (Prof. Milica Topalović): <strong>PRIJATELJSTVO (ПРИЈАТЕЉСТВО)</strong></span>
+                        <span class="word-pill-item">ETH Zurich (Prof. Dr. Philip Ursprung): <strong>TOGETHER</strong></span>
+                        <span class="word-pill-item">Artas Foundation (Swiss Foundation for Art in Conflict): <strong>EQUANIMITY / GELASSENHEIT</strong></span>
+                        <span class="word-pill-item">International Cartographic Association (ICA President Georg Gartner): <strong>CARTOGRAPHIC PROVENANCE</strong></span>
+                        <span class="word-pill-item">International Red Cross (Geneva): <strong>LIFE OF A BOX ECOLOGICAL PATRON</strong></span>
+                        <span class="word-pill-item">Ballenberg Open-Air Museum: <strong>HERITAGE MATERIAL PATRON</strong></span>
+
                         <!-- United Kingdom Institutional Network -->
                         <span class="word-pill-item">Tate (Director Dr. Maria Balshaw CBE): <strong>CONVIVIALITY</strong></span>
                         <span class="word-pill-item">The Courtauld Institute of Art (Prof. Alixe Bovey): <strong>INTERTIDAL</strong></span>
@@ -1293,7 +1315,6 @@
                         
                         <!-- Arctic, Indigenous & Cultural Foundations -->
                         <span class="word-pill-item">Greenland National Museum &amp; Archives: <strong>ARCTIC CULTURAL CODEX</strong></span>
-                        <span class="word-pill-item">Artas Foundation (Swiss): <strong>EQUANIMITY / GELASSENHEIT</strong></span>
                         <span class="word-pill-item">Endangered Languages Project: <strong>LINGUISTIC DIVERSITY ARCHIVE</strong></span>
                         <span class="word-pill-item">Jewish Museum Frankfurt &amp; Hebrew University: <strong>HISTORICAL MEMORY REGISTER</strong></span>
                     </div>
@@ -1343,7 +1364,7 @@
                             <h3 class="ledger-title">Monumental Packaging Sculpture</h3>
                             <div class="ledger-meta-list">
                                 <strong>Medium:</strong> Recycled Industrial Packaging &amp; Gold Leaf<br>
-                                <strong>Donating Institutions:</strong> Nobel Prize Museum, UNICEF, Czech Red Cross, Amazon UK, Hawk Conservancy Trust<br>
+                                <strong>Donating Institutions:</strong> Nobel Prize Museum, Red Cross Geneva, Ballenberg Open-Air Museum, UNICEF, Czech Red Cross, Amazon UK, Hawk Conservancy Trust<br>
                                 <strong>Exhibition History:</strong> Museum of West Bohemia, Plzeň &amp; Museum of Paper, Poland
                             </div>
                         </div>
@@ -1427,6 +1448,22 @@
 
     <script>
         const mapCityData = {
+            ch_zurich: {
+                city: "ZURICH, SWITZERLAND &bull; ACADEMIC &amp; FOUNDATION ARCHIVE",
+                shows: "&bull; <b>ETH Zurich (D-ARCH):</b> Prof. Milica Topalović (Chair of Architecture &amp; Territorial Planning) &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>PRIJATELJSTVO / ПРИЈАТЕЉСТВО</b>)<br>&bull; <b>ETH Zurich (gta):</b> Prof. Dr. Philip Ursprung (Head of Institute of History &amp; Theory of Architecture) &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>TOGETHER</b>)<br>&bull; <b>Artas Foundation:</b> Sandra (Swiss Foundation for Art in Regions of Conflict) &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>EQUANIMITY / GELASSENHEIT</b>)"
+            },
+            ch_geneva: {
+                city: "GENEVA, SWITZERLAND &bull; INTERNATIONAL HUMANITARIAN ARCHIVE",
+                shows: "&bull; <b>International Red Cross:</b> Global Humanitarian Logistics Directorate &mdash; <i>Ecological Material Patron</i> (Donation of field transit packaging vessels for <b>Life of a Box</b> initiative)"
+            },
+            ch_bern: {
+                city: "BERN, SWITZERLAND &bull; CARTOGRAPHIC PROVENANCE ARCHIVE",
+                shows: "&bull; <b>International Cartographic Association (ICA):</b> Prof. Dr. Georg Gartner (President) &mdash; <i>Linguistic Provenance Partner</i> (Cartographic spatial discourse on mapping human thought &amp; global footprints)"
+            },
+            ch_ballenberg: {
+                city: "BALLENBERG / INTERLAKEN, SWITZERLAND &bull; HERITAGE MUSEUM REPOSITORY",
+                shows: "&bull; <b>Ballenberg, Swiss Open-Air Museum:</b> Cultural Heritage Directorate &mdash; <i>Ecological Material Patron</i> (Donation of historical Swiss structural artifacts bridging traditional craft with contemporary art)"
+            },
             uk_london: {
                 city: "LONDON, UK &bull; INSTITUTIONAL ARCHIVE NETWORK",
                 shows: "&bull; <b>Tate:</b> Dr. Maria Balshaw CBE (Director of Tate) &mdash; <i>CONVIVIALITY</i><br>&bull; <b>The Courtauld Institute of Art:</b> Prof. Alixe Bovey (Dean &amp; Deputy Director) &mdash; <i>INTERTIDAL</i><br>&bull; <b>UCL:</b> Prof. Paul Gilroy (<i>KATABASIS</i>) | Prof. Semir Zeki (<i>PROFOUNDLY AMORAL</i>) | Prof. Martin Holbraad (<i>DEPTH</i>) | Dr. Julie Norman (<i>THE DREAM AND THE NIGHTMARE</i>)<br>&bull; <b>SOAS University of London:</b> Prof. Dr. Arshin Adib-Moghaddam &mdash; <i>TRANSVERSALITY</i><br>&bull; <b>Queen Mary University of London:</b> Prof. Quentin Skinner &mdash; <i>METAMORPHOSIS / PRESENCING</i><br>&bull; <b>London School of Economics (LSE):</b> Dr. Michael Mason &mdash; <i>DIGNITY</i><br>&bull; <b>Global NGOs &amp; Think Tanks:</b> Peace Direct (Dylan Mathews &mdash; <i>POWER</i>) | Conciliation Resources (Jonathan Cohen &mdash; <i>COURAGE</i>) | Index on Censorship (Jemimah Steinfeld &mdash; <i>SOLIDARITY</i>)<br>&bull; <b>Academia &amp; Culture:</b> University of East London (Dr. Alessandro Bigi &mdash; <i>HAPPINESS</i>) | Alain de Botton (<i>MELANCHOLY</i>) | Alice Rawsthorn (<i>RESOURCEFULNESS</i>) | PUIG UK Limited (<i>MURMURATIONS</i>)<br>&bull; <b>Life of a Box Patrons:</b> Amazon UK (20 Industrial Packaging Vessels)"
@@ -1604,8 +1641,8 @@
             },
             box_monograph: {
                 code: "PROVENANCE DOSSIER · LIFE OF A BOX",
-                title: "Monumental Industrial Packaging Sculpture",
-                body: "A flagship ecological installation utilizing cardboard packaging collected from Amazon UK, Nobel Prize Museum, UNICEF, and Hawk Conservancy Trust. Exhibited across Czech state museums and documented in official catalogues from the Museum of Paper in Duszniki-Zdrój, Poland."
+                title: "Monumental Packaging Sculpture",
+                body: "A flagship ecological installation utilizing cardboard packaging collected from Amazon UK, Red Cross Geneva, Ballenberg Open-Air Museum, Nobel Prize Museum, and UNICEF. Exhibited across Czech state museums and documented in official catalogues from the Museum of Paper in Duszniki-Zdrój, Poland."
             },
             mowicha: {
                 code: "PROVENANCE DOSSIER · VOICES OF THE LAND",
