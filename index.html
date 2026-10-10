@@ -523,7 +523,7 @@
 
         .map-popup-card {
             position: absolute;
-            width: 320px;
+            width: 340px;
             max-width: 90vw;
             background: rgba(8, 8, 8, 0.98);
             backdrop-filter: blur(25px);
@@ -549,7 +549,7 @@
 
         .map-popup-city {
             font-family: var(--font-serif);
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: var(--accent-gold);
             margin: 0;
             font-weight: 300;
@@ -605,7 +605,7 @@
             flex-wrap: wrap;
             gap: 12px;
             justify-content: center;
-            max-height: 280px;
+            max-height: 350px;
             overflow-y: auto;
             padding-right: 5px;
         }
@@ -1114,6 +1114,10 @@
                         <label for="citySelector" style="font-size: 0.68rem; color: var(--accent-gold); letter-spacing: 0.15em; text-transform: uppercase;">Isolate City Node:</label>
                         <select id="citySelector" class="map-select" onchange="selectCityFromDropdown(this.value)">
                             <option value="">-- Choose City / Region --</option>
+                            <option value="harvard">Harvard University &amp; Cambridge, MA (USA)</option>
+                            <option value="usa_east">USA East Coast (NY, DC, CT, PA, MD, VA)</option>
+                            <option value="usa_west">USA West Coast &amp; Pacific (CA, WA, OR, HI, AK)</option>
+                            <option value="usa_midwest_south">USA Midwest, South &amp; Mountain (IL, CO, TX, TN, OH, ID)</option>
                             <option value="it_bologna_florence">Bologna &amp; Florence, Italy</option>
                             <option value="fr_paris_guadeloupe">Paris &amp; Guadeloupe, France</option>
                             <option value="ps_gaza_jenin">Gaza &amp; Jenin, Palestine</option>
@@ -1158,7 +1162,26 @@
                             <option value="gl_ilulissat">Ilulissat &amp; Avannaata, Greenland</option>
                             <option value="uk_london">London, UK</option>
                             <option value="cz_prague">Prague, Czech Republic</option>
-                            <option value="harvard">Harvard / USA</option>
+                            <option value="goa">Goa &amp; Mumbai, India</option>
+                            <option value="pakistan">Pakistan Archival Nodes</option>
+                            <option value="malaysia">Kuala Lumpur, Malaysia</option>
+                            <option value="mombasa">Nairobi &amp; Mombasa, Kenya</option>
+                            <option value="bc_vancouver">Vancouver &amp; BC, Canada</option>
+                            <option value="alberta_calgary">Alberta Nodes, Canada</option>
+                            <option value="toronto_waterloo">Toronto &amp; ON, Canada</option>
+                            <option value="ottawa_kingston">Ottawa &amp; Kingston, Canada</option>
+                            <option value="montreal_qc">Montreal &amp; QC, Canada</option>
+                            <option value="yukon_atlantic">Yukon &amp; Atlantic, Canada</option>
+                            <option value="ch_zurich">Zurich, Switzerland</option>
+                            <option value="ch_geneva">Geneva, Switzerland</option>
+                            <option value="ch_bern">Bern, Switzerland</option>
+                            <option value="ch_ballenberg">Ballenberg, Switzerland</option>
+                            <option value="af_kinshasa">Kinshasa, DRC</option>
+                            <option value="af_johannesburg">Johannesburg, South Africa</option>
+                            <option value="af_pretoria">Pretoria, South Africa</option>
+                            <option value="af_gaborone">Gaborone, Botswana</option>
+                            <option value="af_lagos">Lagos, Nigeria</option>
+                            <option value="germany">Berlin &amp; Frankfurt, Germany</option>
                         </select>
                     </div>
 
@@ -1167,54 +1190,53 @@
 
                         <img src="world-map.svg" class="world-map-svg" alt="Global Footprint Map">
 
-                        <!-- NEW COUNTRY NODES -->
+                        <!-- NORTH AMERICA / USA NODES -->
+                        <div class="map-node label-top" id="node_harvard" style="top: 28%; left: 24%;" onclick="openMapDetails('harvard', event)">
+                            <span class="node-label">Harvard / MA</span>
+                        </div>
+                        <div class="map-node label-right" id="node_usa_east" style="top: 31%; left: 25.5%;" onclick="openMapDetails('usa_east', event)">
+                            <span class="node-label">USA East Coast</span>
+                        </div>
+                        <div class="map-node label-left" id="node_usa_west" style="top: 35%; left: 14%;" onclick="openMapDetails('usa_west', event)">
+                            <span class="node-label">USA West Coast</span>
+                        </div>
+                        <div class="map-node label-top" id="node_usa_midwest_south" style="top: 38%; left: 19.5%;" onclick="openMapDetails('usa_midwest_south', event)">
+                            <span class="node-label">USA Midwest &amp; South</span>
+                        </div>
+
+                        <!-- CANADA NODES -->
+                        <div class="map-node label-left" id="node_bc_vancouver" style="top: 25%; left: 16%;" onclick="openMapDetails('bc_vancouver', event)">
+                            <span class="node-label">Vancouver / BC</span>
+                        </div>
+                        <div class="map-node label-top" id="node_alberta_calgary" style="top: 24%; left: 21%;" onclick="openMapDetails('alberta_calgary', event)">
+                            <span class="node-label">Alberta</span>
+                        </div>
+                        <div class="map-node label-top" id="node_toronto_waterloo" style="top: 26%; left: 26%;" onclick="openMapDetails('toronto_waterloo', event)">
+                            <span class="node-label">Toronto / ON</span>
+                        </div>
+                        <div class="map-node label-right" id="node_ottawa_kingston" style="top: 23%; left: 28%;" onclick="openMapDetails('ottawa_kingston', event)">
+                            <span class="node-label">Ottawa</span>
+                        </div>
+                        <div class="map-node label-top" id="node_montreal_qc" style="top: 22%; left: 30%;" onclick="openMapDetails('montreal_qc', event)">
+                            <span class="node-label">Montreal / QC</span>
+                        </div>
+                        <div class="map-node label-top" id="node_yukon_atlantic" style="top: 18%; left: 14%;" onclick="openMapDetails('yukon_atlantic', event)">
+                            <span class="node-label">Yukon &amp; Atlantic</span>
+                        </div>
+
+                        <!-- EUROPE NODES -->
                         <div class="map-node label-top" id="node_it_bologna_florence" style="top: 27.5%; left: 50.8%;" onclick="openMapDetails('it_bologna_florence', event)">
                             <span class="node-label">Italy</span>
                         </div>
                         <div class="map-node label-left" id="node_fr_paris_guadeloupe" style="top: 25.5%; left: 47.8%;" onclick="openMapDetails('fr_paris_guadeloupe', event)">
                             <span class="node-label">France</span>
                         </div>
-                        <div class="map-node label-right" id="node_ps_gaza_jenin" style="top: 36.8%; left: 58.2%;" onclick="openMapDetails('ps_gaza_jenin', event)">
-                            <span class="node-label">Palestine</span>
-                        </div>
-                        <div class="map-node label-top" id="node_is_reykjavik" style="top: 10.5%; left: 41.5%;" onclick="openMapDetails('is_reykjavik', event)">
-                            <span class="node-label">Iceland</span>
-                        </div>
-                        <div class="map-node label-top" id="node_th_bangkok" style="top: 48.5%; left: 78.2%;" onclick="openMapDetails('th_bangkok', event)">
-                            <span class="node-label">Thailand</span>
-                        </div>
-                        <div class="map-node label-top" id="node_fj_suva" style="top: 66.5%; left: 95.5%;" onclick="openMapDetails('fj_suva', event)">
-                            <span class="node-label">Fiji</span>
-                        </div>
-                        <div class="map-node label-left" id="node_gy_georgetown" style="top: 53.5%; left: 32.2%;" onclick="openMapDetails('gy_georgetown', event)">
-                            <span class="node-label">Guyana</span>
-                        </div>
-                        <div class="map-node label-left" id="node_jo_amman" style="top: 36.2%; left: 58.8%;" onclick="openMapDetails('jo_amman', event)">
-                            <span class="node-label">Jordan</span>
-                        </div>
-                        <div class="map-node label-top" id="node_mu_mauritius" style="top: 72.5%; left: 66.8%;" onclick="openMapDetails('mu_mauritius', event)">
-                            <span class="node-label">Mauritius</span>
-                        </div>
-                        <div class="map-node label-top" id="node_om_muscat" style="top: 41.2%; left: 64.2%;" onclick="openMapDetails('om_muscat', event)">
-                            <span class="node-label">Oman</span>
-                        </div>
-                        <div class="map-node label-top" id="node_ph_quezon" style="top: 47.5%; left: 83.8%;" onclick="openMapDetails('ph_quezon', event)">
-                            <span class="node-label">Philippines</span>
-                        </div>
-                        <div class="map-node label-left" id="node_ar_buenosaires" style="top: 79.5%; left: 31.8%;" onclick="openMapDetails('ar_buenosaires', event)">
-                            <span class="node-label">Argentina</span>
-                        </div>
                         <div class="map-node label-left" id="node_si_ljubljana_koper" style="top: 25.8%; left: 52.2%;" onclick="openMapDetails('si_ljubljana_koper', event)">
                             <span class="node-label">Slovenia</span>
-                        </div>
-                        <div class="map-node label-top" id="node_nz_auckland" style="top: 83.5%; left: 93.8%;" onclick="openMapDetails('nz_auckland', event)">
-                            <span class="node-label">New Zealand</span>
                         </div>
                         <div class="map-node label-right" id="node_hr_zagreb" style="top: 26.5%; left: 52.8%;" onclick="openMapDetails('hr_zagreb', event)">
                             <span class="node-label">Croatia</span>
                         </div>
-
-                        <!-- INSTITUTIONAL NODES -->
                         <div class="map-node label-left" id="node_pt_lisbon" style="top: 29.5%; left: 44.5%;" onclick="openMapDetails('pt_lisbon', event)">
                             <span class="node-label">Lisbon / PT</span>
                         </div>
@@ -1236,31 +1258,8 @@
                         <div class="map-node label-right" id="node_hu_budapest" style="top: 25.8%; left: 53.8%;" onclick="openMapDetails('hu_budapest', event)">
                             <span class="node-label">Budapest / HU</span>
                         </div>
-                        <div class="map-node label-top" id="node_ae_abudhabi_dubai" style="top: 41%; left: 62.5%;" onclick="openMapDetails('ae_abudhabi_dubai', event)">
-                            <span class="node-label">Abu Dhabi &amp; Dubai / UAE</span>
-                        </div>
-                        <div class="map-node label-top" id="node_cn_shenzhen_hk" style="top: 46%; left: 78.5%;" onclick="openMapDetails('cn_shenzhen_hk', event)">
-                            <span class="node-label">Shenzhen &amp; HK / CN</span>
-                        </div>
                         <div class="map-node label-right" id="node_lt_vilnius" style="top: 19.5%; left: 54.8%;" onclick="openMapDetails('lt_vilnius', event)">
                             <span class="node-label">Vilnius / LT</span>
-                        </div>
-                        <div class="map-node label-top" id="node_kg_bishkek" style="top: 31%; left: 68.5%;" onclick="openMapDetails('kg_bishkek', event)">
-                            <span class="node-label">Bishkek / KG</span>
-                        </div>
-                        <div class="map-node label-left" id="node_me_ljesevici" style="top: 28.5%; left: 53.5%;" onclick="openMapDetails('me_ljesevici', event)">
-                            <span class="node-label">Montenegro</span>
-                        </div>
-                        <div class="map-node label-right" id="node_cy_nicosia" style="top: 34.5%; left: 57.2%;" onclick="openMapDetails('cy_nicosia', event)">
-                            <span class="node-label">Nicosia / CY</span>
-                        </div>
-                        <div class="map-node label-left" id="node_co_bogota" style="top: 55%; left: 27%;" onclick="openMapDetails('co_bogota', event)">
-                            <span class="node-label">Bogotá / CO</span>
-                        </div>
-
-                        <!-- GLOBAL ARCHIVAL NODES -->
-                        <div class="map-node label-top" id="node_vn_hanoi" style="top: 48%; left: 77.5%;" onclick="openMapDetails('vn_hanoi', event)">
-                            <span class="node-label">Hanoi / VN</span>
                         </div>
                         <div class="map-node label-top" id="node_svalbard" style="top: 8%; left: 52%;" onclick="openMapDetails('svalbard', event)">
                             <span class="node-label">Svalbard / NO</span>
@@ -1268,174 +1267,148 @@
                         <div class="map-node label-right" id="node_no_oslo" style="top: 17.5%; left: 49.5%;" onclick="openMapDetails('no_oslo', event)">
                             <span class="node-label">Oslo / NO</span>
                         </div>
-                        <div class="map-node label-left" id="node_cr_sanjose" style="top: 52%; left: 24.5%;" onclick="openMapDetails('cr_sanjose', event)">
-                            <span class="node-label">Costa Rica</span>
-                        </div>
-                        <div class="map-node label-top" id="node_vu_vanuatu" style="top: 68%; left: 91.5%;" onclick="openMapDetails('vu_vanuatu', event)">
-                            <span class="node-label">Vanuatu</span>
-                        </div>
-                        <div class="map-node label-left" id="node_sy_damascus" style="top: 36.5%; left: 56.5%;" onclick="openMapDetails('sy_damascus', event)">
-                            <span class="node-label">Damascus / SY</span>
-                        </div>
                         <div class="map-node label-right" id="node_fi_helsinki" style="top: 16%; left: 53.5%;" onclick="openMapDetails('fi_helsinki', event)">
                             <span class="node-label">Helsinki / FI</span>
                         </div>
                         <div class="map-node label-top" id="node_fi_oulu" style="top: 13.5%; left: 54%;" onclick="openMapDetails('fi_oulu', event)">
                             <span class="node-label">Oulu 2026 / FI</span>
                         </div>
-
-                        <!-- Greenland Nodes -->
-                        <div class="map-node label-left" id="node_gl_nuuk" style="top: 15%; left: 37%;" onclick="openMapDetails('gl_nuuk', event)">
-                            <span class="node-label">Nuuk / GL</span>
-                        </div>
-                        <div class="map-node label-top" id="node_gl_ilulissat" style="top: 11%; left: 38%;" onclick="openMapDetails('gl_ilulissat', event)">
-                            <span class="node-label">Ilulissat / GL</span>
-                        </div>
-                        <div class="map-node label-top" id="node_gl_north" style="top: 8%; left: 39%;" onclick="openMapDetails('gl_north', event)">
-                            <span class="node-label">North Greenland</span>
-                        </div>
-                        <div class="map-node label-right" id="node_gl_qaqortoq" style="top: 18%; left: 39.5%;" onclick="openMapDetails('gl_qaqortoq', event)">
-                            <span class="node-label">Qaqortoq / GL</span>
-                        </div>
-
-                        <!-- Europe Diaspora Nodes -->
                         <div class="map-node label-right" id="node_dk_aalborg" style="top: 19%; left: 48.5%;" onclick="openMapDetails('dk_aalborg', event)">
                             <span class="node-label">Aalborg / DK</span>
                         </div>
                         <div class="map-node label-top" id="node_nl_amsterdam" style="top: 22.8%; left: 47.2%;" onclick="openMapDetails('nl_amsterdam', event)">
                             <span class="node-label">Amsterdam / NL</span>
                         </div>
-
-                        <!-- Global Nodes -->
-                        <div class="map-node" id="node_harvard" style="top: 28%; left: 24%;" onclick="openMapDetails('harvard', event)">
-                            <span class="node-label">Harvard / MA</span>
-                        </div>
-                        <div class="map-node" id="node_usa" style="top: 38%; left: 18%;" onclick="openMapDetails('usa', event)">
-                            <span class="node-label">USA Nodes</span>
-                        </div>
-                        <div class="map-node" id="node_bc_vancouver" style="top: 25%; left: 16%;" onclick="openMapDetails('bc_vancouver', event)">
-                            <span class="node-label">Vancouver &amp; BC</span>
-                        </div>
-                        <div class="map-node" id="node_alberta_calgary" style="top: 24%; left: 21%;" onclick="openMapDetails('alberta_calgary', event)">
-                            <span class="node-label">Alberta Nodes</span>
-                        </div>
-                        <div class="map-node" id="node_toronto_waterloo" style="top: 26%; left: 26%;" onclick="openMapDetails('toronto_waterloo', event)">
-                            <span class="node-label">Toronto &amp; ON</span>
-                        </div>
-                        <div class="map-node" id="node_ottawa_kingston" style="top: 23%; left: 28%;" onclick="openMapDetails('ottawa_kingston', event)">
-                            <span class="node-label">Ottawa &amp; Kingston</span>
-                        </div>
-                        <div class="map-node" id="node_montreal_qc" style="top: 22%; left: 30%;" onclick="openMapDetails('montreal_qc', event)">
-                            <span class="node-label">Montreal / QC</span>
-                        </div>
-                        <div class="map-node" id="node_yukon_atlantic" style="top: 18%; left: 14%;" onclick="openMapDetails('yukon_atlantic', event)">
-                            <span class="node-label">Yukon &amp; Atlantic</span>
-                        </div>
-
-                        <div class="map-node" id="node_uk_london" style="top: 21%; left: 45.2%;" onclick="openMapDetails('uk_london', event)">
+                        <div class="map-node label-top" id="node_uk_london" style="top: 21%; left: 45.2%;" onclick="openMapDetails('uk_london', event)">
                             <span class="node-label">London / UK</span>
                         </div>
-                        <div class="map-node" id="node_uk_oxford" style="top: 21.8%; left: 45%;" onclick="openMapDetails('uk_oxford', event)">
-                            <span class="node-label">Oxford</span>
+                        <div class="map-node label-top" id="node_cz_prague" style="top: 22%; left: 52%;" onclick="openMapDetails('cz_prague', event)">
+                            <span class="node-label">Prague / CZ</span>
                         </div>
-                        <div class="map-node" id="node_uk_cambridge" style="top: 20.2%; left: 45.6%;" onclick="openMapDetails('uk_cambridge', event)">
-                            <span class="node-label">Cambridge</span>
+                        <div class="map-node label-top" id="node_brussels" style="top: 24%; left: 49%;" onclick="openMapDetails('brussels', event)">
+                            <span class="node-label">Brussels / EU</span>
                         </div>
-                        <div class="map-node" id="node_uk_edinburgh" style="top: 17%; left: 44.5%;" onclick="openMapDetails('uk_edinburgh', event)">
-                            <span class="node-label">Edinburgh</span>
+                        <div class="map-node label-top" id="node_poland" style="top: 20%; left: 54%;" onclick="openMapDetails('poland', event)">
+                            <span class="node-label">Poland</span>
                         </div>
-                        <div class="map-node" id="node_uk_exeter" style="top: 22.5%; left: 44.2%;" onclick="openMapDetails('uk_exeter', event)">
-                            <span class="node-label">Exeter</span>
+                        <div class="map-node label-top" id="node_germany" style="top: 24%; left: 51%;" onclick="openMapDetails('germany', event)">
+                            <span class="node-label">Germany</span>
                         </div>
-                        <div class="map-node" id="node_uk_birmingham" style="top: 20%; left: 44.6%;" onclick="openMapDetails('uk_birmingham', event)">
-                            <span class="node-label">Birmingham</span>
-                        </div>
-                        <div class="map-node" id="node_uk_bristol" style="top: 21.5%; left: 44.4%;" onclick="openMapDetails('uk_bristol', event)">
-                            <span class="node-label">Bristol</span>
-                        </div>
-                        <div class="map-node" id="node_uk_kent" style="top: 21.8%; left: 45.8%;" onclick="openMapDetails('uk_kent', event)">
-                            <span class="node-label">Kent</span>
-                        </div>
-                        <div class="map-node" id="node_uk_leeds" style="top: 19%; left: 45.1%;" onclick="openMapDetails('uk_leeds', event)">
-                            <span class="node-label">Leeds</span>
-                        </div>
-                        <div class="map-node" id="node_uk_lincoln" style="top: 19.8%; left: 45.4%;" onclick="openMapDetails('uk_lincoln', event)">
-                            <span class="node-label">Lincoln</span>
-                        </div>
-                        <div class="map-node" id="node_uk_manchester" style="top: 18.8%; left: 44.7%;" onclick="openMapDetails('uk_manchester', event)">
-                            <span class="node-label">Manchester</span>
-                        </div>
-                        <div class="map-node" id="node_uk_aberdeen" style="top: 15.2%; left: 44.8%;" onclick="openMapDetails('uk_aberdeen', event)">
-                            <span class="node-label">Aberdeen</span>
+                        <div class="map-node label-top" id="node_athens" style="top: 30%; left: 53%;" onclick="openMapDetails('athens', event)">
+                            <span class="node-label">Greece</span>
                         </div>
 
-                        <div class="map-node" id="node_ch_zurich" style="top: 25.2%; left: 49.8%;" onclick="openMapDetails('ch_zurich', event)">
+                        <!-- SWITZERLAND NODES -->
+                        <div class="map-node label-top" id="node_ch_zurich" style="top: 25.2%; left: 49.8%;" onclick="openMapDetails('ch_zurich', event)">
                             <span class="node-label">Zurich / CH</span>
                         </div>
-                        <div class="map-node" id="node_ch_geneva" style="top: 26.5%; left: 48.8%;" onclick="openMapDetails('ch_geneva', event)">
+                        <div class="map-node label-left" id="node_ch_geneva" style="top: 26.5%; left: 48.8%;" onclick="openMapDetails('ch_geneva', event)">
                             <span class="node-label">Geneva / CH</span>
                         </div>
-                        <div class="map-node" id="node_ch_bern" style="top: 25.8%; left: 49.3%;" onclick="openMapDetails('ch_bern', event)">
+                        <div class="map-node label-top" id="node_ch_bern" style="top: 25.8%; left: 49.3%;" onclick="openMapDetails('ch_bern', event)">
                             <span class="node-label">Bern / CH</span>
                         </div>
-                        <div class="map-node" id="node_ch_ballenberg" style="top: 26.1%; left: 49.6%;" onclick="openMapDetails('ch_ballenberg', event)">
+                        <div class="map-node label-right" id="node_ch_ballenberg" style="top: 26.1%; left: 49.6%;" onclick="openMapDetails('ch_ballenberg', event)">
                             <span class="node-label">Ballenberg / CH</span>
                         </div>
 
-                        <div class="map-node" id="node_af_kinshasa" style="top: 58%; left: 51.5%;" onclick="openMapDetails('af_kinshasa', event)">
-                            <span class="node-label">Kinshasa / DRC</span>
+                        <!-- GREENLAND NODES -->
+                        <div class="map-node label-left" id="node_gl_nuuk" style="top: 15%; left: 37%;" onclick="openMapDetails('gl_nuuk', event)">
+                            <span class="node-label">Nuuk / GL</span>
                         </div>
-                        <div class="map-node" id="node_af_johannesburg" style="top: 76%; left: 55.5%;" onclick="openMapDetails('af_johannesburg', event)">
-                            <span class="node-label">Johannesburg / SA</span>
-                        </div>
-                        <div class="map-node" id="node_af_pretoria" style="top: 75.2%; left: 55.8%;" onclick="openMapDetails('af_pretoria', event)">
-                            <span class="node-label">Pretoria / SA</span>
-                        </div>
-                        <div class="map-node" id="node_af_gaborone" style="top: 73.8%; left: 54.2%;" onclick="openMapDetails('af_gaborone', event)">
-                            <span class="node-label">Gaborone / BW</span>
-                        </div>
-                        <div class="map-node" id="node_af_lagos" style="top: 50%; left: 46.8%;" onclick="openMapDetails('af_lagos', event)">
-                            <span class="node-label">Lagos / NG</span>
-                        </div>
-                        <div class="map-node" id="node_mombasa" style="top: 55.8%; left: 56.2%;" onclick="openMapDetails('mombasa', event)">
-                            <span class="node-label">Nairobi &amp; Mombasa / KE</span>
+                        <div class="map-node label-top" id="node_gl_ilulissat" style="top: 11%; left: 38%;" onclick="openMapDetails('gl_ilulissat', event)">
+                            <span class="node-label">Ilulissat / GL</span>
                         </div>
 
-                        <div class="map-node" id="node_cz_prague" style="top: 22%; left: 52%;" onclick="openMapDetails('cz_prague', event)">
-                            <span class="node-label">Prague / CZ</span>
-                        </div>
-                        <div class="map-node" id="node_brussels" style="top: 24%; left: 49%;" onclick="openMapDetails('brussels', event)">
-                            <span class="node-label">Brussels / EU</span>
-                        </div>
-                        <div class="map-node" id="node_poland" style="top: 20%; left: 54%;" onclick="openMapDetails('poland', event)">
-                            <span class="node-label">Poland</span>
-                        </div>
-                        <div class="map-node" id="node_germany" style="top: 24%; left: 51%;" onclick="openMapDetails('germany', event)">
-                            <span class="node-label">Germany</span>
-                        </div>
-                        <div class="map-node" id="node_france" style="top: 26%; left: 48%;" onclick="openMapDetails('france', event)">
-                            <span class="node-label">France</span>
-                        </div>
-                        <div class="map-node" id="node_athens" style="top: 30%; left: 53%;" onclick="openMapDetails('athens', event)">
-                            <span class="node-label">Greece</span>
-                        </div>
-                        <div class="map-node" id="node_dubai" style="top: 40%; left: 62%;" onclick="openMapDetails('dubai', event)">
-                            <span class="node-label">Dubai / UAE</span>
-                        </div>
-                        <div class="map-node" id="node_goa" style="top: 52%; left: 71%;" onclick="openMapDetails('goa', event)">
-                            <span class="node-label">India</span>
-                        </div>
-                        <div class="map-node" id="node_pakistan" style="top: 44%; left: 67%;" onclick="openMapDetails('pakistan', event)">
-                            <span class="node-label">Pakistan</span>
-                        </div>
-                        <div class="map-node" id="node_palestine" style="top: 36%; left: 58%;" onclick="openMapDetails('palestine', event)">
+                        <!-- MIDDLE EAST & ASIA NODES -->
+                        <div class="map-node label-right" id="node_ps_gaza_jenin" style="top: 36.8%; left: 58.2%;" onclick="openMapDetails('ps_gaza_jenin', event)">
                             <span class="node-label">Palestine</span>
                         </div>
-                        <div class="map-node" id="node_malaysia" style="top: 58%; left: 81%;" onclick="openMapDetails('malaysia', event)">
+                        <div class="map-node label-left" id="node_jo_amman" style="top: 36.2%; left: 58.8%;" onclick="openMapDetails('jo_amman', event)">
+                            <span class="node-label">Jordan</span>
+                        </div>
+                        <div class="map-node label-top" id="node_om_muscat" style="top: 41.2%; left: 64.2%;" onclick="openMapDetails('om_muscat', event)">
+                            <span class="node-label">Oman</span>
+                        </div>
+                        <div class="map-node label-top" id="node_ae_abudhabi_dubai" style="top: 41%; left: 62.5%;" onclick="openMapDetails('ae_abudhabi_dubai', event)">
+                            <span class="node-label">UAE</span>
+                        </div>
+                        <div class="map-node label-right" id="node_cy_nicosia" style="top: 34.5%; left: 57.2%;" onclick="openMapDetails('cy_nicosia', event)">
+                            <span class="node-label">Cyprus</span>
+                        </div>
+                        <div class="map-node label-left" id="node_sy_damascus" style="top: 36.5%; left: 56.5%;" onclick="openMapDetails('sy_damascus', event)">
+                            <span class="node-label">Syria</span>
+                        </div>
+                        <div class="map-node label-top" id="node_kg_bishkek" style="top: 31%; left: 68.5%;" onclick="openMapDetails('kg_bishkek', event)">
+                            <span class="node-label">Bishkek / KG</span>
+                        </div>
+                        <div class="map-node label-top" id="node_pakistan" style="top: 44%; left: 67%;" onclick="openMapDetails('pakistan', event)">
+                            <span class="node-label">Pakistan</span>
+                        </div>
+                        <div class="map-node label-top" id="node_goa" style="top: 52%; left: 71%;" onclick="openMapDetails('goa', event)">
+                            <span class="node-label">India</span>
+                        </div>
+                        <div class="map-node label-top" id="node_th_bangkok" style="top: 48.5%; left: 78.2%;" onclick="openMapDetails('th_bangkok', event)">
+                            <span class="node-label">Thailand</span>
+                        </div>
+                        <div class="map-node label-top" id="node_ph_quezon" style="top: 47.5%; left: 83.8%;" onclick="openMapDetails('ph_quezon', event)">
+                            <span class="node-label">Philippines</span>
+                        </div>
+                        <div class="map-node label-top" id="node_cn_shenzhen_hk" style="top: 46%; left: 78.5%;" onclick="openMapDetails('cn_shenzhen_hk', event)">
+                            <span class="node-label">Shenzhen &amp; HK</span>
+                        </div>
+                        <div class="map-node label-top" id="node_vn_hanoi" style="top: 48%; left: 77.5%;" onclick="openMapDetails('vn_hanoi', event)">
+                            <span class="node-label">Hanoi / VN</span>
+                        </div>
+                        <div class="map-node label-top" id="node_malaysia" style="top: 58%; left: 81%;" onclick="openMapDetails('malaysia', event)">
                             <span class="node-label">Malaysia</span>
                         </div>
-                        <div class="map-node" id="node_nz" style="top: 84%; left: 94%;" onclick="openMapDetails('nz', event)">
+
+                        <!-- AFRICA & LATIN AMERICA & PACIFIC NODES -->
+                        <div class="map-node label-top" id="node_fj_suva" style="top: 66.5%; left: 95.5%;" onclick="openMapDetails('fj_suva', event)">
+                            <span class="node-label">Fiji</span>
+                        </div>
+                        <div class="map-node label-left" id="node_gy_georgetown" style="top: 53.5%; left: 32.2%;" onclick="openMapDetails('gy_georgetown', event)">
+                            <span class="node-label">Guyana</span>
+                        </div>
+                        <div class="map-node label-top" id="node_mu_mauritius" style="top: 72.5%; left: 66.8%;" onclick="openMapDetails('mu_mauritius', event)">
+                            <span class="node-label">Mauritius</span>
+                        </div>
+                        <div class="map-node label-left" id="node_ar_buenosaires" style="top: 79.5%; left: 31.8%;" onclick="openMapDetails('ar_buenosaires', event)">
+                            <span class="node-label">Argentina</span>
+                        </div>
+                        <div class="map-node label-top" id="node_nz_auckland" style="top: 83.5%; left: 93.8%;" onclick="openMapDetails('nz_auckland', event)">
                             <span class="node-label">New Zealand</span>
+                        </div>
+                        <div class="map-node label-left" id="node_me_ljesevici" style="top: 28.5%; left: 53.5%;" onclick="openMapDetails('me_ljesevici', event)">
+                            <span class="node-label">Montenegro</span>
+                        </div>
+                        <div class="map-node label-left" id="node_co_bogota" style="top: 55%; left: 27%;" onclick="openMapDetails('co_bogota', event)">
+                            <span class="node-label">Bogotá / CO</span>
+                        </div>
+                        <div class="map-node label-left" id="node_cr_sanjose" style="top: 52%; left: 24.5%;" onclick="openMapDetails('cr_sanjose', event)">
+                            <span class="node-label">Costa Rica</span>
+                        </div>
+                        <div class="map-node label-top" id="node_vu_vanuatu" style="top: 68%; left: 91.5%;" onclick="openMapDetails('vu_vanuatu', event)">
+                            <span class="node-label">Vanuatu</span>
+                        </div>
+                        <div class="map-node label-top" id="node_af_kinshasa" style="top: 58%; left: 51.5%;" onclick="openMapDetails('af_kinshasa', event)">
+                            <span class="node-label">Kinshasa / DRC</span>
+                        </div>
+                        <div class="map-node label-top" id="node_af_johannesburg" style="top: 76%; left: 55.5%;" onclick="openMapDetails('af_johannesburg', event)">
+                            <span class="node-label">Johannesburg / SA</span>
+                        </div>
+                        <div class="map-node label-top" id="node_af_pretoria" style="top: 75.2%; left: 55.8%;" onclick="openMapDetails('af_pretoria', event)">
+                            <span class="node-label">Pretoria / SA</span>
+                        </div>
+                        <div class="map-node label-top" id="node_af_gaborone" style="top: 73.8%; left: 54.2%;" onclick="openMapDetails('af_gaborone', event)">
+                            <span class="node-label">Gaborone / BW</span>
+                        </div>
+                        <div class="map-node label-top" id="node_af_lagos" style="top: 50%; left: 46.8%;" onclick="openMapDetails('af_lagos', event)">
+                            <span class="node-label">Lagos / NG</span>
+                        </div>
+                        <div class="map-node label-top" id="node_mombasa" style="top: 55.8%; left: 56.2%;" onclick="openMapDetails('mombasa', event)">
+                            <span class="node-label">Nairobi &amp; Mombasa</span>
                         </div>
 
                         <!-- Dynamic Pop-up Tooltip Card -->
@@ -1456,164 +1429,228 @@
                     <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0; font-weight: 300; text-transform: uppercase;">Institutional Data Provenance</h3>
                     <p style="font-size: 0.8rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Search live word donations from global leadership, universities, museums, and sovereign institutions.</p>
                     
-                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Donated Terms (e.g., Italy, France, Palestine, Iceland, Thailand, Fiji, Guyana, Jordan, Mauritius, Oman, Philippines, Argentina, Belgium, Poland, Slovenia, New Zealand, Croatia, Greece)...">
+                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Donated Terms (e.g., Harvard, Yale, MIT, Columbia, Stanford, UNICEF, EJI, ERE, Grace, Hope, Resilience)...">
                     
                     <div class="word-pills-container" id="wordPillsContainer">
-                        <!-- NEWLY ADDED PILLS -->
+                        <!-- USA PATRONS OF MATERIAL & ECOLOGY -->
+                        <span class="word-pill-item">UNICEF (New York, USA): <strong>ECOLOGICAL MATERIAL PATRONS</strong></span>
+                        <span class="word-pill-item">New York Public Library (New York, USA): <strong>ECOLOGICAL MATERIAL PATRONS</strong></span>
+                        <span class="word-pill-item">Eco-Cycle (Denver, Colorado, USA): <strong>ECOLOGICAL MATERIAL PATRONS</strong></span>
+                        <span class="word-pill-item">GENIUS Olympiad (New York, USA): <strong>ECOLOGICAL MATERIAL PATRONS</strong></span>
+                        <span class="word-pill-item">University of Providence (Great Falls, Montana, USA): <strong>ECOLOGICAL MATERIAL PATRONS</strong></span>
+                        <span class="word-pill-item">Elmira College (Elmira, New York, USA): <strong>ECOLOGICAL MATERIAL PATRONS</strong></span>
+                        <span class="word-pill-item">Georgia Institute of Technology (Atlanta, Georgia, USA): <strong>ECOLOGICAL MATERIAL PATRONS</strong></span>
+                        <span class="word-pill-item">Florida Gulf Coast University (Fort Myers, Florida, USA): <strong>ECOLOGICAL MATERIAL PATRONS</strong></span>
+                        <span class="word-pill-item">Suffolk University Gallery (Boston, Massachusetts, USA): <strong>ECOLOGICAL MATERIAL PATRONS</strong></span>
+
+                        <!-- USA CIVIL SOCIETY & NON-PROFIT ORGANIZATIONS -->
+                        <span class="word-pill-item">Victory Afghanistan (Illinois, USA): <strong>RESONANCE</strong></span>
+                        <span class="word-pill-item">Government of The Bahamas (Nassau, Bahamas): <strong>GRACE</strong></span>
+                        <span class="word-pill-item">CLEAR Global (Idaho, USA): <strong>RESILIENCE</strong></span>
+                        <span class="word-pill-item">The Phoenix (Colorado, USA): <strong>UNSUBSCRIBE</strong></span>
+                        <span class="word-pill-item">Bethany House (Baldwin, New York, USA): <strong>EMPATHY</strong></span>
+                        <span class="word-pill-item">Urgent Action Fund (San Francisco, California, USA): <strong>LIBERATION</strong></span>
+                        <span class="word-pill-item">National Art Education Association (Reston, Virginia, USA): <strong>GRATIFIED</strong></span>
+                        <span class="word-pill-item">Artists at Risk Connection - ARC (New York, USA): <strong>RESILIENCE</strong></span>
+                        <span class="word-pill-item">Equal Justice Initiative - EJI (Montgomery, Alabama, USA): <strong>GRACE</strong></span>
+                        <span class="word-pill-item">Skirball Cultural Center (Los Angeles, California, USA): <strong>PROPINQUITY</strong></span>
+                        <span class="word-pill-item">Sinai Temple (Los Angeles, California, USA): <strong>HINENI</strong></span>
+                        <span class="word-pill-item">Institute for Art and Olfaction (Los Angeles, California, USA): <strong>SENSUAL</strong></span>
+                        <span class="word-pill-item">Jane Goodall Institute (Washington, D.C., USA): <strong>HOPE</strong></span>
+                        <span class="word-pill-item">National Public Radio - NPR (Washington, D.C., USA): <strong>TURMOIL</strong></span>
+                        <span class="word-pill-item">Center for Jewish Life – Princeton Hillel (New Jersey, USA): <strong>FLOURISHING</strong></span>
+                        <span class="word-pill-item">Hillel at Florida State University (Tallahassee, Florida, USA): <strong>BLESSING</strong></span>
+                        <span class="word-pill-item">Endangered Languages Project (Sindhi Language): <strong>MARUARA (ماروئڙا)</strong></span>
+                        <span class="word-pill-item">Endangered Languages Project (Naija / Nigerian Pidgin): <strong>ODESHI / ONE-LOVE / YANGA / HUSTLE / AJO / ESUSU</strong></span>
+
+                        <!-- HARVARD UNIVERSITY CONTRIBUTIONS -->
+                        <span class="word-pill-item">Harvard International Arts + Mind Lab (Baltimore, MD, USA): <strong>JOY</strong></span>
+                        <span class="word-pill-item">Harvard Dept. of Molecular &amp; Cellular Biology (Cambridge, MA): <strong>COGNITION</strong></span>
+                        <span class="word-pill-item">Harvard Dept. of East Asian Languages &amp; Civilizations: <strong>INEPTITUDE</strong></span>
+                        <span class="word-pill-item">Harvard Faculty of Arts &amp; Sciences: <strong>GENOCIDE AND TRANSNATIONAL REPRESSION</strong></span>
+                        <span class="word-pill-item">Harvard Weatherhead Center for International Affairs: <strong>DISRUPTION</strong></span>
+                        <span class="word-pill-item">Harvard Academy Scholar | Weatherhead Center: <strong>CAFUNÉ</strong></span>
+                        <span class="word-pill-item">Harvard Office of the President Emeritus: <strong>DECENCY</strong></span>
+                        <span class="word-pill-item">Harvard Dept. of Anthropology: <strong>GRIEF</strong></span>
+                        <span class="word-pill-item">Harvard Dept. of Psychology: <strong>ENLIGHTENMENT</strong></span>
+                        <span class="word-pill-item">Harvard Cultural Anthropology Division: <strong>NOWHERESVILLE</strong></span>
+                        <span class="word-pill-item">Harvard Graduate School of Design (Dean's Office): <strong>XENOPHILIA</strong></span>
+                        <span class="word-pill-item">Harvard Medical School / Mass General Hospital: <strong>SPICE / SPICES</strong></span>
+                        <span class="word-pill-item">Harvard Medical School / Boston Children's Hospital: <strong>CONCERNED</strong></span>
+                        <span class="word-pill-item">Harvard NeuroBusiness Group: <strong>SATCHITANANDA</strong></span>
+                        <span class="word-pill-item">Harvard T.H. Chan School of Public Health: <strong>TOGETHER</strong></span>
+                        <span class="word-pill-item">Harvard Forest (Charles Bullard Fellowship Program): <strong>UNSURE</strong></span>
+                        <span class="word-pill-item">Harvard Forest (Outreach &amp; Education Directorate): <strong>HOPE</strong></span>
+                        <span class="word-pill-item">Harvard Graduate School of Design (Architecture Faculty): <strong>SERENDIPITY</strong></span>
+                        <span class="word-pill-item">Harvard Faculty of Arts &amp; Sciences: <strong>RUPTURE</strong></span>
+                        <span class="word-pill-item">Harvard Graduate School of Design (Urban Design): <strong>LUMINOUS</strong></span>
+                        <span class="word-pill-item">Harvard Graduate School of Design (Design Studies): <strong>CARE</strong></span>
+                        <span class="word-pill-item">Harvard Graduate School of Design (Regional Planning): <strong>DESPONDENT</strong></span>
+                        <span class="word-pill-item">Harvard Graduate School of Design (GSD Directorate): <strong>SUPERPOSITION</strong></span>
+                        <span class="word-pill-item">Harvard Graduate School of Design (Landscape Architecture): <strong>RESTORATION</strong></span>
+                        <span class="word-pill-item">Harvard Public Policy Mediation Directorate: <strong>SERENITY (שלווה)</strong></span>
+                        <span class="word-pill-item">Harvard Divinity School: <strong>COMPLEXITY</strong></span>
+                        <span class="word-pill-item">Harvard Law School: <strong>DILEMMA</strong></span>
+                        <span class="word-pill-item">Harvard Dept. of Philosophy &amp; Humanities: <strong>PRAISEWORTHINESS</strong></span>
+                        <span class="word-pill-item">Harvard Gender &amp; Sexuality Caucus: <strong>LOVE</strong></span>
+                        <span class="word-pill-item">Harvard Dept. of Art, Film, and Visual Studies: <strong>GRAFT</strong></span>
+                        <span class="word-pill-item">Harvard Dept. of History, Art &amp; Architecture: <strong>SYMBIONTS</strong></span>
+                        <span class="word-pill-item">Harvard Dept. of Philosophy (Emerita Directorate): <strong>THINK</strong></span>
+                        <span class="word-pill-item">Harvard Graduate School of Education: <strong>METAMORPHOSIS</strong></span>
+                        <span class="word-pill-item">Harvard Democratic Knowledge Project &amp; Allen Lab: <strong>RENOVATE</strong></span>
+                        <span class="word-pill-item">Harvard Graduate School of Education: <strong>BETTER</strong></span>
+                        <span class="word-pill-item">Harvard Graduate School of Education (Counseling Pathway): <strong>PERSISTING</strong></span>
+                        <span class="word-pill-item">Harvard Malcolm Wiener Center for Social Policy: <strong>PURPOSE</strong></span>
+                        <span class="word-pill-item">Harvard College (Office of the Dean &amp; HKS): <strong>AMALGAMATION</strong></span>
+                        <span class="word-pill-item">Harvard Graduate School of Education: <strong>BĪ-GHARĀRĪ (بی‌قراری)</strong></span>
+                        <span class="word-pill-item">Harvard Dept. of Psychology: <strong>RIGAMAROLE</strong></span>
+
+                        <!-- YALE UNIVERSITY CONTRIBUTIONS -->
+                        <span class="word-pill-item">Yale University Dept. of Astronomy: <strong>LIMINAL</strong></span>
+                        <span class="word-pill-item">Yale University Dept. of Philosophy: <strong>RESPECT</strong></span>
+                        <span class="word-pill-item">Yale University Faculty of Arts &amp; Sciences: <strong>AIR</strong></span>
+                        <span class="word-pill-item">Yale University Philosophy &amp; International Affairs: <strong>JUSTICE</strong></span>
+                        <span class="word-pill-item">Yale Divinity School: <strong>BELOVED</strong></span>
+                        <span class="word-pill-item">Yale Dept. of Comparative Literature: <strong>همان پلنگ به دریایم و نهنگ به صحرا</strong></span>
+
+                        <!-- PRINCETON, COLUMBIA, MIT & BROWN -->
+                        <span class="word-pill-item">Princeton University Dept. of Religion: <strong>ALIVE</strong></span>
+                        <span class="word-pill-item">Princeton University Dept. of Politics: <strong>COOPERATION</strong></span>
+                        <span class="word-pill-item">Columbia University Dept. of History: <strong>RACHMONES (רחמנות)</strong></span>
+                        <span class="word-pill-item">Columbia Dept. of Middle Eastern, South Asian &amp; African Studies: <strong>ADAB</strong></span>
+                        <span class="word-pill-item">Columbia University Dept. of Political Science: <strong>COMPASSION</strong></span>
+                        <span class="word-pill-item">MIT Dept. of Philosophy &amp; Women's and Gender Studies: <strong>HOPE</strong></span>
+                        <span class="word-pill-item">MIT Comparative Media Studies / Writing (MITHIC): <strong>INTEGRITY</strong></span>
+                        <span class="word-pill-item">Brown University Center for Middle East Studies: <strong>TROTZDEM</strong></span>
+                        <span class="word-pill-item">Brown University Dept. of History of Art &amp; Architecture: <strong>SQUEEZE</strong></span>
+
+                        <!-- UNIVERSITY OF CALIFORNIA SYSTEM -->
+                        <span class="word-pill-item">UC Berkeley (Magnes Collection of Jewish Art &amp; Life): <strong>MISHPOKHE (משפחה)</strong></span>
+                        <span class="word-pill-item">UC Berkeley Dept. of Linguistics: <strong>HUMBLE</strong></span>
+                        <span class="word-pill-item">UC Davis Dept. of Art &amp; Art History: <strong>JAN (جان / Ջان)</strong></span>
+                        <span class="word-pill-item">UC Irvine (Jordan Center for Persian Studies): <strong>COURAGE</strong></span>
+                        <span class="word-pill-item">UC Irvine School of Humanities (Persian &amp; French Culture): <strong>COMMUNITY IS THE PATIENT WORK OF MAKING ROOM</strong></span>
+                        <span class="word-pill-item">UC Irvine Armenian Studies Program: <strong>PEYVAND / ARMENI</strong></span>
+                        <span class="word-pill-item">UC San Diego Dept. of Visual Arts: <strong>DISTURBANCE</strong></span>
+
+                        <!-- OTHER ESTEEMED US ACADEMIC INSTITUTIONS -->
+                        <span class="word-pill-item">West Texas A&amp;M University Student Body: <strong>SUCCESS</strong></span>
+                        <span class="word-pill-item">Keiko Davidson Elementary School (Texas, USA): <strong>CHEESE</strong></span>
+                        <span class="word-pill-item">Altman Siegel Gallery (San Francisco, CA, USA): <strong>SIGNS</strong></span>
+                        <span class="word-pill-item">Arizona State University Indigenous Studies: <strong>RENEWAL / MASHKIKI</strong></span>
+                        <span class="word-pill-item">Arizona State University (Herberger Institute): <strong>GRATITUDE</strong></span>
+                        <span class="word-pill-item">Arizona State University School of Art: <strong>SCALABLE</strong></span>
+                        <span class="word-pill-item">Baylor University Dept. of Sociology: <strong>ANXIOUS</strong></span>
+                        <span class="word-pill-item">Bemidji State University School of Technology, Art &amp; Design: <strong>CONSUME</strong></span>
+                        <span class="word-pill-item">Boise State Dept. of Art, Design &amp; Visual Studies: <strong>PRECARIOUS</strong></span>
+                        <span class="word-pill-item">Boise State University Art Department: <strong>SHADOWS</strong></span>
+                        <span class="word-pill-item">Boise State Art Jewelry &amp; Metalsmithing Program: <strong>PERSEVERANCE</strong></span>
+                        <span class="word-pill-item">Boston University Faculty of Arts: <strong>BEMUSE</strong></span>
+                        <span class="word-pill-item">Buffalo State University Art Directorate: <strong>PROTECTIVE</strong></span>
+                        <span class="word-pill-item">Case Western Reserve Dept. of Art History &amp; Art: <strong>EXCENTRICITY</strong></span>
+                        <span class="word-pill-item">Case Western Reserve Dept. of Art History &amp; Art: <strong>UNFINISHED</strong></span>
+                        <span class="word-pill-item">City University of New York - CUNY: <strong>MITHRA, DAAD, PEYMAN</strong></span>
+                        <span class="word-pill-item">Cleveland State University Dept. of Art History: <strong>HOPE</strong></span>
+                        <span class="word-pill-item">Columbus State University Dept. of Art: <strong>KINDNESS</strong></span>
+                        <span class="word-pill-item">Cornell University Dept. of Human Centered Design: <strong>WITNESS</strong></span>
+                        <span class="word-pill-item">Cornell University History of Art &amp; Visual Studies: <strong>MIND</strong></span>
+                        <span class="word-pill-item">East Tennessee State University School of Art: <strong>ENDURANCE</strong></span>
+                        <span class="word-pill-item">Emory University Dept. of Art History: <strong>RESOLUTE</strong></span>
+                        <span class="word-pill-item">George Mason University Applied Developmental Psychology: <strong>EXHAUSTION</strong></span>
+                        <span class="word-pill-item">George Washington University (Institute for Middle East Studies): <strong>ASTONISHMENT</strong></span>
+                        <span class="word-pill-item">Georgetown University Art &amp; Museum Studies Program: <strong>ALMOST</strong></span>
+                        <span class="word-pill-item">Idaho State Dept. of Communication &amp; Media: <strong>PENDING</strong></span>
+                        <span class="word-pill-item">Idaho State University Dept. of Art: <strong>INCREDULITY</strong></span>
+                        <span class="word-pill-item">Indiana University Bloomington (Eskenazi School): <strong>SOMNAMBULISTIC</strong></span>
+                        <span class="word-pill-item">Indiana University Bloomington (Eskenazi School): <strong>ABRACADABRA</strong></span>
+                        <span class="word-pill-item">Jewish Theological Seminary of America: <strong>LOVE</strong></span>
+                        <span class="word-pill-item">Jewish Theological Seminary Library &amp; Talmudic Studies: <strong>RESPONSIBILITY</strong></span>
+                        <span class="word-pill-item">American Jewish University (Los Angeles, USA): <strong>AHAVAH (אהבה)</strong></span>
+                        <span class="word-pill-item">Johns Hopkins University (Ecological Design Collective): <strong>REGENERATION</strong></span>
+                        <span class="word-pill-item">Kauai Hindu Monastery (Hawaii, USA): <strong>ENSTASY</strong></span>
+                        <span class="word-pill-item">Kauai Hindu Monastery (Hawaii, USA): <strong>ALOHA</strong></span>
+                        <span class="word-pill-item">Lamar University Dept. of Art &amp; Design: <strong>SERENDIPITY</strong></span>
+                        <span class="word-pill-item">Lamar University Dept. of Art &amp; Design: <strong>INTERSTITIAL</strong></span>
+                        <span class="word-pill-item">Lewis-Clark State College: <strong>SOLACE</strong></span>
+                        <span class="word-pill-item">Mississippi University for Women Dept. of Art: <strong>THRESHOLD</strong></span>
+                        <span class="word-pill-item">Missouri State University Dept. of Art History: <strong>EXPECTATION</strong></span>
+                        <span class="word-pill-item">Monmouth University Dept. of Art &amp; Design: <strong>VISCERAL</strong></span>
+                        <span class="word-pill-item">Nevada State University Dept. of English: <strong>RAHI</strong></span>
+                        <span class="word-pill-item">NYU Skirball Dept. of Hebrew &amp; Judaic Studies: <strong>PRESENCE</strong></span>
+                        <span class="word-pill-item">NYU Skirball Dept. of Hebrew &amp; Judaic Studies: <strong>DIALECTICAL</strong></span>
+                        <span class="word-pill-item">Northern State University School of Fine Arts: <strong>FACSIMILE</strong></span>
+                        <span class="word-pill-item">Northwestern Oklahoma State Fine Arts &amp; Natural History Museum: <strong>ANXIETY</strong></span>
+                        <span class="word-pill-item">Northwestern University Dept. of Psychology &amp; Education: <strong>BIODIVERSITY</strong></span>
+                        <span class="word-pill-item">Ohio University School of Art + Design: <strong>UNDERMINING</strong></span>
+                        <span class="word-pill-item">Pennsylvania State University School of Visual Arts: <strong>MOBILIZE</strong></span>
+                        <span class="word-pill-item">Reed College Dept. of Anthropology: <strong>COURAGE</strong></span>
+                        <span class="word-pill-item">Southern Utah University Dept. of Filmmaking &amp; Art: <strong>FREEDOM</strong></span>
+                        <span class="word-pill-item">Stanford University Dept. of Linguistics: <strong>LIMPID</strong></span>
+                        <span class="word-pill-item">Stephen F. Austin State University School of Art: <strong>PETRICHOR</strong></span>
+                        <span class="word-pill-item">Swarthmore College Linguistics &amp; Cognitive Science: <strong>MIND HAS NO END</strong></span>
+                        <span class="word-pill-item">Temple University Dept. of Religion &amp; Jewish Studies: <strong>AWRY</strong></span>
+                        <span class="word-pill-item">Texas Tech University School of Art: <strong>FRACKED</strong></span>
+                        <span class="word-pill-item">University of Alaska Anchorage (ISER): <strong>TREPIDATION</strong></span>
+                        <span class="word-pill-item">University of Chicago Dept. of History &amp; South Asian Languages: <strong>WAR-WEARY</strong></span>
+                        <span class="word-pill-item">University of Chicago Dept. of Art History: <strong>AND</strong></span>
+                        <span class="word-pill-item">University of Colorado Boulder (Artnauts Directorate): <strong>ARTNAUTS</strong></span>
+                        <span class="word-pill-item">University of Hawaii at Manoa Dept. of Art &amp; Art History: <strong>SPENT</strong></span>
+                        <span class="word-pill-item">University of Hawaii at Manoa Dept. of Art &amp; Art History: <strong>ZÀO (造)</strong></span>
+                        <span class="word-pill-item">University of Hawaii at Manoa Dept. of Art &amp; Art History: <strong>HOT</strong></span>
+                        <span class="word-pill-item">University of Kentucky School of Art &amp; Visual Studies: <strong>GRIEF</strong></span>
+                        <span class="word-pill-item">University of Maine at Augusta Dept. of Art: <strong>BLOOM</strong></span>
+                        <span class="word-pill-item">University of Nevada, Las Vegas Dept. of Sociology: <strong>TOXIC</strong></span>
+                        <span class="word-pill-item">University of Nevada, Reno Dept. of Philosophy &amp; Neuroscience: <strong>ABIDES</strong></span>
+                        <span class="word-pill-item">University of New Hampshire Dept. of Art &amp; Art History: <strong>ARDOR</strong></span>
+                        <span class="word-pill-item">University of New Mexico Dept. of Philosophy: <strong>EXHAUSTION</strong></span>
+                        <span class="word-pill-item">University of Pittsburgh Dept. of Linguistics: <strong>DUDE</strong></span>
+                        <span class="word-pill-item">University of Pittsburgh Dept. of Studio Arts: <strong>GRATITUDE</strong></span>
+                        <span class="word-pill-item">University of Pittsburgh Dept. of Philosophy: <strong>INFERENCE</strong></span>
+                        <span class="word-pill-item">University of Rochester Dept. of Art &amp; Art History: <strong>LONGING</strong></span>
+                        <span class="word-pill-item">University of South Florida School of Art &amp; Art History: <strong>FORGIVENESS</strong></span>
+                        <span class="word-pill-item">University of Southern Maine Dept. of Sociology &amp; Criminology: <strong>DESSICATE</strong></span>
+                        <span class="word-pill-item">University of Texas at Austin Dept. of Middle Eastern Studies: <strong>SEKANJEBIN</strong></span>
+                        <span class="word-pill-item">University of Texas at Austin Persian Program: <strong>همه‌چیز تمام می‌شود تو تمام نمی‌شوی</strong></span>
+                        <span class="word-pill-item">University of Utah Dept. of Philosophy: <strong>MEANING</strong></span>
+                        <span class="word-pill-item">University of Utah Dept. of Art &amp; Art History: <strong>INSTABILITY</strong></span>
+                        <span class="word-pill-item">University of Washington Dept. of Anthropology &amp; Burke Museum: <strong>ARINARTUQ</strong></span>
+                        <span class="word-pill-item">University of Washington Dept. of Sociology: <strong>BURGEONING</strong></span>
+                        <span class="word-pill-item">University of Washington 3D4M Program: <strong>FATHOM</strong></span>
+                        <span class="word-pill-item">University of Washington Center for Study of the Pacific NW: <strong>HOMEWATERS</strong></span>
+                        <span class="word-pill-item">University of Washington Research &amp; Neuroscience: <strong>IMAGINE</strong></span>
+                        <span class="word-pill-item">University of Wisconsin–Green Bay Dept. of Art &amp; Design: <strong>NO</strong></span>
+                        <span class="word-pill-item">University of Wisconsin–Madison Dept. of Sociology: <strong>COLORFUL</strong></span>
+                        <span class="word-pill-item">University of Wisconsin–Milwaukee (Ojibwe Language Program): <strong>JIIKENDAAGOZI / SCEITIMÍNI</strong></span>
+                        <span class="word-pill-item">Vanderbilt University Dept. of History of Art &amp; Architecture: <strong>CONNECTION</strong></span>
+                        <span class="word-pill-item">Washington State University (Pollart Center for Arts): <strong>PERSPICACIOUS</strong></span>
+                        <span class="word-pill-item">Wesleyan University Dept. of Philosophy: <strong>GRACE</strong></span>
+                        <span class="word-pill-item">West Liberty University Dept. of Art: <strong>VALUED</strong></span>
+                        <span class="word-pill-item">Wichita State University School of Art &amp; Design: <strong>COLLAPSE</strong></span>
+                        <span class="word-pill-item">Willamette University Dept. of Art History: <strong>COUNTER-GENOCIDAL</strong></span>
+                        <span class="word-pill-item">Winthrop University Dept. of Fine Arts: <strong>COMPASSION</strong></span>
+
+                        <!-- OTHER INTERNATIONAL PILLS -->
                         <span class="word-pill-item">University of Bologna, Dip. di Filosofia (Bologna, Italy): <strong>RESONANCE</strong></span>
                         <span class="word-pill-item">European University Institute (Florence, Italy): <strong>SOLIDARITY</strong></span>
                         <span class="word-pill-item">Arts au Pluriailes (Guadeloupe, France): <strong>SERENDIPITY</strong></span>
-                        <span class="word-pill-item">Institute for Sustainable Development and International Relations (Paris, France): <strong>HUMAN(E)</strong></span>
-                        <span class="word-pill-item">Culture and Free Thought Association (Gaza, Palestine): <strong>صَبابة (LONGING &amp; BELONGING)</strong></span>
+                        <span class="word-pill-item">IDDRI (Paris, France): <strong>HUMAN(E)</strong></span>
+                        <span class="word-pill-item">Culture &amp; Free Thought Association (Gaza, Palestine): <strong>صَبابة</strong></span>
                         <span class="word-pill-item">The Freedom Theatre (Jenin Camp, Palestine): <strong>SUMUD</strong></span>
-                        <span class="word-pill-item">University of Iceland, Dept. of Anthropology (Reykjavík, Iceland): <strong>ÓÞOL (INTOLERANCE)</strong></span>
-                        <span class="word-pill-item">University of Iceland, Faculty of Icelandic &amp; Cultural Studies: <strong>BLESSUN</strong></span>
-                        <span class="word-pill-item">Chulalongkorn University, Faculty of Fine and Applied Arts (Thailand): <strong>ABUSIVE</strong></span>
+                        <span class="word-pill-item">University of Iceland (Reykjavík, Iceland): <strong>ÓÞOL / BLESSUN</strong></span>
+                        <span class="word-pill-item">Chulalongkorn University (Bangkok, Thailand): <strong>ABUSIVE</strong></span>
                         <span class="word-pill-item">University of the South Pacific (Suva, Fiji): <strong>QUIRK</strong></span>
-                        <span class="word-pill-item">University of Guyana, Dept. of Language and Cultural Studies: <strong>QUIETUDE</strong></span>
-                        <span class="word-pill-item">The University of Jordan, Dept. of Design &amp; Visual Communication: <strong>BLESSING (البركة)</strong></span>
-                        <span class="word-pill-item">The University of Jordan, Dept. of Music / Faculty of Arts &amp; Design: <strong>UNCERTAINTY</strong></span>
-                        <span class="word-pill-item">University of Mauritius: <strong>EMPATHY</strong></span>
-                        <span class="word-pill-item">Sultan Qaboos University, Dept. of Art Education (Oman): <strong>ALLAH</strong></span>
-                        <span class="word-pill-item">Sultan Qaboos University, Post-Graduate Studies &amp; Research (Oman): <strong>BECOMING</strong></span>
-                        <span class="word-pill-item">University of the Philippines Diliman, College of Fine Arts (Quezon City): <strong>KAPWA</strong></span>
-                        <span class="word-pill-item">National University of Tres de Febrero (UNTREF), Centre for Genocide Studies (Argentina): <strong>KHURBN</strong></span>
-                        <span class="word-pill-item">Brussels Expo (Belgium): <strong>EXHIBIT OF LIFE OF A BOX</strong></span>
-                        <span class="word-pill-item">KU Leuven, Division Forest, Nature &amp; Landscape (Leuven, Belgium): <strong>BUFFERWORLD</strong></span>
-                        <span class="word-pill-item">Vrije Universiteit Brussel, Dept. of Art History &amp; Archaeology (Belgium): <strong>GRATITUDE</strong></span>
-                        <span class="word-pill-item">Museum of Papermaking in Duszniki-Zdrój (Poland): <strong>FIRST PUBLIC EXHIBIT OF LIFE OF A BOX</strong></span>
-                        <span class="word-pill-item">Magdalena Abakanowicz University of Arts in Poznań (Poland): <strong>NEON GREEN</strong></span>
-                        <span class="word-pill-item">University of Warsaw, Institute of the Americas and Europe (Poland): <strong>BREEZE</strong></span>
-                        <span class="word-pill-item">Jan Matejko Academy of Fine Arts in Krakow (Poland): <strong>HAPAX</strong></span>
-                        <span class="word-pill-item">University of Ljubljana, Department of Art History (Slovenia): <strong>SHAKING</strong></span>
-                        <span class="word-pill-item">University of Primorska, Faculty of Humanities (Koper, Slovenia): <strong>INDECISION</strong></span>
-                        <span class="word-pill-item">University of Auckland, Social Anthropology (New Zealand): <strong>MOŽNOST (POSSIBILITY)</strong></span>
-                        <span class="word-pill-item">University of Auckland, Te Wānanga o Waipapa (New Zealand): <strong>MATEMATEĀONE</strong></span>
-                        <span class="word-pill-item">University of Zagreb, Academy of Fine Arts (Croatia): <strong>DECEIVED</strong></span>
+                        <span class="word-pill-item">University of Guyana (Georgetown): <strong>QUIETUDE</strong></span>
+                        <span class="word-pill-item">The University of Jordan (Amman): <strong>BLESSING (البركة) / UNCERTAINTY</strong></span>
+                        <span class="word-pill-item">University of Mauritius (Reduit): <strong>EMPATHY</strong></span>
+                        <span class="word-pill-item">Sultan Qaboos University (Muscat, Oman): <strong>ALLAH / BECOMING</strong></span>
+                        <span class="word-pill-item">University of the Philippines Diliman (Quezon City): <strong>KAPWA</strong></span>
+                        <span class="word-pill-item">UNTREF Centre for Genocide Studies (Buenos Aires, Argentina): <strong>KHURBN</strong></span>
+                        <span class="word-pill-item">KU Leuven &amp; Vrije Universiteit Brussel (Belgium): <strong>BUFFERWORLD / GRATITUDE</strong></span>
+                        <span class="word-pill-item">Museum of Papermaking, Warsaw &amp; Krakow (Poland): <strong>NEON GREEN / BREEZE / HAPAX</strong></span>
+                        <span class="word-pill-item">University of Ljubljana &amp; Primorska (Slovenia): <strong>SHAKING / INDECISION</strong></span>
+                        <span class="word-pill-item">University of Auckland (New Zealand): <strong>MOŽNOST / MATEMATEĀONE</strong></span>
+                        <span class="word-pill-item">University of Zagreb (Croatia): <strong>DECEIVED</strong></span>
                         <span class="word-pill-item">Athens School of Fine Arts (Greece): <strong>OBLIVION</strong></span>
-
-                        <!-- PREVIOUS PILLS -->
-                        <span class="word-pill-item">On the Move Directorate (Lisbon, Portugal): <strong>SAUDADE</strong></span>
-                        <span class="word-pill-item">Casa Oxente Curatorial Directorate (Lisbon, Portugal): <strong>MEMÓRIA</strong></span>
-                        <span class="word-pill-item">National Museum of the History of Ukraine (Kyiv): <strong>ECOLOGICAL MATERIAL PATRON</strong></span>
-                        <span class="word-pill-item">Cultprojector NGO Executive Directorate (Kyiv, Ukraine): <strong>VICTORY</strong></span>
-                        <span class="word-pill-item">Slovak National Museum (Sereď, Slovakia): <strong>MEMORY</strong></span>
-                        <span class="word-pill-item">Slovak National Gallery (Bratislava, Slovakia): <strong>BELIEF / CHŌRA</strong></span>
-                        <span class="word-pill-item">Volgograd State University (Volgograd, Russia): <strong>LIBRARY</strong></span>
-                        <span class="word-pill-item">University of Tartu UNESCO Chair &amp; Dept. of Ethnology (Estonia): <strong>CRISOGENIC</strong></span>
-                        <span class="word-pill-item">Estonian National Museum Research Directorate (Tartu, Estonia): <strong>SHIP</strong></span>
-                        <span class="word-pill-item">Pop and Contemporary Art Museum Directorate (Tallinn, Estonia): <strong>UNAVAILABLE</strong></span>
-                        <span class="word-pill-item">The Princely Collections Art History Library (Vaduz, Liechtenstein): <strong>INGENUITY</strong></span>
-                        <span class="word-pill-item">Ludwig Museum Directorate (Budapest, Hungary): <strong>COMPULSORY / COMPLIANCE</strong></span>
-                        <span class="word-pill-item">Central European University Romani Studies Program (Budapest, Hungary): <strong>REPAIR</strong></span>
-                        <span class="word-pill-item">The Arts Center at NYU Abu Dhabi (UAE): <strong>RECONCILIATION</strong></span>
-                        <span class="word-pill-item">American University in Dubai Cultural Studies Division (UAE): <strong>YOU</strong></span>
-                        <span class="word-pill-item">Abu Dhabi University Humanities Faculty (Abu Dhabi, UAE): <strong>INTERDEPENDENCE</strong></span>
-                        <span class="word-pill-item">The Chinese University of Hong Kong Art Museum (Shenzhen / HK): <strong>ZEN</strong></span>
-                        <span class="word-pill-item">The Chinese University of Hong Kong Academic Directorate (Shenzhen / HK): <strong>BREATH</strong></span>
-                        <span class="word-pill-item">National Museum of Lithuania (Vilnius): <strong>RESILIENCE</strong></span>
-                        <span class="word-pill-item">Vilnius Academy of Arts / VAA Exhibition Halls "Titanikas" (Vilnius): <strong>FEELING</strong></span>
-                        <span class="word-pill-item">American University of Central Asia Academic Directorate (Bishkek, Kyrgyzstan): <strong>RESILIENCE</strong></span>
-                        <span class="word-pill-item">ORATIO Executive Directorate (Lješevići, Montenegro): <strong>GRATEFUL</strong></span>
-                        <span class="word-pill-item">Ministry of Culture (Nicosia, Cyprus): <strong>VISION</strong></span>
-                        <span class="word-pill-item">Universidad de los Andes Academic Directorate (Bogotá, Colombia): <strong>EGO</strong></span>
-
-                        <span class="word-pill-item">Blue Dragon Children's Foundation (Hanoi, Vietnam): <strong>JOY / PEACEFUL / ADRIFT / TOGETHERNESS</strong></span>
-                        <span class="word-pill-item">Svalbard Global Seed Vault (Spitsbergen, Norway): <strong>PHOTOSYNTHESIS</strong></span>
-                        <span class="word-pill-item">Innovation Norway Editorial Directorate (Oslo): <strong>WELTSCHMERTZ</strong></span>
-                        <span class="word-pill-item">Fundación ARS TEOR/éTica (San José, Costa Rica): <strong>INTERDEPENDENCIA</strong></span>
-                        <span class="word-pill-item">Vanuatu Cultural Centre / VKS (Port-Vila, Pacific): <strong>LOVE</strong></span>
-                        <span class="word-pill-item">Cultural Heritage Archive Node (Damascus, Syria): <strong>DIGNITY</strong></span>
-                        <span class="word-pill-item">University of Helsinki (Social Anthropology, Philosophy, History): <strong>LOCATION / MUSCLE / ADMIRATION / FRUSTRATION</strong></span>
-                        <span class="word-pill-item">European Capital of Culture Node &amp; Galleria MABD (Oulu, Finland): <strong>KINDNESS / UNKNOWN RETROSPECTIVE</strong></span>
-
-                        <span class="word-pill-item">Office of the Bishop of Greenland (Nuuk): <strong>FROM THE RIVER TO ETERNITY DIALOGUE</strong></span>
-                        <span class="word-pill-item">Greenland National Museum &amp; Archives (Nuuk): <strong>AKAAREQATIGIINNEQ / ATAQQEQATIGIINNEQ / SILA</strong></span>
-                        <span class="word-pill-item">Office of the Mayor of Avannaata (Ilulissat): <strong>UAGUT NUNARPUT (OUR SOVEREIGN LAND)</strong></span>
-                        <span class="word-pill-item">Language Secretariat of Greenland (Nuuk): <strong>EQQISSINEQ (PROFOUND PEACE)</strong></span>
-                        <span class="word-pill-item">Katuaq Cultural Centre (Nuuk): <strong>ATAATSIMOORNEQ (UNITY)</strong></span>
-                        <span class="word-pill-item">Ministry of Fisheries &amp; Self-Sufficiency (Nuuk): <strong>PINNGORTITAQ / TAQATIGIINNEQ</strong></span>
-                        <span class="word-pill-item">Sipineq+ (Nuuk, Greenland): <strong>INOOQATIGIINNEQ (INCLUSIVE COEXISTENCE)</strong></span>
-                        <span class="word-pill-item">North Greenland Museums: <strong>EQQUMIITSULIORTOQ (CREATIVE MAKER)</strong></span>
-                        <span class="word-pill-item">Cultural Luminary Node (Qaqortoq, South Greenland): <strong>ALLUITSOQ (ANCESTRAL ROOTS)</strong></span>
-                        <span class="word-pill-item">Greenlandic House in Aalborg (Denmark): <strong>TASSA (MANIFEST PRESENCE)</strong></span>
-                        <span class="word-pill-item">Greenpeace International (Amsterdam): <strong>TOGETHERNESS</strong></span>
-
-                        <span class="word-pill-item">Congo Children Trust (Kinshasa, DRC): <strong>HUMANITARIAN ADVOCACY</strong></span>
-                        <span class="word-pill-item">Wits School of Arts (University of the Witwatersrand, SA): <strong>SYNERGY</strong></span>
-                        <span class="word-pill-item">Centre for Human Rights (University of Pretoria, SA): <strong>SERENDIPITY</strong></span>
-                        <span class="word-pill-item">TEARS Foundation (Johannesburg, South Africa): <strong>HEGEMONY</strong></span>
-                        <span class="word-pill-item">Thapong Visual Arts Centre (Gaborone, Botswana): <strong>INTERPRETATION</strong></span>
-                        <span class="word-pill-item">University of Lagos (Prof. of Art History, Nigeria): <strong>PEACE</strong></span>
-                        <span class="word-pill-item">Omenka Gallery (Lagos, Nigeria): <strong>RESILIENCE</strong></span>
-                        <span class="word-pill-item">Nigerian Educationalist Sector: <strong>SPIRITED</strong></span>
-                        <span class="word-pill-item">PAWA254 Creative Civic Initiative (Nairobi, Kenya): <strong>ARTIVISM</strong></span>
-
-                        <span class="word-pill-item">ETH Zurich (Chair of Architecture &amp; Territorial Planning): <strong>PRIJATELJSTVO (ПРИЈАТЕЉСТВО)</strong></span>
-                        <span class="word-pill-item">ETH Zurich (Head of Institute of History &amp; Theory of Architecture): <strong>TOGETHER</strong></span>
-                        <span class="word-pill-item">Artas Foundation (Swiss Foundation for Art in Conflict): <strong>EQUANIMITY / GELASSENHEIT</strong></span>
-                        <span class="word-pill-item">International Cartographic Association (ICA President): <strong>CARTOGRAPHIC PROVENANCE</strong></span>
-                        <span class="word-pill-item">International Red Cross (Geneva): <strong>LIFE OF A BOX ECOLOGICAL PATRON</strong></span>
-                        <span class="word-pill-item">Ballenberg Open-Air Museum: <strong>HERITAGE MATERIAL PATRON</strong></span>
-
-                        <span class="word-pill-item">Tate (Director of Tate): <strong>CONVIVIALITY</strong></span>
-                        <span class="word-pill-item">The Courtauld Institute of Art (Dean &amp; Deputy Director): <strong>INTERTIDAL</strong></span>
-                        <span class="word-pill-item">UCL (Prof. of Humanities &amp; Centre Director): <strong>KATABASIS</strong></span>
-                        <span class="word-pill-item">UCL (Prof. of Neuroaesthetics): <strong>PROFOUNDLY AMORAL</strong></span>
-                        <span class="word-pill-item">UCL (Prof. of Social Anthropology): <strong>DEPTH</strong></span>
-                        <span class="word-pill-item">UCL (Associate Prof. in Politics): <strong>THE DREAM AND THE NIGHTMARE (AL-AHLAM WA-L-KABUS)</strong></span>
-                        <span class="word-pill-item">SOAS University of London (Chair in Global Thought): <strong>TRANSVERSALITY</strong></span>
-                        <span class="word-pill-item">Queen Mary University of London (Prof. of Humanities): <strong>METAMORPHOSIS / PRESENCING</strong></span>
-                        <span class="word-pill-item">London School of Economics (Middle East Centre Director): <strong>DIGNITY</strong></span>
-                        <span class="word-pill-item">University of Oxford (Principal of St Edmund Hall): <strong>NATURE</strong></span>
-                        <span class="word-pill-item">University of Oxford (Prof. of Ecosystem Science): <strong>FLOURISHING</strong></span>
-                        <span class="word-pill-item">University of Oxford (Prof. of Fine Art, Ruskin School): <strong>MERCY</strong></span>
-                        <span class="word-pill-item">University of Oxford (Prof. of Philosophy): <strong>BODY</strong></span>
-                        <span class="word-pill-item">University of Oxford (Prof. of Modern Middle Eastern History): <strong>KARAMA</strong></span>
-                        <span class="word-pill-item">University of Cambridge (Prof. of Linguistics): <strong>HIRAETH</strong></span>
-                        <span class="word-pill-item">University of Cambridge (Philosophy Faculty &amp; Corpus Christi): <strong>MOVEMENT</strong></span>
-                        <span class="word-pill-item">University of Cambridge (Emeritus Reader in Sociology): <strong>LOVE</strong></span>
-                        <span class="word-pill-item">National Galleries Scotland (Director-General): <strong>DISPUTATIOUS</strong></span>
-                        <span class="word-pill-item">University of Edinburgh (Head of History of Art): <strong>SACRED</strong></span>
-                        <span class="word-pill-item">University of Edinburgh (Social Anthropology): <strong>SUBSIDIARITY</strong></span>
-                        <span class="word-pill-item">University of Exeter (Director, IAIS): <strong>POWER</strong></span>
-                        <span class="word-pill-item">University of Exeter (Climate System Dynamics): <strong>RENEWABLE / DENIALISM / TIPPING / GAIA</strong></span>
-                        <span class="word-pill-item">University of Birmingham (Prof. of Philosophy): <strong>AGENCY</strong></span>
-                        <span class="word-pill-item">University of Birmingham (Director of IRiS): <strong>TOMORROW</strong></span>
-                        <span class="word-pill-item">University of Bristol (Humanities Scholar): <strong>EPHEMERAL</strong></span>
-                        <span class="word-pill-item">University of Kent (Director, Aesthetics Research Centre): <strong>CREPUSCULAR</strong></span>
-                        <span class="word-pill-item">University of Leeds (Librarian Emeritus): <strong>CONCERNED</strong></span>
-                        <span class="word-pill-item">University of Lincoln (Senior Academic in Fine Art): <strong>AQUA</strong></span>
-                        <span class="word-pill-item">University of Manchester (Prof. of Social Anthropology): <strong>INTEGRITY</strong></span>
-                        <span class="word-pill-item">University of Aberdeen (Emeritus Prof. of Social Anthropology): <strong>CORRESPONDENCE</strong></span>
-                        <span class="word-pill-item">Peace Direct (Chief Executive): <strong>POWER</strong></span>
-                        <span class="word-pill-item">Conciliation Resources (Executive Director): <strong>COURAGE</strong></span>
-                        <span class="word-pill-item">Index on Censorship (Chief Executive): <strong>SOLIDARITY</strong></span>
-                        <span class="word-pill-item">University of East London (Innovation &amp; Management): <strong>HAPPINESS</strong></span>
-                        <span class="word-pill-item">Alain de Botton (Philosopher &amp; Author): <strong>MELANCHOLY</strong></span>
-                        <span class="word-pill-item">Alice Rawsthorn (Design Critic &amp; Author): <strong>RESOURCEFULNESS</strong></span>
-                        <span class="word-pill-item">PUIG UK Limited: <strong>MURMURATIONS</strong></span>
-                        <span class="word-pill-item">Hawk Conservancy Trust: <strong>LIFE OF A BOX ARCHIVE</strong></span>
-                        <span class="word-pill-item">Amazon UK (London): <strong>LIFE OF A BOX ARCHIVE (20 VESSEL UNITS)</strong></span>
-
-                        <span class="word-pill-item">President Emeritus of Harvard University: <strong>HARVARD LEADERSHIP ARCHIVE</strong></span>
-                        <span class="word-pill-item">Harvard Law School &amp; Divinity School: <strong>HARVARD ACADEMIC REPOSITORY</strong></span>
-                        <span class="word-pill-item">Harvard Graduate School of Design: <strong>HARVARD ARCHITECTURAL MATRIX</strong></span>
-                        
-                        <span class="word-pill-item">Stanford University &amp; MIT: <strong>QUANTUM &amp; HUMANITIES DATA</strong></span>
-                        <span class="word-pill-item">Sorbonne University (France): <strong>SORBONNE PHILOSOPHICAL ARCHIVE</strong></span>
-                        <span class="word-pill-item">Yale University &amp; Princeton University: <strong>IVY LEAGUE MONOGRAPHIC RECORD</strong></span>
-
-                        <span class="word-pill-item">Equal Justice Initiative: <strong>JUSTICE &amp; MEMORY</strong></span>
-                        <span class="word-pill-item">Art for Amnesty Founder (Amnesty International): <strong>ART FOR HUMAN RIGHTS</strong></span>
-                        <span class="word-pill-item">Jane Goodall Institute (USA): <strong>ECOLOGICAL STEWARDSHIP</strong></span>
-
-                        <span class="word-pill-item">National Gallery of Canada: <strong>SACRED HERITAGE ARCHIVE</strong></span>
-                        <span class="word-pill-item">Hamburger Kunsthalle: <strong>EUROPEAN CONTEMPORARY ARCHIVE</strong></span>
-                        <span class="word-pill-item">Museum of Papermaking (Poland): <strong>PERMANENT STATE COLLECTION</strong></span>
-                        
-                        <span class="word-pill-item">Endangered Languages Project: <strong>LINGUISTIC DIVERSITY ARCHIVE</strong></span>
-                        <span class="word-pill-item">Jewish Museum Frankfurt &amp; Hebrew University: <strong>HISTORICAL MEMORY REGISTER</strong></span>
                     </div>
                 </div>
             </section>
@@ -1737,94 +1774,171 @@
 
     <script>
         const mapCityData = {
-            // NEWLY ADDED CITIES & INSTITUTIONS
+            // USA REGIONAL RADAR NODES
+            harvard: {
+                city: "USA &bull; HARVARD UNIVERSITY &amp; CAMBRIDGE, MA",
+                shows: `&bull; <b>Harvard International Arts + Mind Lab:</b> <i>JOY</i><br>
+&bull; <b>Harvard Dept. of Molecular Biology:</b> <i>COGNITION</i><br>
+&bull; <b>Harvard Dept. of East Asian Languages:</b> <i>INEPTITUDE</i><br>
+&bull; <b>Harvard Faculty of Arts &amp; Sciences:</b> <i>GENOCIDE AND TRANSNATIONAL REPRESSION</i> | <i>RUPTURE</i><br>
+&bull; <b>Harvard Weatherhead Center:</b> <i>DISRUPTION</i> | <i>CAFUNÉ</i><br>
+&bull; <b>Harvard Office of the President Emeritus:</b> <i>DECENCY</i><br>
+&bull; <b>Harvard Dept. of Anthropology:</b> <i>GRIEF</i> | <i>NOWHERESVILLE</i><br>
+&bull; <b>Harvard Dept. of Psychology:</b> <i>ENLIGHTENMENT</i> | <i>RIGAMAROLE</i><br>
+&bull; <b>Harvard Graduate School of Design:</b> <i>XENOPHILIA</i> | <i>SERENDIPITY</i> | <i>LUMINOUS</i> | <i>CARE</i> | <i>DESPONDENT</i> | <i>SUPERPOSITION</i> | <i>RESTORATION</i> | <i>SERENITY (שלווה)</i><br>
+&bull; <b>Harvard Medical School / Mass General &amp; Boston Children's:</b> <i>SPICE/SPICES</i> | <i>CONCERNED</i><br>
+&bull; <b>Harvard NeuroBusiness Group:</b> <i>SATCHITANANDA</i><br>
+&bull; <b>Harvard T.H. Chan School of Public Health:</b> <i>TOGETHER</i><br>
+&bull; <b>Harvard Forest:</b> <i>UNSURE</i> | <i>HOPE</i><br>
+&bull; <b>Harvard Divinity School &amp; Law School:</b> <i>COMPLEXITY</i> | <i>DILEMMA</i><br>
+&bull; <b>Harvard Dept. of Philosophy &amp; AFVS:</b> <i>PRAISEWORTHINESS</i> | <i>THINK</i> | <i>GRAFT</i><br>
+&bull; <b>Harvard Gender &amp; Sexuality Caucus:</b> <i>LOVE</i><br>
+&bull; <b>Harvard Dept. of History, Art &amp; Architecture:</b> <i>SYMBIONTS</i><br>
+&bull; <b>Harvard Graduate School of Education:</b> <i>METAMORPHOSIS</i> | <i>BETTER</i> | <i>PERSISTING</i> | <i>BĪ-GHARĀRĪ (بی‌قراری)</i><br>
+&bull; <b>Harvard Democratic Knowledge Project &amp; Wiener Center:</b> <i>RENOVATE</i> | <i>PURPOSE</i><br>
+&bull; <b>Harvard College (Dean's Office):</b> <i>AMALGAMATION</i>`
+            },
+            usa_east: {
+                city: "USA &bull; EAST COAST INSTITUTIONS",
+                shows: `&bull; <b>UNICEF (New York):</b> Ecological Material Patrons<br>
+&bull; <b>New York Public Library (New York):</b> Ecological Material Patrons<br>
+&bull; <b>Elmira College (New York):</b> Ecological Material Patrons<br>
+&bull; <b>Suffolk University Gallery (Boston, MA):</b> Ecological Material Patrons<br>
+&bull; <b>Bethany House (Baldwin, NY):</b> <i>EMPATHY</i><br>
+&bull; <b>National Art Education Association (Virginia):</b> <i>GRATIFIED</i><br>
+&bull; <b>Artists at Risk Connection - ARC (New York):</b> <i>RESILIENCE</i><br>
+&bull; <b>National Public Radio - NPR (Washington, D.C.):</b> <i>TURMOIL</i><br>
+&bull; <b>Jane Goodall Institute (Washington, D.C.):</b> <i>HOPE</i><br>
+&bull; <b>Princeton Hillel &amp; Princeton University (NJ):</b> <i>FLOURISHING</i> | <i>ALIVE</i> | <i>COOPERATION</i><br>
+&bull; <b>Yale University (New Haven, CT):</b> <i>LIMINAL</i> | <i>RESPECT</i> | <i>AIR</i> | <i>JUSTICE</i> | <i>BELOVED</i> | <i>Persian Poetic Line</i><br>
+&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רحמנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
+&bull; <b>MIT (Cambridge, MA):</b> <i>HOPE</i> | <i>INTEGRITY</i><br>
+&bull; <b>Brown University (Providence, RI):</b> <i>TROTZDEM</i> | <i>SQUEEZE</i><br>
+&bull; <b>NYU &amp; Jewish Theological Seminary (NY):</b> <i>PRESENCE</i> | <i>DIALECTICAL</i> | <i>LOVE</i> | <i>RESPONSIBILITY</i><br>
+&bull; <b>Cornell University (Ithaca, NY):</b> <i>WITNESS</i> | <i>MIND</i><br>
+&bull; <b>Johns Hopkins University (Baltimore, MD):</b> <i>REGENERATION</i><br>
+&bull; <b>Georgetown &amp; George Washington University (D.C.):</b> <i>ALMOST</i> | <i>ASTONISHMENT</i>`
+            },
+            usa_west: {
+                city: "USA &bull; WEST COAST &amp; PACIFIC INSTITUTIONS",
+                shows: `&bull; <b>Urgent Action Fund (San Francisco, CA):</b> <i>LIBERATION</i><br>
+&bull; <b>Skirball Cultural Center &amp; Sinai Temple (Los Angeles, CA):</b> <i>PROPINQUITY</i> | <i>HINENI</i><br>
+&bull; <b>Institute for Art and Olfaction (Los Angeles, CA):</b> <i>SENSUAL</i><br>
+&bull; <b>UC Berkeley &amp; Magnes Collection (Berkeley, CA):</b> <i>MISHPOKHE (משפחה)</i> | <i>HUMBLE</i><br>
+&bull; <b>UC Davis (Davis, CA):</b> <i>JAN (جان / Ջان)</i><br>
+&bull; <b>UC Irvine (Irvine, CA):</b> <i>COURAGE</i> | <i>Persian Cultural Expression</i> | <i>PEYVAND / ARMENI</i><br>
+&bull; <b>UC San Diego (La Jolla, CA):</b> <i>DISTURBANCE</i><br>
+&bull; <b>Altman Siegel Gallery (San Francisco, CA):</b> <i>SIGNS</i><br>
+&bull; <b>Stanford University (Stanford, CA):</b> <i>LIMPID</i><br>
+&bull; <b>University of Washington (Seattle, WA):</b> <i>ARINARTUQ</i> | <i>BURGEONING</i> | <i>FATHOM</i> | <i>HOMEWATERS</i> | <i>IMAGINE</i><br>
+&bull; <b>Reed College &amp; Willamette University (Oregon):</b> <i>COURAGE</i> | <i>COUNTER-GENOCIDAL</i><br>
+&bull; <b>University of Hawaii at Manoa &amp; Kauai Hindu Monastery (Hawaii):</b> <i>SPENT</i> | <i>ZÀO (造)</i> | <i>HOT</i> | <i>ENSTASY</i> | <i>ALOHA</i><br>
+&bull; <b>University of Alaska Anchorage (Alaska):</b> <i>TREPIDATION</i>`
+            },
+            usa_midwest_south: {
+                city: "USA &bull; MIDWEST, SOUTH &amp; MOUNTAIN INSTITUTIONS",
+                shows: `&bull; <b>Eco-Cycle (Denver, CO):</b> Ecological Material Patrons<br>
+&bull; <b>Georgia Tech (Atlanta, GA) &amp; FGCU (Florida):</b> Ecological Material Patrons<br>
+&bull; <b>Victory Afghanistan (Illinois):</b> <i>RESONANCE</i><br>
+&bull; <b>The Phoenix (Colorado):</b> <i>UNSUBSCRIBE</i><br>
+&bull; <b>Equal Justice Initiative (Montgomery, AL):</b> <i>GRACE</i><br>
+&bull; <b>Hillel at Florida State University (Tallahassee, FL):</b> <i>BLESSING</i><br>
+&bull; <b>West Texas A&amp;M University &amp; Keiko Davidson School (Texas):</b> <i>SUCCESS</i> | <i>CHEESE</i><br>
+&bull; <b>University of Texas at Austin (Texas):</b> <i>SEKANJEBIN</i> | <i>Persian Instruction Line</i><br>
+&bull; <b>University of Chicago &amp; Northwestern University (Illinois):</b> <i>WAR-WEARY</i> | <i>AND</i> | <i>BIODIVERSITY</i><br>
+&bull; <b>Arizona State University (Tempe, AZ):</b> <i>RENEWAL / MASHKIKI</i> | <i>GRATITUDE</i> | <i>SCALABLE</i><br>
+&bull; <b>Boise State University &amp; Idaho State (Idaho):</b> <i>PRECARIOUS</i> | <i>SHADOWS</i> | <i>PERSEVERANCE</i> | <i>PENDING</i> | <i>INCREDULITY</i><br>
+&bull; <b>Indiana University Bloomington (Indiana):</b> <i>SOMNAMBULISTIC</i> | <i>ABRACADABRA</i><br>
+&bull; <b>University of Utah &amp; Southern Utah University (Utah):</b> <i>MEANING</i> | <i>INSTABILITY</i> | <i>FREEDOM</i><br>
+&bull; <b>University of Colorado Boulder (Colorado):</b> <i>ARTNAUTS</i>`
+            },
+
+            // INTERNATIONAL INSTITUTIONS
             it_bologna_florence: {
                 city: "ITALY &bull; BOLOGNA &amp; FLORENCE",
-                shows: `&bull; <b>University of Bologna:</b> Dip. di Filosofia / Prof. Giovanni Matteucci &mdash; <i>RESONANCE</i><br>
-&bull; <b>European University Institute (Florence):</b> Director Prof. Erik Jones &mdash; <i>SOLIDARITY</i>`
+                shows: `&bull; <b>University of Bologna:</b> Dip. di Filosofia &mdash; <i>RESONANCE</i><br>
+&bull; <b>European University Institute (Florence):</b> Academic Directorate &mdash; <i>SOLIDARITY</i>`
             },
             fr_paris_guadeloupe: {
                 city: "FRANCE &bull; PARIS &amp; GUADELOUPE",
-                shows: `&bull; <b>Arts au Pluriailes (Guadeloupe):</b> Director Joëlle Ferly &mdash; <i>SERENDIPITY</i><br>
-&bull; <b>IDDRI (Paris):</b> Institute for Sustainable Development / Director Sébastien Treyer &mdash; <i>HUMAN(E)</i>`
+                shows: `&bull; <b>Arts au Pluriailes (Guadeloupe):</b> Curatorial Directorate &mdash; <i>SERENDIPITY</i><br>
+&bull; <b>IDDRI (Paris):</b> Institute for Sustainable Development &mdash; <i>HUMAN(E)</i>`
             },
             ps_gaza_jenin: {
                 city: "PALESTINE &bull; GAZA &amp; JENIN",
-                shows: `&bull; <b>Culture and Free Thought Association (Gaza):</b> Director Majeda Al Saqqa &mdash; <i>صَبابة (LONGING &amp; BELONGING)</i><br>
+                shows: `&bull; <b>Culture and Free Thought Association (Gaza):</b> Executive Directorate &mdash; <i>صَبابة (LONGING &amp; BELONGING)</i><br>
 &bull; <b>The Freedom Theatre (Jenin Camp):</b> Cultural Directorate &mdash; <i>SUMUD</i>`
             },
             is_reykjavik: {
                 city: "ICELAND &bull; REYKJAVÍK",
-                shows: `&bull; <b>University of Iceland (Anthropology):</b> Prof. Gísli Pálsson &mdash; <i>ÓÞOL (INTOLERANCE)</i><br>
-&bull; <b>University of Iceland (Cultural Studies):</b> Prof. Torfi H. Tulinius &mdash; <i>BLESSUN</i>`
+                shows: `&bull; <b>University of Iceland (Anthropology):</b> Academic Directorate &mdash; <i>ÓÞOL (INTOLERANCE)</i><br>
+&bull; <b>University of Iceland (Cultural Studies):</b> Academic Directorate &mdash; <i>BLESSUN</i>`
             },
             th_bangkok: {
                 city: "THAILAND &bull; BANGKOK",
-                shows: `&bull; <b>Chulalongkorn University:</b> Faculty of Fine and Applied Arts / Prof. Bussakorn Binson &mdash; <i>ABUSIVE</i>`
+                shows: `&bull; <b>Chulalongkorn University:</b> Faculty of Fine &amp; Applied Arts &mdash; <i>ABUSIVE</i>`
             },
             fj_suva: {
                 city: "FIJI &bull; SUVA",
-                shows: `&bull; <b>University of the South Pacific:</b> Prof. Sudesh Mishra &mdash; <i>QUIRK</i>`
+                shows: `&bull; <b>University of the South Pacific:</b> Academic Directorate &mdash; <i>QUIRK</i>`
             },
             gy_georgetown: {
                 city: "GUYANA &bull; GEORGETOWN",
-                shows: `&bull; <b>University of Guyana:</b> Dept. of Language &amp; Cultural Studies / Dr. Alim Hosein &mdash; <i>QUIETUDE</i>`
+                shows: `&bull; <b>University of Guyana:</b> Dept. of Language &amp; Cultural Studies &mdash; <i>QUIETUDE</i>`
             },
             jo_amman: {
                 city: "JORDAN &bull; AMMAN",
-                shows: `&bull; <b>The University of Jordan (Design &amp; Visual Communication):</b> Dr. Fu'ad Khasawneh &mdash; <i>BLESSING (البركة)</i><br>
-&bull; <b>The University of Jordan (Dept. of Music):</b> Prof. Dr. Rami Haddad &mdash; <i>UNCERTAINTY</i>`
+                shows: `&bull; <b>The University of Jordan (Design &amp; Visual Communication):</b> <i>BLESSING (البركة)</i><br>
+&bull; <b>The University of Jordan (Dept. of Music):</b> <i>UNCERTAINTY</i>`
             },
             mu_mauritius: {
                 city: "MAURITIUS &bull; REDUIT",
-                shows: `&bull; <b>University of Mauritius:</b> Vice-Chancellor Prof. Kavi Kumar Khedo &mdash; <i>EMPATHY</i>`
+                shows: `&bull; <b>University of Mauritius:</b> Vice-Chancellor Directorate &mdash; <i>EMPATHY</i>`
             },
             om_muscat: {
                 city: "OMAN &bull; MUSCAT",
-                shows: `&bull; <b>Sultan Qaboos University (Art Education):</b> Dr. Salman Amur Alhajri &mdash; <i>ALLAH</i><br>
-&bull; <b>Sultan Qaboos University (Post-Graduate Studies):</b> Prof. Fakhriya Al Yahyai &mdash; <i>BECOMING</i>`
+                shows: `&bull; <b>Sultan Qaboos University (Art Education):</b> <i>ALLAH</i><br>
+&bull; <b>Sultan Qaboos University (Post-Graduate Studies):</b> <i>BECOMING</i>`
             },
             ph_quezon: {
                 city: "PHILIPPINES &bull; QUEZON CITY",
-                shows: `&bull; <b>University of the Philippines Diliman:</b> College of Fine Arts / Dean Prof. Marc J. San Valentin &mdash; <i>KAPWA</i>`
+                shows: `&bull; <b>University of the Philippines Diliman:</b> College of Fine Arts &mdash; <i>KAPWA</i>`
             },
             ar_buenosaires: {
                 city: "ARGENTINA &bull; BUENOS AIRES",
-                shows: `&bull; <b>UNTREF (Centre for Genocide Studies):</b> Dra. Perla Sneh &mdash; <i>KHURBN</i>`
+                shows: `&bull; <b>UNTREF (Centre for Genocide Studies):</b> Directorate &mdash; <i>KHURBN</i>`
             },
             brussels: {
                 city: "BELGIUM &bull; BRUSSELS &amp; LEUVEN",
                 shows: `&bull; <b>Brussels Expo:</b> Europe’s Creative Industries &mdash; <i>Life of a Box Exhibition</i><br>
-&bull; <b>KU Leuven:</b> Division Forest, Nature &amp; Landscape / Prof. Dr. Bart Muys &mdash; <i>BUFFERWORLD</i><br>
-&bull; <b>Vrije Universiteit Brussel:</b> Dept. of Art History &amp; Archaeology / Dr. Tine Meganck &mdash; <i>GRATITUDE</i>`
+&bull; <b>KU Leuven:</b> Division Forest, Nature &amp; Landscape &mdash; <i>BUFFERWORLD</i><br>
+&bull; <b>Vrije Universiteit Brussel:</b> Dept. of Art History &amp; Archaeology &mdash; <i>GRATITUDE</i>`
             },
             poland: {
                 city: "POLAND &bull; DUSZNIKI-ZDRÓJ, POZNAŃ, WARSAW &amp; KRAKOW",
                 shows: `&bull; <b>Museum of Papermaking (Duszniki-Zdrój):</b> First Public Exhibit &mdash; <i>Life of a Box</i><br>
-&bull; <b>Magdalena Abakanowicz University of Arts (Poznań):</b> Prof. Marta Smolińska &mdash; <i>NEON GREEN</i><br>
-&bull; <b>University of Warsaw:</b> Institute of the Americas &amp; Europe / Prof. Dr. Tomasz Basiuk &mdash; <i>BREEZE</i><br>
-&bull; <b>Jan Matejko Academy of Fine Arts (Krakow):</b> Prof. Grzegorz Sztwiertnia &mdash; <i>HAPAX</i>`
+&bull; <b>Magdalena Abakanowicz University of Arts (Poznań):</b> <i>NEON GREEN</i><br>
+&bull; <b>University of Warsaw:</b> Institute of the Americas &amp; Europe &mdash; <i>BREEZE</i><br>
+&bull; <b>Jan Matejko Academy of Fine Arts (Krakow):</b> <i>HAPAX</i>`
             },
             si_ljubljana_koper: {
                 city: "SLOVENIA &bull; LJUBLJANA &amp; KOPER",
-                shows: `&bull; <b>University of Ljubljana:</b> Dept. of Art History / Prof. Dr. Beti Žerovc &mdash; <i>SHAKING</i><br>
-&bull; <b>University of Primorska (Koper):</b> Faculty of Humanities / Dr. Peter Sekloča &mdash; <i>INDECISION</i>`
+                shows: `&bull; <b>University of Ljubljana:</b> Dept. of Art History &mdash; <i>SHAKING</i><br>
+&bull; <b>University of Primorska (Koper):</b> Faculty of Humanities &mdash; <i>INDECISION</i>`
             },
             nz_auckland: {
                 city: "NEW ZEALAND &bull; AUCKLAND",
-                shows: `&bull; <b>University of Auckland (Social Anthropology):</b> Prof. Susanna Trnka &mdash; <i>MOŽNOST (POSSIBILITY)</i><br>
-&bull; <b>University of Auckland (Te Wānanga o Waipapa):</b> Prof. Tracey McIntosh &mdash; <i>MATEMATEĀONE</i>`
+                shows: `&bull; <b>University of Auckland (Social Anthropology):</b> <i>MOŽNOST (POSSIBILITY)</i><br>
+&bull; <b>University of Auckland (Te Wānanga o Waipapa):</b> <i>MATEMATEĀONE</i>`
             },
             hr_zagreb: {
                 city: "CROATIA &bull; ZAGREB",
-                shows: `&bull; <b>University of Zagreb:</b> Academy of Fine Arts / Filip Matović &mdash; <i>DECEIVED</i>`
+                shows: `&bull; <b>University of Zagreb:</b> Academy of Fine Arts &mdash; <i>DECEIVED</i>`
             },
             athens: {
                 city: "GREECE &bull; ATHENS",
-                shows: `&bull; <b>Athens School of Fine Arts:</b> Dept. of Theory &amp; History of Art / Prof. Kostas Ioannidis &mdash; <i>OBLIVION</i>`
+                shows: `&bull; <b>Athens School of Fine Arts:</b> Dept. of Theory &amp; History of Art &mdash; <i>OBLIVION</i>`
             },
-
-            // PREVIOUS CITIES & INSTITUTIONS
             pt_lisbon: {
                 city: "LISBON &bull; PORTUGAL",
                 shows: `&bull; <b>On the Move Directorate:</b> Cultural Mobility Archive &mdash; <i>SAUDADE</i><br>
@@ -1933,12 +2047,92 @@
             },
             uk_london: {
                 city: "LONDON &bull; UK",
-                shows: "&bull; <b>Tate, Courtauld, UCL, SOAS, LSE:</b> Institutional Provenance Partners"
+                shows: `&bull; <b>Tate, Courtauld, UCL, SOAS, LSE:</b> Institutional Provenance Partners`
             },
-            harvard: { city: "HARVARD UNIVERSITY &bull; USA", shows: "&bull; <b>Harvard Leadership Archives:</b> Law | Divinity | GSD" },
-            cz_prague: { city: "PRAGUE &bull; CZECH REPUBLIC", shows: "&bull; <b>Ministry of Environment &amp; State Galleries:</b> Retrospectives" },
-            dubai: { city: "DUBAI &bull; UAE", shows: "&bull; <b>Royal Monographic Viewings:</b> Fine Art Repositories" },
-            goa: { city: "GOA &amp; MUMBAI &bull; INDIA", shows: "&bull; <b>Carpe Diem Gallery:</b> Monographic Archives" }
+            cz_prague: {
+                city: "PRAGUE &bull; CZECH REPUBLIC",
+                shows: `&bull; <b>Ministry of Environment &amp; State Galleries:</b> Retrospectives`
+            },
+            goa: {
+                city: "GOA &amp; MUMBAI &bull; INDIA",
+                shows: `&bull; <b>Carpe Diem Gallery:</b> Monographic Archives`
+            },
+            pakistan: {
+                city: "PAKISTAN ARCHIVAL NODES",
+                shows: `&bull; <b>Cultural &amp; Academic Heritage Repositories</b>`
+            },
+            malaysia: {
+                city: "KUALA LUMPUR &bull; MALAYSIA",
+                shows: `&bull; <b>Contemporary Visual Art Directorate:</b> Retrospective Monograph Archives`
+            },
+            mombasa: {
+                city: "NAIROBI &amp; MOMBASA &bull; KENYA",
+                shows: `&bull; <b>PAWA254 &amp; Chronicles of Mombasa Archive:</b> <i>ARTIVISM</i>`
+            },
+            bc_vancouver: {
+                city: "VANCOUVER &amp; BC &bull; CANADA",
+                shows: `&bull; <b>British Columbia Fine Arts Repositories</b>`
+            },
+            alberta_calgary: {
+                city: "ALBERTA NODES &bull; CANADA",
+                shows: `&bull; <b>Alberta Visual Arts Heritage Repositories</b>`
+            },
+            toronto_waterloo: {
+                city: "TORONTO &amp; ON &bull; CANADA",
+                shows: `&bull; <b>Ontario Cultural &amp; Academic Monographic Archives</b>`
+            },
+            ottawa_kingston: {
+                city: "OTTAWA &amp; KINGSTON &bull; CANADA",
+                shows: `&bull; <b>National Gallery of Canada Knowledge Keepers</b> &mdash; <i>MOWICHA / ANKOSÉ</i>`
+            },
+            montreal_qc: {
+                city: "MONTREAL &amp; QC &bull; CANADA",
+                shows: `&bull; <b>Quebec Cultural &amp; Academic Monographic Archives</b>`
+            },
+            yukon_atlantic: {
+                city: "YUKON &amp; ATLANTIC &bull; CANADA",
+                shows: `&bull; <b>Indigenous Heritage &amp; Territorial Archives</b>`
+            },
+            ch_zurich: {
+                city: "ZURICH &bull; SWITZERLAND",
+                shows: `&bull; <b>ETH Zurich:</b> Chair of Architecture &amp; History &mdash; <i>PRIJATELJSTVO</i> | <i>TOGETHER</i>`
+            },
+            ch_geneva: {
+                city: "GENEVA &bull; SWITZERLAND",
+                shows: `&bull; <b>International Red Cross:</b> Ecological Material Patron`
+            },
+            ch_bern: {
+                city: "BERN &bull; SWITZERLAND",
+                shows: `&bull; <b>Artas Foundation:</b> <i>EQUANIMITY / GELASSENHEIT</i>`
+            },
+            ch_ballenberg: {
+                city: "BALLENBERG &bull; SWITZERLAND",
+                shows: `&bull; <b>Ballenberg Open-Air Museum:</b> Heritage Material Patron`
+            },
+            af_kinshasa: {
+                city: "KINSHASA &bull; DEMOCRATIC REPUBLIC OF CONGO",
+                shows: `&bull; <b>Congo Children Trust:</b> Humanitarian Advocacy`
+            },
+            af_johannesburg: {
+                city: "JOHANNESBURG &bull; SOUTH AFRICA",
+                shows: `&bull; <b>Wits School of Arts &amp; TEARS Foundation:</b> <i>SYNERGY</i> | <i>HEGEMONY</i>`
+            },
+            af_pretoria: {
+                city: "PRETORIA &bull; SOUTH AFRICA",
+                shows: `&bull; <b>Centre for Human Rights (University of Pretoria):</b> <i>SERENDIPITY</i>`
+            },
+            af_gaborone: {
+                city: "GABORONE &bull; BOTSWANA",
+                shows: `&bull; <b>Thapong Visual Arts Centre:</b> <i>INTERPRETATION</i>`
+            },
+            af_lagos: {
+                city: "LAGOS &bull; NIGERIA",
+                shows: `&bull; <b>University of Lagos &amp; Omenka Gallery:</b> <i>PEACE</i> | <i>RESILIENCE</i>`
+            },
+            germany: {
+                city: "BERLIN &amp; FRANKFURT &bull; GERMANY",
+                shows: `&bull; <b>Jewish Museum Frankfurt &amp; Hamburger Kunsthalle:</b> Historical Archives`
+            }
         };
 
         function openMapDetails(key, event) {
@@ -1966,13 +2160,13 @@
                     let leftPos = (nodeRect.left - frameRect.left) + 20;
                     let topPos = (nodeRect.top - frameRect.top) - 20;
 
-                    if (leftPos + 320 > frameRect.width) {
-                        leftPos = (nodeRect.left - frameRect.left) - 330;
+                    if (leftPos + 340 > frameRect.width) {
+                        leftPos = (nodeRect.left - frameRect.left) - 350;
                     }
                     if (leftPos < 10) leftPos = 10;
 
-                    if (topPos + 220 > frameRect.height) {
-                        topPos = frameRect.height - 230;
+                    if (topPos + 240 > frameRect.height) {
+                        topPos = frameRect.height - 250;
                     }
                     if (topPos < 10) topPos = 10;
 
