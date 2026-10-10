@@ -1114,6 +1114,20 @@
                         <label for="citySelector" style="font-size: 0.68rem; color: var(--accent-gold); letter-spacing: 0.15em; text-transform: uppercase;">Isolate City Node:</label>
                         <select id="citySelector" class="map-select" onchange="selectCityFromDropdown(this.value)">
                             <option value="">-- Choose City / Region --</option>
+                            <option value="pt_lisbon">Lisbon, Portugal</option>
+                            <option value="ua_kyiv">Kyiv, Ukraine</option>
+                            <option value="sk_sered_bratislava">Sereď &amp; Bratislava, Slovakia</option>
+                            <option value="ru_volgograd">Volgograd, Russia</option>
+                            <option value="ee_tartu_tallinn">Tartu &amp; Tallinn, Estonia</option>
+                            <option value="li_vaduz">Vaduz, Liechtenstein</option>
+                            <option value="hu_budapest">Budapest, Hungary</option>
+                            <option value="ae_abudhabi_dubai">Abu Dhabi &amp; Dubai, UAE</option>
+                            <option value="cn_shenzhen_hk">Shenzhen &amp; Hong Kong, China</option>
+                            <option value="lt_vilnius">Vilnius, Lithuania</option>
+                            <option value="kg_bishkek">Bishkek, Kyrgyzstan</option>
+                            <option value="me_ljese vici">Lješevići, Montenegro</option>
+                            <option value="cy_nicosia">Nicosia, Cyprus</option>
+                            <option value="co_bogota">Bogotá, Colombia</option>
                             <option value="vn_hanoi">Hanoi, Vietnam</option>
                             <option value="svalbard">Svalbard &amp; Spitsbergen, Norway</option>
                             <option value="no_oslo">Oslo, Norway</option>
@@ -1122,7 +1136,6 @@
                             <option value="sy_damascus">Damascus, Syria</option>
                             <option value="fi_helsinki">Helsinki, Finland</option>
                             <option value="fi_oulu">Oulu (Capital of Culture 2026), Finland</option>
-                            <option value="pt_lisbon">Lisbon, Portugal</option>
                             <option value="gl_nuuk">Nuuk, Greenland</option>
                             <option value="gl_ilulissat">Ilulissat &amp; Avannaata, Greenland</option>
                             <option value="uk_london">London, UK</option>
@@ -1136,7 +1149,51 @@
 
                         <img src="world-map.svg" class="world-map-svg" alt="Global Footprint Map">
 
-                        <!-- NEW NODES ADDED BELOW -->
+                        <!-- NEWLY INTEGRATED INSTITUTIONAL NODES -->
+                        <div class="map-node label-left" id="node_pt_lisbon" style="top: 29.5%; left: 44.5%;" onclick="openMapDetails('pt_lisbon', event)">
+                            <span class="node-label">Lisbon / PT</span>
+                        </div>
+                        <div class="map-node label-top" id="node_ua_kyiv" style="top: 23%; left: 56.5%;" onclick="openMapDetails('ua_kyiv', event)">
+                            <span class="node-label">Kyiv / UA</span>
+                        </div>
+                        <div class="map-node label-right" id="node_sk_sered_bratislava" style="top: 24.2%; left: 53.2%;" onclick="openMapDetails('sk_sered_bratislava', event)">
+                            <span class="node-label">Slovakia</span>
+                        </div>
+                        <div class="map-node label-top" id="node_ru_volgograd" style="top: 26%; left: 60.5%;" onclick="openMapDetails('ru_volgograd', event)">
+                            <span class="node-label">Volgograd / RU</span>
+                        </div>
+                        <div class="map-node label-left" id="node_ee_tartu_tallinn" style="top: 17%; left: 55%;" onclick="openMapDetails('ee_tartu_tallinn', event)">
+                            <span class="node-label">Estonia</span>
+                        </div>
+                        <div class="map-node label-left" id="node_li_vaduz" style="top: 25.5%; left: 50.2%;" onclick="openMapDetails('li_vaduz', event)">
+                            <span class="node-label">Liechtenstein</span>
+                        </div>
+                        <div class="map-node label-right" id="node_hu_budapest" style="top: 25.8%; left: 53.8%;" onclick="openMapDetails('hu_budapest', event)">
+                            <span class="node-label">Budapest / HU</span>
+                        </div>
+                        <div class="map-node label-top" id="node_ae_abudhabi_dubai" style="top: 41%; left: 62.5%;" onclick="openMapDetails('ae_abudhabi_dubai', event)">
+                            <span class="node-label">Abu Dhabi &amp; Dubai / UAE</span>
+                        </div>
+                        <div class="map-node label-top" id="node_cn_shenzhen_hk" style="top: 46%; left: 78.5%;" onclick="openMapDetails('cn_shenzhen_hk', event)">
+                            <span class="node-label">Shenzhen &amp; HK / CN</span>
+                        </div>
+                        <div class="map-node label-right" id="node_lt_vilnius" style="top: 19.5%; left: 54.8%;" onclick="openMapDetails('lt_vilnius', event)">
+                            <span class="node-label">Vilnius / LT</span>
+                        </div>
+                        <div class="map-node label-top" id="node_kg_bishkek" style="top: 31%; left: 68.5%;" onclick="openMapDetails('kg_bishkek', event)">
+                            <span class="node-label">Bishkek / KG</span>
+                        </div>
+                        <div class="map-node label-left" id="node_me_ljese vici" style="top: 28.5%; left: 53.5%;" onclick="openMapDetails('me_ljese vici', event)">
+                            <span class="node-label">Montenegro</span>
+                        </div>
+                        <div class="map-node label-right" id="node_cy_nicosia" style="top: 34.5%; left: 57.2%;" onclick="openMapDetails('cy_nicosia', event)">
+                            <span class="node-label">Nicosia / CY</span>
+                        </div>
+                        <div class="map-node label-left" id="node_co_bogota" style="top: 55%; left: 27%;" onclick="openMapDetails('co_bogota', event)">
+                            <span class="node-label">Bogotá / CO</span>
+                        </div>
+
+                        <!-- EXISTING ARCHIVAL NODES -->
                         <div class="map-node label-top" id="node_vn_hanoi" style="top: 48%; left: 77.5%;" onclick="openMapDetails('vn_hanoi', event)">
                             <span class="node-label">Hanoi / VN</span>
                         </div>
@@ -1160,9 +1217,6 @@
                         </div>
                         <div class="map-node label-top" id="node_fi_oulu" style="top: 13.5%; left: 54%;" onclick="openMapDetails('fi_oulu', event)">
                             <span class="node-label">Oulu 2026 / FI</span>
-                        </div>
-                        <div class="map-node label-left" id="node_pt_lisbon" style="top: 29.5%; left: 44.5%;" onclick="openMapDetails('pt_lisbon', event)">
-                            <span class="node-label">Lisbon / PT</span>
                         </div>
 
                         <!-- Greenland Nodes -->
@@ -1337,9 +1391,36 @@
                     <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0; font-weight: 300; text-transform: uppercase;">Institutional Data Provenance</h3>
                     <p style="font-size: 0.8rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Search live word donations from global leadership, universities, museums, and sovereign institutions.</p>
                     
-                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Donated Terms (e.g., Hanoi, Svalbard, Oslo, Costa Rica, Vanuatu, Damascus, Helsinki, Lisbon)...">
+                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Donated Terms (e.g., Lisbon, Kyiv, Slovakia, Volgograd, Tartu, Vaduz, Budapest, Abu Dhabi, Shenzhen, Vilnius)...">
                     
                     <div class="word-pills-container" id="wordPillsContainer">
+                        <!-- NEW INSTITUTIONAL WORD PILLS -->
+                        <span class="word-pill-item">On the Move Directorate (Lisbon, Portugal): <strong>SAUDADE</strong></span>
+                        <span class="word-pill-item">Casa Oxente Curatorial Directorate (Lisbon, Portugal): <strong>MEMÓRIA</strong></span>
+                        <span class="word-pill-item">National Museum of the History of Ukraine (Kyiv): <strong>ECOLOGICAL MATERIAL PATRON</strong></span>
+                        <span class="word-pill-item">Cultprojector NGO Executive Directorate (Kyiv, Ukraine): <strong>VICTORY</strong></span>
+                        <span class="word-pill-item">Slovak National Museum (Sereď, Slovakia): <strong>MEMORY</strong></span>
+                        <span class="word-pill-item">Slovak National Gallery (Bratislava, Slovakia): <strong>BELIEF / CHŌRA</strong></span>
+                        <span class="word-pill-item">Volgograd State University (Volgograd, Russia): <strong>LIBRARY</strong></span>
+                        <span class="word-pill-item">University of Tartu UNESCO Chair &amp; Dept. of Ethnology (Estonia): <strong>CRISOGENIC</strong></span>
+                        <span class="word-pill-item">Estonian National Museum Research Directorate (Tartu, Estonia): <strong>SHIP</strong></span>
+                        <span class="word-pill-item">Pop and Contemporary Art Museum Directorate (Tallinn, Estonia): <strong>UNAVAILABLE</strong></span>
+                        <span class="word-pill-item">The Princely Collections Art History Library (Vaduz, Liechtenstein): <strong>INGENUITY</strong></span>
+                        <span class="word-pill-item">Ludwig Museum Directorate (Budapest, Hungary): <strong>COMPULSORY / COMPLIANCE</strong></span>
+                        <span class="word-pill-item">Central European University Romani Studies Program (Budapest, Hungary): <strong>REPAIR</strong></span>
+                        <span class="word-pill-item">The Arts Center at NYU Abu Dhabi (UAE): <strong>RECONCILIATION</strong></span>
+                        <span class="word-pill-item">American University in Dubai Cultural Studies Division (UAE): <strong>YOU</strong></span>
+                        <span class="word-pill-item">Abu Dhabi University Humanities Faculty (Abu Dhabi, UAE): <strong>INTERDEPENDENCE</strong></span>
+                        <span class="word-pill-item">The Chinese University of Hong Kong Art Museum (Shenzhen / HK): <strong>ZEN</strong></span>
+                        <span class="word-pill-item">The Chinese University of Hong Kong Academic Directorate (Shenzhen / HK): <strong>BREATH</strong></span>
+                        <span class="word-pill-item">National Museum of Lithuania (Vilnius): <strong>RESILIENCE</strong></span>
+                        <span class="word-pill-item">Vilnius Academy of Arts / VAA Exhibition Halls "Titanikas" (Vilnius): <strong>FEELING</strong></span>
+                        <span class="word-pill-item">American University of Central Asia Academic Directorate (Bishkek, Kyrgyzstan): <strong>RESILIENCE</strong></span>
+                        <span class="word-pill-item">ORATIO Executive Directorate (Lješevići, Montenegro): <strong>GRATEFUL</strong></span>
+                        <span class="word-pill-item">Ministry of Culture (Nicosia, Cyprus): <strong>VISION</strong></span>
+                        <span class="word-pill-item">Universidad de los Andes Academic Directorate (Bogotá, Colombia): <strong>EGO</strong></span>
+
+                        <!-- EXISTING ARCHIVAL WORD PILLS -->
                         <span class="word-pill-item">Blue Dragon Children's Foundation (Hanoi, Vietnam): <strong>JOY / PEACEFUL / ADRIFT / TOGETHERNESS</strong></span>
                         <span class="word-pill-item">Svalbard Global Seed Vault (Spitsbergen, Norway): <strong>PHOTOSYNTHESIS</strong></span>
                         <span class="word-pill-item">Innovation Norway Editorial Directorate (Oslo): <strong>WELTSCHMERTZ</strong></span>
@@ -1348,8 +1429,6 @@
                         <span class="word-pill-item">Cultural Heritage Archive Node (Damascus, Syria): <strong>DIGNITY</strong></span>
                         <span class="word-pill-item">University of Helsinki (Social Anthropology, Philosophy, History): <strong>LOCATION / MUSCLE / ADMIRATION / FRUSTRATION</strong></span>
                         <span class="word-pill-item">European Capital of Culture Node &amp; Galleria MABD (Oulu, Finland): <strong>KINDNESS / UNKNOWN RETROSPECTIVE</strong></span>
-                        <span class="word-pill-item">On the Move Directorate (Lisbon, Portugal): <strong>SAUDADE (HOMESICKNESS &amp; NOSTALGIA)</strong></span>
-                        <span class="word-pill-item">Casa Oxente Curatorial Directorate (Lisbon, Portugal): <strong>MEMÓRIA (CULTURAL MEMORY)</strong></span>
 
                         <span class="word-pill-item">Office of the Bishop of Greenland (Nuuk): <strong>FROM THE RIVER TO ETERNITY DIALOGUE</strong></span>
                         <span class="word-pill-item">Greenland National Museum &amp; Archives (Nuuk): <strong>AKAAREQATIGIINNEQ / ATAQQEQATIGIINNEQ / SILA</strong></span>
@@ -1433,7 +1512,7 @@
                         <span class="word-pill-item">Jane Goodall Institute (USA): <strong>ECOLOGICAL STEWARDSHIP</strong></span>
 
                         <span class="word-pill-item">National Gallery of Canada: <strong>SACRED HERITAGE ARCHIVE</strong></span>
-                        <span class="word-pill-item">Ludwig Museum (Hungary) &amp; Hamburger Kunsthalle: <strong>EUROPEAN CONTEMPORARY ARCHIVE</strong></span>
+                        <span class="word-pill-item">Hamburger Kunsthalle: <strong>EUROPEAN CONTEMPORARY ARCHIVE</strong></span>
                         <span class="word-pill-item">Museum of Papermaking (Poland): <strong>PERMANENT STATE COLLECTION</strong></span>
                         
                         <span class="word-pill-item">Endangered Languages Project: <strong>LINGUISTIC DIVERSITY ARCHIVE</strong></span>
@@ -1482,7 +1561,7 @@
                             <h3 class="ledger-title">Monumental Packaging Sculpture</h3>
                             <div class="ledger-meta-list">
                                 <strong>Medium:</strong> Recycled Industrial Packaging &amp; Gold Leaf<br>
-                                <strong>Donating Institutions:</strong> Nobel Prize Museum, Red Cross Geneva, Ballenberg Open-Air Museum, UNICEF, Czech Red Cross, Amazon UK, Hawk Conservancy Trust<br>
+                                <strong>Donating Institutions:</strong> National Museum of the History of Ukraine, Nobel Prize Museum, Red Cross Geneva, Ballenberg Open-Air Museum, UNICEF, Czech Red Cross, Amazon UK, Hawk Conservancy Trust<br>
                                 <strong>Exhibition History:</strong> Museum of West Bohemia, Plzeň &amp; Museum of Paper, Poland
                             </div>
                         </div>
@@ -1561,6 +1640,72 @@
 
     <script>
         const mapCityData = {
+            pt_lisbon: {
+                city: "LISBON &bull; PORTUGAL",
+                shows: `&bull; <b>On the Move Directorate:</b> Cultural Mobility Archive &mdash; <i>SAUDADE</i> (Homesickness / Nostalgic Longing)<br>
+&bull; <b>Casa Oxente:</b> Curatorial Directorate &mdash; <i>MEMÓRIA</i> (Cultural Memory)`
+            },
+            ua_kyiv: {
+                city: "KYIV &bull; UKRAINE",
+                shows: `&bull; <b>National Museum of the History of Ukraine:</b> Ecological Material Patron &amp; Permanent Museum Repository<br>
+&bull; <b>Cultprojector NGO:</b> Executive Directorate &mdash; <i>VICTORY</i> (Linguistic Provenance Partner)`
+            },
+            sk_sered_bratislava: {
+                city: "SEREĎ &amp; BRATISLAVA &bull; SLOVAKIA",
+                shows: `&bull; <b>Slovak National Museum (Sereď):</b> Institutional Partner &mdash; <i>MEMORY</i><br>
+&bull; <b>Slovak National Gallery (Bratislava):</b> Curatorial Directorate of Old Art Collections &mdash; <i>BELIEF</i> | <i>CHŌRA</i>`
+            },
+            ru_volgograd: {
+                city: "VOLGOGRAD &bull; RUSSIA",
+                shows: `&bull; <b>Volgograd State University:</b> Academic Directorate &mdash; <i>LIBRARY</i> (Linguistic Provenance Partner)`
+            },
+            ee_tartu_tallinn: {
+                city: "TARTU &amp; TALLINN &bull; ESTONIA",
+                shows: `&bull; <b>University of Tartu:</b> UNESCO Chair &amp; Dept. of Ethnology &mdash; <i>CRISOGENIC</i><br>
+&bull; <b>Estonian National Museum (Tartu):</b> Research Directorate &mdash; <i>SHIP</i><br>
+&bull; <b>Pop and Contemporary Art Museum (Tallinn):</b> Founding Directorate &mdash; <i>UNAVAILABLE</i>`
+            },
+            li_vaduz: {
+                city: "VADUZ &bull; LIECHTENSTEIN",
+                shows: `&bull; <b>The Princely Collections (Vaduz):</b> Art History Library Directorate &mdash; <i>INGENUITY</i> (Linguistic Provenance Partner)`
+            },
+            hu_budapest: {
+                city: "BUDAPEST &bull; HUNGARY",
+                shows: `&bull; <b>Ludwig Museum:</b> Museum Directorate &mdash; <i>COMPULSORY</i> | <i>COMPLIANCE</i><br>
+&bull; <b>Central European University:</b> Romani Studies Program Chair &mdash; <i>REPAIR</i>`
+            },
+            ae_abudhabi_dubai: {
+                city: "ABU DHABI &amp; DUBAI &bull; UAE",
+                shows: `&bull; <b>The Arts Center at NYU Abu Dhabi:</b> Executive Artistic Directorate &mdash; <i>RECONCILIATION</i><br>
+&bull; <b>American University in Dubai:</b> Humanities &amp; Social Sciences Division &mdash; <i>YOU</i><br>
+&bull; <b>Abu Dhabi University:</b> Cultural Studies Faculty &mdash; <i>INTERDEPENDENCE</i>`
+            },
+            cn_shenzhen_hk: {
+                city: "SHENZHEN &amp; HONG KONG &bull; CHINA",
+                shows: `&bull; <b>The Chinese University of Hong Kong Art Museum:</b> Museum Directorate &mdash; <i>ZEN</i><br>
+&bull; <b>The Chinese University of Hong Kong:</b> Academic Directorate &mdash; <i>BREATH</i>`
+            },
+            lt_vilnius: {
+                city: "VILNIUS &bull; LITHUANIA",
+                shows: `&bull; <b>National Museum of Lithuania:</b> Executive Directorate &mdash; <i>RESILIENCE</i><br>
+&bull; <b>Vilnius Academy of Arts (VAA):</b> Exhibition Halls "Titanikas" &mdash; <i>FEELING</i>`
+            },
+            kg_bishkek: {
+                city: "BISHKEK &bull; KYRGYZSTAN",
+                shows: `&bull; <b>American University of Central Asia:</b> Academic Directorate &mdash; <i>RESILIENCE</i> (Linguistic Provenance Partner)`
+            },
+            me_ljese vici: {
+                city: "LJEŠEVIĆI &bull; MONTENEGRO",
+                shows: `&bull; <b>ORATIO:</b> Executive Directorate &mdash; <i>GRATEFUL</i> (Linguistic Provenance Partner)`
+            },
+            cy_nicosia: {
+                city: "NICOSIA &bull; CYPRUS",
+                shows: `&bull; <b>Ministry of Culture:</b> Cultural Directorate &mdash; <i>VISION</i> (Linguistic Provenance Partner)`
+            },
+            co_bogota: {
+                city: "BOGOTÁ &bull; COLOMBIA",
+                shows: `&bull; <b>Universidad de los Andes:</b> Academic Directorate &mdash; <i>EGO</i> (Linguistic Provenance Partner)`
+            },
             vn_hanoi: {
                 city: "HANOI &bull; VIETNAM",
                 shows: `&bull; <b>Blue Dragon Children's Foundation:</b> Linguistic &amp; Institutional Provenance Partner &mdash; <i>JOY</i> | <i>PEACEFUL</i> | <i>ADRIFT</i> | <i>TOGETHERNESS</i><br>
@@ -1597,11 +1742,6 @@
                 city: "OULU &bull; EUROPEAN CAPITAL OF CULTURE 2026",
                 shows: `&bull; <b>Sovereign Solo Retrospective:</b> <i>Unknown</i><br>
 &bull; <b>Galleria MABD:</b> Fine Art Gallery Directorate &mdash; <i>KINDNESS</i> (Linguistic Provenance Partner)`
-            },
-            pt_lisbon: {
-                city: "LISBON &bull; PORTUGAL",
-                shows: `&bull; <b>On the Move Directorate:</b> Cultural Mobility Archive &mdash; <i>SAUDADE</i> (Homesickness / Nostalgic longing)<br>
-&bull; <b>Casa Oxente:</b> Curatorial Directorate &mdash; <i>MEMÓRIA</i> (Cultural memory)`
             },
             gl_nuuk: {
                 city: "NUUK &bull; CAPITAL OF GREENLAND",
@@ -1751,7 +1891,7 @@
             box_monograph: {
                 code: "PROVENANCE DOSSIER · LIFE OF A BOX",
                 title: "Monumental Packaging Sculpture",
-                body: "A flagship ecological installation utilizing cardboard packaging collected from Amazon UK, Red Cross Geneva, Ballenberg Open-Air Museum, Nobel Prize Museum, and UNICEF. Exhibited across Czech state museums and documented in official catalogues from the Museum of Paper in Duszniki-Zdrój, Poland."
+                body: "A flagship ecological installation utilizing cardboard packaging collected from the National Museum of the History of Ukraine, Amazon UK, Red Cross Geneva, Ballenberg Open-Air Museum, Nobel Prize Museum, and UNICEF. Exhibited across Czech state museums and documented in official catalogues from the Museum of Paper in Duszniki-Zdrój, Poland."
             },
             mowicha: {
                 code: "PROVENANCE DOSSIER · VOICES OF THE LAND",
