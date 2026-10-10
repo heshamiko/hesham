@@ -213,15 +213,15 @@
 
         .nav-links {
             display: flex;
-            gap: 35px;
+            gap: 30px;
             align-items: center;
         }
 
         .nav-link {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.68rem;
-            letter-spacing: 0.25em;
+            font-size: 0.65rem;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
             transition: color 0.3s ease;
         }
@@ -333,6 +333,73 @@
             padding-bottom: 20px;
             margin-bottom: 40px;
             text-align: center;
+        }
+
+        /* Chronicles of Mombasa Mosaic Grid */
+        .mombasa-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+
+        .mombasa-title {
+            font-family: var(--font-serif);
+            font-size: 2.6rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin: 10px 0;
+        }
+
+        .mombasa-subtitle {
+            font-size: 0.72rem;
+            color: var(--accent-gold);
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .mombasa-description {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .mosaic-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .mosaic-card {
+            position: relative;
+            aspect-ratio: 4 / 5;
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .mosaic-card:hover {
+            border-color: var(--border-gold);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px var(--accent-gold-glow);
+        }
+
+        .mosaic-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(110%);
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .mosaic-card:hover img {
+            filter: grayscale(0%) contrast(100%);
+            transform: scale(1.06);
         }
 
         /* Flight Radar Container */
@@ -828,6 +895,10 @@
             text-transform: uppercase;
         }
 
+        @media (max-width: 1024px) {
+            .mosaic-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
         @media (max-width: 900px) {
             nav.nav-bar { padding: 15px 20px; }
             .nav-links { display: none; }
@@ -835,6 +906,11 @@
             .metrics-bar { grid-template-columns: repeat(2, 1fr); }
             .ledger-row { grid-template-columns: 1fr; }
             .vault-form { flex-direction: column; }
+        }
+
+        @media (max-width: 600px) {
+            .mosaic-grid { grid-template-columns: repeat(2, 1fr); }
+            .mombasa-title { font-size: 2rem; }
         }
     </style>
 </head>
@@ -847,11 +923,12 @@
             <span class="nav-brand-sub">Sovereign Monographic Portal</span>
         </a>
         <div class="nav-links">
-            <a href="#map-section" class="nav-link">01 / Global Footprint Map</a>
-            <a href="#word-archive" class="nav-link">02 / Word Matrix</a>
-            <a href="#ledger" class="nav-link">03 / Provenance Ledger</a>
-            <a href="#materials" class="nav-link">04 / Material Scrubber</a>
-            <a href="#vault" class="btn-vault-nav">05 / Sovereign Vault</a>
+            <a href="#mombasa-grid" class="nav-link">01 / Chronicles of Mombasa</a>
+            <a href="#map-section" class="nav-link">02 / Global Footprint Map</a>
+            <a href="#word-archive" class="nav-link">03 / Word Matrix</a>
+            <a href="#ledger" class="nav-link">04 / Provenance Ledger</a>
+            <a href="#materials" class="nav-link">05 / Material Scrubber</a>
+            <a href="#vault" class="btn-vault-nav">06 / Sovereign Vault</a>
         </div>
     </nav>
 
@@ -898,6 +975,111 @@
         </div>
 
         <main>
+            <!-- Chronicles of Mombasa Section -->
+            <section id="mombasa-grid">
+                <div class="mombasa-header">
+                    <span class="benchmark-tag">&bull; Photo Monograph Series &bull; Kenya &bull;</span>
+                    <h2 class="mombasa-title">Chronicles of Mombasa</h2>
+                    <div class="mombasa-subtitle">Faces, Moments, and the Unfiltered Spirit of East Africa</div>
+                    <p class="mombasa-description">
+                        A visual diary recorded during travels across Africa. Thirty candid portrait studies capturing the quiet strength, curiosity, and authentic human expressions of youth through the lens of an artist.
+                    </p>
+                </div>
+
+                <div class="mosaic-grid">
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-01.jpg', 'Portrait Study I')">
+                        <img src="assets/mombasa/mombasa-01.jpg" alt="Chronicles of Mombasa Portrait 01">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-02.jpg', 'Portrait Study II')">
+                        <img src="assets/mombasa/mombasa-02.jpg" alt="Chronicles of Mombasa Portrait 02">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-03.jpg', 'Portrait Study III')">
+                        <img src="assets/mombasa/mombasa-03.jpg" alt="Chronicles of Mombasa Portrait 03">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-04.jpg', 'Portrait Study IV')">
+                        <img src="assets/mombasa/mombasa-04.jpg" alt="Chronicles of Mombasa Portrait 04">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-05.jpg', 'Portrait Study V')">
+                        <img src="assets/mombasa/mombasa-05.jpg" alt="Chronicles of Mombasa Portrait 05">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-06.jpg', 'Portrait Study VI')">
+                        <img src="assets/mombasa/mombasa-06.jpg" alt="Chronicles of Mombasa Portrait 06">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-07.jpg', 'Portrait Study VII')">
+                        <img src="assets/mombasa/mombasa-07.jpg" alt="Chronicles of Mombasa Portrait 07">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-08.jpg', 'Portrait Study VIII')">
+                        <img src="assets/mombasa/mombasa-08.jpg" alt="Chronicles of Mombasa Portrait 08">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-09.jpg', 'Portrait Study IX')">
+                        <img src="assets/mombasa/mombasa-09.jpg" alt="Chronicles of Mombasa Portrait 09">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-10.jpg', 'Portrait Study X')">
+                        <img src="assets/mombasa/mombasa-10.jpg" alt="Chronicles of Mombasa Portrait 10">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-11.jpg', 'Portrait Study XI')">
+                        <img src="assets/mombasa/mombasa-11.jpg" alt="Chronicles of Mombasa Portrait 11">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-12.jpg', 'Portrait Study XII')">
+                        <img src="assets/mombasa/mombasa-12.jpg" alt="Chronicles of Mombasa Portrait 12">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-13.jpg', 'Portrait Study XIII')">
+                        <img src="assets/mombasa/mombasa-13.jpg" alt="Chronicles of Mombasa Portrait 13">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-14.jpg', 'Portrait Study XIV')">
+                        <img src="assets/mombasa/mombasa-14.jpg" alt="Chronicles of Mombasa Portrait 14">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-15.jpg', 'Portrait Study XV')">
+                        <img src="assets/mombasa/mombasa-15.jpg" alt="Chronicles of Mombasa Portrait 15">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-16.jpg', 'Portrait Study XVI')">
+                        <img src="assets/mombasa/mombasa-16.jpg" alt="Chronicles of Mombasa Portrait 16">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-17.jpg', 'Portrait Study XVII')">
+                        <img src="assets/mombasa/mombasa-17.jpg" alt="Chronicles of Mombasa Portrait 17">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-18.jpg', 'Portrait Study XVIII')">
+                        <img src="assets/mombasa/mombasa-18.jpg" alt="Chronicles of Mombasa Portrait 18">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-19.jpg', 'Portrait Study XIX')">
+                        <img src="assets/mombasa/mombasa-19.jpg" alt="Chronicles of Mombasa Portrait 19">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-20.jpg', 'Portrait Study XX')">
+                        <img src="assets/mombasa/mombasa-20.jpg" alt="Chronicles of Mombasa Portrait 20">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-21.jpg', 'Portrait Study XXI')">
+                        <img src="assets/mombasa/mombasa-21.jpg" alt="Chronicles of Mombasa Portrait 21">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-22.jpg', 'Portrait Study XXII')">
+                        <img src="assets/mombasa/mombasa-22.jpg" alt="Chronicles of Mombasa Portrait 22">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-23.jpg', 'Portrait Study XXIII')">
+                        <img src="assets/mombasa/mombasa-23.jpg" alt="Chronicles of Mombasa Portrait 23">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-24.jpg', 'Portrait Study XXIV')">
+                        <img src="assets/mombasa/mombasa-24.jpg" alt="Chronicles of Mombasa Portrait 24">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-25.jpg', 'Portrait Study XXV')">
+                        <img src="assets/mombasa/mombasa-25.jpg" alt="Chronicles of Mombasa Portrait 25">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-26.jpg', 'Portrait Study XXVI')">
+                        <img src="assets/mombasa/mombasa-26.jpg" alt="Chronicles of Mombasa Portrait 26">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-27.jpg', 'Portrait Study XXVII')">
+                        <img src="assets/mombasa/mombasa-27.jpg" alt="Chronicles of Mombasa Portrait 27">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-28.jpg', 'Portrait Study XXVIII')">
+                        <img src="assets/mombasa/mombasa-28.jpg" alt="Chronicles of Mombasa Portrait 28">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-29.jpg', 'Portrait Study XXIX')">
+                        <img src="assets/mombasa/mombasa-29.jpg" alt="Chronicles of Mombasa Portrait 29">
+                    </div>
+                    <div class="mosaic-card" onclick="openLightbox('assets/mombasa/mombasa-30.jpg', 'Portrait Study XXX')">
+                        <img src="assets/mombasa/mombasa-30.jpg" alt="Chronicles of Mombasa Portrait 30">
+                    </div>
+                </div>
+            </section>
+
             <!-- Airport Flight Radar Map Section -->
             <section id="map-section">
                 <h2 class="section-heading">Interactive Global Footprint Radar</h2>
@@ -1308,6 +1490,18 @@
                 document.getElementById('modalBody').innerText = data.body;
                 document.getElementById('dossierModal').classList.add('active');
             }
+        }
+
+        function openLightbox(imageSrc, title) {
+            document.getElementById('modalCode').innerText = "CHRONICLES OF MOMBASA · PORTRAIT ARCHIVE";
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalBody').innerHTML = `
+                <div style="text-align: center;">
+                    <img src="${imageSrc}" style="max-width: 100%; max-height: 60vh; border: 1px solid var(--border-gold); margin-bottom: 15px;">
+                    <p style="font-size: 0.8rem; color: var(--text-secondary);">Mombasa Series · Natural Expression Study</p>
+                </div>
+            `;
+            document.getElementById('dossierModal').classList.add('active');
         }
 
         function closeDossier() {
