@@ -438,7 +438,7 @@
             z-index: 2;
         }
 
-        /* Updated CSS for world (1).svg */
+        /* Style for world (1).svg */
         .world-map-svg {
             position: absolute;
             top: 0;
@@ -1093,16 +1093,35 @@
                         <!-- Direct Local World Map File -->
                         <img src="world-map.svg" class="world-map-svg" alt="Global Footprint Map">
 
-                        <!-- Geolocation Hotspots -->
+                        <!-- Geolocation Hotspots: USA & International -->
                         <div class="map-node" style="top: 28%; left: 24%;" onclick="openMapDetails('harvard')">
                             <span class="node-label">Harvard / MA</span>
-                        </div>
-                        <div class="map-node" style="top: 22%; left: 20%;" onclick="openMapDetails('toronto')">
-                            <span class="node-label">Canada</span>
                         </div>
                         <div class="map-node" style="top: 38%; left: 18%;" onclick="openMapDetails('usa')">
                             <span class="node-label">USA Nodes</span>
                         </div>
+
+                        <!-- Geolocation Hotspots: Canadian Regional Network -->
+                        <div class="map-node" style="top: 25%; left: 16%;" onclick="openMapDetails('bc_vancouver')">
+                            <span class="node-label">Vancouver &amp; BC</span>
+                        </div>
+                        <div class="map-node" style="top: 24%; left: 21%;" onclick="openMapDetails('alberta_calgary')">
+                            <span class="node-label">Alberta Nodes</span>
+                        </div>
+                        <div class="map-node" style="top: 26%; left: 26%;" onclick="openMapDetails('toronto_waterloo')">
+                            <span class="node-label">Toronto &amp; ON</span>
+                        </div>
+                        <div class="map-node" style="top: 23%; left: 28%;" onclick="openMapDetails('ottawa_kingston')">
+                            <span class="node-label">Ottawa &amp; Kingston</span>
+                        </div>
+                        <div class="map-node" style="top: 22%; left: 30%;" onclick="openMapDetails('montreal_qc')">
+                            <span class="node-label">Montreal / QC</span>
+                        </div>
+                        <div class="map-node" style="top: 18%; left: 14%;" onclick="openMapDetails('yukon_atlantic')">
+                            <span class="node-label">Yukon &amp; Atlantic</span>
+                        </div>
+
+                        <!-- European, Middle Eastern, Asian & Global Hotspots -->
                         <div class="map-node" style="top: 22%; left: 52%;" onclick="openMapDetails('cz_prague')">
                             <span class="node-label">Prague / CZ</span>
                         </div>
@@ -1339,13 +1358,33 @@
                 city: "CAMBRIDGE, MASSACHUSETTS, USA &bull; HARVARD UNIVERSITY",
                 shows: "&bull; <b>Linguistic Provenance Partners:</b> President Emeritus of Harvard University | Dean of Harvard College | Dean of Graduate School of Design | Harvard Law School | Harvard Divinity School | Harvard T.H. Chan School of Public Health | Faculty of Arts and Sciences | Weatherhead Center for International Affairs | Malcolm Wiener Center for Social Policy | Harvard Forest Fellows"
             },
-            toronto: {
-                city: "CANADA &bull; ONTARIO, QUEBEC &amp; YUKON",
-                shows: "&bull; <b>Sovereign Solo Retrospective:</b> Seneca College (Toronto), <i>I Am</i><br>&bull; <b>Linguistic Provenance Partners:</b> University of Toronto | UBC | McGill University | University of Waterloo | University of Calgary | Na'kuset Native Women's Shelter Montreal<br>&bull; <b>Ecological Material Patrons:</b> Museum of Anthropology | ODD Gallery Yukon"
-            },
             usa: {
                 city: "UNITED STATES OF AMERICA &bull; ACADEMIC &amp; HUMAN RIGHTS NODES",
                 shows: "&bull; <b>Sovereign Solo Retrospective:</b> Berkeley Commonplace (California), <i>Twain</i><br>&bull; <b>Linguistic Provenance Partners:</b> Equal Justice Initiative (Bryan Stevenson) | Stanford | MIT | Princeton | Yale | Columbia | Johns Hopkins | NYU Skirball | Jane Goodall Institute<br>&bull; <b>Ecological Material Patrons:</b> Eco-cycle Denver | GENIUS Olympiad NY"
+            },
+            bc_vancouver: {
+                city: "BRITISH COLUMBIA &bull; VANCOUVER, VICTORIA &amp; KELOWNA",
+                shows: "&bull; <b>Linguistic Provenance Partners:</b> University of British Columbia (Philosophy, Anthropology, Centre for Culture &amp; Technology) | University of Victoria (Indigenous Studies, Visual Arts) | JASCO Applied Sciences<br>&bull; <b>Material Provenance Repositories:</b> Museum of Anthropology (Vancouver)"
+            },
+            alberta_calgary: {
+                city: "ALBERTA &bull; CALGARY, EDMONTON &amp; MEDICINE HAT",
+                shows: "&bull; <b>Linguistic Provenance Partners:</b> University of Calgary (School of Creative &amp; Performing Arts) | University of Alberta (Indigenous Teacher Education) | Calgary Arts Development Foundation<br>&bull; <b>Material Provenance Repositories:</b> Medalta Archaeological Museum"
+            },
+            toronto_waterloo: {
+                city: "ONTARIO &bull; TORONTO, WATERLOO, KITCHENER &amp; AURORA",
+                shows: "&bull; <b>Sovereign Solo Exhibition:</b> Seneca College of Applied Arts and Technology (<i>I Am</i>)<br>&bull; <b>Linguistic Provenance Partners:</b> University of Toronto | UJA Federation | Sex Work Donor Collaborative | Penny Appeal Canada | Trent University<br>&bull; <b>Material Repositories &amp; Fieldwork:</b> Toronto Metropolitan University | University of Waterloo | Agora Prep Academy | KW Senior Center"
+            },
+            ottawa_kingston: {
+                city: "ONTARIO &bull; OTTAWA, KINGSTON &amp; BARRIE",
+                shows: "&bull; <b>Linguistic Provenance Partners:</b> Queen's University (2015 Nobel Physics Laureate Dr. Arthur McDonald) | Carleton University (School of Indigenous &amp; Canadian Studies, Canadian Centre for Evidence-Informed Conservation) | Women &amp; Children’s Shelter of Barrie"
+            },
+            montreal_qc: {
+                city: "QUEBEC &bull; MONTREAL",
+                shows: "&bull; <b>Linguistic Provenance Partners:</b> McGill University | Native Women's Shelter of Montreal (Kainai Nation)<br>&bull; <b>Material Provenance Repositories:</b> Arteria Gallery"
+            },
+            yukon_atlantic: {
+                city: "YUKON, PRAIRIES &amp; ATLANTIC CANADA",
+                shows: "&bull; <b>Linguistic Provenance Partners:</b> University of Manitoba (Indigenous Studies, Art History) | University of Saskatchewan | Dalhousie University | The Rooms Public Art Gallery (Newfoundland)<br>&bull; <b>Material Provenance Repositories:</b> ODD Gallery / Klondike Institute of Art &amp; Culture (Yukon)"
             },
             cz_prague: {
                 city: "PRAGUE &amp; CZECH REPUBLIC NETWORK",
