@@ -1173,6 +1173,26 @@
                             <span class="node-label">Ballenberg / CH</span>
                         </div>
 
+                        <!-- Geolocation Hotspots: African Continental Sector -->
+                        <div class="map-node" style="top: 58%; left: 51.5%;" onclick="openMapDetails('af_kinshasa')">
+                            <span class="node-label">Kinshasa / DRC</span>
+                        </div>
+                        <div class="map-node" style="top: 76%; left: 55.5%;" onclick="openMapDetails('af_johannesburg')">
+                            <span class="node-label">Johannesburg / SA</span>
+                        </div>
+                        <div class="map-node" style="top: 75.2%; left: 55.8%;" onclick="openMapDetails('af_pretoria')">
+                            <span class="node-label">Pretoria / SA</span>
+                        </div>
+                        <div class="map-node" style="top: 73.8%; left: 54.2%;" onclick="openMapDetails('af_gaborone')">
+                            <span class="node-label">Gaborone / BW</span>
+                        </div>
+                        <div class="map-node" style="top: 50%; left: 46.8%;" onclick="openMapDetails('af_lagos')">
+                            <span class="node-label">Lagos / NG</span>
+                        </div>
+                        <div class="map-node" style="top: 55.8%; left: 56.2%;" onclick="openMapDetails('mombasa')">
+                            <span class="node-label">Nairobi &amp; Mombasa / KE</span>
+                        </div>
+
                         <!-- European, Middle Eastern, Asian & Global Hotspots -->
                         <div class="map-node" style="top: 22%; left: 52%;" onclick="openMapDetails('cz_prague')">
                             <span class="node-label">Prague / CZ</span>
@@ -1210,9 +1230,6 @@
                         <div class="map-node" style="top: 58%; left: 81%;" onclick="openMapDetails('malaysia')">
                             <span class="node-label">Malaysia</span>
                         </div>
-                        <div class="map-node" style="top: 56%; left: 56%;" onclick="openMapDetails('mombasa')">
-                            <span class="node-label">Kenya</span>
-                        </div>
                         <div class="map-node" style="top: 84%; left: 94%;" onclick="openMapDetails('nz')">
                             <span class="node-label">New Zealand</span>
                         </div>
@@ -1239,52 +1256,63 @@
                     <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0; font-weight: 300; text-transform: uppercase;">Institutional Data Provenance</h3>
                     <p style="font-size: 0.8rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Search live word donations from global leadership, universities, museums, and sovereign institutions.</p>
                     
-                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Donated Terms (e.g., ETH Zurich, Red Cross, Tate, Oxford, Gelassenheit, Prijateljstvo)...">
+                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Donated Terms (e.g., Wits, Lagos, PAWA254, ETH Zurich, Synergy, Artivism)...">
                     
                     <div class="word-pills-container" id="wordPillsContainer">
+                        <!-- African Continental Institutional Network -->
+                        <span class="word-pill-item">Congo Children Trust (Kinshasa, DRC): <strong>HUMANITARIAN ADVOCACY</strong></span>
+                        <span class="word-pill-item">Wits School of Arts (University of the Witwatersrand, SA): <strong>SYNERGY</strong></span>
+                        <span class="word-pill-item">Centre for Human Rights (University of Pretoria, SA): <strong>SERENDIPITY</strong></span>
+                        <span class="word-pill-item">TEARS Foundation (Johannesburg, South Africa): <strong>HEGEMONY</strong></span>
+                        <span class="word-pill-item">Thapong Visual Arts Centre (Gaborone, Botswana): <strong>INTERPRETATION</strong></span>
+                        <span class="word-pill-item">University of Lagos (Prof. of Art History, Nigeria): <strong>PEACE</strong></span>
+                        <span class="word-pill-item">Omenka Gallery (Lagos, Nigeria): <strong>RESILIENCE</strong></span>
+                        <span class="word-pill-item">Nigerian Educationalist Sector: <strong>SPIRITED</strong></span>
+                        <span class="word-pill-item">PAWA254 Creative Civic Initiative (Nairobi, Kenya): <strong>ARTIVISM</strong></span>
+
                         <!-- Swiss Confederation Institutional Network -->
-                        <span class="word-pill-item">ETH Zurich (Prof. Milica Topalović): <strong>PRIJATELJSTVO (ПРИЈАТЕЉСТВО)</strong></span>
-                        <span class="word-pill-item">ETH Zurich (Prof. Dr. Philip Ursprung): <strong>TOGETHER</strong></span>
+                        <span class="word-pill-item">ETH Zurich (Chair of Architecture &amp; Territorial Planning): <strong>PRIJATELJSTVO (ПРИЈАТЕЉСТВО)</strong></span>
+                        <span class="word-pill-item">ETH Zurich (Head of Institute of History &amp; Theory of Architecture): <strong>TOGETHER</strong></span>
                         <span class="word-pill-item">Artas Foundation (Swiss Foundation for Art in Conflict): <strong>EQUANIMITY / GELASSENHEIT</strong></span>
-                        <span class="word-pill-item">International Cartographic Association (ICA President Georg Gartner): <strong>CARTOGRAPHIC PROVENANCE</strong></span>
+                        <span class="word-pill-item">International Cartographic Association (ICA President): <strong>CARTOGRAPHIC PROVENANCE</strong></span>
                         <span class="word-pill-item">International Red Cross (Geneva): <strong>LIFE OF A BOX ECOLOGICAL PATRON</strong></span>
                         <span class="word-pill-item">Ballenberg Open-Air Museum: <strong>HERITAGE MATERIAL PATRON</strong></span>
 
                         <!-- United Kingdom Institutional Network -->
-                        <span class="word-pill-item">Tate (Director Dr. Maria Balshaw CBE): <strong>CONVIVIALITY</strong></span>
-                        <span class="word-pill-item">The Courtauld Institute of Art (Prof. Alixe Bovey): <strong>INTERTIDAL</strong></span>
-                        <span class="word-pill-item">UCL (Prof. Paul Gilroy): <strong>KATABASIS</strong></span>
-                        <span class="word-pill-item">UCL (Prof. Semir Zeki): <strong>PROFOUNDLY AMORAL</strong></span>
-                        <span class="word-pill-item">UCL (Prof. Martin Holbraad): <strong>DEPTH</strong></span>
-                        <span class="word-pill-item">UCL (Dr. Julie Norman): <strong>THE DREAM AND THE NIGHTMARE (AL-AHLAM WA-L-KABUS)</strong></span>
-                        <span class="word-pill-item">SOAS University of London (Prof. Dr. Arshin Adib-Moghaddam): <strong>TRANSVERSALITY</strong></span>
-                        <span class="word-pill-item">Queen Mary University of London (Prof. Quentin Skinner): <strong>METAMORPHOSIS / PRESENCING</strong></span>
-                        <span class="word-pill-item">London School of Economics (Dr. Michael Mason): <strong>DIGNITY</strong></span>
-                        <span class="word-pill-item">University of Oxford (Prof. Kathy Willis CBE): <strong>NATURE</strong></span>
-                        <span class="word-pill-item">University of Oxford (Prof. Yadvinder Malhi CBE): <strong>FLOURISHING</strong></span>
-                        <span class="word-pill-item">University of Oxford (Prof. Ian Kiaer): <strong>MERCY</strong></span>
-                        <span class="word-pill-item">University of Oxford (Prof. Edward Harcourt MBE): <strong>BODY</strong></span>
-                        <span class="word-pill-item">University of Oxford (Prof. Eugene Rogan): <strong>KARAMA</strong></span>
-                        <span class="word-pill-item">University of Cambridge (Prof. Ian Roberts FBA): <strong>HIRAETH</strong></span>
-                        <span class="word-pill-item">University of Cambridge (Dr. Sarah Fine): <strong>MOVEMENT</strong></span>
-                        <span class="word-pill-item">University of Cambridge (Prof. David Lane): <strong>LOVE</strong></span>
-                        <span class="word-pill-item">National Galleries Scotland (Anne Lyden): <strong>DISPUTATIOUS</strong></span>
-                        <span class="word-pill-item">University of Edinburgh (Prof. Viccy Coltman): <strong>SACRED</strong></span>
-                        <span class="word-pill-item">University of Edinburgh (Dr. Maya Mayblin): <strong>SUBSIDIARITY</strong></span>
-                        <span class="word-pill-item">University of Exeter (Prof. Laleh Khalili): <strong>POWER</strong></span>
-                        <span class="word-pill-item">University of Exeter (Prof. Peter Cox): <strong>RENEWABLE / DENIALISM / TIPPING / GAIA</strong></span>
-                        <span class="word-pill-item">University of Birmingham (Prof. Lisa Bortolotti): <strong>AGENCY</strong></span>
-                        <span class="word-pill-item">University of Birmingham (Prof. Nando Sigona): <strong>TOMORROW</strong></span>
-                        <span class="word-pill-item">University of Bristol (Aisha): <strong>EPHEMERAL</strong></span>
-                        <span class="word-pill-item">University of Kent (Prof. Murray Smith): <strong>CREPUSCULAR</strong></span>
-                        <span class="word-pill-item">University of Leeds (Dr. Stella Butler): <strong>CONCERNED</strong></span>
-                        <span class="word-pill-item">University of Lincoln (Dr. Andrew Bracey): <strong>AQUA</strong></span>
-                        <span class="word-pill-item">University of Manchester (Prof. Rupert Cox): <strong>INTEGRITY</strong></span>
-                        <span class="word-pill-item">University of Aberdeen (Prof. Tim Ingold FBA): <strong>CORRESPONDENCE</strong></span>
-                        <span class="word-pill-item">Peace Direct (Dylan Mathews): <strong>POWER</strong></span>
-                        <span class="word-pill-item">Conciliation Resources (Jonathan Cohen): <strong>COURAGE</strong></span>
-                        <span class="word-pill-item">Index on Censorship (Jemimah Steinfeld): <strong>SOLIDARITY</strong></span>
-                        <span class="word-pill-item">University of East London (Dr. Alessandro Bigi): <strong>HAPPINESS</strong></span>
+                        <span class="word-pill-item">Tate (Director of Tate): <strong>CONVIVIALITY</strong></span>
+                        <span class="word-pill-item">The Courtauld Institute of Art (Dean &amp; Deputy Director): <strong>INTERTIDAL</strong></span>
+                        <span class="word-pill-item">UCL (Prof. of Humanities &amp; Centre Director): <strong>KATABASIS</strong></span>
+                        <span class="word-pill-item">UCL (Prof. of Neuroaesthetics): <strong>PROFOUNDLY AMORAL</strong></span>
+                        <span class="word-pill-item">UCL (Prof. of Social Anthropology): <strong>DEPTH</strong></span>
+                        <span class="word-pill-item">UCL (Associate Prof. in Politics): <strong>THE DREAM AND THE NIGHTMARE (AL-AHLAM WA-L-KABUS)</strong></span>
+                        <span class="word-pill-item">SOAS University of London (Chair in Global Thought): <strong>TRANSVERSALITY</strong></span>
+                        <span class="word-pill-item">Queen Mary University of London (Prof. of Humanities): <strong>METAMORPHOSIS / PRESENCING</strong></span>
+                        <span class="word-pill-item">London School of Economics (Middle East Centre Director): <strong>DIGNITY</strong></span>
+                        <span class="word-pill-item">University of Oxford (Principal of St Edmund Hall): <strong>NATURE</strong></span>
+                        <span class="word-pill-item">University of Oxford (Prof. of Ecosystem Science): <strong>FLOURISHING</strong></span>
+                        <span class="word-pill-item">University of Oxford (Prof. of Fine Art, Ruskin School): <strong>MERCY</strong></span>
+                        <span class="word-pill-item">University of Oxford (Prof. of Philosophy): <strong>BODY</strong></span>
+                        <span class="word-pill-item">University of Oxford (Prof. of Modern Middle Eastern History): <strong>KARAMA</strong></span>
+                        <span class="word-pill-item">University of Cambridge (Prof. of Linguistics): <strong>HIRAETH</strong></span>
+                        <span class="word-pill-item">University of Cambridge (Philosophy Faculty &amp; Corpus Christi): <strong>MOVEMENT</strong></span>
+                        <span class="word-pill-item">University of Cambridge (Emeritus Reader in Sociology): <strong>LOVE</strong></span>
+                        <span class="word-pill-item">National Galleries Scotland (Director-General): <strong>DISPUTATIOUS</strong></span>
+                        <span class="word-pill-item">University of Edinburgh (Head of History of Art): <strong>SACRED</strong></span>
+                        <span class="word-pill-item">University of Edinburgh (Social Anthropology): <strong>SUBSIDIARITY</strong></span>
+                        <span class="word-pill-item">University of Exeter (Director, IAIS): <strong>POWER</strong></span>
+                        <span class="word-pill-item">University of Exeter (Climate System Dynamics): <strong>RENEWABLE / DENIALISM / TIPPING / GAIA</strong></span>
+                        <span class="word-pill-item">University of Birmingham (Prof. of Philosophy): <strong>AGENCY</strong></span>
+                        <span class="word-pill-item">University of Birmingham (Director of IRiS): <strong>TOMORROW</strong></span>
+                        <span class="word-pill-item">University of Bristol (Humanities Scholar): <strong>EPHEMERAL</strong></span>
+                        <span class="word-pill-item">University of Kent (Director, Aesthetics Research Centre): <strong>CREPUSCULAR</strong></span>
+                        <span class="word-pill-item">University of Leeds (Librarian Emeritus): <strong>CONCERNED</strong></span>
+                        <span class="word-pill-item">University of Lincoln (Senior Academic in Fine Art): <strong>AQUA</strong></span>
+                        <span class="word-pill-item">University of Manchester (Prof. of Social Anthropology): <strong>INTEGRITY</strong></span>
+                        <span class="word-pill-item">University of Aberdeen (Emeritus Prof. of Social Anthropology): <strong>CORRESPONDENCE</strong></span>
+                        <span class="word-pill-item">Peace Direct (Chief Executive): <strong>POWER</strong></span>
+                        <span class="word-pill-item">Conciliation Resources (Executive Director): <strong>COURAGE</strong></span>
+                        <span class="word-pill-item">Index on Censorship (Chief Executive): <strong>SOLIDARITY</strong></span>
+                        <span class="word-pill-item">University of East London (Innovation &amp; Management): <strong>HAPPINESS</strong></span>
                         <span class="word-pill-item">Alain de Botton (Philosopher &amp; Author): <strong>MELANCHOLY</strong></span>
                         <span class="word-pill-item">Alice Rawsthorn (Design Critic &amp; Author): <strong>RESOURCEFULNESS</strong></span>
                         <span class="word-pill-item">PUIG UK Limited: <strong>MURMURATIONS</strong></span>
@@ -1302,7 +1330,7 @@
                         <span class="word-pill-item">Yale University &amp; Princeton University: <strong>IVY LEAGUE MONOGRAPHIC RECORD</strong></span>
 
                         <!-- Human Rights & Global NGOs -->
-                        <span class="word-pill-item">Equal Justice Initiative / Bryan Stevenson: <strong>JUSTICE &amp; MEMORY</strong></span>
+                        <span class="word-pill-item">Equal Justice Initiative: <strong>JUSTICE &amp; MEMORY</strong></span>
                         <span class="word-pill-item">Art for Amnesty Founder (Amnesty International): <strong>ART FOR HUMAN RIGHTS</strong></span>
                         <span class="word-pill-item">Svalbard Global Seed Vault (Norway): <strong>PLANETARY PRESERVATION</strong></span>
                         <span class="word-pill-item">Jane Goodall Institute (USA): <strong>ECOLOGICAL STEWARDSHIP</strong></span>
@@ -1448,9 +1476,33 @@
 
     <script>
         const mapCityData = {
+            af_kinshasa: {
+                city: "KINSHASA, DEMOCRATIC REPUBLIC OF THE CONGO &bull; HUMANITARIAN ARCHIVE",
+                shows: "&bull; <b>Congo Children Trust:</b> Child Welfare &amp; Youth Rights Directorate &mdash; <i>Linguistic Provenance Partner</i> (Concept: <b>HUMANITARIAN ADVOCACY</b> &mdash; Empowerment and social protection for youth across Central Africa)"
+            },
+            af_johannesburg: {
+                city: "JOHANNESBURG, SOUTH AFRICA &bull; FINE ARTS &amp; ADVOCACY ARCHIVE",
+                shows: "&bull; <b>Wits School of Arts (University of the Witwatersrand):</b> Postgraduate Directorate in Fine Arts &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>SYNERGY</b>)<br>&bull; <b>TEARS Foundation:</b> Social Rights Activist Directorate &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>HEGEMONY</b>)"
+            },
+            af_pretoria: {
+                city: "PRETORIA, SOUTH AFRICA &bull; HUMAN RIGHTS ARCHIVE",
+                shows: "&bull; <b>Centre for Human Rights (University of Pretoria):</b> Human Rights Academic Directorate &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>SERENDIPITY</b>)"
+            },
+            af_gaborone: {
+                city: "GABORONE, BOTSWANA &bull; VISUAL ARTS ARCHIVE",
+                shows: "&bull; <b>Thapong Visual Arts Centre:</b> Executive Cultural Directorate &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>INTERPRETATION</b>)"
+            },
+            af_lagos: {
+                city: "LAGOS, NIGERIA &bull; ACADEMIC &amp; CONTEMPORARY ART ARCHIVE",
+                shows: "&bull; <b>University of Lagos:</b> Professor of Art History &amp; Visual Arts &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>PEACE</b>)<br>&bull; <b>Omenka Gallery:</b> Contemporary Gallery Directorate &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>RESILIENCE</b>)<br>&bull; <b>Educational Sector Partner:</b> Senior Educationalist &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>SPIRITED</b>)"
+            },
+            mombasa: {
+                city: "KENYA &bull; NAIROBI &amp; MOMBASA",
+                shows: "&bull; <b>PAWA254 (PAWA Initiative, Nairobi):</b> Creative Civic Media Platform &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>ARTIVISM</b>)<br>&bull; <b>Sovereign Exhibition:</b> Private Monographic Spatial Intervention (Mombasa)"
+            },
             ch_zurich: {
                 city: "ZURICH, SWITZERLAND &bull; ACADEMIC &amp; FOUNDATION ARCHIVE",
-                shows: "&bull; <b>ETH Zurich (D-ARCH):</b> Prof. Milica Topalović (Chair of Architecture &amp; Territorial Planning) &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>PRIJATELJSTVO / ПРИЈАТЕЉСТВО</b>)<br>&bull; <b>ETH Zurich (gta):</b> Prof. Dr. Philip Ursprung (Head of Institute of History &amp; Theory of Architecture) &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>TOGETHER</b>)<br>&bull; <b>Artas Foundation:</b> Sandra (Swiss Foundation for Art in Regions of Conflict) &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>EQUANIMITY / GELASSENHEIT</b>)"
+                shows: "&bull; <b>ETH Zurich (D-ARCH):</b> Chair of Architecture &amp; Territorial Planning &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>PRIJATELJSTVO / ПРИЈАТЕЉСТВО</b>)<br>&bull; <b>ETH Zurich (gta):</b> Head of Institute of History &amp; Theory of Architecture &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>TOGETHER</b>)<br>&bull; <b>Artas Foundation:</b> Swiss Foundation for Art in Regions of Conflict &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>EQUANIMITY / GELASSENHEIT</b>)"
             },
             ch_geneva: {
                 city: "GENEVA, SWITZERLAND &bull; INTERNATIONAL HUMANITARIAN ARCHIVE",
@@ -1458,7 +1510,7 @@
             },
             ch_bern: {
                 city: "BERN, SWITZERLAND &bull; CARTOGRAPHIC PROVENANCE ARCHIVE",
-                shows: "&bull; <b>International Cartographic Association (ICA):</b> Prof. Dr. Georg Gartner (President) &mdash; <i>Linguistic Provenance Partner</i> (Cartographic spatial discourse on mapping human thought &amp; global footprints)"
+                shows: "&bull; <b>International Cartographic Association (ICA):</b> Executive Presidency &mdash; <i>Linguistic Provenance Partner</i> (Cartographic spatial discourse on mapping human thought &amp; global footprints)"
             },
             ch_ballenberg: {
                 city: "BALLENBERG / INTERLAKEN, SWITZERLAND &bull; HERITAGE MUSEUM REPOSITORY",
@@ -1466,51 +1518,51 @@
             },
             uk_london: {
                 city: "LONDON, UK &bull; INSTITUTIONAL ARCHIVE NETWORK",
-                shows: "&bull; <b>Tate:</b> Dr. Maria Balshaw CBE (Director of Tate) &mdash; <i>CONVIVIALITY</i><br>&bull; <b>The Courtauld Institute of Art:</b> Prof. Alixe Bovey (Dean &amp; Deputy Director) &mdash; <i>INTERTIDAL</i><br>&bull; <b>UCL:</b> Prof. Paul Gilroy (<i>KATABASIS</i>) | Prof. Semir Zeki (<i>PROFOUNDLY AMORAL</i>) | Prof. Martin Holbraad (<i>DEPTH</i>) | Dr. Julie Norman (<i>THE DREAM AND THE NIGHTMARE</i>)<br>&bull; <b>SOAS University of London:</b> Prof. Dr. Arshin Adib-Moghaddam &mdash; <i>TRANSVERSALITY</i><br>&bull; <b>Queen Mary University of London:</b> Prof. Quentin Skinner &mdash; <i>METAMORPHOSIS / PRESENCING</i><br>&bull; <b>London School of Economics (LSE):</b> Dr. Michael Mason &mdash; <i>DIGNITY</i><br>&bull; <b>Global NGOs &amp; Think Tanks:</b> Peace Direct (Dylan Mathews &mdash; <i>POWER</i>) | Conciliation Resources (Jonathan Cohen &mdash; <i>COURAGE</i>) | Index on Censorship (Jemimah Steinfeld &mdash; <i>SOLIDARITY</i>)<br>&bull; <b>Academia &amp; Culture:</b> University of East London (Dr. Alessandro Bigi &mdash; <i>HAPPINESS</i>) | Alain de Botton (<i>MELANCHOLY</i>) | Alice Rawsthorn (<i>RESOURCEFULNESS</i>) | PUIG UK Limited (<i>MURMURATIONS</i>)<br>&bull; <b>Life of a Box Patrons:</b> Amazon UK (20 Industrial Packaging Vessels)"
+                shows: "&bull; <b>Tate:</b> Director of Tate &mdash; <i>CONVIVIALITY</i><br>&bull; <b>The Courtauld Institute of Art:</b> Dean &amp; Deputy Director &mdash; <i>INTERTIDAL</i><br>&bull; <b>UCL:</b> Humanities &amp; Centre Director (<i>KATABASIS</i>) | Prof. of Neuroaesthetics (<i>PROFOUNDLY AMORAL</i>) | Social Anthropology (<i>DEPTH</i>) | Politics &amp; International Relations (<i>THE DREAM AND THE NIGHTMARE</i>)<br>&bull; <b>SOAS University of London:</b> Chair in Global Thought &mdash; <i>TRANSVERSALITY</i><br>&bull; <b>Queen Mary University of London:</b> Barber Beaumont Prof. of Humanities &mdash; <i>METAMORPHOSIS / PRESENCING</i><br>&bull; <b>London School of Economics (LSE):</b> Middle East Centre Directorate &mdash; <i>DIGNITY</i><br>&bull; <b>Global NGOs &amp; Think Tanks:</b> Peace Direct (<i>POWER</i>) | Conciliation Resources (<i>COURAGE</i>) | Index on Censorship (<i>SOLIDARITY</i>)<br>&bull; <b>Academia &amp; Culture:</b> University of East London (<i>HAPPINESS</i>) | Alain de Botton (<i>MELANCHOLY</i>) | Alice Rawsthorn (<i>RESOURCEFULNESS</i>) | PUIG UK Limited (<i>MURMURATIONS</i>)<br>&bull; <b>Life of a Box Patrons:</b> Amazon UK (20 Industrial Packaging Vessels)"
             },
             uk_oxford: {
                 city: "OXFORD, UK &bull; UNIVERSITY OF OXFORD",
-                shows: "&bull; <b>Prof. Kathy Willis CBE:</b> Principal of St Edmund Hall &amp; Prof. of Biodiversity &mdash; <i>NATURE</i><br>&bull; <b>Prof. Yadvinder Malhi CBE FRS:</b> Environmental Change Institute &mdash; <i>FLOURISHING</i><br>&bull; <b>Prof. Ian Kiaer:</b> The Ruskin School of Art &mdash; <i>MERCY</i><br>&bull; <b>Prof. Edward Harcourt MBE:</b> Oxford Institute for Ethics in AI &mdash; <i>BODY</i><br>&bull; <b>Prof. Eugene Rogan:</b> Prof. of Modern Middle Eastern History &mdash; <i>KARAMA</i>"
+                shows: "&bull; <b>Principal of St Edmund Hall &amp; Prof. of Biodiversity:</b> <i>NATURE</i><br>&bull; <b>Environmental Change Institute:</b> Prof. of Ecosystem Science &mdash; <i>FLOURISHING</i><br>&bull; <b>The Ruskin School of Art:</b> Prof. of Fine Art &mdash; <i>MERCY</i><br>&bull; <b>Oxford Institute for Ethics in AI:</b> Faculty of Philosophy &mdash; <i>BODY</i><br>&bull; <b>Modern Middle Eastern History:</b> Chair Directorate &mdash; <i>KARAMA</i>"
             },
             uk_cambridge: {
                 city: "CAMBRIDGE, UK &bull; UNIVERSITY OF CAMBRIDGE",
-                shows: "&bull; <b>Prof. Ian Roberts FBA:</b> Professor of Linguistics &mdash; <i>HIRAETH</i><br>&bull; <b>Dr. Sarah Fine:</b> Faculty of Philosophy &amp; Corpus Christi College &mdash; <i>MOVEMENT</i><br>&bull; <b>Prof. David Lane:</b> Emeritus Reader in Sociology &mdash; <i>LOVE</i>"
+                shows: "&bull; <b>Faculty of Modern Languages &amp; Linguistics:</b> Prof. of Linguistics &mdash; <i>HIRAETH</i><br>&bull; <b>Faculty of Philosophy &amp; Corpus Christi College:</b> <i>MOVEMENT</i><br>&bull; <b>Department of Sociology:</b> Emeritus Reader &mdash; <i>LOVE</i>"
             },
             uk_edinburgh: {
                 city: "EDINBURGH, SCOTLAND &bull; NATIONAL GALLERIES &amp; UNIVERSITY OF EDINBURGH",
-                shows: "&bull; <b>National Galleries Scotland:</b> Anne Lyden (Director-General) &mdash; <i>DISPUTATIOUS</i><br>&bull; <b>University of Edinburgh:</b> Prof. Viccy Coltman (Head of History of Art) &mdash; <i>SACRED</i><br>&bull; <b>University of Edinburgh:</b> Dr. Maya Mayblin (Sr. Lecturer in Social Anthropology) &mdash; <i>SUBSIDIARITY</i>"
+                shows: "&bull; <b>National Galleries Scotland:</b> Director-General &mdash; <i>DISPUTATIOUS</i><br>&bull; <b>University of Edinburgh:</b> Head of History of Art &mdash; <i>SACRED</i><br>&bull; <b>University of Edinburgh:</b> Social Anthropology Directorate &mdash; <i>SUBSIDIARITY</i>"
             },
             uk_exeter: {
                 city: "EXETER, UK &bull; UNIVERSITY OF EXETER &amp; IAIS",
-                shows: "&bull; <b>Institute of Arab and Islamic Studies:</b> Director Laleh Khalili &mdash; <i>POWER</i><br>&bull; <b>University of Exeter:</b> Prof. Peter Cox (Climate System Dynamics) &mdash; <i>RENEWABLE, DENIALISM, TIPPING, GAIA</i>"
+                shows: "&bull; <b>Institute of Arab and Islamic Studies:</b> Executive Directorate &mdash; <i>POWER</i><br>&bull; <b>University of Exeter:</b> Climate System Dynamics Directorate &mdash; <i>RENEWABLE, DENIALISM, TIPPING, GAIA</i>"
             },
             uk_birmingham: {
                 city: "BIRMINGHAM, UK &bull; UNIVERSITY OF BIRMINGHAM &amp; IRIS",
-                shows: "&bull; <b>Prof. Lisa Bortolotti:</b> Professor of Philosophy &mdash; <i>AGENCY</i><br>&bull; <b>Prof. Nando Sigona:</b> Chair in International Migration &amp; Director of IRiS &mdash; <i>TOMORROW</i>"
+                shows: "&bull; <b>Department of Philosophy:</b> Chair Directorate &mdash; <i>AGENCY</i><br>&bull; <b>Institute for Research into Superdiversity (IRiS):</b> Chair in International Migration &mdash; <i>TOMORROW</i>"
             },
             uk_bristol: {
                 city: "BRISTOL, UK &bull; UNIVERSITY OF BRISTOL",
-                shows: "&bull; <b>Aisha:</b> Scholar in Humanities, University of Bristol &mdash; <i>EPHEMERAL</i>"
+                shows: "&bull; <b>University of Bristol:</b> Scholar in Humanities &mdash; <i>EPHEMERAL</i>"
             },
             uk_kent: {
                 city: "KENT, UK &bull; ACADEMIC &amp; ECOLOGICAL CONSERVATION NODES",
-                shows: "&bull; <b>University of Kent:</b> Prof. Murray Smith (Aesthetics Research Centre) &mdash; <i>CREPUSCULAR</i><br>&bull; <b>Hawk Conservancy Trust:</b> Wildlife Conservation Vessel Donation &mdash; <i>Life of a Box Initiative</i>"
+                shows: "&bull; <b>University of Kent:</b> Aesthetics Research Centre &mdash; <i>CREPUSCULAR</i><br>&bull; <b>Hawk Conservancy Trust:</b> Wildlife Conservation Vessel Donation &mdash; <i>Life of a Box Initiative</i>"
             },
             uk_leeds: {
                 city: "LEEDS, UK &bull; UNIVERSITY OF LEEDS",
-                shows: "&bull; <b>Dr. Stella Butler:</b> Librarian Emeritus, University of Leeds &mdash; <i>CONCERNED</i>"
+                shows: "&bull; <b>University of Leeds:</b> Librarian Emeritus &mdash; <i>CONCERNED</i>"
             },
             uk_lincoln: {
                 city: "LINCOLN, UK &bull; UNIVERSITY OF LINCOLN",
-                shows: "&bull; <b>Dr. Andrew Bracey:</b> Senior Academic &amp; Artist in Fine Art &mdash; <i>AQUA</i>"
+                shows: "&bull; <b>University of Lincoln:</b> Senior Academic &amp; Artist in Fine Art &mdash; <i>AQUA</i>"
             },
             uk_manchester: {
                 city: "MANCHESTER, UK &bull; UNIVERSITY OF MANCHESTER",
-                shows: "&bull; <b>Prof. Rupert Cox:</b> Professor of Social Anthropology &mdash; <i>INTEGRITY</i>"
+                shows: "&bull; <b>University of Manchester:</b> Professor of Social Anthropology &mdash; <i>INTEGRITY</i>"
             },
             uk_aberdeen: {
                 city: "ABERDEEN, SCOTLAND &bull; UNIVERSITY OF ABERDEEN",
-                shows: "&bull; <b>Prof. Tim Ingold FBA FRSE:</b> Emeritus Professor of Social Anthropology &mdash; <i>CORRESPONDENCE</i>"
+                shows: "&bull; <b>University of Aberdeen:</b> Emeritus Professor of Social Anthropology &mdash; <i>CORRESPONDENCE</i>"
             },
             harvard: {
                 city: "CAMBRIDGE, MASSACHUSETTS, USA &bull; HARVARD UNIVERSITY",
@@ -1518,7 +1570,7 @@
             },
             usa: {
                 city: "UNITED STATES OF AMERICA &bull; ACADEMIC &amp; HUMAN RIGHTS NODES",
-                shows: "&bull; <b>Sovereign Solo Retrospective:</b> Berkeley Commonplace (California), <i>Twain</i><br>&bull; <b>Linguistic Provenance Partners:</b> Equal Justice Initiative (Bryan Stevenson) | Stanford | MIT | Princeton | Yale | Columbia | Johns Hopkins | NYU Skirball | Jane Goodall Institute<br>&bull; <b>Ecological Material Patrons:</b> Eco-cycle Denver | GENIUS Olympiad NY"
+                shows: "&bull; <b>Sovereign Solo Retrospective:</b> Berkeley Commonplace (California), <i>Twain</i><br>&bull; <b>Linguistic Provenance Partners:</b> Equal Justice Initiative | Stanford | MIT | Princeton | Yale | Columbia | Johns Hopkins | NYU Skirball | Jane Goodall Institute<br>&bull; <b>Ecological Material Patrons:</b> Eco-cycle Denver | GENIUS Olympiad NY"
             },
             bc_vancouver: {
                 city: "BRITISH COLUMBIA &bull; VANCOUVER, VICTORIA &amp; KELOWNA",
@@ -1534,7 +1586,7 @@
             },
             ottawa_kingston: {
                 city: "ONTARIO &bull; OTTAWA, KINGSTON &amp; BARRIE",
-                shows: "&bull; <b>Linguistic Provenance Partners:</b> Queen's University (2015 Nobel Physics Laureate Dr. Arthur McDonald) | Carleton University (School of Indigenous &amp; Canadian Studies, Canadian Centre for Evidence-Informed Conservation) | Women &amp; Children’s Shelter of Barrie"
+                shows: "&bull; <b>Linguistic Provenance Partners:</b> Queen's University (Nobel Laureate Physics Research Group) | Carleton University (School of Indigenous &amp; Canadian Studies) | Women &amp; Children’s Shelter of Barrie"
             },
             montreal_qc: {
                 city: "QUEBEC &bull; MONTREAL",
@@ -1546,7 +1598,7 @@
             },
             cz_prague: {
                 city: "PRAGUE &amp; CZECH REPUBLIC NETWORK",
-                shows: "&bull; <b>Official Patronage:</b> Ministry of the Environment, Prague<br>&bull; <b>State Museum Retrospectives:</b> Prague Municipal Library | Jerusalem Synagogue | Diocese of Pilsen | Museum Jindřichův Hradec | Karlovy Vary Museum<br>&bull; <b>Linguistic Provenance Partners:</b> Charles University | Masaryk University | Kurt &amp; Ursula Schubert Center for Jewish Studies | IPSOS (Radka Malik)"
+                shows: "&bull; <b>Official Patronage:</b> Ministry of the Environment, Prague<br>&bull; <b>State Museum Retrospectives:</b> Prague Municipal Library | Jerusalem Synagogue | Diocese of Pilsen | Museum Jindřichův Hradec | Karlovy Vary Museum<br>&bull; <b>Linguistic Provenance Partners:</b> Charles University | Masaryk University | Kurt &amp; Ursula Schubert Center for Jewish Studies | IPSOS"
             },
             brussels: {
                 city: "BELGIUM &amp; EUROPEAN UNION",
@@ -1566,7 +1618,7 @@
             },
             france: {
                 city: "FRANCE &bull; PARIS",
-                shows: "&bull; <b>Linguistic Provenance Partners:</b> Sorbonne University Director | Founder of Art for Amnesty | American School of Paris"
+                shows: "&bull; <b>Linguistic Provenance Partners:</b> Sorbonne University Directorate | Founder of Art for Amnesty | American School of Paris"
             },
             athens: {
                 city: "GREECE &amp; CYPRUS",
@@ -1592,17 +1644,13 @@
                 city: "KUALA LUMPUR, MALAYSIA",
                 shows: "&bull; <b>Sovereign Exhibition:</b> Private Monographic Retrospective"
             },
-            mombasa: {
-                city: "KENYA &bull; MOMBASA &amp; NAIROBI",
-                shows: "&bull; <b>Sovereign Exhibition:</b> Private Monographic Spatial Intervention<br>&bull; <b>Linguistic Provenance Partner:</b> PAWA254 (Nairobi)"
-            },
             nz: {
                 city: "NEW ZEALAND (AOTEAROA)",
                 shows: "&bull; <b>Linguistic Provenance Partner:</b> University of Auckland<br>&bull; <b>Ecological Material Patrons:</b> Waitangi Museum | Tūhura Otago Museum"
             },
             greenland: {
                 city: "GREENLAND &bull; NUUK &amp; AVANNAATA",
-                shows: "&bull; <b>Linguistic Provenance Partners:</b> Mayor of Avannaata | Greenland National Museum &amp; Archives | Katuaq Cultural Centre"
+                shows: "&bull; <b>Linguistic Provenance Partners:</b> Office of the Mayor of Avannaata | Greenland National Museum &amp; Archives | Katuaq Cultural Centre"
             },
             svalbard: {
                 city: "SVALBARD &amp; NORWAY",
@@ -1687,28 +1735,4 @@
             
             pills.forEach(pill => {
                 const text = pill.innerText.toLowerCase();
-                if (text.includes(input)) {
-                    pill.style.display = 'inline-block';
-                } else {
-                    pill.style.display = 'none';
-                }
-            });
-        }
-
-        function filterLedger(category, event) {
-            const buttons = document.querySelectorAll('.ledger-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            if (event && event.target) event.target.classList.add('active');
-
-            const rows = document.querySelectorAll('.ledger-row');
-            rows.forEach(row => {
-                if (category === 'all' || row.dataset.category === category) {
-                    row.style.display = 'grid';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-        }
-    </script>
-</body>
-</html>
+                if (text.includes
