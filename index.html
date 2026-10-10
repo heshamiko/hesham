@@ -393,7 +393,6 @@
             transform: scale(1.06);
         }
 
-        /* Flight Radar Container with Fixed Pointer Events & Relative Positioning */
         .real-map-wrapper {
             background: var(--surface-card);
             border: 1px solid var(--border-gold);
@@ -405,7 +404,7 @@
 
         .map-quick-filter {
             margin: 15px auto 25px auto;
-            max-width: 600px;
+            max-width: 650px;
             display: flex;
             gap: 10px;
             justify-content: center;
@@ -463,7 +462,6 @@
             z-index: 1;
         }
 
-        /* Interactive Nodes with Traffic/Overlap Countermeasures */
         .map-node {
             position: absolute;
             width: 10px;
@@ -519,12 +517,10 @@
             transition: opacity 0.2s ease;
         }
 
-        /* Label Offsets to prevent label clutter in dense areas */
         .map-node.label-top .node-label { top: -22px; }
         .map-node.label-left .node-label { top: -2px; left: -10px; transform: translateX(-100%); }
         .map-node.label-right .node-label { top: -2px; left: 16px; transform: translateX(0); }
 
-        /* Next-To-Node Pop-Up Tooltip Box */
         .map-popup-card {
             position: absolute;
             width: 320px;
@@ -1118,12 +1114,17 @@
                         <label for="citySelector" style="font-size: 0.68rem; color: var(--accent-gold); letter-spacing: 0.15em; text-transform: uppercase;">Isolate City Node:</label>
                         <select id="citySelector" class="map-select" onchange="selectCityFromDropdown(this.value)">
                             <option value="">-- Choose City / Region --</option>
+                            <option value="vn_hanoi">Hanoi, Vietnam</option>
+                            <option value="svalbard">Svalbard &amp; Spitsbergen, Norway</option>
+                            <option value="no_oslo">Oslo, Norway</option>
+                            <option value="cr_sanjose">San José, Costa Rica</option>
+                            <option value="vu_vanuatu">Port-Vila, Vanuatu</option>
+                            <option value="sy_damascus">Damascus, Syria</option>
+                            <option value="fi_helsinki">Helsinki, Finland</option>
+                            <option value="fi_oulu">Oulu (Capital of Culture 2026), Finland</option>
+                            <option value="pt_lisbon">Lisbon, Portugal</option>
                             <option value="gl_nuuk">Nuuk, Greenland</option>
                             <option value="gl_ilulissat">Ilulissat &amp; Avannaata, Greenland</option>
-                            <option value="gl_north">North Greenland Museums</option>
-                            <option value="gl_qaqortoq">Qaqortoq &amp; South Greenland</option>
-                            <option value="dk_aalborg">Aalborg, Denmark</option>
-                            <option value="nl_amsterdam">Amsterdam, Netherlands</option>
                             <option value="uk_london">London, UK</option>
                             <option value="cz_prague">Prague, Czech Republic</option>
                             <option value="harvard">Harvard / USA</option>
@@ -1135,7 +1136,36 @@
 
                         <img src="world-map.svg" class="world-map-svg" alt="Global Footprint Map">
 
-                        <!-- Greenland Specific City Nodes -->
+                        <!-- NEW NODES ADDED BELOW -->
+                        <div class="map-node label-top" id="node_vn_hanoi" style="top: 48%; left: 77.5%;" onclick="openMapDetails('vn_hanoi', event)">
+                            <span class="node-label">Hanoi / VN</span>
+                        </div>
+                        <div class="map-node label-top" id="node_svalbard" style="top: 8%; left: 52%;" onclick="openMapDetails('svalbard', event)">
+                            <span class="node-label">Svalbard / NO</span>
+                        </div>
+                        <div class="map-node label-right" id="node_no_oslo" style="top: 17.5%; left: 49.5%;" onclick="openMapDetails('no_oslo', event)">
+                            <span class="node-label">Oslo / NO</span>
+                        </div>
+                        <div class="map-node label-left" id="node_cr_sanjose" style="top: 52%; left: 24.5%;" onclick="openMapDetails('cr_sanjose', event)">
+                            <span class="node-label">Costa Rica</span>
+                        </div>
+                        <div class="map-node label-top" id="node_vu_vanuatu" style="top: 68%; left: 91.5%;" onclick="openMapDetails('vu_vanuatu', event)">
+                            <span class="node-label">Vanuatu</span>
+                        </div>
+                        <div class="map-node label-left" id="node_sy_damascus" style="top: 36.5%; left: 56.5%;" onclick="openMapDetails('sy_damascus', event)">
+                            <span class="node-label">Damascus / SY</span>
+                        </div>
+                        <div class="map-node label-right" id="node_fi_helsinki" style="top: 16%; left: 53.5%;" onclick="openMapDetails('fi_helsinki', event)">
+                            <span class="node-label">Helsinki / FI</span>
+                        </div>
+                        <div class="map-node label-top" id="node_fi_oulu" style="top: 13.5%; left: 54%;" onclick="openMapDetails('fi_oulu', event)">
+                            <span class="node-label">Oulu 2026 / FI</span>
+                        </div>
+                        <div class="map-node label-left" id="node_pt_lisbon" style="top: 29.5%; left: 44.5%;" onclick="openMapDetails('pt_lisbon', event)">
+                            <span class="node-label">Lisbon / PT</span>
+                        </div>
+
+                        <!-- Greenland Nodes -->
                         <div class="map-node label-left" id="node_gl_nuuk" style="top: 15%; left: 37%;" onclick="openMapDetails('gl_nuuk', event)">
                             <span class="node-label">Nuuk / GL</span>
                         </div>
@@ -1149,7 +1179,7 @@
                             <span class="node-label">Qaqortoq / GL</span>
                         </div>
 
-                        <!-- European Diaspora / Partner Nodes -->
+                        <!-- Europe Diaspora Nodes -->
                         <div class="map-node label-right" id="node_dk_aalborg" style="top: 19%; left: 48.5%;" onclick="openMapDetails('dk_aalborg', event)">
                             <span class="node-label">Aalborg / DK</span>
                         </div>
@@ -1157,7 +1187,7 @@
                             <span class="node-label">Amsterdam / NL</span>
                         </div>
 
-                        <!-- General Global Nodes -->
+                        <!-- Global Nodes -->
                         <div class="map-node" id="node_harvard" style="top: 28%; left: 24%;" onclick="openMapDetails('harvard', event)">
                             <span class="node-label">Harvard / MA</span>
                         </div>
@@ -1261,9 +1291,6 @@
                         <div class="map-node" id="node_poland" style="top: 20%; left: 54%;" onclick="openMapDetails('poland', event)">
                             <span class="node-label">Poland</span>
                         </div>
-                        <div class="map-node" id="node_finland" style="top: 15%; left: 55%;" onclick="openMapDetails('finland', event)">
-                            <span class="node-label">Finland &amp; Åland</span>
-                        </div>
                         <div class="map-node" id="node_germany" style="top: 24%; left: 51%;" onclick="openMapDetails('germany', event)">
                             <span class="node-label">Germany</span>
                         </div>
@@ -1291,9 +1318,6 @@
                         <div class="map-node" id="node_nz" style="top: 84%; left: 94%;" onclick="openMapDetails('nz', event)">
                             <span class="node-label">New Zealand</span>
                         </div>
-                        <div class="map-node" id="node_svalbard" style="top: 8%; left: 52%;" onclick="openMapDetails('svalbard', event)">
-                            <span class="node-label">Svalbard</span>
-                        </div>
 
                         <!-- Dynamic Pop-up Tooltip Card -->
                         <div class="map-popup-card" id="mapPopupCard">
@@ -1313,9 +1337,20 @@
                     <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0; font-weight: 300; text-transform: uppercase;">Institutional Data Provenance</h3>
                     <p style="font-size: 0.8rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Search live word donations from global leadership, universities, museums, and sovereign institutions.</p>
                     
-                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Donated Terms (e.g., Nuuk, Avannaata, Wits, Lagos, PAWA254, ETH Zurich, Synergy, Artivism)...">
+                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Donated Terms (e.g., Hanoi, Svalbard, Oslo, Costa Rica, Vanuatu, Damascus, Helsinki, Lisbon)...">
                     
                     <div class="word-pills-container" id="wordPillsContainer">
+                        <span class="word-pill-item">Blue Dragon Children's Foundation (Hanoi, Vietnam): <strong>JOY / PEACEFUL / ADRIFT / TOGETHERNESS</strong></span>
+                        <span class="word-pill-item">Svalbard Global Seed Vault (Spitsbergen, Norway): <strong>PHOTOSYNTHESIS</strong></span>
+                        <span class="word-pill-item">Innovation Norway Editorial Directorate (Oslo): <strong>WELTSCHMERTZ</strong></span>
+                        <span class="word-pill-item">Fundación ARS TEOR/éTica (San José, Costa Rica): <strong>INTERDEPENDENCIA</strong></span>
+                        <span class="word-pill-item">Vanuatu Cultural Centre / VKS (Port-Vila, Pacific): <strong>LOVE</strong></span>
+                        <span class="word-pill-item">Cultural Heritage Archive Node (Damascus, Syria): <strong>DIGNITY</strong></span>
+                        <span class="word-pill-item">University of Helsinki (Social Anthropology, Philosophy, History): <strong>LOCATION / MUSCLE / ADMIRATION / FRUSTRATION</strong></span>
+                        <span class="word-pill-item">European Capital of Culture Node &amp; Galleria MABD (Oulu, Finland): <strong>KINDNESS / UNKNOWN RETROSPECTIVE</strong></span>
+                        <span class="word-pill-item">On the Move Directorate (Lisbon, Portugal): <strong>SAUDADE (HOMESICKNESS &amp; NOSTALGIA)</strong></span>
+                        <span class="word-pill-item">Casa Oxente Curatorial Directorate (Lisbon, Portugal): <strong>MEMÓRIA (CULTURAL MEMORY)</strong></span>
+
                         <span class="word-pill-item">Office of the Bishop of Greenland (Nuuk): <strong>FROM THE RIVER TO ETERNITY DIALOGUE</strong></span>
                         <span class="word-pill-item">Greenland National Museum &amp; Archives (Nuuk): <strong>AKAAREQATIGIINNEQ / ATAQQEQATIGIINNEQ / SILA</strong></span>
                         <span class="word-pill-item">Office of the Mayor of Avannaata (Ilulissat): <strong>UAGUT NUNARPUT (OUR SOVEREIGN LAND)</strong></span>
@@ -1395,9 +1430,7 @@
 
                         <span class="word-pill-item">Equal Justice Initiative: <strong>JUSTICE &amp; MEMORY</strong></span>
                         <span class="word-pill-item">Art for Amnesty Founder (Amnesty International): <strong>ART FOR HUMAN RIGHTS</strong></span>
-                        <span class="word-pill-item">Svalbard Global Seed Vault (Norway): <strong>PLANETARY PRESERVATION</strong></span>
                         <span class="word-pill-item">Jane Goodall Institute (USA): <strong>ECOLOGICAL STEWARDSHIP</strong></span>
-                        <span class="word-pill-item">Greenpeace International (Netherlands): <strong>ENVIRONMENTAL RESILIENCE</strong></span>
 
                         <span class="word-pill-item">National Gallery of Canada: <strong>SACRED HERITAGE ARCHIVE</strong></span>
                         <span class="word-pill-item">Ludwig Museum (Hungary) &amp; Hamburger Kunsthalle: <strong>EUROPEAN CONTEMPORARY ARCHIVE</strong></span>
@@ -1528,137 +1561,115 @@
 
     <script>
         const mapCityData = {
+            vn_hanoi: {
+                city: "HANOI &bull; VIETNAM",
+                shows: `&bull; <b>Blue Dragon Children's Foundation:</b> Linguistic &amp; Institutional Provenance Partner &mdash; <i>JOY</i> | <i>PEACEFUL</i> | <i>ADRIFT</i> | <i>TOGETHERNESS</i><br>
+&bull; <b>Participatory Community Archive:</b> Curatorial dialogue documenting resilience and sanctuary, forming the conceptual core of a dedicated masterwork canvas.`
+            },
+            svalbard: {
+                city: "SVALBARD &amp; SPITSBERGEN &bull; NORWAY",
+                shows: `&bull; <b>Svalbard Global Seed Vault (Longyearbyen):</b> Linguistic Provenance Partner &mdash; <i>PHOTOSYNTHESIS</i> (Planetary preservation directive)`
+            },
+            no_oslo: {
+                city: "OSLO &bull; NORWAY",
+                shows: `&bull; <b>Innovation Norway:</b> Editorial Directorate &mdash; <i>WELTSCHMERTZ</i> (Linguistic Provenance Partner)`
+            },
+            cr_sanjose: {
+                city: "SAN JOSÉ &bull; COSTA RICA",
+                shows: `&bull; <b>Fundación ARS TEOR/éTica:</b> Curatorial Directorate &mdash; <i>INTERDEPENDENCIA</i> (Linguistic Provenance Partner)`
+            },
+            vu_vanuatu: {
+                city: "PORT-VILA &bull; VANUATU (PACIFIC ISLANDS)",
+                shows: `&bull; <b>Vanuatu Cultural Centre / Vanuatu Kaljoral Senta (VKS):</b> Executive Directorate &mdash; <i>LOVE</i> (Linguistic Provenance Partner)`
+            },
+            sy_damascus: {
+                city: "DAMASCUS &bull; SYRIA",
+                shows: `&bull; <b>Cultural Heritage Archive Node:</b> Diplomatic &amp; Cultural Lineage &mdash; <i>DIGNITY</i> (Linguistic Provenance Partner)`
+            },
+            fi_helsinki: {
+                city: "HELSINKI &bull; FINLAND",
+                shows: `&bull; <b>University of Helsinki (Social Anthropology):</b> Linguistic Partner &mdash; <i>LOCATION</i><br>
+&bull; <b>University of Helsinki (Theoretical Philosophy):</b> Linguistic Partner &mdash; <i>MUSCLE</i><br>
+&bull; <b>University of Helsinki (Centre for Consumer Society Research):</b> Linguistic Partner &mdash; <i>ADMIRATION</i><br>
+&bull; <b>University of Helsinki (Economic History):</b> Linguistic Partner &mdash; <i>FRUSTRATION</i>`
+            },
+            fi_oulu: {
+                city: "OULU &bull; EUROPEAN CAPITAL OF CULTURE 2026",
+                shows: `&bull; <b>Sovereign Solo Retrospective:</b> <i>Unknown</i><br>
+&bull; <b>Galleria MABD:</b> Fine Art Gallery Directorate &mdash; <i>KINDNESS</i> (Linguistic Provenance Partner)`
+            },
+            pt_lisbon: {
+                city: "LISBON &bull; PORTUGAL",
+                shows: `&bull; <b>On the Move Directorate:</b> Cultural Mobility Archive &mdash; <i>SAUDADE</i> (Homesickness / Nostalgic longing)<br>
+&bull; <b>Casa Oxente:</b> Curatorial Directorate &mdash; <i>MEMÓRIA</i> (Cultural memory)`
+            },
             gl_nuuk: {
                 city: "NUUK &bull; CAPITAL OF GREENLAND",
                 shows: `&bull; <b>Office of the Bishop of Greenland:</b> Curatorial Dialogue &mdash; <i>"From the River to Eternity"</i><br>
-&bull; <b>Greenland National Museum &amp; Archives:</b> Linguistic Provenance Partner &mdash; <i>AKAAREQATIGIINNEQ</i> (Mutual respect) | <i>Ataqqeqatigiinneq</i> (Respect &amp; trust) | <i>SILA</i> (Consciousness &amp; world connection) | <i>ILLERPIAASINNAATITAAVUTIT</i> (Sacred space of belonging)<br>
-&bull; <b>Katuaq - Cultural Centre of Greenland:</b> Linguistic Partner &mdash; <i>ATAATSIMOORNEQ</i> (Unity)<br>
-&bull; <b>Language Secretariat of Greenland (Oqaasileriffik):</b> Linguistic Partner &mdash; <i>EQQISSINEQ</i> (Peace)<br>
-&bull; <b>Ministry of Fisheries, Hunting &amp; Agriculture:</b> Linguistic Partner &mdash; <i>Pinngortitaq</i> (Nature) | <i>Taqatigiinneq</i> (Togetherness) | <i>Qimusseq</i> (Dog sled)<br>
-&bull; <b>Sipineq+:</b> Linguistic Partner &mdash; <i>INOOQATIGIINNEQ</i> (Coexistence)`
+&bull; <b>Greenland National Museum &amp; Archives:</b> Linguistic Partner &mdash; <i>AKAAREQATIGIINNEQ</i> | <i>Ataqqeqatigiinneq</i> | <i>SILA</i> | <i>ILLERPIAASINNAATITAAVUTIT</i><br>
+&bull; <b>Katuaq Cultural Centre:</b> <i>ATAATSIMOORNEQ</i> | <b>Language Secretariat:</b> <i>EQQISSINEQ</i><br>
+&bull; <b>Ministry of Fisheries:</b> <i>Pinngortitaq</i> | <i>Taqatigiinneq</i> | <i>Qimusseq</i><br>
+&bull; <b>Sipineq+:</b> <i>INOOQATIGIINNEQ</i>`
             },
             gl_ilulissat: {
                 city: "ILULISSAT &amp; AVANNAATA REGION &bull; GREENLAND",
-                shows: `&bull; <b>Executive Office of the Mayor, Avannaata Municipality:</b> Linguistic Provenance Partner &mdash; <i>Uagut nunarput</i> ("Our Country / Our Land")<br>
-&bull; <b>Municipality of Avannaata:</b> Linguistic Provenance Partner &mdash; <i>Ataqqinninneq</i> (Respect) | <i>Kalaallit nunaat kalaallit pigaat</i> (Greenland belongs to Greenlanders) | <i>Aluu</i> (Hello) | <i>Naamik</i> (No) | <i>Aap</i> (Yes)`
+                shows: `&bull; <b>Executive Office of the Mayor, Avannaata Municipality:</b> Linguistic Partner &mdash; <i>Uagut nunarput</i> ("Our Land")<br>
+&bull; <b>Municipality of Avannaata:</b> Linguistic Partner &mdash; <i>Ataqqinninneq</i> | <i>Kalaallit nunaat kalaallit pigaat</i>`
             },
             gl_north: {
                 city: "NORTH GREENLAND MUSEUMS NODE",
-                shows: `&bull; <b>Directorate of North Greenland Museums:</b> Linguistic Provenance Partner &mdash; <i>Eqqumiitsuliortoq</i> (The Creative Maker / Artist)`
+                shows: `&bull; <b>North Greenland Museums Directorate:</b> Linguistic Partner &mdash; <i>Eqqumiitsuliortoq</i> (Creative Maker)`
             },
             gl_qaqortoq: {
                 city: "QAQORTOQ &amp; SOUTH GREENLAND NODE",
-                shows: `&bull; <b>South Greenland Cultural Luminary Archive:</b> Linguistic Provenance Partner &mdash; <i>Alluitsoq</i> (Ancestral village lineage &amp; generational memory)`
+                shows: `&bull; <b>South Greenland Cultural Heritage Node:</b> Linguistic Partner &mdash; <i>Alluitsoq</i> (Ancestral lineage)`
             },
             dk_aalborg: {
-                city: "AALBORG &bull; NORTH JUTLAND, DENMARK",
-                shows: `&bull; <b>The Greenlandic House in Aalborg:</b> Linguistic Provenance Partner &mdash; <i>TASSA</i> (Presence / Manifest Existence)`
+                city: "AALBORG &bull; DENMARK",
+                shows: `&bull; <b>The Greenlandic House in Aalborg:</b> Linguistic Partner &mdash; <i>TASSA</i> (Presence)`
             },
             nl_amsterdam: {
                 city: "AMSTERDAM &bull; NETHERLANDS",
-                shows: `&bull; <b>Greenpeace International:</b> Executive Leadership &mdash; <i>Linguistic Provenance Partner</i> (Word: <b>TOGETHERNESS</b> &mdash; Global ecological stewardship)`
+                shows: `&bull; <b>Greenpeace International:</b> Executive Leadership &mdash; <i>TOGETHERNESS</i>`
             },
             af_kinshasa: {
                 city: "KINSHASA &bull; DEMOCRATIC REPUBLIC OF THE CONGO",
-                shows: "&bull; <b>Congo Children Trust:</b> Child Welfare Directorate &mdash; <i>Linguistic Provenance Partner</i> (Concept: <b>HUMANITARIAN ADVOCACY</b>)"
+                shows: "&bull; <b>Congo Children Trust:</b> Child Welfare Directorate &mdash; <i>HUMANITARIAN ADVOCACY</i>"
             },
             af_johannesburg: {
                 city: "JOHANNESBURG &bull; SOUTH AFRICA",
-                shows: "&bull; <b>Wits School of Arts:</b> Postgraduate Fine Arts &mdash; <i>SYNERGY</i><br>&bull; <b>TEARS Foundation:</b> Social Activism &mdash; <i>HEGEMONY</i>"
+                shows: "&bull; <b>Wits School of Arts:</b> <i>SYNERGY</i><br>&bull; <b>TEARS Foundation:</b> <i>HEGEMONY</i>"
             },
-            af_pretoria: {
-                city: "PRETORIA &bull; SOUTH AFRICA",
-                shows: "&bull; <b>Centre for Human Rights (University of Pretoria):</b> <i>SERENDIPITY</i>"
-            },
-            af_gaborone: {
-                city: "GABORONE &bull; BOTSWANA",
-                shows: "&bull; <b>Thapong Visual Arts Centre:</b> Executive Directorate &mdash; <i>INTERPRETATION</i>"
-            },
+            af_pretoria: { city: "PRETORIA &bull; SOUTH AFRICA", shows: "&bull; <b>Centre for Human Rights:</b> <i>SERENDIPITY</i>" },
+            af_gaborone: { city: "GABORONE &bull; BOTSWANA", shows: "&bull; <b>Thapong Visual Arts Centre:</b> <i>INTERPRETATION</i>" },
             af_lagos: {
                 city: "LAGOS &bull; NIGERIA",
-                shows: "&bull; <b>University of Lagos:</b> Art History &mdash; <i>PEACE</i><br>&bull; <b>Omenka Gallery:</b> Contemporary Art &mdash; <i>RESILIENCE</i><br>&bull; <b>Educational Sector Partner:</b> <i>SPIRITED</i>"
+                shows: "&bull; <b>University of Lagos:</b> <i>PEACE</i><br>&bull; <b>Omenka Gallery:</b> <i>RESILIENCE</i>"
             },
-            mombasa: {
-                city: "NAIROBI &amp; MOMBASA &bull; KENYA",
-                shows: "&bull; <b>PAWA254:</b> Creative Civic Platform &mdash; <i>ARTIVISM</i><br>&bull; <b>Sovereign Exhibition:</b> Private Monographic Intervention"
-            },
-            ch_zurich: {
-                city: "ZURICH &bull; SWITZERLAND",
-                shows: "&bull; <b>ETH Zurich (D-ARCH):</b> <i>PRIJATELJSTVO</i><br>&bull; <b>ETH Zurich (gta):</b> <i>TOGETHER</i><br>&bull; <b>Artas Foundation:</b> <i>EQUANIMITY / GELASSENHEIT</i>"
-            },
-            ch_geneva: {
-                city: "GENEVA &bull; SWITZERLAND",
-                shows: "&bull; <b>International Red Cross:</b> Global Logistics &mdash; <i>Life of a Box Patron</i>"
-            },
-            ch_bern: {
-                city: "BERN &bull; SWITZERLAND",
-                shows: "&bull; <b>International Cartographic Association (ICA):</b> Executive Presidency &mdash; <i>Cartographic Spatial Discourse</i>"
-            },
-            ch_ballenberg: {
-                city: "BALLENBERG &bull; SWITZERLAND",
-                shows: "&bull; <b>Ballenberg Open-Air Museum:</b> <i>Heritage Material Patron</i>"
-            },
+            mombasa: { city: "NAIROBI &amp; MOMBASA &bull; KENYA", shows: "&bull; <b>PAWA254:</b> <i>ARTIVISM</i><br>&bull; <b>Sovereign Exhibition:</b> Private Monographic Intervention" },
+            ch_zurich: { city: "ZURICH &bull; SWITZERLAND", shows: "&bull; <b>ETH Zurich:</b> <i>PRIJATELJSTVO</i> | <i>TOGETHER</i><br>&bull; <b>Artas Foundation:</b> <i>EQUANIMITY</i>" },
+            ch_geneva: { city: "GENEVA &bull; SWITZERLAND", shows: "&bull; <b>International Red Cross:</b> Global Logistics &mdash; <i>Life of a Box Patron</i>" },
+            ch_bern: { city: "BERN &bull; SWITZERLAND", shows: "&bull; <b>International Cartographic Association:</b> <i>Cartographic Spatial Discourse</i>" },
+            ch_ballenberg: { city: "BALLENBERG &bull; SWITZERLAND", shows: "&bull; <b>Ballenberg Open-Air Museum:</b> <i>Heritage Material Patron</i>" },
             uk_london: {
                 city: "LONDON &bull; UNITED KINGDOM",
-                shows: "&bull; <b>Tate:</b> Director of Tate &mdash; <i>CONVIVIALITY</i><br>&bull; <b>The Courtauld Institute:</b> <i>INTERTIDAL</i><br>&bull; <b>UCL:</b> <i>KATABASIS</i> | <i>PROFOUNDLY AMORAL</i> | <i>DEPTH</i> | <i>THE DREAM AND THE NIGHTMARE</i><br>&bull; <b>SOAS:</b> <i>TRANSVERSALITY</i><br>&bull; <b>LSE:</b> <i>DIGNITY</i><br>&bull; <b>Amazon UK:</b> 20 Packaging Vessels"
+                shows: "&bull; <b>Tate:</b> <i>CONVIVIALITY</i><br>&bull; <b>The Courtauld Institute:</b> <i>INTERTIDAL</i><br>&bull; <b>UCL:</b> <i>KATABASIS</i> | <i>PROFOUNDLY AMORAL</i> | <i>DEPTH</i><br>&bull; <b>SOAS:</b> <i>TRANSVERSALITY</i><br>&bull; <b>LSE:</b> <i>DIGNITY</i>"
             },
-            uk_oxford: {
-                city: "OXFORD &bull; UNITED KINGDOM",
-                shows: "&bull; <b>St Edmund Hall:</b> <i>NATURE</i><br>&bull; <b>Environmental Change Institute:</b> <i>FLOURISHING</i><br>&bull; <b>Ruskin School of Art:</b> <i>MERCY</i>"
-            },
-            uk_cambridge: {
-                city: "CAMBRIDGE &bull; UNITED KINGDOM",
-                shows: "&bull; <b>Modern Languages:</b> <i>HIRAETH</i><br>&bull; <b>Philosophy:</b> <i>MOVEMENT</i><br>&bull; <b>Sociology:</b> <i>LOVE</i>"
-            },
-            uk_edinburgh: {
-                city: "EDINBURGH &bull; SCOTLAND",
-                shows: "&bull; <b>National Galleries Scotland:</b> <i>DISPUTATIOUS</i><br>&bull; <b>University of Edinburgh:</b> <i>SACRED</i> | <i>SUBSIDIARITY</i>"
-            },
-            uk_exeter: { city: "EXETER &bull; UK", shows: "&bull; <b>IAIS:</b> <i>POWER</i><br>&bull; <b>Climate Dynamics:</b> <i>GAIA / TIPPING</i>" },
-            uk_birmingham: { city: "BIRMINGHAM &bull; UK", shows: "&bull; <b>Philosophy:</b> <i>AGENCY</i><br>&bull; <b>IRiS:</b> <i>TOMORROW</i>" },
-            uk_bristol: { city: "BRISTOL &bull; UK", shows: "&bull; <b>Humanities:</b> <i>EPHEMERAL</i>" },
-            uk_kent: { city: "KENT &bull; UK", shows: "&bull; <b>Aesthetics Centre:</b> <i>CREPUSCULAR</i><br>&bull; <b>Hawk Conservancy:</b> <i>Life of a Box Patron</i>" },
-            uk_leeds: { city: "LEEDS &bull; UK", shows: "&bull; <b>University of Leeds:</b> <i>CONCERNED</i>" },
-            uk_lincoln: { city: "LINCOLN &bull; UK", shows: "&bull; <b>Fine Art:</b> <i>AQUA</i>" },
-            uk_manchester: { city: "MANCHESTER &bull; UK", shows: "&bull; <b>Anthropology:</b> <i>INTEGRITY</i>" },
-            uk_aberdeen: { city: "ABERDEEN &bull; SCOTLAND", shows: "&bull; <b>Anthropology:</b> <i>CORRESPONDENCE</i>" },
-            harvard: {
-                city: "HARVARD UNIVERSITY &bull; MASSACHUSETTS",
-                shows: "&bull; <b>Harvard Leadership &amp; Faculty Archives:</b> President Emeritus | Harvard Law | Divinity School | Graduate School of Design"
-            },
-            usa: {
-                city: "UNITED STATES OF AMERICA",
-                shows: "&bull; <b>Retrospective:</b> Berkeley Commonplace (California)<br>&bull; <b>Partners:</b> Stanford | MIT | Princeton | Yale | Equal Justice Initiative | Jane Goodall Institute"
-            },
-            bc_vancouver: { city: "BRITISH COLUMBIA &bull; CANADA", shows: "&bull; <b>UBC &amp; Victoria:</b> Philosophy, Anthropology &amp; Indigenous Studies" },
-            alberta_calgary: { city: "ALBERTA &bull; CANADA", shows: "&bull; <b>U of Calgary &amp; Edmonton:</b> Performing Arts &amp; Medalta Museum" },
-            toronto_waterloo: { city: "ONTARIO &bull; CANADA", shows: "&bull; <b>Seneca College:</b> <i>I Am Exhibition</i><br>&bull; <b>U of Toronto &amp; Waterloo:</b> Participatory Fieldwork" },
-            ottawa_kingston: { city: "OTTAWA &amp; KINGSTON &bull; CANADA", shows: "&bull; <b>Queen's University &amp; Carleton:</b> Nobel Laureate Research Group" },
-            montreal_qc: { city: "QUEBEC &bull; CANADA", shows: "&bull; <b>McGill University &amp; Native Women's Shelter:</b> Kainai Nation Dialogue" },
-            yukon_atlantic: { city: "YUKON &amp; ATLANTIC CANADA", shows: "&bull; <b>Manitoba, Saskatchewan &amp; Dalhousie:</b> Indigenous Cultural Studies" },
-            cz_prague: {
-                city: "PRAGUE &amp; CZECH REPUBLIC",
-                shows: "&bull; <b>Patronage:</b> Ministry of the Environment, Prague<br>&bull; <b>State Museums:</b> Municipal Library, Jerusalem Synagogue, Diocese of Pilsen<br>&bull; <b>Universities:</b> Charles University, Masaryk University"
-            },
-            brussels: { city: "BRUSSELS &bull; BELGIUM / EU", shows: "&bull; <b>Brussels Expo:</b> <i>Life of a Box European Commission Exhibition</i>" },
+            uk_oxford: { city: "OXFORD &bull; UK", shows: "&bull; <b>St Edmund Hall:</b> <i>NATURE</i><br>&bull; <b>ECI:</b> <i>FLOURISHING</i><br>&bull; <b>Ruskin School:</b> <i>MERCY</i>" },
+            uk_cambridge: { city: "CAMBRIDGE &bull; UK", shows: "&bull; <b>Linguistics:</b> <i>HIRAETH</i><br>&bull; <b>Philosophy:</b> <i>MOVEMENT</i><br>&bull; <b>Sociology:</b> <i>LOVE</i>" },
+            uk_edinburgh: { city: "EDINBURGH &bull; SCOTLAND", shows: "&bull; <b>National Galleries Scotland:</b> <i>DISPUTATIOUS</i><br>&bull; <b>University of Edinburgh:</b> <i>SACRED</i>" },
+            harvard: { city: "HARVARD UNIVERSITY &bull; MASSACHUSETTS", shows: "&bull; <b>Harvard Leadership &amp; Faculty Archives:</b> President Emeritus | Harvard Law | Divinity School" },
+            usa: { city: "UNITED STATES OF AMERICA", shows: "&bull; <b>Retrospective:</b> Berkeley Commonplace<br>&bull; <b>Partners:</b> Stanford | MIT | Princeton | Yale" },
+            cz_prague: { city: "PRAGUE &amp; CZECH REPUBLIC", shows: "&bull; <b>Ministry of Environment &amp; State Museums:</b> Monographic Retrospectives" },
+            brussels: { city: "BRUSSELS &bull; BELGIUM / EU", shows: "&bull; <b>Brussels Expo:</b> <i>Life of a Box Installation</i>" },
             poland: { city: "POLAND &bull; DUSZNIKI-ZDRÓJ", shows: "&bull; <b>Museum of Paper:</b> Permanent State Monograph Collection" },
-            finland: { city: "FINLAND &amp; ÅLAND", shows: "&bull; <b>Gallery MABD, Oulu:</b> Solo Retrospective (<i>Unknown</i>)" },
-            germany: { city: "GERMANY &bull; FRANKFURT &amp; BERLIN", shows: "&bull; <b>Institutes:</b> Max Planck, Humboldt, Goethe University, Potsdam Institute" },
-            france: { city: "PARIS &bull; FRANCE", shows: "&bull; <b>Sorbonne University Directorate &amp; Art for Amnesty:</b> Philosophical Archives" },
-            athens: { city: "GREECE &amp; CYPRUS", shows: "&bull; <b>Athens School of Fine Arts:</b> Pigment Trajectory Research" },
             dubai: { city: "DUBAI &amp; ABU DHABI &bull; UAE", shows: "&bull; <b>H Hotel &amp; Royal Mirage:</b> Retrospective Viewings" },
-            goa: { city: "GOA &amp; MUMBAI &bull; INDIA", shows: "&bull; <b>Carpe Diem Gallery:</b> Early Monographic Interventions" },
-            pakistan: { city: "KARACHI &bull; PAKISTAN", shows: "&bull; <b>University of Peshawar &amp; Mohatta Palace Museum</b>" },
-            palestine: { city: "PALESTINE", shows: "&bull; <b>ANERA Gaza &amp; Freedom Theatre Jenin:</b> Cultural Archives" },
-            malaysia: { city: "KUALA LUMPUR &bull; MALAYSIA", shows: "&bull; <b>Private Monographic Retrospective</b>" },
-            nz: { city: "NEW ZEALAND (AOTEAROA)", shows: "&bull; <b>University of Auckland &amp; Waitangi Museum</b>" },
-            svalbard: { city: "SVALBARD &amp; NORWAY", shows: "&bull; <b>Svalbard Global Seed Vault &amp; Innovation Norway</b>" }
+            goa: { city: "GOA &amp; MUMBAI &bull; INDIA", shows: "&bull; <b>Carpe Diem Gallery:</b> Early Monographic Interventions" }
         };
 
         function openMapDetails(key, event) {
             if (event) event.stopPropagation();
 
-            // Clear previous active nodes
             document.querySelectorAll('.map-node').forEach(n => n.classList.remove('active-node'));
 
             const data = mapCityData[key];
@@ -1674,7 +1685,6 @@
 
                 popup.classList.add('active');
 
-                // Dynamic Position directly beside the clicked node
                 if (nodeElem) {
                     const nodeRect = nodeElem.getBoundingClientRect();
                     const frameRect = frame.getBoundingClientRect();
@@ -1682,7 +1692,6 @@
                     let leftPos = (nodeRect.left - frameRect.left) + 20;
                     let topPos = (nodeRect.top - frameRect.top) - 20;
 
-                    // Boundary checks so box stays inside map container
                     if (leftPos + 320 > frameRect.width) {
                         leftPos = (nodeRect.left - frameRect.left) - 330;
                     }
@@ -1713,7 +1722,6 @@
             }
         }
 
-        // Close map tooltip when clicking outside frame
         document.addEventListener('click', function(e) {
             const frame = document.getElementById('mapCanvasFrame');
             if (frame && !frame.contains(e.target)) {
