@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hesham Malik | Sovereign Monographic Portal &amp; Provenance Ledger</title>
 
-    <!-- Primary Metadata -->
     <meta name="description" content="Official Sovereign Monographic Portal of Hesham Malik. Three decades of fine art, monumental public installations, museum holdings, and global participatory archives.">
     <meta name="keywords" content="Hesham Malik, Fine Art, Sovereign Monograph, Masterwork Provenance, Words Project, Life of a Box, Voices of the Land, Rooh-Nawaz, Fine Art Investment">
     <meta name="author" content="Hesham Malik">
     <link rel="canonical" href="https://heshammalik.com/">
 
-    <!-- Open Graph Protocol -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Hesham Malik Monographic Portal">
     <meta property="og:title" content="Hesham Malik | Sovereign Monographic Portal">
@@ -19,12 +17,10 @@
     <meta property="og:url" content="https://heshammalik.com/">
     <meta property="og:locale" content="en_US">
 
-    <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Structured Data Schema (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -90,7 +86,6 @@
             overflow-x: hidden;
         }
 
-        /* Full Bleed Hero */
         header.full-bleed-hero {
             position: relative;
             width: 100vw;
@@ -173,7 +168,6 @@
             transform: rotate(45deg);
         }
 
-        /* Pinned Navigation Bar */
         nav.nav-bar {
             position: fixed;
             top: 0;
@@ -245,7 +239,6 @@
             color: #000000;
         }
 
-        /* Benchmark Callout Box */
         .benchmark-box {
             background: var(--surface-solid);
             border: 1px solid var(--border-gold);
@@ -278,7 +271,6 @@
             color: var(--text-secondary);
         }
 
-        /* Key Metrics Bar */
         .metrics-bar {
             max-width: 1140px;
             margin: 60px auto;
@@ -335,7 +327,6 @@
             text-align: center;
         }
 
-        /* Chronicles of Mombasa Mosaic Grid */
         .mombasa-header {
             text-align: center;
             max-width: 800px;
@@ -402,7 +393,7 @@
             transform: scale(1.06);
         }
 
-        /* Flight Radar Container */
+        /* Flight Radar Container with Fixed Pointer Events & Positioning */
         .real-map-wrapper {
             background: var(--surface-card);
             border: 1px solid var(--border-gold);
@@ -421,7 +412,7 @@
             background-color: #000000;
             border: 1px solid var(--border-gold);
             box-shadow: inset 0 0 50px rgba(0,0,0,0.95), 0 0 25px var(--accent-gold-glow);
-            overflow: hidden;
+            overflow: visible; /* Prevents popup clipping */
         }
 
         .radar-grid {
@@ -434,11 +425,10 @@
                 linear-gradient(to right, rgba(212, 175, 55, 0.04) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(212, 175, 55, 0.04) 1px, transparent 1px);
             background-size: 40px 40px;
-            pointer-events: none;
+            pointer-events: none; /* Allows click-through to nodes */
             z-index: 2;
         }
 
-        /* Style for world (1).svg */
         .world-map-svg {
             position: absolute;
             top: 0;
@@ -448,21 +438,22 @@
             object-fit: contain;
             opacity: 0.55;
             filter: sepia(100%) hue-rotate(5deg) saturate(300%) brightness(110%);
-            pointer-events: none;
+            pointer-events: none; /* Allows click-through to nodes */
             z-index: 1;
         }
 
-        /* Radar Nodes */
+        /* High Z-Index Interactive Nodes */
         .map-node {
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             background: #ffffff;
             border-radius: 50%;
             transform: translate(-50%, -50%);
             cursor: pointer;
-            z-index: 5;
+            z-index: 100; /* Keeps nodes clickable above grid */
             box-shadow: 0 0 10px var(--accent-gold);
+            pointer-events: auto;
         }
 
         .map-node::after {
@@ -470,11 +461,12 @@
             position: absolute;
             top: -5px;
             left: -5px;
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             border: 1px solid var(--accent-gold);
             border-radius: 50%;
             animation: pulse-ring 1.8s infinite ease-out;
+            pointer-events: none;
         }
 
         .map-node:hover {
@@ -489,7 +481,7 @@
 
         .node-label {
             position: absolute;
-            top: 14px;
+            top: 16px;
             left: 50%;
             transform: translateX(-50%);
             font-size: 0.62rem;
@@ -503,42 +495,62 @@
             pointer-events: none;
         }
 
+        /* Fixed Pop-up Card Box */
         .map-popup-card {
             position: absolute;
-            bottom: 20px;
+            bottom: -15px;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) translateY(100%);
             width: 92%;
             max-width: 650px;
-            background: rgba(5, 5, 5, 0.96);
-            backdrop-filter: blur(20px);
+            background: rgba(8, 8, 8, 0.98);
+            backdrop-filter: blur(25px);
             border: 1px solid var(--border-gold);
             padding: 22px 28px;
             text-align: left;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.95);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.98), 0 0 20px var(--accent-gold-glow);
             display: none;
-            z-index: 10;
+            z-index: 200;
         }
 
         .map-popup-card.active { display: block; }
 
+        .map-popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
         .map-popup-city {
             font-family: var(--font-serif);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--accent-gold);
-            margin: 0 0 8px 0;
+            margin: 0;
             font-weight: 300;
         }
 
+        .map-popup-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .map-popup-close:hover { color: var(--accent-gold); }
+
         .map-popup-shows {
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             color: var(--text-secondary);
             line-height: 1.8;
-            max-height: 200px;
+            max-height: 220px;
             overflow-y: auto;
         }
 
-        /* Live Word Search Terminal */
         .word-terminal-box {
             background: var(--surface-card);
             border: 1px solid var(--border-gold);
@@ -592,7 +604,6 @@
             color: #ffffff;
         }
 
-        /* Provenance Ledger Section */
         .ledger-controls {
             display: flex;
             justify-content: center;
@@ -721,7 +732,6 @@
             background: var(--surface-solid);
         }
 
-        /* Material Scrubber Inspector */
         .scrubber-inspector-box {
             background: var(--surface-solid);
             border: 1px solid var(--border-gold);
@@ -764,7 +774,6 @@
             margin-top: 10px;
         }
 
-        /* Sovereign Vault */
         .vault-section {
             background: linear-gradient(180deg, var(--surface-solid) 0%, #040404 100%);
             border: 1px solid var(--border-gold);
@@ -830,7 +839,6 @@
 
         .vault-submit:hover { opacity: 0.88; }
 
-        /* Modal System */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -879,7 +887,6 @@
 
         .modal-close:hover { color: var(--accent-gold); }
 
-        /* Footer */
         footer {
             background: var(--surface-solid);
             border-top: 1px solid var(--border-subtle);
@@ -915,7 +922,6 @@
 </head>
 <body>
 
-    <!-- Pinned Navigation -->
     <nav class="nav-bar">
         <a href="#" class="nav-brand">
             <span class="nav-brand-title">Hesham Malik</span>
@@ -931,7 +937,6 @@
         </div>
     </nav>
 
-    <!-- Corner-to-Corner Full-Bleed Main Hero Photo -->
     <header class="full-bleed-hero">
         <img src="hero-full-image.jpg" alt="Hesham Malik Masterwork Canvas" class="hero-bg-img">
         <div class="hero-overlay-content">
@@ -944,16 +949,13 @@
         </a>
     </header>
 
-    <!-- Main Content Portal -->
     <div id="main-content">
-        <!-- Benchmark Callout Box -->
         <div class="benchmark-box">
             <span class="benchmark-tag">&bull; Documented Historical Benchmark</span>
             <div class="benchmark-text">Single Monograph Transaction Valued at $50M+ USD</div>
             <div class="benchmark-subtext">Permanent State &amp; Museum Repositories: National Museum of History of Ukraine | Museum of Paper (Poland) | Czech Republic State Gallery Network</div>
         </div>
 
-        <!-- Metrics Bar -->
         <div class="metrics-bar">
             <div class="metric-card">
                 <div class="metric-number">30+</div>
@@ -974,7 +976,6 @@
         </div>
 
         <main>
-            <!-- Chronicles of Mombasa Section -->
             <section id="mombasa-grid">
                 <div class="mombasa-header">
                     <span class="benchmark-tag">&bull; Photo Monograph Series &bull; Kenya &bull;</span>
@@ -1079,7 +1080,6 @@
                 </div>
             </section>
 
-            <!-- Airport Flight Radar Map Section -->
             <section id="map-section">
                 <h2 class="section-heading">Interactive Global Footprint Radar</h2>
                 
@@ -1090,10 +1090,8 @@
                     <div class="map-canvas-frame">
                         <div class="radar-grid"></div>
 
-                        <!-- Direct Local World Map File -->
                         <img src="world-map.svg" class="world-map-svg" alt="Global Footprint Map">
 
-                        <!-- Geolocation Hotspots: USA & International -->
                         <div class="map-node" style="top: 28%; left: 24%;" onclick="openMapDetails('harvard')">
                             <span class="node-label">Harvard / MA</span>
                         </div>
@@ -1101,7 +1099,6 @@
                             <span class="node-label">USA Nodes</span>
                         </div>
 
-                        <!-- Geolocation Hotspots: Canadian Regional Network -->
                         <div class="map-node" style="top: 25%; left: 16%;" onclick="openMapDetails('bc_vancouver')">
                             <span class="node-label">Vancouver &amp; BC</span>
                         </div>
@@ -1121,7 +1118,6 @@
                             <span class="node-label">Yukon &amp; Atlantic</span>
                         </div>
 
-                        <!-- Geolocation Hotspots: United Kingdom Regional Multi-City Network -->
                         <div class="map-node" style="top: 21%; left: 45.2%;" onclick="openMapDetails('uk_london')">
                             <span class="node-label">London / UK</span>
                         </div>
@@ -1159,7 +1155,6 @@
                             <span class="node-label">Aberdeen</span>
                         </div>
 
-                        <!-- Geolocation Hotspots: Swiss Confederation Network -->
                         <div class="map-node" style="top: 25.2%; left: 49.8%;" onclick="openMapDetails('ch_zurich')">
                             <span class="node-label">Zurich / CH</span>
                         </div>
@@ -1173,7 +1168,6 @@
                             <span class="node-label">Ballenberg / CH</span>
                         </div>
 
-                        <!-- Geolocation Hotspots: African Continental Sector -->
                         <div class="map-node" style="top: 58%; left: 51.5%;" onclick="openMapDetails('af_kinshasa')">
                             <span class="node-label">Kinshasa / DRC</span>
                         </div>
@@ -1193,7 +1187,6 @@
                             <span class="node-label">Nairobi &amp; Mombasa / KE</span>
                         </div>
 
-                        <!-- European, Middle Eastern, Asian & Global Hotspots -->
                         <div class="map-node" style="top: 22%; left: 52%;" onclick="openMapDetails('cz_prague')">
                             <span class="node-label">Prague / CZ</span>
                         </div>
@@ -1240,16 +1233,17 @@
                             <span class="node-label">Svalbard</span>
                         </div>
 
-                        <!-- Details Box -->
                         <div class="map-popup-card" id="mapPopupCard">
-                            <div class="map-popup-city" id="popupCityTitle">City / Region</div>
+                            <div class="map-popup-header">
+                                <div class="map-popup-city" id="popupCityTitle">City / Region</div>
+                                <button class="map-popup-close" onclick="closeMapDetails()">&times;</button>
+                            </div>
                             <div class="map-popup-shows" id="popupCityBody">Click any gold node to inspect records...</div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Live Institutional Word Matrix Terminal -->
             <section id="word-archive">
                 <div class="word-terminal-box">
                     <span class="benchmark-tag">&bull; LIVE GLOBAL WORD DONATION MATRIX &bull; NEURO-AESTHETIC ARCHIVE</span>
@@ -1259,7 +1253,6 @@
                     <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Donated Terms (e.g., Wits, Lagos, PAWA254, ETH Zurich, Synergy, Artivism)...">
                     
                     <div class="word-pills-container" id="wordPillsContainer">
-                        <!-- African Continental Institutional Network -->
                         <span class="word-pill-item">Congo Children Trust (Kinshasa, DRC): <strong>HUMANITARIAN ADVOCACY</strong></span>
                         <span class="word-pill-item">Wits School of Arts (University of the Witwatersrand, SA): <strong>SYNERGY</strong></span>
                         <span class="word-pill-item">Centre for Human Rights (University of Pretoria, SA): <strong>SERENDIPITY</strong></span>
@@ -1270,7 +1263,6 @@
                         <span class="word-pill-item">Nigerian Educationalist Sector: <strong>SPIRITED</strong></span>
                         <span class="word-pill-item">PAWA254 Creative Civic Initiative (Nairobi, Kenya): <strong>ARTIVISM</strong></span>
 
-                        <!-- Swiss Confederation Institutional Network -->
                         <span class="word-pill-item">ETH Zurich (Chair of Architecture &amp; Territorial Planning): <strong>PRIJATELJSTVO (ПРИЈАТЕЉСТВО)</strong></span>
                         <span class="word-pill-item">ETH Zurich (Head of Institute of History &amp; Theory of Architecture): <strong>TOGETHER</strong></span>
                         <span class="word-pill-item">Artas Foundation (Swiss Foundation for Art in Conflict): <strong>EQUANIMITY / GELASSENHEIT</strong></span>
@@ -1278,7 +1270,6 @@
                         <span class="word-pill-item">International Red Cross (Geneva): <strong>LIFE OF A BOX ECOLOGICAL PATRON</strong></span>
                         <span class="word-pill-item">Ballenberg Open-Air Museum: <strong>HERITAGE MATERIAL PATRON</strong></span>
 
-                        <!-- United Kingdom Institutional Network -->
                         <span class="word-pill-item">Tate (Director of Tate): <strong>CONVIVIALITY</strong></span>
                         <span class="word-pill-item">The Courtauld Institute of Art (Dean &amp; Deputy Director): <strong>INTERTIDAL</strong></span>
                         <span class="word-pill-item">UCL (Prof. of Humanities &amp; Centre Director): <strong>KATABASIS</strong></span>
@@ -1319,29 +1310,24 @@
                         <span class="word-pill-item">Hawk Conservancy Trust: <strong>LIFE OF A BOX ARCHIVE</strong></span>
                         <span class="word-pill-item">Amazon UK (London): <strong>LIFE OF A BOX ARCHIVE (20 VESSEL UNITS)</strong></span>
 
-                        <!-- Harvard Leadership & Faculties -->
                         <span class="word-pill-item">President Emeritus of Harvard University: <strong>HARVARD LEADERSHIP ARCHIVE</strong></span>
                         <span class="word-pill-item">Harvard Law School &amp; Divinity School: <strong>HARVARD ACADEMIC REPOSITORY</strong></span>
                         <span class="word-pill-item">Harvard Graduate School of Design: <strong>HARVARD ARCHITECTURAL MATRIX</strong></span>
                         
-                        <!-- Top Global Universities -->
                         <span class="word-pill-item">Stanford University &amp; MIT: <strong>QUANTUM &amp; HUMANITIES DATA</strong></span>
                         <span class="word-pill-item">Sorbonne University (France): <strong>SORBONNE PHILOSOPHICAL ARCHIVE</strong></span>
                         <span class="word-pill-item">Yale University &amp; Princeton University: <strong>IVY LEAGUE MONOGRAPHIC RECORD</strong></span>
 
-                        <!-- Human Rights & Global NGOs -->
                         <span class="word-pill-item">Equal Justice Initiative: <strong>JUSTICE &amp; MEMORY</strong></span>
                         <span class="word-pill-item">Art for Amnesty Founder (Amnesty International): <strong>ART FOR HUMAN RIGHTS</strong></span>
                         <span class="word-pill-item">Svalbard Global Seed Vault (Norway): <strong>PLANETARY PRESERVATION</strong></span>
                         <span class="word-pill-item">Jane Goodall Institute (USA): <strong>ECOLOGICAL STEWARDSHIP</strong></span>
                         <span class="word-pill-item">Greenpeace International (Netherlands): <strong>ENVIRONMENTAL RESILIENCE</strong></span>
 
-                        <!-- World Museums & Galleries -->
                         <span class="word-pill-item">National Gallery of Canada: <strong>SACRED HERITAGE ARCHIVE</strong></span>
                         <span class="word-pill-item">Ludwig Museum (Hungary) &amp; Hamburger Kunsthalle: <strong>EUROPEAN CONTEMPORARY ARCHIVE</strong></span>
                         <span class="word-pill-item">Museum of Papermaking (Poland): <strong>PERMANENT STATE COLLECTION</strong></span>
                         
-                        <!-- Arctic, Indigenous & Cultural Foundations -->
                         <span class="word-pill-item">Greenland National Museum &amp; Archives: <strong>ARCTIC CULTURAL CODEX</strong></span>
                         <span class="word-pill-item">Endangered Languages Project: <strong>LINGUISTIC DIVERSITY ARCHIVE</strong></span>
                         <span class="word-pill-item">Jewish Museum Frankfurt &amp; Hebrew University: <strong>HISTORICAL MEMORY REGISTER</strong></span>
@@ -1349,7 +1335,6 @@
                 </div>
             </section>
 
-            <!-- Masterwork Provenance Ledger -->
             <section id="ledger">
                 <h2 class="section-heading">Masterwork Provenance Ledger</h2>
                 
@@ -1362,7 +1347,6 @@
                 </div>
 
                 <div class="ledger-grid">
-                    <!-- Ledger Row 1 -->
                     <div class="ledger-row" data-category="words">
                         <div class="ledger-visual">
                             <img src="words-texture-1.jpg" alt="Equanimity Gelassenheit Canvas">
@@ -1382,7 +1366,6 @@
                         </div>
                     </div>
 
-                    <!-- Ledger Row 2 -->
                     <div class="ledger-row" data-category="box">
                         <div class="ledger-visual">
                             <img src="box-spatial-1.jpg" alt="Life of a Box Installation">
@@ -1402,7 +1385,6 @@
                         </div>
                     </div>
 
-                    <!-- Ledger Row 3 -->
                     <div class="ledger-row" data-category="voices">
                         <div class="ledger-visual">
                             <img src="land-spatial-2.jpg" alt="Mowicha Voices of the Land">
@@ -1424,7 +1406,6 @@
                 </div>
             </section>
 
-            <!-- Material Scrubber Inspector -->
             <section id="materials">
                 <h2 class="section-heading">Material Lifecycle Scrubber</h2>
                 <div class="scrubber-inspector-box">
@@ -1445,7 +1426,6 @@
                 </div>
             </section>
 
-            <!-- Sovereign Vault -->
             <section id="vault" class="vault-section">
                 <h3 class="vault-title">The Sovereign Archive Vault</h3>
                 <p class="vault-sub">Restricted access portal for museum directors, biennial curators, and institutional collectors. Enter access keyphrase to review private registers and upcoming museum loans.</p>
@@ -1457,7 +1437,6 @@
         </main>
     </div>
 
-    <!-- Modal Dossier Container -->
     <div class="modal-overlay" id="dossierModal">
         <div class="modal-box">
             <button class="modal-close" onclick="closeDossier()">&times;</button>
@@ -1467,7 +1446,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-copy">
             &copy; 2026 Hesham Malik. All Rights Reserved. Sovereign Monographic Register.
@@ -1668,6 +1646,11 @@
             }
         }
 
+        function closeMapDetails() {
+            const popup = document.getElementById('mapPopupCard');
+            if (popup) popup.classList.remove('active');
+        }
+
         const scrubberImages = {
             "1": "land-texture-2.jpg",
             "2": "words-texture-1.jpg",
@@ -1735,4 +1718,28 @@
             
             pills.forEach(pill => {
                 const text = pill.innerText.toLowerCase();
-                if (text.includes
+                if (text.includes(input)) {
+                    pill.style.display = 'inline-block';
+                } else {
+                    pill.style.display = 'none';
+                }
+            });
+        }
+
+        function filterLedger(category, event) {
+            const buttons = document.querySelectorAll('.ledger-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if (event && event.target) event.target.classList.add('active');
+
+            const rows = document.querySelectorAll('.ledger-row');
+            rows.forEach(row => {
+                if (category === 'all' || row.dataset.category === category) {
+                    row.style.display = 'grid';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
