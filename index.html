@@ -266,11 +266,6 @@
             letter-spacing: 0.05em;
         }
 
-        .benchmark-subtext {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-        }
-
         .metrics-bar {
             max-width: 1140px;
             margin: 60px auto;
@@ -341,6 +336,11 @@
             color: #ffffff;
             text-transform: uppercase;
             margin: 10px 0;
+            transition: color 0.3s ease;
+        }
+
+        .mombasa-title:hover {
+            color: var(--accent-gold);
         }
 
         .mombasa-subtitle {
@@ -349,12 +349,6 @@
             letter-spacing: 0.35em;
             text-transform: uppercase;
             margin-bottom: 20px;
-        }
-
-        .mombasa-description {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
         }
 
         .mosaic-grid {
@@ -973,10 +967,12 @@
     </header>
 
     <div id="main-content">
+        <!-- GLOBAL PRACTICE & INSTITUTIONAL ARCHIVES BANNER -->
         <div class="benchmark-box">
-            <span class="benchmark-tag">&bull; Documented Historical Benchmark</span>
-            <div class="benchmark-text">Single Monograph Transaction Valued at $50M+ USD</div>
-            <div class="benchmark-subtext">Permanent State &amp; Museum Repositories: National Museum of History of Ukraine | Museum of Paper (Poland) | Czech Republic State Gallery Network</div>
+            <span class="benchmark-tag">&bull; Global Practice &amp; Institutional Archives</span>
+            <div class="benchmark-text">
+                A practice defined by large-scale monochromatic works, raw human portraiture, and expansive conceptual series. Held across public state repositories, international museum collections, and private foundations, the studio maintains an active archive spanning public installations, solo monograph projects, and ongoing site-specific research across Europe, Asia, and Africa.
+            </div>
         </div>
 
         <div class="metrics-bar">
@@ -1001,12 +997,30 @@
         <main>
             <section id="mombasa-grid">
                 <div class="mombasa-header">
-                    <span class="benchmark-tag">&bull; Photo Monograph Series &bull; Kenya &bull;</span>
-                    <h2 class="mombasa-title">Chronicles of Mombasa</h2>
+                    <span class="benchmark-tag">&bull; Photo Monograph Series &bull; Kenya &bull; 2008</span>
+                    
+                    <!-- CLICKABLE TITLE -->
+                    <h2 class="mombasa-title" onclick="toggleMombasaEssay()" style="cursor: pointer; user-select: none;" title="Click to expand curatorial note">
+                        Chronicles of Mombasa <span id="mombasa-toggle-icon" style="font-size: 1.2rem; color: var(--accent-gold); margin-left: 10px; vertical-align: middle;">+</span>
+                    </h2>
+                    
                     <div class="mombasa-subtitle">Faces, Moments, and the Unfiltered Spirit of East Africa</div>
-                    <p class="mombasa-description">
-                        A visual diary recorded during travels across Africa. Thirty candid portrait studies capturing the quiet strength, curiosity, and authentic human expressions of youth through the lens of an artist.
-                    </p>
+                    
+                    <!-- EXPANDABLE CURATORIAL ESSAY (HIDDEN BY DEFAULT) -->
+                    <div id="mombasa-essay" style="display: none; text-align: left; background: var(--surface-card); border: 1px solid var(--border-subtle); padding: 25px 30px; margin-top: 20px; transition: all 0.4s ease;">
+                        <p style="font-size: 0.9rem; color: #ffffff; margin-top: 0; font-weight: 300; line-height: 1.8;">
+                            Thirty candid portrait studies capturing the presence, nuance, and unfiltered human expression of youth through the lens of an artist.
+                        </p>
+                        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.8;">
+                            Recorded in 2008, <i>Chronicles of Mombasa</i> is an intimate investigation into perception, ambition, and the unconditioned mind.
+                        </p>
+                        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.8;">
+                            During a singular encounter with school children in East Africa, a deceptively simple inquiry—asking each child to define their future aspiration—revealed a remarkable psychological dynamic. When posed with the exact same question shortly thereafter, every child offered an entirely distinct response, unburdened by rigid self-definition or narrative continuity.
+                        </p>
+                        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 0;">
+                            What began as a portrait study evolved into an observation of total cognitive freedom and fluid identity—qualities often lost in the adult experience.
+                        </p>
+                    </div>
                 </div>
 
                 <div class="mosaic-grid">
@@ -1773,8 +1787,19 @@
     </footer>
 
     <script>
+        function toggleMombasaEssay() {
+            const essay = document.getElementById('mombasa-essay');
+            const icon = document.getElementById('mombasa-toggle-icon');
+            if (essay.style.display === 'none' || essay.style.display === '') {
+                essay.style.display = 'block';
+                icon.innerHTML = '&#8722;';
+            } else {
+                essay.style.display = 'none';
+                icon.innerHTML = '+';
+            }
+        }
+
         const mapCityData = {
-            // USA REGIONAL RADAR NODES
             harvard: {
                 city: "USA &bull; HARVARD UNIVERSITY &amp; CAMBRIDGE, MA",
                 shows: `&bull; <b>Harvard International Arts + Mind Lab:</b> <i>JOY</i><br>
@@ -1811,7 +1836,7 @@
 &bull; <b>Jane Goodall Institute (Washington, D.C.):</b> <i>HOPE</i><br>
 &bull; <b>Princeton Hillel &amp; Princeton University (NJ):</b> <i>FLOURISHING</i> | <i>ALIVE</i> | <i>COOPERATION</i><br>
 &bull; <b>Yale University (New Haven, CT):</b> <i>LIMINAL</i> | <i>RESPECT</i> | <i>AIR</i> | <i>JUSTICE</i> | <i>BELOVED</i> | <i>Persian Poetic Line</i><br>
-&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רحמנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
+&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רחמנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
 &bull; <b>MIT (Cambridge, MA):</b> <i>HOPE</i> | <i>INTEGRITY</i><br>
 &bull; <b>Brown University (Providence, RI):</b> <i>TROTZDEM</i> | <i>SQUEEZE</i><br>
 &bull; <b>NYU &amp; Jewish Theological Seminary (NY):</b> <i>PRESENCE</i> | <i>DIALECTICAL</i> | <i>LOVE</i> | <i>RESPONSIBILITY</i><br>
@@ -1852,8 +1877,6 @@
 &bull; <b>University of Utah &amp; Southern Utah University (Utah):</b> <i>MEANING</i> | <i>INSTABILITY</i> | <i>FREEDOM</i><br>
 &bull; <b>University of Colorado Boulder (Colorado):</b> <i>ARTNAUTS</i>`
             },
-
-            // INTERNATIONAL INSTITUTIONS
             it_bologna_florence: {
                 city: "ITALY &bull; BOLOGNA &amp; FLORENCE",
                 shows: `&bull; <b>University of Bologna:</b> Dip. di Filosofia &mdash; <i>RESONANCE</i><br>
