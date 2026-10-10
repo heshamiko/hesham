@@ -444,11 +444,16 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            opacity: 0.35;
-            filter: invert(75%) sepia(80%) saturate(400%) hue-rotate(5deg) brightness(95%);
             pointer-events: none;
             z-index: 1;
+        }
+
+        .world-map-svg path {
+            fill: rgba(212, 175, 55, 0.08);
+            stroke: var(--accent-gold);
+            stroke-width: 0.8;
+            stroke-linejoin: round;
+            opacity: 0.7;
         }
 
         /* Radar Nodes */
@@ -1089,8 +1094,27 @@
                     <div class="map-canvas-frame">
                         <div class="radar-grid"></div>
 
-                        <!-- High-Detail Open Source World Map Vector -->
-                        <img src="https://raw.githubusercontent.com/d3/d3-geo/main/test/data/world-110m.svg" class="world-map-svg" alt="Global Monographic Map Outline">
+                        <!-- Embedded World Map Vector -->
+                        <svg class="world-map-svg" viewBox="0 0 1000 500">
+                            <!-- North America -->
+                            <path d="M 50,110 Q 70,80 120,60 T 220,50 T 310,70 T 320,130 T 270,170 T 220,240 T 170,220 T 120,170 Z" />
+                            <!-- Greenland -->
+                            <path d="M 340,30 Q 380,20 420,30 T 430,90 T 370,100 Z" />
+                            <!-- South America -->
+                            <path d="M 270,260 Q 320,260 360,290 T 370,360 T 310,470 T 270,410 T 250,330 Z" />
+                            <!-- Europe -->
+                            <path d="M 460,70 Q 520,50 580,60 T 600,110 T 540,140 T 480,120 Z" />
+                            <!-- British Isles -->
+                            <path d="M 435,90 Q 450,80 460,95 T 445,115 Z" />
+                            <!-- Africa -->
+                            <path d="M 460,150 Q 540,140 600,190 T 610,260 T 540,380 T 490,360 T 450,250 Z" />
+                            <!-- Asia -->
+                            <path d="M 590,60 Q 750,40 880,50 T 940,120 T 880,210 T 780,240 T 680,210 T 600,140 Z" />
+                            <!-- India -->
+                            <path d="M 685,210 Q 730,215 725,270 T 685,240 Z" />
+                            <!-- Australia -->
+                            <path d="M 780,320 Q 880,300 920,340 T 870,420 T 780,390 Z" />
+                        </svg>
 
                         <!-- Geolocation Hotspots -->
                         <div class="map-node" style="top: 28%; left: 24%;" onclick="openMapDetails('harvard')">
