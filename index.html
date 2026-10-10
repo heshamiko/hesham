@@ -435,6 +435,7 @@
                 linear-gradient(to bottom, rgba(212, 175, 55, 0.04) 1px, transparent 1px);
             background-size: 40px 40px;
             pointer-events: none;
+            z-index: 2;
         }
 
         .world-map-svg {
@@ -443,14 +444,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-        }
-
-        .world-map-svg path {
-            fill: rgba(212, 175, 55, 0.03);
-            stroke: #d4af37;
-            stroke-width: 1.2;
-            stroke-linejoin: round;
-            filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.5));
+            object-fit: contain;
+            opacity: 0.35;
+            filter: invert(75%) sepia(80%) saturate(400%) hue-rotate(5deg) brightness(95%);
+            pointer-events: none;
+            z-index: 1;
         }
 
         /* Radar Nodes */
@@ -1091,31 +1089,8 @@
                     <div class="map-canvas-frame">
                         <div class="radar-grid"></div>
 
-                        <!-- Embedded Vector Golden Coastlines Vector -->
-                        <svg class="world-map-svg" viewBox="0 0 1000 500">
-                            <!-- North America -->
-                            <path d="M 150 70 L 230 60 L 320 90 L 300 180 L 240 240 L 180 260 L 140 200 L 90 120 Z" />
-                            <!-- Greenland -->
-                            <path d="M 350 30 L 440 20 L 460 100 L 390 110 L 360 60 Z" />
-                            <!-- South America -->
-                            <path d="M 280 270 L 350 280 L 370 380 L 320 470 L 280 400 L 260 320 Z" />
-                            <!-- Europe -->
-                            <path d="M 480 80 L 580 70 L 600 130 L 550 170 L 490 160 L 470 110 Z" />
-                            <!-- British Isles -->
-                            <path d="M 440 95 L 460 85 L 450 115 L 430 105 Z" />
-                            <!-- Africa -->
-                            <path d="M 470 180 L 580 180 L 600 280 L 550 380 L 490 340 L 460 240 Z" />
-                            <!-- Asia -->
-                            <path d="M 590 60 L 880 50 L 930 160 L 830 260 L 710 260 L 600 160 Z" />
-                            <!-- India -->
-                            <path d="M 690 220 L 740 230 L 730 300 L 690 280 Z" />
-                            <!-- Southeast Asia -->
-                            <path d="M 790 250 L 850 260 L 860 310 L 800 300 Z" />
-                            <!-- Australia -->
-                            <path d="M 800 330 L 900 320 L 920 390 L 840 430 L 780 380 Z" />
-                            <!-- New Zealand -->
-                            <path d="M 930 400 L 960 410 L 940 450 L 920 430 Z" />
-                        </svg>
+                        <!-- High-Detail Open Source World Map Vector -->
+                        <img src="https://raw.githubusercontent.com/d3/d3-geo/main/test/data/world-110m.svg" class="world-map-svg" alt="Global Monographic Map Outline">
 
                         <!-- Geolocation Hotspots -->
                         <div class="map-node" style="top: 28%; left: 24%;" onclick="openMapDetails('harvard')">
