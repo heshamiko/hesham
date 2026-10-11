@@ -453,7 +453,7 @@ const dossierData = {
     box_monograph: {
         code: "PROVENANCE DOSSIER · LIFE OF A BOX",
         title: "Monumental Packaging Sculpture",
-        body: "A flagship ecological installation utilizing cardboard packaging collected from the National Museum of the History of Ukraine, Amazon UK, Red Cross Geneva, Ballenberg Open-Air Museum, Nobel Prize Museum, and UNICEF. Exhibited across Czech state museums and documented in official catalogues from the Museum of Paper in Duszniki-Zdrój, Poland."
+        body: "A flagship ecological installation utilizing cardboard packaging collected from the National Museum of the History of Ukraine, National Museum of Denmark, Museum of Basel, Nobel Prize Museum, City Museum Nuremberg, and many more. Exhibited across state museums and documented in official catalogues from the first public display at the Museum of Paper in Duszniki-Zdrój, Poland."
     },
     mowicha: {
         code: "PROVENANCE DOSSIER · VOICES OF THE LAND",
