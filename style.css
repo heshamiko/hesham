@@ -892,3 +892,15 @@ footer {
     .mosaic-grid { grid-template-columns: repeat(2, 1fr); }
     .mombasa-title { font-size: 2rem; }
 }
+
+/* --- Mowicha (Living Wisdom) Image Centering Overrides --- */
+.ledger-row-centered .ledger-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ledger-row-centered .ledger-visual img.img-centered {
+    object-position: center center;
+    margin: 0 auto;
+}
