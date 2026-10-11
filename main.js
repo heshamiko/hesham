@@ -47,7 +47,7 @@ const mapCityData = {
 &bull; <b>Jane Goodall Institute (Washington, D.C.):</b> <i>HOPE</i><br>
 &bull; <b>Princeton Hillel &amp; Princeton University (NJ):</b> <i>FLOURISHING</i> | <i>ALIVE</i> | <i>COOPERATION</i><br>
 &bull; <b>Yale University (New Haven, CT):</b> <i>LIMINAL</i> | <i>RESPECT</i> | <i>AIR</i> | <i>JUSTICE</i> | <i>BELOVED</i> | <i>Persian Poetic Line</i><br>
-&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רחمנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
+&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רחמנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
 &bull; <b>MIT (Cambridge, MA):</b> <i>HOPE</i> | <i>INTEGRITY</i><br>
 &bull; <b>Brown University (Providence, RI):</b> <i>TROTZDEM</i> | <i>SQUEEZE</i><br>
 &bull; <b>NYU &amp; Jewish Theological Seminary (NY):</b> <i>PRESENCE</i> | <i>DIALECTICAL</i> | <i>LOVE</i> | <i>RESPONSIBILITY</i><br>
@@ -448,7 +448,7 @@ const dossierData = {
     equanimity: {
         code: "PROVENANCE DOSSIER · WORDS PROJECT",
         title: "Equanimity / Gelassenheit",
-        body: "Donated by Artas Foundation, a Swiss foundation operating in regions of conflict. Created using heavy earth pigments and presented at the Brussels Expo: Empowering Europe’s Creative Industries. It translates the donated term 'Equanimity' into a multi-layered visual field exploring calm resilience amidst geopolitical tension."
+        body: "Donated by Artas Foundation, a Swiss foundation operating in regions of conflict. Created using heavy earth pigments and presented at the Museum of West Bohemia. It translates the donated term 'Equanimity' along with others into a multi-layered visual field exploring calm resilience amidst geopolitical tension."
     },
     box_monograph: {
         code: "PROVENANCE DOSSIER · LIFE OF A BOX",
@@ -486,10 +486,6 @@ function openLightbox(imageSrc, title) {
 
 function closeDossier() {
     document.getElementById('dossierModal').classList.remove('active');
-}
-
-function scrollToVault() {
-    document.getElementById('vault').scrollIntoView({ behavior: 'smooth' });
 }
 
 function filterWords() {
