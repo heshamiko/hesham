@@ -168,12 +168,13 @@
             transform: rotate(45deg);
         }
 
+        /* Slimmed Header Navigation Bar */
         nav.nav-bar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 18px 50px;
+            padding: 12px 35px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -185,37 +186,47 @@
 
         .nav-brand {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            gap: 10px;
             text-decoration: none;
+            white-space: nowrap;
         }
 
         .nav-brand-title {
             font-family: var(--font-serif);
-            font-size: 1.25rem;
-            letter-spacing: 0.25em;
+            font-size: 1.15rem;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
             color: #ffffff;
             font-weight: 300;
         }
 
+        .nav-brand-divider {
+            color: var(--border-gold);
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
         .nav-brand-sub {
-            font-size: 0.58rem;
-            letter-spacing: 0.25em;
+            font-size: 0.62rem;
+            letter-spacing: 0.18em;
             color: var(--accent-gold);
             text-transform: uppercase;
+            font-weight: 300;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 20px;
             align-items: center;
+            white-space: nowrap;
         }
 
         .nav-link {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.65rem;
-            letter-spacing: 0.22em;
+            font-size: 0.62rem;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
             transition: color 0.3s ease;
         }
@@ -224,14 +235,15 @@
 
         .btn-vault-nav {
             border: 1px solid var(--border-gold);
-            padding: 8px 18px;
+            padding: 6px 14px;
             color: var(--accent-gold);
-            font-size: 0.65rem;
-            letter-spacing: 0.2em;
+            font-size: 0.62rem;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
             text-decoration: none;
             transition: all 0.3s ease;
             background: rgba(212, 175, 55, 0.03);
+            white-space: nowrap;
         }
 
         .btn-vault-nav:hover {
@@ -242,28 +254,29 @@
         .benchmark-box {
             background: var(--surface-solid);
             border: 1px solid var(--border-gold);
-            padding: 25px 35px;
-            max-width: 900px;
+            padding: 30px 40px;
+            max-width: 950px;
             margin: 60px auto 0 auto;
             box-shadow: 0 20px 50px rgba(0,0,0,0.8);
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 12px;
             text-align: left;
         }
 
         .benchmark-tag {
-            font-size: 0.6rem;
+            font-size: 0.62rem;
             letter-spacing: 0.3em;
             color: var(--accent-gold);
             text-transform: uppercase;
         }
 
         .benchmark-text {
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: #ffffff;
-            font-weight: 400;
-            letter-spacing: 0.05em;
+            font-weight: 300;
+            letter-spacing: 0.03em;
+            line-height: 1.85;
         }
 
         .metrics-bar {
@@ -920,10 +933,12 @@
 
         @media (max-width: 1024px) {
             .mosaic-grid { grid-template-columns: repeat(3, 1fr); }
+            .nav-brand-sub { display: none; }
+            .nav-brand-divider { display: none; }
         }
 
         @media (max-width: 900px) {
-            nav.nav-bar { padding: 15px 20px; }
+            nav.nav-bar { padding: 12px 20px; }
             .nav-links { display: none; }
             h1.hero-title-main { font-size: 3.2rem; }
             .metrics-bar { grid-template-columns: repeat(2, 1fr); }
@@ -942,15 +957,16 @@
     <nav class="nav-bar">
         <a href="#" class="nav-brand">
             <span class="nav-brand-title">Hesham Malik</span>
+            <span class="nav-brand-divider">|</span>
             <span class="nav-brand-sub">Sovereign Monographic Portal</span>
         </a>
         <div class="nav-links">
-            <a href="#mombasa-grid" class="nav-link">01 / Chronicles of Mombasa</a>
-            <a href="#map-section" class="nav-link">02 / Global Footprint Map</a>
-            <a href="#word-archive" class="nav-link">03 / Word Matrix</a>
-            <a href="#ledger" class="nav-link">04 / Provenance Ledger</a>
-            <a href="#materials" class="nav-link">05 / Material Scrubber</a>
-            <a href="#vault" class="btn-vault-nav">06 / Sovereign Vault</a>
+            <a href="#mombasa-grid" class="nav-link">Chronicles of Mombasa</a>
+            <a href="#map-section" class="nav-link">Global Footprint Map</a>
+            <a href="#word-archive" class="nav-link">Word Matrix</a>
+            <a href="#ledger" class="nav-link">Provenance Ledger</a>
+            <a href="#materials" class="nav-link">Material Scrubber</a>
+            <a href="#vault" class="btn-vault-nav">Sovereign Vault</a>
         </div>
     </nav>
 
@@ -1539,7 +1555,7 @@
                         <span class="word-pill-item">Brown University Dept. of History of Art &amp; Architecture: <strong>SQUEEZE</strong></span>
 
                         <!-- UNIVERSITY OF CALIFORNIA SYSTEM -->
-                        <span class="word-pill-item">UC Berkeley (Magnes Collection of Jewish Art &amp; Life): <strong>MISHPOKHE (משפחה)</strong></span>
+                        <span class="word-pill-item">UC Berkeley (Magnes Collection of Jewish Art &amp; Life): <strong>MISHPOKHE (משپחה)</strong></span>
                         <span class="word-pill-item">UC Berkeley Dept. of Linguistics: <strong>HUMBLE</strong></span>
                         <span class="word-pill-item">UC Davis Dept. of Art &amp; Art History: <strong>JAN (جان / Ջان)</strong></span>
                         <span class="word-pill-item">UC Irvine (Jordan Center for Persian Studies): <strong>COURAGE</strong></span>
