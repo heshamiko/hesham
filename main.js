@@ -47,7 +47,7 @@ const mapCityData = {
 &bull; <b>Jane Goodall Institute (Washington, D.C.):</b> <i>HOPE</i><br>
 &bull; <b>Princeton Hillel &amp; Princeton University (NJ):</b> <i>FLOURISHING</i> | <i>ALIVE</i> | <i>COOPERATION</i><br>
 &bull; <b>Yale University (New Haven, CT):</b> <i>LIMINAL</i> | <i>RESPECT</i> | <i>AIR</i> | <i>JUSTICE</i> | <i>BELOVED</i> | <i>Persian Poetic Line</i><br>
-&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רחמנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
+&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רחمנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
 &bull; <b>MIT (Cambridge, MA):</b> <i>HOPE</i> | <i>INTEGRITY</i><br>
 &bull; <b>Brown University (Providence, RI):</b> <i>TROTZDEM</i> | <i>SQUEEZE</i><br>
 &bull; <b>NYU &amp; Jewish Theological Seminary (NY):</b> <i>PRESENCE</i> | <i>DIALECTICAL</i> | <i>LOVE</i> | <i>RESPONSIBILITY</i><br>
@@ -458,7 +458,7 @@ const dossierData = {
     mowicha: {
         code: "PROVENANCE DOSSIER · VOICES OF THE LAND",
         title: "Mowicha (Living Wisdom)",
-        body: "In collaboration with National Gallery of Canada Knowledge Keepers, this work incorporates the Anishinaabemowin concept 'Ankosé' ('everything is connected'). Prepared using earth pigmentation to preserve indigenous oral philosophy into permanent fine art."
+        body: "In collaboration with National Gallery of Canada, Burke Museum, Endangered Languages - Oregon USA, University of Victoria, University of Alberta, and many other Knowledge Keepers. This work incorporates the Anishinaabemowin concept 'Ankosé' ('everything is connected'). Prepared using earth pigmentation/Mix media to preserve indigenous oral philosophy into permanent fine art."
     }
 };
 
