@@ -1,15 +1,24 @@
+/* ==========================================================================
+   HESHAM MALIK — SOVEREIGN MONOGRAPHIC PORTAL
+   Flagship Interactive Engine (main.js)
+   ========================================================================== */
+
+// --- 1. MOMBASA ESSAY TOGGLE ---
 function toggleMombasaEssay() {
     const essay = document.getElementById('mombasa-essay');
     const icon = document.getElementById('mombasa-toggle-icon');
+    if (!essay || !icon) return;
+
     if (essay.style.display === 'none' || essay.style.display === '') {
         essay.style.display = 'block';
-        icon.innerHTML = '&#8722;';
+        icon.innerHTML = '&#8722;'; // Minus sign
     } else {
         essay.style.display = 'none';
         icon.innerHTML = '+';
     }
 }
 
+// --- 2. GLOBAL FOOTPRINT MAP DATA REPOSITORY ---
 const mapCityData = {
     harvard: {
         city: "USA &bull; HARVARD UNIVERSITY &amp; CAMBRIDGE, MA",
@@ -47,7 +56,7 @@ const mapCityData = {
 &bull; <b>Jane Goodall Institute (Washington, D.C.):</b> <i>HOPE</i><br>
 &bull; <b>Princeton Hillel &amp; Princeton University (NJ):</b> <i>FLOURISHING</i> | <i>ALIVE</i> | <i>COOPERATION</i><br>
 &bull; <b>Yale University (New Haven, CT):</b> <i>LIMINAL</i> | <i>RESPECT</i> | <i>AIR</i> | <i>JUSTICE</i> | <i>BELOVED</i> | <i>Persian Poetic Line</i><br>
-&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רחمנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
+&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רחמנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
 &bull; <b>MIT (Cambridge, MA):</b> <i>HOPE</i> | <i>INTEGRITY</i><br>
 &bull; <b>Brown University (Providence, RI):</b> <i>TROTZDEM</i> | <i>SQUEEZE</i><br>
 &bull; <b>NYU &amp; Jewish Theological Seminary (NY):</b> <i>PRESENCE</i> | <i>DIALECTICAL</i> | <i>LOVE</i> | <i>RESPONSIBILITY</i><br>
@@ -369,6 +378,7 @@ const mapCityData = {
     }
 };
 
+// --- 3. MAP POPUP & NAVIGATION ENGINE ---
 function openMapDetails(key, event) {
     if (event) event.stopPropagation();
 
@@ -394,13 +404,14 @@ function openMapDetails(key, event) {
             let leftPos = (nodeRect.left - frameRect.left) + 20;
             let topPos = (nodeRect.top - frameRect.top) - 20;
 
-            if (leftPos + 340 > frameRect.width) {
-                leftPos = (nodeRect.left - frameRect.left) - 350;
+            // Viewport & Mobile Safe Boundary Calculations
+            if (leftPos + 300 > frameRect.width) {
+                leftPos = Math.max(10, (nodeRect.left - frameRect.left) - 310);
             }
             if (leftPos < 10) leftPos = 10;
 
-            if (topPos + 240 > frameRect.height) {
-                topPos = frameRect.height - 250;
+            if (topPos + 220 > frameRect.height) {
+                topPos = Math.max(10, frameRect.height - 230);
             }
             if (topPos < 10) topPos = 10;
 
@@ -419,11 +430,16 @@ function closeMapDetails() {
 function selectCityFromDropdown(key) {
     if (key) {
         openMapDetails(key, null);
+        const frame = document.getElementById('mapCanvasFrame');
+        if (frame) {
+            frame.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     } else {
         closeMapDetails();
     }
 }
 
+// Close map popup when clicking outside the canvas frame
 document.addEventListener('click', function(e) {
     const frame = document.getElementById('mapCanvasFrame');
     if (frame && !frame.contains(e.target)) {
@@ -431,6 +447,8 @@ document.addEventListener('click', function(e) {
     }
 });
 
+
+// --- 4. MATERIAL LIFECYCLE SCRUBBER ---
 const scrubberImages = {
     "1": "land-texture-2.jpg",
     "2": "words-texture-1.jpg",
@@ -440,10 +458,18 @@ const scrubberImages = {
 function updateScrubberView(val) {
     const img = document.getElementById('scrubberImage');
     if (img && scrubberImages[val]) {
-        img.src = scrubberImages[val];
+        img.style.transition = 'opacity 0.2s ease';
+        img.style.opacity = '0.3';
+        
+        setTimeout(() => {
+            img.src = scrubberImages[val];
+            img.style.opacity = '1';
+        }, 120);
     }
 }
 
+
+// --- 5. PROVENANCE DOSSIER & LIGHTBOX MODAL ---
 const dossierData = {
     equanimity: {
         code: "PROVENANCE DOSSIER · WORDS PROJECT",
@@ -485,23 +511,28 @@ function openLightbox(imageSrc, title) {
 }
 
 function closeDossier() {
-    document.getElementById('dossierModal').classList.remove('active');
+    const modal = document.getElementById('dossierModal');
+    if (modal) modal.classList.remove('active');
 }
 
+
+// --- 6. LIVE WORD MATRIX FILTER (WITH DEBOUNCE) ---
+let filterTimeout;
 function filterWords() {
-    const input = document.getElementById('wordSearchInput').value.toLowerCase();
-    const pills = document.querySelectorAll('.word-pill-item');
-    
-    pills.forEach(pill => {
-        const text = pill.innerText.toLowerCase();
-        if (text.includes(input)) {
-            pill.style.display = 'inline-block';
-        } else {
-            pill.style.display = 'none';
-        }
-    });
+    clearTimeout(filterTimeout);
+    filterTimeout = setTimeout(() => {
+        const input = document.getElementById('wordSearchInput').value.toLowerCase().trim();
+        const pills = document.querySelectorAll('.word-pill-item');
+        
+        pills.forEach(pill => {
+            const text = pill.innerText.toLowerCase();
+            pill.style.display = text.includes(input) ? 'inline-block' : 'none';
+        });
+    }, 150);
 }
 
+
+// --- 7. MASTERWORK LEDGER CATEGORY FILTER ---
 function filterLedger(category, event) {
     const buttons = document.querySelectorAll('.ledger-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
@@ -510,9 +541,29 @@ function filterLedger(category, event) {
     const rows = document.querySelectorAll('.ledger-row');
     rows.forEach(row => {
         if (category === 'all' || row.dataset.category === category) {
-            row.style.display = 'grid';
+            row.style.display = ''; // Reverts to stylesheet rule (grid/flex)
         } else {
             row.style.display = 'none';
         }
     });
 }
+
+
+// --- 8. GLOBAL ACCESSIBILITY & KEYBOARD HANDLERS ---
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeDossier();
+        closeMapDetails();
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('dossierModal');
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeDossier();
+            }
+        });
+    }
+});
