@@ -56,7 +56,7 @@ const mapCityData = {
 &bull; <b>Jane Goodall Institute (Washington, D.C.):</b> <i>HOPE</i><br>
 &bull; <b>Princeton Hillel &amp; Princeton University (NJ):</b> <i>FLOURISHING</i> | <i>ALIVE</i> | <i>COOPERATION</i><br>
 &bull; <b>Yale University (New Haven, CT):</b> <i>LIMINAL</i> | <i>RESPECT</i> | <i>AIR</i> | <i>JUSTICE</i> | <i>BELOVED</i> | <i>Persian Poetic Line</i><br>
-&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רחמנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
+&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רחمנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
 &bull; <b>MIT (Cambridge, MA):</b> <i>HOPE</i> | <i>INTEGRITY</i><br>
 &bull; <b>Brown University (Providence, RI):</b> <i>TROTZDEM</i> | <i>SQUEEZE</i><br>
 &bull; <b>NYU &amp; Jewish Theological Seminary (NY):</b> <i>PRESENCE</i> | <i>DIALECTICAL</i> | <i>LOVE</i> | <i>RESPONSIBILITY</i><br>
@@ -287,12 +287,20 @@ const mapCityData = {
         shows: `&bull; <b>Retrospective &amp; Galleria MABD:</b> <i>KINDNESS</i>`
     },
     gl_nuuk: {
-        city: "NUUK &bull; GREENLAND",
-        shows: `&bull; <b>Bishop Office &amp; National Museum:</b> <i>AKAAREQATIGIINNEQ</i> | <i>SILA</i>`
+        city: "GREENLAND &bull; NUUK",
+        shows: `&bull; <b>Greenland National Museum &amp; Archives (Nunatta Katersugaasivia Allagaateqarfialu):</b> Dept. of Intangible Cultural Heritage &amp; Archaeology &mdash; <i>SILA</i> | <i>ATAQQEQATIGIINNEQ</i><br>
+&bull; <b>Nuuk Art Museum:</b> Material Patrons &mdash; Structural Canvas Components (<i>Life of a Box</i>)<br>
+&bull; <b>Sipineq+:</b> Human Rights &amp; Civil Society Directorate &mdash; <i>INOOQATIGIINNEQ</i><br>
+&bull; <b>Diocese of Greenland &amp; Language Secretariat:</b> Ecclesiastical &amp; Linguistic Dialogue &mdash; <i>AKAAREQATIGIINNEQ</i> | <i>EQQISSINEQ</i>`
     },
     gl_ilulissat: {
-        city: "ILULISSAT &bull; GREENLAND",
-        shows: `&bull; <b>Mayor Office, Avannaata:</b> <i>Uagut nunarput</i>`
+        city: "GREENLAND &bull; ILULISSAT &amp; AVANNAATA REGION",
+        shows: `&bull; <b>The Museums in North-Greenland (Kalaallit Nunaata Avannaani):</b> Directorate of Regional Museums (Ilulissat, Upernavik, Uummannaq, Qaanaaq) &mdash; <i>EQQUMIITSULIORTOQ</i><br>
+&bull; <b>Municipality of Avannaata &amp; Katuaq Cultural Centre:</b> Civic &amp; Cultural Directorate &mdash; <i>UAGUT NUNARPUT</i> | <i>ATAATSIMOORNEQ</i>`
+    },
+    gl_aalborg: {
+        city: "GREENLAND (DIASPORA) &bull; AALBORG",
+        shows: `&bull; <b>Det Grønlandske Hus i Aalborg:</b> Education Department (Skoletjenesten) &mdash; <i>TASSA</i>`
     },
     uk_london: {
         city: "LONDON &bull; UK",
@@ -379,7 +387,7 @@ const mapCityData = {
         shows: `&bull; <b>Thapong Visual Arts Centre:</b> <i>INTERPRETATION</i>`
     },
     af_lagos: {
-        city: "GERMANY &bull; BERLIN &amp; FRANKFURT",
+        city: "NIGERIA &bull; LAGOS",
         shows: `&bull; <b>University of Lagos &amp; Omenka Gallery:</b> <i>PEACE</i> | <i>RESILIENCE</i>`
     },
     germany: {
