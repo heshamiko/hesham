@@ -56,7 +56,7 @@ const mapCityData = {
 &bull; <b>Jane Goodall Institute (Washington, D.C.):</b> <i>HOPE</i><br>
 &bull; <b>Princeton Hillel &amp; Princeton University (NJ):</b> <i>FLOURISHING</i> | <i>ALIVE</i> | <i>COOPERATION</i><br>
 &bull; <b>Yale University (New Haven, CT):</b> <i>LIMINAL</i> | <i>RESPECT</i> | <i>AIR</i> | <i>JUSTICE</i> | <i>BELOVED</i> | <i>Persian Poetic Line</i><br>
-&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רחمנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
+&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רחמנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
 &bull; <b>MIT (Cambridge, MA):</b> <i>HOPE</i> | <i>INTEGRITY</i><br>
 &bull; <b>Brown University (Providence, RI):</b> <i>TROTZDEM</i> | <i>SQUEEZE</i><br>
 &bull; <b>NYU &amp; Jewish Theological Seminary (NY):</b> <i>PRESENCE</i> | <i>DIALECTICAL</i> | <i>LOVE</i> | <i>RESPONSIBILITY</i><br>
@@ -170,9 +170,11 @@ const mapCityData = {
 &bull; <b>University of Primorska (Koper):</b> Faculty of Humanities &mdash; <i>INDECISION</i>`
     },
     nz_auckland: {
-        city: "NEW ZEALAND &bull; AUCKLAND",
-        shows: `&bull; <b>University of Auckland (Social Anthropology):</b> <i>MOŽNOST (POSSIBILITY)</i><br>
-&bull; <b>University of Auckland (Te Wānanga o Waipapa):</b> <i>MATEMATEĀONE</i>`
+        city: "NEW ZEALAND &bull; AUCKLAND, WAITANGI, DUNEDIN, WELLINGTON &amp; TARANAKI",
+        shows: `&bull; <b>Academic &amp; Ethnographic Collaboration:</b> University of Auckland &mdash; Department of Social Anthropology &amp; Te Wānanga o Waipapa (School of Indigenous Studies). Research dialogues and personal correspondence on social existence and cultural memory.<br>
+&bull; <b>Ecological Material Patrons (Life of a Box):</b> Te Kōngahu Museum of Waitangi (Waitangi Treaty Grounds) &amp; Tūhura Otago Museum (Dunedin North).<br>
+&bull; <b>Transformed Museum Sculpture Holdings:</b> Recycled material preservation series accessioned into <i>From Out of the Blue Studio Gallery</i> (Ōpunakē, Taranaki).<br>
+&bull; <b>Global Youth Depth Psychology (I AM Project):</b> Wellington student participation in the global online educational initiative linking youth perspectives with peer networks in Stockholm, London, Boston, Prague, Sydney, and Dubai.`
     },
     hr_zagreb: {
         city: "CROATIA &bull; ZAGREB",
@@ -250,9 +252,9 @@ const mapCityData = {
     },
     vn_hanoi: {
         city: "VIETNAM &bull; HANOI",
-        shows: `&bull; <b>Blue Dragon Children's Foundation:</b> Dedicated Monographic Tribute &amp; Art Therapy Participatory Archive.<br>
-&bull; <b>Linguistic &amp; Emotional Archive Node:</b> Interactive "Word Corner" board, field stories, and child-led art therapy vocabulary documenting trauma recovery, crisis resilience, and human dignity.<br>
-&bull; <b>Linguistic &amp; Conceptual Contributions:</b> <i>JOY</i> | <i>PEACEFUL</i> | <i>ADRIFT</i> | <i>TOGETHERNESS</i> | <i>EMPTY</i> | <i>WARM</i> | <i>LOVE</i> | <i>RESILIENCE</i>`
+        shows: `&bull; <b>Blue Dragon Children's Foundation:</b> Dedicated Monographic Tribute &amp; Participatory Archive.<br>
+&bull; <b>Human-Centered &amp; Dialogic Exchange:</b> Multi-stage narrative dialogue, field correspondence, and child-led art therapy recordings exploring trauma recovery, emotional expression, and cognitive freedom.<br>
+&bull; <b>Curatorial Focus:</b> Intimate documentation of lived childhood experiences, personal resilience, and human dignity transformed into dedicated canvas research.`
     },
     svalbard: {
         city: "SVALBARD &amp; SPITSBERGEN &bull; NORWAY",
