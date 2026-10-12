@@ -24,7 +24,7 @@
     <!-- LINK TO SEPARATE CSS FILE -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Custom Center Alignment for Mowicha Section & Macro Viewer Styles -->
+    <!-- Custom Center Alignment for Mowicha Section & Fixed Pan/Zoom Viewer Styles -->
     <style>
         .ledger-row-centered .ledger-visual {
             display: flex !important;
@@ -48,27 +48,29 @@
         .macro-view-window {
             position: relative;
             width: 100%;
-            height: 520px;
+            height: 550px;
             overflow: hidden;
             background: #050505;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             cursor: grab;
             margin-top: 20px;
             border-radius: 2px;
+            touch-action: none;
         }
         .macro-view-window:active {
             cursor: grabbing;
         }
         .macro-view-window img {
             position: absolute;
-            top: 0;
-            left: 0;
-            height: 180%;
-            width: auto;
+            top: 50%;
+            left: 50%;
             max-width: none;
-            transition: transform 0.1s ease-out;
+            height: auto;
+            width: 180%; /* Base zoom size */
+            transform-origin: center center;
             user-select: none;
             -webkit-user-drag: none;
+            transition: transform 0.05s ease-out;
         }
         .macro-controls-bar {
             display: flex;
@@ -707,7 +709,7 @@
 
                         <span class="word-pill-item">Princeton University Dept. of Religion: <strong>ALIVE</strong></span>
                         <span class="word-pill-item">Princeton University Dept. of Politics: <strong>COOPERATION</strong></span>
-                        <span class="word-pill-item">Columbia University Dept. of History: <strong>RACHMONES (רחمנות)</strong></span>
+                        <span class="word-pill-item">Columbia University Dept. of History: <strong>RACHMONES (רחמנות)</strong></span>
                         <span class="word-pill-item">Columbia Dept. of Middle Eastern, South Asian &amp; African Studies: <strong>ADAB</strong></span>
                         <span class="word-pill-item">Columbia University Dept. of Political Science: <strong>COMPASSION</strong></span>
                         <span class="word-pill-item">MIT Dept. of Philosophy &amp; Women's and Gender Studies: <strong>HOPE</strong></span>
@@ -891,7 +893,7 @@
                         </div>
                     </div>
 
-                    <!-- UPDATED MOWICHA (LIVING WISDOM) ROW -->
+                    <!-- MOWICHA (LIVING WISDOM) ROW -->
                     <div class="ledger-row ledger-row-centered" data-category="voices">
                         <div class="ledger-visual">
                             <img src="land-spatial-2.jpg" alt="Mowicha Voices of the Land" class="img-centered">
@@ -910,20 +912,20 @@
                 </div>
             </section>
 
-            <!-- REPLACED: OPTION 1 HIGH-RESOLUTION MACRO DETAIL VIEWER -->
+            <!-- HIGH-RESOLUTION MACRO DETAIL VIEWER WITH WORKING PAN & ZOOM -->
             <section id="materials">
                 <h2 class="section-heading">Surface &amp; Texture Detail</h2>
                 <div class="macro-viewer-container">
                     <span class="benchmark-tag">&bull; SURFACE &amp; TEXTURE &bull; MACRO CANVAS STUDY</span>
                     <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0 5px 0; font-weight: 300; text-transform: uppercase;">Tactile Depth &amp; Pigment Density</h3>
-                    <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0 0 10px 0;">Drag mouse/finger to pan across the high-resolution impasto and raw pigment layers.</p>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0 0 10px 0;">Click &amp; drag to pan across the texture. Scroll mouse wheel to zoom in/out.</p>
 
                     <div class="macro-view-window" id="macroWindow">
                         <img src="words-texture-1.jpg" id="macroImage" alt="Hesham Malik High-Resolution Macro Detail View">
                     </div>
 
                     <div class="macro-controls-bar">
-                        <span>Click &amp; Drag to Pan Surface</span>
+                        <span>Click &amp; Drag to Pan Surface • Scroll to Zoom</span>
                         <div>
                             <button class="macro-btn" onclick="resetMacroView()">Reset View</button>
                         </div>
@@ -951,45 +953,64 @@
     <!-- LINK TO SEPARATE JAVASCRIPT FILE -->
     <script src="main.js"></script>
 
-    <!-- Interactive Pan Script for Macro Viewer -->
+    <!-- Interactive Pan & Zoom Script for Macro Viewer -->
     <script>
         (function() {
             const windowEl = document.getElementById('macroWindow');
             const imgEl = document.getElementById('macroImage');
             if (!windowEl || !imgEl) return;
 
+            let scale = 1.2;
+            let posX = 0;
+            let posY = 0;
             let isDragging = false;
             let startX, startY;
-            let currentX = -100;
-            let currentY = -50;
 
-            function updatePos() {
-                imgEl.style.transform = `translate(${currentX}px, ${currentY}px)`;
+            function render() {
+                imgEl.style.transform = `translate(calc(-50% + ${posX}px), calc(-50% + ${posY}px)) scale(${scale})`;
             }
-            updatePos();
 
+            render();
+
+            // Mouse Dragging
             windowEl.addEventListener('mousedown', (e) => {
                 isDragging = true;
-                startX = e.clientX - currentX;
-                startY = e.clientY - currentY;
+                startX = e.clientX - posX;
+                startY = e.clientY - posY;
+                windowEl.style.cursor = 'grabbing';
             });
 
-            window.addEventListener('mouseup', () => { isDragging = false; });
+            window.addEventListener('mouseup', () => {
+                isDragging = false;
+                windowEl.style.cursor = 'grab';
+            });
 
             windowEl.addEventListener('mousemove', (e) => {
                 if (!isDragging) return;
                 e.preventDefault();
-                currentX = e.clientX - startX;
-                currentY = e.clientY - startY;
-                updatePos();
+                posX = e.clientX - startX;
+                posY = e.clientY - startY;
+                render();
             });
 
-            // Touch support for mobile devices
+            // Mouse Wheel Zooming
+            windowEl.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const zoomSpeed = 0.1;
+                if (e.deltaY < 0) {
+                    scale = Math.min(scale + zoomSpeed, 3.5);
+                } else {
+                    scale = Math.max(scale - zoomSpeed, 0.8);
+                }
+                render();
+            }, { passive: false });
+
+            // Touch Support for Mobile
             windowEl.addEventListener('touchstart', (e) => {
                 if (e.touches.length === 1) {
                     isDragging = true;
-                    startX = e.touches[0].clientX - currentX;
-                    startY = e.touches[0].clientY - currentY;
+                    startX = e.touches[0].clientX - posX;
+                    startY = e.touches[0].clientY - posY;
                 }
             });
 
@@ -997,7 +1018,19 @@
 
             windowEl.addEventListener('touchmove', (e) => {
                 if (!isDragging || e.touches.length !== 1) return;
-                currentX = e.touches[0].clientX - startX;
-                currentY = e.touches[0].clientY - startY;
-                updatePos();
+                posX = e.touches[0].clientX - startX;
+                posY = e.touches[0].clientY - startY;
+                render();
             });
+
+            // Reset Function
+            window.resetMacroView = function() {
+                scale = 1.2;
+                posX = 0;
+                posY = 0;
+                render();
+            };
+        })();
+    </script>
+</body>
+</html>
