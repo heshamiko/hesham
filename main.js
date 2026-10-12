@@ -69,7 +69,7 @@ const mapCityData = {
         shows: `&bull; <b>Urgent Action Fund (San Francisco, CA):</b> <i>LIBERATION</i><br>
 &bull; <b>Skirball Cultural Center &amp; Sinai Temple (Los Angeles, CA):</b> <i>PROPINQUITY</i> | <i>HINENI</i><br>
 &bull; <b>Institute for Art and Olfaction (Los Angeles, CA):</b> <i>SENSUAL</i><br>
-&bull; <b>UC Berkeley &amp; Magnes Collection (Berkeley, CA):</b> <i>MISHPOKHE (משפחה)</i> | <i>HUMBLE</i><br>
+&bull; <b>UC Berkeley &amp; Magnes Collection (Berkeley, CA):</b> <i>MISHPOKHE (משپחה)</i> | <i>HUMBLE</i><br>
 &bull; <b>UC Davis (Davis, CA):</b> <i>JAN (جان / Ջان)</i><br>
 &bull; <b>UC Irvine (Irvine, CA):</b> <i>COURAGE</i> | <i>Persian Cultural Expression</i> | <i>PEYVAND / ARMENI</i><br>
 &bull; <b>UC San Diego (La Jolla, CA):</b> <i>DISTURBANCE</i><br>
@@ -99,24 +99,29 @@ const mapCityData = {
     },
     au_brisbane_qld: {
         city: "AUSTRALIA &bull; BRISBANE &amp; QUEENSLAND",
-        shows: `&bull; <b>University of Queensland Art Museum &amp; Outer Space Directorate:</b> Academic &amp; Curatorial Dialogue &mdash; <i>SEEN</i> | <i>FLUX</i>`
+        shows: `&bull; <b>University of Queensland Art Museum &amp; Outer Space Directorate:</b> Academic &amp; Curatorial Dialogue on Ephemeral Dynamics &amp; Institutional Visibility &mdash; <i>SEEN</i> | <i>FLUX</i><br>
+&bull; <b>Curatorial Scope:</b> Scholarly inquiry into perpetual fluid movement and perceptual recognition within contemporary South Pacific exhibition spaces.`
     },
     au_sydney_nsw: {
         city: "AUSTRALIA &bull; SYDNEY &amp; NEW SOUTH WALES",
         shows: `&bull; <b>University of Sydney:</b> Faculty of Arts &amp; Social Sciences (Holocaust Studies &amp; Academic Excellence) &mdash; <i>FRAILTY</i> | <i>MIASMA</i><br>
-&bull; <b>Global Youth Depth Psychology (I AM Project):</b> Sydney Student Network Archive`
+&bull; <b>Academic &amp; Curatorial Focus:</b> Research into historical vulnerability and atmospheric strain, exploring how collective trauma and memory inform structural abstraction.<br>
+&bull; <b>Global Youth Depth Psychology (I AM Project):</b> Sydney Student Network Participation in the international educational initiative linking Australian youth with peer archives in Stockholm, London, Boston, Prague, Toronto, and Dubai.`
     },
     au_melbourne: {
-        city: "MELBOURNE &bull; AUSTRALIA",
-        shows: `&bull; <b>The University of Melbourne:</b> School of Culture and Communication &mdash; <i>HUMANITIES</i>`
+        city: "AUSTRALIA &bull; MELBOURNE &amp; VICTORIA",
+        shows: `&bull; <b>The University of Melbourne:</b> School of Culture and Communication &mdash; <i>HUMANITIES</i><br>
+&bull; <b>Academic &amp; Curatorial Focus:</b> Interdisciplinary dialogue on language as an intellectual vessel, examining how humanistic critical theory integrates into large-scale visual execution.`
     },
     au_canberra: {
-        city: "CANBERRA &bull; AUSTRALIA",
-        shows: `&bull; <b>M16 Artspace:</b> Executive Directorate &mdash; <i>UNGOVERNABLE</i>`
+        city: "AUSTRALIA &bull; CANBERRA (ACT)",
+        shows: `&bull; <b>M16 Artspace Executive Directorate:</b> Institutional Dialogue on Spatial Autonomy &mdash; <i>UNGOVERNABLE</i><br>
+&bull; <b>Curatorial Scope:</b> Exploration of creative autonomy and unrestricted expression beyond formal regulatory boundaries.`
     },
     ws_samoa: {
-        city: "SAMOA &bull; APIA",
-        shows: `&bull; <b>National University of Samoa:</b> Faculty of Arts &mdash; <i>STEADY</i> | <i>CONTENT</i> | <i>OPTIMISTIC</i>`
+        city: "SAMOA &bull; APIA (PACIFIC DIALOGUE NODE)",
+        shows: `&bull; <b>National University of Samoa:</b> Faculty of Arts &mdash; <i>STEADY</i> | <i>CONTENT</i> | <i>OPTIMISTIC</i><br>
+&bull; <b>Academic &amp; Curatorial Focus:</b> Inquiry into Pacific philosophy, internal balance, and communal resilience, translating South Pacific equilibrium into layered material research.`
     },
     it_bologna_florence: {
         city: "ITALY &bull; BOLOGNA &amp; FLORENCE",
