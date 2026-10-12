@@ -149,7 +149,9 @@ const mapCityData = {
     },
     ar_buenosaires: {
         city: "ARGENTINA &bull; BUENOS AIRES",
-        shows: `&bull; <b>UNTREF (Centre for Genocide Studies):</b> Directorate &mdash; <i>KHURBN</i>`
+        shows: `&bull; <b>Centre for Genocide Studies (UNTREF):</b> National University of Tres de Febrero &mdash; Academic Directorate &amp; Research Program on Cultural Diversity.<br>
+&bull; <b>Historical Trauma &amp; Research Exchange:</b> Scholarly dialogue on historical rupture, memory, and the Yiddish concept of <i>Khurbn</i> (Destruction / Historical Watershed), serving as foundational conceptual research for the upcoming 2027 retrospective series at the Jewish Museum.<br>
+&bull; <b>Curatorial Focus:</b> Exploration of exile, historical continuity, and global Jewish heritage transformed into large-scale canvas research.`
     },
     brussels: {
         city: "BELGIUM &bull; BRUSSELS &amp; LEUVEN",
