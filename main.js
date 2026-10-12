@@ -56,7 +56,7 @@ const mapCityData = {
 &bull; <b>Jane Goodall Institute (Washington, D.C.):</b> <i>HOPE</i><br>
 &bull; <b>Princeton Hillel &amp; Princeton University (NJ):</b> <i>FLOURISHING</i> | <i>ALIVE</i> | <i>COOPERATION</i><br>
 &bull; <b>Yale University (New Haven, CT):</b> <i>LIMINAL</i> | <i>RESPECT</i> | <i>AIR</i> | <i>JUSTICE</i> | <i>BELOVED</i> | <i>Persian Poetic Line</i><br>
-&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רחמנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
+&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רחمנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
 &bull; <b>MIT (Cambridge, MA):</b> <i>HOPE</i> | <i>INTEGRITY</i><br>
 &bull; <b>Brown University (Providence, RI):</b> <i>TROTZDEM</i> | <i>SQUEEZE</i><br>
 &bull; <b>NYU &amp; Jewish Theological Seminary (NY):</b> <i>PRESENCE</i> | <i>DIALECTICAL</i> | <i>LOVE</i> | <i>RESPONSIBILITY</i><br>
@@ -249,8 +249,10 @@ const mapCityData = {
         shows: `&bull; <b>Universidad de los Andes:</b> Academic Directorate &mdash; <i>EGO</i>`
     },
     vn_hanoi: {
-        city: "HANOI &bull; VIETNAM",
-        shows: `&bull; <b>Blue Dragon Children's Foundation:</b> <i>JOY</i> | <i>PEACEFUL</i> | <i>ADRIFT</i> | <i>TOGETHERNESS</i>`
+        city: "VIETNAM &bull; HANOI",
+        shows: `&bull; <b>Blue Dragon Children's Foundation:</b> Dedicated Monographic Tribute &amp; Art Therapy Participatory Archive.<br>
+&bull; <b>Linguistic &amp; Emotional Archive Node:</b> Interactive "Word Corner" board, field stories, and child-led art therapy vocabulary documenting trauma recovery, crisis resilience, and human dignity.<br>
+&bull; <b>Linguistic &amp; Conceptual Contributions:</b> <i>JOY</i> | <i>PEACEFUL</i> | <i>ADRIFT</i> | <i>TOGETHERNESS</i> | <i>EMPTY</i> | <i>WARM</i> | <i>LOVE</i> | <i>RESILIENCE</i>`
     },
     svalbard: {
         city: "SVALBARD &amp; SPITSBERGEN &bull; NORWAY",
@@ -373,7 +375,7 @@ const mapCityData = {
         shows: `&bull; <b>Thapong Visual Arts Centre:</b> <i>INTERPRETATION</i>`
     },
     af_lagos: {
-        city: "NIGERIA &bull; LAGOS",
+        city: "GERMANY &bull; BERLIN &amp; FRANKFURT",
         shows: `&bull; <b>University of Lagos &amp; Omenka Gallery:</b> <i>PEACE</i> | <i>RESILIENCE</i>`
     },
     germany: {
