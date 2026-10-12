@@ -297,8 +297,12 @@ const mapCityData = {
         shows: `&bull; <b>Ministry of Environment &amp; State Galleries:</b> Retrospectives`
     },
     goa: {
-        city: "GOA &amp; MUMBAI &bull; INDIA",
-        shows: `&bull; <b>Carpe Diem Gallery:</b> Monographic Archives`
+        city: "INDIA &bull; GOA, MUMBAI &amp; NATIONAL ARCHIVES",
+        shows: `&bull; <b>Ecclesiastical &amp; Theological Discourse:</b> Monographic dialogue on aesthetics and sacred beauty with Most Rev. Felix Machado; research-led manuscript canvas resulting from interfaith inquiry with Rabbi Ezekiel Isaac (Judah Hyam Synagogue, New Delhi).<br>
+&bull; <b>Selected Solo Monographs:</b> Recurring multi-year exhibition series at Carpe Diem Gallery (including <i>Mukha</i>, <i>Ganesha</i>, <i>Samay</i>, and <i>Aliferous</i>, among others).<br>
+&bull; <b>Institutional Collections:</b> Accessioned into the permanent collection of Sala de Arte.<br>
+&bull; <b>Contemporary Gallery Provenance:</b> Conceptual and linguistic archive donor node supported by Chatterjee &amp; Lal (Mumbai).<br>
+&bull; <b>Humanitarian &amp; Crisis Provenance:</b> Dedicated solo monograph <i>Goa COVID</i> and benefit initiatives supporting pediatric neurodevelopmental research at the Sethu Centre.`
     },
     pakistan: {
         city: "PAKISTAN ARCHIVAL NODES",
@@ -369,11 +373,11 @@ const mapCityData = {
         shows: `&bull; <b>Thapong Visual Arts Centre:</b> <i>INTERPRETATION</i>`
     },
     af_lagos: {
-        city: "LAGOS &bull; NIGERIA",
+        city: "NIGERIA &bull; LAGOS",
         shows: `&bull; <b>University of Lagos &amp; Omenka Gallery:</b> <i>PEACE</i> | <i>RESILIENCE</i>`
     },
     germany: {
-        city: "BERLIN &amp; FRANKFURT &bull; GERMANY",
+        city: "GERMANY &bull; BERLIN &amp; FRANKFURT",
         shows: `&bull; <b>Jewish Museum Frankfurt &amp; Hamburger Kunsthalle:</b> Historical Archives`
     }
 };
