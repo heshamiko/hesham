@@ -24,7 +24,7 @@
     <!-- LINK TO SEPARATE CSS FILE -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Custom Center Alignment for Mowicha Section -->
+    <!-- Custom Center Alignment for Mowicha Section & Macro Viewer Styles -->
     <style>
         .ledger-row-centered .ledger-visual {
             display: flex !important;
@@ -34,6 +34,66 @@
         .ledger-row-centered .ledger-visual img.img-centered {
             object-position: center center !important;
             margin: 0 auto !important;
+        }
+
+        /* Macro Detail Viewer Section */
+        .macro-viewer-container {
+            background: var(--surface-card, #111111);
+            border: 1px solid var(--border-subtle, #222222);
+            padding: 30px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        .macro-view-window {
+            position: relative;
+            width: 100%;
+            height: 520px;
+            overflow: hidden;
+            background: #050505;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            cursor: grab;
+            margin-top: 20px;
+            border-radius: 2px;
+        }
+        .macro-view-window:active {
+            cursor: grabbing;
+        }
+        .macro-view-window img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 180%;
+            width: auto;
+            max-width: none;
+            transition: transform 0.1s ease-out;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        .macro-controls-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 0.75rem;
+            color: var(--text-secondary, #888888);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .macro-btn {
+            background: transparent;
+            border: 1px solid var(--accent-gold, #d4af37);
+            color: var(--accent-gold, #d4af37);
+            padding: 6px 14px;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .macro-btn:hover {
+            background: var(--accent-gold, #d4af37);
+            color: #000000;
         }
     </style>
 
@@ -83,7 +143,7 @@
             <a href="#map-section" class="nav-link">Global Footprint Map</a>
             <a href="#word-archive" class="nav-link">Word Matrix</a>
             <a href="#ledger" class="nav-link">Provenance Ledger</a>
-            <a href="#materials" class="nav-link">Material Scrubber</a>
+            <a href="#materials" class="nav-link">Macro Detail</a>
         </div>
     </nav>
 
@@ -647,7 +707,7 @@
 
                         <span class="word-pill-item">Princeton University Dept. of Religion: <strong>ALIVE</strong></span>
                         <span class="word-pill-item">Princeton University Dept. of Politics: <strong>COOPERATION</strong></span>
-                        <span class="word-pill-item">Columbia University Dept. of History: <strong>RACHMONES (רחמנות)</strong></span>
+                        <span class="word-pill-item">Columbia University Dept. of History: <strong>RACHMONES (רחمנות)</strong></span>
                         <span class="word-pill-item">Columbia Dept. of Middle Eastern, South Asian &amp; African Studies: <strong>ADAB</strong></span>
                         <span class="word-pill-item">Columbia University Dept. of Political Science: <strong>COMPASSION</strong></span>
                         <span class="word-pill-item">MIT Dept. of Philosophy &amp; Women's and Gender Studies: <strong>HOPE</strong></span>
@@ -850,22 +910,23 @@
                 </div>
             </section>
 
+            <!-- REPLACED: OPTION 1 HIGH-RESOLUTION MACRO DETAIL VIEWER -->
             <section id="materials">
-                <h2 class="section-heading">Material Lifecycle Scrubber</h2>
-                <div class="scrubber-inspector-box">
-                    <span class="benchmark-tag">&bull; TACTILE MATERIAL SCIENCE &bull; LAYER INSPECTOR</span>
-                    <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0 5px 0; font-weight: 300; text-transform: uppercase;">Canvas Material Evolution</h3>
-                    <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0 0 20px 0;">Slide the control below to inspect the structural transformation from raw ground earth oxides to 24k gold leaf adhesion.</p>
+                <h2 class="section-heading">Surface &amp; Texture Detail</h2>
+                <div class="macro-viewer-container">
+                    <span class="benchmark-tag">&bull; SURFACE &amp; TEXTURE &bull; MACRO CANVAS STUDY</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0 5px 0; font-weight: 300; text-transform: uppercase;">Tactile Depth &amp; Pigment Density</h3>
+                    <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0 0 10px 0;">Drag mouse/finger to pan across the high-resolution impasto and raw pigment layers.</p>
 
-                    <div class="scrubber-view-wrapper">
-                        <img src="box-texture-1.jpg" id="scrubberImage" alt="Material Texture Layer">
+                    <div class="macro-view-window" id="macroWindow">
+                        <img src="words-texture-1.jpg" id="macroImage" alt="Hesham Malik High-Resolution Macro Detail View">
                     </div>
 
-                    <input type="range" min="1" max="3" value="3" class="scrubber-range-control" id="materialSlider" oninput="updateScrubberView(this.value)">
-                    <div class="scrubber-labels-bar">
-                        <span>Stage 1: Raw Earth Oxides</span>
-                        <span>Stage 2: Engraved Text</span>
-                        <span>Stage 3: 24k Gold Adhesion</span>
+                    <div class="macro-controls-bar">
+                        <span>Click &amp; Drag to Pan Surface</span>
+                        <div>
+                            <button class="macro-btn" onclick="resetMacroView()">Reset View</button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -889,5 +950,54 @@
 
     <!-- LINK TO SEPARATE JAVASCRIPT FILE -->
     <script src="main.js"></script>
-</body>
-</html>
+
+    <!-- Interactive Pan Script for Macro Viewer -->
+    <script>
+        (function() {
+            const windowEl = document.getElementById('macroWindow');
+            const imgEl = document.getElementById('macroImage');
+            if (!windowEl || !imgEl) return;
+
+            let isDragging = false;
+            let startX, startY;
+            let currentX = -100;
+            let currentY = -50;
+
+            function updatePos() {
+                imgEl.style.transform = `translate(${currentX}px, ${currentY}px)`;
+            }
+            updatePos();
+
+            windowEl.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.clientX - currentX;
+                startY = e.clientY - currentY;
+            });
+
+            window.addEventListener('mouseup', () => { isDragging = false; });
+
+            windowEl.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                currentX = e.clientX - startX;
+                currentY = e.clientY - startY;
+                updatePos();
+            });
+
+            // Touch support for mobile devices
+            windowEl.addEventListener('touchstart', (e) => {
+                if (e.touches.length === 1) {
+                    isDragging = true;
+                    startX = e.touches[0].clientX - currentX;
+                    startY = e.touches[0].clientY - currentY;
+                }
+            });
+
+            windowEl.addEventListener('touchend', () => { isDragging = false; });
+
+            windowEl.addEventListener('touchmove', (e) => {
+                if (!isDragging || e.touches.length !== 1) return;
+                currentX = e.touches[0].clientX - startX;
+                currentY = e.touches[0].clientY - startY;
+                updatePos();
+            });
