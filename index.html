@@ -322,6 +322,11 @@
                             <option value="usa_east">USA East Coast (NY, DC, CT, PA, MD, VA)</option>
                             <option value="usa_west">USA West Coast &amp; Pacific (CA, WA, OR, HI, AK)</option>
                             <option value="usa_midwest_south">USA Midwest, South &amp; Mountain (IL, CO, TX, TN, OH, ID)</option>
+                            <option value="au_brisbane_qld">Brisbane &amp; Queensland, Australia</option>
+                            <option value="au_sydney_nsw">Sydney &amp; New South Wales, Australia</option>
+                            <option value="au_melbourne">Melbourne, Australia</option>
+                            <option value="au_canberra">Canberra (ACT), Australia</option>
+                            <option value="ws_samoa">Apia, Samoa</option>
                             <option value="it_bologna_florence">Bologna &amp; Florence, Italy</option>
                             <option value="fr_paris_guadeloupe">Paris &amp; Guadeloupe, France</option>
                             <option value="ps_gaza_jenin">Gaza &amp; Jenin, Palestine</option>
@@ -567,6 +572,23 @@
                             <span class="node-label">Malaysia</span>
                         </div>
 
+                        <!-- AUSTRALIA & PACIFIC NODES -->
+                        <div class="map-node label-right" id="node_au_brisbane_qld" style="top: 70%; left: 88.5%;" onclick="openMapDetails('au_brisbane_qld', event)">
+                            <span class="node-label">Brisbane / QLD</span>
+                        </div>
+                        <div class="map-node label-right" id="node_au_sydney_nsw" style="top: 74.5%; left: 87.2%;" onclick="openMapDetails('au_sydney_nsw', event)">
+                            <span class="node-label">Sydney / NSW</span>
+                        </div>
+                        <div class="map-node label-left" id="node_au_melbourne" style="top: 78%; left: 85.5%;" onclick="openMapDetails('au_melbourne', event)">
+                            <span class="node-label">Melbourne / VIC</span>
+                        </div>
+                        <div class="map-node label-left" id="node_au_canberra" style="top: 76%; left: 86.8%;" onclick="openMapDetails('au_canberra', event)">
+                            <span class="node-label">Canberra / ACT</span>
+                        </div>
+                        <div class="map-node label-top" id="node_ws_samoa" style="top: 65%; left: 96.8%;" onclick="openMapDetails('ws_samoa', event)">
+                            <span class="node-label">Samoa</span>
+                        </div>
+
                         <div class="map-node label-top" id="node_fj_suva" style="top: 66.5%; left: 95.5%;" onclick="openMapDetails('fj_suva', event)">
                             <span class="node-label">Fiji</span>
                         </div>
@@ -631,9 +653,16 @@
                     <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0; font-weight: 300; text-transform: uppercase;">Institutional Data Provenance</h3>
                     <p style="font-size: 0.8rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Search live word donations from global leadership, universities, museums, and sovereign institutions.</p>
                     
-                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Donated Terms (e.g., Greenland, Harvard, Yale, MIT, Sila, Inooqatigiinneq, Resilience)...">
+                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Donated Terms (e.g., Sydney, Queensland, Melbourne, Samoa, Greenland, Harvard, Yale)...">
                     
                     <div class="word-pills-container" id="wordPillsContainer">
+                        <span class="word-pill-item">University of Sydney (Holocaust Studies &amp; Social Sciences): <strong>FRAILTY / MIASMA</strong></span>
+                        <span class="word-pill-item">University of Queensland Art Museum &amp; Outer Space: <strong>SEEN / FLUX</strong></span>
+                        <span class="word-pill-item">The University of Melbourne (School of Culture &amp; Communication): <strong>HUMANITIES</strong></span>
+                        <span class="word-pill-item">M16 Artspace (Canberra, Australia): <strong>UNGOVERNABLE</strong></span>
+                        <span class="word-pill-item">National University of Samoa (Faculty of Arts): <strong>STEADY / CONTENT / OPTIMISTIC</strong></span>
+                        <span class="word-pill-item">Sydney Youth Network (Australia): <strong>GLOBAL "I AM" DEPTH PSYCHOLOGY PROJECT</strong></span>
+
                         <span class="word-pill-item">Greenland National Museum &amp; Archives (Nuuk): <strong>SILA (CONSCIOUSNESS / WORLD) / ATAQQEQATIGIINNEQ</strong></span>
                         <span class="word-pill-item">Sipineq+ Rights Directorate (Greenland): <strong>INOOQATIGIINNEQ (LIVING TOGETHER IN DIVERSITY)</strong></span>
                         <span class="word-pill-item">The Museums in North-Greenland (Ilulissat): <strong>EQQUMIITSULIORTOQ (ARTIST / CREATING EXTRAORDINARY)</strong></span>
