@@ -56,7 +56,7 @@ const mapCityData = {
 &bull; <b>Jane Goodall Institute (Washington, D.C.):</b> <i>HOPE</i><br>
 &bull; <b>Princeton Hillel &amp; Princeton University (NJ):</b> <i>FLOURISHING</i> | <i>ALIVE</i> | <i>COOPERATION</i><br>
 &bull; <b>Yale University (New Haven, CT):</b> <i>LIMINAL</i> | <i>RESPECT</i> | <i>AIR</i> | <i>JUSTICE</i> | <i>BELOVED</i> | <i>Persian Poetic Line</i><br>
-&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רחمנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
+&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רחמנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
 &bull; <b>MIT (Cambridge, MA):</b> <i>HOPE</i> | <i>INTEGRITY</i><br>
 &bull; <b>Brown University (Providence, RI):</b> <i>TROTZDEM</i> | <i>SQUEEZE</i><br>
 &bull; <b>NYU &amp; Jewish Theological Seminary (NY):</b> <i>PRESENCE</i> | <i>DIALECTICAL</i> | <i>LOVE</i> | <i>RESPONSIBILITY</i><br>
@@ -96,6 +96,27 @@ const mapCityData = {
 &bull; <b>Indiana University Bloomington (Indiana):</b> <i>SOMNAMBULISTIC</i> | <i>ABRACADABRA</i><br>
 &bull; <b>University of Utah &amp; Southern Utah University (Utah):</b> <i>MEANING</i> | <i>INSTABILITY</i> | <i>FREEDOM</i><br>
 &bull; <b>University of Colorado Boulder (Colorado):</b> <i>ARTNAUTS</i>`
+    },
+    au_brisbane_qld: {
+        city: "AUSTRALIA &bull; BRISBANE &amp; QUEENSLAND",
+        shows: `&bull; <b>University of Queensland Art Museum &amp; Outer Space Directorate:</b> Academic &amp; Curatorial Dialogue &mdash; <i>SEEN</i> | <i>FLUX</i>`
+    },
+    au_sydney_nsw: {
+        city: "AUSTRALIA &bull; SYDNEY &amp; NEW SOUTH WALES",
+        shows: `&bull; <b>University of Sydney:</b> Faculty of Arts &amp; Social Sciences (Holocaust Studies &amp; Academic Excellence) &mdash; <i>FRAILTY</i> | <i>MIASMA</i><br>
+&bull; <b>Global Youth Depth Psychology (I AM Project):</b> Sydney Student Network Archive`
+    },
+    au_melbourne: {
+        city: "MELBOURNE &bull; AUSTRALIA",
+        shows: `&bull; <b>The University of Melbourne:</b> School of Culture and Communication &mdash; <i>HUMANITIES</i>`
+    },
+    au_canberra: {
+        city: "CANBERRA &bull; AUSTRALIA",
+        shows: `&bull; <b>M16 Artspace:</b> Executive Directorate &mdash; <i>UNGOVERNABLE</i>`
+    },
+    ws_samoa: {
+        city: "SAMOA &bull; APIA",
+        shows: `&bull; <b>National University of Samoa:</b> Faculty of Arts &mdash; <i>STEADY</i> | <i>CONTENT</i> | <i>OPTIMISTIC</i>`
     },
     it_bologna_florence: {
         city: "ITALY &bull; BOLOGNA &amp; FLORENCE",
