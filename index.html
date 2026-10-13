@@ -317,85 +317,118 @@
                     <div class="map-quick-filter">
                         <label for="citySelector" style="font-size: 0.68rem; color: var(--accent-gold); letter-spacing: 0.15em; text-transform: uppercase;">Isolate City Node:</label>
                         <select id="citySelector" class="map-select" onchange="selectCityFromDropdown(this.value)">
-                            <option value="">-- Choose City / Region --</option>
-                            <option value="harvard">Harvard University &amp; Cambridge, MA (USA)</option>
-                            <option value="usa_east">USA East Coast (NY, DC, CT, PA, MD, VA)</option>
-                            <option value="usa_west">USA West Coast &amp; Pacific (CA, WA, OR, HI, AK)</option>
-                            <option value="usa_midwest_south">USA Midwest, South &amp; Mountain (IL, CO, TX, TN, OH, ID)</option>
-                            <option value="bc_vancouver">Vancouver, Victoria &amp; British Columbia (Canada)</option>
-                            <option value="alberta_calgary">Calgary, Edmonton &amp; Alberta Nodes (Canada)</option>
-                            <option value="toronto_waterloo">Toronto, Waterloo &amp; Southern Ontario (Canada)</option>
-                            <option value="ottawa_kingston">Ottawa, Kingston &amp; Capital Region (Canada)</option>
-                            <option value="montreal_qc">Montreal, Quebec City &amp; QC (Canada)</option>
-                            <option value="yukon_atlantic">Yukon, Northwest Territories &amp; Atlantic Canada</option>
-                            <option value="au_brisbane_qld">Brisbane &amp; Queensland, Australia</option>
-                            <option value="au_sydney_nsw">Sydney &amp; New South Wales, Australia</option>
-                            <option value="au_melbourne">Melbourne, Australia</option>
-                            <option value="au_canberra">Canberra (ACT), Australia</option>
-                            <option value="ws_samoa">Apia (National University of Samoa), Samoa</option>
-                            <option value="fj_suva">Suva (University of the South Pacific), Fiji</option>
-                            <option value="vu_vanuatu">Port-Vila (Vanuatu Cultural Centre), Vanuatu</option>
-                            <option value="it_bologna_florence">Bologna &amp; Florence, Italy</option>
-                            <option value="fr_paris_guadeloupe">Paris &amp; Guadeloupe, France</option>
-                            <option value="ps_gaza_jenin">Gaza &amp; Jenin, Palestine</option>
-                            <option value="is_reykjavik">Reykjavík, Iceland</option>
-                            <option value="th_bangkok">Bangkok (Chulalongkorn University), Thailand</option>
-                            <option value="gy_georgetown">Georgetown, Guyana</option>
-                            <option value="jo_amman">Amman, Jordan</option>
-                            <option value="mu_mauritius">Reduit, Mauritius</option>
-                            <option value="om_muscat">Muscat, Oman</option>
-                            <option value="ph_quezon">Quezon City (Univ. of the Philippines Diliman), Philippines</option>
-                            <option value="ar_buenosaires">Buenos Aires (UNTREF Centre for Genocide Studies), Argentina</option>
-                            <option value="brussels">Brussels &amp; Leuven, Belgium</option>
-                            <option value="poland">Duszniki-Zdrój, Poznań, Warsaw &amp; Krakow, Poland</option>
-                            <option value="si_ljubljana_koper">Ljubljana &amp; Koper, Slovenia</option>
-                            <option value="nz_auckland">New Zealand (Auckland, Waitangi, Dunedin, Wellington &amp; Taranaki)</option>
-                            <option value="hr_zagreb">Zagreb, Croatia</option>
-                            <option value="athens">Athens, Greece</option>
-                            <option value="pt_lisbon">Lisbon, Portugal</option>
-                            <option value="ua_kyiv">Kyiv, Ukraine</option>
-                            <option value="sk_sered_bratislava">Sereď &amp; Bratislava, Slovakia</option>
-                            <option value="ru_volgograd">Volgograd, Russia</option>
-                            <option value="ee_tartu_tallinn">Tartu &amp; Tallinn, Estonia</option>
-                            <option value="li_vaduz">Vaduz, Liechtenstein</option>
-                            <option value="hu_budapest">Budapest, Hungary</option>
-                            <option value="ae_abudhabi_dubai">Abu Dhabi &amp; Dubai, UAE</option>
-                            <option value="cn_changsha">Changsha (Hunan Normal Univ. HCTS &amp; Museum), China</option>
-                            <option value="lt_vilnius">Vilnius, Lithuania</option>
-                            <option value="kg_bishkek">Bishkek, Kyrgyzstan</option>
-                            <option value="me_ljesevici">Lješevići, Montenegro</option>
-                            <option value="cy_nicosia">Nicosia, Cyprus</option>
-                            <option value="co_bogota">Bogotá (Universidad de los Andes), Colombia</option>
-                            <option value="vn_hanoi">Hanoi (Blue Dragon Children's Foundation), Vietnam</option>
-                            <option value="svalbard">Svalbard &amp; Spitsbergen, Norway</option>
-                            <option value="no_oslo">Oslo, Norway</option>
-                            <option value="cr_sanjose">San José (Fundación Ars TEOR/éTica), Costa Rica</option>
-                            <option value="sy_damascus">Damascus, Syria</option>
-                            <option value="fi_helsinki">Helsinki, Finland</option>
-                            <option value="fi_oulu">Oulu (Capital of Culture 2026), Finland</option>
-                            <option value="gl_nuuk">Nuuk &amp; National Museum, Greenland</option>
-                            <option value="gl_ilulissat">Ilulissat &amp; Avannaata Region, Greenland</option>
-                            <option value="gl_aalborg">Aalborg (Greenlandic Diaspora), Denmark</option>
-                            <option value="uk_london">London, UK</option>
-                            <option value="cz_prague">Prague, Czech Republic</option>
-                            <option value="goa">Goa &amp; Mumbai, India</option>
-                            <option value="pakistan">Peshawar &amp; Archival Nodes, Pakistan</option>
-                            <option value="malaysia">Kuala Lumpur, Malaysia</option>
-                            <option value="ch_zurich">Zurich, Switzerland</option>
-                            <option value="ch_geneva">Geneva, Switzerland</option>
-                            <option value="ch_bern">Bern, Switzerland</option>
-                            <option value="ch_ballenberg">Ballenberg, Switzerland</option>
-                            <option value="germany">Berlin &amp; Frankfurt, Germany</option>
-                            <option value="af_pretoria">Pretoria (Centre for Human Rights, UP), South Africa</option>
-                            <option value="af_johannesburg">Johannesburg (TEARS Foundation), South Africa</option>
-                            <option value="af_nairobi">Nairobi (PAWA Initiative / PAWA254), Kenya</option>
-                            <option value="af_lagos">Lagos (University of Lagos / Omenka Gallery), Nigeria</option>
-                            <option value="af_naija_vernacular">West Africa / Vernacular Pidgin Research Networks</option>
-                            <option value="af_gaborone">Gaborone (Thapong Visual Arts Centre), Botswana</option>
-                            <option value="af_madagascar">Antananarivo (American School of Antananarivo), Madagascar</option>
-                            <option value="af_congo">Brazzaville / Kinshasa (Congo Children's Trust), DRC</option>
-                            <option value="af_bahamas">Nassau (Government Cultural Directorate), Bahamas</option>
-                            <option value="af_pan_african_research">Pan-African Field Research &amp; Tribal Ethnographic Archives</option>
+                            <option value="">-- Choose City Node --</option>
+
+                            <!-- UNITED KINGDOM -->
+                            <option value="uk_london">London (Tate, UCL, SOAS, LSE, Courtauld, UK)</option>
+                            <option value="oxford">Oxford (University of Oxford, Ruskin School, UK)</option>
+                            <option value="cambridge">Cambridge (University of Cambridge, UK)</option>
+                            <option value="edinburgh">Edinburgh (National Galleries Scotland, Univ. of Edinburgh, UK)</option>
+                            <option value="aberdeen">Aberdeen (University of Aberdeen, UK)</option>
+                            <option value="birmingham">Birmingham (University of Birmingham, UK)</option>
+                            <option value="leeds">Leeds (University of Leeds, UK)</option>
+                            <option value="lincoln">Lincoln (University of Lincoln, UK)</option>
+                            <option value="manchester">Manchester (University of Manchester, UK)</option>
+                            <option value="exeter">Exeter (University of Exeter &amp; IAIS, UK)</option>
+                            <option value="kent">Kent (University of Kent &amp; Hawk Conservancy, UK)</option>
+
+                            <!-- SWITZERLAND -->
+                            <option value="ch_geneva">Geneva (Red Cross, Switzerland)</option>
+                            <option value="ch_bern">Bern (Cartographic Association, Switzerland)</option>
+                            <option value="ch_ballenberg">Ballenberg (Swiss Open-Air Museum, Switzerland)</option>
+                            <option value="ch_zurich">Zurich (ETH Zurich &amp; Artas Foundation, Switzerland)</option>
+
+                            <!-- EUROPE & MEDITERRANEAN -->
+                            <option value="it_bologna">Bologna (Univ. of Bologna, Italy)</option>
+                            <option value="it_florence">Florence (European University Institute, Italy)</option>
+                            <option value="fr_paris">Paris (IDDRI Sustainable Development, France)</option>
+                            <option value="fr_guadeloupe">Guadeloupe (Arts au Pluriel, France)</option>
+                            <option value="ps_gaza">Gaza (Culture &amp; Free Thought Association, Palestine)</option>
+                            <option value="ps_jenin">Jenin Camp (The Freedom Theatre, Palestine)</option>
+                            <option value="is_reykjavik">Reykjavík (University of Iceland)</option>
+                            <option value="be_brussels">Brussels (Brussels Expo &amp; VUB, Belgium)</option>
+                            <option value="be_leuven">Leuven (KU Leuven Forest &amp; Landscape, Belgium)</option>
+                            <option value="pl_duszniki">Duszniki-Zdrój (Museum of Papermaking, Poland)</option>
+                            <option value="pl_poznan">Poznań (Magdalena Abakanowicz Univ., Poland)</option>
+                            <option value="pl_warsaw">Warsaw (University of Warsaw, Poland)</option>
+                            <option value="pl_krakow">Krakow (Jan Matejko Academy of Fine Arts, Poland)</option>
+                            <option value="si_ljubljana">Ljubljana (University of Ljubljana, Slovenia)</option>
+                            <option value="si_koper">Koper (University of Primorska, Slovenia)</option>
+                            <option value="hr_zagreb">Zagreb (University of Zagreb, Croatia)</option>
+                            <option value="gr_athens">Athens (Athens School of Fine Arts, Greece)</option>
+                            <option value="no_longyearbyen">Longyearbyen (Svalbard Global Seed Vault, Norway)</option>
+                            <option value="no_oslo">Oslo (Innovation Norway, Norway)</option>
+                            <option value="fi_oulu">Oulu (Capital of Culture 2026, Finland)</option>
+                            <option value="fi_helsinki">Helsinki (University of Helsinki, Finland)</option>
+                            <option value="sy_damascus">Damascus (Cultural Representation, Syria)</option>
+                            <option value="pt_lisbon">Lisbon (On the Move &amp; Casa Oxente, Portugal)</option>
+                            <option value="ua_kyiv">Kyiv (National Museum of History, Ukraine)</option>
+                            <option value="sk_bratislava">Bratislava (Slovak National Gallery, Slovakia)</option>
+                            <option value="sk_sered">Sereď (Slovak National Museum, Slovakia)</option>
+                            <option value="ru_volgograd">Volgograd (Volgograd State University, Russia)</option>
+                            <option value="ee_tartu">Tartu (University of Tartu &amp; National Museum, Estonia)</option>
+                            <option value="ee_tallinn">Tallinn (Pop &amp; Contemporary Art Museum, Estonia)</option>
+                            <option value="li_vaduz">Vaduz (Princely Collections Art Library, Liechtenstein)</option>
+                            <option value="hu_budapest">Budapest (Ludwig Museum &amp; CEU, Hungary)</option>
+                            <option value="lt_vilnius">Vilnius (National Museum &amp; VAA, Lithuania)</option>
+                            <option value="me_ljesevici">Lješevići (ORATIO Foundation, Montenegro)</option>
+                            <option value="cy_nicosia">Nicosia (Ministry of Culture, Cyprus)</option>
+                            <option value="cz_prague">Prague (Ministry of Environment, Czech Republic)</option>
+                            <option value="germany">Berlin &amp; Frankfurt (Museum Archives, Germany)</option>
+                            <option value="gl_aalborg">Aalborg (Greenlandic Diaspora, Denmark)</option>
+
+                            <!-- AMERICAS -->
+                            <option value="harvard">Cambridge / Harvard Network (Harvard University, USA)</option>
+                            <option value="usa_east">East Coast Academic Network (NY, DC, Yale, Princeton, Columbia, USA)</option>
+                            <option value="usa_west">West Coast &amp; Pacific Rim (CA, WA, OR, HI, AK, USA)</option>
+                            <option value="usa_midwest_south">Midwest &amp; Sunbelt Networks (Chicago, CO, TX, AL, USA)</option>
+                            <option value="bc_vancouver">Vancouver (MOA &amp; UBC, British Columbia, Canada)</option>
+                            <option value="alberta_calgary">Edmonton &amp; Calgary (Univ. of Alberta, Canada)</option>
+                            <option value="toronto_waterloo">Toronto &amp; Waterloo (Univ. of Toronto, TMU, Canada)</option>
+                            <option value="ottawa_kingston">Ottawa &amp; Kingston (National Gallery &amp; Carleton, Canada)</option>
+                            <option value="montreal_qc">Montreal (McGill Univ. &amp; Native Women's Shelter, Canada)</option>
+                            <option value="yukon_atlantic">Dawson City &amp; Winnipeg (Klondike Institute, Canada)</option>
+                            <option value="gy_georgetown">Georgetown (University of Guyana)</option>
+                            <option value="ar_buenosaires">Buenos Aires (UNTREF Centre for Genocide Studies, Argentina)</option>
+                            <option value="co_bogota">Bogotá (Universidad de los Andes, Colombia)</option>
+                            <option value="cr_sanjose">San José (Fundación Ars TEOR/éTica, Costa Rica)</option>
+                            <option value="af_bahamas">Nassau (Government Cultural Directorate, Bahamas)</option>
+
+                            <!-- MIDDLE EAST, ASIA & OCEANIA -->
+                            <option value="jo_amman">Amman (The University of Jordan, Jordan)</option>
+                            <option value="mu_reduit">Réduit (University of Mauritius)</option>
+                            <option value="om_muscat">Muscat (Sultan Qaboos University, Oman)</option>
+                            <option value="ae_abudhabi">Abu Dhabi (NYU Abu Dhabi, UAE)</option>
+                            <option value="ae_dubai">Dubai (American University in Dubai, UAE)</option>
+                            <option value="kg_bishkek">Bishkek (American University of Central Asia, Kyrgyzstan)</option>
+                            <option value="pakistan">Peshawar &amp; Karachi (Mohatta Palace Museum, Pakistan)</option>
+                            <option value="goa">Goa, Mumbai &amp; New Delhi (Carpe Diem, India)</option>
+                            <option value="th_bangkok">Bangkok (Chulalongkorn University, Thailand)</option>
+                            <option value="ph_quezon">Quezon City (Univ. of the Philippines Diliman)</option>
+                            <option value="cn_changsha">Changsha (Hunan Normal Univ. HCTS, China)</option>
+                            <option value="vn_hanoi">Hanoi (Blue Dragon Foundation, Vietnam)</option>
+                            <option value="malaysia">Kuala Lumpur (Visual Art Directorate, Malaysia)</option>
+                            <option value="au_brisbane_qld">Brisbane (Univ. of Queensland Art Museum, Australia)</option>
+                            <option value="au_sydney_nsw">Sydney (Univ. of Sydney, Australia)</option>
+                            <option value="au_melbourne">Melbourne (Univ. of Melbourne, Australia)</option>
+                            <option value="au_canberra">Canberra (M16 Artspace, Australia)</option>
+                            <option value="ws_samoa">Apia (National University of Samoa)</option>
+                            <option value="fj_suva">Suva (Univ. of the South Pacific, Fiji)</option>
+                            <option value="vu_vanuatu">Port-Vila (Vanuatu Cultural Centre)</option>
+                            <option value="nz_auckland">Auckland &amp; Regional Nodes (Waitangi, Dunedin, New Zealand)</option>
+
+                            <!-- AFRICA -->
+                            <option value="af_pretoria">Pretoria (Centre for Human Rights, South Africa)</option>
+                            <option value="af_johannesburg">Johannesburg (TEARS Foundation, South Africa)</option>
+                            <option value="af_nairobi">Nairobi (PAWA Initiative, Kenya)</option>
+                            <option value="af_lagos">Lagos (University of Lagos, Nigeria)</option>
+                            <option value="af_naija_vernacular">Vernacular Networks (West Africa)</option>
+                            <option value="af_gaborone">Gaborone (Thapong Visual Arts Centre, Botswana)</option>
+                            <option value="af_madagascar">Antananarivo (American School, Madagascar)</option>
+                            <option value="af_congo">Kinshasa / Brazzaville (Congo Children's Trust, DRC)</option>
+                            <option value="af_pan_african_research">Pan-African Tribal Ethnographic Archives</option>
+                            <option value="gl_nuuk">Nuuk (Greenland National Museum, Greenland)</option>
+                            <option value="gl_ilulissat">Ilulissat (North-Greenland Museums, Greenland)</option>
                         </select>
                     </div>
 
@@ -404,251 +437,285 @@
 
                         <img src="world-map.svg" class="world-map-svg" alt="Global Footprint Map">
 
-                        <!-- MAP NODES -->
+                        <!-- MAP NODES (PINS) -->
                         <div class="map-node label-top" id="node_harvard" style="top: 28%; left: 24%;" onclick="openMapDetails('harvard', event)">
-                            <span class="node-label">Harvard / MA</span>
+                            <span class="node-label">Harvard</span>
                         </div>
                         <div class="map-node label-right" id="node_usa_east" style="top: 31%; left: 25.5%;" onclick="openMapDetails('usa_east', event)">
-                            <span class="node-label">USA East Coast</span>
+                            <span class="node-label">USA East</span>
                         </div>
                         <div class="map-node label-left" id="node_usa_west" style="top: 35%; left: 14%;" onclick="openMapDetails('usa_west', event)">
-                            <span class="node-label">USA West Coast</span>
+                            <span class="node-label">USA West</span>
                         </div>
                         <div class="map-node label-top" id="node_usa_midwest_south" style="top: 38%; left: 19.5%;" onclick="openMapDetails('usa_midwest_south', event)">
-                            <span class="node-label">USA Midwest &amp; South</span>
+                            <span class="node-label">USA Midwest</span>
                         </div>
 
                         <!-- CANADA REGIONAL MAP NODES -->
                         <div class="map-node label-left" id="node_bc_vancouver" style="top: 25%; left: 16%;" onclick="openMapDetails('bc_vancouver', event)">
-                            <span class="node-label">Vancouver / BC</span>
+                            <span class="node-label">Vancouver</span>
                         </div>
                         <div class="map-node label-top" id="node_alberta_calgary" style="top: 24%; left: 21%;" onclick="openMapDetails('alberta_calgary', event)">
-                            <span class="node-label">Alberta</span>
+                            <span class="node-label">Calgary</span>
                         </div>
                         <div class="map-node label-top" id="node_toronto_waterloo" style="top: 26%; left: 26%;" onclick="openMapDetails('toronto_waterloo', event)">
-                            <span class="node-label">Toronto / ON</span>
+                            <span class="node-label">Toronto</span>
                         </div>
                         <div class="map-node label-right" id="node_ottawa_kingston" style="top: 23%; left: 28%;" onclick="openMapDetails('ottawa_kingston', event)">
                             <span class="node-label">Ottawa</span>
                         </div>
                         <div class="map-node label-top" id="node_montreal_qc" style="top: 22%; left: 30%;" onclick="openMapDetails('montreal_qc', event)">
-                            <span class="node-label">Montreal / QC</span>
+                            <span class="node-label">Montreal</span>
                         </div>
                         <div class="map-node label-top" id="node_yukon_atlantic" style="top: 18%; left: 14%;" onclick="openMapDetails('yukon_atlantic', event)">
-                            <span class="node-label">Yukon &amp; Atlantic</span>
+                            <span class="node-label">Yukon</span>
                         </div>
 
-                        <div class="map-node label-top" id="node_it_bologna_florence" style="top: 27.5%; left: 50.8%;" onclick="openMapDetails('it_bologna_florence', event)">
-                            <span class="node-label">Italy</span>
-                        </div>
-                        <div class="map-node label-left" id="node_fr_paris_guadeloupe" style="top: 25.5%; left: 47.8%;" onclick="openMapDetails('fr_paris_guadeloupe', event)">
-                            <span class="node-label">France</span>
-                        </div>
-                        <div class="map-node label-left" id="node_si_ljubljana_koper" style="top: 25.8%; left: 52.2%;" onclick="openMapDetails('si_ljubljana_koper', event)">
-                            <span class="node-label">Slovenia</span>
-                        </div>
-                        <div class="map-node label-right" id="node_hr_zagreb" style="top: 26.5%; left: 52.8%;" onclick="openMapDetails('hr_zagreb', event)">
-                            <span class="node-label">Croatia</span>
-                        </div>
-                        <div class="map-node label-left" id="node_pt_lisbon" style="top: 29.5%; left: 44.5%;" onclick="openMapDetails('pt_lisbon', event)">
-                            <span class="node-label">Lisbon / PT</span>
-                        </div>
-                        <div class="map-node label-top" id="node_ua_kyiv" style="top: 23%; left: 56.5%;" onclick="openMapDetails('ua_kyiv', event)">
-                            <span class="node-label">Kyiv / UA</span>
-                        </div>
-                        <div class="map-node label-right" id="node_sk_sered_bratislava" style="top: 24.2%; left: 53.2%;" onclick="openMapDetails('sk_sered_bratislava', event)">
-                            <span class="node-label">Slovakia</span>
-                        </div>
-                        <div class="map-node label-top" id="node_ru_volgograd" style="top: 26%; left: 60.5%;" onclick="openMapDetails('ru_volgograd', event)">
-                            <span class="node-label">Volgograd / RU</span>
-                        </div>
-                        <div class="map-node label-left" id="node_ee_tartu_tallinn" style="top: 17%; left: 55%;" onclick="openMapDetails('ee_tartu_tallinn', event)">
-                            <span class="node-label">Estonia</span>
-                        </div>
-                        <div class="map-node label-left" id="node_li_vaduz" style="top: 25.5%; left: 50.2%;" onclick="openMapDetails('li_vaduz', event)">
-                            <span class="node-label">Liechtenstein</span>
-                        </div>
-                        <div class="map-node label-right" id="node_hu_budapest" style="top: 25.8%; left: 53.8%;" onclick="openMapDetails('hu_budapest', event)">
-                            <span class="node-label">Budapest / HU</span>
-                        </div>
-                        <div class="map-node label-right" id="node_lt_vilnius" style="top: 19.5%; left: 54.8%;" onclick="openMapDetails('lt_vilnius', event)">
-                            <span class="node-label">Vilnius / LT</span>
-                        </div>
-                        <div class="map-node label-top" id="node_svalbard" style="top: 8%; left: 52%;" onclick="openMapDetails('svalbard', event)">
-                            <span class="node-label">Svalbard / NO</span>
-                        </div>
-                        <div class="map-node label-right" id="node_no_oslo" style="top: 17.5%; left: 49.5%;" onclick="openMapDetails('no_oslo', event)">
-                            <span class="node-label">Oslo / NO</span>
-                        </div>
-                        <div class="map-node label-right" id="node_fi_helsinki" style="top: 16%; left: 53.5%;" onclick="openMapDetails('fi_helsinki', event)">
-                            <span class="node-label">Helsinki / FI</span>
-                        </div>
-                        <div class="map-node label-top" id="node_fi_oulu" style="top: 13.5%; left: 54%;" onclick="openMapDetails('fi_oulu', event)">
-                            <span class="node-label">Oulu 2026 / FI</span>
-                        </div>
-                        <div class="map-node label-right" id="node_dk_aalborg" style="top: 19%; left: 48.5%;" onclick="openMapDetails('gl_aalborg', event)">
-                            <span class="node-label">Aalborg / DK</span>
-                        </div>
+                        <!-- UNITED KINGDOM CITIES -->
                         <div class="map-node label-top" id="node_uk_london" style="top: 21%; left: 45.2%;" onclick="openMapDetails('uk_london', event)">
-                            <span class="node-label">London / UK</span>
+                            <span class="node-label">London</span>
                         </div>
-                        <div class="map-node label-top" id="node_cz_prague" style="top: 22%; left: 52%;" onclick="openMapDetails('cz_prague', event)">
-                            <span class="node-label">Prague / CZ</span>
+                        <div class="map-node label-top" id="node_oxford" style="top: 21.5%; left: 44.8%;" onclick="openMapDetails('oxford', event)">
+                            <span class="node-label">Oxford</span>
                         </div>
-                        <div class="map-node label-top" id="node_brussels" style="top: 24%; left: 49%;" onclick="openMapDetails('brussels', event)">
-                            <span class="node-label">Brussels / EU</span>
+                        <div class="map-node label-right" id="node_cambridge" style="top: 20.8%; left: 45.5%;" onclick="openMapDetails('cambridge', event)">
+                            <span class="node-label">Cambridge</span>
                         </div>
-                        <div class="map-node label-top" id="node_poland" style="top: 20%; left: 54%;" onclick="openMapDetails('poland', event)">
-                            <span class="node-label">Poland</span>
-                        </div>
-                        <div class="map-node label-top" id="node_germany" style="top: 24%; left: 51%;" onclick="openMapDetails('germany', event)">
-                            <span class="node-label">Germany</span>
-                        </div>
-                        <div class="map-node label-top" id="node_athens" style="top: 30%; left: 53%;" onclick="openMapDetails('athens', event)">
-                            <span class="node-label">Greece</span>
+                        <div class="map-node label-top" id="node_edinburgh" style="top: 18.5%; left: 44.5%;" onclick="openMapDetails('edinburgh', event)">
+                            <span class="node-label">Edinburgh</span>
                         </div>
 
+                        <!-- SWITZERLAND CITIES -->
                         <div class="map-node label-top" id="node_ch_zurich" style="top: 25.2%; left: 49.8%;" onclick="openMapDetails('ch_zurich', event)">
-                            <span class="node-label">Zurich / CH</span>
+                            <span class="node-label">Zurich</span>
                         </div>
                         <div class="map-node label-left" id="node_ch_geneva" style="top: 26.5%; left: 48.8%;" onclick="openMapDetails('ch_geneva', event)">
-                            <span class="node-label">Geneva / CH</span>
+                            <span class="node-label">Geneva</span>
                         </div>
                         <div class="map-node label-top" id="node_ch_bern" style="top: 25.8%; left: 49.3%;" onclick="openMapDetails('ch_bern', event)">
-                            <span class="node-label">Bern / CH</span>
-                        </div>
-                        <div class="map-node label-right" id="node_ch_ballenberg" style="top: 26.1%; left: 49.6%;" onclick="openMapDetails('ch_ballenberg', event)">
-                            <span class="node-label">Ballenberg / CH</span>
+                            <span class="node-label">Bern</span>
                         </div>
 
-                        <div class="map-node label-left" id="node_gl_nuuk" style="top: 15%; left: 37%;" onclick="openMapDetails('gl_nuuk', event)">
-                            <span class="node-label">Nuuk / GL</span>
+                        <!-- EUROPEAN CITIES -->
+                        <div class="map-node label-top" id="node_it_bologna" style="top: 27.5%; left: 50.8%;" onclick="openMapDetails('it_bologna', event)">
+                            <span class="node-label">Bologna</span>
                         </div>
-                        <div class="map-node label-top" id="node_gl_ilulissat" style="top: 11%; left: 38%;" onclick="openMapDetails('gl_ilulissat', event)">
-                            <span class="node-label">Ilulissat / GL</span>
+                        <div class="map-node label-top" id="node_it_florence" style="top: 28.2%; left: 51.1%;" onclick="openMapDetails('it_florence', event)">
+                            <span class="node-label">Florence</span>
                         </div>
-                        <div class="map-node label-top" id="node_gl_aalborg" style="top: 18.5%; left: 48.2%;" onclick="openMapDetails('gl_aalborg', event)">
-                            <span class="node-label">Greenland Diaspora / DK</span>
+                        <div class="map-node label-left" id="node_fr_paris" style="top: 25.5%; left: 47.8%;" onclick="openMapDetails('fr_paris', event)">
+                            <span class="node-label">Paris</span>
+                        </div>
+                        <div class="map-node label-left" id="node_si_ljubljana" style="top: 25.8%; left: 52.2%;" onclick="openMapDetails('si_ljubljana', event)">
+                            <span class="node-label">Ljubljana</span>
+                        </div>
+                        <div class="map-node label-right" id="node_hr_zagreb" style="top: 26.5%; left: 52.8%;" onclick="openMapDetails('hr_zagreb', event)">
+                            <span class="node-label">Zagreb</span>
+                        </div>
+                        <div class="map-node label-left" id="node_pt_lisbon" style="top: 29.5%; left: 44.5%;" onclick="openMapDetails('pt_lisbon', event)">
+                            <span class="node-label">Lisbon</span>
+                        </div>
+                        <div class="map-node label-top" id="node_ua_kyiv" style="top: 23%; left: 56.5%;" onclick="openMapDetails('ua_kyiv', event)">
+                            <span class="node-label">Kyiv</span>
+                        </div>
+                        <div class="map-node label-right" id="node_sk_bratislava" style="top: 24.2%; left: 53.2%;" onclick="openMapDetails('sk_bratislava', event)">
+                            <span class="node-label">Bratislava</span>
+                        </div>
+                        <div class="map-node label-top" id="node_ru_volgograd" style="top: 26%; left: 60.5%;" onclick="openMapDetails('ru_volgograd', event)">
+                            <span class="node-label">Volgograd</span>
+                        </div>
+                        <div class="map-node label-left" id="node_ee_tartu" style="top: 17%; left: 55%;" onclick="openMapDetails('ee_tartu', event)">
+                            <span class="node-label">Tartu</span>
+                        </div>
+                        <div class="map-node label-left" id="node_ee_tallinn" style="top: 16%; left: 54.8%;" onclick="openMapDetails('ee_tallinn', event)">
+                            <span class="node-label">Tallinn</span>
+                        </div>
+                        <div class="map-node label-left" id="node_li_vaduz" style="top: 25.5%; left: 50.2%;" onclick="openMapDetails('li_vaduz', event)">
+                            <span class="node-label">Vaduz</span>
+                        </div>
+                        <div class="map-node label-right" id="node_hu_budapest" style="top: 25.8%; left: 53.8%;" onclick="openMapDetails('hu_budapest', event)">
+                            <span class="node-label">Budapest</span>
+                        </div>
+                        <div class="map-node label-right" id="node_lt_vilnius" style="top: 19.5%; left: 54.8%;" onclick="openMapDetails('lt_vilnius', event)">
+                            <span class="node-label">Vilnius</span>
+                        </div>
+                        <div class="map-node label-top" id="node_no_longyearbyen" style="top: 8%; left: 52%;" onclick="openMapDetails('no_longyearbyen', event)">
+                            <span class="node-label">Longyearbyen</span>
+                        </div>
+                        <div class="map-node label-right" id="node_no_oslo" style="top: 17.5%; left: 49.5%;" onclick="openMapDetails('no_oslo', event)">
+                            <span class="node-label">Oslo</span>
+                        </div>
+                        <div class="map-node label-right" id="node_fi_helsinki" style="top: 16%; left: 53.5%;" onclick="openMapDetails('fi_helsinki', event)">
+                            <span class="node-label">Helsinki</span>
+                        </div>
+                        <div class="map-node label-top" id="node_fi_oulu" style="top: 13.5%; left: 54%;" onclick="openMapDetails('fi_oulu', event)">
+                            <span class="node-label">Oulu</span>
+                        </div>
+                        <div class="map-node label-right" id="node_gl_aalborg" style="top: 19%; left: 48.5%;" onclick="openMapDetails('gl_aalborg', event)">
+                            <span class="node-label">Aalborg</span>
+                        </div>
+                        <div class="map-node label-top" id="node_cz_prague" style="top: 22%; left: 52%;" onclick="openMapDetails('cz_prague', event)">
+                            <span class="node-label">Prague</span>
+                        </div>
+                        <div class="map-node label-top" id="node_be_brussels" style="top: 24%; left: 49%;" onclick="openMapDetails('be_brussels', event)">
+                            <span class="node-label">Brussels</span>
+                        </div>
+                        <div class="map-node label-top" id="node_be_leuven" style="top: 24.3%; left: 49.3%;" onclick="openMapDetails('be_leuven', event)">
+                            <span class="node-label">Leuven</span>
+                        </div>
+                        <div class="map-node label-top" id="node_pl_warsaw" style="top: 20%; left: 54%;" onclick="openMapDetails('pl_warsaw', event)">
+                            <span class="node-label">Warsaw</span>
+                        </div>
+                        <div class="map-node label-top" id="node_pl_krakow" style="top: 21%; left: 54.2%;" onclick="openMapDetails('pl_krakow', event)">
+                            <span class="node-label">Krakow</span>
+                        </div>
+                        <div class="map-node label-top" id="node_pl_duszniki" style="top: 21.5%; left: 52.8%;" onclick="openMapDetails('pl_duszniki', event)">
+                            <span class="node-label">Duszniki</span>
+                        </div>
+                        <div class="map-node label-top" id="node_pl_poznan" style="top: 20.5%; left: 52.5%;" onclick="openMapDetails('pl_poznan', event)">
+                            <span class="node-label">Poznań</span>
+                        </div>
+                        <div class="map-node label-top" id="node_germany" style="top: 24%; left: 51%;" onclick="openMapDetails('germany', event)">
+                            <span class="node-label">Frankfurt</span>
+                        </div>
+                        <div class="map-node label-top" id="node_gr_athens" style="top: 30%; left: 53%;" onclick="openMapDetails('gr_athens', event)">
+                            <span class="node-label">Athens</span>
                         </div>
 
-                        <div class="map-node label-right" id="node_ps_gaza_jenin" style="top: 36.8%; left: 58.2%;" onclick="openMapDetails('ps_gaza_jenin', event)">
-                            <span class="node-label">Palestine</span>
+                        <!-- MIDDLE EAST & ASIA CITIES -->
+                        <div class="map-node label-right" id="node_ps_gaza" style="top: 36.8%; left: 58.2%;" onclick="openMapDetails('ps_gaza', event)">
+                            <span class="node-label">Gaza</span>
+                        </div>
+                        <div class="map-node label-right" id="node_ps_jenin" style="top: 36.2%; left: 58.0%;" onclick="openMapDetails('ps_jenin', event)">
+                            <span class="node-label">Jenin</span>
                         </div>
                         <div class="map-node label-left" id="node_jo_amman" style="top: 36.2%; left: 58.8%;" onclick="openMapDetails('jo_amman', event)">
-                            <span class="node-label">Jordan</span>
+                            <span class="node-label">Amman</span>
                         </div>
                         <div class="map-node label-top" id="node_om_muscat" style="top: 41.2%; left: 64.2%;" onclick="openMapDetails('om_muscat', event)">
-                            <span class="node-label">Oman</span>
+                            <span class="node-label">Muscat</span>
                         </div>
-                        <div class="map-node label-top" id="node_ae_abudhabi_dubai" style="top: 41%; left: 62.5%;" onclick="openMapDetails('ae_abudhabi_dubai', event)">
-                            <span class="node-label">UAE</span>
+                        <div class="map-node label-top" id="node_ae_abudhabi" style="top: 41%; left: 62.5%;" onclick="openMapDetails('ae_abudhabi', event)">
+                            <span class="node-label">Abu Dhabi</span>
+                        </div>
+                        <div class="map-node label-top" id="node_ae_dubai" style="top: 40.5%; left: 63.0%;" onclick="openMapDetails('ae_dubai', event)">
+                            <span class="node-label">Dubai</span>
                         </div>
                         <div class="map-node label-right" id="node_cy_nicosia" style="top: 34.5%; left: 57.2%;" onclick="openMapDetails('cy_nicosia', event)">
-                            <span class="node-label">Cyprus</span>
+                            <span class="node-label">Nicosia</span>
                         </div>
                         <div class="map-node label-left" id="node_sy_damascus" style="top: 36.5%; left: 56.5%;" onclick="openMapDetails('sy_damascus', event)">
-                            <span class="node-label">Syria</span>
+                            <span class="node-label">Damascus</span>
                         </div>
                         <div class="map-node label-top" id="node_kg_bishkek" style="top: 31%; left: 68.5%;" onclick="openMapDetails('kg_bishkek', event)">
-                            <span class="node-label">Bishkek / KG</span>
+                            <span class="node-label">Bishkek</span>
                         </div>
                         <div class="map-node label-top" id="node_pakistan" style="top: 44%; left: 67%;" onclick="openMapDetails('pakistan', event)">
-                            <span class="node-label">Pakistan</span>
+                            <span class="node-label">Peshawar</span>
                         </div>
                         <div class="map-node label-top" id="node_goa" style="top: 52%; left: 71%;" onclick="openMapDetails('goa', event)">
-                            <span class="node-label">India</span>
+                            <span class="node-label">Goa</span>
                         </div>
                         <div class="map-node label-top" id="node_th_bangkok" style="top: 48.5%; left: 78.2%;" onclick="openMapDetails('th_bangkok', event)">
-                            <span class="node-label">Thailand</span>
+                            <span class="node-label">Bangkok</span>
                         </div>
                         <div class="map-node label-top" id="node_ph_quezon" style="top: 47.5%; left: 83.8%;" onclick="openMapDetails('ph_quezon', event)">
-                            <span class="node-label">Philippines</span>
+                            <span class="node-label">Quezon City</span>
                         </div>
                         <div class="map-node label-top" id="node_cn_changsha" style="top: 43.5%; left: 76.5%;" onclick="openMapDetails('cn_changsha', event)">
-                            <span class="node-label">Changsha / CN</span>
+                            <span class="node-label">Changsha</span>
                         </div>
                         <div class="map-node label-top" id="node_vn_hanoi" style="top: 48%; left: 77.5%;" onclick="openMapDetails('vn_hanoi', event)">
-                            <span class="node-label">Hanoi / VN</span>
+                            <span class="node-label">Hanoi</span>
                         </div>
                         <div class="map-node label-top" id="node_malaysia" style="top: 58%; left: 81%;" onclick="openMapDetails('malaysia', event)">
-                            <span class="node-label">Malaysia</span>
+                            <span class="node-label">Kuala Lumpur</span>
                         </div>
 
                         <!-- AUSTRALIA & PACIFIC NODES -->
                         <div class="map-node label-right" id="node_au_brisbane_qld" style="top: 70%; left: 88.5%;" onclick="openMapDetails('au_brisbane_qld', event)">
-                            <span class="node-label">Brisbane / QLD</span>
+                            <span class="node-label">Brisbane</span>
                         </div>
                         <div class="map-node label-right" id="node_au_sydney_nsw" style="top: 74.5%; left: 87.2%;" onclick="openMapDetails('au_sydney_nsw', event)">
-                            <span class="node-label">Sydney / NSW</span>
+                            <span class="node-label">Sydney</span>
                         </div>
                         <div class="map-node label-left" id="node_au_melbourne" style="top: 78%; left: 85.5%;" onclick="openMapDetails('au_melbourne', event)">
-                            <span class="node-label">Melbourne / VIC</span>
+                            <span class="node-label">Melbourne</span>
                         </div>
                         <div class="map-node label-left" id="node_au_canberra" style="top: 76%; left: 86.8%;" onclick="openMapDetails('au_canberra', event)">
-                            <span class="node-label">Canberra / ACT</span>
+                            <span class="node-label">Canberra</span>
                         </div>
                         <div class="map-node label-top" id="node_ws_samoa" style="top: 65%; left: 96.8%;" onclick="openMapDetails('ws_samoa', event)">
-                            <span class="node-label">Samoa</span>
+                            <span class="node-label">Apia</span>
                         </div>
-
                         <div class="map-node label-top" id="node_fj_suva" style="top: 66.5%; left: 95.5%;" onclick="openMapDetails('fj_suva', event)">
-                            <span class="node-label">Fiji</span>
-                        </div>
-                        <div class="map-node label-left" id="node_gy_georgetown" style="top: 53.5%; left: 32.2%;" onclick="openMapDetails('gy_georgetown', event)">
-                            <span class="node-label">Guyana</span>
-                        </div>
-                        <div class="map-node label-top" id="node_mu_mauritius" style="top: 72.5%; left: 66.8%;" onclick="openMapDetails('mu_mauritius', event)">
-                            <span class="node-label">Mauritius</span>
-                        </div>
-                        <div class="map-node label-left" id="node_ar_buenosaires" style="top: 79.5%; left: 31.8%;" onclick="openMapDetails('ar_buenosaires', event)">
-                            <span class="node-label">Argentina</span>
-                        </div>
-                        <div class="map-node label-top" id="node_nz_auckland" style="top: 83.5%; left: 93.8%;" onclick="openMapDetails('nz_auckland', event)">
-                            <span class="node-label">New Zealand</span>
-                        </div>
-                        <div class="map-node label-left" id="node_me_ljesevici" style="top: 28.5%; left: 53.5%;" onclick="openMapDetails('me_ljesevici', event)">
-                            <span class="node-label">Montenegro</span>
-                        </div>
-                        <div class="map-node label-left" id="node_co_bogota" style="top: 55%; left: 27%;" onclick="openMapDetails('co_bogota', event)">
-                            <span class="node-label">Bogotá / CO</span>
-                        </div>
-                        <div class="map-node label-left" id="node_cr_sanjose" style="top: 52%; left: 24.5%;" onclick="openMapDetails('cr_sanjose', event)">
-                            <span class="node-label">Costa Rica</span>
+                            <span class="node-label">Suva</span>
                         </div>
                         <div class="map-node label-top" id="node_vu_vanuatu" style="top: 68%; left: 91.5%;" onclick="openMapDetails('vu_vanuatu', event)">
-                            <span class="node-label">Vanuatu</span>
+                            <span class="node-label">Port-Vila</span>
+                        </div>
+                        <div class="map-node label-top" id="node_nz_auckland" style="top: 83.5%; left: 93.8%;" onclick="openMapDetails('nz_auckland', event)">
+                            <span class="node-label">Auckland</span>
                         </div>
 
-                        <!-- REFINED AFRICAN MAP NODES -->
+                        <!-- LATIN AMERICA & OTHER REGIONS -->
+                        <div class="map-node label-left" id="node_gy_georgetown" style="top: 53.5%; left: 32.2%;" onclick="openMapDetails('gy_georgetown', event)">
+                            <span class="node-label">Georgetown</span>
+                        </div>
+                        <div class="map-node label-top" id="node_mu_reduit" style="top: 72.5%; left: 66.8%;" onclick="openMapDetails('mu_reduit', event)">
+                            <span class="node-label">Réduit</span>
+                        </div>
+                        <div class="map-node label-left" id="node_ar_buenosaires" style="top: 79.5%; left: 31.8%;" onclick="openMapDetails('ar_buenosaires', event)">
+                            <span class="node-label">Buenos Aires</span>
+                        </div>
+                        <div class="map-node label-left" id="node_me_ljesevici" style="top: 28.5%; left: 53.5%;" onclick="openMapDetails('me_ljesevici', event)">
+                            <span class="node-label">Lješevići</span>
+                        </div>
+                        <div class="map-node label-left" id="node_co_bogota" style="top: 55%; left: 27%;" onclick="openMapDetails('co_bogota', event)">
+                            <span class="node-label">Bogotá</span>
+                        </div>
+                        <div class="map-node label-left" id="node_cr_sanjose" style="top: 52%; left: 24.5%;" onclick="openMapDetails('cr_sanjose', event)">
+                            <span class="node-label">San José</span>
+                        </div>
+
+                        <!-- AFRICAN CITIES -->
                         <div class="map-node label-top" id="node_af_pretoria" style="top: 75.2%; left: 55.8%;" onclick="openMapDetails('af_pretoria', event)">
-                            <span class="node-label">Pretoria / SA</span>
+                            <span class="node-label">Pretoria</span>
                         </div>
                         <div class="map-node label-top" id="node_af_johannesburg" style="top: 76%; left: 55.5%;" onclick="openMapDetails('af_johannesburg', event)">
-                            <span class="node-label">Johannesburg / SA</span>
+                            <span class="node-label">Johannesburg</span>
                         </div>
                         <div class="map-node label-top" id="node_af_nairobi" style="top: 55.8%; left: 56.2%;" onclick="openMapDetails('af_nairobi', event)">
-                            <span class="node-label">Nairobi / KE</span>
+                            <span class="node-label">Nairobi</span>
                         </div>
                         <div class="map-node label-top" id="node_af_lagos" style="top: 50%; left: 46.8%;" onclick="openMapDetails('af_lagos', event)">
-                            <span class="node-label">Lagos / NG</span>
+                            <span class="node-label">Lagos</span>
                         </div>
                         <div class="map-node label-left" id="node_af_naija_vernacular" style="top: 52%; left: 45.8%;" onclick="openMapDetails('af_naija_vernacular', event)">
-                            <span class="node-label">West Africa Vernacular</span>
+                            <span class="node-label">West Africa</span>
                         </div>
                         <div class="map-node label-top" id="node_af_gaborone" style="top: 73.8%; left: 54.2%;" onclick="openMapDetails('af_gaborone', event)">
-                            <span class="node-label">Gaborone / BW</span>
+                            <span class="node-label">Gaborone</span>
                         </div>
                         <div class="map-node label-right" id="node_af_madagascar" style="top: 68%; left: 62.5%;" onclick="openMapDetails('af_madagascar', event)">
-                            <span class="node-label">Madagascar</span>
+                            <span class="node-label">Antananarivo</span>
                         </div>
                         <div class="map-node label-top" id="node_af_congo" style="top: 58%; left: 51.5%;" onclick="openMapDetails('af_congo', event)">
-                            <span class="node-label">Congo / DRC</span>
+                            <span class="node-label">Kinshasa</span>
                         </div>
                         <div class="map-node label-left" id="node_af_bahamas" style="top: 42%; left: 26.5%;" onclick="openMapDetails('af_bahamas', event)">
-                            <span class="node-label">Bahamas</span>
+                            <span class="node-label">Nassau</span>
                         </div>
                         <div class="map-node label-top" id="node_af_pan_african_research" style="top: 54%; left: 52.5%;" onclick="openMapDetails('af_pan_african_research', event)">
-                            <span class="node-label">Pan-African Research</span>
+                            <span class="node-label">Pan-Africa</span>
+                        </div>
+
+                        <!-- GREENLAND CITIES -->
+                        <div class="map-node label-left" id="node_gl_nuuk" style="top: 15%; left: 37%;" onclick="openMapDetails('gl_nuuk', event)">
+                            <span class="node-label">Nuuk</span>
+                        </div>
+                        <div class="map-node label-top" id="node_gl_ilulissat" style="top: 11%; left: 38%;" onclick="openMapDetails('gl_ilulissat', event)">
+                            <span class="node-label">Ilulissat</span>
                         </div>
 
                         <!-- POPUP TOOLTIP CARD -->
@@ -1115,6 +1182,7 @@
             // Reset Function
             window.resetMacroView = function() {
                 scale = 1.2;
+                posX = 0;
                 posX = 0;
                 posY = 0;
                 render();
