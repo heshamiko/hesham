@@ -180,7 +180,7 @@
             </div>
             <div class="metric-card">
                 <div class="metric-number">1,000s</div>
-                <div class="metric-label">Donated Global Words</div>
+                <div class="metric-label">Global Word Archive Participations</div>
             </div>
             <div class="metric-card">
                 <div class="metric-number">4</div>
@@ -375,7 +375,6 @@
                             <option value="goa">Goa &amp; Mumbai, India</option>
                             <option value="pakistan">Pakistan Archival Nodes</option>
                             <option value="malaysia">Kuala Lumpur, Malaysia</option>
-                            <option value="mombasa">Nairobi &amp; Mombasa, Kenya</option>
                             <option value="bc_vancouver">Vancouver &amp; BC, Canada</option>
                             <option value="alberta_calgary">Alberta Nodes, Canada</option>
                             <option value="toronto_waterloo">Toronto &amp; ON, Canada</option>
@@ -386,12 +385,18 @@
                             <option value="ch_geneva">Geneva, Switzerland</option>
                             <option value="ch_bern">Bern, Switzerland</option>
                             <option value="ch_ballenberg">Ballenberg, Switzerland</option>
-                            <option value="af_kinshasa">Kinshasa, DRC</option>
-                            <option value="af_johannesburg">Johannesburg, South Africa</option>
-                            <option value="af_pretoria">Pretoria, South Africa</option>
-                            <option value="af_gaborone">Gaborone, Botswana</option>
-                            <option value="af_lagos">Lagos, Nigeria</option>
                             <option value="germany">Berlin &amp; Frankfurt, Germany</option>
+                            <!-- REFINED AFRICAN CULTURAL NODES -->
+                            <option value="af_pretoria">Pretoria (Centre for Human Rights, UP), South Africa</option>
+                            <option value="af_johannesburg">Johannesburg (TEARS Foundation), South Africa</option>
+                            <option value="af_nairobi">Nairobi (PAWA Initiative / PAWA254), Kenya</option>
+                            <option value="af_lagos">Lagos (University of Lagos / Omenka Gallery), Nigeria</option>
+                            <option value="af_naija_vernacular">West Africa / Vernacular Pidgin Research Networks</option>
+                            <option value="af_gaborone">Gaborone (Thapong Visual Arts Centre), Botswana</option>
+                            <option value="af_madagascar">Antananarivo (American School of Antananarivo), Madagascar</option>
+                            <option value="af_congo">Brazzaville / Kinshasa (Congo Children's Trust), DRC</option>
+                            <option value="af_bahamas">Nassau (Government Cultural Directorate), Bahamas</option>
+                            <option value="af_pan_african_research">Pan-African Field Research &amp; Tribal Ethnographic Archives</option>
                         </select>
                     </div>
 
@@ -616,23 +621,37 @@
                         <div class="map-node label-top" id="node_vu_vanuatu" style="top: 68%; left: 91.5%;" onclick="openMapDetails('vu_vanuatu', event)">
                             <span class="node-label">Vanuatu</span>
                         </div>
-                        <div class="map-node label-top" id="node_af_kinshasa" style="top: 58%; left: 51.5%;" onclick="openMapDetails('af_kinshasa', event)">
-                            <span class="node-label">Kinshasa / DRC</span>
+
+                        <!-- UPDATED REFINED AFRICAN MAP NODES -->
+                        <div class="map-node label-top" id="node_af_pretoria" style="top: 75.2%; left: 55.8%;" onclick="openMapDetails('af_pretoria', event)">
+                            <span class="node-label">Pretoria / SA</span>
                         </div>
                         <div class="map-node label-top" id="node_af_johannesburg" style="top: 76%; left: 55.5%;" onclick="openMapDetails('af_johannesburg', event)">
                             <span class="node-label">Johannesburg / SA</span>
                         </div>
-                        <div class="map-node label-top" id="node_af_pretoria" style="top: 75.2%; left: 55.8%;" onclick="openMapDetails('af_pretoria', event)">
-                            <span class="node-label">Pretoria / SA</span>
-                        </div>
-                        <div class="map-node label-top" id="node_af_gaborone" style="top: 73.8%; left: 54.2%;" onclick="openMapDetails('af_gaborone', event)">
-                            <span class="node-label">Gaborone / BW</span>
+                        <div class="map-node label-top" id="node_af_nairobi" style="top: 55.8%; left: 56.2%;" onclick="openMapDetails('af_nairobi', event)">
+                            <span class="node-label">Nairobi / KE</span>
                         </div>
                         <div class="map-node label-top" id="node_af_lagos" style="top: 50%; left: 46.8%;" onclick="openMapDetails('af_lagos', event)">
                             <span class="node-label">Lagos / NG</span>
                         </div>
-                        <div class="map-node label-top" id="node_mombasa" style="top: 55.8%; left: 56.2%;" onclick="openMapDetails('mombasa', event)">
-                            <span class="node-label">Nairobi &amp; Mombasa</span>
+                        <div class="map-node label-left" id="node_af_naija_vernacular" style="top: 52%; left: 45.8%;" onclick="openMapDetails('af_naija_vernacular', event)">
+                            <span class="node-label">West Africa Vernacular</span>
+                        </div>
+                        <div class="map-node label-top" id="node_af_gaborone" style="top: 73.8%; left: 54.2%;" onclick="openMapDetails('af_gaborone', event)">
+                            <span class="node-label">Gaborone / BW</span>
+                        </div>
+                        <div class="map-node label-right" id="node_af_madagascar" style="top: 68%; left: 62.5%;" onclick="openMapDetails('af_madagascar', event)">
+                            <span class="node-label">Madagascar</span>
+                        </div>
+                        <div class="map-node label-top" id="node_af_congo" style="top: 58%; left: 51.5%;" onclick="openMapDetails('af_congo', event)">
+                            <span class="node-label">Congo / DRC</span>
+                        </div>
+                        <div class="map-node label-left" id="node_af_bahamas" style="top: 42%; left: 26.5%;" onclick="openMapDetails('af_bahamas', event)">
+                            <span class="node-label">Bahamas</span>
+                        </div>
+                        <div class="map-node label-top" id="node_af_pan_african_research" style="top: 54%; left: 52.5%;" onclick="openMapDetails('af_pan_african_research', event)">
+                            <span class="node-label">Pan-African Research</span>
                         </div>
 
                         <!-- POPUP TOOLTIP CARD -->
@@ -649,13 +668,26 @@
 
             <section id="word-archive">
                 <div class="word-terminal-box">
-                    <span class="benchmark-tag">&bull; LIVE GLOBAL WORD DONATION MATRIX &bull; NEURO-AESTHETIC ARCHIVE</span>
+                    <span class="benchmark-tag">&bull; LIVE GLOBAL WORD ARCHIVE MATRIX &bull; NEURO-AESTHETIC ARCHIVE</span>
                     <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0; font-weight: 300; text-transform: uppercase;">Institutional Data Provenance</h3>
-                    <p style="font-size: 0.8rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Search live word donations from global leadership, universities, museums, and sovereign institutions.</p>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Search live word records from global leadership, universities, museums, and sovereign institutions.</p>
                     
-                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Donated Terms (e.g., Sydney, Queensland, Melbourne, Samoa, Greenland, Harvard, Yale)...">
+                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Archival Terms (e.g., Pretoria, Lagos, Nairobi, Harvard, Yale, Sydney)...">
                     
                     <div class="word-pills-container" id="wordPillsContainer">
+                        <!-- REFINED AFRICAN & GLOBAL INSTITUTIONAL PILLS -->
+                        <span class="word-pill-item">Centre for Human Rights — University of Pretoria (South Africa): <strong>SERENDIPITY</strong></span>
+                        <span class="word-pill-item">TEARS Foundation (Johannesburg, South Africa): <strong>HEGEMONY</strong></span>
+                        <span class="word-pill-item">PAWA Initiative / PAWA254 (Nairobi, Kenya): <strong>ARTIVISM</strong></span>
+                        <span class="word-pill-item">University of Lagos &amp; Omenka Gallery (Nigeria): <strong>PEACE / RESILIENCE</strong></span>
+                        <span class="word-pill-item">Vernacular Linguistic Forum (Naija / West Africa): <strong>ODESHI / ONE-LOVE / YANGA / HUSTLE / AJO / ESUSU</strong></span>
+                        <span class="word-pill-item">Thapong Visual Arts Centre (Gaborone, Botswana): <strong>INTERPRETATION</strong></span>
+                        <span class="word-pill-item">American School of Antananarivo (Madagascar): <strong>SAMBATRA</strong></span>
+                        <span class="word-pill-item">Congo Children’s Trust (Brazzaville / Kinshasa, DRC): <strong>CONGO</strong></span>
+                        <span class="word-pill-item">Government Cultural Directorate (Nassau, The Bahamas): <strong>GRACE</strong></span>
+                        <span class="word-pill-item">Leiden University Department of African Linguistics (Netherlands): <strong>HHALHHALI (Tanzanian Iraqw Concept)</strong></span>
+                        <span class="word-pill-item">Pan-African Tribal Ethnographic Research Networks: <strong>KUUMBA (Swahili Legacy Framework)</strong></span>
+
                         <span class="word-pill-item">University of Sydney (Holocaust Studies &amp; Social Sciences): <strong>FRAILTY / MIASMA</strong></span>
                         <span class="word-pill-item">University of Queensland Art Museum &amp; Outer Space: <strong>SEEN / FLUX</strong></span>
                         <span class="word-pill-item">The University of Melbourne (School of Culture &amp; Communication): <strong>HUMANITIES</strong></span>
@@ -688,7 +720,6 @@
                         <span class="word-pill-item">UNTREF Centre for Genocide Studies (Buenos Aires, Argentina): <strong>KHURBN (HISTORICAL TRAUMA &amp; 2027 JEWISH MUSEUM RESEARCH)</strong></span>
 
                         <span class="word-pill-item">Victory Afghanistan (Illinois, USA): <strong>RESONANCE</strong></span>
-                        <span class="word-pill-item">Government of The Bahamas (Nassau, Bahamas): <strong>GRACE</strong></span>
                         <span class="word-pill-item">CLEAR Global (Idaho, USA): <strong>RESILIENCE</strong></span>
                         <span class="word-pill-item">The Phoenix (Colorado, USA): <strong>UNSUBSCRIBE</strong></span>
                         <span class="word-pill-item">Bethany House (Baldwin, New York, USA): <strong>EMPATHY</strong></span>
@@ -704,7 +735,6 @@
                         <span class="word-pill-item">Center for Jewish Life – Princeton Hillel (New Jersey, USA): <strong>FLOURISHING</strong></span>
                         <span class="word-pill-item">Hillel at Florida State University (Tallahassee, Florida, USA): <strong>BLESSING</strong></span>
                         <span class="word-pill-item">Endangered Languages Project (Sindhi Language): <strong>MARUARA (ماروئڙا)</strong></span>
-                        <span class="word-pill-item">Endangered Languages Project (Naija / Nigerian Pidgin): <strong>ODESHI / ONE-LOVE / YANGA / HUSTLE / AJO / ESUSU</strong></span>
 
                         <span class="word-pill-item">Harvard International Arts + Mind Lab (Baltimore, MD, USA): <strong>JOY</strong></span>
                         <span class="word-pill-item">Harvard Dept. of Molecular &amp; Cellular Biology (Cambridge, MA): <strong>COGNITION</strong></span>
@@ -756,7 +786,7 @@
 
                         <span class="word-pill-item">Princeton University Dept. of Religion: <strong>ALIVE</strong></span>
                         <span class="word-pill-item">Princeton University Dept. of Politics: <strong>COOPERATION</strong></span>
-                        <span class="word-pill-item">Columbia University Dept. of History: <strong>RACHMONES (רחמנות)</strong></span>
+                        <span class="word-pill-item">Columbia University Dept. of History: <strong>RACHMONES (רחمנות)</strong></span>
                         <span class="word-pill-item">Columbia Dept. of Middle Eastern, South Asian &amp; African Studies: <strong>ADAB</strong></span>
                         <span class="word-pill-item">Columbia University Dept. of Political Science: <strong>COMPASSION</strong></span>
                         <span class="word-pill-item">MIT Dept. of Philosophy &amp; Women's and Gender Studies: <strong>HOPE</strong></span>
@@ -766,7 +796,7 @@
 
                         <span class="word-pill-item">UC Berkeley (Magnes Collection of Jewish Art &amp; Life): <strong>MISHPOKHE (משפחה)</strong></span>
                         <span class="word-pill-item">UC Berkeley Dept. of Linguistics: <strong>HUMBLE</strong></span>
-                        <span class="word-pill-item">UC Davis Dept. of Art &amp; Art History: <strong>JAN (جان / Ջان)</strong></span>
+                        <span class="word-pill-item">UC Davis Dept. of Art &amp; Art History: <strong>JAN (جان / Ջան)</strong></span>
                         <span class="word-pill-item">UC Irvine (Jordan Center for Persian Studies): <strong>COURAGE</strong></span>
                         <span class="word-pill-item">UC Irvine School of Humanities (Persian &amp; French Culture): <strong>COMMUNITY IS THE PATIENT WORK OF MAKING ROOM</strong></span>
                         <span class="word-pill-item">UC Irvine Armenian Studies Program: <strong>PEYVAND / ARMENI</strong></span>
@@ -911,7 +941,7 @@
                             <h3 class="ledger-title">Equanimity / Gelassenheit</h3>
                             <div class="ledger-meta-list">
                                 <strong>Medium:</strong> Mixed Media on Canvas (Natural Ground Earth Pigments)<br>
-                                <strong>Provenance / Donation:</strong> Artas Foundation (Swiss Foundation for Art in Regions of Conflict)<br>
+                                <strong>Provenance:</strong> Artas Foundation (Swiss Foundation for Art in Regions of Conflict)<br>
                                 <strong>Exhibition History:</strong> Museum of West Bohemia
                             </div>
                         </div>
@@ -929,7 +959,7 @@
                             <h3 class="ledger-title">Monumental Packaging Sculpture</h3>
                             <div class="ledger-meta-list">
                                 <strong>Medium:</strong> Recycled Industrial Packaging &amp; Gold Leaf<br>
-                                <strong>Donating Institutions:</strong> National Museum of the History of Ukraine, National Museum of Denmark, Museum of Basel, Nobel Prize Museum, City Museum Nuremberg, Nuuk Art Museum, and many more<br>
+                                <strong>Patron Institutions:</strong> National Museum of the History of Ukraine, National Museum of Denmark, Museum of Basel, Nobel Prize Museum, City Museum Nuremberg, Nuuk Art Museum, and many more<br>
                                 <strong>Exhibition History:</strong> Exhibited across state museums and documented in official catalogues from the first public display at the Museum of Paper in Duszniki-Zdrój, Poland
                             </div>
                         </div>
