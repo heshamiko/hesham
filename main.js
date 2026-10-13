@@ -519,7 +519,7 @@ const mapCityData = {
     },
     goa: {
         city: "INDIA &bull; GOA, MUMBAI &amp; NEW DELHI",
-        shows: `&bull; <b>Institutional Anchor:</b> Carpe Diem Gallery (Goa); Sala de Arte; Chatterjee &amp; Lal (Mumbai); Judah Hyam Synagogue (New Delhi); Sethu Centre.<br>
+        shows: `&bull; <b>Institutional Anchor:</b> Sala de Arte (Goa); Chatterjee &amp; Lal (Mumbai); Judah Hyam Synagogue (New Delhi); Sethu Centre.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Sacred beauty, interfaith theological inquiry, pediatrics neurodevelopment benefit series, and Indian visual traditions.<br>
 &bull; <b>Curatorial Focus:</b> Monographic solo series (<i>Mukha</i>, <i>Samay</i>, <i>Aliferous</i>) and benefit canvases addressing pediatric neurodevelopment.`
     },
@@ -687,15 +687,23 @@ const mapCityData = {
 function openMapDetails(key, event) {
     if (event) event.stopPropagation();
 
-    document.querySelectorAll('.map-node').forEach(n => n.classList.remove('active-node'));
-
+    const allNodes = document.querySelectorAll('.map-node');
     const data = mapCityData[key];
     const nodeElem = document.getElementById('node_' + key);
     const popup = document.getElementById('mapPopupCard');
     const frame = document.getElementById('mapCanvasFrame');
 
     if (data && popup && frame) {
-        if (nodeElem) nodeElem.classList.add('active-node');
+        // Apply isolation effect across nodes
+        allNodes.forEach(n => {
+            n.classList.remove('active-node');
+            n.style.opacity = '0.25';
+        });
+
+        if (nodeElem) {
+            nodeElem.classList.add('active-node');
+            nodeElem.style.opacity = '1';
+        }
 
         document.getElementById('popupCityTitle').innerHTML = data.city;
         document.getElementById('popupCityBody').innerHTML = data.shows;
@@ -729,7 +737,15 @@ function openMapDetails(key, event) {
 function closeMapDetails() {
     const popup = document.getElementById('mapPopupCard');
     if (popup) popup.classList.remove('active');
-    document.querySelectorAll('.map-node').forEach(n => n.classList.remove('active-node'));
+
+    // Reset visibility for all nodes
+    document.querySelectorAll('.map-node').forEach(n => {
+        n.classList.remove('active-node');
+        n.style.opacity = '1';
+    });
+
+    const selector = document.getElementById('citySelector');
+    if (selector) selector.value = '';
 }
 
 function selectCityFromDropdown(key) {
@@ -747,7 +763,8 @@ function selectCityFromDropdown(key) {
 // Close map popup when clicking outside the canvas frame
 document.addEventListener('click', function(e) {
     const frame = document.getElementById('mapCanvasFrame');
-    if (frame && !frame.contains(e.target)) {
+    const selector = document.getElementById('citySelector');
+    if (frame && !frame.contains(e.target) && selector && !selector.contains(e.target)) {
         closeMapDetails();
     }
 });
