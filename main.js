@@ -329,28 +329,43 @@ const mapCityData = {
         shows: `&bull; <b>Contemporary Visual Art Directorate:</b> Retrospective Monograph Archives`
     },
     bc_vancouver: {
-        city: "VANCOUVER &amp; BC &bull; CANADA",
-        shows: `&bull; <b>British Columbia Fine Arts Repositories</b>`
+        city: "CANADA &bull; BRITISH COLUMBIA &amp; PACIFIC COAST",
+        shows: `&bull; <b>Museum of Anthropology (MOA — Vancouver):</b> Material Archival Donor providing recycled packaging grounds for <i>Life of a Box</i>.<br>
+&bull; <b>University of British Columbia (Vancouver &amp; Kelowna):</b> Multidisciplinary research spanning philosophy (aesthetic subtlety), anthropology (linguistic endangerment), and land-based digital media art across Syilx Okanagan Nation Territory.<br>
+&bull; <b>University of Victoria &amp; JASCO Applied Sciences:</b> Coast Salish land memory, water ecology (<i>Ama</i>), and technical marine acoustic research into underwater soundscapes.`
     },
     alberta_calgary: {
-        city: "ALBERTA NODES &bull; CANADA",
-        shows: `&bull; <b>Alberta Visual Arts Heritage Repositories</b>`
+        city: "CANADA &bull; ALBERTA &amp; PRAIRIE NODES",
+        shows: `&bull; <b>University of Alberta (Edmonton):</b> Pedagogical exchange with the Faculty of Education and Indigenous Teacher Education Directorate on Nehiyaw (Cree) relational philosophy and sacred love (<i>Sâkihitowin</i>).<br>
+&bull; <b>University of Calgary &amp; Calgary Arts Development:</b> Scholarly exchange on musical composition, spatial acoustics, public cultural investment, and community bundling.<br>
+&bull; <b>Medalta Historic District &amp; Alberta Museum:</b> Industrial heritage preservation site and material donor for packaging research.`
     },
     toronto_waterloo: {
-        city: "TORONTO &amp; ON &bull; CANADA",
-        shows: `&bull; <b>Ontario Cultural &amp; Academic Monographic Archives</b>`
+        city: "CANADA &bull; TORONTO, WATERLOO &amp; SOUTHERN ONTARIO",
+        shows: `&bull; <b>Seneca Polytechnic &amp; University of Waterloo:</b> Academic monographic trajectory, International Baccalaureate alumni record, and material patron for <i>Life of a Box</i>.<br>
+&bull; <b>Toronto Metropolitan University (TMU) &amp; Agora Prep Academy:</b> Institutional preservation node for ecological packaging materials and secondary host for the global <i>'I Am'</i> youth psychology project.<br>
+&bull; <b>Institutional Archive Exchanges:</b> Scholarly dialogues with United Jewish Appeal (UJA) Federation, Sex Work Donor Collaborative (SWDC), Penny Appeal Canada (Mississauga), and Women &amp; Children's Shelter (Barrie) on social cohesion, human rights legal frameworks, and systemic resilience.<br>
+&bull; <b>Trent University (Peterborough):</b> Chanie Wenjack School for Indigenous Studies dialogue on Anishinaabe philosophy, peace frameworks (<i>Skén:nen</i>), and Indigenous governance.<br>
+&bull; <b>Kitchener-Waterloo Civic Center:</b> Early student community service record and civic engagement history.`
     },
     ottawa_kingston: {
-        city: "OTTAWA &amp; KINGSTON &bull; CANADA",
-        shows: `&bull; <b>National Gallery of Canada Knowledge Keepers</b> &mdash; <i>MOWICHA / ANKOSÉ</i>`
+        city: "CANADA &bull; OTTAWA, KINGSTON &amp; CAPITAL REGION",
+        shows: `&bull; <b>National Gallery of Canada (Ottawa):</b> Institutional exchange surrounding the foundational Anishinaabemowin framework <i>Ankosé</i> ('everything is connected'), exploring territorial heritage and interconnected global archives.<br>
+&bull; <b>Carleton University:</b> Conservation and ethnographic research with the Canadian Centre for Evidence-Informed Conservation and School of Indigenous/Canadian Studies incorporating matriarchal concepts (<i>Unci</i>) and environmental reflection.<br>
+&bull; <b>Queen's University (Kingston):</b> Scientific and cosmological exchange with the Department of Physics, Engineering Physics &amp; Astronomy on physical transformation, cosmic energy, and systemic paradigm shifts.`
     },
     montreal_qc: {
-        city: "MONTREAL &amp; QC &bull; CANADA",
-        shows: `&bull; <b>Quebec Cultural &amp; Academic Monographic Archives</b>`
+        city: "CANADA &bull; MONTREAL, QUEBEC &amp; ATLANTIC REGIONS",
+        shows: `&bull; <b>McGill University &amp; Université de Montréal:</b> Scholarly dialogue on visual culture, medical humanities, temporal perception, and bilingual philosophical traditions.<br>
+&bull; <b>Native Women's Shelter of Montreal &amp; Kainai Nation:</b> Grassroots Indigenous advocacy dialogue on First Nations rights and contemporary action (<i>Skoden</i>).<br>
+&bull; <b>Arteria Gallery (Quebec):</b> Gallery preservation site and material patron for recycled packaging works.<br>
+&bull; <b>Dalhousie University (Halifax, NS) &amp; The Rooms (St. John's, NL):</b> Atlantic socioreligious research and maritime archival dialogue on geographical sanctuary and coastal identity.`
     },
     yukon_atlantic: {
-        city: "YUKON &amp; ATLANTIC &bull; CANADA",
-        shows: `&bull; <b>Indigenous Heritage &amp; Territorial Archives</b>`
+        city: "CANADA &bull; YUKON, NORTHWEST TERRITORIES &amp; MANITOBA",
+        shows: `&bull; <b>ODD Gallery / Klondike Institute of Art &amp; Culture (Dawson City, YT):</b> Sub-Arctic ecological material donor and northern exhibition venue for recycled industrial packaging research.<br>
+&bull; <b>University of Manitoba (Winnipeg):</b> Critical Indigenous theory exchange on Anishinaabe and Inuit existential philosophy (<i>Pimatisiwin</i> / <i>Auyunarmut</i> / <i>Taima</i>) alongside modernist art history research.<br>
+&bull; <b>University of Saskatchewan (Saskatoon):</b> Prairie monographic studio research on architectural scale and landscape representation.`
     },
     ch_zurich: {
         city: "ZURICH &bull; SWITZERLAND",
