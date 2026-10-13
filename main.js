@@ -1040,23 +1040,7 @@ function closeDossier() {
 }
 
 
-// --- 6. LIVE WORD MATRIX FILTER (WITH DEBOUNCE) ---
-let filterTimeout;
-function filterWords() {
-    clearTimeout(filterTimeout);
-    filterTimeout = setTimeout(() => {
-        const input = document.getElementById('wordSearchInput').value.toLowerCase().trim();
-        const pills = document.querySelectorAll('.word-pill-item');
-        
-        pills.forEach(pill => {
-            const text = pill.innerText.toLowerCase();
-            pill.style.display = text.includes(input) ? 'inline-block' : 'none';
-        });
-    }, 150);
-}
-
-
-// --- 7. MASTERWORK LEDGER CATEGORY FILTER ---
+// --- 6. MASTERWORK LEDGER CATEGORY FILTER ---
 function filterLedger(category, event) {
     const buttons = document.querySelectorAll('.ledger-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
@@ -1073,7 +1057,7 @@ function filterLedger(category, event) {
 }
 
 
-// --- 8. GLOBAL ACCESSIBILITY & KEYBOARD HANDLERS ---
+// --- 7. GLOBAL ACCESSIBILITY & KEYBOARD HANDLERS ---
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeDossier();
