@@ -70,7 +70,7 @@ const mapCityData = {
 &bull; <b>Skirball Cultural Center &amp; Sinai Temple (Los Angeles, CA):</b> <i>PROPINQUITY</i> | <i>HINENI</i><br>
 &bull; <b>Institute for Art and Olfaction (Los Angeles, CA):</b> <i>SENSUAL</i><br>
 &bull; <b>UC Berkeley &amp; Magnes Collection (Berkeley, CA):</b> <i>MISHPOKHE (משפחה)</i> | <i>HUMBLE</i><br>
-&bull; <b>UC Davis (Davis, CA):</b> <i>JAN (جان / Ջան)</i><br>
+&bull; <b>UC Davis (Davis, CA):</b> <i>JAN (جان / Ջان)</i><br>
 &bull; <b>UC Irvine (Irvine, CA):</b> <i>COURAGE</i> | <i>Persian Cultural Expression</i> | <i>PEYVAND / ARMENI</i><br>
 &bull; <b>UC San Diego (La Jolla, CA):</b> <i>DISTURBANCE</i><br>
 &bull; <b>Altman Siegel Gallery (San Francisco, CA):</b> <i>SIGNS</i><br>
@@ -119,9 +119,22 @@ const mapCityData = {
 &bull; <b>Curatorial Scope:</b> Exploration of creative autonomy and unrestricted expression beyond formal regulatory boundaries.`
     },
     ws_samoa: {
-        city: "SAMOA &bull; APIA (PACIFIC DIALOGUE NODE)",
-        shows: `&bull; <b>National University of Samoa:</b> Faculty of Arts &mdash; <i>STEADY</i> | <i>CONTENT</i> | <i>OPTIMISTIC</i><br>
-&bull; <b>Academic &amp; Curatorial Focus:</b> Inquiry into Pacific philosophy, internal balance, and communal resilience, translating South Pacific equilibrium into layered material research.`
+        city: "SAMOA &bull; APIA",
+        shows: `&bull; <b>National University of Samoa:</b> Faculty of Arts &amp; Pacific Studies Directorate.<br>
+&bull; <b>Academic &amp; Curatorial Exchange:</b> Interdisciplinary dialogue examining South Pacific philosophy, emotional equilibrium, and communal resilience within modern Pacific educational frameworks. Research anchored in the triple conceptual foundation of <i>Steady</i>, <i>Content</i>, and <i>Optimistic</i> as visual anchors for internal stability.<br>
+&bull; <b>Curatorial Focus:</b> Exploration of Pacific spatial balance and ocean topologies translated into layered material research and structural canvas compositions.`
+    },
+    fj_suva: {
+        city: "FIJI &bull; SUVA",
+        shows: `&bull; <b>The University of the South Pacific:</b> School of Language, Arts &amp; Media.<br>
+&bull; <b>Academic &amp; Curatorial Exchange:</b> Scholarly dialogue on South Pacific literary traditions, linguistic nuance, and post-colonial island narratives. Conceptual research focusing on cultural idiosyncrasy and structural language patterns within the broader Oceania region.<br>
+&bull; <b>Curatorial Focus:</b> Fluid gestural studies examining maritime heritage, oral narrative structures, and regional identity transformed into large-scale canvas research.`
+    },
+    vu_vanuatu: {
+        city: "VANUATU &bull; PORT-VILA",
+        shows: `&bull; <b>Vanuatu Cultural Centre (VKS):</b> National Cultural Directorate &amp; Intangible Heritage Council.<br>
+&bull; <b>Academic &amp; Curatorial Exchange:</b> High-level cultural dialogue addressing global crisis response, human unity, and community solidarity. Research centering on the universal imperative of <i>Love</i> as a primary catalyst for individual agency and collective restoration during pivotal periods.<br>
+&bull; <b>Curatorial Focus:</b> Intimate textural and color-field compositions exploring human empathy, social cohesion, and the preservation of indigenous Pacific heritage.`
     },
     it_bologna_florence: {
         city: "ITALY &bull; BOLOGNA &amp; FLORENCE",
@@ -146,10 +159,6 @@ const mapCityData = {
     th_bangkok: {
         city: "THAILAND &bull; BANGKOK",
         shows: `&bull; <b>Chulalongkorn University:</b> Faculty of Fine &amp; Applied Arts &mdash; <i>ABUSIVE</i>`
-    },
-    fj_suva: {
-        city: "FIJI &bull; SUVA",
-        shows: `&bull; <b>University of the South Pacific:</b> Academic Directorate &mdash; <i>QUIRK</i>`
     },
     gy_georgetown: {
         city: "GUYANA &bull; GEORGETOWN",
@@ -296,10 +305,6 @@ const mapCityData = {
         city: "SAN JOSÉ &bull; COSTA RICA",
         shows: `&bull; <b>Fundación ARS TEOR/éTica:</b> Curatorial Directorate &mdash; <i>INTERDEPENDENCIA</i>`
     },
-    vu_vanuatu: {
-        city: "PORT-VILA &bull; VANUATU",
-        shows: `&bull; <b>Vanuatu Cultural Centre (VKS):</b> Executive Directorate &mdash; <i>LOVE</i>`
-    },
     sy_damascus: {
         city: "DAMASCUS &bull; SYRIA",
         shows: `&bull; <b>Cultural Heritage Archive Node:</b> <i>DIGNITY</i>`
@@ -345,8 +350,10 @@ const mapCityData = {
 &bull; <b>Humanitarian &amp; Crisis Provenance:</b> Dedicated solo monograph <i>Goa COVID</i> and benefit initiatives supporting pediatric neurodevelopmental research at the Sethu Centre.`
     },
     pakistan: {
-        city: "PAKISTAN ARCHIVAL NODES",
-        shows: `&bull; <b>Cultural &amp; Academic Heritage Repositories</b>`
+        city: "PAKISTAN &bull; PESHAWAR &amp; ARCHIVAL NODES",
+        shows: `&bull; <b>University of Peshawar (Dept. of Environmental Sciences) / Mohatta Palace Museum:</b> Archival &amp; Field Research Directorate.<br>
+&bull; <b>Academic &amp; Ethnographic Research:</b> Multi-stage field study across autonomous tribal territories (<i>Ilaqa-e-Ghair</i>), investigating indigenous tribal justice systems, agrarian self-reliance, armaments as social security icons, and ecological realities along borderland corridors. Material partnership with national museum repositories providing repurposed industrial packaging for global sustainability initiatives displayed at the Museum of Papermaking in Duszniki-Zdrój.<br>
+&bull; <b>Curatorial Focus:</b> Photographic documentation, ecological material preservation, and raw monochromatic canvas research dissecting borderland autonomy, tribal honor codes, and environmental endurance.`
     },
     malaysia: {
         city: "KUALA LUMPUR &bull; MALAYSIA",
@@ -396,7 +403,7 @@ const mapCityData = {
         city: "GERMANY &bull; BERLIN &amp; FRANKFURT",
         shows: `&bull; <b>Jewish Museum Frankfurt &amp; Hamburger Kunsthalle:</b> Historical Archives`
     },
-    // --- UPDATED REFINED AFRICAN CULTURAL & RESEARCH NODES ---
+    // --- REFINED AFRICAN CULTURAL & RESEARCH NODES ---
     af_pretoria: {
         city: "SOUTH AFRICA &bull; PRETORIA",
         shows: `&bull; <b>Centre for Human Rights — University of Pretoria:</b> Academic Directorate &amp; Legal Philosophy Program.<br>
@@ -555,7 +562,7 @@ const dossierData = {
     equanimity: {
         code: "PROVENANCE DOSSIER · WORDS PROJECT",
         title: "Equanimity / Gelassenheit",
-        body: "Donated by Artas Foundation, a Swiss foundation operating in regions of conflict. Created using heavy earth pigments and presented at the Museum of West Bohemia. It translates the term 'Equanimity' along with others into a multi-layered visual field exploring calm resilience amidst geopolitical tension."
+        body: "Artas Foundation (Swiss Foundation for Art in Regions of Conflict). Created using heavy earth pigments and presented at the Museum of West Bohemia. It translates the term 'Equanimity' along with others into a multi-layered visual field exploring calm resilience amidst geopolitical tension."
     },
     box_monograph: {
         code: "PROVENANCE DOSSIER · LIFE OF A BOX",
