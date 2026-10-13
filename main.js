@@ -158,7 +158,9 @@ const mapCityData = {
     },
     th_bangkok: {
         city: "THAILAND &bull; BANGKOK",
-        shows: `&bull; <b>Chulalongkorn University:</b> Faculty of Fine &amp; Applied Arts &mdash; <i>ABUSIVE</i>`
+        shows: `&bull; <b>Chulalongkorn University:</b> Faculty of Fine and Applied Arts.<br>
+&bull; <b>Institutional Exchange:</b> Academic engagement with fine arts leadership on Southeast Asian aesthetic heritage, performance methodologies, and sensory resonance in modern practice.<br>
+&bull; <b>Curatorial Focus:</b> Structural research into spatial cadence, ritual geometry, and fluid material traditions across East Asian contemporary art networks.`
     },
     gy_georgetown: {
         city: "GUYANA &bull; GEORGETOWN",
@@ -180,7 +182,9 @@ const mapCityData = {
     },
     ph_quezon: {
         city: "PHILIPPINES &bull; QUEZON CITY",
-        shows: `&bull; <b>University of the Philippines Diliman:</b> College of Fine Arts &mdash; <i>KAPWA</i>`
+        shows: `&bull; <b>University of the Philippines Diliman:</b> College of Fine Arts.<br>
+&bull; <b>Institutional Exchange:</b> Institutional exchange with academic directorates focusing on archipelagic visual histories, community-grounded creative discourse, and post-colonial artistic identity.<br>
+&bull; <b>Curatorial Focus:</b> Exploration of island cartography, collective memory, and the material vernacular of Southeast Asian island networks.`
     },
     ar_buenosaires: {
         city: "ARGENTINA &bull; BUENOS AIRES",
@@ -261,10 +265,11 @@ const mapCityData = {
 &bull; <b>American University in Dubai:</b> <i>YOU</i><br>
 &bull; <b>Abu Dhabi University:</b> <i>INTERDEPENDENCE</i>`
     },
-    cn_shenzhen_hk: {
-        city: "SHENZHEN &amp; HONG KONG &bull; CHINA",
-        shows: `&bull; <b>CUHK Art Museum:</b> Museum Directorate &mdash; <i>ZEN</i><br>
-&bull; <b>CUHK Academic Directorate:</b> <i>BREATH</i>`
+    cn_changsha: {
+        city: "CHANGSHA &bull; CHINA",
+        shows: `&bull; <b>Hunan Normal University (HCTS) &amp; University Art Museum Directorate:</b><br>
+&bull; <b>Institutional Exchange:</b> Transcultural research dialogue spanning comparative literature institutes and museum leadership, analyzing expansive world-literary perspectives, global horizon models, and cross-border museum curation.<br>
+&bull; <b>Curatorial Focus:</b> Monumental compositions exploring transcultural poetic structures, multi-perspective narrative arcs, and the visual translation of literary theory.`
     },
     lt_vilnius: {
         city: "VILNIUS &bull; LITHUANIA",
@@ -285,7 +290,9 @@ const mapCityData = {
     },
     co_bogota: {
         city: "BOGOTÁ &bull; COLOMBIA",
-        shows: `&bull; <b>Universidad de los Andes:</b> Academic Directorate &mdash; <i>EGO</i>`
+        shows: `&bull; <b>Universidad de los Andes:</b> Academic &amp; Humanities Faculties.<br>
+&bull; <b>Institutional Exchange:</b> Scholarly dialogue with senior academic faculty regarding South American socio-cultural historiography, pedagogical frameworks, and the convergence of academic research with visual expression.<br>
+&bull; <b>Curatorial Focus:</b> Canvas studies analyzing memory landscapes, institutional knowledge transfer, and urban Andean spatial dynamics.`
     },
     vn_hanoi: {
         city: "VIETNAM &bull; HANOI",
@@ -303,7 +310,9 @@ const mapCityData = {
     },
     cr_sanjose: {
         city: "SAN JOSÉ &bull; COSTA RICA",
-        shows: `&bull; <b>Fundación ARS TEOR/éTica:</b> Curatorial Directorate &mdash; <i>INTERDEPENDENCIA</i>`
+        shows: `&bull; <b>Fundación Ars TEOR/éTica &amp; Global Environmental Leadership Initiatives:</b><br>
+&bull; <b>Institutional Exchange:</b> High-level dialogue with climate governance leadership and regional contemporary art institutions, examining systemic paradigm shifts, ecological resilience, and institutional co-reliance within Central American art ecosystems.<br>
+&bull; <b>Curatorial Focus:</b> Visual frameworks investigating collective responsibility, environmental optimism, and the multi-layered synthesis of systemic transition.`
     },
     sy_damascus: {
         city: "DAMASCUS &bull; SYRIA",
