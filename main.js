@@ -69,8 +69,8 @@ const mapCityData = {
         shows: `&bull; <b>Urgent Action Fund (San Francisco, CA):</b> <i>LIBERATION</i><br>
 &bull; <b>Skirball Cultural Center &amp; Sinai Temple (Los Angeles, CA):</b> <i>PROPINQUITY</i> | <i>HINENI</i><br>
 &bull; <b>Institute for Art and Olfaction (Los Angeles, CA):</b> <i>SENSUAL</i><br>
-&bull; <b>UC Berkeley &amp; Magnes Collection (Berkeley, CA):</b> <i>MISHPOKHE (משپחה)</i> | <i>HUMBLE</i><br>
-&bull; <b>UC Davis (Davis, CA):</b> <i>JAN (جان / Ջان)</i><br>
+&bull; <b>UC Berkeley &amp; Magnes Collection (Berkeley, CA):</b> <i>MISHPOKHE (משפחה)</i> | <i>HUMBLE</i><br>
+&bull; <b>UC Davis (Davis, CA):</b> <i>JAN (جان / Ջան)</i><br>
 &bull; <b>UC Irvine (Irvine, CA):</b> <i>COURAGE</i> | <i>Persian Cultural Expression</i> | <i>PEYVAND / ARMENI</i><br>
 &bull; <b>UC San Diego (La Jolla, CA):</b> <i>DISTURBANCE</i><br>
 &bull; <b>Altman Siegel Gallery (San Francisco, CA):</b> <i>SIGNS</i><br>
@@ -352,10 +352,6 @@ const mapCityData = {
         city: "KUALA LUMPUR &bull; MALAYSIA",
         shows: `&bull; <b>Contemporary Visual Art Directorate:</b> Retrospective Monograph Archives`
     },
-    mombasa: {
-        city: "NAIROBI &amp; MOMBASA &bull; KENYA",
-        shows: `&bull; <b>PAWA254 &amp; Chronicles of Mombasa Archive:</b> <i>ARTIVISM</i>`
-    },
     bc_vancouver: {
         city: "VANCOUVER &amp; BC &bull; CANADA",
         shows: `&bull; <b>British Columbia Fine Arts Repositories</b>`
@@ -396,29 +392,70 @@ const mapCityData = {
         city: "BALLENBERG &bull; SWITZERLAND",
         shows: `&bull; <b>Ballenberg Open-Air Museum:</b> Heritage Material Patron`
     },
-    af_kinshasa: {
-        city: "KINSHASA &bull; DEMOCRATIC REPUBLIC OF CONGO",
-        shows: `&bull; <b>Congo Children Trust:</b> Humanitarian Advocacy`
-    },
-    af_johannesburg: {
-        city: "JOHANNESBURG &bull; SOUTH AFRICA",
-        shows: `&bull; <b>Wits School of Arts &amp; TEARS Foundation:</b> <i>SYNERGY</i> | <i>HEGEMONY</i>`
-    },
-    af_pretoria: {
-        city: "PRETORIA &bull; SOUTH AFRICA",
-        shows: `&bull; <b>Centre for Human Rights (University of Pretoria):</b> <i>SERENDIPITY</i>`
-    },
-    af_gaborone: {
-        city: "GABORONE &bull; BOTSWANA",
-        shows: `&bull; <b>Thapong Visual Arts Centre:</b> <i>INTERPRETATION</i>`
-    },
-    af_lagos: {
-        city: "NIGERIA &bull; LAGOS",
-        shows: `&bull; <b>University of Lagos &amp; Omenka Gallery:</b> <i>PEACE</i> | <i>RESILIENCE</i>`
-    },
     germany: {
         city: "GERMANY &bull; BERLIN &amp; FRANKFURT",
         shows: `&bull; <b>Jewish Museum Frankfurt &amp; Hamburger Kunsthalle:</b> Historical Archives`
+    },
+    // --- UPDATED REFINED AFRICAN CULTURAL & RESEARCH NODES ---
+    af_pretoria: {
+        city: "SOUTH AFRICA &bull; PRETORIA",
+        shows: `&bull; <b>Centre for Human Rights — University of Pretoria:</b> Academic Directorate &amp; Legal Philosophy Program.<br>
+&bull; <b>Interdisciplinary Dialogue:</b> Research on human rights frameworks, systemic dignity, and the unexpected intersections of fate within institutional spaces. Conceptual research anchored in the linguistic exploration of <i>Serendipity</i> as a catalyst for social justice.<br>
+&bull; <b>Curatorial Focus:</b> Large-scale canvas studies examining human agency, institutional protection, and structural resilience within contemporary African civil society.`
+    },
+    af_johannesburg: {
+        city: "SOUTH AFRICA &bull; JOHANNESBURG",
+        shows: `&bull; <b>The TEARS Foundation:</b> Social Advocacy &amp; Structural Power Research Initiative.<br>
+&bull; <b>Institutional Dialogue:</b> Academic exchange addressing systemic power structures, survivor advocacy, and social justice. Research examining the sociopolitical mechanics of <i>Hegemony</i> and the transformation of collective trauma into institutional empowerment.<br>
+&bull; <b>Curatorial Focus:</b> High-contrast gestural abstraction exploring power dynamics, body memory, and the recovery of individual voice within fragmented societies.`
+    },
+    af_nairobi: {
+        city: "KENYA &bull; NAIROBI",
+        shows: `&bull; <b>PAWA Initiative (PAWA254):</b> Center for Social Change &amp; Visual Arts.<br>
+&bull; <b>Collaborative Dialogue:</b> Academic inquiry into civic engagement, creative activism, and youth movement politics. Conceptual research into <i>Artivism</i> as a legitimate historical and visual methodology for societal transformation across East Africa.<br>
+&bull; <b>Curatorial Focus:</b> Monumental canvas research connecting street-level civil discourse with formal abstraction, focusing on public memory and community agency.`
+    },
+    af_lagos: {
+        city: "NIGERIA &bull; LAGOS",
+        shows: `&bull; <b>Department of Art History &amp; Visual Arts — University of Lagos / Omenka Foundation:</b> Academic Directorate.<br>
+&bull; <b>High-Level Scholarly Dialogue:</b> Exchange on West African art histories, curatorial stewardship, and post-colonial visual traditions. Research examining institutional continuity, cultural endurance, and the linguistic weight of <i>Resilience</i> and <i>Peace</i>.<br>
+&bull; <b>Curatorial Focus:</b> Multi-layered canvas research probing historical memory, bronze and sculptural traditions, and the enduring strength of West African urban centers.`
+    },
+    af_naija_vernacular: {
+        city: "NIGERIA &bull; VERNACULAR &amp; COMMUNITY DIALOGUES",
+        shows: `&bull; <b>Regional Linguistic Forum &amp; Intangible Cultural Heritage Network:</b> Pidgin Visual Idioms &amp; Informal Community Structures.<br>
+&bull; <b>Sociolinguistic Exchange:</b> Deep ethnographic research into indigenous micro-economic solidarity networks, spatial proximity, and body memory within urban labor spaces (*Odeshi*, *One-Love*, *Yanga*, *Hustle*, *Ajo/Esusu*).<br>
+&bull; <b>Curatorial Focus:</b> Raw textural and figurative canvas studies capturing collective wealth systems, unbreakable identity, and the unwritten social contracts of daily endurance.`
+    },
+    af_gaborone: {
+        city: "BOTSWANA &bull; GABORONE",
+        shows: `&bull; <b>Thapong Visual Arts Centre:</b> National Cultural Directorate.<br>
+&bull; <b>Institutional Exchange:</b> Scholarly dialogue on regional visual arts management, Southern African abstraction, and linguistic hermeneutics (*Interpretation*) as a bridge between indigenous symbol systems and international contemporary art networks.<br>
+&bull; <b>Curatorial Focus:</b> Structural compositions investigating semiotic systems, spatial light, and the fluidity of cultural translation across borders.`
+    },
+    af_madagascar: {
+        city: "MADAGASCAR &bull; ANTANANARIVO",
+        shows: `&bull; <b>American School of Antananarivo:</b> International Cultural Exchange Program.<br>
+&bull; <b>Cross-Cultural Initiative:</b> Inquiry examining Malagasy heritage, island ecology, and social wellbeing. Conceptual focus anchored in the Malagasy concept of <i>Sambatra</i> (blessedness / systemic well-being) within global educational structures.<br>
+&bull; <b>Curatorial Focus:</b> Tonal and environmental canvas research investigating island isolation, ancestral memory, and communal balance.`
+    },
+    af_congo: {
+        city: "DEMOCRATIC REPUBLIC OF CONGO &bull; BRAZZAVILLE / KINSHASA",
+        shows: `&bull; <b>Congo Children’s Trust:</b> Humanitarian &amp; Youth Educational Initiative.<br>
+&bull; <b>Field Research:</b> Academic inquiry on vulnerable youth populations, post-conflict reconciliation, and institutional child advocacy. Conceptual focus on the historical depth and geographical identity embodied in the name <i>Congo</i>.<br>
+&bull; <b>Curatorial Focus:</b> Expressive figurative studies probing vulnerability, resilience, and the historical continuity of human dignity in Central Africa.`
+    },
+    af_bahamas: {
+        city: "THE BAHAMAS &bull; NASSAU (DIASPORA EXCHANGE)",
+        shows: `&bull; <b>Government Cultural Directorate &amp; National Heritage Exchange:</b> Transatlantic Heritage Directorate.<br>
+&bull; <b>Institutional Dialogue:</b> Strategic exchange on diaspora heritage, maritime history, and island sovereignty, centering on <i>Grace</i> as an overarching philosophical frame for historical endurance and cultural survival.<br>
+&bull; <b>Curatorial Focus:</b> Luminous color theory and expansive canvas research examining ocean topologies, migration narratives, and spiritual continuity.`
+    },
+    af_pan_african_research: {
+        city: "PAN-AFRICAN FIELD RESEARCH &bull; REGIONAL TRIBAL TERRITORIES",
+        shows: `&bull; <b>Regional Anthropological &amp; Ethnographic Expeditions:</b> Regional Museum &amp; Cultural Networks.<br>
+&bull; <b>Multi-Year Field Research:</b> In-depth study across indigenous tribal territories focusing on oral traditions, disappearing dialects, mythologies, and human-nature reciprocity grounded in the Swahili concept of <i>Kuumba</i> (leaving a legacy more beautiful and beneficial than inherited).<br>
+&bull; <b>Curatorial Focus:</b> Monumental canvas retrospectives and sensory installations integrating tribal folklore, fauna iconographies, and human proximity into global museum narratives.`
     }
 };
 
@@ -518,7 +555,7 @@ const dossierData = {
     equanimity: {
         code: "PROVENANCE DOSSIER · WORDS PROJECT",
         title: "Equanimity / Gelassenheit",
-        body: "Donated by Artas Foundation, a Swiss foundation operating in regions of conflict. Created using heavy earth pigments and presented at the Museum of West Bohemia. It translates the donated term 'Equanimity' along with others into a multi-layered visual field exploring calm resilience amidst geopolitical tension."
+        body: "Donated by Artas Foundation, a Swiss foundation operating in regions of conflict. Created using heavy earth pigments and presented at the Museum of West Bohemia. It translates the term 'Equanimity' along with others into a multi-layered visual field exploring calm resilience amidst geopolitical tension."
     },
     box_monograph: {
         code: "PROVENANCE DOSSIER · LIFE OF A BOX",
