@@ -810,6 +810,190 @@ const dossierData = {
     }
 };
 
+// --- MOMBASA ARCHIVAL INSCRIPTIONS MATRIX (30 PORTRAIT FIELD RECORDS) ---
+const mombasaInscriptions = {
+    "mombasa-01.jpg": {
+        code: "FIELD RECORD: MBA-2008-042",
+        title: "Chronicles of Mombasa · Study No. I",
+        obs: "Close crop on a quiet, direct expression with soft, wide eyes looking straight ahead.",
+        cog: "He began by declaring he wanted to drive big transport trucks. Moments later, looking at a bird landing nearby, his expression shifted to total wonder as he announced he would fly passenger jets around the world instead."
+    },
+    "mombasa-02.jpg": {
+        code: "FIELD RECORD: MBA-2008-118",
+        title: "Chronicles of Mombasa · Study No. II",
+        obs: "Wide-eyed and attentive posture, caught in a moment of bright curiosity.",
+        cog: "He initially said he wanted to work in a shop like his uncle. When asked what he loved doing most on weekends, his face lit up and he immediately decided he wanted to build big wooden boats for fishermen."
+    },
+    "mombasa-03.jpg": {
+        code: "FIELD RECORD: MBA-2008-204",
+        title: "Chronicles of Mombasa · Study No. III",
+        obs: "Caught in motion, with a sleeve or scarf pulled loosely across his face in a spontaneous, playful gesture.",
+        cog: "Shy at first, he whispered that he wanted to be a teacher. After giggling behind his sweater, he pulled it down and announced boldly that he was going to be a stage actor and make people laugh."
+    },
+    "mombasa-04.jpg": {
+        code: "FIELD RECORD: MBA-2008-083",
+        title: "Chronicles of Mombasa · Study No. IV",
+        obs: "Gentle, downward glance with a calm and deeply thoughtful expression.",
+        cog: "She spoke quietly about helping her mother in the garden. After a brief silence, she looked up and added with complete confidence that she also wanted to write books of poetry for children."
+    },
+    "mombasa-05.jpg": {
+        code: "FIELD RECORD: MBA-2008-167",
+        title: "Chronicles of Mombasa · Study No. V",
+        obs: "Composed, formal stance in a school sweater, looking straight into the lens with quiet pride.",
+        cog: "He stated very formally that he was going to be a doctor. Re-interviewed five minutes later, he smiled and admitted he'd actually prefer to be a football captain who leads his team to victory."
+    },
+    "mombasa-06.jpg": {
+        code: "FIELD RECORD: MBA-2008-289",
+        title: "Chronicles of Mombasa · Study No. VI",
+        obs: "Profile view looking upward alongside classmates, caught mid-smile with genuine excitement.",
+        cog: "He originally said he wanted to fix cars. Watching a plane pass overhead with his friends, he pointed up and decided on the spot that he was going to build rockets that travel to the moon."
+    },
+    "mombasa-07.jpg": {
+        code: "FIELD RECORD: MBA-2008-312",
+        title: "Chronicles of Mombasa · Study No. VII",
+        obs: "Close-up showing an inquisitive glance to the side, wearing a beaded neckpiece.",
+        cog: "He said his dream was to protect wild animals in the forest. A moment later, hearing music from a nearby radio, he grinned and said he might also play the guitar in a famous band."
+    },
+    "mombasa-08.jpg": {
+        code: "FIELD RECORD: MBA-2008-056",
+        title: "Chronicles of Mombasa · Study No. VIII",
+        obs: "A big, joyful smile showing teeth, full of infectious warmth and energy.",
+        cog: "He laughed and said he was going to be a famous runner. When asked what he'd do after winning his races, he grinned even wider and said, 'I'll open a bakery and give free cakes to everyone!'"
+    },
+    "mombasa-09.jpg": {
+        code: "FIELD RECORD: MBA-2008-391",
+        title: "Chronicles of Mombasa · Study No. IX",
+        obs: "Soft profile against a natural backdrop, looking calmly toward the horizon.",
+        cog: "He spoke about wanting to work on a farm growing corn. After looking out at the open landscape for a moment, he turned back and said he wanted to study the ocean and dive deep under water."
+    },
+    "mombasa-10.jpg": {
+        code: "FIELD RECORD: MBA-2008-472",
+        title: "Chronicles of Mombasa · Study No. X",
+        obs: "High-contrast, cinematic close-up with light highlighting one side of the face in intense focus.",
+        cog: "She spoke with deep seriousness about wanting to study medicine to cure illnesses. Re-engaged a few minutes later, her face softened and she added that she also wanted to paint large color murals on city walls."
+    },
+    "mombasa-11.jpg": {
+        code: "FIELD RECORD: MBA-2008-143",
+        title: "Chronicles of Mombasa · Study No. XI",
+        obs: "Direct, attentive portrait in a crisp collared shirt, holding a steady and earnest expression.",
+        cog: "He started by saying he was going to be a school principal. Moments later, after watching a bird soar over the trees, he turned back with a smile and decided he would rather pilot airplanes across the ocean."
+    },
+    "mombasa-12.jpg": {
+        code: "FIELD RECORD: MBA-2008-225",
+        title: "Chronicles of Mombasa · Study No. XII",
+        obs: "Close-up portrait with eyes looking slightly downward in deep, quiet concentration.",
+        cog: "He spoke first about repairing motorbikes in his town. After thinking quietly for a moment, he looked up and said he wanted to design giant bridges that connect islands."
+    },
+    "mombasa-13.jpg": {
+        code: "FIELD RECORD: MBA-2008-097",
+        title: "Chronicles of Mombasa · Study No. XIII",
+        obs: "Profile view in soft outdoor light, looking toward the side with an open, inquiring posture.",
+        cog: "He announced he was going to be a competitive runner. Re-interviewed shortly after, he laughed and said he would rather open a shop that builds bicycles for everyone in his village."
+    },
+    "mombasa-14.jpg": {
+        code: "FIELD RECORD: MBA-2008-331",
+        title: "Chronicles of Mombasa · Study No. XIV",
+        obs: "Sharp, direct gaze toward the camera with an open collar and a confident, inquisitive expression.",
+        cog: "He declared he was going to be a structural engineer. Within minutes, hearing music nearby, he grinned and added that he also wanted to learn the drums and play in a band."
+    },
+    "mombasa-15.jpg": {
+        code: "FIELD RECORD: MBA-2008-182",
+        title: "Chronicles of Mombasa · Study No. XV",
+        obs: "High-contrast, moody close-up in deep shadow, showing a quiet, reflective expression.",
+        cog: "She spoke softly about growing a flower garden behind her house. Re-engaged a few moments later, her face brightened as she decided she actually wanted to paint giant murals on city buildings."
+    },
+    "mombasa-16.jpg": {
+        code: "FIELD RECORD: MBA-2008-415",
+        title: "Chronicles of Mombasa · Study No. XVI",
+        obs: "Gentle portrait in a dark sweater, looking down with a subtle, contemplative expression.",
+        cog: "He originally thought about working on a farm. After a brief silence, he looked up and said with total enthusiasm that he wanted to study the stars and become an astronomer."
+    },
+    "mombasa-17.jpg": {
+        code: "FIELD RECORD: MBA-2008-264",
+        title: "Chronicles of Mombasa · Study No. XVII",
+        obs: "Side profile caught mid-motion, hands raised as if clapping or explaining an idea with excitement.",
+        cog: "He spoke animatedly about playing professional football. Mid-sentence, he paused, laughed, and said, 'Actually, I want to be the announcer on the radio who shouts when someone scores!'"
+    },
+    "mombasa-18.jpg": {
+        code: "FIELD RECORD: MBA-2008-109",
+        title: "Chronicles of Mombasa · Study No. XVIII",
+        obs: "Frontal portrait against a textured grassy background, with an open, conversational expression.",
+        cog: "He mentioned wanting to be a carpenter like his uncle. Moments later, seeing someone writing in a journal, he decided he wanted to write stories and publish books instead."
+    },
+    "mombasa-19.jpg": {
+        code: "FIELD RECORD: MBA-2008-378",
+        title: "Chronicles of Mombasa · Study No. XIX",
+        obs: "Composed, formal portrait wearing a school emblem, looking directly at the camera with quiet poise.",
+        cog: "He stated clearly that he was going to be a doctor. Re-interviewed five minutes later, he smiled and said he might also like to build solar-powered boats for fishermen."
+    },
+    "mombasa-20.jpg": {
+        code: "FIELD RECORD: MBA-2008-451",
+        title: "Chronicles of Mombasa · Study No. XX",
+        obs: "Profile view with braided hair, looking intently with a strong, focused expression.",
+        cog: "She initially said she wanted to be a judge in a courtroom. After looking out across the schoolyard, her expression softened and she said she would rather run a sanctuary to care for wild animals."
+    },
+    "mombasa-21.jpg": {
+        code: "FIELD RECORD: MBA-2008-418",
+        title: "Chronicles of Mombasa · Study No. XXI",
+        obs: "Over-the-shoulder glance with an intense, questioning expression caught in a crowd.",
+        cog: "He initially stated he wanted to be a school teacher. Moments later, turning back toward the photographer, he reconsidered and said he wanted to design large ocean ships instead."
+    },
+    "mombasa-22.jpg": {
+        code: "FIELD RECORD: MBA-2008-088",
+        title: "Chronicles of Mombasa · Study No. XXII",
+        obs: "Soft, joyful grin caught slightly out of focus, radiating warmth and spontaneous energy.",
+        cog: "He laughed and said he was going to be a radio host. When asked what music he would play, he grinned even wider and said he would just tell jokes between songs to make everyone happy."
+    },
+    "mombasa-23.jpg": {
+        code: "FIELD RECORD: MBA-2008-042 (SECONDARY FRAME)",
+        title: "Chronicles of Mombasa · Study No. XXIII",
+        obs: "Downward-angled portrait showing a quiet, contemplative expression (a second study of the child in Photo 01).",
+        cog: "In this second recording taken shortly after his first answer, he looked down in thought. Having previously mentioned piloting jets, he quietly added that he also wanted to invent new engines that don't make any noise."
+    },
+    "mombasa-24.jpg": {
+        code: "FIELD RECORD: MBA-2008-362",
+        title: "Chronicles of Mombasa · Study No. XXIV",
+        obs: "Cropped profile view highlighting an ear and patterned collar, caught in a serene, peaceful moment.",
+        cog: "He spoke softly about working in a library. Re-interviewed moments later, he smiled and said he’d actually rather write the adventure stories that go on the shelves."
+    },
+    "mombasa-25.jpg": {
+        code: "FIELD RECORD: MBA-2008-209",
+        title: "Chronicles of Mombasa · Study No. XXV",
+        obs: "Direct gaze from a young child standing in a group, holding a serious and steady expression.",
+        cog: "He declared he was going to be a builder. A few minutes later, seeing a passing bicycle, he decided he would rather own a shop that repairs tires for his friends."
+    },
+    "mombasa-26.jpg": {
+        code: "FIELD RECORD: MBA-2008-485",
+        title: "Chronicles of Mombasa · Study No. XXVI",
+        obs: "Close portrait of a young girl wearing a hooded sweater, with wide eyes peering out from beneath the fabric.",
+        cog: "She said she wanted to be a doctor to care for sick children. Looking out from her hood moments later, she added with equal conviction that she also wanted to learn how to paint large oil canvases."
+    },
+    "mombasa-27.jpg": {
+        code: "FIELD RECORD: MBA-2008-161",
+        title: "Chronicles of Mombasa · Study No. XXVII",
+        obs: "Inquisitive face looking upward, with wide eyes and an open, curious posture.",
+        cog: "He started out saying he wanted to grow vegetables on a farm. Looking up at the open sky, he shifted his dream to studying weather patterns and predicting rain."
+    },
+    "mombasa-28.jpg": {
+        code: "FIELD RECORD: MBA-2008-298",
+        title: "Chronicles of Mombasa · Study No. XXVIII",
+        obs: "Soft portrait with another child visible in the background, showing a quiet, contemplative face.",
+        cog: "He initially whispered that he wanted to be an electrician. After seeing his classmate smile behind him, he turned and said he'd rather learn how to program computers."
+    },
+    "mombasa-29.jpg": {
+        code: "FIELD RECORD: MBA-2008-327",
+        title: "Chronicles of Mombasa · Study No. XXIX",
+        obs: "Open, expressive face set against outdoor foliage, caught mid-phrase.",
+        cog: "He spoke passionately about becoming a boat captain along the coast. Re-interviewed five minutes later, he decided he would rather study marine life and protect sea turtles."
+    },
+    "mombasa-30.jpg": {
+        code: "FIELD RECORD: MBA-2008-264 (INVERTED PERSPECTIVE)",
+        title: "Chronicles of Mombasa · Study No. XXX",
+        obs: "Horizontally mirrored study of Photo 17, capturing the child's expressive hand gesture from an inverted visual orientation.",
+        cog: "This mirrored print visualizes the child's repeated reversal of answers during the encounter. After switching from football player to sports announcer, a third inquiry prompted him to reverse direction again, happily concluding that he would simply do both."
+    }
+};
+
 function openDossier(key) {
     const data = dossierData[key];
     if (data) {
@@ -820,15 +1004,33 @@ function openDossier(key) {
     }
 }
 
-function openLightbox(imageSrc, title) {
-    document.getElementById('modalCode').innerText = "CHRONICLES OF MOMBASA · PORTRAIT ARCHIVE";
-    document.getElementById('modalTitle').innerText = title;
-    document.getElementById('modalBody').innerHTML = `
-        <div style="text-align: center;">
-            <img src="${imageSrc}" style="max-width: 100%; max-height: 60vh; border: 1px solid var(--border-gold); margin-bottom: 15px;">
-            <p style="font-size: 0.8rem; color: var(--text-secondary);">Mombasa Series · Natural Expression Study</p>
-        </div>
-    `;
+function openLightbox(imageSrc, fallbackTitle) {
+    const filename = imageSrc.split('/').pop();
+    const item = mombasaInscriptions[filename];
+
+    if (item) {
+        document.getElementById('modalCode').innerText = item.code;
+        document.getElementById('modalTitle').innerText = item.title;
+        document.getElementById('modalBody').innerHTML = `
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="${imageSrc}" style="max-width: 100%; max-height: 50vh; border: 1px solid var(--border-gold); margin-bottom: 15px;">
+            </div>
+            <div style="text-align: left; font-size: 0.85rem; line-height: 1.8; color: var(--text-secondary); background: rgba(255,255,255,0.02); padding: 15px; border-left: 2px solid var(--accent-gold);">
+                <p style="margin-top: 0; margin-bottom: 10px;"><strong style="color: #fff;">Field Observation:</strong> ${item.obs}</p>
+                <p style="margin-bottom: 0;"><strong style="color: #fff;">The Conversation:</strong> ${item.cog}</p>
+            </div>
+        `;
+    } else {
+        document.getElementById('modalCode').innerText = "CHRONICLES OF MOMBASA · PORTRAIT ARCHIVE";
+        document.getElementById('modalTitle').innerText = fallbackTitle || "Portrait Study";
+        document.getElementById('modalBody').innerHTML = `
+            <div style="text-align: center;">
+                <img src="${imageSrc}" style="max-width: 100%; max-height: 60vh; border: 1px solid var(--border-gold); margin-bottom: 15px;">
+                <p style="font-size: 0.8rem; color: var(--text-secondary);">Mombasa Series · Natural Expression Study</p>
+            </div>
+        `;
+    }
+    
     document.getElementById('dossierModal').classList.add('active');
 }
 
