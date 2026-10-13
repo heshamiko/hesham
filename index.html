@@ -333,12 +333,12 @@
                             <option value="fr_paris_guadeloupe">Paris &amp; Guadeloupe, France</option>
                             <option value="ps_gaza_jenin">Gaza &amp; Jenin, Palestine</option>
                             <option value="is_reykjavik">Reykjavík, Iceland</option>
-                            <option value="th_bangkok">Bangkok, Thailand</option>
+                            <option value="th_bangkok">Bangkok (Chulalongkorn University), Thailand</option>
                             <option value="gy_georgetown">Georgetown, Guyana</option>
                             <option value="jo_amman">Amman, Jordan</option>
                             <option value="mu_mauritius">Reduit, Mauritius</option>
                             <option value="om_muscat">Muscat, Oman</option>
-                            <option value="ph_quezon">Quezon City, Philippines</option>
+                            <option value="ph_quezon">Quezon City (Univ. of the Philippines Diliman), Philippines</option>
                             <option value="ar_buenosaires">Buenos Aires (UNTREF Centre for Genocide Studies), Argentina</option>
                             <option value="brussels">Brussels &amp; Leuven, Belgium</option>
                             <option value="poland">Duszniki-Zdrój, Poznań, Warsaw &amp; Krakow, Poland</option>
@@ -354,16 +354,16 @@
                             <option value="li_vaduz">Vaduz, Liechtenstein</option>
                             <option value="hu_budapest">Budapest, Hungary</option>
                             <option value="ae_abudhabi_dubai">Abu Dhabi &amp; Dubai, UAE</option>
-                            <option value="cn_shenzhen_hk">Shenzhen &amp; Hong Kong, China</option>
+                            <option value="cn_changsha">Changsha (Hunan Normal Univ. HCTS &amp; Museum), China</option>
                             <option value="lt_vilnius">Vilnius, Lithuania</option>
                             <option value="kg_bishkek">Bishkek, Kyrgyzstan</option>
                             <option value="me_ljesevici">Lješevići, Montenegro</option>
                             <option value="cy_nicosia">Nicosia, Cyprus</option>
-                            <option value="co_bogota">Bogotá, Colombia</option>
+                            <option value="co_bogota">Bogotá (Universidad de los Andes), Colombia</option>
                             <option value="vn_hanoi">Hanoi (Blue Dragon Children's Foundation), Vietnam</option>
                             <option value="svalbard">Svalbard &amp; Spitsbergen, Norway</option>
                             <option value="no_oslo">Oslo, Norway</option>
-                            <option value="cr_sanjose">San José, Costa Rica</option>
+                            <option value="cr_sanjose">San José (Fundación Ars TEOR/éTica), Costa Rica</option>
                             <option value="sy_damascus">Damascus, Syria</option>
                             <option value="fi_helsinki">Helsinki, Finland</option>
                             <option value="fi_oulu">Oulu (Capital of Culture 2026), Finland</option>
@@ -486,11 +486,8 @@
                         <div class="map-node label-top" id="node_fi_oulu" style="top: 13.5%; left: 54%;" onclick="openMapDetails('fi_oulu', event)">
                             <span class="node-label">Oulu 2026 / FI</span>
                         </div>
-                        <div class="map-node label-right" id="node_dk_aalborg" style="top: 19%; left: 48.5%;" onclick="openMapDetails('dk_aalborg', event)">
+                        <div class="map-node label-right" id="node_dk_aalborg" style="top: 19%; left: 48.5%;" onclick="openMapDetails('gl_aalborg', event)">
                             <span class="node-label">Aalborg / DK</span>
-                        </div>
-                        <div class="map-node label-top" id="node_nl_amsterdam" style="top: 22.8%; left: 47.2%;" onclick="openMapDetails('nl_amsterdam', event)">
-                            <span class="node-label">Amsterdam / NL</span>
                         </div>
                         <div class="map-node label-top" id="node_uk_london" style="top: 21%; left: 45.2%;" onclick="openMapDetails('uk_london', event)">
                             <span class="node-label">London / UK</span>
@@ -567,8 +564,8 @@
                         <div class="map-node label-top" id="node_ph_quezon" style="top: 47.5%; left: 83.8%;" onclick="openMapDetails('ph_quezon', event)">
                             <span class="node-label">Philippines</span>
                         </div>
-                        <div class="map-node label-top" id="node_cn_shenzhen_hk" style="top: 46%; left: 78.5%;" onclick="openMapDetails('cn_shenzhen_hk', event)">
-                            <span class="node-label">Shenzhen &amp; HK</span>
+                        <div class="map-node label-top" id="node_cn_changsha" style="top: 43.5%; left: 76.5%;" onclick="openMapDetails('cn_changsha', event)">
+                            <span class="node-label">Changsha / CN</span>
                         </div>
                         <div class="map-node label-top" id="node_vn_hanoi" style="top: 48%; left: 77.5%;" onclick="openMapDetails('vn_hanoi', event)">
                             <span class="node-label">Hanoi / VN</span>
@@ -672,10 +669,16 @@
                     <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0; font-weight: 300; text-transform: uppercase;">Institutional Data Provenance</h3>
                     <p style="font-size: 0.8rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Search live word records from global leadership, universities, museums, and sovereign institutions.</p>
                     
-                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Archival Terms (e.g., Pretoria, Lagos, Nairobi, Samoa, Fiji, Vanuatu, Peshawar, Harvard, Yale)...">
+                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Archival Terms (e.g., San José, Bogotá, Changsha, Bangkok, Quezon City, Pretoria, Lagos, Harvard)...">
                     
                     <div class="word-pills-container" id="wordPillsContainer">
                         <!-- REFINED INSTITUTIONAL & RESEARCH PILLS -->
+                        <span class="word-pill-item">Fundación Ars TEOR/éTica &amp; Climate Leadership (San José, Costa Rica): <strong>SYSTEMIC TRANSITION &amp; ECOLOGICAL PARADIGMS</strong></span>
+                        <span class="word-pill-item">Universidad de los Andes (Bogotá, Colombia): <strong>SOCIOCULTURAL HISTORIOGRAPHY &amp; SPATIAL DYNAMICS</strong></span>
+                        <span class="word-pill-item">Hunan Normal University HCTS &amp; Museum Directorate (Changsha, China): <strong>TRANSCULTURAL POETICS &amp; WORLDWIDE PERSPECTIVES</strong></span>
+                        <span class="word-pill-item">Chulalongkorn University (Bangkok, Thailand): <strong>SOUTHEAST ASIAN AESTHETIC HERITAGE &amp; SPATIAL CADENCE</strong></span>
+                        <span class="word-pill-item">University of the Philippines Diliman (Quezon City): <strong>ARCHIPELAGIC CARTOGRAPHY &amp; POST-COLONIAL IDENTITY</strong></span>
+
                         <span class="word-pill-item">National University of Samoa (Faculty of Arts &amp; Pacific Studies): <strong>STEADY / CONTENT / OPTIMISTIC</strong></span>
                         <span class="word-pill-item">The University of the South Pacific (Suva, Fiji): <strong>SOUTH PACIFIC LITERARY TRADITIONS &amp; IDIOSYNCRASY</strong></span>
                         <span class="word-pill-item">Vanuatu Cultural Centre / VKS (Port-Vila, Vanuatu): <strong>LOVE (INDIVIDUAL AGENCY &amp; RESTORATION)</strong></span>
@@ -790,7 +793,7 @@
 
                         <span class="word-pill-item">Princeton University Dept. of Religion: <strong>ALIVE</strong></span>
                         <span class="word-pill-item">Princeton University Dept. of Politics: <strong>COOPERATION</strong></span>
-                        <span class="word-pill-item">Columbia University Dept. of History: <strong>RACHMONES (רחמנות)</strong></span>
+                        <span class="word-pill-item">Columbia University Dept. of History: <strong>RACHMONES (רחمנות)</strong></span>
                         <span class="word-pill-item">Columbia Dept. of Middle Eastern, South Asian &amp; African Studies: <strong>ADAB</strong></span>
                         <span class="word-pill-item">Columbia University Dept. of Political Science: <strong>COMPASSION</strong></span>
                         <span class="word-pill-item">MIT Dept. of Philosophy &amp; Women's and Gender Studies: <strong>HOPE</strong></span>
@@ -908,12 +911,10 @@
                         <span class="word-pill-item">Culture &amp; Free Thought Association (Gaza, Palestine): <strong>صَبابة</strong></span>
                         <span class="word-pill-item">The Freedom Theatre (Jenin Camp, Palestine): <strong>SUMUD</strong></span>
                         <span class="word-pill-item">University of Iceland (Reykjavík, Iceland): <strong>ÓÞOL / BLESSUN</strong></span>
-                        <span class="word-pill-item">Chulalongkorn University (Bangkok, Thailand): <strong>ABUSIVE</strong></span>
                         <span class="word-pill-item">University of Guyana (Georgetown): <strong>QUIETUDE</strong></span>
                         <span class="word-pill-item">The University of Jordan (Amman): <strong>BLESSING (البركة) / UNCERTAINTY</strong></span>
                         <span class="word-pill-item">University of Mauritius (Reduit): <strong>EMPATHY</strong></span>
                         <span class="word-pill-item">Sultan Qaboos University (Muscat, Oman): <strong>ALLAH / BECOMING</strong></span>
-                        <span class="word-pill-item">University of the Philippines Diliman (Quezon City): <strong>KAPWA</strong></span>
                         <span class="word-pill-item">KU Leuven &amp; Vrije Universiteit Brussel (Belgium): <strong>BUFFERWORLD / GRATITUDE</strong></span>
                         <span class="word-pill-item">Museum of Papermaking, Warsaw &amp; Krakow (Poland): <strong>NEON GREEN / BREEZE / HAPAX</strong></span>
                         <span class="word-pill-item">University of Ljubljana &amp; Primorska (Slovenia): <strong>SHAKING / INDECISION</strong></span>
