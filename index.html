@@ -322,6 +322,12 @@
                             <option value="usa_east">USA East Coast (NY, DC, CT, PA, MD, VA)</option>
                             <option value="usa_west">USA West Coast &amp; Pacific (CA, WA, OR, HI, AK)</option>
                             <option value="usa_midwest_south">USA Midwest, South &amp; Mountain (IL, CO, TX, TN, OH, ID)</option>
+                            <option value="bc_vancouver">Vancouver, Victoria &amp; British Columbia (Canada)</option>
+                            <option value="alberta_calgary">Calgary, Edmonton &amp; Alberta Nodes (Canada)</option>
+                            <option value="toronto_waterloo">Toronto, Waterloo &amp; Southern Ontario (Canada)</option>
+                            <option value="ottawa_kingston">Ottawa, Kingston &amp; Capital Region (Canada)</option>
+                            <option value="montreal_qc">Montreal, Quebec City &amp; QC (Canada)</option>
+                            <option value="yukon_atlantic">Yukon, Northwest Territories &amp; Atlantic Canada</option>
                             <option value="au_brisbane_qld">Brisbane &amp; Queensland, Australia</option>
                             <option value="au_sydney_nsw">Sydney &amp; New South Wales, Australia</option>
                             <option value="au_melbourne">Melbourne, Australia</option>
@@ -375,18 +381,11 @@
                             <option value="goa">Goa &amp; Mumbai, India</option>
                             <option value="pakistan">Peshawar &amp; Archival Nodes, Pakistan</option>
                             <option value="malaysia">Kuala Lumpur, Malaysia</option>
-                            <option value="bc_vancouver">Vancouver &amp; BC, Canada</option>
-                            <option value="alberta_calgary">Alberta Nodes, Canada</option>
-                            <option value="toronto_waterloo">Toronto &amp; ON, Canada</option>
-                            <option value="ottawa_kingston">Ottawa &amp; Kingston, Canada</option>
-                            <option value="montreal_qc">Montreal &amp; QC, Canada</option>
-                            <option value="yukon_atlantic">Yukon &amp; Atlantic, Canada</option>
                             <option value="ch_zurich">Zurich, Switzerland</option>
                             <option value="ch_geneva">Geneva, Switzerland</option>
                             <option value="ch_bern">Bern, Switzerland</option>
                             <option value="ch_ballenberg">Ballenberg, Switzerland</option>
                             <option value="germany">Berlin &amp; Frankfurt, Germany</option>
-                            <!-- REFINED AFRICAN CULTURAL NODES -->
                             <option value="af_pretoria">Pretoria (Centre for Human Rights, UP), South Africa</option>
                             <option value="af_johannesburg">Johannesburg (TEARS Foundation), South Africa</option>
                             <option value="af_nairobi">Nairobi (PAWA Initiative / PAWA254), Kenya</option>
@@ -419,6 +418,7 @@
                             <span class="node-label">USA Midwest &amp; South</span>
                         </div>
 
+                        <!-- CANADA REGIONAL MAP NODES -->
                         <div class="map-node label-left" id="node_bc_vancouver" style="top: 25%; left: 16%;" onclick="openMapDetails('bc_vancouver', event)">
                             <span class="node-label">Vancouver / BC</span>
                         </div>
@@ -619,7 +619,7 @@
                             <span class="node-label">Vanuatu</span>
                         </div>
 
-                        <!-- UPDATED REFINED AFRICAN MAP NODES -->
+                        <!-- REFINED AFRICAN MAP NODES -->
                         <div class="map-node label-top" id="node_af_pretoria" style="top: 75.2%; left: 55.8%;" onclick="openMapDetails('af_pretoria', event)">
                             <span class="node-label">Pretoria / SA</span>
                         </div>
@@ -669,10 +669,20 @@
                     <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0; font-weight: 300; text-transform: uppercase;">Institutional Data Provenance</h3>
                     <p style="font-size: 0.8rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Search live word records from global leadership, universities, museums, and sovereign institutions.</p>
                     
-                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Archival Terms (e.g., San José, Bogotá, Changsha, Bangkok, Quezon City, Pretoria, Lagos, Harvard)...">
+                    <input type="text" id="wordSearchInput" onkeyup="filterWords()" class="word-search-input" placeholder="Search Institutions or Archival Terms (e.g., National Gallery, Toronto, Vancouver, Montreal, Harvard, San José)...">
                     
                     <div class="word-pills-container" id="wordPillsContainer">
-                        <!-- REFINED INSTITUTIONAL & RESEARCH PILLS -->
+                        <!-- CANADIAN INSTITUTIONAL & RESEARCH PILLS -->
+                        <span class="word-pill-item">National Gallery of Canada (Ottawa, ON): <strong>ANKOSÉ (EVERYTHING IS CONNECTED / ALGONQUIN FRAMEWORK)</strong></span>
+                        <span class="word-pill-item">University of British Columbia &amp; Simon Fraser University (Vancouver, BC): <strong>PACIFIC COAST ECOLOGICAL ARCHIVES &amp; MATERIAL DIALOGUES</strong></span>
+                        <span class="word-pill-item">University of Victoria &amp; First Peoples' Cultural Council (Victoria, BC): <strong>INDIGENOUS LINGUISTIC SOVEREIGNTY &amp; LAND MEMORY</strong></span>
+                        <span class="word-pill-item">University of Alberta &amp; Glenbow Museum (Calgary / Edmonton, AB): <strong>PLAINS ETHNOGRAPHIC RESEARCH &amp; ECOLOGICAL RECOVERY</strong></span>
+                        <span class="word-pill-item">University of Toronto &amp; Art Gallery of Ontario (Toronto, ON): <strong>CANADIAN MONOGRAPHIC ARCHIVES &amp; TRANSCULTURAL CRITIQUE</strong></span>
+                        <span class="word-pill-item">University of Waterloo &amp; Wilfrid Laurier University (Waterloo, ON): <strong>NEURO-AESTHETICS &amp; COGNITIVE DYNAMICS</strong></span>
+                        <span class="word-pill-item">McGill University &amp; Université de Montréal (Montreal, QC): <strong>BILINGUAL PHILOSOPHICAL TRADITIONS &amp; AESTHETIC MONOGRAPHS</strong></span>
+                        <span class="word-pill-item">Yukon Arts Centre &amp; Prince of Wales Northern Heritage Centre (Yukon / NWT): <strong>ARCTIC CONSCIOUSNESS &amp; INDIGENOUS LAND ORAL HISTORIES</strong></span>
+
+                        <!-- OTHER GLOBAL INSTITUTIONAL & RESEARCH PILLS -->
                         <span class="word-pill-item">Fundación Ars TEOR/éTica &amp; Climate Leadership (San José, Costa Rica): <strong>SYSTEMIC TRANSITION &amp; ECOLOGICAL PARADIGMS</strong></span>
                         <span class="word-pill-item">Universidad de los Andes (Bogotá, Colombia): <strong>SOCIOCULTURAL HISTORIOGRAPHY &amp; SPATIAL DYNAMICS</strong></span>
                         <span class="word-pill-item">Hunan Normal University HCTS &amp; Museum Directorate (Changsha, China): <strong>TRANSCULTURAL POETICS &amp; WORLDWIDE PERSPECTIVES</strong></span>
