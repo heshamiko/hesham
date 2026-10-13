@@ -21,81 +21,41 @@ function toggleMombasaEssay() {
 // --- 2. GLOBAL FOOTPRINT MAP DATA REPOSITORY ---
 const mapCityData = {
     harvard: {
-        city: "USA &bull; HARVARD UNIVERSITY &amp; CAMBRIDGE, MA",
-        shows: `&bull; <b>Harvard International Arts + Mind Lab:</b> <i>JOY</i><br>
-&bull; <b>Harvard Dept. of Molecular Biology:</b> <i>COGNITION</i><br>
-&bull; <b>Harvard Dept. of East Asian Languages:</b> <i>INEPTITUDE</i><br>
-&bull; <b>Harvard Faculty of Arts &amp; Sciences:</b> <i>GENOCIDE AND TRANSNATIONAL REPRESSION</i> | <i>RUPTURE</i><br>
-&bull; <b>Harvard Weatherhead Center:</b> <i>DISRUPTION</i> | <i>CAFUNÉ</i><br>
-&bull; <b>Harvard Office of the President Emeritus:</b> <i>DECENCY</i><br>
-&bull; <b>Harvard Dept. of Anthropology:</b> <i>GRIEF</i> | <i>NOWHERESVILLE</i><br>
-&bull; <b>Harvard Dept. of Psychology:</b> <i>ENLIGHTENMENT</i> | <i>RIGAMAROLE</i><br>
-&bull; <b>Harvard Graduate School of Design:</b> <i>XENOPHILIA</i> | <i>SERENDIPITY</i> | <i>LUMINOUS</i> | <i>CARE</i> | <i>DESPONDENT</i> | <i>SUPERPOSITION</i> | <i>RESTORATION</i> | <i>SERENITY (שלווה)</i><br>
-&bull; <b>Harvard Medical School / Mass General &amp; Boston Children's:</b> <i>SPICE/SPICES</i> | <i>CONCERNED</i><br>
-&bull; <b>Harvard NeuroBusiness Group:</b> <i>SATCHITANANDA</i><br>
-&bull; <b>Harvard T.H. Chan School of Public Health:</b> <i>TOGETHER</i><br>
-&bull; <b>Harvard Forest:</b> <i>UNSURE</i> | <i>HOPE</i><br>
-&bull; <b>Harvard Divinity School &amp; Law School:</b> <i>COMPLEXITY</i> | <i>DILEMMA</i><br>
-&bull; <b>Harvard Dept. of Philosophy &amp; AFVS:</b> <i>PRAISEWORTHINESS</i> | <i>THINK</i> | <i>GRAFT</i><br>
-&bull; <b>Harvard Gender &amp; Sexuality Caucus:</b> <i>LOVE</i><br>
-&bull; <b>Harvard Dept. of History, Art &amp; Architecture:</b> <i>SYMBIONTS</i><br>
-&bull; <b>Harvard Graduate School of Education:</b> <i>METAMORPHOSIS</i> | <i>BETTER</i> | <i>PERSISTING</i> | <i>BĪ-GHARĀRĪ (بی‌قراری)</i><br>
-&bull; <b>Harvard Democratic Knowledge Project &amp; Wiener Center:</b> <i>RENOVATE</i> | <i>PURPOSE</i><br>
-&bull; <b>Harvard College (Dean's Office):</b> <i>AMALGAMATION</i>`
+        city: "USA &bull; HARVARD UNIVERSITY &amp; CAMBRIDGE ACADEMIC NETWORK",
+        shows: `&bull; <b>Harvard University Academic Directorate:</b> Multi-departmental research exchange spanning the International Arts + Mind Lab, Dept. of Molecular &amp; Cellular Biology, Dept. of East Asian Languages &amp; Civilizations, Faculty of Arts &amp; Sciences (Transnational Repression &amp; Rupture Research), Weatherhead Center for International Affairs, Office of the President Emeritus, Dept. of Anthropology, Dept. of Psychology, Graduate School of Design, Harvard Medical School, Harvard Divinity School, Harvard Law School, and the T.H. Chan School of Public Health.<br>
+&bull; <b>Academic &amp; Curatorial Scope:</b> Interdisciplinary inquiry into neuro-aesthetics, historical trauma, urban design topologies, cognitive freedom, and public policy mediation translated into monumental canvas structures.`
     },
     usa_east: {
-        city: "USA &bull; EAST COAST INSTITUTIONS",
-        shows: `&bull; <b>UNICEF (New York):</b> Ecological Material Patrons<br>
-&bull; <b>New York Public Library (New York):</b> Ecological Material Patrons<br>
-&bull; <b>Elmira College (New York):</b> Ecological Material Patrons<br>
-&bull; <b>Suffolk University Gallery (Boston, MA):</b> Ecological Material Patrons<br>
-&bull; <b>Bethany House (Baldwin, NY):</b> <i>EMPATHY</i><br>
-&bull; <b>National Art Education Association (Virginia):</b> <i>GRATIFIED</i><br>
-&bull; <b>Artists at Risk Connection - ARC (New York):</b> <i>RESILIENCE</i><br>
-&bull; <b>National Public Radio - NPR (Washington, D.C.):</b> <i>TURMOIL</i><br>
-&bull; <b>Jane Goodall Institute (Washington, D.C.):</b> <i>HOPE</i><br>
-&bull; <b>Princeton Hillel &amp; Princeton University (NJ):</b> <i>FLOURISHING</i> | <i>ALIVE</i> | <i>COOPERATION</i><br>
-&bull; <b>Yale University (New Haven, CT):</b> <i>LIMINAL</i> | <i>RESPECT</i> | <i>AIR</i> | <i>JUSTICE</i> | <i>BELOVED</i> | <i>Persian Poetic Line</i><br>
-&bull; <b>Columbia University (New York):</b> <i>RACHMONES (רחמנות)</i> | <i>ADAB</i> | <i>COMPASSION</i><br>
-&bull; <b>MIT (Cambridge, MA):</b> <i>HOPE</i> | <i>INTEGRITY</i><br>
-&bull; <b>Brown University (Providence, RI):</b> <i>TROTZDEM</i> | <i>SQUEEZE</i><br>
-&bull; <b>NYU &amp; Jewish Theological Seminary (NY):</b> <i>PRESENCE</i> | <i>DIALECTICAL</i> | <i>LOVE</i> | <i>RESPONSIBILITY</i><br>
-&bull; <b>Cornell University (Ithaca, NY):</b> <i>WITNESS</i> | <i>MIND</i><br>
-&bull; <b>Johns Hopkins University (Baltimore, MD):</b> <i>REGENERATION</i><br>
-&bull; <b>Georgetown &amp; George Washington University (D.C.):</b> <i>ALMOST</i> | <i>ASTONISHMENT</i>`
+        city: "USA &bull; EAST COAST &amp; IVY LEAGUE ACADEMIC DIRECTORATES",
+        shows: `&bull; <b>Yale University Academic Directorate (New Haven, CT):</b> Scholarly engagement with the Faculty of Arts &amp; Sciences, Dept. of Astronomy, Dept. of Philosophy, Dept. of Comparative Literature, and Yale Divinity School regarding liminal astrophysics, Persian literary traditions, and systematic theology.<br>
+&bull; <b>Columbia University &amp; New York Intellectual Archives (New York, NY):</b> Academic exchange with the Dept. of History, Dept. of Middle Eastern, South Asian &amp; African Studies (MESAAS), and Dept. of Political Science on American Jewish history, historical empathy, and classical socio-cultural etiquette.<br>
+&bull; <b>Princeton University &amp; Middle East Studies Nodes (Princeton, NJ):</b> High-level dialogue with the Dept. of Religion, Dept. of Politics, and Center for Jewish Life / Princeton Hillel addressing systemic cooperation, human values, and existential vitality.<br>
+&bull; <b>Massachusetts Institute of Technology — MIT (Cambridge, MA):</b> Interdisciplinary collaboration with the Dept. of Philosophy, Women’s &amp; Gender Studies, and Comparative Media Studies/Writing (MITHIC) on technological ethics and media integrity.<br>
+&bull; <b>Brown University &amp; Rhode Island Academic Exchange (Providence, RI):</b> Research dialogue with the Center for Middle East Studies and Dept. of History of Art &amp; Architecture on entangled histories, political defiance, and historical trauma.<br>
+&bull; <b>Johns Hopkins University &amp; Ecological Design Collective (Baltimore, MD):</b> Academic research with the Krieger-Eisenhower Chair of Anthropology and ecological research units on environmental regeneration and sustainable futures.<br>
+&bull; <b>Georgetown &amp; George Washington Universities (Washington, D.C.):</b> Strategic exchange with the Institute for Middle East Studies, Art &amp; Museum Studies Program, and national broadcasting archives on international affairs, public media archives, and geopolitical astonishment.<br>
+&bull; <b>University of Pennsylvania &amp; Swarthmore College Network (PA):</b> Scholarly dialogue with cognitive science, linguistics, and religious studies departments regarding indigenous language preservation and cognitive limits.`
     },
     usa_west: {
-        city: "USA &bull; WEST COAST &amp; PACIFIC INSTITUTIONS",
-        shows: `&bull; <b>Urgent Action Fund (San Francisco, CA):</b> <i>LIBERATION</i><br>
-&bull; <b>Skirball Cultural Center &amp; Sinai Temple (Los Angeles, CA):</b> <i>PROPINQUITY</i> | <i>HINENI</i><br>
-&bull; <b>Institute for Art and Olfaction (Los Angeles, CA):</b> <i>SENSUAL</i><br>
-&bull; <b>UC Berkeley &amp; Magnes Collection (Berkeley, CA):</b> <i>MISHPOKHE (משפחה)</i> | <i>HUMBLE</i><br>
-&bull; <b>UC Davis (Davis, CA):</b> <i>JAN (جان / Ջان)</i><br>
-&bull; <b>UC Irvine (Irvine, CA):</b> <i>COURAGE</i> | <i>Persian Cultural Expression</i> | <i>PEYVAND / ARMENI</i><br>
-&bull; <b>UC San Diego (La Jolla, CA):</b> <i>DISTURBANCE</i><br>
-&bull; <b>Altman Siegel Gallery (San Francisco, CA):</b> <i>SIGNS</i><br>
-&bull; <b>Stanford University (Stanford, CA):</b> <i>LIMPID</i><br>
-&bull; <b>University of Washington (Seattle, WA):</b> <i>ARINARTUQ</i> | <i>BURGEONING</i> | <i>FATHOM</i> | <i>HOMEWATERS</i> | <i>IMAGINE</i><br>
-&bull; <b>Reed College &amp; Willamette University (Oregon):</b> <i>COURAGE</i> | <i>COUNTER-GENOCIDAL</i><br>
-&bull; <b>University of Hawaii at Manoa &amp; Kauai Hindu Monastery (Hawaii):</b> <i>SPENT</i> | <i>ZÀO (造)</i> | <i>HOT</i> | <i>ENSTASY</i> | <i>ALOHA</i><br>
-&bull; <b>University of Alaska Anchorage (Alaska):</b> <i>TREPIDATION</i>`
+        city: "USA &bull; WEST COAST &amp; PACIFIC RIM INSTITUTIONS",
+        shows: `&bull; <b>University of California System (CA):</b> Multi-tier research network spanning the Magnes Collection of Jewish Art &amp; Life (UC Berkeley), Samuel Jordan Center for Persian Studies &amp; Culture (UC Irvine), Dept. of Art &amp; Architectural History (UC Davis), Dept. of Visual Arts (UC San Diego), and Armenian Studies Programs on Middle Eastern visual histories, archipelagic displacement, and sociopolitical disturbance.<br>
+&bull; <b>Stanford University &amp; Bay Area Contemporary Repositories (CA):</b> Collaborative engagement with Stanford Dept. of Linguistics, Urgent Action Fund, and Altman Siegel Gallery on structural linguistics, human rights advocacy, and commercial curatorial dynamics.<br>
+&bull; <b>Skirball Cultural Center &amp; Los Angeles Philosophical Repositories (CA):</b> Curatorial dialogue with Jewish cultural institutions, American Jewish University, and the Institute for Art and Olfaction on sensory perception, sacred presence, and olfactory aesthetics.<br>
+&bull; <b>University of Washington &amp; Pacific Northwest Repositories (Seattle, WA):</b> Collaborative research with the Dept. of Anthropology, Burke Museum of Natural History &amp; Culture, Center for the Study of the Pacific Northwest, and 3D4M Program on Indigenous North American heritage, coastal topologies, and urban sociology.<br>
+&bull; <b>Reed College &amp; Willamette University (Oregon):</b> Academic dialogue with anthropology and art history directorates focusing on counter-genocidal discourse, political resistance, and ethnographic ethics.<br>
+&bull; <b>University of Hawaii at Mānoa &amp; Kauai Cultural Repositories (Hawaii):</b> Cross-cultural exchange with the Dept. of Art &amp; Art History, Asian Art History Directorates, and regional monastic centers on Pacific Rim material traditions and indigenous Hawaiian philosophies.<br>
+&bull; <b>University of Alaska Anchorage (ISER Node, Alaska):</b> Academic research with social and economic research institutes on Arctic environmental vulnerability and Northern community resilience.`
     },
     usa_midwest_south: {
-        city: "USA &bull; MIDWEST, SOUTH &amp; MOUNTAIN INSTITUTIONS",
-        shows: `&bull; <b>Eco-Cycle (Denver, CO):</b> Ecological Material Patrons<br>
-&bull; <b>Georgia Tech (Atlanta, GA) &amp; FGCU (Florida):</b> Ecological Material Patrons<br>
-&bull; <b>Victory Afghanistan (Illinois):</b> <i>RESONANCE</i><br>
-&bull; <b>The Phoenix (Colorado):</b> <i>UNSUBSCRIBE</i><br>
-&bull; <b>Equal Justice Initiative (Montgomery, AL):</b> <i>GRACE</i><br>
-&bull; <b>Hillel at Florida State University (Tallahassee, FL):</b> <i>BLESSING</i><br>
-&bull; <b>West Texas A&amp;M University &amp; Keiko Davidson School (Texas):</b> <i>SUCCESS</i> | <i>CHEESE</i><br>
-&bull; <b>University of Texas at Austin (Texas):</b> <i>SEKANJEBIN</i> | <i>Persian Instruction Line</i><br>
-&bull; <b>University of Chicago &amp; Northwestern University (Illinois):</b> <i>WAR-WEARY</i> | <i>AND</i> | <i>BIODIVERSITY</i><br>
-&bull; <b>Arizona State University (Tempe, AZ):</b> <i>RENEWAL / MASHKIKI</i> | <i>GRATITUDE</i> | <i>SCALABLE</i><br>
-&bull; <b>Boise State University &amp; Idaho State (Idaho):</b> <i>PRECARIOUS</i> | <i>SHADOWS</i> | <i>PERSEVERANCE</i> | <i>PENDING</i> | <i>INCREDULITY</i><br>
-&bull; <b>Indiana University Bloomington (Indiana):</b> <i>SOMNAMBULISTIC</i> | <i>ABRACADABRA</i><br>
-&bull; <b>University of Utah &amp; Southern Utah University (Utah):</b> <i>MEANING</i> | <i>INSTABILITY</i> | <i>FREEDOM</i><br>
-&bull; <b>University of Colorado Boulder (Colorado):</b> <i>ARTNAUTS</i>`
+        city: "USA &bull; MIDWEST, MOUNTAIN &amp; SUNBELT INSTITUTIONS",
+        shows: `&bull; <b>University of Chicago &amp; Northwestern University (IL):</b> High-level academic engagement with the Dept. of History, Dept. of Art History, South Asian Languages &amp; Civilizations, and Dept. of Psychology &amp; Education on post-colonial historiography, war weariness, and cognitive biodiversity.<br>
+&bull; <b>University of Colorado Boulder &amp; Eco-Cycle Networks (CO):</b> Collaborative dialogue with the Artnauts International Curatorial Collective, Dept. of Art &amp; Art History, and national eco-cycle networks on art as geopolitical intervention.<br>
+&bull; <b>Indiana University Bloomington &amp; Eskenazi School of Art (IN):</b> Scholarly dialogue with senior fine arts and sculpture faculty on surrealist history, somnambulistic creative states, and linguistic incantation.<br>
+&bull; <b>Boise State University &amp; Idaho Academic Network (ID):</b> Multi-faculty exchange across the Dept. of Art, Design &amp; Visual Studies, Art Jewelry &amp; Metalsmithing Program, and CLEAR Global on linguistic accessibility and human resilience.<br>
+&bull; <b>University of Utah &amp; Southern Utah University (UT):</b> Academic engagement with philosophy, filmmaking, and visual arts directorates on existential instability, cinema semantics, and structural freedom.<br>
+&bull; <b>University of Texas at Austin (TX):</b> Academic collaboration with Middle Eastern Studies, Media Studies, and Persian Program Directorates on classical Iranian cultural heritage, traditional poetic endurance, and Middle Eastern media analysis.<br>
+&bull; <b>Equal Justice Initiative &amp; Civil Rights Repositories (Montgomery, AL):</b> High-level institutional alignment with civil rights directorates, legal defense organizations, and social justice networks focusing on racial justice, historic reconciliation, and systemic grace.<br>
+&bull; <b>Arizona State University (Herberger Institute, Tempe, AZ):</b> Cross-disciplinary dialogue with Indigenous Studies, School of Art, and Regents' Professors Emeriti on Indigenous ecological medicine, desert photography traditions, and scalable visual systems.`
     },
     au_brisbane_qld: {
         city: "AUSTRALIA &bull; BRISBANE &amp; QUEENSLAND",
