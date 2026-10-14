@@ -862,42 +862,67 @@
                 </div>
             </section>
 
+            <!-- MASTERWORK PROVENANCE LEDGER SECTION (Reordered with Words Project placed last) -->
             <section id="ledger">
                 <h2 class="section-heading">Masterwork Provenance Ledger</h2>
                 
                 <div class="ledger-controls">
                     <button class="ledger-btn active" onclick="filterLedger('all', event)">All Masterworks</button>
-                    <button class="ledger-btn" onclick="filterLedger('words', event)">Words Project</button>
-                    <button class="ledger-btn" onclick="filterLedger('box', event)">Life of a Box</button>
-                    <button class="ledger-btn" onclick="filterLedger('voices', event)">Voices of the Land</button>
                     <button class="ledger-btn" onclick="filterLedger('rooh', event)">Rooh-Nawaz</button>
+                    <button class="ledger-btn" onclick="filterLedger('voices', event)">Voices of the Land</button>
+                    <button class="ledger-btn" onclick="filterLedger('box', event)">Life of a Box</button>
+                    <button class="ledger-btn" onclick="filterLedger('words', event)">Words Project</button>
                 </div>
 
                 <div class="ledger-grid">
-                    <!-- WORDS PROJECT ROW -->
-                    <div class="ledger-row" data-category="words">
+                    <!-- 1. ROOH-NAWAZ (4TH PILLAR) ROW -->
+                    <div class="ledger-row ledger-row-centered" data-category="rooh">
                         <div class="ledger-visual">
-                            <img src="words-texture-1.jpg" 
-                                 alt="Equanimity Gelassenheit Canvas" 
-                                 loading="lazy"
-                                 style="cursor: pointer;"
-                                 onclick="openLightbox('words-texture-1.jpg', 'Equanimity / Gelassenheit')">
+                            <img src="rooh-nawaz-1.jpg" 
+                                 alt="Rooh-Nawaz Persian Heritage Canvas" 
+                                 class="img-centered" 
+                                 loading="lazy" 
+                                 style="cursor: pointer;" 
+                                 onclick="openLightbox('rooh-nawaz-1.jpg', 'Rooh-Nawaz (روح‌نواز)')">
                         </div>
                         <div class="ledger-info">
-                            <span class="ledger-pillar-tag">&bull; Words Project &bull; Featured Masterwork</span>
-                            <h3 class="ledger-title">Equanimity / Gelassenheit</h3>
+                            <span class="ledger-pillar-tag">&bull; Rooh-Nawaz &bull; Persian Heritage &amp; Poetic Wisdom</span>
+                            <h3 class="ledger-title">Rooh-Nawaz (روح‌نواز)</h3>
                             <div class="ledger-meta-list">
-                                <strong>Medium:</strong> Mixed Media on Canvas (Natural Ground Earth Pigments)<br>
-                                <strong>Provenance:</strong> Artas Foundation (Swiss Foundation for Art in Regions of Conflict)<br>
-                                <strong>Exhibition History:</strong> Museum of West Bohemia
+                                <strong>Medium:</strong> Mixed Media &amp; Natural Earth Pigments on Canvas<br>
+                                <strong>Academic Network:</strong> Harvard University, Yale University, Courtauld Institute of Art, Samuel Jordan Center, University of Göttingen, Masaryk University<br>
+                                <strong>Core Concept:</strong> A living fine art archive dedicated to Persian cultural preservation, transforming classical poetic fragments and collective memory into visual masterworks.
                             </div>
                         </div>
                         <div class="ledger-actions">
-                            <button class="action-btn" onclick="openDossier('equanimity')">Read Dossier</button>
+                            <button class="action-btn" onclick="openDossier('rooh_nawaz')">Read Dossier</button>
                         </div>
                     </div>
 
-                    <!-- LIFE OF A BOX ROW -->
+                    <!-- 2. VOICES OF THE LAND ROW -->
+                    <div class="ledger-row ledger-row-centered" data-category="voices">
+                        <div class="ledger-visual">
+                            <img src="land-spatial-2.jpg" 
+                                 alt="Mowicha Voices of the Land" 
+                                 class="img-centered" 
+                                 loading="lazy" 
+                                 style="cursor: pointer;" 
+                                 onclick="openLightbox('land-spatial-2.jpg', 'Mowicha (Living Wisdom)')">
+                        </div>
+                        <div class="ledger-info">
+                            <span class="ledger-pillar-tag">&bull; Voices of the Land &bull; Sacred Indigenous Knowledge</span>
+                            <h3 class="ledger-title">Mowicha (Living Wisdom)</h3>
+                            <div class="ledger-meta-list">
+                                <strong>Collaborative Institutions:</strong> National Gallery of Canada, Burke Museum, Endangered Languages Project, University of Victoria, University of Alberta, and Indigenous Knowledge Keepers worldwide.<br>
+                                <strong>Core Concept:</strong> Incorporates the Anishinaabemowin framework <i>Ankosé</i> ('everything is connected') to transform oral traditions into permanent fine art masterworks.
+                            </div>
+                        </div>
+                        <div class="ledger-actions">
+                            <button class="action-btn" onclick="openDossier('mowicha')">Read Dossier</button>
+                        </div>
+                    </div>
+
+                    <!-- 3. LIFE OF A BOX ROW -->
                     <div class="ledger-row" data-category="box">
                         <div class="ledger-visual">
                             <img src="box-spatial-1.jpg" 
@@ -920,50 +945,26 @@
                         </div>
                     </div>
 
-                    <!-- VOICES OF THE LAND ROW -->
-                    <div class="ledger-row ledger-row-centered" data-category="voices">
+                    <!-- 4. WORDS PROJECT ROW (MOVED TO LAST) -->
+                    <div class="ledger-row" data-category="words">
                         <div class="ledger-visual">
-                            <img src="land-spatial-2.jpg" 
-                                 alt="Mowicha Voices of the Land" 
-                                 class="img-centered" 
+                            <img src="words-texture-1.jpg" 
+                                 alt="Equanimity Gelassenheit Canvas" 
                                  loading="lazy"
                                  style="cursor: pointer;"
-                                 onclick="openLightbox('land-spatial-2.jpg', 'Mowicha (Living Wisdom)')">
+                                 onclick="openLightbox('words-texture-1.jpg', 'Equanimity / Gelassenheit')">
                         </div>
                         <div class="ledger-info">
-                            <span class="ledger-pillar-tag">&bull; Voices of the Land &bull; Sacred Indigenous Knowledge</span>
-                            <h3 class="ledger-title">Mowicha (Living Wisdom)</h3>
+                            <span class="ledger-pillar-tag">&bull; Words Project &bull; Featured Masterwork</span>
+                            <h3 class="ledger-title">Equanimity / Gelassenheit</h3>
                             <div class="ledger-meta-list">
-                                <strong>Collaborative Institutions:</strong> National Gallery of Canada, Burke Museum, Endangered Languages Project, University of Victoria, University of Alberta, and Indigenous Knowledge Keepers worldwide.<br>
-                                <strong>Core Concept:</strong> Incorporates the Anishinaabemowin framework <i>Ankosé</i> ('everything is connected') to transform oral traditions into permanent fine art masterworks.
+                                <strong>Medium:</strong> Mixed Media on Canvas (Natural Ground Earth Pigments)<br>
+                                <strong>Provenance:</strong> Artas Foundation (Swiss Foundation for Art in Regions of Conflict)<br>
+                                <strong>Exhibition History:</strong> Museum of West Bohemia
                             </div>
                         </div>
                         <div class="ledger-actions">
-                            <button class="action-btn" onclick="openDossier('mowicha')">Read Dossier</button>
-                        </div>
-                    </div>
-
-                    <!-- ROOH-NAWAZ (4TH PILLAR) ROW -->
-                    <div class="ledger-row ledger-row-centered" data-category="rooh">
-                        <div class="ledger-visual">
-                            <img src="rooh-nawaz-1.jpg" 
-                                 alt="Rooh-Nawaz Persian Heritage Canvas" 
-                                 class="img-centered" 
-                                 loading="lazy" 
-                                 style="cursor: pointer;" 
-                                 onclick="openLightbox('rooh-nawaz-1.jpg', 'Rooh-Nawaz (روح‌نواز)')">
-                        </div>
-                        <div class="ledger-info">
-                            <span class="ledger-pillar-tag">&bull; Rooh-Nawaz &bull; Persian Heritage &amp; Poetic Wisdom</span>
-                            <h3 class="ledger-title">Rooh-Nawaz (روح‌نواز)</h3>
-                            <div class="ledger-meta-list">
-                                <strong>Medium:</strong> Mixed Media &amp; Natural Earth Pigments on Canvas<br>
-                                <strong>Academic Network:</strong> Harvard University, Yale University, Courtauld Institute of Art, Samuel Jordan Center, University of Göttingen, Masaryk University<br>
-                                <strong>Core Concept:</strong> A living fine art archive dedicated to Persian cultural preservation, transforming classical poetic fragments and collective memory into visual masterworks.
-                            </div>
-                        </div>
-                        <div class="ledger-actions">
-                            <button class="action-btn" onclick="openDossier('rooh_nawaz')">Read Dossier</button>
+                            <button class="action-btn" onclick="openDossier('equanimity')">Read Dossier</button>
                         </div>
                     </div>
                 </div>
