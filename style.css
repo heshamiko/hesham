@@ -769,6 +769,7 @@ footer {
         bottom: 10px;
         position: fixed;
         max-height: 50vh;
+        z-index: 10001;
     }
 
     /* Modal Safe-Areas for Mobile Safari */
