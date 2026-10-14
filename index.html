@@ -24,7 +24,7 @@
     <!-- LINK TO SEPARATE CSS FILE -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Custom Center Alignment for Mowicha Section & Fixed Pan/Zoom Viewer Styles -->
+    <!-- Custom Center Alignment, Modal Fixes, & Responsive Macro Detail Viewer Styles -->
     <style>
         .ledger-row-centered .ledger-visual {
             display: flex !important;
@@ -96,6 +96,17 @@
         .macro-btn:hover {
             background: var(--accent-gold, #d4af37);
             color: #000000;
+        }
+
+        /* Mobile Adjustments for Macro Window & Canvas Maps */
+        @media (max-width: 768px) {
+            .macro-view-window {
+                height: 360px;
+            }
+            .macro-controls-bar {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 
@@ -214,94 +225,94 @@
 
                 <div class="mosaic-grid">
                     <div class="mosaic-card" onclick="openLightbox('mombasa-01.jpg', 'Portrait Study I')">
-                        <img src="mombasa-01.jpg" alt="Chronicles of Mombasa Portrait 01">
+                        <img src="mombasa-01.jpg" alt="Chronicles of Mombasa Portrait 01 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-02.jpg', 'Portrait Study II')">
-                        <img src="mombasa-02.jpg" alt="Chronicles of Mombasa Portrait 02">
+                        <img src="mombasa-02.jpg" alt="Chronicles of Mombasa Portrait 02 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-03.jpg', 'Portrait Study III')">
-                        <img src="mombasa-03.jpg" alt="Chronicles of Mombasa Portrait 03">
+                        <img src="mombasa-03.jpg" alt="Chronicles of Mombasa Portrait 03 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-04.jpg', 'Portrait Study IV')">
-                        <img src="mombasa-04.jpg" alt="Chronicles of Mombasa Portrait 04">
+                        <img src="mombasa-04.jpg" alt="Chronicles of Mombasa Portrait 04 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-05.jpg', 'Portrait Study V')">
-                        <img src="mombasa-05.jpg" alt="Chronicles of Mombasa Portrait 05">
+                        <img src="mombasa-05.jpg" alt="Chronicles of Mombasa Portrait 05 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-06.jpg', 'Portrait Study VI')">
-                        <img src="mombasa-06.jpg" alt="Chronicles of Mombasa Portrait 06">
+                        <img src="mombasa-06.jpg" alt="Chronicles of Mombasa Portrait 06 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-07.jpg', 'Portrait Study VII')">
-                        <img src="mombasa-07.jpg" alt="Chronicles of Mombasa Portrait 07">
+                        <img src="mombasa-07.jpg" alt="Chronicles of Mombasa Portrait 07 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-08.jpg', 'Portrait Study VIII')">
-                        <img src="mombasa-08.jpg" alt="Chronicles of Mombasa Portrait 08">
+                        <img src="mombasa-08.jpg" alt="Chronicles of Mombasa Portrait 08 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-09.jpg', 'Portrait Study IX')">
-                        <img src="mombasa-09.jpg" alt="Chronicles of Mombasa Portrait 09">
+                        <img src="mombasa-09.jpg" alt="Chronicles of Mombasa Portrait 09 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-10.jpg', 'Portrait Study X')">
-                        <img src="mombasa-10.jpg" alt="Chronicles of Mombasa Portrait 10">
+                        <img src="mombasa-10.jpg" alt="Chronicles of Mombasa Portrait 10 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-11.jpg', 'Portrait Study XI')">
-                        <img src="mombasa-11.jpg" alt="Chronicles of Mombasa Portrait 11">
+                        <img src="mombasa-11.jpg" alt="Chronicles of Mombasa Portrait 11 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-12.jpg', 'Portrait Study XII')">
-                        <img src="mombasa-12.jpg" alt="Chronicles of Mombasa Portrait 12">
+                        <img src="mombasa-12.jpg" alt="Chronicles of Mombasa Portrait 12 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-13.jpg', 'Portrait Study XIII')">
-                        <img src="mombasa-13.jpg" alt="Chronicles of Mombasa Portrait 13">
+                        <img src="mombasa-13.jpg" alt="Chronicles of Mombasa Portrait 13 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-14.jpg', 'Portrait Study XIV')">
-                        <img src="mombasa-14.jpg" alt="Chronicles of Mombasa Portrait 14">
+                        <img src="mombasa-14.jpg" alt="Chronicles of Mombasa Portrait 14 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-15.jpg', 'Portrait Study XV')">
-                        <img src="mombasa-15.jpg" alt="Chronicles of Mombasa Portrait 15">
+                        <img src="mombasa-15.jpg" alt="Chronicles of Mombasa Portrait 15 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-16.jpg', 'Portrait Study XVI')">
-                        <img src="mombasa-16.jpg" alt="Chronicles of Mombasa Portrait 16">
+                        <img src="mombasa-16.jpg" alt="Chronicles of Mombasa Portrait 16 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-17.jpg', 'Portrait Study XVII')">
-                        <img src="mombasa-17.jpg" alt="Chronicles of Mombasa Portrait 17">
+                        <img src="mombasa-17.jpg" alt="Chronicles of Mombasa Portrait 17 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-18.jpg', 'Portrait Study XVIII')">
-                        <img src="mombasa-18.jpg" alt="Chronicles of Mombasa Portrait 18">
+                        <img src="mombasa-18.jpg" alt="Chronicles of Mombasa Portrait 18 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-19.jpg', 'Portrait Study XIX')">
-                        <img src="mombasa-19.jpg" alt="Chronicles of Mombasa Portrait 19">
+                        <img src="mombasa-19.jpg" alt="Chronicles of Mombasa Portrait 19 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-20.jpg', 'Portrait Study XX')">
-                        <img src="mombasa-20.jpg" alt="Chronicles of Mombasa Portrait 20">
+                        <img src="mombasa-20.jpg" alt="Chronicles of Mombasa Portrait 20 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-21.jpg', 'Portrait Study XXI')">
-                        <img src="mombasa-21.jpg" alt="Chronicles of Mombasa Portrait 21">
+                        <img src="mombasa-21.jpg" alt="Chronicles of Mombasa Portrait 21 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-22.jpg', 'Portrait Study XXII')">
-                        <img src="mombasa-22.jpg" alt="Chronicles of Mombasa Portrait 22">
+                        <img src="mombasa-22.jpg" alt="Chronicles of Mombasa Portrait 22 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-23.jpg', 'Portrait Study XXIII')">
-                        <img src="mombasa-23.jpg" alt="Chronicles of Mombasa Portrait 23">
+                        <img src="mombasa-23.jpg" alt="Chronicles of Mombasa Portrait 23 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-24.jpg', 'Portrait Study XXIV')">
-                        <img src="mombasa-24.jpg" alt="Chronicles of Mombasa Portrait 24">
+                        <img src="mombasa-24.jpg" alt="Chronicles of Mombasa Portrait 24 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-25.jpg', 'Portrait Study XXV')">
-                        <img src="mombasa-25.jpg" alt="Chronicles of Mombasa Portrait 25">
+                        <img src="mombasa-25.jpg" alt="Chronicles of Mombasa Portrait 25 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-26.jpg', 'Portrait Study XXVI')">
-                        <img src="mombasa-26.jpg" alt="Chronicles of Mombasa Portrait 26">
+                        <img src="mombasa-26.jpg" alt="Chronicles of Mombasa Portrait 26 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-27.jpg', 'Portrait Study XXVII')">
-                        <img src="mombasa-27.jpg" alt="Chronicles of Mombasa Portrait 27">
+                        <img src="mombasa-27.jpg" alt="Chronicles of Mombasa Portrait 27 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-28.jpg', 'Portrait Study XXVIII')">
-                        <img src="mombasa-28.jpg" alt="Chronicles of Mombasa Portrait 28">
+                        <img src="mombasa-28.jpg" alt="Chronicles of Mombasa Portrait 28 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-29.jpg', 'Portrait Study XXIX')">
-                        <img src="mombasa-29.jpg" alt="Chronicles of Mombasa Portrait 29">
+                        <img src="mombasa-29.jpg" alt="Chronicles of Mombasa Portrait 29 - Hesham Malik" loading="lazy">
                     </div>
                     <div class="mosaic-card" onclick="openLightbox('mombasa-30.jpg', 'Portrait Study XXX')">
-                        <img src="mombasa-30.jpg" alt="Chronicles of Mombasa Portrait 30">
+                        <img src="mombasa-30.jpg" alt="Chronicles of Mombasa Portrait 30 - Hesham Malik" loading="lazy">
                     </div>
                 </div>
             </section>
@@ -579,10 +590,10 @@
                         <div class="map-node label-right" id="node_sk_bratislava" style="top: 24.2%; left: 53.2%;" onclick="openMapDetails('sk_bratislava', event)">
                             <span class="node-label">Bratislava</span>
                         </div>
-                        <div class="map-node label-top" id="node_sk_sered" style="top: 24.5%; left: 53.5%;" onclick="openMapDetails('sk_sered', event)">
+                        <div class="map-node label-top" id="node_sk_sered" style="top: 24.8%; left: 53.5%;" onclick="openMapDetails('sk_sered', event)">
                             <span class="node-label">Sereď</span>
                         </div>
-                        <div class="map-node label-top" id="node_sk_senec" style="top: 24.0%; left: 53.0%;" onclick="openMapDetails('sk_senec', event)">
+                        <div class="map-node label-top" id="node_sk_senec" style="top: 23.6%; left: 52.8%;" onclick="openMapDetails('sk_senec', event)">
                             <span class="node-label">Senec</span>
                         </div>
                         <div class="map-node label-top" id="node_ru_volgograd" style="top: 26%; left: 60.5%;" onclick="openMapDetails('ru_volgograd', event)">
@@ -865,7 +876,7 @@
                 <div class="ledger-grid">
                     <div class="ledger-row" data-category="words">
                         <div class="ledger-visual">
-                            <img src="words-texture-1.jpg" alt="Equanimity Gelassenheit Canvas">
+                            <img src="words-texture-1.jpg" alt="Equanimity Gelassenheit Canvas" loading="lazy">
                         </div>
                         <div class="ledger-info">
                             <span class="ledger-pillar-tag">&bull; Words Project &bull; Featured Masterwork</span>
@@ -883,7 +894,7 @@
 
                     <div class="ledger-row" data-category="box">
                         <div class="ledger-visual">
-                            <img src="box-spatial-1.jpg" alt="Life of a Box Installation">
+                            <img src="box-spatial-1.jpg" alt="Life of a Box Installation" loading="lazy">
                         </div>
                         <div class="ledger-info">
                             <span class="ledger-pillar-tag">&bull; Life of a Box &bull; Ecological Sculpture</span>
@@ -902,7 +913,7 @@
                     <!-- MOWICHA (LIVING WISDOM) ROW -->
                     <div class="ledger-row ledger-row-centered" data-category="voices">
                         <div class="ledger-visual">
-                            <img src="land-spatial-2.jpg" alt="Mowicha Voices of the Land" class="img-centered">
+                            <img src="land-spatial-2.jpg" alt="Mowicha Voices of the Land" class="img-centered" loading="lazy">
                         </div>
                         <div class="ledger-info">
                             <span class="ledger-pillar-tag">&bull; Voices of the Land &bull; Sacred Indigenous Knowledge</span>
