@@ -973,22 +973,63 @@ function updateScrubberView(val) {
 }
 
 
-// --- 5. PROVENANCE DOSSIER & LIGHTBOX MODAL ---
+// --- 5. AUTHORITATIVE PROVENANCE DOSSIER REPOSITORY ---
 const dossierData = {
     equanimity: {
-        code: "PROVENANCE DOSSIER · WORDS PROJECT",
-        title: "Equanimity / Gelassenheit",
-        body: "Artas Foundation (Swiss Foundation for Art in Regions of Conflict). Created using heavy earth pigments and presented at the Museum of West Bohemia. It translates the term 'Equanimity' along with others into a multi-layered visual field exploring calm resilience amidst geopolitical tension."
+        code: "PROVENANCE DOSSIER · THE GLOBAL WORDS PROJECT",
+        title: "The Global Words Project (A Global Collective Inspiration)",
+        body: `A Multi-Decade Global Participatory Initiative:
+The Words Project is an expansive, decentralized artistic archive spanning over three decades. It operates on a singular, powerful mechanism of unified human consciousness: individuals, scholars, and communities from all over the world contribute single words to a global collective reservoir.
+
+• The Collective Alchemy: Words donated across 500+ global institutions and thousands of participants are gathered into a shared pool. From this global reservoir, words are drawn and woven into a narrative puzzle—a description that serves as the conceptual blueprint for a monumental canvas. Every painting is a physical record of pure global collective inspiration.
+
+• Unprecedented Global Network: Built upon thousands of direct word contributions spanning state repositories, national archives, academic faculties, cultural research centers, and grass-roots communities across Europe, Asia, Africa, and the Americas.
+
+• Museum & Archival Provenance: Documented and exhibited across major international solo retrospectives, state museum collections (such as the Museum of West Bohemia), and public research archives worldwide.
+
+• Sovereign Philosophy: Each painting stands as proof that diverse global voices, when gathered without boundary or hierarchy, form a harmonious and permanent visual document of shared human experience.`
     },
     box_monograph: {
         code: "PROVENANCE DOSSIER · LIFE OF A BOX",
-        title: "Monumental Packaging Sculpture",
-        body: "A flagship ecological installation utilizing cardboard packaging collected from the National Museum of the History of Ukraine, National Museum of Denmark, Museum of Basel, Nobel Prize Museum, City Museum Nuremberg, and many more. Exhibited across state museums and documented in official catalogues from the first public display at the Museum of Paper in Duszniki-Zdrój, Poland."
+        title: "Life of a Box (The Beauty of Sustainability & Global Material Memory)",
+        body: `A Monumental Ecological & Archival Installation:
+Life of a Box is an internationally acclaimed fine art initiative that redefines recycled industrial packaging into monumental sculptural works and tactile canvas panels. The project explores the journey of ordinary objects through human hands—transforming discarded commercial materials into permanent symbols of sustainability, memory, and interconnectedness.
+
+• The Core Philosophy: Every box carries a hidden trajectory of travel, human labor, and environmental impact. By embedding real packaging into high-art compositions alongside natural earth pigments and gold leaf, the project bridges industrial utility with timeless aesthetic grace.
+
+• Global Institutional Coverage: Featured and analyzed across major international media platforms, environmental essays, and corporate-cultural archives—including official features by Amazon, global sustainability leadership forums, state libraries, and international art periodicals.
+
+• State Museum Provenance: Documented in official museum catalogues and exhibited across prestigious European state repositories and cultural institutions—tracing its public journey from its inaugural presentation at the Museum of Papermaking in Duszniki-Zdrój, Poland, through national library networks, municipal museums, and global environmental summits.
+
+• Sovereign Impact: The project challenges how contemporary society perceives waste, proving that utility and beauty can coexist when material memory is honored through mastercraft.`
     },
     mowicha: {
         code: "PROVENANCE DOSSIER · VOICES OF THE LAND",
-        title: "Mowicha (Living Wisdom)",
-        body: "In collaboration with National Gallery of Canada, Burke Museum, Endangered Languages - Oregon USA, University of Victoria, University of Alberta, and many other Knowledge Keepers. This work incorporates the Anishinaabemowin concept 'Ankosé' ('everything is connected'). Prepared using earth pigmentation/Mix media to preserve indigenous oral philosophy into permanent fine art."
+        title: "Voices of the Land (Indigenous Wisdom & Sacred Oral Heritage)",
+        body: `A Living Tribute to Indigenous Wisdom & Sacred Linguistic Heritage:
+Voices of the Land is a monumental fine art initiative designed to honor, preserve, and share an ancient lineage of Indigenous philosophy with the global community. Approached with profound reverence, cultural sensitivity, and deep care, the project transforms hundreds of sacred oral traditions, ancestral myths, land memories, and donated linguistic fragments into permanent fine art masterworks.
+
+• A Classic Bridge of Respect: The initiative creates a respectful sanctuary where timeless ancestral knowledge connects with the modern world. By engaging with profound philosophies donated by Knowledge Keepers across continents—such as concepts of total universal interconnectedness—each work serves not merely as an artwork, but as a living act of honor, grace, and cultural preservation.
+
+• Authenticity & Land Connection: Every concept and linguistic nuance inspiring the series is rooted in an authentic understanding of human connection to the land, cosmos, and community. Prepared using natural earth pigments and mixed media, the tactile surfaces embody the physical earth and spiritual energy of the territories they honor.
+
+• Global Institutional & Academic Network: Developed in collaboration with, and drawing from, distinguished cultural institutions, research platforms, and advocates across the globe—including Harvard University, National Gallery of Canada, Burke Museum (Seattle), University of Auckland (New Zealand), Na'kuset - Native Women’s Shelter of Montreal, Endangered Languages Project, University of Queensland Art Museum, National University of Samoa, University of Alberta, Swarthmore College, Trent University, Arizona State University, University of Wisconsin-Milwaukee, University of Manitoba, and many others alongside Indigenous Knowledge Keepers.
+
+• Sovereign Impact: A living tribute to First Nations heritage that transcends traditional artistic boundaries—inviting the world to witness the profound depth, care, and classic elegance of Indigenous traditions that have sustained communities since time immemorial.`
+    },
+    rooh_nawaz: {
+        code: "PROVENANCE DOSSIER · ROOH-NAWAZ",
+        title: "Rooh-Nawaz (Persian Heritage, Memory & Collective Testament)",
+        body: `A Living Archive of Persian Culture, Memory & Poetic Wisdom:
+Rooh-Nawaz (روح‌نواز)—inspired by the classical concept of that which soothes the spirit—is an expansive ethnographic and fine art initiative dedicated to honoring Persian cultural heritage. By gathering contributions, memories, and poetic reflections from scholars, educators, and leaders worldwide, the project transforms personal recollections into a permanent visual testament to collective memory.
+
+• The Poetic Synthesis: Disparate linguistic fragments, verses, and philosophical donations—reflections on language as a bridge, human connection under a shared sky, relational grace, and hospitality—are pooled and woven into a singular visual narrative. Every painting serves as a living composition, proving that cultural memory is an active, evolving dialogue.
+
+• Authenticity & Sacred Depth: Deeply rooted in Persian literature, classical poetry, and historical memory, each masterwork is realized through natural earth pigments, luminous glazes, and expressive brushwork to forge a timeless bridge between ancient heritage and modern global thought.
+
+• Global Academic & Cultural Network: Built upon direct contributions pooled across world-renowned universities and centers for Middle Eastern and Persian studies—including the University of California, Harvard University, Yale University, University of Texas at Austin, Uppsala University (Sweden), Samuel Jordan Center for Persian Studies, The Courtauld Institute of Art (London), Göttingen University, Masaryk University, Central Asia Initiative, and the MacMillan Center for International and Area Studies.
+
+• Sovereign Impact: A living archive for cultural preservation that offers the international art world a dignified visual record of Persian heritage, crafted through global scholarly exchange.`
     }
 };
 
@@ -1176,6 +1217,7 @@ const mombasaInscriptions = {
     }
 };
 
+// --- 6. INTERACTIVE MODAL & FULL-SCREEN LIGHTBOX ENGINE ---
 function openDossier(key) {
     const data = dossierData[key];
     if (data) {
@@ -1183,6 +1225,7 @@ function openDossier(key) {
         document.getElementById('modalTitle').innerText = data.title;
         document.getElementById('modalBody').innerText = data.body;
         document.getElementById('dossierModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
     }
 }
 
@@ -1191,38 +1234,46 @@ function openLightbox(imageSrc, fallbackTitle) {
     const item = mombasaInscriptions[filename];
 
     if (item) {
+        // Mombasa Field Record Lightbox
         document.getElementById('modalCode').innerText = item.code;
         document.getElementById('modalTitle').innerText = item.title;
         document.getElementById('modalBody').innerHTML = `
             <div style="text-align: center; margin-bottom: 20px;">
-                <img src="${imageSrc}" style="max-width: 100%; max-height: 50vh; border: 1px solid var(--border-gold); margin-bottom: 15px;">
+                <img src="${imageSrc}" alt="${item.title}" style="max-width: 100%; max-height: 50vh; border: 1px solid var(--border-gold); margin-bottom: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.8);">
             </div>
-            <div style="text-align: left; font-size: 0.85rem; line-height: 1.8; color: var(--text-secondary); background: rgba(255,255,255,0.02); padding: 15px; border-left: 2px solid var(--accent-gold);">
+            <div style="text-align: left; font-size: 0.85rem; line-height: 1.8; color: var(--text-secondary); background: rgba(255,255,255,0.02); padding: 18px; border-left: 2px solid var(--accent-gold);">
                 <p style="margin-top: 0; margin-bottom: 10px;"><strong style="color: #fff;">Field Observation:</strong> ${item.obs}</p>
                 <p style="margin-bottom: 0;"><strong style="color: #fff;">The Conversation:</strong> ${item.cog}</p>
             </div>
         `;
     } else {
-        document.getElementById('modalCode').innerText = "CHRONICLES OF MOMBASA · PORTRAIT ARCHIVE";
-        document.getElementById('modalTitle').innerText = fallbackTitle || "Portrait Dream Archive";
+        // Masterwork Canvas Full-Screen Lightbox
+        document.getElementById('modalCode').innerText = "FULL-SCREEN MASTERWORK VIEW";
+        document.getElementById('modalTitle').innerText = fallbackTitle || "Hesham Malik Sovereign Archive";
         document.getElementById('modalBody').innerHTML = `
-            <div style="text-align: center;">
-                <img src="${imageSrc}" style="max-width: 100%; max-height: 60vh; border: 1px solid var(--border-gold); margin-bottom: 15px;">
-                <p style="font-size: 0.8rem; color: var(--text-secondary);">Mombasa Series · Natural Expression Study</p>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="${imageSrc}" alt="${fallbackTitle}" style="max-width: 100%; max-height: 58vh; border: 1px solid var(--border-gold); box-shadow: 0 15px 40px rgba(0,0,0,0.9);">
+            </div>
+            <div style="text-align: center; font-size: 0.82rem; color: var(--text-secondary); letter-spacing: 0.05em;">
+                <p style="margin: 0;">Click anywhere outside or press ESC to return to the Monographic Ledger.</p>
             </div>
         `;
     }
     
     document.getElementById('dossierModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
 }
 
 function closeDossier() {
     const modal = document.getElementById('dossierModal');
-    if (modal) modal.classList.remove('active');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 }
 
 
-// --- 6. MASTERWORK LEDGER CATEGORY FILTER ---
+// --- 7. MASTERWORK LEDGER CATEGORY FILTER ---
 function filterLedger(category, event) {
     const buttons = document.querySelectorAll('.ledger-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
@@ -1239,7 +1290,7 @@ function filterLedger(category, event) {
 }
 
 
-// --- 7. GLOBAL ACCESSIBILITY & KEYBOARD HANDLERS ---
+// --- 8. GLOBAL ACCESSIBILITY & KEYBOARD HANDLERS ---
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeDossier();
