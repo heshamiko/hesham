@@ -41,9 +41,9 @@ const mapCityData = {
     },
     edinburgh: {
         city: "UNITED KINGDOM &bull; EDINBURGH",
-        shows: `&bull; <b>Institutional Anchor:</b> National Galleries Scotland; University of Edinburgh.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Anthropological research and historical art curation examining social anthropology, historical art curation, and regional cultural memory across major Scottish cultural centers.<br>
-&bull; <b>Curatorial Focus:</b> Textural paint application and historical paper research reflecting Northern European heritage, institutional memory, and structural social anthropology.`
+        shows: `&bull; <b>Institutional Anchor:</b> Strathallan Academic Platform &amp; Scottish Material Culture Project (<i>Life of a Box</i> Initiative); National Galleries Scotland; University of Edinburgh.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Transformative material cycles, educational transit, physical metamorphosis, and historical art curation across major Scottish cultural centers.<br>
+&bull; <b>Curatorial Focus:</b> Structural box assemblage, tactile paper studies, and material relocation research detailing form transformation and Scottish cultural memory.`
     },
     aberdeen: {
         city: "UNITED KINGDOM &bull; ABERDEEN",
@@ -88,6 +88,14 @@ const mapCityData = {
 &bull; <b>Curatorial Focus:</b> Dynamic feathered visual textures and light studies examining natural conservation, crepuscular light, and aesthetic philosophy.`
     },
 
+    // --- SAUDI ARABIA CITIES ---
+    sa_riyadh: {
+        city: "SAUDI ARABIA &bull; RIYADH",
+        shows: `&bull; <b>Institutional Anchor:</b> Qiddiya Cultural &amp; Development Authority, Riyadh Development Zone.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Spatial transformation, mega-scale urban transitions, and shifting cultural topographies in the Arabian Peninsula.<br>
+&bull; <b>Curatorial Focus:</b> Strategic exploration of architectural evolution and geographic turning points integrated into dynamic canvas studies.`
+    },
+
     // --- SWITZERLAND CITIES ---
     ch_geneva: {
         city: "SWITZERLAND &bull; GENEVA",
@@ -98,20 +106,20 @@ const mapCityData = {
     ch_bern: {
         city: "SWITZERLAND &bull; BERN",
         shows: `&bull; <b>Institutional Anchor:</b> International Cartographic Association.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Spatial mapping, linguistic cartography, and global geographical representation of human knowledge.<br>
-&bull; <b>Curatorial Focus:</b> Cartographic symbolism and geometric canvas structures mapping world heritage, spatial relations, and cultural topography.`
+&bull; <b>Field &amp; Conceptual Research:</b> Spatial mapping, linguistic cartography, cartographic theory, and global geographical representation of human knowledge.<br>
+&bull; <b>Curatorial Focus:</b> Topographical canvas mapping, cartographic symbolism, and geometric canvas structures mapping world heritage and territorial relations.`
     },
     ch_ballenberg: {
-        city: "SWITZERLAND &bull; BALLENBERG",
-        shows: `&bull; <b>Institutional Anchor:</b> Swiss Open-Air Museum Ballenberg.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Alpine architecture preservation, traditional craftsmanship, and ecological material provenance in rural European heritage.<br>
-&bull; <b>Curatorial Focus:</b> Tactile wood and paper sculptural installations probing historical shelter, rural craftsmanship, and material conservation.`
+        city: "SWITZERLAND &bull; BALLENBERG &amp; BASEL",
+        shows: `&bull; <b>Institutional Anchor:</b> Swiss Open-Air Museum Ballenberg; Museum of Basel (<i>Life of a Box</i> Initiative).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Alpine architecture preservation, traditional craftsmanship, ecological material provenance, and archival packaging containment.<br>
+&bull; <b>Curatorial Focus:</b> Tactile wood, paper, and card sculptural installations probing historical shelter, rural craftsmanship, and material conservation.`
     },
     ch_zurich: {
         city: "SWITZERLAND &bull; ZURICH",
-        shows: `&bull; <b>Institutional Anchor:</b> ETH Zurich (Dept. of Architecture &amp; Institute of History and Theory of Architecture); Artas Foundation.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Spatial mapping, territorial research, architectural history, and conflict transformation dialogue through visual arts and urban planning.<br>
-&bull; <b>Curatorial Focus:</b> Reclaimed ecological material studies paired with architectural canvas research examining social cohesion, spatial continuity, and peacebuilding.`
+        shows: `&bull; <b>Institutional Anchor:</b> ETH Zurich (Dept. of Architecture &amp; Institute of History and Theory of Architecture); Natural History Museum Zurich (<i>Life of a Box</i> Initiative); Artas Foundation.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Territorial planning, architectural history, conflict transformation, equanimity, and spatial togetherness (<i>Prijateljstvo</i>).<br>
+&bull; <b>Curatorial Focus:</b> Architectural grid structures, warm territorial earth tones, and reclaimed ecological material studies examining social cohesion and spatial continuity.`
     },
 
     // --- ITALY CITIES ---
@@ -119,27 +127,39 @@ const mapCityData = {
         city: "ITALY &bull; BOLOGNA",
         shows: `&bull; <b>Institutional Anchor:</b> University of Bologna (Department of Philosophy).<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Philosophical inquiry into structural aesthetics, perceptual resonance, and the historical evolution of European artistic theory.<br>
-&bull; <b>Curatorial Focus:</b> Canvas investigations probing visual harmony, acoustic frequencies, and the sensory resonance of human thought.`
+&bull; <b>Curatorial Focus:</b> Harmonic tonal frequencies and canvas investigations probing visual balance, acoustic dynamics, and sensory resonance.`
     },
     it_florence: {
         city: "ITALY &bull; FLORENCE",
         shows: `&bull; <b>Institutional Anchor:</b> European University Institute.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> European governance, historical political philosophy, and civic solidarity within the Mediterranean basin.<br>
-&bull; <b>Curatorial Focus:</b> Deep Renaissance-inspired color palettes and structured geometric compositions addressing European unity and historical solidarity.`
+&bull; <b>Field &amp; Conceptual Research:</b> European governance, historical political philosophy, civic solidarity, and continental unity within the Mediterranean basin.<br>
+&bull; <b>Curatorial Focus:</b> Structured geometric compositions and deep Renaissance-inspired color palettes addressing historical solidarity and political philosophy.`
+    },
+    it_fabriano_rome: {
+        city: "ITALY &bull; FABRIANO &amp; ROME",
+        shows: `&bull; <b>Institutional Anchor:</b> Cotroceni National Museum; Paper and Watermark Museum, Fabriano (UNESCO Creative City - <i>Life of a Box</i> Initiative).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Historical papermaking technologies, watermark embedding, and archival packaging preservation.<br>
+&bull; <b>Curatorial Focus:</b> Fibrous paper-pulp textures, watermark transparency studies, and tactile canvas aging techniques.`
     },
 
     // --- FRANCE CITIES ---
     fr_paris: {
         city: "FRANCE &bull; PARIS",
-        shows: `&bull; <b>Institutional Anchor:</b> Institute for Sustainable Development and International Relations (IDDRI).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Environmental transition policy, international climate stewardship, and human-centered ecological responsibility.<br>
-&bull; <b>Curatorial Focus:</b> Lyrical eco-material canvas works exploring global climate sustainability, natural balance, and planetary stewardship.`
+        shows: `&bull; <b>Institutional Anchor:</b> Sorbonne University; Université Paris Cité; Sorbonne Business School; Amnesty International "Art for Amnesty" Platform; American School of Paris; Institute for Sustainable Development and International Relations (IDDRI).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Urban proximity dynamics (the 15-minute city), Enlightenment literary traditions, civil resistance, human rights activism, and fortuitous educational discovery.<br>
+&bull; <b>Curatorial Focus:</b> High-contrast activist iconography, luminescent Enlightenment light studies, and urban proximity mapping on canvas.`
+    },
+    fr_toulouse: {
+        city: "FRANCE &bull; TOULOUSE",
+        shows: `&bull; <b>Institutional Anchor:</b> Musée des Augustins (<i>Life of a Box</i> Initiative).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> French provincial museum archives, packaging preservation, and regional artistic heritage.<br>
+&bull; <b>Curatorial Focus:</b> Textural cardboard transformations and historical paper-ground panel studies.`
     },
     fr_guadeloupe: {
         city: "FRANCE &bull; GUADELOUPE",
         shows: `&bull; <b>Institutional Anchor:</b> Arts au Pluriel.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Caribbean contemporary art platforms, Francophone Atlantic dialogue, and multi-layered island cultural heritage.<br>
-&bull; <b>Curatorial Focus:</b> Vibrant tropical compositions probing serendipitous creative encounters, island topography, and post-colonial artistic identity.`
+&bull; <b>Field &amp; Conceptual Research:</b> Caribbean contemporary art platforms, Francophone Atlantic dialogue, serendipitous artistic practices, and multi-layered island cultural heritage.<br>
+&bull; <b>Curatorial Focus:</b> Tropical color chance-operations, vibrant island topographies, and post-colonial artistic identity.`
     },
 
     // --- PALESTINE CITIES ---
@@ -159,25 +179,25 @@ const mapCityData = {
     // --- ICELAND CITIES ---
     is_reykjavik: {
         city: "ICELAND &bull; REYKJAVÍK",
-        shows: `&bull; <b>Institutional Anchor:</b> University of Iceland (Dept. of Anthropology &amp; Cultural Studies).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Sub-arctic human survival, environmental tolerance, medieval literature, and the linguistic heritage of Nordic sagas facing rapid modernization.<br>
-&bull; <b>Curatorial Focus:</b> Volcanic mineral textures and sparse abstract compositions translating old Norse linguistic structures into stark visual landscapes.`
+        shows: `&bull; <b>Institutional Anchor:</b> University of Iceland (Faculty of Icelandic &amp; Comparative Cultural Studies &amp; Dept. of Anthropology).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Nordic island blessings (<i>Blessun</i>), social friction, human intolerance (<i>Óþol</i>), sub-arctic human survival, and saga literature.<br>
+&bull; <b>Curatorial Focus:</b> Volcanic mineral textures, stark high-latitude color contrasts, and sparse abstract compositions mapping environmental harshness.`
     },
 
     // --- GUYANA CITIES ---
     gy_georgetown: {
         city: "GUYANA &bull; GEORGETOWN",
         shows: `&bull; <b>Institutional Anchor:</b> University of Guyana (Dept. of Language and Cultural Studies).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Caribbean and Amazonian linguistic identity, quietude, interiority, and the oral histories of the Guiana Shield.<br>
-&bull; <b>Curatorial Focus:</b> Atmospheric figurative and lush landscape studies capturing the quiet depth, rainforest stillness, and rich post-colonial heritage of Northern South America.`
+&bull; <b>Field &amp; Conceptual Research:</b> Caribbean and Amazonian linguistic identity, quietude, post-colonial silence, interiority, and oral histories of the Guiana Shield.<br>
+&bull; <b>Curatorial Focus:</b> Subdued color palettes, rainforest stillness, and atmospheric landscape studies capturing Northern South American cultural depth.`
     },
 
     // --- JORDAN CITIES ---
     jo_amman: {
         city: "JORDAN &bull; AMMAN",
         shows: `&bull; <b>Institutional Anchor:</b> The University of Jordan (School of Arts &amp; Design &amp; Dept. of Music).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Levantine visual typography, sacred geometry, uncertainty, and Middle Eastern sonic traditions across ancient trade routes.<br>
-&bull; <b>Curatorial Focus:</b> Calligraphic abstraction and tonal canvas research translating traditional Levantine musical structures and spiritual concepts into fluid visual rhythms.`
+&bull; <b>Field &amp; Conceptual Research:</b> Levantine sacred grace (<i>Barakah</i>), sonic uncertainty, Levantine typography, and Middle Eastern visual communication frameworks.<br>
+&bull; <b>Curatorial Focus:</b> Calligraphic abstraction, harmonic tension, and fluid visual rhythms translating traditional Levantine musical structures.`
     },
 
     // --- MAURITIUS CITIES ---
@@ -192,8 +212,8 @@ const mapCityData = {
     om_muscat: {
         city: "OMAN &bull; MUSCAT",
         shows: `&bull; <b>Institutional Anchor:</b> Sultan Qaboos University (Dept. of Art Education &amp; Graphic Design).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Contemporary Arab visual arts, sacred ontology, coastal trade history, Middle Eastern typography, and continuous ontological transformation.<br>
-&bull; <b>Curatorial Focus:</b> Architectural canvas works utilizing desert pigments and luminous tones to explore spiritual continuity, Gulf heritage, and contemporary Arabian visual identity.`
+&bull; <b>Field &amp; Conceptual Research:</b> Sacred geometry, ontological evolution (<i>Becoming</i>), Gulf visual arts pedagogy, and coastal trade history.<br>
+&bull; <b>Curatorial Focus:</b> Spiritual minimalism, continuous line work, and architectural canvas treatments utilizing desert pigments and luminous tones.`
     },
 
     // --- ARGENTINA CITIES ---
@@ -207,29 +227,35 @@ const mapCityData = {
     // --- BELGIUM CITIES ---
     be_brussels: {
         city: "BELGIUM &bull; BRUSSELS",
-        shows: `&bull; <b>Institutional Anchor:</b> Brussels Expo; Vrije Universiteit Brussel (Dept. of Art History &amp; Archaeology).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Major public exhibition platforms for eco-sculptural works, integrated with academic research into Northern Renaissance art history and urban heritage.<br>
+        shows: `&bull; <b>Institutional Anchor:</b> Brussels Expo; Vrije Universiteit Brussel (Dept. of Art History &amp; Archaeology); Centre for European Policy Studies (CEPS); The Green Door Gallery.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Major public exhibition platforms for eco-sculptural works, Northern Renaissance art history, European policy frameworks, human forgiveness, and social balance.<br>
 &bull; <b>Curatorial Focus:</b> Retrospective displays of eco-sculptural box works alongside large-scale canvas research examining human gratitude and spatial containment.`
     },
     be_leuven: {
         city: "BELGIUM &bull; LEUVEN",
-        shows: `&bull; <b>Institutional Anchor:</b> KU Leuven (Division Forest, Nature &amp; Landscape).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Forest canopy ecology, landscape buffer zones, and environmental conservation in Western Europe.<br>
-&bull; <b>Curatorial Focus:</b> Organic green and earth-toned canvas compositions exploring ecological protection zones, forest balance, and environmental stewardship.`
+        shows: `&bull; <b>Institutional Anchor:</b> KU Leuven (Division Forest, Nature &amp; Landscape &amp; Dept. of Social Anthropology).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Forest canopy ecology, landscape buffer zones (<i>Bufferworld</i>), human conviviality, and European environmental conservation.<br>
+&bull; <b>Curatorial Focus:</b> Organic green canopy palettes, earth-toned canvas compositions, and soft transitional glazes representing sanctuary zones.`
+    },
+    be_ghent_bruges: {
+        city: "BELGIUM &bull; GHENT &amp; BRUGES",
+        shows: `&bull; <b>Institutional Anchor:</b> Museum Voor Schone Kunsten; Museum Brugge (<i>Life of a Box</i> Initiative); Ghent University (Dept. of Languages &amp; Cultures).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Flemish art conservation, gratuitous aesthetic theory, and municipal packaging preservation in historic Belgian centers.<br>
+&bull; <b>Curatorial Focus:</b> Cardboard-ground panel compositions and natural color fields reflecting Flemish painterly traditions and archival protection.`
     },
 
     // --- POLAND CITIES ---
     pl_duszniki: {
         city: "POLAND &bull; DUSZNIKI-ZDRÓJ",
-        shows: `&bull; <b>Institutional Anchor:</b> Museum of Papermaking.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Historical paper manufacturing, raw material conservation, and physical paper craft as a repository for European cultural memory.<br>
-&bull; <b>Curatorial Focus:</b> First public exhibition site for <i>Life of a Box</i>, presenting physical paper sculptures and historical paper conservation studies.`
+        shows: `&bull; <b>Institutional Anchor:</b> Museum of Papermaking (<i>Life of a Box</i> Initiative).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Historical paper manufacturing, raw material conservation, fluid dynamics (<i>Flow</i>), and physical paper craft as a repository for European cultural memory.<br>
+&bull; <b>Curatorial Focus:</b> Inaugural public exhibition site for <i>Life of a Box</i>, presenting fibrous paper-pulp sculptures and historical paper conservation studies.`
     },
     pl_poznan: {
         city: "POLAND &bull; POZNAŃ",
         shows: `&bull; <b>Institutional Anchor:</b> Magdalena Abakanowicz University of Arts in Poznań.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Contemporary curatorial theory, radical spatial installation, and modern Eastern European art criticism.<br>
-&bull; <b>Curatorial Focus:</b> Bold, high-contrast chromatic canvases probing spatial installations, vibrant visual accents, and modern curatorial practice.`
+&bull; <b>Field &amp; Conceptual Research:</b> Contemporary curatorial theory, synthetic color field theory, radical spatial installation, and modern Eastern European art criticism.<br>
+&bull; <b>Curatorial Focus:</b> Bold, high-contrast chromatic canvases probing high-luminescence synthetic tones, spatial installations, and modern curatorial practice.`
     },
     pl_warsaw: {
         city: "POLAND &bull; WARSAW",
@@ -247,9 +273,9 @@ const mapCityData = {
     // --- SLOVENIA CITIES ---
     si_ljubljana: {
         city: "SLOVENIA &bull; LJUBLJANA",
-        shows: `&bull; <b>Institutional Anchor:</b> University of Ljubljana (Department of Art History).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Contemporary European art curation, bodily movement in visual media, and post-socialist cultural transitions.<br>
-&bull; <b>Curatorial Focus:</b> Dynamic kinetic brushwork studies investigating physical tension, bodily presence, and the visual representation of movement.`
+        shows: `&bull; <b>Institutional Anchor:</b> Rog Creative Center (<i>Life of a Box</i> Initiative); University of Ljubljana (Department of Art History).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Contemporary European art curation, structural physical tremors, bodily movement in visual media, and packaging recycling cycles.<br>
+&bull; <b>Curatorial Focus:</b> Dynamic kinetic brushwork studies, unstable geometric compositions, and sculptural cardboard transformations.`
     },
     si_koper: {
         city: "SLOVENIA &bull; KOPER",
@@ -261,31 +287,207 @@ const mapCityData = {
     // --- CROATIA CITIES ---
     hr_zagreb: {
         city: "CROATIA &bull; ZAGREB",
-        shows: `&bull; <b>Institutional Anchor:</b> University of Zagreb (Academy of Fine Arts).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Balkan contemporary art pedagogy, visual perception, and structural criticism in historical fine art training.<br>
-&bull; <b>Curatorial Focus:</b> Layered figurative canvases utilizing chiaroscuro techniques to unpack perception, illusion, and structural narrative integrity.`
+        shows: `&bull; <b>Institutional Anchor:</b> University of Zagreb, Academy of Fine Arts &amp; International Academic Directorate.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Balkan fine arts heritage, institutional exchange, and narratives of systemic disillusionment and trust rupture.<br>
+&bull; <b>Curatorial Focus:</b> Structural canvas compositions addressing fragmented perceptions, narrative shifts, chiaroscuro techniques, and regional visual history.`
     },
 
-    // --- GREECE CITIES ---
-    gr_athens: {
-        city: "GREECE &bull; ATHENS",
-        shows: `&bull; <b>Institutional Anchor:</b> Athens School of Fine Arts (Dept. of Theory and History of Art).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Classical aesthetic theory, Mediterranean cultural memory, and the philosophy of oblivion versus historical preservation.<br>
-&bull; <b>Curatorial Focus:</b> Monochromatic, stone-textured canvases exploring archaeological memory, classical myth structures, and the persistence of light through decay.`
+    // --- ARMENIA CITIES ---
+    am_yerevan: {
+        city: "ARMENIA &bull; YEREVAN",
+        shows: `&bull; <b>Institutional Anchor:</b> Sexual Assault Crisis Center / Human Rights Advocacy Axis, Yerevan.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Trauma studies, social defense mechanisms, bodily autonomy, recovery frameworks, and institutional support systems.<br>
+&bull; <b>Curatorial Focus:</b> Raw tactile canvas research investigating resilience, personal boundary protection, and societal restoration.`
     },
 
-    // --- NORWAY CITIES ---
-    no_longyearbyen: {
-        city: "NORWAY &bull; LONGYEARBYEN (SVALBARD)",
-        shows: `&bull; <b>Institutional Anchor:</b> Svalbard Global Seed Vault (Spitsbergen).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Arctic biodiversity preservation, agricultural heritage, and global bio-security against ecological crisis.<br>
-&bull; <b>Curatorial Focus:</b> Deep green and icy tonal studies reflecting biological resilience, light capture, and humanity's collective bio-archive.`
+    // --- BELARUS CITIES ---
+    by_minsk: {
+        city: "BELARUS &bull; MINSK",
+        shows: `&bull; <b>Institutional Anchor:</b> ICOMOS Belarusian National Committee, Historical Preservation Forum.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Heritage conservation under institutional restraint, architectural sovereignty, human agency, and historical self-determination.<br>
+&bull; <b>Curatorial Focus:</b> Layered material research probing the limits of preservation, structural memory, and cultural persistence.`
     },
-    no_oslo: {
-        city: "NORWAY &bull; OSLO",
-        shows: `&bull; <b>Institutional Anchor:</b> Innovation Norway.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Nordic cultural editing, existential philosophical concepts, and Scandinavian public media curation.<br>
-&bull; <b>Curatorial Focus:</b> Somber, atmospheric landscapes capturing Northern light, existential reflection, and Nordic emotional geography.`
+
+    // --- BULGARIA CITIES ---
+    bg_sofia: {
+        city: "BULGARIA &bull; SOFIA",
+        shows: `&bull; <b>Institutional Anchor:</b> BlueLink Environmental Foundation &amp; American College of Sofia Cultural Axis.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Civil society dynamics, ecological equilibrium, absolute educational structures, and civic balance in Southeast Europe.<br>
+&bull; <b>Curatorial Focus:</b> Studies in tension, harmonic proportions, and binary balance applied to large-scale mixed-media panels.`
+    },
+
+    // --- KUWAIT CITIES ---
+    kw_kuwaitcity: {
+        city: "KUWAIT &bull; KUWAIT CITY",
+        shows: `&bull; <b>Institutional Anchor:</b> Gulf Independent Culinary &amp; Commercial Heritage Archives, Kuwait City.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Domestic tranquility (<i>Sukun</i>), interior sanctuary, and peaceful family continuity amid rapid Arabian Gulf urbanism.<br>
+&bull; <b>Curatorial Focus:</b> Minimalist spatial research focusing on silence, interior stillness, and private domestic geometry.`
+    },
+
+    // --- LATVIA CITIES ---
+    lv_riga: {
+        city: "LATVIA &bull; RIGA",
+        shows: `&bull; <b>Institutional Anchor:</b> Baltic Cultural Heritage &amp; Tourism Guild, Riga Bureau.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Post-Baltic historical tranquility (<i>Miers</i>), urban memory preservation, and public spatial calm.<br>
+&bull; <b>Curatorial Focus:</b> Tonal color field studies reflecting Baltic atmospheric clarity, silence, and civic equilibrium.`
+    },
+
+    // --- SPAIN CITIES ---
+    es_madrid: {
+        city: "SPAIN &bull; MADRID",
+        shows: `&bull; <b>Institutional Anchor:</b> Mapfre Cultural Foundation (<i>Life of a Box</i> Initiative) &amp; Ecosistema Urbano Architectural Lab.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Urban aesthetics, sustainable architectural design, classical visual proportions, and packaging recycling in Iberian contexts.<br>
+&bull; <b>Curatorial Focus:</b> Harmony, urban surface tension, cardboard structural installations, and geometric elegance mapped onto multi-panel canvases.`
+    },
+
+    // --- LITHUANIA CITIES ---
+    lt_vilnius: {
+        city: "LITHUANIA &bull; VILNIUS",
+        shows: `&bull; <b>Institutional Anchor:</b> National Museum of Lithuania; Vilnius Academy of Arts (VAA Exhibition Halls 'Titanikas').<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Baltic historical defense, raw emotional feeling in fine art pedagogy, collective endurance, and contemporary aesthetic theory.<br>
+&bull; <b>Curatorial Focus:</b> Heavy-texture impasto works and expressive gestural brushwork evaluating psychological toughness, raw human emotion, and historical continuity.`
+    },
+
+    // --- CYPRUS CITIES ---
+    cy_nicosia: {
+        city: "CYPRUS &bull; NICOSIA",
+        shows: `&bull; <b>Institutional Anchor:</b> Ministry of Culture, Division of Arts &amp; Historical Heritage, Republic of Cyprus.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Island division dynamics, Levant trade history, strategic cultural horizons, and long-term Mediterranean art preservation.<br>
+&bull; <b>Curatorial Focus:</b> Horizon-line studies, focal perspective, and visual clarity across complex geographic histories.`
+    },
+
+    // --- SLOVAKIA CITIES ---
+    sk_bratislava: {
+        city: "SLOVAKIA &bull; BRATISLAVA",
+        shows: `&bull; <b>Institutional Anchor:</b> Slovak National Gallery (Old Art Collections &amp; Modern Curatorial Division).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Historical art collection curation, sacred spatial theory (<i>Chōra</i>), philosophical conviction, and Central European art preservation.<br>
+&bull; <b>Curatorial Focus:</b> Abstract spatial research probing empty space, belief systems, architectural canvas studies, and classical art conservation.`
+    },
+    sk_sered: {
+        city: "SLOVAKIA &bull; SEREĎ",
+        shows: `&bull; <b>Institutional Anchor:</b> Slovak National Museum, Sereď Holocaust Museum Preservation Site.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Historical memory, memorial architecture, Holocaust research, and the ethics of remembrance in Central Europe.<br>
+&bull; <b>Curatorial Focus:</b> Somber, reflective paper and canvas works dedicated to historical trauma, memory retention, and human rights advocacy.`
+    },
+    sk_senec: {
+        city: "SLOVAKIA &bull; SENEC",
+        shows: `&bull; <b>Institutional Anchor:</b> Ministry of Culture Regional Network, City of Senec (<i>Life of a Box</i> Initiative).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Municipal packaging cycles, civic art integration, and regional Slovak transit lines.<br>
+&bull; <b>Curatorial Focus:</b> Cardboard packaging reconstruction and material reuse in modern sculpture.`
+    },
+
+    // --- AUSTRIA CITIES ---
+    at_linz: {
+        city: "AUSTRIA &bull; LINZ",
+        shows: `&bull; <b>Institutional Anchor:</b> Lentos Art Museum (<i>Life of a Box</i> Initiative), Department of Sculpture &amp; Painting.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Mirroring, psychological reflection, self-obsession (<i>Narzissmus</i>), and modern European museum collections.<br>
+&bull; <b>Curatorial Focus:</b> Reflective surface studies, recycled packaging structures, and self-referential iconography.`
+    },
+    at_vienna: {
+        city: "AUSTRIA &bull; VIENNA",
+        shows: `&bull; <b>Institutional Anchor:</b> University of Vienna (Dept. of Art History &amp; Dept. of Sociology); Academy of Fine Arts Vienna (Akbild).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Visual perception, eye movement dynamics (<i>Saccades</i>), diaspora aesthetics, and socio-spatial networks.<br>
+&bull; <b>Curatorial Focus:</b> Kinetic sightline mapping, fragmented visual pathways, and displacement narratives on canvas.`
+    },
+    at_innsbruck: {
+        city: "AUSTRIA &bull; INNSBRUCK",
+        shows: `&bull; <b>Institutional Anchor:</b> University of Innsbruck, Chair of Practical Philosophy.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Alpine philosophical traditions, ethical certainty, practical philosophy, and institutional trust structures.<br>
+&bull; <b>Curatorial Focus:</b> Structural balance and grounded color fields reflecting philosophical stability.`
+    },
+
+    // --- ISRAEL CITIES ---
+    il_jerusalem: {
+        city: "ISRAEL &bull; JERUSALEM",
+        shows: `&bull; <b>Institutional Anchor:</b> The Hebrew University of Jerusalem &amp; Pardes Institute of Jewish Studies.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Artistic creation (<i>Yetzira</i>), Jewish historiography, and enduring cultural hope (<i>Tikvah</i>).<br>
+&bull; <b>Curatorial Focus:</b> Scriptural layerings, genesis motifs, and luminous golden-toned canvas studies.`
+    },
+
+    // --- HUNGARY CITIES ---
+    hu_budapest: {
+        city: "HUNGARY &bull; BUDAPEST",
+        shows: `&bull; <b>Institutional Anchor:</b> Ludwig Museum of Contemporary Art &amp; Central European University (Romani Studies Program).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Institutional compliance, systemic mandates, minority visibility, post-communist cultural shifts, and social repair.<br>
+&bull; <b>Curatorial Focus:</b> Grid-locked geometric tension juxtaposed with mended, stitched-canvas repair techniques.`
+    },
+
+    // --- GERMANY CITIES ---
+    de_hamburg: {
+        city: "GERMANY &bull; HAMBURG",
+        shows: `&bull; <b>Institutional Anchor:</b> Hamburger Kunsthalle (Contemporary Art Department).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Institutional amnesia, repressed emotional tension, memory suppression, and contemporary curation in Northern Germany.<br>
+&bull; <b>Curatorial Focus:</b> Submerged tones, heavy grey-scale glazing, and tense gestural mark-making.`
+    },
+    de_stuttgart: {
+        city: "GERMANY &bull; STUTTGART",
+        shows: `&bull; <b>Institutional Anchor:</b> State Academy of Fine Arts Stuttgart, Fine Arts &amp; Painting Department.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Painterly apprehension, material hesitation, and German fine arts pedagogy.<br>
+&bull; <b>Curatorial Focus:</b> Gestural color applications analyzing apprehension, surface tension, and painterly discipline.`
+    },
+    de_frankfurt: {
+        city: "GERMANY &bull; FRANKFURT",
+        shows: `&bull; <b>Institutional Anchor:</b> German Library Frankfurt (<i>Life of a Box</i> Initiative); Jewish Museum Frankfurt; Goethe University Frankfurt.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Historical archives preservation, European cultural memory, future courage (<i>Zukunftsmut</i>), resilience, and post-war visual theory.<br>
+&bull; <b>Curatorial Focus:</b> Historical archival canvas research, forward-looking color fields, and structural paper installations.`
+    },
+    de_leipzig: {
+        city: "GERMANY &bull; LEIPZIG",
+        shows: `&bull; <b>Institutional Anchor:</b> Max Planck Institute for Evolutionary Anthropology (Dept. of Linguistic &amp; Cultural Evolution).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Human linguistic evolution, tactile sensory contact, and cultural transformation.<br>
+&bull; <b>Curatorial Focus:</b> Tactile touch-based textures and evolutionary linguistic maps on canvas.`
+    },
+    de_potsdam_berlin: {
+        city: "GERMANY &bull; BERLIN &amp; POTSDAM",
+        shows: `&bull; <b>Institutional Anchor:</b> Potsdam Institute for Climate Impact Research; Humboldt University Berlin; University of Potsdam; European Roma Institute for Arts and Culture (ERIAC); Prinzessinnengarten Berlin.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Urban farming communities (<i>Nachbarschaft</i>), climate skillcraft, Earth system dynamics, Jewish intellectual history, and Roma cultural identity.<br>
+&bull; <b>Curatorial Focus:</b> Organic pigment applications, intricate community networks, and high-intensity chromatic studies.`
+    },
+    de_gottingen: {
+        city: "GERMANY &bull; GÖTTINGEN",
+        shows: `&bull; <b>Institutional Anchor:</b> University of Göttingen, Iranian Studies Department.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Oriental manuscripts, ancient poetic truth traditions, and Middle Eastern linguistic archives.<br>
+&bull; <b>Curatorial Focus:</b> Scriptural calligraphic layers, archival manuscript glazes, and textual preservation.`
+    },
+    de_mainz: {
+        city: "GERMANY &bull; MAINZ",
+        shows: `&bull; <b>Institutional Anchor:</b> Johannes Gutenberg University Mainz, Department of Theoretical Philosophy.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Consciousness studies, empty cognition, and the philosophy of mind.<br>
+&bull; <b>Curatorial Focus:</b> Subdued minimalist canvases probing pure cognitive awareness and visual clarity.`
+    },
+    de_nuremberg: {
+        city: "GERMANY &bull; NUREMBERG",
+        shows: `&bull; <b>Institutional Anchor:</b> City Museum Nuremberg; Albrecht Dürer’s House (<i>Life of a Box</i> Initiative).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Northern Renaissance printmaking legacies, master craft traditions, and historical box packaging preservation.<br>
+&bull; <b>Curatorial Focus:</b> Precision line work, woodcut-inspired canvas etching, and historic material recycling.`
+    },
+
+    // --- NETHERLANDS CITIES ---
+    nl_amsterdam: {
+        city: "NETHERLANDS &bull; AMSTERDAM",
+        shows: `&bull; <b>Institutional Anchor:</b> Greenpeace International Secretariat; University of Amsterdam (Dept. of Philosophy, Film, &amp; Performance).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Ecological unity, non-linear cinematic flow (<i>Riverrun</i>), theatrical performance, and political resistance.<br>
+&bull; <b>Curatorial Focus:</b> Fluid-mechanics paint pouring, environmental green-palette studies, and theatrical lighting dynamics.`
+    },
+    nl_leiden: {
+        city: "NETHERLANDS &bull; LEIDEN",
+        shows: `&bull; <b>Institutional Anchor:</b> Leiden University (LUCAS, NICA, &amp; African Linguistics Department).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Communal resource sharing (<i>Lumbung</i>), linguistic rare terms, digital disconnection, and world art studies.<br>
+&bull; <b>Curatorial Focus:</b> Network-node abstraction, fragmented digital motifs, and collaborative multi-layer canvases.`
+    },
+    nl_utrecht: {
+        city: "NETHERLANDS &bull; UTRECHT",
+        shows: `&bull; <b>Institutional Anchor:</b> Utrecht University (Logic &amp; AI Divisions &amp; Department of Linguistics).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Logic-based methods, AI ethics, theoretical philosophy, linguistic negation, and human regret.<br>
+&bull; <b>Curatorial Focus:</b> Algorithmic geometric systems, structural binary canvas maps, and subdued tonal grids.`
+    },
+
+    // --- SWEDEN CITIES ---
+    se_stockholm: {
+        city: "SWEDEN &bull; STOCKHOLM",
+        shows: `&bull; <b>Institutional Anchor:</b> Stockholm Resilience Centre (<i>Life of a Box</i> Initiative); Stockholm University (Anthropology Dept); Södertörn University.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Ecosystem transformation, universalist philosophy, social anthropology, and atmospheric cloud patterns.<br>
+&bull; <b>Curatorial Focus:</b> Atmospheric diffuse glazing, ecological metamorphosis charts, recycled packaging structures, and expansive sky-tone fields.`
     },
 
     // --- FINLAND CITIES ---
@@ -297,9 +499,53 @@ const mapCityData = {
     },
     fi_helsinki: {
         city: "FINLAND &bull; HELSINKI",
-        shows: `&bull; <b>Institutional Anchor:</b> University of Helsinki (Social &amp; Cultural Anthropology, Theoretical Philosophy, Economic History).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Economic history, theoretical philosophy, spatial location theory, and social anthropology in extreme climates.<br>
-&bull; <b>Curatorial Focus:</b> Structural and spatial canvas research reflecting northern economic resilience, physical endurance, and philosophy of mind.`
+        shows: `&bull; <b>Institutional Anchor:</b> University of Helsinki (Theoretical Philosophy, Social Anthropology, Economic History, &amp; Consumer Research); Åland Islands Platform (<i>Life of a Box</i> Initiative).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Physical resistance, geographic placement, economic frustration, consumer society ethics, and sub-arctic material transit.<br>
+&bull; <b>Curatorial Focus:</b> Heavy physical paint application, spatial coordinate grids, recycled packaging components, and intense tactile surface resistance.`
+    },
+
+    // --- ESTONIA CITIES ---
+    ee_tallinn: {
+        city: "ESTONIA &bull; TALLINN",
+        shows: `&bull; <b>Institutional Anchor:</b> Pop and Contemporary Art Museum (PoCo).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Digital unavailability, modern Baltic art platforms, technological metaphors, and contemporary European curation.<br>
+&bull; <b>Curatorial Focus:</b> Blocked spatial views, stark minimalist voids, clean visual structures, and Baltic contemporary art aesthetics.`
+    },
+    ee_tartu: {
+        city: "ESTONIA &bull; TARTU",
+        shows: `&bull; <b>Institutional Anchor:</b> University of Tartu (Dept. of Ethnology &amp; UNESCO Chair); Estonian National Museum.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Finno-Ugric ethnographic heritage, systemic crisis generation (<i>Crisogenic</i>), and Baltic social crisis dynamics.<br>
+&bull; <b>Curatorial Focus:</b> Finno-Ugric cultural motifs, cold light hues, and maritime archival preservation studies.`
+    },
+
+    // --- CZECH REPUBLIC CITIES ---
+    cz_prague: {
+        city: "CZECH REPUBLIC &bull; PRAGUE",
+        shows: `&bull; <b>Institutional Anchor:</b> National Gallery Prague; Museum of Czech Literature; City Gallery Prague; KAMPA Museum; Charles University (Anthropology &amp; Sociology); Ministry of Environment.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Philosophical nothingness (<i>Nicotnost</i>), parallel social worlds, European solidarity, literary heritage, and ecological state retrospectives.<br>
+&bull; <b>Curatorial Focus:</b> Monochromatic void studies, overlapping parallel spatial planes, literary text-based canvas washes, and retrospective box installations.`
+    },
+    cz_pilsen_regional: {
+        city: "CZECH REPUBLIC &bull; PILSEN &amp; REGIONAL MUSEUMS",
+        shows: `&bull; <b>Institutional Anchor:</b> Bishopric of Pilsen; Museum of West Bohemia (Pilsen); Regional Museum in Most; GAMPA Pardubice; Schubert Center UPOL Olomouc; Museums of Jindřichův Hradec, Karlovy Vary, Kroměříž, East Prague, &amp; North Pilsen.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Spiritual struggle (<i>Zápas</i>), hope (<i>Naděje</i>), compressed space, domestic nests (<i>Hnízdo</i>), and regional Czech museum solos.<br>
+&bull; <b>Curatorial Focus:</b> Sacred light contrasts, nest-like woven paint structures, and compressed multi-layer canvas panels across major regional museum collections.`
+    },
+
+    // --- DENMARK CITIES ---
+    dk_copenhagen: {
+        city: "DENMARK &bull; COPENHAGEN",
+        shows: `&bull; <b>Institutional Anchor:</b> National Museum of Denmark (<i>Life of a Box</i> Initiative); Foundation for Environmental Education; University of Copenhagen (Biostatistics); Be My Eyes Platform.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Mathematical probability models (<i>Martingale</i>), civic volunteering, environmental education networks, and packaging preservation.<br>
+&bull; <b>Curatorial Focus:</b> Algorithmic grid patterns, accessible high-contrast color arrangements, and systemic packaging sculptures.`
+    },
+
+    // --- GREECE CITIES ---
+    gr_athens: {
+        city: "GREECE &bull; ATHENS",
+        shows: `&bull; <b>Institutional Anchor:</b> Athens School of Fine Arts (Dept. of Theory and History of Art).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Classical aesthetic theory, Mediterranean cultural memory, and the philosophy of oblivion versus historical preservation.<br>
+&bull; <b>Curatorial Focus:</b> Monochromatic, stone-textured canvases exploring archaeological memory, classical myth structures, and the persistence of light through decay.`
     },
 
     // --- SYRIA CITIES ---
@@ -321,23 +567,9 @@ const mapCityData = {
     // --- UKRAINE CITIES ---
     ua_kyiv: {
         city: "UKRAINE &bull; KYIV",
-        shows: `&bull; <b>Institutional Anchor:</b> National Museum of the History of Ukraine; Cultprojector NGO.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Urgent field inquiry into monument preservation during conflict, civic defense of art, and national identity defense through material culture.<br>
-&bull; <b>Curatorial Focus:</b> Stark, powerful compositions utilizing reclaimed museum-grade paper and dramatic color contrasts to visually express resilience, victory, and preservation.`
-    },
-
-    // --- SLOVAKIA CITIES ---
-    sk_bratislava: {
-        city: "SLOVAKIA &bull; BRATISLAVA",
-        shows: `&bull; <b>Institutional Anchor:</b> Slovak National Gallery.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Historical art collection curation, sacred spatial theory (<i>Chōra</i>), and Central European art preservation.<br>
-&bull; <b>Curatorial Focus:</b> Architectural canvas studies probing spatial philosophy, personal conviction, and classical art conservation.`
-    },
-    sk_sered: {
-        city: "SLOVAKIA &bull; SEREĎ",
-        shows: `&bull; <b>Institutional Anchor:</b> Slovak National Museum.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Historical memory, Holocaust research, and civil rights history in Central Europe.<br>
-&bull; <b>Curatorial Focus:</b> Somber, reflective paper and canvas works dedicated to historical trauma, memory retention, and human rights advocacy.`
+        shows: `&bull; <b>Institutional Anchor:</b> National Museum of the History of Ukraine (<i>Life of a Box</i> Initiative); Cultprojector NGO.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Urgent field inquiry into monument preservation during conflict, civic defense of art, triumph over disruption, and national identity defense.<br>
+&bull; <b>Curatorial Focus:</b> High-intensity monochromatic compositions, reclaimed museum-grade packaging paper, and dramatic color contrasts expressing victory and preservation.`
     },
 
     // --- RUSSIA CITIES ---
@@ -348,34 +580,12 @@ const mapCityData = {
 &bull; <b>Curatorial Focus:</b> Layered textual and calligraphic paintings probing the weight of archived knowledge, quiet contemplation, and historical document preservation.`
     },
 
-    // --- ESTONIA CITIES ---
-    ee_tartu: {
-        city: "ESTONIA &bull; TARTU",
-        shows: `&bull; <b>Institutional Anchor:</b> University of Tartu (Dept. of Ethnology &amp; UNESCO Chair); Estonian National Museum.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Finno-Ugric ethnographic heritage, maritime history, and social crisis dynamics.<br>
-&bull; <b>Curatorial Focus:</b> Finno-Ugric cultural motifs and cold light hues reflecting maritime traditions, archival preservation, and Baltic history.`
-    },
-    ee_tallinn: {
-        city: "ESTONIA &bull; TALLINN",
-        shows: `&bull; <b>Institutional Anchor:</b> Pop and Contemporary Art Museum.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Modern Baltic art platforms, digital social structures, and contemporary European curation.<br>
-&bull; <b>Curatorial Focus:</b> Clean, minimal visual structures incorporating modern technological metaphors and Baltic contemporary art aesthetics.`
-    },
-
     // --- LIECHTENSTEIN CITIES ---
     li_vaduz: {
         city: "LIECHTENSTEIN &bull; VADUZ",
         shows: `&bull; <b>Institutional Anchor:</b> The Princely Collections – Art History Library.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Masterwork archival analysis, historical patronage systems, and technical innovation in classical European painting.<br>
 &bull; <b>Curatorial Focus:</b> Intricate visual studies drawing on Renaissance and Baroque material techniques, exploring intellectual ingenuity and fine art collecting.`
-    },
-
-    // --- HUNGARY CITIES ---
-    hu_budapest: {
-        city: "HUNGARY &bull; BUDAPEST",
-        shows: `&bull; <b>Institutional Anchor:</b> Ludwig Museum; Central European University (Romani Studies Program).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Contemporary museum curation, institutional compliance, minority visibility, post-communist cultural shifts, and societal repair.<br>
-&bull; <b>Curatorial Focus:</b> Bold, contrasting canvas works confronting institutional structures while honoring marginalized oral histories and Romani visual traditions.`
     },
 
     // --- UNITED ARAB EMIRATES CITIES ---
@@ -392,14 +602,6 @@ const mapCityData = {
 &bull; <b>Curatorial Focus:</b> Architectural canvas research probing modern identity, urban topography, and human connection in fast-evolving metropolises.`
     },
 
-    // --- LITHUANIA CITIES ---
-    lt_vilnius: {
-        city: "LITHUANIA &bull; VILNIUS",
-        shows: `&bull; <b>Institutional Anchor:</b> National Museum of Lithuania; Vilnius Academy of Arts (VAA Exhibition Halls "Titanikas").<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Baltic historical defense, raw emotional expression in fine art pedagogy, and the preservation of national folklore.<br>
-&bull; <b>Curatorial Focus:</b> Expressive, highly textured figurative and spatial works capturing Baltic perseverance, raw human feeling, and historical continuity.`
-    },
-
     // --- KYRGYZSTAN CITIES ---
     kg_bishkek: {
         city: "KYRGYZSTAN &bull; BISHKEK",
@@ -414,14 +616,6 @@ const mapCityData = {
         shows: `&bull; <b>Institutional Anchor:</b> ORATIO Foundation.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Mediterranean coastal history, civic gratitude, and the role of quiet reflection in modern Balkan dialogue.<br>
 &bull; <b>Curatorial Focus:</b> Luminous coastal landscapes and meditative abstract canvases reflecting Adriatic light, peace, and human connection.`
-    },
-
-    // --- CYPRUS CITIES ---
-    cy_nicosia: {
-        city: "CYPRUS &bull; NICOSIA",
-        shows: `&bull; <b>Institutional Anchor:</b> Ministry of Culture.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Island division dynamics, Levant trade history, and long-term strategic visions for Mediterranean art preservation.<br>
-&bull; <b>Curatorial Focus:</b> Architectural and historical canvas research examining vision, cultural crossroads, and the preservation of Levantine archaeological heritage.`
     },
 
     // --- NORTH AMERICA NODES ---
@@ -511,12 +705,6 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Indigenous studies (Te Wānanga o Waipapa), social existence, youth psychology, and ecological packaging preservation.<br>
 &bull; <b>Curatorial Focus:</b> Recycled material sculptures and canvas research probing land memory, Indigenous identity, and youth perspective archives.`
     },
-    cz_prague: {
-        city: "CZECH REPUBLIC &bull; PRAGUE",
-        shows: `&bull; <b>Institutional Anchor:</b> Ministry of Environment &amp; State Gallery Networks.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Ecological state retrospectives, Central European artistic heritage, and environmental policy mediation.<br>
-&bull; <b>Curatorial Focus:</b> Monumental retrospective series mapping environmental consciousness and European institutional memory.`
-    },
     goa: {
         city: "INDIA &bull; GOA, MUMBAI &amp; NEW DELHI",
         shows: `&bull; <b>Institutional Anchor:</b> Sala de Arte (Goa); Chatterjee &amp; Lal (Mumbai); Judah Hyam Synagogue (New Delhi); Sethu Centre.<br>
@@ -570,12 +758,6 @@ const mapCityData = {
         shows: `&bull; <b>Institutional Anchor:</b> ODD Gallery (Klondike Institute of Art); Univ. of Manitoba; Univ. of Saskatchewan.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Sub-Arctic ecological material research, Inuit existential philosophy, and prairie landscape scale.<br>
 &bull; <b>Curatorial Focus:</b> Northern recycled packaging research and wide-format prairie landscape compositions.`
-    },
-    germany: {
-        city: "GERMANY &bull; BERLIN &amp; FRANKFURT",
-        shows: `&bull; <b>Institutional Anchor:</b> Jewish Museum Frankfurt; Hamburger Kunsthalle.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Historical archives preservation, European cultural memory, and post-war visual theory.<br>
-&bull; <b>Curatorial Focus:</b> Historical archival canvas research and structural paper installations.`
     },
 
     // --- AFRICAN CITIES ---
