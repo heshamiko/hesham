@@ -1217,6 +1217,14 @@ const mombasaInscriptions = {
     }
 };
 
+// --- MASTERWORK MUSEUM PROVENANCE CAPTION MAP ---
+const masterworkProvenance = {
+    "rooh-nawaz-1.jpg": "Exhibition & Museum Provenance: Exhibited in Gold at the Museum of Prague West, an institutional municipality repository founded in 1891 by Leopold Čihák.",
+    "land-spatial-2.jpg": "Exhibition & Museum Provenance: Exhibited in the upper gallery of the Church of Our Lady Visitation at Horní Police, a 13th-century pilgrimage landmark and Northern Bohemia's premier Baroque museum.",
+    "box-spatial-1.jpg": "Exhibition & Museum Provenance: Exhibited in Life of a Box at the Museum of Ecclesiastical Art, housed within Plzeň’s 14th-century former Franciscan monastery.",
+    "words-texture-1.jpg": "Exhibition & Museum Provenance: Exhibited at Brussels Expo as a featured highlight alongside Europe’s leading cultural and creative industry institutions."
+};
+
 // --- 6. INTERACTIVE MODAL & FULL-SCREEN LIGHTBOX ENGINE ---
 function openDossier(key) {
     const data = dossierData[key];
@@ -1254,15 +1262,17 @@ function openLightbox(imageSrc, fallbackTitle) {
             </div>
         `;
     } else {
-        // Masterwork Canvas Full-Screen Lightbox (Rooh-Nawaz & Masterworks)
+        // Masterwork Canvas Full-Screen Lightbox (Museum-Grade Provenance Captions)
+        const provenanceCaption = masterworkProvenance[filename] || (fallbackTitle ? `Exhibition Record: ${fallbackTitle}` : "Hesham Malik Sovereign Archive");
+
         document.getElementById('modalCode').innerText = "FULL-SCREEN MASTERWORK VIEW";
         document.getElementById('modalTitle').innerText = fallbackTitle || "Hesham Malik Sovereign Archive";
         document.getElementById('modalBody').innerHTML = `
             <div style="text-align: center; margin-bottom: 20px;">
                 <img src="${imageSrc}" alt="${fallbackTitle}" style="max-width: 100%; max-height: 58vh; border: 1px solid var(--accent-gold, #d4af37); box-shadow: 0 15px 40px rgba(0,0,0,0.9); object-fit: contain;">
             </div>
-            <div style="text-align: center; font-size: 0.82rem; color: var(--text-secondary, #888888); letter-spacing: 0.05em;">
-                <p style="margin: 0;">Click anywhere outside or press ESC to return to the Monographic Ledger.</p>
+            <div style="text-align: center; font-size: 0.85rem; line-height: 1.8; color: var(--text-secondary, #888888); background: rgba(255,255,255,0.02); padding: 15px 20px; border-top: 1px solid rgba(212, 175, 55, 0.3);">
+                <p style="margin: 0; color: #ffffff; font-weight: 300;">${provenanceCaption}</p>
             </div>
         `;
     }
