@@ -3,112 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hesham Malik | Sovereign Monographic Portal &amp; Provenance Ledger</title>
+    <title>Hesham Malik | Studio Archive &amp; Selected Works Catalogue</title>
 
-    <meta name="description" content="Official Sovereign Monographic Portal of Hesham Malik. Three decades of fine art, monumental public installations, museum holdings, and global participatory archives.">
-    <meta name="keywords" content="Hesham Malik, Fine Art, Sovereign Monograph, Masterwork Provenance, Words Project, Life of a Box, Voices of the Land, Rooh-Nawaz, Fine Art Investment">
+    <meta name="description" content="Official Archive and Selected Works Catalogue of Hesham Malik. Documenting three decades of fine art, monumental public installations, museum holdings, and global participatory archives.">
+    <meta name="keywords" content="Hesham Malik, Fine Art, Studio Archive, Masterwork Provenance, Words Project, Life of a Box, Voices of the Land, Rooh-Nawaz, Fine Art Catalogue">
     <meta name="author" content="Hesham Malik">
-    <link rel="canonical" href="https://heshammalik.com/">
+    <link rel="canonical" href="https://heshammalik.org/">
 
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Hesham Malik Monographic Portal">
-    <meta property="og:title" content="Hesham Malik | Sovereign Monographic Portal">
-    <meta property="og:description" content="Three Decades of Sovereign Art, Museum Repositories, and Monumental Fine Art Initiatives.">
-    <meta property="og:url" content="https://heshammalik.com/">
+    <meta property="og:site_name" content="Hesham Malik Studio Archive">
+    <meta property="og:title" content="Hesham Malik | Studio Archive &amp; Selected Works">
+    <meta property="og:description" content="Three Decades of Contemporary Fine Art, Museum Repositories, and Monumental Initiatives.">
+    <meta property="og:url" content="https://heshammalik.org/">
     <meta property="og:locale" content="en_US">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- LINK TO SEPARATE CSS FILE -->
+    <!-- External stylesheet reference -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Custom Center Alignment, Modal Fixes, & Responsive Macro Detail Viewer Styles -->
-    <style>
-        .ledger-row-centered .ledger-visual {
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-        }
-        .ledger-row-centered .ledger-visual img.img-centered {
-            object-position: center center !important;
-            margin: 0 auto !important;
-        }
-
-        /* Macro Detail Viewer Section */
-        .macro-viewer-container {
-            background: var(--surface-card, #111111);
-            border: 1px solid var(--border-subtle, #222222);
-            padding: 30px;
-            text-align: center;
-            margin-top: 20px;
-            border-radius: 4px;
-        }
-        .macro-view-window {
-            position: relative;
-            width: 100%;
-            height: 550px;
-            overflow: hidden;
-            background: #050505;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            cursor: grab;
-            margin-top: 20px;
-            border-radius: 2px;
-            touch-action: none;
-        }
-        .macro-view-window:active {
-            cursor: grabbing;
-        }
-        .macro-view-window img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            max-width: none;
-            height: auto;
-            width: 180%; /* Base zoom size */
-            transform-origin: center center;
-            user-select: none;
-            -webkit-user-drag: none;
-            transition: transform 0.05s ease-out;
-        }
-        .macro-controls-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 15px;
-            font-size: 0.75rem;
-            color: var(--text-secondary, #888888);
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-        .macro-btn {
-            background: transparent;
-            border: 1px solid var(--accent-gold, #d4af37);
-            color: var(--accent-gold, #d4af37);
-            padding: 6px 14px;
-            font-size: 0.7rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .macro-btn:hover {
-            background: var(--accent-gold, #d4af37);
-            color: #000000;
-        }
-
-        /* Mobile Adjustments for Macro Window & Canvas Maps */
-        @media (max-width: 768px) {
-            .macro-view-window {
-                height: 360px;
-            }
-            .macro-controls-bar {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
 
     <script type="application/ld+json">
     {
@@ -116,26 +30,26 @@
       "@graph": [
         {
           "@type": "Person",
-          "@id": "https://heshammalik.com/#artist",
+          "@id": "https://heshammalik.org/#artist",
           "name": "Hesham Malik",
           "jobTitle": "Visual Artist & Cultural Researcher",
-          "url": "https://heshammalik.com",
+          "url": "https://heshammalik.org",
           "knowsAbout": [
             "Abstract Fine Art",
             "Participatory Art Archives",
             "Ecological Sustainability Initiatives",
             "Indigenous Cultural Heritage",
-            "Neuro-Aesthetics & Geopolitical Data Visualization"
+            "Neuro-Aesthetics & Cultural Data Visualization"
           ]
         },
         {
           "@type": "WebSite",
-          "@id": "https://heshammalik.com/#website",
-          "url": "https://heshammalik.com",
-          "name": "Hesham Malik Sovereign Monographic Portal",
-          "description": "Primary monographic ledger and archival record documenting three decades of Hesham Malik's fine art trajectory.",
+          "@id": "https://heshammalik.org/#website",
+          "url": "https://heshammalik.org",
+          "name": "Hesham Malik Studio Archive",
+          "description": "Primary archival record documenting three decades of Hesham Malik's fine art trajectory.",
           "publisher": {
-            "@id": "https://heshammalik.com/#artist"
+            "@id": "https://heshammalik.org/#artist"
           },
           "inLanguage": "en"
         }
@@ -149,40 +63,40 @@
         <a href="#" class="nav-brand">
             <span class="nav-brand-title">Hesham Malik</span>
             <span class="nav-brand-divider">|</span>
-            <span class="nav-brand-sub">Sovereign Monographic Portal</span>
+            <span class="nav-brand-sub">Studio Archive</span>
         </a>
         <div class="nav-links">
             <a href="#mombasa-grid" class="nav-link">Chronicles of Mombasa</a>
-            <a href="#map-section" class="nav-link">Global Footprint Map</a>
-            <a href="#ledger" class="nav-link">Provenance Ledger</a>
-            <a href="#materials" class="nav-link">Macro Detail</a>
+            <a href="#map-section" class="nav-link">Exhibition Map</a>
+            <a href="#ledger" class="nav-link">Selected Series</a>
+            <a href="#materials" class="nav-link">Surface &amp; Detail</a>
         </div>
     </nav>
 
     <header class="full-bleed-hero">
-        <img src="hero-full-image.jpg" alt="Hesham Malik Masterwork Canvas" class="hero-bg-img">
+        <img src="hero-full-image.jpg" alt="Hesham Malik Masterwork Canvas" class="hero-bg-img" width="1920" height="1080">
         <div class="hero-overlay-content">
             <h1 class="hero-title-main">Hesham Malik</h1>
-            <div class="hero-subtitle-main">Three Decades of Sovereign Art &bull; Global Institutional Archives</div>
+            <div class="hero-subtitle-main">Three Decades of Fine Art &bull; Global Institutional Archives</div>
         </div>
-        <a href="#main-content" class="scroll-indicator">
+        <a href="#main-content" class="scroll-indicator" aria-label="Scroll to main archive content">
             <span>Explore Archive</span>
             <div class="scroll-arrow"></div>
         </a>
     </header>
 
     <div id="main-content">
-        <div class="benchmark-box">
+        <section class="benchmark-box">
             <span class="benchmark-tag">&bull; Global Practice &amp; Institutional Archives</span>
             <div class="benchmark-text">
                 A practice defined by large-scale monochromatic works, raw human portraiture, and expansive conceptual series. Held across public state repositories, international museum collections, and private foundations, the studio maintains an active archive spanning public installations, solo monograph projects, and ongoing site-specific research across Europe, Asia, and Africa.
             </div>
-        </div>
+        </section>
 
-        <div class="metrics-bar">
+        <section class="metrics-bar" aria-label="Key Archive Metrics">
             <div class="metric-card">
                 <div class="metric-number">30+</div>
-                <div class="metric-label">Years Monographic Trajectory</div>
+                <div class="metric-label">Years Archival Trajectory</div>
             </div>
             <div class="metric-card">
                 <div class="metric-number">100+</div>
@@ -190,143 +104,148 @@
             </div>
             <div class="metric-card">
                 <div class="metric-number">1,000s</div>
-                <div class="metric-label">Global Word Archive Participations</div>
+                <div class="metric-label">Global Participatory Records</div>
             </div>
             <div class="metric-card">
                 <div class="metric-number">4</div>
-                <div class="metric-label">Sovereign Pillars</div>
+                <div class="metric-label">Core Conceptual Series</div>
             </div>
-        </div>
+        </section>
 
         <main>
+            <!-- PHOTO MONOGRAPH SERIES -->
             <section id="mombasa-grid">
                 <div class="mombasa-header">
                     <span class="benchmark-tag">&bull; Photo Monograph Series &bull; Kenya &bull; 2008</span>
-                    <h2 class="mombasa-title" onclick="toggleMombasaEssay()" style="cursor: pointer; user-select: none;" title="Click to expand curatorial note">
-                        Chronicles of Mombasa <span id="mombasa-toggle-icon" style="font-size: 1.2rem; color: var(--accent-gold); margin-left: 10px; vertical-align: middle;">+</span>
+                    <h2>
+                        <button type="button" class="mombasa-accordion-trigger" id="mombasa-trigger" aria-expanded="false" aria-controls="mombasa-essay">
+                            <span>Chronicles of Mombasa</span>
+                            <span class="toggle-icon" id="mombasa-toggle-icon" aria-hidden="true">+</span>
+                        </button>
                     </h2>
                     <div class="mombasa-subtitle">Faces, Moments, and the Unfiltered Spirit of East Africa</div>
                     
-                    <div id="mombasa-essay" style="display: none; text-align: left; background: var(--surface-card); border: 1px solid var(--border-subtle); padding: 25px 30px; margin-top: 20px; transition: all 0.4s ease;">
-                        <p style="font-size: 0.9rem; color: #ffffff; margin-top: 0; font-weight: 300; line-height: 1.8;">
+                    <div id="mombasa-essay" class="mombasa-essay-panel" aria-labelledby="mombasa-trigger" hidden>
+                        <p class="essay-lead">
                             Thirty candid portrait studies capturing the presence, nuance, and unfiltered human expression of youth through the lens of an artist.
                         </p>
-                        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.8;">
+                        <p>
                             Recorded in 2008, <i>Chronicles of Mombasa</i> is an intimate investigation into perception, ambition, and the unconditioned mind.
                         </p>
-                        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.8;">
+                        <p>
                             During a singular encounter with school children in East Africa, a deceptively simple inquiry—asking each child to define their future aspiration—revealed a remarkable psychological dynamic. When posed with the exact same question shortly thereafter, every child offered an entirely distinct response, unburdened by rigid self-definition or narrative continuity.
                         </p>
-                        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 0;">
+                        <p>
                             What began as a portrait study evolved into an observation of total cognitive freedom and fluid identity—qualities often lost in the adult experience.
                         </p>
                     </div>
                 </div>
 
                 <div class="mosaic-grid">
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-01.jpg', 'Portrait Study I')">
-                        <img src="mombasa-01.jpg" alt="Chronicles of Mombasa Portrait 01 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-01.jpg" data-caption="Portrait Study I">
+                        <img src="mombasa-01.jpg" alt="Chronicles of Mombasa Portrait 01 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-02.jpg', 'Portrait Study II')">
-                        <img src="mombasa-02.jpg" alt="Chronicles of Mombasa Portrait 02 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-02.jpg" data-caption="Portrait Study II">
+                        <img src="mombasa-02.jpg" alt="Chronicles of Mombasa Portrait 02 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-03.jpg', 'Portrait Study III')">
-                        <img src="mombasa-03.jpg" alt="Chronicles of Mombasa Portrait 03 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-03.jpg" data-caption="Portrait Study III">
+                        <img src="mombasa-03.jpg" alt="Chronicles of Mombasa Portrait 03 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-04.jpg', 'Portrait Study IV')">
-                        <img src="mombasa-04.jpg" alt="Chronicles of Mombasa Portrait 04 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-04.jpg" data-caption="Portrait Study IV">
+                        <img src="mombasa-04.jpg" alt="Chronicles of Mombasa Portrait 04 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-05.jpg', 'Portrait Study V')">
-                        <img src="mombasa-05.jpg" alt="Chronicles of Mombasa Portrait 05 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-05.jpg" data-caption="Portrait Study V">
+                        <img src="mombasa-05.jpg" alt="Chronicles of Mombasa Portrait 05 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-06.jpg', 'Portrait Study VI')">
-                        <img src="mombasa-06.jpg" alt="Chronicles of Mombasa Portrait 06 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-06.jpg" data-caption="Portrait Study VI">
+                        <img src="mombasa-06.jpg" alt="Chronicles of Mombasa Portrait 06 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-07.jpg', 'Portrait Study VII')">
-                        <img src="mombasa-07.jpg" alt="Chronicles of Mombasa Portrait 07 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-07.jpg" data-caption="Portrait Study VII">
+                        <img src="mombasa-07.jpg" alt="Chronicles of Mombasa Portrait 07 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-08.jpg', 'Portrait Study VIII')">
-                        <img src="mombasa-08.jpg" alt="Chronicles of Mombasa Portrait 08 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-08.jpg" data-caption="Portrait Study VIII">
+                        <img src="mombasa-08.jpg" alt="Chronicles of Mombasa Portrait 08 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-09.jpg', 'Portrait Study IX')">
-                        <img src="mombasa-09.jpg" alt="Chronicles of Mombasa Portrait 09 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-09.jpg" data-caption="Portrait Study IX">
+                        <img src="mombasa-09.jpg" alt="Chronicles of Mombasa Portrait 09 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-10.jpg', 'Portrait Study X')">
-                        <img src="mombasa-10.jpg" alt="Chronicles of Mombasa Portrait 10 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-10.jpg" data-caption="Portrait Study X">
+                        <img src="mombasa-10.jpg" alt="Chronicles of Mombasa Portrait 10 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-11.jpg', 'Portrait Study XI')">
-                        <img src="mombasa-11.jpg" alt="Chronicles of Mombasa Portrait 11 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-11.jpg" data-caption="Portrait Study XI">
+                        <img src="mombasa-11.jpg" alt="Chronicles of Mombasa Portrait 11 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-12.jpg', 'Portrait Study XII')">
-                        <img src="mombasa-12.jpg" alt="Chronicles of Mombasa Portrait 12 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-12.jpg" data-caption="Portrait Study XII">
+                        <img src="mombasa-12.jpg" alt="Chronicles of Mombasa Portrait 12 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-13.jpg', 'Portrait Study XIII')">
-                        <img src="mombasa-13.jpg" alt="Chronicles of Mombasa Portrait 13 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-13.jpg" data-caption="Portrait Study XIII">
+                        <img src="mombasa-13.jpg" alt="Chronicles of Mombasa Portrait 13 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-14.jpg', 'Portrait Study XIV')">
-                        <img src="mombasa-14.jpg" alt="Chronicles of Mombasa Portrait 14 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-14.jpg" data-caption="Portrait Study XIV">
+                        <img src="mombasa-14.jpg" alt="Chronicles of Mombasa Portrait 14 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-15.jpg', 'Portrait Study XV')">
-                        <img src="mombasa-15.jpg" alt="Chronicles of Mombasa Portrait 15 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-15.jpg" data-caption="Portrait Study XV">
+                        <img src="mombasa-15.jpg" alt="Chronicles of Mombasa Portrait 15 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-16.jpg', 'Portrait Study XVI')">
-                        <img src="mombasa-16.jpg" alt="Chronicles of Mombasa Portrait 16 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-16.jpg" data-caption="Portrait Study XVI">
+                        <img src="mombasa-16.jpg" alt="Chronicles of Mombasa Portrait 16 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-17.jpg', 'Portrait Study XVII')">
-                        <img src="mombasa-17.jpg" alt="Chronicles of Mombasa Portrait 17 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-17.jpg" data-caption="Portrait Study XVII">
+                        <img src="mombasa-17.jpg" alt="Chronicles of Mombasa Portrait 17 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-18.jpg', 'Portrait Study XVIII')">
-                        <img src="mombasa-18.jpg" alt="Chronicles of Mombasa Portrait 18 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-18.jpg" data-caption="Portrait Study XVIII">
+                        <img src="mombasa-18.jpg" alt="Chronicles of Mombasa Portrait 18 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-19.jpg', 'Portrait Study XIX')">
-                        <img src="mombasa-19.jpg" alt="Chronicles of Mombasa Portrait 19 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-19.jpg" data-caption="Portrait Study XIX">
+                        <img src="mombasa-19.jpg" alt="Chronicles of Mombasa Portrait 19 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-20.jpg', 'Portrait Study XX')">
-                        <img src="mombasa-20.jpg" alt="Chronicles of Mombasa Portrait 20 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-20.jpg" data-caption="Portrait Study XX">
+                        <img src="mombasa-20.jpg" alt="Chronicles of Mombasa Portrait 20 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-21.jpg', 'Portrait Study XXI')">
-                        <img src="mombasa-21.jpg" alt="Chronicles of Mombasa Portrait 21 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-21.jpg" data-caption="Portrait Study XXI">
+                        <img src="mombasa-21.jpg" alt="Chronicles of Mombasa Portrait 21 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-22.jpg', 'Portrait Study XXII')">
-                        <img src="mombasa-22.jpg" alt="Chronicles of Mombasa Portrait 22 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-22.jpg" data-caption="Portrait Study XXII">
+                        <img src="mombasa-22.jpg" alt="Chronicles of Mombasa Portrait 22 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-23.jpg', 'Portrait Study XXIII')">
-                        <img src="mombasa-23.jpg" alt="Chronicles of Mombasa Portrait 23 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-23.jpg" data-caption="Portrait Study XXIII">
+                        <img src="mombasa-23.jpg" alt="Chronicles of Mombasa Portrait 23 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-24.jpg', 'Portrait Study XXIV')">
-                        <img src="mombasa-24.jpg" alt="Chronicles of Mombasa Portrait 24 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-24.jpg" data-caption="Portrait Study XXIV">
+                        <img src="mombasa-24.jpg" alt="Chronicles of Mombasa Portrait 24 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-25.jpg', 'Portrait Study XXV')">
-                        <img src="mombasa-25.jpg" alt="Chronicles of Mombasa Portrait 25 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-25.jpg" data-caption="Portrait Study XXV">
+                        <img src="mombasa-25.jpg" alt="Chronicles of Mombasa Portrait 25 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-26.jpg', 'Portrait Study XXVI')">
-                        <img src="mombasa-26.jpg" alt="Chronicles of Mombasa Portrait 26 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-26.jpg" data-caption="Portrait Study XXVI">
+                        <img src="mombasa-26.jpg" alt="Chronicles of Mombasa Portrait 26 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-27.jpg', 'Portrait Study XXVII')">
-                        <img src="mombasa-27.jpg" alt="Chronicles of Mombasa Portrait 27 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-27.jpg" data-caption="Portrait Study XXVII">
+                        <img src="mombasa-27.jpg" alt="Chronicles of Mombasa Portrait 27 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-28.jpg', 'Portrait Study XXVIII')">
-                        <img src="mombasa-28.jpg" alt="Chronicles of Mombasa Portrait 28 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-28.jpg" data-caption="Portrait Study XXVIII">
+                        <img src="mombasa-28.jpg" alt="Chronicles of Mombasa Portrait 28 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-29.jpg', 'Portrait Study XXIX')">
-                        <img src="mombasa-29.jpg" alt="Chronicles of Mombasa Portrait 29 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-29.jpg" data-caption="Portrait Study XXIX">
+                        <img src="mombasa-29.jpg" alt="Chronicles of Mombasa Portrait 29 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
-                    <div class="mosaic-card" onclick="openLightbox('mombasa-30.jpg', 'Portrait Study XXX')">
-                        <img src="mombasa-30.jpg" alt="Chronicles of Mombasa Portrait 30 - Hesham Malik" loading="lazy">
+                    <div class="mosaic-card" data-lightbox-src="mombasa-30.jpg" data-caption="Portrait Study XXX">
+                        <img src="mombasa-30.jpg" alt="Chronicles of Mombasa Portrait 30 - Hesham Malik" width="600" height="800" loading="lazy">
                     </div>
                 </div>
             </section>
 
+            <!-- GLOBAL EXHIBITION MAP -->
             <section id="map-section">
-                <h2 class="section-heading">Interactive Global Footprint Radar</h2>
+                <h2 class="section-heading">Global Institutional History</h2>
                 
                 <div class="real-map-wrapper">
-                    <span class="benchmark-tag">&bull; 30-YEAR FLIGHT &amp; MONOGRAPHIC RADAR &bull; CLICK ANY PULSING NODE</span>
-                    <p style="font-size:0.8rem; color:var(--text-secondary); margin-top:5px;">Explore solo retrospectives, linguistic provenance partners, and ecological material patrons worldwide.</p>
+                    <span class="benchmark-tag">&bull; 30-YEAR EXHIBITION &amp; ARCHIVAL RECORD &bull; SELECT ANY NODE</span>
+                    <p class="map-subtext">Explore solo retrospectives, linguistic provenance partners, and ecological material patrons worldwide.</p>
 
                     <div class="map-quick-filter">
-                        <label for="citySelector" style="font-size: 0.68rem; color: var(--accent-gold); letter-spacing: 0.15em; text-transform: uppercase;">Isolate City Node:</label>
-                        <select id="citySelector" class="map-select" onchange="selectCityFromDropdown(this.value)">
+                        <label for="citySelector" class="filter-label">Isolate City Node:</label>
+                        <select id="citySelector" class="map-select">
                             <option value="">-- Choose City Node --</option>
 
                             <!-- UNITED KINGDOM -->
@@ -475,403 +394,169 @@
                     <div class="map-canvas-frame" id="mapCanvasFrame">
                         <div class="radar-grid"></div>
 
-                        <img src="world-map.svg" class="world-map-svg" alt="Global Footprint Map">
+                        <img src="world-map.svg" class="world-map-svg" alt="Global Footprint Map" width="1200" height="600">
 
                         <!-- NORTH AMERICA MAP NODES -->
-                        <div class="map-node label-top" id="node_harvard" style="top: 28%; left: 24%;" onclick="openMapDetails('harvard', event)">
-                            <span class="node-label">Harvard</span>
-                        </div>
-                        <div class="map-node label-right" id="node_usa_east" style="top: 31%; left: 25.5%;" onclick="openMapDetails('usa_east', event)">
-                            <span class="node-label">USA East</span>
-                        </div>
-                        <div class="map-node label-left" id="node_usa_west" style="top: 35%; left: 14%;" onclick="openMapDetails('usa_west', event)">
-                            <span class="node-label">USA West</span>
-                        </div>
-                        <div class="map-node label-top" id="node_usa_midwest_south" style="top: 38%; left: 19.5%;" onclick="openMapDetails('usa_midwest_south', event)">
-                            <span class="node-label">USA Midwest</span>
-                        </div>
+                        <div class="map-node label-top" id="node_harvard" data-node="harvard"><span class="node-label">Harvard</span></div>
+                        <div class="map-node label-right" id="node_usa_east" data-node="usa_east"><span class="node-label">USA East</span></div>
+                        <div class="map-node label-left" id="node_usa_west" data-node="usa_west"><span class="node-label">USA West</span></div>
+                        <div class="map-node label-top" id="node_usa_midwest_south" data-node="usa_midwest_south"><span class="node-label">USA Midwest</span></div>
 
                         <!-- CANADA REGIONAL MAP NODES -->
-                        <div class="map-node label-left" id="node_bc_vancouver" style="top: 25%; left: 16%;" onclick="openMapDetails('bc_vancouver', event)">
-                            <span class="node-label">Vancouver</span>
-                        </div>
-                        <div class="map-node label-top" id="node_alberta_calgary" style="top: 24%; left: 21%;" onclick="openMapDetails('alberta_calgary', event)">
-                            <span class="node-label">Calgary</span>
-                        </div>
-                        <div class="map-node label-top" id="node_toronto_waterloo" style="top: 26%; left: 26%;" onclick="openMapDetails('toronto_waterloo', event)">
-                            <span class="node-label">Toronto</span>
-                        </div>
-                        <div class="map-node label-right" id="node_ottawa_kingston" style="top: 23%; left: 28%;" onclick="openMapDetails('ottawa_kingston', event)">
-                            <span class="node-label">Ottawa</span>
-                        </div>
-                        <div class="map-node label-top" id="node_montreal_qc" style="top: 22%; left: 30%;" onclick="openMapDetails('montreal_qc', event)">
-                            <span class="node-label">Montreal</span>
-                        </div>
-                        <div class="map-node label-top" id="node_yukon_atlantic" style="top: 18%; left: 14%;" onclick="openMapDetails('yukon_atlantic', event)">
-                            <span class="node-label">Yukon</span>
-                        </div>
+                        <div class="map-node label-left" id="node_bc_vancouver" data-node="bc_vancouver"><span class="node-label">Vancouver</span></div>
+                        <div class="map-node label-top" id="node_alberta_calgary" data-node="alberta_calgary"><span class="node-label">Calgary</span></div>
+                        <div class="map-node label-top" id="node_toronto_waterloo" data-node="toronto_waterloo"><span class="node-label">Toronto</span></div>
+                        <div class="map-node label-right" id="node_ottawa_kingston" data-node="ottawa_kingston"><span class="node-label">Ottawa</span></div>
+                        <div class="map-node label-top" id="node_montreal_qc" data-node="montreal_qc"><span class="node-label">Montreal</span></div>
+                        <div class="map-node label-top" id="node_yukon_atlantic" data-node="yukon_atlantic"><span class="node-label">Yukon</span></div>
 
                         <!-- UNITED KINGDOM CITIES -->
-                        <div class="map-node label-top" id="node_uk_london" style="top: 21%; left: 45.2%;" onclick="openMapDetails('uk_london', event)">
-                            <span class="node-label">London</span>
-                        </div>
-                        <div class="map-node label-top" id="node_oxford" style="top: 21.5%; left: 44.8%;" onclick="openMapDetails('oxford', event)">
-                            <span class="node-label">Oxford</span>
-                        </div>
-                        <div class="map-node label-right" id="node_cambridge" style="top: 20.8%; left: 45.5%;" onclick="openMapDetails('cambridge', event)">
-                            <span class="node-label">Cambridge</span>
-                        </div>
-                        <div class="map-node label-top" id="node_edinburgh" style="top: 18.5%; left: 44.5%;" onclick="openMapDetails('edinburgh', event)">
-                            <span class="node-label">Edinburgh</span>
-                        </div>
+                        <div class="map-node label-top" id="node_uk_london" data-node="uk_london"><span class="node-label">London</span></div>
+                        <div class="map-node label-top" id="node_oxford" data-node="oxford"><span class="node-label">Oxford</span></div>
+                        <div class="map-node label-right" id="node_cambridge" data-node="cambridge"><span class="node-label">Cambridge</span></div>
+                        <div class="map-node label-top" id="node_edinburgh" data-node="edinburgh"><span class="node-label">Edinburgh</span></div>
 
                         <!-- SAUDI ARABIA -->
-                        <div class="map-node label-top" id="node_sa_riyadh" style="top: 42%; left: 63.8%;" onclick="openMapDetails('sa_riyadh', event)">
-                            <span class="node-label">Riyadh</span>
-                        </div>
+                        <div class="map-node label-top" id="node_sa_riyadh" data-node="sa_riyadh"><span class="node-label">Riyadh</span></div>
 
                         <!-- SWITZERLAND CITIES -->
-                        <div class="map-node label-top" id="node_ch_zurich" style="top: 25.2%; left: 49.8%;" onclick="openMapDetails('ch_zurich', event)">
-                            <span class="node-label">Zurich</span>
-                        </div>
-                        <div class="map-node label-left" id="node_ch_geneva" style="top: 26.5%; left: 48.8%;" onclick="openMapDetails('ch_geneva', event)">
-                            <span class="node-label">Geneva</span>
-                        </div>
-                        <div class="map-node label-top" id="node_ch_bern" style="top: 25.8%; left: 49.3%;" onclick="openMapDetails('ch_bern', event)">
-                            <span class="node-label">Bern</span>
-                        </div>
+                        <div class="map-node label-top" id="node_ch_zurich" data-node="ch_zurich"><span class="node-label">Zurich</span></div>
+                        <div class="map-node label-left" id="node_ch_geneva" data-node="ch_geneva"><span class="node-label">Geneva</span></div>
+                        <div class="map-node label-top" id="node_ch_bern" data-node="ch_bern"><span class="node-label">Bern</span></div>
 
                         <!-- EUROPEAN CITIES -->
-                        <div class="map-node label-top" id="node_it_bologna" style="top: 27.5%; left: 50.8%;" onclick="openMapDetails('it_bologna', event)">
-                            <span class="node-label">Bologna</span>
-                        </div>
-                        <div class="map-node label-top" id="node_it_florence" style="top: 28.2%; left: 51.1%;" onclick="openMapDetails('it_florence', event)">
-                            <span class="node-label">Florence</span>
-                        </div>
-                        <div class="map-node label-left" id="node_it_fabriano_rome" style="top: 29%; left: 51.4%;" onclick="openMapDetails('it_fabriano_rome', event)">
-                            <span class="node-label">Fabriano</span>
-                        </div>
-                        <div class="map-node label-left" id="node_fr_paris" style="top: 25.5%; left: 47.8%;" onclick="openMapDetails('fr_paris', event)">
-                            <span class="node-label">Paris</span>
-                        </div>
-                        <div class="map-node label-left" id="node_fr_toulouse" style="top: 27.2%; left: 47.2%;" onclick="openMapDetails('fr_toulouse', event)">
-                            <span class="node-label">Toulouse</span>
-                        </div>
-                        <div class="map-node label-left" id="node_si_ljubljana" style="top: 25.8%; left: 52.2%;" onclick="openMapDetails('si_ljubljana', event)">
-                            <span class="node-label">Ljubljana</span>
-                        </div>
-                        <div class="map-node label-right" id="node_si_koper" style="top: 26.2%; left: 52.0%;" onclick="openMapDetails('si_koper', event)">
-                            <span class="node-label">Koper</span>
-                        </div>
-                        <div class="map-node label-right" id="node_hr_zagreb" style="top: 26.5%; left: 52.8%;" onclick="openMapDetails('hr_zagreb', event)">
-                            <span class="node-label">Zagreb</span>
-                        </div>
-                        <div class="map-node label-top" id="node_am_yerevan" style="top: 32.8%; left: 61.2%;" onclick="openMapDetails('am_yerevan', event)">
-                            <span class="node-label">Yerevan</span>
-                        </div>
-                        <div class="map-node label-top" id="node_by_minsk" style="top: 20.8%; left: 56.2%;" onclick="openMapDetails('by_minsk', event)">
-                            <span class="node-label">Minsk</span>
-                        </div>
-                        <div class="map-node label-right" id="node_bg_sofia" style="top: 28.8%; left: 54.8%;" onclick="openMapDetails('bg_sofia', event)">
-                            <span class="node-label">Sofia</span>
-                        </div>
-                        <div class="map-node label-top" id="node_lv_riga" style="top: 18.2%; left: 54.2%;" onclick="openMapDetails('lv_riga', event)">
-                            <span class="node-label">Riga</span>
-                        </div>
-                        <div class="map-node label-left" id="node_es_madrid" style="top: 28.5%; left: 45.8%;" onclick="openMapDetails('es_madrid', event)">
-                            <span class="node-label">Madrid</span>
-                        </div>
-                        <div class="map-node label-left" id="node_pt_lisbon" style="top: 29.5%; left: 44.5%;" onclick="openMapDetails('pt_lisbon', event)">
-                            <span class="node-label">Lisbon</span>
-                        </div>
-                        <div class="map-node label-top" id="node_ua_kyiv" style="top: 23%; left: 56.5%;" onclick="openMapDetails('ua_kyiv', event)">
-                            <span class="node-label">Kyiv</span>
-                        </div>
-                        <div class="map-node label-right" id="node_sk_bratislava" style="top: 24.2%; left: 53.2%;" onclick="openMapDetails('sk_bratislava', event)">
-                            <span class="node-label">Bratislava</span>
-                        </div>
-                        <div class="map-node label-top" id="node_sk_sered" style="top: 24.8%; left: 53.5%;" onclick="openMapDetails('sk_sered', event)">
-                            <span class="node-label">Sereď</span>
-                        </div>
-                        <div class="map-node label-top" id="node_sk_senec" style="top: 23.6%; left: 52.8%;" onclick="openMapDetails('sk_senec', event)">
-                            <span class="node-label">Senec</span>
-                        </div>
-                        <div class="map-node label-top" id="node_ru_volgograd" style="top: 26%; left: 60.5%;" onclick="openMapDetails('ru_volgograd', event)">
-                            <span class="node-label">Volgograd</span>
-                        </div>
-                        <div class="map-node label-left" id="node_ee_tartu" style="top: 17%; left: 55%;" onclick="openMapDetails('ee_tartu', event)">
-                            <span class="node-label">Tartu</span>
-                        </div>
-                        <div class="map-node label-left" id="node_ee_tallinn" style="top: 16%; left: 54.8%;" onclick="openMapDetails('ee_tallinn', event)">
-                            <span class="node-label">Tallinn</span>
-                        </div>
-                        <div class="map-node label-left" id="node_li_vaduz" style="top: 25.5%; left: 50.2%;" onclick="openMapDetails('li_vaduz', event)">
-                            <span class="node-label">Vaduz</span>
-                        </div>
-                        <div class="map-node label-right" id="node_hu_budapest" style="top: 25.8%; left: 53.8%;" onclick="openMapDetails('hu_budapest', event)">
-                            <span class="node-label">Budapest</span>
-                        </div>
-                        <div class="map-node label-right" id="node_lt_vilnius" style="top: 19.5%; left: 54.8%;" onclick="openMapDetails('lt_vilnius', event)">
-                            <span class="node-label">Vilnius</span>
-                        </div>
-                        <div class="map-node label-top" id="node_no_longyearbyen" style="top: 8%; left: 52%;" onclick="openMapDetails('no_longyearbyen', event)">
-                            <span class="node-label">Longyearbyen</span>
-                        </div>
-                        <div class="map-node label-right" id="node_no_oslo" style="top: 17.5%; left: 49.5%;" onclick="openMapDetails('no_oslo', event)">
-                            <span class="node-label">Oslo</span>
-                        </div>
-                        <div class="map-node label-right" id="node_fi_helsinki" style="top: 16%; left: 53.5%;" onclick="openMapDetails('fi_helsinki', event)">
-                            <span class="node-label">Helsinki</span>
-                        </div>
-                        <div class="map-node label-top" id="node_fi_oulu" style="top: 13.5%; left: 54%;" onclick="openMapDetails('fi_oulu', event)">
-                            <span class="node-label">Oulu</span>
-                        </div>
-                        <div class="map-node label-right" id="node_gl_aalborg" style="top: 19%; left: 48.5%;" onclick="openMapDetails('gl_aalborg', event)">
-                            <span class="node-label">Aalborg</span>
-                        </div>
-                        <div class="map-node label-top" id="node_dk_copenhagen" style="top: 19.8%; left: 49.2%;" onclick="openMapDetails('dk_copenhagen', event)">
-                            <span class="node-label">Copenhagen</span>
-                        </div>
-                        <div class="map-node label-top" id="node_at_linz" style="top: 24.8%; left: 51.5%;" onclick="openMapDetails('at_linz', event)">
-                            <span class="node-label">Linz</span>
-                        </div>
-                        <div class="map-node label-top" id="node_at_vienna" style="top: 25.0%; left: 52.2%;" onclick="openMapDetails('at_vienna', event)">
-                            <span class="node-label">Vienna</span>
-                        </div>
-                        <div class="map-node label-top" id="node_at_innsbruck" style="top: 25.5%; left: 50.8%;" onclick="openMapDetails('at_innsbruck', event)">
-                            <span class="node-label">Innsbruck</span>
-                        </div>
-                        <div class="map-node label-top" id="node_cz_prague" style="top: 22%; left: 52%;" onclick="openMapDetails('cz_prague', event)">
-                            <span class="node-label">Prague</span>
-                        </div>
-                        <div class="map-node label-top" id="node_cz_pilsen_regional" style="top: 22.8%; left: 51.5%;" onclick="openMapDetails('cz_pilsen_regional', event)">
-                            <span class="node-label">Pilsen</span>
-                        </div>
-                        <div class="map-node label-top" id="node_be_brussels" style="top: 24%; left: 49%;" onclick="openMapDetails('be_brussels', event)">
-                            <span class="node-label">Brussels</span>
-                        </div>
-                        <div class="map-node label-top" id="node_be_leuven" style="top: 24.3%; left: 49.3%;" onclick="openMapDetails('be_leuven', event)">
-                            <span class="node-label">Leuven</span>
-                        </div>
-                        <div class="map-node label-top" id="node_be_ghent_bruges" style="top: 23.8%; left: 48.6%;" onclick="openMapDetails('be_ghent_bruges', event)">
-                            <span class="node-label">Ghent</span>
-                        </div>
-                        <div class="map-node label-top" id="node_pl_warsaw" style="top: 20%; left: 54%;" onclick="openMapDetails('pl_warsaw', event)">
-                            <span class="node-label">Warsaw</span>
-                        </div>
-                        <div class="map-node label-top" id="node_pl_krakow" style="top: 21%; left: 54.2%;" onclick="openMapDetails('pl_krakow', event)">
-                            <span class="node-label">Krakow</span>
-                        </div>
-                        <div class="map-node label-top" id="node_pl_duszniki" style="top: 21.5%; left: 52.8%;" onclick="openMapDetails('pl_duszniki', event)">
-                            <span class="node-label">Duszniki</span>
-                        </div>
-                        <div class="map-node label-top" id="node_pl_poznan" style="top: 20.5%; left: 52.5%;" onclick="openMapDetails('pl_poznan', event)">
-                            <span class="node-label">Poznań</span>
-                        </div>
-                        <div class="map-node label-top" id="node_de_hamburg" style="top: 21.2%; left: 50.2%;" onclick="openMapDetails('de_hamburg', event)">
-                            <span class="node-label">Hamburg</span>
-                        </div>
-                        <div class="map-node label-top" id="node_de_stuttgart" style="top: 24.2%; left: 50.1%;" onclick="openMapDetails('de_stuttgart', event)">
-                            <span class="node-label">Stuttgart</span>
-                        </div>
-                        <div class="map-node label-top" id="node_de_frankfurt" style="top: 23.5%; left: 50.3%;" onclick="openMapDetails('de_frankfurt', event)">
-                            <span class="node-label">Frankfurt</span>
-                        </div>
-                        <div class="map-node label-top" id="node_de_leipzig" style="top: 22.8%; left: 51.2%;" onclick="openMapDetails('de_leipzig', event)">
-                            <span class="node-label">Leipzig</span>
-                        </div>
-                        <div class="map-node label-top" id="node_de_potsdam_berlin" style="top: 21.8%; left: 51.5%;" onclick="openMapDetails('de_potsdam_berlin', event)">
-                            <span class="node-label">Berlin</span>
-                        </div>
-                        <div class="map-node label-top" id="node_de_gottingen" style="top: 22.5%; left: 50.6%;" onclick="openMapDetails('de_gottingen', event)">
-                            <span class="node-label">Göttingen</span>
-                        </div>
-                        <div class="map-node label-top" id="node_de_mainz" style="top: 23.8%; left: 49.9%;" onclick="openMapDetails('de_mainz', event)">
-                            <span class="node-label">Mainz</span>
-                        </div>
-                        <div class="map-node label-top" id="node_de_nuremberg" style="top: 23.8%; left: 50.8%;" onclick="openMapDetails('de_nuremberg', event)">
-                            <span class="node-label">Nuremberg</span>
-                        </div>
-                        <div class="map-node label-top" id="node_nl_amsterdam" style="top: 22.2%; left: 48.2%;" onclick="openMapDetails('nl_amsterdam', event)">
-                            <span class="node-label">Amsterdam</span>
-                        </div>
-                        <div class="map-node label-top" id="node_nl_leiden" style="top: 22.5%; left: 48.0%;" onclick="openMapDetails('nl_leiden', event)">
-                            <span class="node-label">Leiden</span>
-                        </div>
-                        <div class="map-node label-top" id="node_nl_utrecht" style="top: 22.8%; left: 48.4%;" onclick="openMapDetails('nl_utrecht', event)">
-                            <span class="node-label">Utrecht</span>
-                        </div>
-                        <div class="map-node label-top" id="node_se_stockholm" style="top: 16.2%; left: 51.8%;" onclick="openMapDetails('se_stockholm', event)">
-                            <span class="node-label">Stockholm</span>
-                        </div>
-                        <div class="map-node label-top" id="node_gr_athens" style="top: 30%; left: 53%;" onclick="openMapDetails('gr_athens', event)">
-                            <span class="node-label">Athens</span>
-                        </div>
+                        <div class="map-node label-top" id="node_it_bologna" data-node="it_bologna"><span class="node-label">Bologna</span></div>
+                        <div class="map-node label-top" id="node_it_florence" data-node="it_florence"><span class="node-label">Florence</span></div>
+                        <div class="map-node label-left" id="node_it_fabriano_rome" data-node="it_fabriano_rome"><span class="node-label">Fabriano</span></div>
+                        <div class="map-node label-left" id="node_fr_paris" data-node="fr_paris"><span class="node-label">Paris</span></div>
+                        <div class="map-node label-left" id="node_fr_toulouse" data-node="fr_toulouse"><span class="node-label">Toulouse</span></div>
+                        <div class="map-node label-left" id="node_si_ljubljana" data-node="si_ljubljana"><span class="node-label">Ljubljana</span></div>
+                        <div class="map-node label-right" id="node_si_koper" data-node="si_koper"><span class="node-label">Koper</span></div>
+                        <div class="map-node label-right" id="node_hr_zagreb" data-node="hr_zagreb"><span class="node-label">Zagreb</span></div>
+                        <div class="map-node label-top" id="node_am_yerevan" data-node="am_yerevan"><span class="node-label">Yerevan</span></div>
+                        <div class="map-node label-top" id="node_by_minsk" data-node="by_minsk"><span class="node-label">Minsk</span></div>
+                        <div class="map-node label-right" id="node_bg_sofia" data-node="bg_sofia"><span class="node-label">Sofia</span></div>
+                        <div class="map-node label-top" id="node_lv_riga" data-node="lv_riga"><span class="node-label">Riga</span></div>
+                        <div class="map-node label-left" id="node_es_madrid" data-node="es_madrid"><span class="node-label">Madrid</span></div>
+                        <div class="map-node label-left" id="node_pt_lisbon" data-node="pt_lisbon"><span class="node-label">Lisbon</span></div>
+                        <div class="map-node label-top" id="node_ua_kyiv" data-node="ua_kyiv"><span class="node-label">Kyiv</span></div>
+                        <div class="map-node label-right" id="node_sk_bratislava" data-node="sk_bratislava"><span class="node-label">Bratislava</span></div>
+                        <div class="map-node label-top" id="node_sk_sered" data-node="sk_sered"><span class="node-label">Sereď</span></div>
+                        <div class="map-node label-top" id="node_sk_senec" data-node="sk_senec"><span class="node-label">Senec</span></div>
+                        <div class="map-node label-top" id="node_ru_volgograd" data-node="ru_volgograd"><span class="node-label">Volgograd</span></div>
+                        <div class="map-node label-left" id="node_ee_tartu" data-node="ee_tartu"><span class="node-label">Tartu</span></div>
+                        <div class="map-node label-left" id="node_ee_tallinn" data-node="ee_tallinn"><span class="node-label">Tallinn</span></div>
+                        <div class="map-node label-left" id="node_li_vaduz" data-node="li_vaduz"><span class="node-label">Vaduz</span></div>
+                        <div class="map-node label-right" id="node_hu_budapest" data-node="hu_budapest"><span class="node-label">Budapest</span></div>
+                        <div class="map-node label-right" id="node_lt_vilnius" data-node="lt_vilnius"><span class="node-label">Vilnius</span></div>
+                        <div class="map-node label-top" id="node_no_longyearbyen" data-node="no_longyearbyen"><span class="node-label">Longyearbyen</span></div>
+                        <div class="map-node label-right" id="node_no_oslo" data-node="no_oslo"><span class="node-label">Oslo</span></div>
+                        <div class="map-node label-right" id="node_fi_helsinki" data-node="fi_helsinki"><span class="node-label">Helsinki</span></div>
+                        <div class="map-node label-top" id="node_fi_oulu" data-node="fi_oulu"><span class="node-label">Oulu</span></div>
+                        <div class="map-node label-right" id="node_gl_aalborg" data-node="gl_aalborg"><span class="node-label">Aalborg</span></div>
+                        <div class="map-node label-top" id="node_dk_copenhagen" data-node="dk_copenhagen"><span class="node-label">Copenhagen</span></div>
+                        <div class="map-node label-top" id="node_at_linz" data-node="at_linz"><span class="node-label">Linz</span></div>
+                        <div class="map-node label-top" id="node_at_vienna" data-node="at_vienna"><span class="node-label">Vienna</span></div>
+                        <div class="map-node label-top" id="node_at_innsbruck" data-node="at_innsbruck"><span class="node-label">Innsbruck</span></div>
+                        <div class="map-node label-top" id="node_cz_prague" data-node="cz_prague"><span class="node-label">Prague</span></div>
+                        <div class="map-node label-top" id="node_cz_pilsen_regional" data-node="cz_pilsen_regional"><span class="node-label">Pilsen</span></div>
+                        <div class="map-node label-top" id="node_be_brussels" data-node="be_brussels"><span class="node-label">Brussels</span></div>
+                        <div class="map-node label-top" id="node_be_leuven" data-node="be_leuven"><span class="node-label">Leuven</span></div>
+                        <div class="map-node label-top" id="node_be_ghent_bruges" data-node="be_ghent_bruges"><span class="node-label">Ghent</span></div>
+                        <div class="map-node label-top" id="node_pl_warsaw" data-node="pl_warsaw"><span class="node-label">Warsaw</span></div>
+                        <div class="map-node label-top" id="node_pl_krakow" data-node="pl_krakow"><span class="node-label">Krakow</span></div>
+                        <div class="map-node label-top" id="node_pl_duszniki" data-node="pl_duszniki"><span class="node-label">Duszniki</span></div>
+                        <div class="map-node label-top" id="node_pl_poznan" data-node="pl_poznan"><span class="node-label">Poznań</span></div>
+                        <div class="map-node label-top" id="node_de_hamburg" data-node="de_hamburg"><span class="node-label">Hamburg</span></div>
+                        <div class="map-node label-top" id="node_de_stuttgart" data-node="de_stuttgart"><span class="node-label">Stuttgart</span></div>
+                        <div class="map-node label-top" id="node_de_frankfurt" data-node="de_frankfurt"><span class="node-label">Frankfurt</span></div>
+                        <div class="map-node label-top" id="node_de_leipzig" data-node="de_leipzig"><span class="node-label">Leipzig</span></div>
+                        <div class="map-node label-top" id="node_de_potsdam_berlin" data-node="de_potsdam_berlin"><span class="node-label">Berlin</span></div>
+                        <div class="map-node label-top" id="node_de_gottingen" data-node="de_gottingen"><span class="node-label">Göttingen</span></div>
+                        <div class="map-node label-top" id="node_de_mainz" data-node="de_mainz"><span class="node-label">Mainz</span></div>
+                        <div class="map-node label-top" id="node_de_nuremberg" data-node="de_nuremberg"><span class="node-label">Nuremberg</span></div>
+                        <div class="map-node label-top" id="node_nl_amsterdam" data-node="nl_amsterdam"><span class="node-label">Amsterdam</span></div>
+                        <div class="map-node label-top" id="node_nl_leiden" data-node="nl_leiden"><span class="node-label">Leiden</span></div>
+                        <div class="map-node label-top" id="node_nl_utrecht" data-node="nl_utrecht"><span class="node-label">Utrecht</span></div>
+                        <div class="map-node label-top" id="node_se_stockholm" data-node="se_stockholm"><span class="node-label">Stockholm</span></div>
+                        <div class="map-node label-top" id="node_gr_athens" data-node="gr_athens"><span class="node-label">Athens</span></div>
 
                         <!-- MIDDLE EAST & ASIA CITIES -->
-                        <div class="map-node label-right" id="node_kw_kuwaitcity" style="top: 39.5%; left: 62.0%;" onclick="openMapDetails('kw_kuwaitcity', event)">
-                            <span class="node-label">Kuwait City</span>
-                        </div>
-                        <div class="map-node label-right" id="node_ps_gaza" style="top: 36.8%; left: 58.2%;" onclick="openMapDetails('ps_gaza', event)">
-                            <span class="node-label">Gaza</span>
-                        </div>
-                        <div class="map-node label-right" id="node_ps_jenin" style="top: 36.2%; left: 58.0%;" onclick="openMapDetails('ps_jenin', event)">
-                            <span class="node-label">Jenin</span>
-                        </div>
-                        <div class="map-node label-left" id="node_jo_amman" style="top: 36.2%; left: 58.8%;" onclick="openMapDetails('jo_amman', event)">
-                            <span class="node-label">Amman</span>
-                        </div>
-                        <div class="map-node label-right" id="node_il_jerusalem" style="top: 36.5%; left: 58.4%;" onclick="openMapDetails('il_jerusalem', event)">
-                            <span class="node-label">Jerusalem</span>
-                        </div>
-                        <div class="map-node label-top" id="node_om_muscat" style="top: 41.2%; left: 64.2%;" onclick="openMapDetails('om_muscat', event)">
-                            <span class="node-label">Muscat</span>
-                        </div>
-                        <div class="map-node label-top" id="node_ae_abudhabi" style="top: 41%; left: 62.5%;" onclick="openMapDetails('ae_abudhabi', event)">
-                            <span class="node-label">Abu Dhabi</span>
-                        </div>
-                        <div class="map-node label-top" id="node_ae_dubai" style="top: 40.5%; left: 63.0%;" onclick="openMapDetails('ae_dubai', event)">
-                            <span class="node-label">Dubai</span>
-                        </div>
-                        <div class="map-node label-right" id="node_cy_nicosia" style="top: 34.5%; left: 57.2%;" onclick="openMapDetails('cy_nicosia', event)">
-                            <span class="node-label">Nicosia</span>
-                        </div>
-                        <div class="map-node label-left" id="node_sy_damascus" style="top: 36.5%; left: 56.5%;" onclick="openMapDetails('sy_damascus', event)">
-                            <span class="node-label">Damascus</span>
-                        </div>
-                        <div class="map-node label-top" id="node_kg_bishkek" style="top: 31%; left: 68.5%;" onclick="openMapDetails('kg_bishkek', event)">
-                            <span class="node-label">Bishkek</span>
-                        </div>
-                        <div class="map-node label-top" id="node_pakistan" style="top: 44%; left: 67%;" onclick="openMapDetails('pakistan', event)">
-                            <span class="node-label">Peshawar</span>
-                        </div>
-                        <div class="map-node label-top" id="node_goa" style="top: 52%; left: 71%;" onclick="openMapDetails('goa', event)">
-                            <span class="node-label">Goa</span>
-                        </div>
-                        <div class="map-node label-top" id="node_th_bangkok" style="top: 48.5%; left: 78.2%;" onclick="openMapDetails('th_bangkok', event)">
-                            <span class="node-label">Bangkok</span>
-                        </div>
-                        <div class="map-node label-top" id="node_ph_quezon" style="top: 47.5%; left: 83.8%;" onclick="openMapDetails('ph_quezon', event)">
-                            <span class="node-label">Quezon City</span>
-                        </div>
-                        <div class="map-node label-top" id="node_cn_changsha" style="top: 43.5%; left: 76.5%;" onclick="openMapDetails('cn_changsha', event)">
-                            <span class="node-label">Changsha</span>
-                        </div>
-                        <div class="map-node label-top" id="node_vn_hanoi" style="top: 48%; left: 77.5%;" onclick="openMapDetails('vn_hanoi', event)">
-                            <span class="node-label">Hanoi</span>
-                        </div>
-                        <div class="map-node label-top" id="node_malaysia" style="top: 58%; left: 81%;" onclick="openMapDetails('malaysia', event)">
-                            <span class="node-label">Kuala Lumpur</span>
-                        </div>
+                        <div class="map-node label-right" id="node_kw_kuwaitcity" data-node="kw_kuwaitcity"><span class="node-label">Kuwait City</span></div>
+                        <div class="map-node label-right" id="node_ps_gaza" data-node="ps_gaza"><span class="node-label">Gaza</span></div>
+                        <div class="map-node label-right" id="node_ps_jenin" data-node="ps_jenin"><span class="node-label">Jenin</span></div>
+                        <div class="map-node label-left" id="node_jo_amman" data-node="jo_amman"><span class="node-label">Amman</span></div>
+                        <div class="map-node label-right" id="node_il_jerusalem" data-node="il_jerusalem"><span class="node-label">Jerusalem</span></div>
+                        <div class="map-node label-top" id="node_om_muscat" data-node="om_muscat"><span class="node-label">Muscat</span></div>
+                        <div class="map-node label-top" id="node_ae_abudhabi" data-node="ae_abudhabi"><span class="node-label">Abu Dhabi</span></div>
+                        <div class="map-node label-top" id="node_ae_dubai" data-node="ae_dubai"><span class="node-label">Dubai</span></div>
+                        <div class="map-node label-right" id="node_cy_nicosia" data-node="cy_nicosia"><span class="node-label">Nicosia</span></div>
+                        <div class="map-node label-left" id="node_sy_damascus" data-node="sy_damascus"><span class="node-label">Damascus</span></div>
+                        <div class="map-node label-top" id="node_kg_bishkek" data-node="kg_bishkek"><span class="node-label">Bishkek</span></div>
+                        <div class="map-node label-top" id="node_pakistan" data-node="pakistan"><span class="node-label">Peshawar</span></div>
+                        <div class="map-node label-top" id="node_goa" data-node="goa"><span class="node-label">Goa</span></div>
+                        <div class="map-node label-top" id="node_th_bangkok" data-node="th_bangkok"><span class="node-label">Bangkok</span></div>
+                        <div class="map-node label-top" id="node_ph_quezon" data-node="ph_quezon"><span class="node-label">Quezon City</span></div>
+                        <div class="map-node label-top" id="node_cn_changsha" data-node="cn_changsha"><span class="node-label">Changsha</span></div>
+                        <div class="map-node label-top" id="node_vn_hanoi" data-node="vn_hanoi"><span class="node-label">Hanoi</span></div>
+                        <div class="map-node label-top" id="node_malaysia" data-node="malaysia"><span class="node-label">Kuala Lumpur</span></div>
 
                         <!-- AUSTRALIA & PACIFIC NODES -->
-                        <div class="map-node label-right" id="node_au_brisbane_qld" style="top: 70%; left: 88.5%;" onclick="openMapDetails('au_brisbane_qld', event)">
-                            <span class="node-label">Brisbane</span>
-                        </div>
-                        <div class="map-node label-right" id="node_au_sydney_nsw" style="top: 74.5%; left: 87.2%;" onclick="openMapDetails('au_sydney_nsw', event)">
-                            <span class="node-label">Sydney</span>
-                        </div>
-                        <div class="map-node label-left" id="node_au_melbourne" style="top: 78%; left: 85.5%;" onclick="openMapDetails('au_melbourne', event)">
-                            <span class="node-label">Melbourne</span>
-                        </div>
-                        <div class="map-node label-left" id="node_au_canberra" style="top: 76%; left: 86.8%;" onclick="openMapDetails('au_canberra', event)">
-                            <span class="node-label">Canberra</span>
-                        </div>
-                        <div class="map-node label-top" id="node_ws_samoa" style="top: 65%; left: 96.8%;" onclick="openMapDetails('ws_samoa', event)">
-                            <span class="node-label">Apia</span>
-                        </div>
-                        <div class="map-node label-top" id="node_fj_suva" style="top: 66.5%; left: 95.5%;" onclick="openMapDetails('fj_suva', event)">
-                            <span class="node-label">Suva</span>
-                        </div>
-                        <div class="map-node label-top" id="node_vu_vanuatu" style="top: 68%; left: 91.5%;" onclick="openMapDetails('vu_vanuatu', event)">
-                            <span class="node-label">Port-Vila</span>
-                        </div>
-                        <div class="map-node label-top" id="node_nz_auckland" style="top: 83.5%; left: 93.8%;" onclick="openMapDetails('nz_auckland', event)">
-                            <span class="node-label">Auckland</span>
-                        </div>
+                        <div class="map-node label-right" id="node_au_brisbane_qld" data-node="au_brisbane_qld"><span class="node-label">Brisbane</span></div>
+                        <div class="map-node label-right" id="node_au_sydney_nsw" data-node="au_sydney_nsw"><span class="node-label">Sydney</span></div>
+                        <div class="map-node label-left" id="node_au_melbourne" data-node="au_melbourne"><span class="node-label">Melbourne</span></div>
+                        <div class="map-node label-left" id="node_au_canberra" data-node="au_canberra"><span class="node-label">Canberra</span></div>
+                        <div class="map-node label-top" id="node_ws_samoa" data-node="ws_samoa"><span class="node-label">Apia</span></div>
+                        <div class="map-node label-top" id="node_fj_suva" data-node="fj_suva"><span class="node-label">Suva</span></div>
+                        <div class="map-node label-top" id="node_vu_vanuatu" data-node="vu_vanuatu"><span class="node-label">Port-Vila</span></div>
+                        <div class="map-node label-top" id="node_nz_auckland" data-node="nz_auckland"><span class="node-label">Auckland</span></div>
 
                         <!-- LATIN AMERICA & OTHER REGIONS -->
-                        <div class="map-node label-left" id="node_gy_georgetown" style="top: 53.5%; left: 32.2%;" onclick="openMapDetails('gy_georgetown', event)">
-                            <span class="node-label">Georgetown</span>
-                        </div>
-                        <div class="map-node label-top" id="node_mu_reduit" style="top: 72.5%; left: 66.8%;" onclick="openMapDetails('mu_reduit', event)">
-                            <span class="node-label">Réduit</span>
-                        </div>
-                        <div class="map-node label-left" id="node_ar_buenosaires" style="top: 79.5%; left: 31.8%;" onclick="openMapDetails('ar_buenosaires', event)">
-                            <span class="node-label">Buenos Aires</span>
-                        </div>
-                        <div class="map-node label-left" id="node_me_ljesevici" style="top: 28.5%; left: 53.5%;" onclick="openMapDetails('me_ljesevici', event)">
-                            <span class="node-label">Lješevići</span>
-                        </div>
-                        <div class="map-node label-left" id="node_co_bogota" style="top: 55%; left: 27%;" onclick="openMapDetails('co_bogota', event)">
-                            <span class="node-label">Bogotá</span>
-                        </div>
-                        <div class="map-node label-left" id="node_cr_sanjose" style="top: 52%; left: 24.5%;" onclick="openMapDetails('cr_sanjose', event)">
-                            <span class="node-label">San José</span>
-                        </div>
+                        <div class="map-node label-left" id="node_gy_georgetown" data-node="gy_georgetown"><span class="node-label">Georgetown</span></div>
+                        <div class="map-node label-top" id="node_mu_reduit" data-node="mu_reduit"><span class="node-label">Réduit</span></div>
+                        <div class="map-node label-left" id="node_ar_buenosaires" data-node="ar_buenosaires"><span class="node-label">Buenos Aires</span></div>
+                        <div class="map-node label-left" id="node_me_ljesevici" data-node="me_ljesevici"><span class="node-label">Lješevići</span></div>
+                        <div class="map-node label-left" id="node_co_bogota" data-node="co_bogota"><span class="node-label">Bogotá</span></div>
+                        <div class="map-node label-left" id="node_cr_sanjose" data-node="cr_sanjose"><span class="node-label">San José</span></div>
 
                         <!-- AFRICAN CITIES -->
-                        <div class="map-node label-top" id="node_af_pretoria" style="top: 75.2%; left: 55.8%;" onclick="openMapDetails('af_pretoria', event)">
-                            <span class="node-label">Pretoria</span>
-                        </div>
-                        <div class="map-node label-top" id="node_af_johannesburg" style="top: 76%; left: 55.5%;" onclick="openMapDetails('af_johannesburg', event)">
-                            <span class="node-label">Johannesburg</span>
-                        </div>
-                        <div class="map-node label-top" id="node_af_nairobi" style="top: 55.8%; left: 56.2%;" onclick="openMapDetails('af_nairobi', event)">
-                            <span class="node-label">Nairobi</span>
-                        </div>
-                        <div class="map-node label-top" id="node_af_lagos" style="top: 50%; left: 46.8%;" onclick="openMapDetails('af_lagos', event)">
-                            <span class="node-label">Lagos</span>
-                        </div>
-                        <div class="map-node label-left" id="node_af_naija_vernacular" style="top: 52%; left: 45.8%;" onclick="openMapDetails('af_naija_vernacular', event)">
-                            <span class="node-label">West Africa</span>
-                        </div>
-                        <div class="map-node label-top" id="node_af_gaborone" style="top: 73.8%; left: 54.2%;" onclick="openMapDetails('af_gaborone', event)">
-                            <span class="node-label">Gaborone</span>
-                        </div>
-                        <div class="map-node label-right" id="node_af_madagascar" style="top: 68%; left: 62.5%;" onclick="openMapDetails('af_madagascar', event)">
-                            <span class="node-label">Antananarivo</span>
-                        </div>
-                        <div class="map-node label-top" id="node_af_congo" style="top: 58%; left: 51.5%;" onclick="openMapDetails('af_congo', event)">
-                            <span class="node-label">Kinshasa</span>
-                        </div>
-                        <div class="map-node label-left" id="node_af_bahamas" style="top: 42%; left: 26.5%;" onclick="openMapDetails('af_bahamas', event)">
-                            <span class="node-label">Nassau</span>
-                        </div>
-                        <div class="map-node label-top" id="node_af_pan_african_research" style="top: 54%; left: 52.5%;" onclick="openMapDetails('af_pan_african_research', event)">
-                            <span class="node-label">Pan-Africa</span>
-                        </div>
+                        <div class="map-node label-top" id="node_af_pretoria" data-node="af_pretoria"><span class="node-label">Pretoria</span></div>
+                        <div class="map-node label-top" id="node_af_johannesburg" data-node="af_johannesburg"><span class="node-label">Johannesburg</span></div>
+                        <div class="map-node label-top" id="node_af_nairobi" data-node="af_nairobi"><span class="node-label">Nairobi</span></div>
+                        <div class="map-node label-top" id="node_af_lagos" data-node="af_lagos"><span class="node-label">Lagos</span></div>
+                        <div class="map-node label-left" id="node_af_naija_vernacular" data-node="af_naija_vernacular"><span class="node-label">West Africa</span></div>
+                        <div class="map-node label-top" id="node_af_gaborone" data-node="af_gaborone"><span class="node-label">Gaborone</span></div>
+                        <div class="map-node label-right" id="node_af_madagascar" data-node="af_madagascar"><span class="node-label">Antananarivo</span></div>
+                        <div class="map-node label-top" id="node_af_congo" data-node="af_congo"><span class="node-label">Kinshasa</span></div>
+                        <div class="map-node label-left" id="node_af_bahamas" data-node="af_bahamas"><span class="node-label">Nassau</span></div>
+                        <div class="map-node label-top" id="node_af_pan_african_research" data-node="af_pan_african_research"><span class="node-label">Pan-Africa</span></div>
 
                         <!-- GREENLAND CITIES -->
-                        <div class="map-node label-left" id="node_gl_nuuk" style="top: 15%; left: 37%;" onclick="openMapDetails('gl_nuuk', event)">
-                            <span class="node-label">Nuuk</span>
-                        </div>
-                        <div class="map-node label-top" id="node_gl_ilulissat" style="top: 11%; left: 38%;" onclick="openMapDetails('gl_ilulissat', event)">
-                            <span class="node-label">Ilulissat</span>
-                        </div>
+                        <div class="map-node label-left" id="node_gl_nuuk" data-node="gl_nuuk"><span class="node-label">Nuuk</span></div>
+                        <div class="map-node label-top" id="node_gl_ilulissat" data-node="gl_ilulissat"><span class="node-label">Ilulissat</span></div>
 
                         <!-- POPUP TOOLTIP CARD -->
-                        <div class="map-popup-card" id="mapPopupCard">
+                        <div class="map-popup-card" id="mapPopupCard" aria-live="polite">
                             <div class="map-popup-header">
                                 <div class="map-popup-city" id="popupCityTitle">City / Region</div>
-                                <button class="map-popup-close" onclick="closeMapDetails()">&times;</button>
+                                <button type="button" class="map-popup-close" id="closeMapPopupBtn" aria-label="Close details">&times;</button>
                             </div>
-                            <div class="map-popup-shows" id="popupCityBody">Click any gold node to inspect records...</div>
+                            <div class="map-popup-shows" id="popupCityBody">Select any gold node to inspect institutional records...</div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- MASTERWORK PROVENANCE LEDGER SECTION -->
+            <!-- SELECTED SERIES / CATALOGUE SECTION -->
             <section id="ledger">
-                <h2 class="section-heading">Masterwork Provenance Ledger</h2>
+                <h2 class="section-heading">Selected Series Catalogue</h2>
                 
-                <div class="ledger-controls">
-                    <button class="ledger-btn active" onclick="filterLedger('all', event)">All Masterworks</button>
-                    <button class="ledger-btn" onclick="filterLedger('rooh', event)">Rooh-Nawaz</button>
-                    <button class="ledger-btn" onclick="filterLedger('voices', event)">Voices of the Land</button>
-                    <button class="ledger-btn" onclick="filterLedger('box', event)">Life of a Box</button>
-                    <button class="ledger-btn" onclick="filterLedger('words', event)">Words Project</button>
+                <div class="ledger-controls" role="tablist" aria-label="Filter series">
+                    <button type="button" class="ledger-btn active" data-filter="all" role="tab" aria-selected="true">All Works</button>
+                    <button type="button" class="ledger-btn" data-filter="rooh" role="tab" aria-selected="false">Rooh-Nawaz</button>
+                    <button type="button" class="ledger-btn" data-filter="voices" role="tab" aria-selected="false">Voices of the Land</button>
+                    <button type="button" class="ledger-btn" data-filter="box" role="tab" aria-selected="false">Life of a Box</button>
+                    <button type="button" class="ledger-btn" data-filter="words" role="tab" aria-selected="false">Words Project</button>
                 </div>
 
                 <div class="ledger-grid">
@@ -882,11 +567,13 @@
                                  alt="Rooh-Nawaz Persian Heritage Canvas" 
                                  class="img-centered" 
                                  loading="lazy" 
-                                 style="cursor: pointer;" 
-                                 onclick="openLightbox('rooh-nawaz-1.jpg', 'Rooh-Nawaz (روح‌نواز)')">
+                                 width="800" 
+                                 height="600"
+                                 data-lightbox-src="rooh-nawaz-1.jpg" 
+                                 data-caption="Rooh-Nawaz (روح‌نواز)">
                         </div>
                         <div class="ledger-info">
-                            <span class="ledger-pillar-tag">&bull; Rooh-Nawaz &bull; Persian Heritage &amp; Poetic Wisdom</span>
+                            <span class="ledger-pillar-tag">&bull; Rooh-Nawaz &bull; Persian Heritage &amp; Poetic Memory</span>
                             <h3 class="ledger-title">Rooh-Nawaz (روح‌نواز)</h3>
                             <div class="ledger-meta-list">
                                 <strong>Medium:</strong> Mixed Media &amp; Natural Earth Pigments on Canvas<br>
@@ -895,7 +582,7 @@
                             </div>
                         </div>
                         <div class="ledger-actions">
-                            <button class="action-btn" onclick="openDossier('rooh_nawaz')">Read Dossier</button>
+                            <button type="button" class="action-btn" data-dossier="rooh_nawaz">Read Dossier</button>
                         </div>
                     </div>
 
@@ -906,11 +593,13 @@
                                  alt="Voices of the Land Canvas" 
                                  class="img-centered" 
                                  loading="lazy" 
-                                 style="cursor: pointer;" 
-                                 onclick="openLightbox('land-spatial-2.jpg', 'Voices of the Land (Indigenous Wisdom &amp; Sacred Oral Heritage)')">
+                                 width="800" 
+                                 height="600"
+                                 data-lightbox-src="land-spatial-2.jpg" 
+                                 data-caption="Voices of the Land (Indigenous Wisdom &amp; Sacred Oral Heritage)">
                         </div>
                         <div class="ledger-info">
-                            <span class="ledger-pillar-tag">&bull; Voices of the Land &bull; Sacred Indigenous Knowledge</span>
+                            <span class="ledger-pillar-tag">&bull; Voices of the Land &bull; Indigenous Knowledge</span>
                             <h3 class="ledger-title">Voices of the Land (Indigenous Wisdom &amp; Sacred Oral Heritage)</h3>
                             <div class="ledger-meta-list">
                                 <strong>Collaborative Institutions:</strong> National Gallery of Canada, Burke Museum, Endangered Languages Project, University of Victoria, University of Alberta, and Indigenous Knowledge Keepers worldwide.<br>
@@ -918,7 +607,7 @@
                             </div>
                         </div>
                         <div class="ledger-actions">
-                            <button class="action-btn" onclick="openDossier('mowicha')">Read Dossier</button>
+                            <button type="button" class="action-btn" data-dossier="mowicha">Read Dossier</button>
                         </div>
                     </div>
 
@@ -928,20 +617,22 @@
                             <img src="box-spatial-1.jpg" 
                                  alt="Life of a Box Installation" 
                                  loading="lazy"
-                                 style="cursor: pointer;"
-                                 onclick="openLightbox('box-spatial-1.jpg', 'Monumental Packaging Sculpture')">
+                                 width="800" 
+                                 height="600"
+                                 data-lightbox-src="box-spatial-1.jpg" 
+                                 data-caption="Monumental Packaging Sculpture">
                         </div>
                         <div class="ledger-info">
                             <span class="ledger-pillar-tag">&bull; Life of a Box &bull; Ecological Sculpture</span>
                             <h3 class="ledger-title">Monumental Packaging Sculpture</h3>
                             <div class="ledger-meta-list">
                                 <strong>Medium:</strong> Recycled Industrial Packaging &amp; Gold Leaf<br>
-                                <strong>Patron Institutions:</strong> National Museum of the History of Ukraine, National Museum of Denmark, Museum of Basel, Nobel Prize Museum, City Museum Nuremberg, Nuuk Art Museum, Mohatta Palace Museum, and many more<br>
+                                <strong>Patron Institutions:</strong> National Museum of the History of Ukraine, National Museum of Denmark, Museum of Basel, Nobel Prize Museum, City Museum Nuremberg, Nuuk Art Museum, Mohatta Palace Museum, and global partners<br>
                                 <strong>Exhibition History:</strong> Exhibited across state museums and documented in official catalogues from the first public display at the Museum of Paper in Duszniki-Zdrój, Poland
                             </div>
                         </div>
                         <div class="ledger-actions">
-                            <button class="action-btn" onclick="openDossier('box_monograph')">Read Dossier</button>
+                            <button type="button" class="action-btn" data-dossier="box_monograph">Read Dossier</button>
                         </div>
                     </div>
 
@@ -951,41 +642,43 @@
                             <img src="words-texture-1.jpg" 
                                  alt="The Global Words Project Canvas" 
                                  loading="lazy"
-                                 style="cursor: pointer;"
-                                 onclick="openLightbox('words-texture-1.jpg', 'The Global Words Project (A Global Collective Inspiration)')">
+                                 width="800" 
+                                 height="600"
+                                 data-lightbox-src="words-texture-1.jpg" 
+                                 data-caption="The Global Words Project (A Global Collective Inspiration)">
                         </div>
                         <div class="ledger-info">
                             <span class="ledger-pillar-tag">&bull; Words Project &bull; Featured Masterwork Archive</span>
                             <h3 class="ledger-title">The Global Words Project (A Global Collective Inspiration)</h3>
                             <div class="ledger-meta-list">
                                 <strong>Medium:</strong> Mixed Media on Canvas (Natural Ground Earth Pigments)<br>
-                                <strong>Provenance:</strong> Global Participatory Participations &amp; Partner Institutions Worldwide<br>
+                                <strong>Provenance:</strong> Global Participatory Contributions &amp; Partner Institutions Worldwide<br>
                                 <strong>Exhibition History:</strong> International Museum Collections &amp; Regional Repositories
                             </div>
                         </div>
                         <div class="ledger-actions">
-                            <button class="action-btn" onclick="openDossier('equanimity')">Read Dossier</button>
+                            <button type="button" class="action-btn" data-dossier="equanimity">Read Dossier</button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- HIGH-RESOLUTION MACRO DETAIL VIEWER WITH WORKING PAN & ZOOM -->
+            <!-- SURFACE & TEXTURE DETAIL VIEWER -->
             <section id="materials">
                 <h2 class="section-heading">Surface &amp; Texture Detail</h2>
                 <div class="macro-viewer-container">
                     <span class="benchmark-tag">&bull; SURFACE &amp; TEXTURE &bull; MACRO CANVAS STUDY</span>
-                    <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; margin: 10px 0 5px 0; font-weight: 300; text-transform: uppercase;">Tactile Depth &amp; Pigment Density</h3>
-                    <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0 0 10px 0;">Click &amp; drag to pan across the texture. Scroll mouse wheel to zoom in/out.</p>
+                    <h3 class="macro-heading">Tactile Depth &amp; Pigment Density</h3>
+                    <p class="macro-subtext">Click &amp; drag to pan across the surface texture. Scroll mouse wheel to zoom in/out.</p>
 
-                    <div class="macro-view-window" id="macroWindow">
-                        <img src="words-texture-1.jpg" id="macroImage" alt="Hesham Malik High-Resolution Macro Detail View">
+                    <div class="macro-view-window" id="macroWindow" tabIndex="0" aria-label="Interactive macro detail canvas viewer">
+                        <img src="words-texture-1.jpg" id="macroImage" alt="Hesham Malik High-Resolution Macro Detail View" width="1600" height="1200">
                     </div>
 
                     <div class="macro-controls-bar">
                         <span>Click &amp; Drag to Pan Surface • Scroll to Zoom</span>
                         <div>
-                            <button class="macro-btn" onclick="resetMacroView()">Reset View</button>
+                            <button type="button" class="macro-btn" id="resetMacroBtn">Reset View</button>
                         </div>
                     </div>
                 </div>
@@ -994,109 +687,31 @@
     </div>
 
     <!-- DOSSIER MODAL -->
-    <div class="modal-overlay" id="dossierModal">
+    <div class="modal-overlay" id="dossierModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
         <div class="modal-box">
-            <button class="modal-close" onclick="closeDossier()">&times;</button>
-            <div style="font-size:0.65rem; color:var(--accent-gold); letter-spacing:0.25em; text-transform:uppercase; margin-bottom:10px;" id="modalCode">DOSSIER RECORD</div>
-            <h3 style="font-family:var(--font-serif); font-size:1.8rem; color:#fff; margin-top:0;" id="modalTitle">Title</h3>
-            <div style="font-size:0.88rem; color:var(--text-secondary); line-height:1.9;" id="modalBody">Body...</div>
+            <button type="button" class="modal-close" id="closeDossierBtn" aria-label="Close dossier">&times;</button>
+            <div class="modal-code" id="modalCode">DOSSIER RECORD</div>
+            <h3 class="modal-title" id="modalTitle">Title</h3>
+            <div class="modal-body" id="modalBody">Body content loads here...</div>
         </div>
     </div>
 
     <!-- LIGHTBOX MODAL CONTAINER -->
-    <div id="lightbox" class="modal-overlay" style="display:none;" onclick="closeLightbox()">
-        <span class="modal-close" onclick="closeLightbox()">&times;</span>
-        <img id="lightbox-img" src="" alt="Enlarged View">
-        <div id="lightbox-caption" style="color:#ffffff; margin-top:15px; font-size:0.9rem;"></div>
+    <div id="lightbox" class="modal-overlay" aria-hidden="true" role="dialog" aria-label="Image lightbox view">
+        <button type="button" class="modal-close" id="closeLightboxBtn" aria-label="Close lightbox">&times;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="Enlarged Masterwork View">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
     </div>
 
     <footer>
         <div class="footer-copy">
-            &copy; 2026 Hesham Malik. All Rights Reserved. Sovereign Monographic Register.
+            &copy; 2026 Hesham Malik. All Rights Reserved. Studio Archive &amp; Catalogue Raisonné.
         </div>
     </footer>
 
-    <!-- LINK TO SEPARATE JAVASCRIPT FILE -->
+    <!-- Main JavaScript Application File -->
     <script src="main.js"></script>
-
-    <!-- Interactive Pan & Zoom Script for Macro Viewer -->
-    <script>
-        (function() {
-            const windowEl = document.getElementById('macroWindow');
-            const imgEl = document.getElementById('macroImage');
-            if (!windowEl || !imgEl) return;
-
-            let scale = 1.2;
-            let posX = 0;
-            let posY = 0;
-            let isDragging = false;
-            let startX, startY;
-
-            function render() {
-                imgEl.style.transform = `translate(calc(-50% + ${posX}px), calc(-50% + ${posY}px)) scale(${scale})`;
-            }
-
-            render();
-
-            // Mouse Dragging
-            windowEl.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                startX = e.clientX - posX;
-                startY = e.clientY - posY;
-                windowEl.style.cursor = 'grabbing';
-            });
-
-            window.addEventListener('mouseup', () => {
-                isDragging = false;
-                windowEl.style.cursor = 'grab';
-            });
-
-            windowEl.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
-                e.preventDefault();
-                posX = e.clientX - startX;
-                posY = e.clientY - startY;
-                render();
-            });
-
-            // Mouse Wheel Zooming
-            windowEl.addEventListener('wheel', (e) => {
-                e.preventDefault();
-                const zoomSpeed = 0.1;
-                if (e.deltaY < 0) {
-                    scale = Math.min(scale + zoomSpeed, 3.5);
-                } else {
-                    scale = Math.max(scale - zoomSpeed, 0.8);
-                }
-                render();
-            }, { passive: false });
-
-            // Touch Support for Mobile
-            windowEl.addEventListener('touchstart', (e) => {
-                if (e.touches.length === 1) {
-                    isDragging = true;
-                    startX = e.touches[0].clientX - posX;
-                    startY = e.touches[0].clientY - posY;
-                }
-            });
-
-            windowEl.addEventListener('touchend', () => { isDragging = false; });
-
-            windowEl.addEventListener('touchmove', (e) => {
-                if (!isDragging || e.touches.length !== 1) return;
-                posX = e.touches[0].clientX - startX;
-                posY = e.touches[0].clientY - startY;
-                render();
-            });
-
-            // Reset Function
-            window.resetMacroView = function() {
-                scale = 1.2;
-                posX = 0;
-                posY = 0;
-                render();
-            };
-        })();
-    </script>
 </body>
 </html>
