@@ -1219,10 +1219,10 @@ const mombasaInscriptions = {
 
 // --- MASTERWORK MUSEUM PROVENANCE CAPTION MAP ---
 const masterworkProvenance = {
-    "rooh-nawaz-1.jpg": "Exhibition & Museum Provenance: Exhibited in Gold at the Museum of Prague West, an institutional municipality repository founded in 1891 by Leopold Čihák.",
-    "land-spatial-2.jpg": "Exhibition & Museum Provenance: Exhibited in the upper gallery of the Church of Our Lady Visitation at Horní Police, a 13th-century pilgrimage landmark and Northern Bohemia's premier Baroque museum.",
-    "box-spatial-1.jpg": "Exhibition & Museum Provenance: Exhibited in Life of a Box at the Museum of Ecclesiastical Art, housed within Plzeň’s 14th-century former Franciscan monastery.",
-    "words-texture-1.jpg": "Exhibition & Museum Provenance: Exhibited at Brussels Expo as a featured highlight alongside Europe’s leading cultural and creative industry institutions."
+    "rooh-nawaz-1.jpg": "Exhibited at the Museum of Prague West, an institutional repository founded in 1891 by Leopold Čihák.",
+    "land-spatial-2.jpg": "Exhibited at the Museum of The Pilgrimage Church of the Visitation of Virgin Mary, a 13th-century pilgrimage landmark and Northern Bohemia's premier Baroque museum.",
+    "box-spatial-1.jpg": "Exhibited at the Museum of Ecclesiastical Art, housed within Plzeň’s 14th-century former Franciscan monastery.",
+    "words-texture-1.jpg": "Exhibited at Brussels Expo as a featured highlight alongside Europe’s leading cultural and creative institutions."
 };
 
 // --- 6. INTERACTIVE MODAL & FULL-SCREEN LIGHTBOX ENGINE ---
