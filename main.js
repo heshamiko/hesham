@@ -1,20 +1,25 @@
 /* ==========================================================================
-   HESHAM MALIK — SOVEREIGN MONOGRAPHIC PORTAL
+   HESHAM MALIK — STUDIO ARCHIVE & CATALOGUE RAISONNÉ
    Flagship Interactive Engine (main.js)
    ========================================================================== */
 
-// --- 1. MOMBASA ESSAY TOGGLE ---
+// --- 1. MOMBASA ESSAY ACCORDION TOGGLE ---
 function toggleMombasaEssay() {
     const essay = document.getElementById('mombasa-essay');
     const icon = document.getElementById('mombasa-toggle-icon');
-    if (!essay || !icon) return;
+    const trigger = document.getElementById('mombasa-trigger');
+    if (!essay || !icon || !trigger) return;
 
-    if (essay.style.display === 'none' || essay.style.display === '') {
-        essay.style.display = 'block';
-        icon.innerHTML = '&#8722;'; // Minus sign
-    } else {
-        essay.style.display = 'none';
+    const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+
+    if (isExpanded) {
+        trigger.setAttribute('aria-expanded', 'false');
+        essay.hidden = true;
         icon.innerHTML = '+';
+    } else {
+        trigger.setAttribute('aria-expanded', 'true');
+        essay.hidden = false;
+        icon.innerHTML = '&#8722;'; // Minus sign
     }
 }
 
@@ -24,32 +29,32 @@ const mapCityData = {
     uk_london: {
         city: "UNITED KINGDOM &bull; LONDON",
         shows: `&bull; <b>Institutional Anchor:</b> Tate; Amazon UK; Index on Censorship; Courtauld Institute of Art; University College London (UCL); SOAS University of London; Queen Mary University of London; London School of Economics (LSE); Peace Direct; Conciliation Resources.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Interdisciplinary dialogue spanning neuroaesthetics, ecosystem dynamics, global thought, post-colonial geography, and conflict resolution, focusing on movement, historical rupture, and civic agency.<br>
-&bull; <b>Curatorial Focus:</b> Reclaiming reclaimed paper mediums and vast linguistic lexicons to transform critical socio-political theory into large-scale canvas series probing power and human endurance.`
+&bull; <b>Field &amp; Conceptual Research:</b> Interdisciplinary dialogue spanning neuroaesthetics, ecosystem dynamics, global thought, post-colonial geography, and conflict resolution.<br>
+&bull; <b>Curatorial Focus:</b> Reclaiming paper mediums and vast linguistic lexicons to transform critical socio-political theory into large-scale canvas series probing power and human endurance.`
     },
     oxford: {
         city: "UNITED KINGDOM &bull; OXFORD",
         shows: `&bull; <b>Institutional Anchor:</b> University of Oxford; The Ruskin School of Art; Environmental Change Institute.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Scholarly exchanges focused on ecosystem dynamics, ethics, modern Middle Eastern history, and fine art theory, examining environmental shifts and human resilience.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Scholarly exchanges focused on ecosystem dynamics, ethics, modern Middle Eastern history, and fine art theory.<br>
 &bull; <b>Curatorial Focus:</b> Deep earth and organic material studies mapping biodiversity, systemic change, and the philosophical foundations of biological flourishing.`
     },
     cambridge: {
         city: "UNITED KINGDOM &bull; CAMBRIDGE",
         shows: `&bull; <b>Institutional Anchor:</b> University of Cambridge.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Academic collaboration surrounding comparative linguistics, migratory ethics, and core philosophical concepts framing global human experience.<br>
-&bull; <b>Curatorial Focus:</b> Textual and linguistic visual structures translating complex semantic structures and philosophical movement into minimalist canvas compositions.`
+&bull; <b>Field &amp; Conceptual Research:</b> Academic collaboration surrounding comparative linguistics, migratory ethics, and core philosophical concepts.<br>
+&bull; <b>Curatorial Focus:</b> Textual and linguistic visual structures translating complex semantic structures into minimalist canvas compositions.`
     },
     edinburgh: {
         city: "UNITED KINGDOM &bull; EDINBURGH",
         shows: `&bull; <b>Institutional Anchor:</b> Strathallan Academic Platform &amp; Scottish Material Culture Project (<i>Life of a Box</i> Initiative); National Galleries Scotland; University of Edinburgh.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Transformative material cycles, educational transit, physical metamorphosis, and historical art curation across major Scottish cultural centers.<br>
-&bull; <b>Curatorial Focus:</b> Structural box assemblage, tactile paper studies, and material relocation research detailing form transformation and Scottish cultural memory.`
+&bull; <b>Field &amp; Conceptual Research:</b> Transformative material cycles, educational transit, physical metamorphosis, and historical art curation.<br>
+&bull; <b>Curatorial Focus:</b> Structural box assemblage, tactile paper studies, and material relocation research detailing form transformation.`
     },
     aberdeen: {
         city: "UNITED KINGDOM &bull; ABERDEEN",
         shows: `&bull; <b>Institutional Anchor:</b> University of Aberdeen.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Social anthropology studies exploring human correspondence, environmental perception, and lived experience in coastal ecosystems.<br>
-&bull; <b>Curatorial Focus:</b> Organic pigment studies investigating tactile engagement with natural landscapes and human connectivity across isolated environments.`
+&bull; <b>Curatorial Focus:</b> Organic pigment studies investigating tactile engagement with natural landscapes and human connectivity.`
     },
     birmingham: {
         city: "UNITED KINGDOM &bull; BIRMINGHAM",
@@ -60,13 +65,13 @@ const mapCityData = {
     leeds: {
         city: "UNITED KINGDOM &bull; LEEDS",
         shows: `&bull; <b>Institutional Anchor:</b> University of Leeds.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Archival research and library sciences inquiry into information preservation, civic concern, and institutional stewardship of historical knowledge.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Archival research and library sciences inquiry into information preservation, civic concern, and institutional stewardship.<br>
 &bull; <b>Curatorial Focus:</b> Deep monochromatic canvas works exploring quiet contemplation, textual archival structures, and civic responsibility.`
     },
     lincoln: {
         city: "UNITED KINGDOM &bull; LINCOLN",
         shows: `&bull; <b>Institutional Anchor:</b> University of Lincoln.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Visual arts research focusing on environmental aesthetics, color theory, and regional artistic practices in the East Midlands.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Visual arts research focusing on environmental aesthetics, color theory, and regional artistic practices.<br>
 &bull; <b>Curatorial Focus:</b> Luminous aquatic and tonal studies probing fluid dynamics, spatial color theory, and material expression.`
     },
     manchester: {
@@ -79,7 +84,7 @@ const mapCityData = {
         city: "UNITED KINGDOM &bull; EXETER",
         shows: `&bull; <b>Institutional Anchor:</b> University of Exeter; Institute of Arab and Islamic Studies.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Climate system dynamics, post-colonial Middle Eastern geography, and environmental tipping point research.<br>
-&bull; <b>Curatorial Focus:</b> Layered climate-inspired landscapes exploring global ecological vulnerability, planetary dynamics, and atmospheric shifts.`
+&bull; <b>Curatorial Focus:</b> Layered climate-inspired landscapes exploring global ecological vulnerability and planetary dynamics.`
     },
     kent: {
         city: "UNITED KINGDOM &bull; KENT",
@@ -107,7 +112,7 @@ const mapCityData = {
         city: "SWITZERLAND &bull; BERN",
         shows: `&bull; <b>Institutional Anchor:</b> International Cartographic Association.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Spatial mapping, linguistic cartography, cartographic theory, and global geographical representation of human knowledge.<br>
-&bull; <b>Curatorial Focus:</b> Topographical canvas mapping, cartographic symbolism, and geometric canvas structures mapping world heritage and territorial relations.`
+&bull; <b>Curatorial Focus:</b> Topographical canvas mapping, cartographic symbolism, and geometric canvas structures mapping world heritage.`
     },
     ch_ballenberg: {
         city: "SWITZERLAND &bull; BALLENBERG &amp; BASEL",
@@ -118,8 +123,8 @@ const mapCityData = {
     ch_zurich: {
         city: "SWITZERLAND &bull; ZURICH",
         shows: `&bull; <b>Institutional Anchor:</b> ETH Zurich (Dept. of Architecture &amp; Institute of History and Theory of Architecture); Natural History Museum Zurich (<i>Life of a Box</i> Initiative); Artas Foundation.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Territorial planning, architectural history, conflict transformation, equanimity, and spatial togetherness (<i>Prijateljstvo</i>).<br>
-&bull; <b>Curatorial Focus:</b> Architectural grid structures, warm territorial earth tones, and reclaimed ecological material studies examining social cohesion and spatial continuity.`
+&bull; <b>Field &amp; Conceptual Research:</b> Territorial planning, architectural history, conflict transformation, equanimity, and spatial togetherness.<br>
+&bull; <b>Curatorial Focus:</b> Architectural grid structures, warm territorial earth tones, and reclaimed ecological material studies examining social cohesion.`
     },
 
     // --- ITALY CITIES ---
@@ -133,7 +138,7 @@ const mapCityData = {
         city: "ITALY &bull; FLORENCE",
         shows: `&bull; <b>Institutional Anchor:</b> European University Institute.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> European governance, historical political philosophy, civic solidarity, and continental unity within the Mediterranean basin.<br>
-&bull; <b>Curatorial Focus:</b> Structured geometric compositions and deep Renaissance-inspired color palettes addressing historical solidarity and political philosophy.`
+&bull; <b>Curatorial Focus:</b> Structured geometric compositions and deep Renaissance-inspired color palettes addressing historical solidarity.`
     },
     it_fabriano_rome: {
         city: "ITALY &bull; FABRIANO &amp; ROME",
@@ -145,8 +150,8 @@ const mapCityData = {
     // --- FRANCE CITIES ---
     fr_paris: {
         city: "FRANCE &bull; PARIS",
-        shows: `&bull; <b>Institutional Anchor:</b> Sorbonne University; Université Paris Cité; Sorbonne Business School; Amnesty International "Art for Amnesty" Platform; American School of Paris; Institute for Sustainable Development and International Relations (IDDRI).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Urban proximity dynamics (the 15-minute city), Enlightenment literary traditions, civil resistance, human rights activism, and fortuitous educational discovery.<br>
+        shows: `&bull; <b>Institutional Anchor:</b> Sorbonne University; Université Paris Cité; Sorbonne Business School; Amnesty International "Art for Amnesty" Platform; American School of Paris; IDDRI.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Urban proximity dynamics, Enlightenment literary traditions, civil resistance, human rights activism, and fortuitous discovery.<br>
 &bull; <b>Curatorial Focus:</b> High-contrast activist iconography, luminescent Enlightenment light studies, and urban proximity mapping on canvas.`
     },
     fr_toulouse: {
@@ -172,7 +177,7 @@ const mapCityData = {
     ps_jenin: {
         city: "PALESTINE &bull; JENIN CAMP",
         shows: `&bull; <b>Institutional Anchor:</b> The Freedom Theatre.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Cultural resistance, theatrical expression, and community resilience (<i>Sumud</i>) within refugee camp environments.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Cultural resistance, theatrical expression, and community resilience within refugee camp environments.<br>
 &bull; <b>Curatorial Focus:</b> Monochromatic and high-contrast structural studies translating physical theater and collective memory into quiet testaments to endurance.`
     },
 
@@ -180,7 +185,7 @@ const mapCityData = {
     is_reykjavik: {
         city: "ICELAND &bull; REYKJAVÍK",
         shows: `&bull; <b>Institutional Anchor:</b> University of Iceland (Faculty of Icelandic &amp; Comparative Cultural Studies &amp; Dept. of Anthropology).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Nordic island blessings (<i>Blessun</i>), social friction, human intolerance (<i>Óþol</i>), sub-arctic human survival, and saga literature.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Nordic island blessings, social friction, human survival, and saga literature.<br>
 &bull; <b>Curatorial Focus:</b> Volcanic mineral textures, stark high-latitude color contrasts, and sparse abstract compositions mapping environmental harshness.`
     },
 
@@ -188,7 +193,7 @@ const mapCityData = {
     gy_georgetown: {
         city: "GUYANA &bull; GEORGETOWN",
         shows: `&bull; <b>Institutional Anchor:</b> University of Guyana (Dept. of Language and Cultural Studies).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Caribbean and Amazonian linguistic identity, quietude, post-colonial silence, interiority, and oral histories of the Guiana Shield.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Caribbean and Amazonian linguistic identity, quietude, post-colonial silence, interiority, and oral histories.<br>
 &bull; <b>Curatorial Focus:</b> Subdued color palettes, rainforest stillness, and atmospheric landscape studies capturing Northern South American cultural depth.`
     },
 
@@ -196,7 +201,7 @@ const mapCityData = {
     jo_amman: {
         city: "JORDAN &bull; AMMAN",
         shows: `&bull; <b>Institutional Anchor:</b> The University of Jordan (School of Arts &amp; Design &amp; Dept. of Music).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Levantine sacred grace (<i>Barakah</i>), sonic uncertainty, Levantine typography, and Middle Eastern visual communication frameworks.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Levantine sacred grace, sonic uncertainty, Levantine typography, and Middle Eastern visual communication frameworks.<br>
 &bull; <b>Curatorial Focus:</b> Calligraphic abstraction, harmonic tension, and fluid visual rhythms translating traditional Levantine musical structures.`
     },
 
@@ -212,7 +217,7 @@ const mapCityData = {
     om_muscat: {
         city: "OMAN &bull; MUSCAT",
         shows: `&bull; <b>Institutional Anchor:</b> Sultan Qaboos University (Dept. of Art Education &amp; Graphic Design).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Sacred geometry, ontological evolution (<i>Becoming</i>), Gulf visual arts pedagogy, and coastal trade history.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Sacred geometry, ontological evolution, Gulf visual arts pedagogy, and coastal trade history.<br>
 &bull; <b>Curatorial Focus:</b> Spiritual minimalism, continuous line work, and architectural canvas treatments utilizing desert pigments and luminous tones.`
     },
 
@@ -220,27 +225,27 @@ const mapCityData = {
     ar_buenosaires: {
         city: "ARGENTINA &bull; BUENOS AIRES",
         shows: `&bull; <b>Institutional Anchor:</b> National University of Tres de Febrero (UNTREF), Centre for Genocide Studies.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Scholarly dialogue on historical rupture, memory, and the Yiddish concept of <i>Khurbn</i> (Destruction / Historical Watershed), serving as conceptual research for upcoming retrospectives.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Scholarly dialogue on historical rupture, memory, and destruction/historical watersheds.<br>
 &bull; <b>Curatorial Focus:</b> Exploration of exile, historical continuity, and global Jewish heritage transformed into large-scale canvas research.`
     },
 
     // --- BELGIUM CITIES ---
     be_brussels: {
         city: "BELGIUM &bull; BRUSSELS",
-        shows: `&bull; <b>Institutional Anchor:</b> Brussels Expo; Vrije Universiteit Brussel (Dept. of Art History &amp; Archaeology); Centre for European Policy Studies (CEPS); The Green Door Gallery.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Major public exhibition platforms for eco-sculptural works, Northern Renaissance art history, European policy frameworks, human forgiveness, and social balance.<br>
+        shows: `&bull; <b>Institutional Anchor:</b> Brussels Expo; Vrije Universiteit Brussel (Dept. of Art History &amp; Archaeology); CEPS; Green Door Gallery.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Major public exhibition platforms for eco-sculptural works, Northern Renaissance art history, and European policy frameworks.<br>
 &bull; <b>Curatorial Focus:</b> Retrospective displays of eco-sculptural box works alongside large-scale canvas research examining human gratitude and spatial containment.`
     },
     be_leuven: {
         city: "BELGIUM &bull; LEUVEN",
         shows: `&bull; <b>Institutional Anchor:</b> KU Leuven (Division Forest, Nature &amp; Landscape &amp; Dept. of Social Anthropology).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Forest canopy ecology, landscape buffer zones (<i>Bufferworld</i>), human conviviality, and European environmental conservation.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Forest canopy ecology, landscape buffer zones, human conviviality, and European environmental conservation.<br>
 &bull; <b>Curatorial Focus:</b> Organic green canopy palettes, earth-toned canvas compositions, and soft transitional glazes representing sanctuary zones.`
     },
     be_ghent_bruges: {
         city: "BELGIUM &bull; GHENT &amp; BRUGES",
-        shows: `&bull; <b>Institutional Anchor:</b> Museum Voor Schone Kunsten; Museum Brugge (<i>Life of a Box</i> Initiative); Ghent University (Dept. of Languages &amp; Cultures).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Flemish art conservation, gratuitous aesthetic theory, and municipal packaging preservation in historic Belgian centers.<br>
+        shows: `&bull; <b>Institutional Anchor:</b> Museum Voor Schone Kunsten; Museum Brugge (<i>Life of a Box</i> Initiative); Ghent University.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Flemish art conservation, aesthetic theory, and municipal packaging preservation in historic Belgian centers.<br>
 &bull; <b>Curatorial Focus:</b> Cardboard-ground panel compositions and natural color fields reflecting Flemish painterly traditions and archival protection.`
     },
 
@@ -248,14 +253,14 @@ const mapCityData = {
     pl_duszniki: {
         city: "POLAND &bull; DUSZNIKI-ZDRÓJ",
         shows: `&bull; <b>Institutional Anchor:</b> Museum of Papermaking (<i>Life of a Box</i> Initiative).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Historical paper manufacturing, raw material conservation, fluid dynamics (<i>Flow</i>), and physical paper craft as a repository for European cultural memory.<br>
-&bull; <b>Curatorial Focus:</b> Inaugural public exhibition site for <i>Life of a Box</i>, presenting fibrous paper-pulp sculptures and historical paper conservation studies.`
+&bull; <b>Field &amp; Conceptual Research:</b> Historical paper manufacturing, raw material conservation, fluid dynamics, and physical paper craft.<br>
+&bull; <b>Curatorial Focus:</b> Inaugural public exhibition site for <i>Life of a Box</i>, presenting fibrous paper-pulp sculptures and paper conservation studies.`
     },
     pl_poznan: {
         city: "POLAND &bull; POZNAŃ",
         shows: `&bull; <b>Institutional Anchor:</b> Magdalena Abakanowicz University of Arts in Poznań.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Contemporary curatorial theory, synthetic color field theory, radical spatial installation, and modern Eastern European art criticism.<br>
-&bull; <b>Curatorial Focus:</b> Bold, high-contrast chromatic canvases probing high-luminescence synthetic tones, spatial installations, and modern curatorial practice.`
+&bull; <b>Field &amp; Conceptual Research:</b> Contemporary curatorial theory, synthetic color field theory, radical spatial installation, and modern art criticism.<br>
+&bull; <b>Curatorial Focus:</b> Bold, high-contrast chromatic canvases probing synthetic tones, spatial installations, and modern curatorial practice.`
     },
     pl_warsaw: {
         city: "POLAND &bull; WARSAW",
@@ -267,7 +272,7 @@ const mapCityData = {
         city: "POLAND &bull; KRAKOW",
         shows: `&bull; <b>Institutional Anchor:</b> Jan Matejko Academy of Fine Arts.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Classical painterly rigor, historical fine art pedagogy, and rare linguistic concepts in contemporary visual art.<br>
-&bull; <b>Curatorial Focus:</b> Precision-driven canvas works utilizing classical glazing methods to explore unique linguistic events, painterly discipline, and historical memory.`
+&bull; <b>Curatorial Focus:</b> Precision-driven canvas works utilizing classical glazing methods to explore unique linguistic events and historical memory.`
     },
 
     // --- SLOVENIA CITIES ---
@@ -281,22 +286,22 @@ const mapCityData = {
         city: "SLOVENIA &bull; KOPER",
         shows: `&bull; <b>Institutional Anchor:</b> University of Primorska (Faculty of Humanities).<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Adriatic humanism, coastal philosophical traditions, and political hesitation in modern social structures.<br>
-&bull; <b>Curatorial Focus:</b> Coastal light studies and balanced abstract canvases probing psychological uncertainty, space, and Mediterranean philosophy.`
+&bull; <b>Curatorial Focus:</b> Coastal light studies and balanced abstract canvases probing psychological uncertainty and Mediterranean philosophy.`
     },
 
     // --- CROATIA CITIES ---
     hr_zagreb: {
         city: "CROATIA &bull; ZAGREB",
         shows: `&bull; <b>Institutional Anchor:</b> University of Zagreb, Academy of Fine Arts &amp; International Academic Directorate.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Balkan fine arts heritage, institutional exchange, and narratives of systemic disillusionment and trust rupture.<br>
-&bull; <b>Curatorial Focus:</b> Structural canvas compositions addressing fragmented perceptions, narrative shifts, chiaroscuro techniques, and regional visual history.`
+&bull; <b>Field &amp; Conceptual Research:</b> Balkan fine arts heritage, institutional exchange, and narratives of systemic disillusionment.<br>
+&bull; <b>Curatorial Focus:</b> Structural canvas compositions addressing fragmented perceptions, narrative shifts, chiaroscuro techniques, and visual history.`
     },
 
     // --- ARMENIA CITIES ---
     am_yerevan: {
         city: "ARMENIA &bull; YEREVAN",
         shows: `&bull; <b>Institutional Anchor:</b> Sexual Assault Crisis Center / Human Rights Advocacy Axis, Yerevan.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Trauma studies, social defense mechanisms, bodily autonomy, recovery frameworks, and institutional support systems.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Trauma studies, social defense mechanisms, bodily autonomy, recovery frameworks, and support systems.<br>
 &bull; <b>Curatorial Focus:</b> Raw tactile canvas research investigating resilience, personal boundary protection, and societal restoration.`
     },
 
@@ -304,7 +309,7 @@ const mapCityData = {
     by_minsk: {
         city: "BELARUS &bull; MINSK",
         shows: `&bull; <b>Institutional Anchor:</b> ICOMOS Belarusian National Committee, Historical Preservation Forum.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Heritage conservation under institutional restraint, architectural sovereignty, human agency, and historical self-determination.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Heritage conservation under institutional restraint, architectural sovereignty, and human agency.<br>
 &bull; <b>Curatorial Focus:</b> Layered material research probing the limits of preservation, structural memory, and cultural persistence.`
     },
 
@@ -320,7 +325,7 @@ const mapCityData = {
     kw_kuwaitcity: {
         city: "KUWAIT &bull; KUWAIT CITY",
         shows: `&bull; <b>Institutional Anchor:</b> Gulf Independent Culinary &amp; Commercial Heritage Archives, Kuwait City.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Domestic tranquility (<i>Sukun</i>), interior sanctuary, and peaceful family continuity amid rapid Arabian Gulf urbanism.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Domestic tranquility, interior sanctuary, and peaceful family continuity amid rapid Arabian Gulf urbanism.<br>
 &bull; <b>Curatorial Focus:</b> Minimalist spatial research focusing on silence, interior stillness, and private domestic geometry.`
     },
 
@@ -328,7 +333,7 @@ const mapCityData = {
     lv_riga: {
         city: "LATVIA &bull; RIGA",
         shows: `&bull; <b>Institutional Anchor:</b> Baltic Cultural Heritage &amp; Tourism Guild, Riga Bureau.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Post-Baltic historical tranquility (<i>Miers</i>), urban memory preservation, and public spatial calm.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Post-Baltic historical tranquility, urban memory preservation, and public spatial calm.<br>
 &bull; <b>Curatorial Focus:</b> Tonal color field studies reflecting Baltic atmospheric clarity, silence, and civic equilibrium.`
     },
 
@@ -344,7 +349,7 @@ const mapCityData = {
     lt_vilnius: {
         city: "LITHUANIA &bull; VILNIUS",
         shows: `&bull; <b>Institutional Anchor:</b> National Museum of Lithuania; Vilnius Academy of Arts (VAA Exhibition Halls 'Titanikas').<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Baltic historical defense, raw emotional feeling in fine art pedagogy, collective endurance, and contemporary aesthetic theory.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Baltic historical defense, raw emotional feeling in fine art pedagogy, collective endurance, and aesthetic theory.<br>
 &bull; <b>Curatorial Focus:</b> Heavy-texture impasto works and expressive gestural brushwork evaluating psychological toughness, raw human emotion, and historical continuity.`
     },
 
@@ -360,7 +365,7 @@ const mapCityData = {
     sk_bratislava: {
         city: "SLOVAKIA &bull; BRATISLAVA",
         shows: `&bull; <b>Institutional Anchor:</b> Slovak National Gallery (Old Art Collections &amp; Modern Curatorial Division).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Historical art collection curation, sacred spatial theory (<i>Chōra</i>), philosophical conviction, and Central European art preservation.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Historical art collection curation, sacred spatial theory, philosophical conviction, and Central European art preservation.<br>
 &bull; <b>Curatorial Focus:</b> Abstract spatial research probing empty space, belief systems, architectural canvas studies, and classical art conservation.`
     },
     sk_sered: {
@@ -380,13 +385,13 @@ const mapCityData = {
     at_linz: {
         city: "AUSTRIA &bull; LINZ",
         shows: `&bull; <b>Institutional Anchor:</b> Lentos Art Museum (<i>Life of a Box</i> Initiative), Department of Sculpture &amp; Painting.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Mirroring, psychological reflection, self-obsession (<i>Narzissmus</i>), and modern European museum collections.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Mirroring, psychological reflection, self-obsession, and modern European museum collections.<br>
 &bull; <b>Curatorial Focus:</b> Reflective surface studies, recycled packaging structures, and self-referential iconography.`
     },
     at_vienna: {
         city: "AUSTRIA &bull; VIENNA",
         shows: `&bull; <b>Institutional Anchor:</b> University of Vienna (Dept. of Art History &amp; Dept. of Sociology); Academy of Fine Arts Vienna (Akbild).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Visual perception, eye movement dynamics (<i>Saccades</i>), diaspora aesthetics, and socio-spatial networks.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Visual perception, eye movement dynamics, diaspora aesthetics, and socio-spatial networks.<br>
 &bull; <b>Curatorial Focus:</b> Kinetic sightline mapping, fragmented visual pathways, and displacement narratives on canvas.`
     },
     at_innsbruck: {
@@ -400,7 +405,7 @@ const mapCityData = {
     il_jerusalem: {
         city: "ISRAEL &bull; JERUSALEM",
         shows: `&bull; <b>Institutional Anchor:</b> The Hebrew University of Jerusalem &amp; Pardes Institute of Jewish Studies.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Artistic creation (<i>Yetzira</i>), Jewish historiography, and enduring cultural hope (<i>Tikvah</i>).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Artistic creation, Jewish historiography, and enduring cultural hope.<br>
 &bull; <b>Curatorial Focus:</b> Scriptural layerings, genesis motifs, and luminous golden-toned canvas studies.`
     },
 
@@ -416,7 +421,7 @@ const mapCityData = {
     de_hamburg: {
         city: "GERMANY &bull; HAMBURG",
         shows: `&bull; <b>Institutional Anchor:</b> Hamburger Kunsthalle (Contemporary Art Department).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Institutional amnesia, repressed emotional tension, memory suppression, and contemporary curation in Northern Germany.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Institutional amnesia, repressed emotional tension, memory suppression, and contemporary curation.<br>
 &bull; <b>Curatorial Focus:</b> Submerged tones, heavy grey-scale glazing, and tense gestural mark-making.`
     },
     de_stuttgart: {
@@ -428,7 +433,7 @@ const mapCityData = {
     de_frankfurt: {
         city: "GERMANY &bull; FRANKFURT",
         shows: `&bull; <b>Institutional Anchor:</b> German Library Frankfurt (<i>Life of a Box</i> Initiative); Jewish Museum Frankfurt; Goethe University Frankfurt.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Historical archives preservation, European cultural memory, future courage (<i>Zukunftsmut</i>), resilience, and post-war visual theory.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Historical archives preservation, European cultural memory, future courage, resilience, and post-war visual theory.<br>
 &bull; <b>Curatorial Focus:</b> Historical archival canvas research, forward-looking color fields, and structural paper installations.`
     },
     de_leipzig: {
@@ -439,8 +444,8 @@ const mapCityData = {
     },
     de_potsdam_berlin: {
         city: "GERMANY &bull; BERLIN &amp; POTSDAM",
-        shows: `&bull; <b>Institutional Anchor:</b> Potsdam Institute for Climate Impact Research; Humboldt University Berlin; University of Potsdam; European Roma Institute for Arts and Culture (ERIAC); Prinzessinnengarten Berlin.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Urban farming communities (<i>Nachbarschaft</i>), climate skillcraft, Earth system dynamics, Jewish intellectual history, and Roma cultural identity.<br>
+        shows: `&bull; <b>Institutional Anchor:</b> Potsdam Institute for Climate Impact Research; Humboldt University Berlin; University of Potsdam; ERIAC; Prinzessinnengarten Berlin.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Urban farming communities, climate skillcraft, Earth system dynamics, Jewish intellectual history, and Roma cultural identity.<br>
 &bull; <b>Curatorial Focus:</b> Organic pigment applications, intricate community networks, and high-intensity chromatic studies.`
     },
     de_gottingen: {
@@ -466,13 +471,13 @@ const mapCityData = {
     nl_amsterdam: {
         city: "NETHERLANDS &bull; AMSTERDAM",
         shows: `&bull; <b>Institutional Anchor:</b> Greenpeace International Secretariat; University of Amsterdam (Dept. of Philosophy, Film, &amp; Performance).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Ecological unity, non-linear cinematic flow (<i>Riverrun</i>), theatrical performance, and political resistance.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Ecological unity, non-linear cinematic flow, theatrical performance, and political resistance.<br>
 &bull; <b>Curatorial Focus:</b> Fluid-mechanics paint pouring, environmental green-palette studies, and theatrical lighting dynamics.`
     },
     nl_leiden: {
         city: "NETHERLANDS &bull; LEIDEN",
         shows: `&bull; <b>Institutional Anchor:</b> Leiden University (LUCAS, NICA, &amp; African Linguistics Department).<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Communal resource sharing (<i>Lumbung</i>), linguistic rare terms, digital disconnection, and world art studies.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Communal resource sharing, linguistic rare terms, digital disconnection, and world art studies.<br>
 &bull; <b>Curatorial Focus:</b> Network-node abstraction, fragmented digital motifs, and collaborative multi-layer canvases.`
     },
     nl_utrecht: {
@@ -487,7 +492,7 @@ const mapCityData = {
         city: "SWEDEN &bull; STOCKHOLM",
         shows: `&bull; <b>Institutional Anchor:</b> Stockholm Resilience Centre (<i>Life of a Box</i> Initiative); Stockholm University (Anthropology Dept); Södertörn University.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Ecosystem transformation, universalist philosophy, social anthropology, and atmospheric cloud patterns.<br>
-&bull; <b>Curatorial Focus:</b> Atmospheric diffuse glazing, ecological metamorphosis charts, recycled packaging structures, and expansive sky-tone fields.`
+&bull; <b>Curatorial Focus:</b> Atmospheric diffuse glazing, ecological metamorphosis charts, recycled packaging structures, and sky-tone fields.`
     },
 
     // --- FINLAND CITIES ---
@@ -499,9 +504,9 @@ const mapCityData = {
     },
     fi_helsinki: {
         city: "FINLAND &bull; HELSINKI",
-        shows: `&bull; <b>Institutional Anchor:</b> University of Helsinki (Theoretical Philosophy, Social Anthropology, Economic History, &amp; Consumer Research); Åland Islands Platform (<i>Life of a Box</i> Initiative).<br>
+        shows: `&bull; <b>Institutional Anchor:</b> University of Helsinki; Åland Islands Platform (<i>Life of a Box</i> Initiative).<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Physical resistance, geographic placement, economic frustration, consumer society ethics, and sub-arctic material transit.<br>
-&bull; <b>Curatorial Focus:</b> Heavy physical paint application, spatial coordinate grids, recycled packaging components, and intense tactile surface resistance.`
+&bull; <b>Curatorial Focus:</b> Heavy physical paint application, spatial coordinate grids, recycled packaging components, and tactile surface resistance.`
     },
 
     // --- ESTONIA CITIES ---
@@ -514,29 +519,29 @@ const mapCityData = {
     ee_tartu: {
         city: "ESTONIA &bull; TARTU",
         shows: `&bull; <b>Institutional Anchor:</b> University of Tartu (Dept. of Ethnology &amp; UNESCO Chair); Estonian National Museum.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Finno-Ugric ethnographic heritage, systemic crisis generation (<i>Crisogenic</i>), and Baltic social crisis dynamics.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Finno-Ugric ethnographic heritage, systemic crisis generation, and Baltic social crisis dynamics.<br>
 &bull; <b>Curatorial Focus:</b> Finno-Ugric cultural motifs, cold light hues, and maritime archival preservation studies.`
     },
 
     // --- CZECH REPUBLIC CITIES ---
     cz_prague: {
         city: "CZECH REPUBLIC &bull; PRAGUE",
-        shows: `&bull; <b>Institutional Anchor:</b> National Gallery Prague; Museum of Czech Literature; City Gallery Prague; KAMPA Museum; Charles University (Anthropology &amp; Sociology); Ministry of Environment.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Philosophical nothingness (<i>Nicotnost</i>), parallel social worlds, European solidarity, literary heritage, and ecological state retrospectives.<br>
+        shows: `&bull; <b>Institutional Anchor:</b> National Gallery Prague; Museum of Czech Literature; City Gallery Prague; KAMPA Museum; Charles University; Ministry of Environment.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Philosophical nothingness, parallel social worlds, European solidarity, literary heritage, and ecological state retrospectives.<br>
 &bull; <b>Curatorial Focus:</b> Monochromatic void studies, overlapping parallel spatial planes, literary text-based canvas washes, and retrospective box installations.`
     },
     cz_pilsen_regional: {
         city: "CZECH REPUBLIC &bull; PILSEN &amp; REGIONAL MUSEUMS",
-        shows: `&bull; <b>Institutional Anchor:</b> Bishopric of Pilsen; Museum of West Bohemia (Pilsen); Regional Museum in Most; GAMPA Pardubice; Schubert Center UPOL Olomouc; Museums of Jindřichův Hradec, Karlovy Vary, Kroměříž, East Prague, &amp; North Pilsen.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Spiritual struggle (<i>Zápas</i>), hope (<i>Naděje</i>), compressed space, domestic nests (<i>Hnízdo</i>), and regional Czech museum solos.<br>
+        shows: `&bull; <b>Institutional Anchor:</b> Bishopric of Pilsen; Museum of West Bohemia (Pilsen); Regional Museum in Most; GAMPA Pardubice; Schubert Center UPOL Olomouc.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Spiritual struggle, hope, compressed space, domestic nests, and regional Czech museum solos.<br>
 &bull; <b>Curatorial Focus:</b> Sacred light contrasts, nest-like woven paint structures, and compressed multi-layer canvas panels across major regional museum collections.`
     },
 
     // --- DENMARK CITIES ---
     dk_copenhagen: {
         city: "DENMARK &bull; COPENHAGEN",
-        shows: `&bull; <b>Institutional Anchor:</b> National Museum of Denmark (<i>Life of a Box</i> Initiative); Foundation for Environmental Education; University of Copenhagen (Biostatistics); Be My Eyes Platform.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Mathematical probability models (<i>Martingale</i>), civic volunteering, environmental education networks, and packaging preservation.<br>
+        shows: `&bull; <b>Institutional Anchor:</b> National Museum of Denmark (<i>Life of a Box</i> Initiative); Foundation for Environmental Education; University of Copenhagen.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Mathematical probability models, civic volunteering, environmental education networks, and packaging preservation.<br>
 &bull; <b>Curatorial Focus:</b> Algorithmic grid patterns, accessible high-contrast color arrangements, and systemic packaging sculptures.`
     },
 
@@ -553,7 +558,7 @@ const mapCityData = {
         city: "SYRIA &bull; DAMASCUS",
         shows: `&bull; <b>Institutional Anchor:</b> Syrian Cultural &amp; Diplomatic Representation.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Archival research on Levant architectural history, civil dignity under severe adversity, and ancient trade route craftsmanship.<br>
-&bull; <b>Curatorial Focus:</b> Richly textured golden and earth-toned canvases honoring the enduring dignity, architectural elegance, and historical permanence of Syrian cultural heritage.`
+&bull; <b>Curatorial Focus:</b> Richly textured golden and earth-toned canvases honoring the enduring dignity and historical permanence of Syrian cultural heritage.`
     },
 
     // --- PORTUGAL CITIES ---
@@ -569,7 +574,7 @@ const mapCityData = {
         city: "UKRAINE &bull; KYIV",
         shows: `&bull; <b>Institutional Anchor:</b> National Museum of the History of Ukraine (<i>Life of a Box</i> Initiative); Cultprojector NGO.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Urgent field inquiry into monument preservation during conflict, civic defense of art, triumph over disruption, and national identity defense.<br>
-&bull; <b>Curatorial Focus:</b> High-intensity monochromatic compositions, reclaimed museum-grade packaging paper, and dramatic color contrasts expressing victory and preservation.`
+&bull; <b>Curatorial Focus:</b> High-intensity monochromatic compositions, reclaimed museum-grade packaging paper, and dramatic color contrasts expressing victory.`
     },
 
     // --- RUSSIA CITIES ---
@@ -577,7 +582,7 @@ const mapCityData = {
         city: "RUSSIA &bull; VOLGOGRAD",
         shows: `&bull; <b>Institutional Anchor:</b> Volgograd State University.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Archival literature studies, textual preservation, and language history along the Volga basin.<br>
-&bull; <b>Curatorial Focus:</b> Layered textual and calligraphic paintings probing the weight of archived knowledge, quiet contemplation, and historical document preservation.`
+&bull; <b>Curatorial Focus:</b> Layered textual and calligraphic paintings probing the weight of archived knowledge, quiet contemplation, and document preservation.`
     },
 
     // --- LIECHTENSTEIN CITIES ---
@@ -627,21 +632,21 @@ const mapCityData = {
     },
     usa_east: {
         city: "USA &bull; EAST COAST &amp; IVY LEAGUE ACADEMIC DIRECTORATES",
-        shows: `&bull; <b>Institutional Anchor:</b> Yale University (New Haven); Columbia University (New York); Princeton University (NJ); MIT (Cambridge); Brown University (Providence); Johns Hopkins (Baltimore); Georgetown (D.C.); UPenn (PA).<br>
+        shows: `&bull; <b>Institutional Anchor:</b> Yale University; Columbia University; Princeton University; MIT; Brown University; Johns Hopkins; Georgetown; UPenn.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> High-level dialogue covering liminal astrophysics, Persian literary archives, technological ethics, environmental regeneration, and political defiance.<br>
 &bull; <b>Curatorial Focus:</b> Reclaimed packaging installations and dense calligraphic canvases dissecting human empathy, civic history, and systemic grace.`
     },
     usa_west: {
         city: "USA &bull; WEST COAST &amp; PACIFIC RIM INSTITUTIONS",
-        shows: `&bull; <b>Institutional Anchor:</b> UC System (Berkeley, Irvine, Davis, San Diego); Stanford University; Skirball Cultural Center; University of Washington (Seattle); Reed College (OR); Univ. of Hawaii; Univ. of Alaska Anchorage.<br>
+        shows: `&bull; <b>Institutional Anchor:</b> UC System; Stanford University; Skirball Cultural Center; University of Washington; Reed College; Univ. of Hawaii; Univ. of Alaska Anchorage.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Pacific Rim material traditions, structural linguistics, counter-genocidal discourse, Olfactory aesthetics, and Indigenous North American heritage.<br>
 &bull; <b>Curatorial Focus:</b> Coastal topologies, sensory perception canvases, and environmental vulnerability studies across sub-arctic and Pacific regions.`
     },
     usa_midwest_south: {
         city: "USA &bull; MIDWEST, MOUNTAIN &amp; SUNBELT INSTITUTIONS",
-        shows: `&bull; <b>Institutional Anchor:</b> University of Chicago; Northwestern; Univ. of Colorado Boulder; Indiana Univ. Bloomington; Boise State; Univ. of Utah; UT Austin; Equal Justice Initiative (Montgomery, AL); Arizona State Univ.<br>
+        shows: `&bull; <b>Institutional Anchor:</b> University of Chicago; Northwestern; Univ. of Colorado Boulder; Indiana Univ. Bloomington; Boise State; Univ. of Utah; UT Austin; Equal Justice Initiative; Arizona State Univ.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Post-colonial historiography, geopolitical art interventions, Indigenous ecological medicine, surrealist history, and racial justice reconciliation.<br>
-&bull; <b>Curatorial Focus:</b> Scalable visual systems, desert photography research, and expressive canvases addressing historical reconciliation and community resilience.`
+&bull; <b>Curatorial Focus:</b> Scalable visual systems, desert photography research, and expressive canvases addressing historical reconciliation.`
     },
 
     // --- OTHER GLOBAL CITIES ---
@@ -701,8 +706,8 @@ const mapCityData = {
     },
     nz_auckland: {
         city: "NEW ZEALAND &bull; AUCKLAND &amp; REGIONAL NODES",
-        shows: `&bull; <b>Institutional Anchor:</b> Univ. of Auckland; Waitangi Treaty Grounds; Tūhura Otago Museum (Dunedin); Wellington Youth Network; Taranaki Gallery.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Indigenous studies (Te Wānanga o Waipapa), social existence, youth psychology, and ecological packaging preservation.<br>
+        shows: `&bull; <b>Institutional Anchor:</b> Univ. of Auckland; Waitangi Treaty Grounds; Tūhura Otago Museum; Wellington Youth Network; Taranaki Gallery.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Indigenous studies, social existence, youth psychology, and ecological packaging preservation.<br>
 &bull; <b>Curatorial Focus:</b> Recycled material sculptures and canvas research probing land memory, Indigenous identity, and youth perspective archives.`
     },
     goa: {
@@ -732,13 +737,13 @@ const mapCityData = {
     alberta_calgary: {
         city: "CANADA &bull; EDMONTON &amp; CALGARY",
         shows: `&bull; <b>Institutional Anchor:</b> Univ. of Alberta (Edmonton); Univ. of Calgary; Medalta Historic District.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Nehiyaw (Cree) relational philosophy (<i>Sâkihitowin</i>), spatial acoustics, and industrial packaging heritage.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Nehiyaw (Cree) relational philosophy, spatial acoustics, and industrial packaging heritage.<br>
 &bull; <b>Curatorial Focus:</b> Prairie monographic studio research and industrial material packaging preservation.`
     },
     toronto_waterloo: {
         city: "CANADA &bull; TORONTO &amp; WATERLOO",
         shows: `&bull; <b>Institutional Anchor:</b> Seneca Polytechnic; Univ. of Waterloo; TMU; Trent Univ.; UJA Federation.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Anishinaabe peace frameworks (<i>Skén:nen</i>), youth psychology archives, and social cohesion legal frameworks.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Anishinaabe peace frameworks, youth psychology archives, and social cohesion legal frameworks.<br>
 &bull; <b>Curatorial Focus:</b> Ecological packaging preservation and visual research into human rights and Indigenous governance.`
     },
     ottawa_kingston: {
@@ -749,7 +754,7 @@ const mapCityData = {
     },
     montreal_qc: {
         city: "CANADA &bull; MONTREAL &amp; HALIFAX",
-        shows: `&bull; <b>Institutional Anchor:</b> McGill University; Native Women's Shelter of Montreal; Arteria Gallery; Dalhousie Univ. (Halifax).<br>
+        shows: `&bull; <b>Institutional Anchor:</b> McGill University; Native Women's Shelter of Montreal; Arteria Gallery; Dalhousie Univ.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> First Nations rights, medical humanities, temporal perception, and maritime sanctuary research.<br>
 &bull; <b>Curatorial Focus:</b> Bicultural philosophical canvases, Atlantic ocean studies, and recycled packaging art.`
     },
@@ -800,7 +805,7 @@ const mapCityData = {
     af_madagascar: {
         city: "MADAGASCAR &bull; ANTANANARIVO",
         shows: `&bull; <b>Institutional Anchor:</b> American School of Antananarivo.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Malagasy heritage, island ecology, ancestral memory, and systemic social well-being (<i>Sambatra</i>).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Malagasy heritage, island ecology, ancestral memory, and systemic social well-being.<br>
 &bull; <b>Curatorial Focus:</b> Tonal and environmental canvas research investigating island isolation, ancestral balance, and communal health.`
     },
     af_congo: {
@@ -818,7 +823,7 @@ const mapCityData = {
     af_pan_african_research: {
         city: "PAN-AFRICAN FIELD RESEARCH &bull; REGIONAL TERRITORIES",
         shows: `&bull; <b>Institutional Anchor:</b> Regional Anthropological &amp; Ethnographic Expeditions.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Indigenous oral traditions, disappearing dialects, mythologies, and human-nature reciprocity (<i>Kuumba</i>).<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Indigenous oral traditions, disappearing dialects, mythologies, and human-nature reciprocity.<br>
 &bull; <b>Curatorial Focus:</b> Monumental canvas retrospectives and sensory installations integrating tribal folklore and fauna iconographies.`
     },
     cn_changsha: {
@@ -876,7 +881,7 @@ function openMapDetails(key, event) {
     const frame = document.getElementById('mapCanvasFrame');
 
     if (data && popup && frame) {
-        // Apply isolation effect across nodes
+        // Isolation effect across map nodes
         allNodes.forEach(n => {
             n.classList.remove('active-node');
             n.style.opacity = '0.25';
@@ -899,7 +904,7 @@ function openMapDetails(key, event) {
             let leftPos = (nodeRect.left - frameRect.left) + 20;
             let topPos = (nodeRect.top - frameRect.top) - 20;
 
-            // Viewport & Mobile Safe Boundary Calculations
+            // Boundary Calculations for Mobile/Desktop
             if (leftPos + 300 > frameRect.width) {
                 leftPos = Math.max(10, (nodeRect.left - frameRect.left) - 310);
             }
@@ -920,7 +925,6 @@ function closeMapDetails() {
     const popup = document.getElementById('mapPopupCard');
     if (popup) popup.classList.remove('active');
 
-    // Reset visibility for all nodes
     document.querySelectorAll('.map-node').forEach(n => {
         n.classList.remove('active-node');
         n.style.opacity = '1';
@@ -942,50 +946,19 @@ function selectCityFromDropdown(key) {
     }
 }
 
-// Close map popup when clicking outside the canvas frame
-document.addEventListener('click', function(e) {
-    const frame = document.getElementById('mapCanvasFrame');
-    const selector = document.getElementById('citySelector');
-    if (frame && !frame.contains(e.target) && selector && !selector.contains(e.target)) {
-        closeMapDetails();
-    }
-});
-
-
-// --- 4. MATERIAL LIFECYCLE SCRUBBER ---
-const scrubberImages = {
-    "1": "land-texture-2.jpg",
-    "2": "words-texture-1.jpg",
-    "3": "box-texture-1.jpg"
-};
-
-function updateScrubberView(val) {
-    const img = document.getElementById('scrubberImage');
-    if (img && scrubberImages[val]) {
-        img.style.transition = 'opacity 0.2s ease';
-        img.style.opacity = '0.3';
-        
-        setTimeout(() => {
-            img.src = scrubberImages[val];
-            img.style.opacity = '1';
-        }, 120);
-    }
-}
-
-
-// --- 5. AUTHORITATIVE PROVENANCE DOSSIER REPOSITORY ---
+// --- 4. AUTHORITATIVE PROVENANCE DOSSIER REPOSITORY ---
 const dossierData = {
     equanimity: {
         code: "PROVENANCE DOSSIER · THE GLOBAL WORDS PROJECT",
         title: "The Global Words Project (A Global Collective Inspiration)",
         body: `A Multi-Decade Global Participatory Initiative:
-The Words Project is an expansive, decentralized artistic archive spanning over three decades. It operates on a singular, powerful mechanism of unified human consciousness: individuals, scholars, and communities from all over the world contribute single words to a global collective reservoir.
+The Words Project is an expansive, decentralized artistic archive spanning over three decades. It operates on a singular mechanism of unified human consciousness: individuals, scholars, and communities from all over the world contribute single words to a global collective reservoir.
 
 - The Collective Alchemy: Words donated across 500+ global institutions and thousands of participants are gathered into a shared pool. From this global reservoir, words are drawn and woven into a narrative puzzle—a description that serves as the conceptual blueprint for a monumental canvas. Every painting is a physical record of pure global collective inspiration.
 
 - Unprecedented Global Network: Built upon thousands of direct word contributions spanning state repositories, national archives, academic faculties, cultural research centers, and grass-roots communities across Europe, Asia, Africa, and the Americas.
 
-- Museum & Archival Provenance: Documented and exhibited across major international solo retrospectives, state museum collections (such as the Museum of West Bohemia), and public research archives worldwide.
+- Museum & Archival Provenance: Documented and exhibited across major international solo retrospectives, state museum collections, and public research archives worldwide.
 
 - Sovereign Philosophy: Each painting stands as proof that diverse global voices, when gathered without boundary or hierarchy, form a harmonious and permanent visual document of shared human experience.`
     },
@@ -1013,9 +986,9 @@ Voices of the Land is a monumental fine art initiative designed to honor, preser
 
 - Authenticity & Land Connection: Every concept and linguistic nuance inspiring the series is rooted in an authentic understanding of human connection to the land, cosmos, and community. Prepared using natural earth pigments and mixed media, the tactile surfaces embody the physical earth and spiritual energy of the territories they honor.
 
-- Global Institutional & Academic Network: Developed in collaboration with, and drawing from, distinguished cultural institutions, research platforms, and advocates across the globe—including Harvard University, National Gallery of Canada, Burke Museum (Seattle), University of Auckland (New Zealand), Na'kuset - Native Women’s Shelter of Montreal, Endangered Languages Project, University of Queensland Art Museum, National University of Samoa, University of Alberta, Swarthmore College, Trent University, Arizona State University, University of Wisconsin-Milwaukee, University of Manitoba, and many others alongside Indigenous Knowledge Keepers.
+- Global Institutional & Academic Network: Developed in collaboration with, and drawing from, distinguished cultural institutions, research platforms, and advocates across the globe—including Harvard University, National Gallery of Canada, Burke Museum (Seattle), University of Auckland, Na'kuset - Native Women’s Shelter of Montreal, Endangered Languages Project, University of Queensland Art Museum, National University of Samoa, University of Alberta, Swarthmore College, Trent University, Arizona State University, University of Wisconsin-Milwaukee, University of Manitoba, and Indigenous Knowledge Keepers.
 
-- Sovereign Impact: A living tribute to First Nations heritage that transcends traditional artistic boundaries—inviting the world to witness the profound depth, care, and classic elegance of Indigenous traditions that have sustained communities since time immemorial.`
+- Sovereign Impact: A living tribute to First Nations heritage that transcends traditional artistic boundaries—inviting the world to witness the profound depth, care, and classic elegance of Indigenous traditions.`
     },
     rooh_nawaz: {
         code: "PROVENANCE DOSSIER · ROOH-NAWAZ",
@@ -1023,11 +996,11 @@ Voices of the Land is a monumental fine art initiative designed to honor, preser
         body: `A Living Archive of Persian Culture, Memory & Poetic Wisdom:
 Rooh-Nawaz (روح‌نواز)—inspired by the classical concept of that which soothes the spirit—is an expansive ethnographic and fine art initiative dedicated to honoring Persian cultural heritage. By gathering contributions, memories, and poetic reflections from scholars, educators, and leaders worldwide, the project transforms personal recollections into a permanent visual testament to collective memory.
 
-- The Poetic Synthesis: Disparate linguistic fragments, verses, and philosophical donations—reflections on language as a bridge, human connection under a shared sky, relational grace, and hospitality—are pooled and woven into a singular visual narrative. Every painting serves as a living composition, proving that cultural memory is an active, evolving dialogue.
+- The Poetic Synthesis: Disparate linguistic fragments, verses, and philosophical donations are pooled and woven into a singular visual narrative. Every painting serves as a living composition, proving that cultural memory is an active, evolving dialogue.
 
 - Authenticity & Sacred Depth: Deeply rooted in Persian literature, classical poetry, and historical memory, each masterwork is realized through natural earth pigments, luminous glazes, and expressive brushwork to forge a timeless bridge between ancient heritage and modern global thought.
 
-- Global Academic & Cultural Network: Built upon direct contributions pooled across world-renowned universities and centers for Middle Eastern and Persian studies—including the University of California, Harvard University, Yale University, University of Texas at Austin, Uppsala University (Sweden), Samuel Jordan Center for Persian Studies, The Courtauld Institute of Art (London), Göttingen University, Masaryk University, Central Asia Initiative, and the MacMillan Center for International and Area Studies.
+- Global Academic & Cultural Network: Built upon direct contributions pooled across world-renowned universities and centers for Middle Eastern and Persian studies—including UC, Harvard University, Yale University, UT Austin, Uppsala University, Samuel Jordan Center for Persian Studies, The Courtauld Institute of Art, Göttingen University, Masaryk University, Central Asia Initiative, and the MacMillan Center.
 
 - Sovereign Impact: A living archive for cultural preservation that offers the international art world a dignified visual record of Persian heritage, crafted through global scholarly exchange.`
     }
@@ -1050,7 +1023,7 @@ const mombasaInscriptions = {
     "mombasa-03.jpg": {
         code: "FIELD RECORD: MBA-2008-204",
         title: "Chronicles of Mombasa · The Teacher / The Stage Actor",
-        obs: "Caught in motion, with a sleeve or scarf pulled loosely across his face in a spontaneous, playful gesture.",
+        obs: "Caught in motion, with a sleeve or scarf pulled loosely across his face in a spontaneous gesture.",
         cog: "Shy at first, he whispered that he wanted to be a teacher. After giggling behind his sweater, he pulled it down and announced boldly that he was going to be a stage actor and make people laugh."
     },
     "mombasa-04.jpg": {
@@ -1098,61 +1071,61 @@ const mombasaInscriptions = {
     "mombasa-11.jpg": {
         code: "FIELD RECORD: MBA-2008-143",
         title: "Chronicles of Mombasa · The School Principal / The Transoceanic Pilot",
-        obs: "Direct, attentive portrait in a crisp collared shirt, holding a steady and earnest expression.",
+        obs: "Direct, attentive portrait in a crisp collared shirt, holding a steady expression.",
         cog: "He started by saying he was going to be a school principal. Moments later, after watching a bird soar over the trees, he turned back with a smile and decided he would rather pilot airplanes across the ocean."
     },
     "mombasa-12.jpg": {
         code: "FIELD RECORD: MBA-2008-225",
         title: "Chronicles of Mombasa · The Motorbike Mechanic / The Bridge Architect",
-        obs: "Close-up portrait with eyes looking slightly downward in deep, quiet concentration.",
+        obs: "Close-up portrait with eyes looking slightly downward in deep concentration.",
         cog: "He spoke first about repairing motorbikes in his town. After thinking quietly for a moment, he looked up and said he wanted to design giant bridges that connect islands."
     },
     "mombasa-13.jpg": {
         code: "FIELD RECORD: MBA-2008-097",
         title: "Chronicles of Mombasa · The Sprinter / The Bicycle Craftsman",
-        obs: "Profile view in soft outdoor light, looking toward the side with an open, inquiring posture.",
+        obs: "Profile view in soft outdoor light, looking toward the side with an open posture.",
         cog: "He announced he was going to be a competitive runner. Re-interviewed shortly after, he laughed and said he would rather open a shop that builds bicycles for everyone in his village."
     },
     "mombasa-14.jpg": {
         code: "FIELD RECORD: MBA-2008-331",
         title: "Chronicles of Mombasa · The Structural Engineer / The Band Drummer",
-        obs: "Sharp, direct gaze toward the camera with an open collar and a confident, inquisitive expression.",
+        obs: "Sharp, direct gaze toward the camera with an open collar and a confident expression.",
         cog: "He declared he was going to be a structural engineer. Within minutes, hearing music nearby, he grinned and added that he also wanted to learn the drums and play in a band."
     },
     "mombasa-15.jpg": {
         code: "FIELD RECORD: MBA-2008-182",
         title: "Chronicles of Mombasa · The Home Gardener / The City Muralist",
-        obs: "High-contrast, moody close-up in deep shadow, showing a quiet, reflective expression.",
+        obs: "High-contrast, moody close-up in deep shadow, showing a quiet expression.",
         cog: "She spoke softly about growing a flower garden behind her house. Re-engaged a few moments later, her face brightened as she decided she actually wanted to paint giant murals on city buildings."
     },
     "mombasa-16.jpg": {
         code: "FIELD RECORD: MBA-2008-415",
         title: "Chronicles of Mombasa · The Farm Hand / The Astronomer",
-        obs: "Gentle portrait in a dark sweater, looking down with a subtle, contemplative expression.",
+        obs: "Gentle portrait in a dark sweater, looking down with a contemplative expression.",
         cog: "He originally thought about working on a farm. After a brief silence, he looked up and said with total enthusiasm that he wanted to study the stars and become an astronomer."
     },
     "mombasa-17.jpg": {
         code: "FIELD RECORD: MBA-2008-264",
         title: "Chronicles of Mombasa · The Footballer / The Radio Broadcaster",
-        obs: "Side profile caught mid-motion, hands raised as if clapping or explaining an idea with excitement.",
+        obs: "Side profile caught mid-motion, hands raised as if explaining an idea with excitement.",
         cog: "He spoke animatedly about playing professional football. Mid-sentence, he paused, laughed, and said, 'Actually, I want to be the announcer on the radio who shouts when someone scores!'"
     },
     "mombasa-18.jpg": {
         code: "FIELD RECORD: MBA-2008-109",
         title: "Chronicles of Mombasa · The Apprentice Carpenter / The Author",
-        obs: "Frontal portrait against a textured grassy background, with an open, conversational expression.",
+        obs: "Frontal portrait against a textured grassy background, with an open expression.",
         cog: "He mentioned wanting to be a carpenter like his uncle. Moments later, seeing someone writing in a journal, he decided he wanted to write stories and publish books instead."
     },
     "mombasa-19.jpg": {
         code: "FIELD RECORD: MBA-2008-378",
         title: "Chronicles of Mombasa · The Physician / The Solar Boat Designer",
-        obs: "Composed, formal portrait wearing a school emblem, looking directly at the camera with quiet poise.",
+        obs: "Composed, formal portrait wearing a school emblem, looking directly at the camera.",
         cog: "He stated clearly that he was going to be a doctor. Re-interviewed five minutes later, he smiled and said he might also like to build solar-powered boats for fishermen."
     },
     "mombasa-20.jpg": {
         code: "FIELD RECORD: MBA-2008-451",
         title: "Chronicles of Mombasa · The Courtroom Judge / The Sanctuary Founder",
-        obs: "Profile view with braided hair, looking intently with a strong, focused expression.",
+        obs: "Profile view with braided hair, looking intently with a focused expression.",
         cog: "She initially said she wanted to be a judge in a courtroom. After looking out across the schoolyard, her expression softened and she said she would rather run a sanctuary to care for wild animals."
     },
     "mombasa-21.jpg": {
@@ -1170,37 +1143,37 @@ const mombasaInscriptions = {
     "mombasa-23.jpg": {
         code: "FIELD RECORD: MBA-2008-042 (SECONDARY FRAME)",
         title: "Chronicles of Mombasa · The Jet Aviator / The Silent Engine Inventor",
-        obs: "Downward-angled portrait showing a quiet, contemplative expression (a second study of the child in Photo 01).",
-        cog: "In this second recording taken shortly after his first answer, he looked down in thought. Having previously mentioned piloting jets, he quietly added that he also wanted to invent new engines that don't make any noise."
+        obs: "Downward-angled portrait showing a quiet expression (a second study of the child in Photo 01).",
+        cog: "In this second recording taken shortly after his first answer, he looked down in thought. Having previously mentioned piloting jets, he quietly added that he also wanted to invent engines that don't make noise."
     },
     "mombasa-24.jpg": {
         code: "FIELD RECORD: MBA-2008-362",
         title: "Chronicles of Mombasa · The Librarian / The Adventure Writer",
-        obs: "Cropped profile view highlighting an ear and patterned collar, caught in a serene, peaceful moment.",
+        obs: "Cropped profile view highlighting an ear and patterned collar, caught in a serene moment.",
         cog: "He spoke softly about working in a library. Re-interviewed moments later, he smiled and said he’d actually rather write the adventure stories that go on the shelves."
     },
     "mombasa-25.jpg": {
         code: "FIELD RECORD: MBA-2008-209",
         title: "Chronicles of Mombasa · The Builder / The Tire Technician",
-        obs: "Direct gaze from a young child standing in a group, holding a serious and steady expression.",
+        obs: "Direct gaze from a young child standing in a group, holding a serious, steady expression.",
         cog: "He declared he was going to be a builder. A few minutes later, seeing a passing bicycle, he decided he would rather own a shop that repairs tires for his friends."
     },
     "mombasa-26.jpg": {
         code: "FIELD RECORD: MBA-2008-485",
         title: "Chronicles of Mombasa · The Pediatrician / The Oil Painter",
-        obs: "Close portrait of a young girl wearing a hooded sweater, with wide eyes peering out from beneath the fabric.",
+        obs: "Close portrait of a young girl wearing a hooded sweater, with wide eyes peering out from beneath.",
         cog: "She said she wanted to be a doctor to care for sick children. Looking out from her hood moments later, she added with equal conviction that she also wanted to learn how to paint large oil canvases."
     },
     "mombasa-27.jpg": {
         code: "FIELD RECORD: MBA-2008-161",
         title: "Chronicles of Mombasa · The Crop Farmer / The Meteorologist",
-        obs: "Inquisitive face looking upward, with wide eyes and an open, curious posture.",
+        obs: "Inquisitive face looking upward, with wide eyes and a curious posture.",
         cog: "He started out saying he wanted to grow vegetables on a farm. Looking up at the open sky, he shifted his dream to studying weather patterns and predicting rain."
     },
     "mombasa-28.jpg": {
         code: "FIELD RECORD: MBA-2008-298",
         title: "Chronicles of Mombasa · The Electrician / The Software Programmer",
-        obs: "Soft portrait with another child visible in the background, showing a quiet, contemplative face.",
+        obs: "Soft portrait with another child visible in the background, showing a quiet face.",
         cog: "He initially whispered that he wanted to be an electrician. After seeing his classmate smile behind him, he turned and said he'd rather learn how to program computers."
     },
     "mombasa-29.jpg": {
@@ -1212,34 +1185,35 @@ const mombasaInscriptions = {
     "mombasa-30.jpg": {
         code: "FIELD RECORD: MBA-2008-264 (INVERTED PERSPECTIVE)",
         title: "Chronicles of Mombasa · The Footballer-Broadcaster Dualist",
-        obs: "Horizontally mirrored study of Photo 17, capturing the child's expressive hand gesture from an inverted visual orientation.",
-        cog: "This mirrored print visualizes the child's repeated reversal of answers during the encounter. After switching from football player to sports announcer, a third inquiry prompted him to reverse direction again, happily concluding that he would simply do both."
+        obs: "Horizontally mirrored study of Photo 17, capturing the child's expressive hand gesture.",
+        cog: "This mirrored print visualizes the child's repeated reversal of answers during the encounter. After switching from football player to sports announcer, a third inquiry prompted him to conclude that he would simply do both."
     }
 };
 
 // --- MASTERWORK MUSEUM PROVENANCE CAPTION MAP ---
 const masterworkProvenance = {
     "rooh-nawaz-1.jpg": "Exhibited at the Museum of Prague West, an institutional repository founded in 1891 by Leopold Čihák.",
-    "land-spatial-2.jpg": "Exhibited at the Museum of The Pilgrimage Church of the Visitation of Virgin Mary, a 13th-century pilgrimage landmark and Northern Bohemia's premier Baroque museum.",
+    "land-spatial-2.jpg": "Exhibited at the Museum of The Pilgrimage Church of the Visitation of Virgin Mary, a 13th-century landmark and Northern Bohemia's premier Baroque museum.",
     "box-spatial-1.jpg": "Exhibited at the Museum of Ecclesiastical Art, housed within Plzeň’s 14th-century former Franciscan monastery.",
     "words-texture-1.jpg": "Exhibited at Brussels Expo as a featured highlight alongside Europe’s leading cultural and creative institutions."
 };
 
-// --- 6. INTERACTIVE MODAL & FULL-SCREEN LIGHTBOX ENGINE ---
+// --- 5. INTERACTIVE MODAL & LIGHTBOX ENGINE ---
 function openDossier(key) {
     const data = dossierData[key];
-    if (data) {
+    const modal = document.getElementById('dossierModal');
+    if (data && modal) {
         document.getElementById('modalCode').innerText = data.code;
         document.getElementById('modalTitle').innerText = data.title;
         
-        // Convert line breaks and bullet points into HTML formatting
         const formattedBody = data.body
             .split('\n\n')
             .map(paragraph => `<p style="margin-bottom: 15px; line-height: 1.8;">${paragraph.replace(/\n/g, '<br>')}</p>`)
             .join('');
 
         document.getElementById('modalBody').innerHTML = formattedBody;
-        document.getElementById('dossierModal').classList.add('active');
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
     }
 }
@@ -1247,6 +1221,9 @@ function openDossier(key) {
 function openLightbox(imageSrc, fallbackTitle) {
     const filename = imageSrc.split('/').pop();
     const item = mombasaInscriptions[filename];
+    const modal = document.getElementById('dossierModal');
+
+    if (!modal) return;
 
     if (item) {
         // Mombasa Field Record Lightbox
@@ -1262,11 +1239,11 @@ function openLightbox(imageSrc, fallbackTitle) {
             </div>
         `;
     } else {
-        // Masterwork Canvas Full-Screen Lightbox (Museum-Grade Provenance Captions)
-        const provenanceCaption = masterworkProvenance[filename] || (fallbackTitle ? `Exhibition Record: ${fallbackTitle}` : "Hesham Malik Sovereign Archive");
+        // Masterwork Canvas Lightbox
+        const provenanceCaption = masterworkProvenance[filename] || (fallbackTitle ? `Exhibition Record: ${fallbackTitle}` : "Hesham Malik Studio Archive");
 
         document.getElementById('modalCode').innerText = "FULL-SCREEN MASTERWORK VIEW";
-        document.getElementById('modalTitle').innerText = fallbackTitle || "Hesham Malik Sovereign Archive";
+        document.getElementById('modalTitle').innerText = fallbackTitle || "Hesham Malik Studio Archive";
         document.getElementById('modalBody').innerHTML = `
             <div style="text-align: center; margin-bottom: 20px;">
                 <img src="${imageSrc}" alt="${fallbackTitle}" style="max-width: 100%; max-height: 58vh; border: 1px solid var(--accent-gold, #d4af37); box-shadow: 0 15px 40px rgba(0,0,0,0.9); object-fit: contain;">
@@ -1277,7 +1254,8 @@ function openLightbox(imageSrc, fallbackTitle) {
         `;
     }
     
-    document.getElementById('dossierModal').classList.add('active');
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
 }
 
@@ -1285,27 +1263,115 @@ function closeDossier() {
     const modal = document.getElementById('dossierModal');
     if (modal) {
         modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = 'auto';
     }
 }
 
-
-// --- 7. MASTERWORK LEDGER CATEGORY FILTER ---
-function filterLedger(category, event) {
+// --- 6. MASTERWORK LEDGER CATEGORY FILTER ---
+function filterLedger(category, targetBtn) {
     const buttons = document.querySelectorAll('.ledger-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    if (event && event.target) event.target.classList.add('active');
+    buttons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+    });
+    
+    if (targetBtn) {
+        targetBtn.classList.add('active');
+        targetBtn.setAttribute('aria-selected', 'true');
+    }
 
     const rows = document.querySelectorAll('.ledger-row');
     rows.forEach(row => {
         if (category === 'all' || row.dataset.category === category) {
-            row.style.display = ''; // Reverts to stylesheet rule
+            row.style.display = '';
         } else {
             row.style.display = 'none';
         }
     });
 }
 
+// --- 7. AUTOMATIC EVENT DELEGATION & INITIALIZATION ---
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Mombasa Accordion Trigger
+    const mombasaTrigger = document.getElementById('mombasa-trigger');
+    if (mombasaTrigger) {
+        mombasaTrigger.addEventListener('click', toggleMombasaEssay);
+    }
+
+    // 2. Dossier Read Buttons
+    document.querySelectorAll('[data-dossier]').forEach(btn => {
+        btn.addEventListener('click', function() {
+            openDossier(this.getAttribute('data-dossier'));
+        });
+    });
+
+    // 3. Lightbox Images & Mosaic Cards
+    document.querySelectorAll('[data-lightbox-src]').forEach(item => {
+        item.addEventListener('click', function() {
+            const src = this.getAttribute('data-lightbox-src');
+            const caption = this.getAttribute('data-caption') || '';
+            openLightbox(src, caption);
+        });
+    });
+
+    // 4. Map Node Click Handlers
+    document.querySelectorAll('.map-node').forEach(node => {
+        node.addEventListener('click', function(e) {
+            const key = this.getAttribute('data-node');
+            openMapDetails(key, e);
+        });
+    });
+
+    // 5. City Filter Selector
+    const citySelector = document.getElementById('citySelector');
+    if (citySelector) {
+        citySelector.addEventListener('change', function() {
+            selectCityFromDropdown(this.value);
+        });
+    }
+
+    // 6. Map Popup Close Button
+    const closeMapBtn = document.getElementById('closeMapPopupBtn');
+    if (closeMapBtn) {
+        closeMapBtn.addEventListener('click', closeMapDetails);
+    }
+
+    // 7. Dossier Modal Close Buttons
+    const closeDossierBtn = document.getElementById('closeDossierBtn');
+    if (closeDossierBtn) {
+        closeDossierBtn.addEventListener('click', closeDossier);
+    }
+
+    const closeLightboxBtn = document.getElementById('closeLightboxBtn');
+    if (closeLightboxBtn) {
+        closeLightboxBtn.addEventListener('click', closeDossier);
+    }
+
+    // 8. Series Category Filter Buttons
+    document.querySelectorAll('.ledger-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            filterLedger(filter, this);
+        });
+    });
+
+    // 9. Outside Click Handler for Modal Backdrops
+    const dossierModal = document.getElementById('dossierModal');
+    if (dossierModal) {
+        dossierModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeDossier();
+            }
+        });
+    }
+
+    // 10. Macro Viewer Integration
+    const resetMacroBtn = document.getElementById('resetMacroBtn');
+    if (resetMacroBtn && typeof window.resetMacroView === 'function') {
+        resetMacroBtn.addEventListener('click', window.resetMacroView);
+    }
+});
 
 // --- 8. GLOBAL ACCESSIBILITY & KEYBOARD HANDLERS ---
 document.addEventListener('keydown', function(e) {
@@ -1315,13 +1381,11 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('dossierModal');
-    if (modal) {
-        modal.addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeDossier();
-            }
-        });
+// Close map popup when clicking outside the canvas frame
+document.addEventListener('click', function(e) {
+    const frame = document.getElementById('mapCanvasFrame');
+    const selector = document.getElementById('citySelector');
+    if (frame && !frame.contains(e.target) && selector && !selector.contains(e.target)) {
+        closeMapDetails();
     }
 });
