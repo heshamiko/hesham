@@ -875,11 +875,15 @@ The Words Project is an expansive, decentralized artistic archive spanning over 
 
 - The Collective Alchemy: Words donated across 500+ global institutions and thousands of participants are gathered into a shared pool. From this global reservoir, words are drawn and woven into a narrative puzzle—a description that serves as the conceptual blueprint for a monumental canvas. Every painting is a physical record of pure global collective inspiration.
 
+
 - Unprecedented Global Network: Built upon thousands of direct word contributions spanning state repositories, national archives, academic faculties, cultural research centers, and grass-roots communities across Europe, Asia, Africa, and the Americas.
+
 
 - Museum & Archival Provenance: Documented and exhibited across major international solo retrospectives, state museum collections, and public research archives worldwide.
 
+
 - Sovereign Philosophy: Each painting stands as proof that diverse global voices, when gathered without boundary or hierarchy, form a harmonious and permanent visual document of shared human experience.`
+
     },
     box_monograph: {
         code: "PROVENANCE DOSSIER · LIFE OF A BOX",
@@ -889,11 +893,15 @@ Life of a Box is an internationally acclaimed fine art initiative that redefines
 
 - The Core Philosophy: Every box carries a hidden trajectory of travel, human labor, and environmental impact. By embedding real packaging into high-art compositions alongside natural earth pigments and gold leaf, the project bridges industrial utility with timeless aesthetic grace.
 
+
 - Global Institutional Coverage: Featured and analyzed across major international media platforms, environmental essays, and corporate-cultural archives—including official features by Amazon, global sustainability leadership forums, state libraries, and international art periodicals.
+
 
 - State Museum Provenance: Documented in official museum catalogues and exhibited across prestigious European state repositories and cultural institutions—tracing its public journey from its inaugural presentation at the Museum of Papermaking in Duszniki-Zdrój, Poland, through national library networks, municipal museums, and global environmental summits.
 
+
 - Sovereign Impact: The project challenges how contemporary society perceives waste, proving that utility and beauty can coexist when material memory is honored through mastercraft.`
+
     },
     mowicha: {
         code: "PROVENANCE DOSSIER · VOICES OF THE LAND",
@@ -903,11 +911,15 @@ Voices of the Land is a monumental fine art initiative designed to honor, preser
 
 - A Classic Bridge of Respect: The initiative creates a respectful sanctuary where timeless ancestral knowledge connects with the modern world. By engaging with profound philosophies donated by Knowledge Keepers across continents—such as concepts of total universal interconnectedness—each work serves not merely as an artwork, but as a living act of honor, grace, and cultural preservation.
 
+
 - Authenticity & Land Connection: Every concept and linguistic nuance inspiring the series is rooted in an authentic understanding of human connection to the land, cosmos, and community. Prepared using natural earth pigments and mixed media, the tactile surfaces embody the physical earth and spiritual energy of the territories they honor.
+
 
 - Global Institutional & Academic Network: Developed in collaboration with, and drawing from, distinguished cultural institutions, research platforms, and advocates across the globe—including Harvard University, National Gallery of Canada, Burke Museum (Seattle), University of Auckland, Na'kuset - Native Women’s Shelter of Montreal, Endangered Languages Project, University of Queensland Art Museum, National University of Samoa, University of Alberta, Swarthmore College, Trent University, Arizona State University, University of Wisconsin-Milwaukee, University of Manitoba, and Indigenous Knowledge Keepers.
 
+
 - Sovereign Impact: A living tribute to First Nations heritage that transcends traditional artistic boundaries—inviting the world to witness the profound depth, care, and classic elegance of Indigenous traditions.`
+
     },
     rooh_nawaz: {
         code: "PROVENANCE DOSSIER · ROOH-NAWAZ",
@@ -917,11 +929,15 @@ Rooh-Nawaz (روح‌نواز)—inspired by the classical concept of that which
 
 - The Poetic Synthesis: Disparate linguistic fragments, verses, and philosophical donations are pooled and woven into a singular visual narrative. Every painting serves as a living composition, proving that cultural memory is an active, evolving dialogue.
 
+
 - Authenticity & Sacred Depth: Deeply rooted in Persian literature, classical poetry, and historical memory, each masterwork is realized through natural earth pigments, luminous glazes, and expressive brushwork to forge a timeless bridge between ancient heritage and modern global thought.
+
 
 - Global Academic & Cultural Network: Built upon direct contributions pooled across world-renowned universities and centers for Middle Eastern and Persian studies—including UC, Harvard University, Yale University, UT Austin, Uppsala University, Samuel Jordan Center for Persian Studies, The Courtauld Institute of Art, Göttingen University, Masaryk University, Central Asia Initiative, and the MacMillan Center.
 
+
 - Sovereign Impact: A living archive for cultural preservation that offers the international art world a dignified visual record of Persian heritage, crafted through global scholarly exchange.`
+
     }
 };
 
@@ -1207,7 +1223,7 @@ function filterLedger(category, targetBtn) {
     });
 }
 
-// --- 7. SURFACE & TEXTURE MACRO DETAIL VIEWER ENGINE (ROBUST MULTI-INPUT) ---
+// --- 7. SURFACE & TEXTURE MACRO DETAIL VIEWER ENGINE ---
 function initMacroViewerEngine() {
     const macroWindow = document.getElementById('macroWindow');
     const macroImg = document.getElementById('macroImage');
@@ -1221,14 +1237,14 @@ function initMacroViewerEngine() {
     let startX = 0;
     let startY = 0;
 
-    // Mobile touch parameters
+    // Touch parameters
     let initialPinchDistance = null;
     let initialScale = 1;
 
     function clampBoundaries() {
         const rect = macroWindow.getBoundingClientRect();
-        const maxPanX = (rect.width * (scale - 1)) / 2;
-        const maxPanY = (rect.height * (scale - 1)) / 2;
+        const maxPanX = (rect.width * scale) / 2;
+        const maxPanY = (rect.height * scale) / 2;
 
         if (scale > 1) {
             pointX = Math.min(Math.max(pointX, -maxPanX), maxPanX);
@@ -1241,19 +1257,18 @@ function initMacroViewerEngine() {
 
     function renderTransform(animate = false) {
         clampBoundaries();
-        macroImg.style.transition = animate ? 'transform 0.25s ease-out' : 'none';
+        macroImg.style.transition = animate ? 'transform 0.3s cubic-bezier(0.25, 1, 0.5, 1)' : 'none';
         macroImg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
-        macroWindow.style.cursor = scale > 1 ? (isPanning ? 'grabbing' : 'grab') : 'default';
+        macroWindow.style.cursor = isPanning ? 'grabbing' : 'grab';
     }
 
     // --- MOUSE PAN CONTROLS ---
     macroWindow.addEventListener('mousedown', function(e) {
-        if (scale <= 1) return;
         e.preventDefault();
         isPanning = true;
         startX = e.clientX - pointX;
         startY = e.clientY - pointY;
-        renderTransform();
+        renderTransform(false);
     });
 
     window.addEventListener('mousemove', function(e) {
@@ -1261,14 +1276,32 @@ function initMacroViewerEngine() {
         e.preventDefault();
         pointX = e.clientX - startX;
         pointY = e.clientY - startY;
-        renderTransform();
+        renderTransform(false);
     });
 
     window.addEventListener('mouseup', function() {
         if (isPanning) {
             isPanning = false;
-            renderTransform();
+            renderTransform(true);
         }
+    });
+
+    // --- DOUBLE CLICK / DOUBLE TAP TO ZOOM ---
+    macroWindow.addEventListener('dblclick', function(e) {
+        e.preventDefault();
+        if (scale > 1) {
+            scale = 1;
+            pointX = 0;
+            pointY = 0;
+        } else {
+            const rect = macroWindow.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left - rect.width / 2;
+            const mouseY = e.clientY - rect.top - rect.height / 2;
+            scale = 2.5;
+            pointX = -mouseX * 1.5;
+            pointY = -mouseY * 1.5;
+        }
+        renderTransform(true);
     });
 
     // --- MOUSE WHEEL ZOOM CONTROLS ---
@@ -1279,20 +1312,20 @@ function initMacroViewerEngine() {
         const mouseX = e.clientX - rect.left - rect.width / 2;
         const mouseY = e.clientY - rect.top - rect.height / 2;
 
-        const zoomFactor = e.deltaY < 0 ? 1.25 : 0.8;
-        const targetScale = Math.min(Math.max(scale * zoomFactor, 1), 4.5);
+        const zoomFactor = e.deltaY < 0 ? 1.2 : 0.83;
+        const targetScale = Math.min(Math.max(scale * zoomFactor, 1), 5.0);
 
         if (targetScale !== scale) {
             pointX += (mouseX - pointX) * (1 - targetScale / scale);
             pointY += (mouseY - pointY) * (1 - targetScale / scale);
             scale = targetScale;
-            renderTransform();
+            renderTransform(false);
         }
     }, { passive: false });
 
-    // --- TOUCH & PINCH GESTURES (MOBILE/TABLET) ---
+    // --- TOUCH & PINCH GESTURES (MOBILE / TABLET) ---
     macroWindow.addEventListener('touchstart', function(e) {
-        if (e.touches.length === 1 && scale > 1) {
+        if (e.touches.length === 1) {
             isPanning = true;
             startX = e.touches[0].clientX - pointX;
             startY = e.touches[0].clientY - pointY;
@@ -1310,21 +1343,21 @@ function initMacroViewerEngine() {
         if (e.touches.length === 1 && isPanning) {
             pointX = e.touches[0].clientX - startX;
             pointY = e.touches[0].clientY - startY;
-            renderTransform();
+            renderTransform(false);
         } else if (e.touches.length === 2 && initialPinchDistance) {
             const currentDistance = Math.hypot(
                 e.touches[0].clientX - e.touches[1].clientX,
                 e.touches[0].clientY - e.touches[1].clientY
             );
-            scale = Math.min(Math.max(initialScale * (currentDistance / initialPinchDistance), 1), 4.5);
-            renderTransform();
+            scale = Math.min(Math.max(initialScale * (currentDistance / initialPinchDistance), 1), 5.0);
+            renderTransform(false);
         }
     }, { passive: true });
 
     macroWindow.addEventListener('touchend', function() {
         isPanning = false;
         initialPinchDistance = null;
-        renderTransform();
+        renderTransform(true);
     });
 
     // --- RESET VIEW FUNCTION ---
