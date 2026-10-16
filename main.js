@@ -1,6 +1,6 @@
 /* ==========================================================================
    HESHAM MALIK — STUDIO ARCHIVE & CATALOGUE RAISONNÉ
-   Flagship Interactive Engine (main.js) - Complete Production Build
+   Flagship Interactive Engine (main.js) - Fixed Build
    ========================================================================== */
 
 // --- 1. MOMBASA ESSAY ACCORDION TOGGLE ---
@@ -25,7 +25,6 @@ function toggleMombasaEssay() {
 
 // --- 2. GLOBAL FOOTPRINT MAP DATA REPOSITORY ---
 const mapCityData = {
-    // --- UNITED KINGDOM CITIES ---
     uk_london: {
         city: "UNITED KINGDOM &bull; LONDON",
         shows: `&bull; <b>Institutional Anchor:</b> Tate; Amazon UK; Index on Censorship; Courtauld Institute of Art; University College London (UCL); SOAS University of London; Queen Mary University of London; London School of Economics (LSE); Peace Direct; Conciliation Resources.<br>
@@ -92,16 +91,12 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Interdisciplinary focus spanning eco-material conservation, film aesthetics, philosophy of art, and avian ecosystem stewardship.<br>
 &bull; <b>Curatorial Focus:</b> Dynamic feathered visual textures and light studies examining natural conservation, crepuscular light, and aesthetic philosophy.`
     },
-
-    // --- SAUDI ARABIA CITIES ---
     sa_riyadh: {
         city: "SAUDI ARABIA &bull; RIYADH",
         shows: `&bull; <b>Institutional Anchor:</b> Qiddiya Cultural &amp; Development Authority, Riyadh Development Zone.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Spatial transformation, mega-scale urban transitions, and shifting cultural topographies in the Arabian Peninsula.<br>
 &bull; <b>Curatorial Focus:</b> Strategic exploration of architectural evolution and geographic turning points integrated into dynamic canvas studies.`
     },
-
-    // --- SWITZERLAND CITIES ---
     ch_geneva: {
         city: "SWITZERLAND &bull; GENEVA",
         shows: `&bull; <b>Institutional Anchor:</b> International Committee of the Red Cross.<br>
@@ -126,8 +121,6 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Territorial planning, architectural history, conflict transformation, equanimity, and spatial togetherness.<br>
 &bull; <b>Curatorial Focus:</b> Architectural grid structures, warm territorial earth tones, and reclaimed ecological material studies examining social cohesion.`
     },
-
-    // --- ITALY CITIES ---
     it_bologna: {
         city: "ITALY &bull; BOLOGNA",
         shows: `&bull; <b>Institutional Anchor:</b> University of Bologna (Department of Philosophy).<br>
@@ -146,8 +139,6 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Historical papermaking technologies, watermark embedding, and archival packaging preservation.<br>
 &bull; <b>Curatorial Focus:</b> Fibrous paper-pulp textures, watermark transparency studies, and tactile canvas aging techniques.`
     },
-
-    // --- FRANCE CITIES ---
     fr_paris: {
         city: "FRANCE &bull; PARIS",
         shows: `&bull; <b>Institutional Anchor:</b> Sorbonne University; Université Paris Cité; Sorbonne Business School; Amnesty International "Art for Amnesty" Platform; American School of Paris; IDDRI.<br>
@@ -166,8 +157,6 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Caribbean contemporary art platforms, Francophone Atlantic dialogue, serendipitous artistic practices, and multi-layered island cultural heritage.<br>
 &bull; <b>Curatorial Focus:</b> Tropical color chance-operations, vibrant island topographies, and post-colonial artistic identity.`
     },
-
-    // --- PALESTINE CITIES ---
     ps_gaza: {
         city: "PALESTINE &bull; GAZA",
         shows: `&bull; <b>Institutional Anchor:</b> Culture and Free Thought Association.<br>
@@ -180,56 +169,42 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Cultural resistance, theatrical expression, and community resilience within refugee camp environments.<br>
 &bull; <b>Curatorial Focus:</b> Monochromatic and high-contrast structural studies translating physical theater and collective memory into quiet testaments to endurance.`
     },
-
-    // --- ICELAND CITIES ---
     is_reykjavik: {
         city: "ICELAND &bull; REYKJAVÍK",
         shows: `&bull; <b>Institutional Anchor:</b> University of Iceland (Faculty of Icelandic &amp; Comparative Cultural Studies &amp; Dept. of Anthropology).<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Nordic island blessings, social friction, human survival, and saga literature.<br>
 &bull; <b>Curatorial Focus:</b> Volcanic mineral textures, stark high-latitude color contrasts, and sparse abstract compositions mapping environmental harshness.`
     },
-
-    // --- GUYANA CITIES ---
     gy_georgetown: {
         city: "GUYANA &bull; GEORGETOWN",
         shows: `&bull; <b>Institutional Anchor:</b> University of Guyana (Dept. of Language and Cultural Studies).<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Caribbean and Amazonian linguistic identity, quietude, post-colonial silence, interiority, and oral histories.<br>
 &bull; <b>Curatorial Focus:</b> Subdued color palettes, rainforest stillness, and atmospheric landscape studies capturing Northern South American cultural depth.`
     },
-
-    // --- JORDAN CITIES ---
     jo_amman: {
         city: "JORDAN &bull; AMMAN",
         shows: `&bull; <b>Institutional Anchor:</b> The University of Jordan (School of Arts &amp; Design &amp; Dept. of Music).<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Levantine sacred grace, sonic uncertainty, Levantine typography, and Middle Eastern visual communication frameworks.<br>
 &bull; <b>Curatorial Focus:</b> Calligraphic abstraction, harmonic tension, and fluid visual rhythms translating traditional Levantine musical structures.`
     },
-
-    // --- MAURITIUS CITIES ---
     mu_reduit: {
         city: "MAURITIUS &bull; RÉDUIT",
         shows: `&bull; <b>Institutional Anchor:</b> University of Mauritius.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Island biodiversity, environmental ethics, oceanographic isolation, and inter-ethnic empathy within multicultural island topologies.<br>
 &bull; <b>Curatorial Focus:</b> Vibrant, light-filled color studies probing ecological fragility, Indian Ocean marine heritage, and island interconnectedness.`
     },
-
-    // --- OMAN CITIES ---
     om_muscat: {
         city: "OMAN &bull; MUSCAT",
         shows: `&bull; <b>Institutional Anchor:</b> Sultan Qaboos University (Dept. of Art Education &amp; Graphic Design).<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Sacred geometry, ontological evolution, Gulf visual arts pedagogy, and coastal trade history.<br>
 &bull; <b>Curatorial Focus:</b> Spiritual minimalism, continuous line work, and architectural canvas treatments utilizing desert pigments and luminous tones.`
     },
-
-    // --- ARGENTINA CITIES ---
     ar_buenosaires: {
         city: "ARGENTINA &bull; BUENOS AIRES",
         shows: `&bull; <b>Institutional Anchor:</b> National University of Tres de Febrero (UNTREF), Centre for Genocide Studies.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Scholarly dialogue on historical rupture, memory, and destruction/historical watersheds.<br>
 &bull; <b>Curatorial Focus:</b> Exploration of exile, historical continuity, and global Jewish heritage transformed into large-scale canvas research.`
     },
-
-    // --- BELGIUM CITIES ---
     be_brussels: {
         city: "BELGIUM &bull; BRUSSELS",
         shows: `&bull; <b>Institutional Anchor:</b> Brussels Expo; Vrije Universiteit Brussel (Dept. of Art History &amp; Archaeology); CEPS; Green Door Gallery.<br>
@@ -248,8 +223,6 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Flemish art conservation, aesthetic theory, and municipal packaging preservation in historic Belgian centers.<br>
 &bull; <b>Curatorial Focus:</b> Cardboard-ground panel compositions and natural color fields reflecting Flemish painterly traditions and archival protection.`
     },
-
-    // --- POLAND CITIES ---
     pl_duszniki: {
         city: "POLAND &bull; DUSZNIKI-ZDRÓJ",
         shows: `&bull; <b>Institutional Anchor:</b> Museum of Papermaking (<i>Life of a Box</i> Initiative).<br>
@@ -274,8 +247,6 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Classical painterly rigor, historical fine art pedagogy, and rare linguistic concepts in contemporary visual art.<br>
 &bull; <b>Curatorial Focus:</b> Precision-driven canvas works utilizing classical glazing methods to explore unique linguistic events and historical memory.`
     },
-
-    // --- SLOVENIA CITIES ---
     si_ljubljana: {
         city: "SLOVENIA &bull; LJUBLJANA",
         shows: `&bull; <b>Institutional Anchor:</b> Rog Creative Center (<i>Life of a Box</i> Initiative); University of Ljubljana (Department of Art History).<br>
@@ -288,80 +259,60 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Adriatic humanism, coastal philosophical traditions, and political hesitation in modern social structures.<br>
 &bull; <b>Curatorial Focus:</b> Coastal light studies and balanced abstract canvases probing psychological uncertainty and Mediterranean philosophy.`
     },
-
-    // --- CROATIA CITIES ---
     hr_zagreb: {
         city: "CROATIA &bull; ZAGREB",
         shows: `&bull; <b>Institutional Anchor:</b> University of Zagreb, Academy of Fine Arts &amp; International Academic Directorate.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Balkan fine arts heritage, institutional exchange, and narratives of systemic disillusionment.<br>
 &bull; <b>Curatorial Focus:</b> Structural canvas compositions addressing fragmented perceptions, narrative shifts, chiaroscuro techniques, and visual history.`
     },
-
-    // --- ARMENIA CITIES ---
     am_yerevan: {
         city: "ARMENIA &bull; YEREVAN",
         shows: `&bull; <b>Institutional Anchor:</b> Sexual Assault Crisis Center / Human Rights Advocacy Axis, Yerevan.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Trauma studies, social defense mechanisms, bodily autonomy, recovery frameworks, and support systems.<br>
 &bull; <b>Curatorial Focus:</b> Raw tactile canvas research investigating resilience, personal boundary protection, and societal restoration.`
     },
-
-    // --- BELARUS CITIES ---
     by_minsk: {
         city: "BELARUS &bull; MINSK",
         shows: `&bull; <b>Institutional Anchor:</b> ICOMOS Belarusian National Committee, Historical Preservation Forum.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Heritage conservation under institutional restraint, architectural sovereignty, and human agency.<br>
 &bull; <b>Curatorial Focus:</b> Layered material research probing the limits of preservation, structural memory, and cultural persistence.`
     },
-
-    // --- BULGARIA CITIES ---
     bg_sofia: {
         city: "BULGARIA &bull; SOFIA",
         shows: `&bull; <b>Institutional Anchor:</b> BlueLink Environmental Foundation &amp; American College of Sofia Cultural Axis.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Civil society dynamics, ecological equilibrium, absolute educational structures, and civic balance in Southeast Europe.<br>
 &bull; <b>Curatorial Focus:</b> Studies in tension, harmonic proportions, and binary balance applied to large-scale mixed-media panels.`
     },
-
-    // --- KUWAIT CITIES ---
     kw_kuwaitcity: {
         city: "KUWAIT &bull; KUWAIT CITY",
         shows: `&bull; <b>Institutional Anchor:</b> Gulf Independent Culinary &amp; Commercial Heritage Archives, Kuwait City.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Domestic tranquility, interior sanctuary, and peaceful family continuity amid rapid Arabian Gulf urbanism.<br>
 &bull; <b>Curatorial Focus:</b> Minimalist spatial research focusing on silence, interior stillness, and private domestic geometry.`
     },
-
-    // --- LATVIA CITIES ---
     lv_riga: {
         city: "LATVIA &bull; RIGA",
         shows: `&bull; <b>Institutional Anchor:</b> Baltic Cultural Heritage &amp; Tourism Guild, Riga Bureau.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Post-Baltic historical tranquility, urban memory preservation, and public spatial calm.<br>
 &bull; <b>Curatorial Focus:</b> Tonal color field studies reflecting Baltic atmospheric clarity, silence, and civic equilibrium.`
     },
-
-    // --- SPAIN CITIES ---
     es_madrid: {
         city: "SPAIN &bull; MADRID",
         shows: `&bull; <b>Institutional Anchor:</b> Mapfre Cultural Foundation (<i>Life of a Box</i> Initiative) &amp; Ecosistema Urbano Architectural Lab.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Urban aesthetics, sustainable architectural design, classical visual proportions, and packaging recycling in Iberian contexts.<br>
 &bull; <b>Curatorial Focus:</b> Harmony, urban surface tension, cardboard structural installations, and geometric elegance mapped onto multi-panel canvases.`
     },
-
-    // --- LITHUANIA CITIES ---
     lt_vilnius: {
         city: "LITHUANIA &bull; VILNIUS",
         shows: `&bull; <b>Institutional Anchor:</b> National Museum of Lithuania; Vilnius Academy of Arts (VAA Exhibition Halls 'Titanikas').<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Baltic historical defense, raw emotional feeling in fine art pedagogy, collective endurance, and aesthetic theory.<br>
 &bull; <b>Curatorial Focus:</b> Heavy-texture impasto works and expressive gestural brushwork evaluating psychological toughness, raw human emotion, and historical continuity.`
     },
-
-    // --- CYPRUS CITIES ---
     cy_nicosia: {
         city: "CYPRUS &bull; NICOSIA",
         shows: `&bull; <b>Institutional Anchor:</b> Ministry of Culture, Division of Arts &amp; Historical Heritage, Republic of Cyprus.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Island division dynamics, Levant trade history, strategic cultural horizons, and long-term Mediterranean art preservation.<br>
 &bull; <b>Curatorial Focus:</b> Horizon-line studies, focal perspective, and visual clarity across complex geographic histories.`
     },
-
-    // --- SLOVAKIA CITIES ---
     sk_bratislava: {
         city: "SLOVAKIA &bull; BRATISLAVA",
         shows: `&bull; <b>Institutional Anchor:</b> Slovak National Gallery (Old Art Collections &amp; Modern Curatorial Division).<br>
@@ -380,8 +331,6 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Municipal packaging cycles, civic art integration, and regional Slovak transit lines.<br>
 &bull; <b>Curatorial Focus:</b> Cardboard packaging reconstruction and material reuse in modern sculpture.`
     },
-
-    // --- AUSTRIA CITIES ---
     at_linz: {
         city: "AUSTRIA &bull; LINZ",
         shows: `&bull; <b>Institutional Anchor:</b> Lentos Art Museum (<i>Life of a Box</i> Initiative), Department of Sculpture &amp; Painting.<br>
@@ -400,24 +349,18 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Alpine philosophical traditions, ethical certainty, practical philosophy, and institutional trust structures.<br>
 &bull; <b>Curatorial Focus:</b> Structural balance and grounded color fields reflecting philosophical stability.`
     },
-
-    // --- ISRAEL CITIES ---
     il_jerusalem: {
         city: "ISRAEL &bull; JERUSALEM",
         shows: `&bull; <b>Institutional Anchor:</b> The Hebrew University of Jerusalem &amp; Pardes Institute of Jewish Studies.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Artistic creation, Jewish historiography, and enduring cultural hope.<br>
 &bull; <b>Curatorial Focus:</b> Scriptural layerings, genesis motifs, and luminous golden-toned canvas studies.`
     },
-
-    // --- HUNGARY CITIES ---
     hu_budapest: {
         city: "HUNGARY &bull; BUDAPEST",
         shows: `&bull; <b>Institutional Anchor:</b> Ludwig Museum of Contemporary Art &amp; Central European University (Romani Studies Program).<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Institutional compliance, systemic mandates, minority visibility, post-communist cultural shifts, and social repair.<br>
 &bull; <b>Curatorial Focus:</b> Grid-locked geometric tension juxtaposed with mended, stitched-canvas repair techniques.`
     },
-
-    // --- GERMANY CITIES ---
     de_hamburg: {
         city: "GERMANY &bull; HAMBURG",
         shows: `&bull; <b>Institutional Anchor:</b> Hamburger Kunsthalle (Contemporary Art Department).<br>
@@ -466,8 +409,6 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Northern Renaissance printmaking legacies, master craft traditions, and historical box packaging preservation.<br>
 &bull; <b>Curatorial Focus:</b> Precision line work, woodcut-inspired canvas etching, and historic material recycling.`
     },
-
-    // --- NETHERLANDS CITIES ---
     nl_amsterdam: {
         city: "NETHERLANDS &bull; AMSTERDAM",
         shows: `&bull; <b>Institutional Anchor:</b> Greenpeace International Secretariat; University of Amsterdam (Dept. of Philosophy, Film, &amp; Performance).<br>
@@ -486,16 +427,12 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Logic-based methods, AI ethics, theoretical philosophy, linguistic negation, and human regret.<br>
 &bull; <b>Curatorial Focus:</b> Algorithmic geometric systems, structural binary canvas maps, and subdued tonal grids.`
     },
-
-    // --- SWEDEN CITIES ---
     se_stockholm: {
         city: "SWEDEN &bull; STOCKHOLM",
         shows: `&bull; <b>Institutional Anchor:</b> Stockholm Resilience Centre (<i>Life of a Box</i> Initiative); Stockholm University (Anthropology Dept); Södertörn University.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Ecosystem transformation, universalist philosophy, social anthropology, and atmospheric cloud patterns.<br>
 &bull; <b>Curatorial Focus:</b> Atmospheric diffuse glazing, ecological metamorphosis charts, recycled packaging structures, and sky-tone fields.`
     },
-
-    // --- FINLAND CITIES ---
     fi_oulu: {
         city: "FINLAND &bull; OULU (CAPITAL OF CULTURE 2026)",
         shows: `&bull; <b>Institutional Anchor:</b> Oulu European Capital of Culture 2026; Galleria MABD.<br>
@@ -508,8 +445,6 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Physical resistance, geographic placement, economic frustration, consumer society ethics, and sub-arctic material transit.<br>
 &bull; <b>Curatorial Focus:</b> Heavy physical paint application, spatial coordinate grids, recycled packaging components, and tactile surface resistance.`
     },
-
-    // --- ESTONIA CITIES ---
     ee_tallinn: {
         city: "ESTONIA &bull; TALLINN",
         shows: `&bull; <b>Institutional Anchor:</b> Pop and Contemporary Art Museum (PoCo).<br>
@@ -522,8 +457,6 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Finno-Ugric ethnographic heritage, systemic crisis generation, and Baltic social crisis dynamics.<br>
 &bull; <b>Curatorial Focus:</b> Finno-Ugric cultural motifs, cold light hues, and maritime archival preservation studies.`
     },
-
-    // --- CZECH REPUBLIC CITIES ---
     cz_prague: {
         city: "CZECH REPUBLIC &bull; PRAGUE",
         shows: `&bull; <b>Institutional Anchor:</b> National Gallery Prague; Museum of Czech Literature; City Gallery Prague; KAMPA Museum; Charles University; Ministry of Environment.<br>
@@ -537,64 +470,48 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Architectural dialogue within monumental Baroque sites, regional Czech heritage, compressed spatial forms, and historical memory.<br>
 &bull; <b>Curatorial Focus:</b> Sacred light contrasts, nest-like woven paint structures, and multi-layered canvas masterworks housed across historic regional museums.`
     },
-
-    // --- DENMARK CITIES ---
     dk_copenhagen: {
         city: "DENMARK &bull; COPENHAGEN",
         shows: `&bull; <b>Institutional Anchor:</b> National Museum of Denmark (<i>Life of a Box</i> Initiative); Foundation for Environmental Education; University of Copenhagen.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Mathematical probability models, civic volunteering, environmental education networks, and packaging preservation.<br>
 &bull; <b>Curatorial Focus:</b> Algorithmic grid patterns, accessible high-contrast color arrangements, and systemic packaging sculptures.`
     },
-
-    // --- GREECE CITIES ---
     gr_athens: {
         city: "GREECE &bull; ATHENS",
         shows: `&bull; <b>Institutional Anchor:</b> Athens School of Fine Arts (Dept. of Theory and History of Art).<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Classical aesthetic theory, Mediterranean cultural memory, and the philosophy of oblivion versus historical preservation.<br>
 &bull; <b>Curatorial Focus:</b> Monochromatic, stone-textured canvases exploring archaeological memory, classical myth structures, and the persistence of light through decay.`
     },
-
-    // --- SYRIA CITIES ---
     sy_damascus: {
         city: "SYRIA &bull; DAMASCUS",
         shows: `&bull; <b>Institutional Anchor:</b> Syrian Cultural &amp; Diplomatic Representation.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Archival research on Levant architectural history, civil dignity under severe adversity, and ancient trade route craftsmanship.<br>
 &bull; <b>Curatorial Focus:</b> Richly textured golden and earth-toned canvases honoring the enduring dignity and historical permanence of Syrian cultural heritage.`
     },
-
-    // --- PORTUGAL CITIES ---
     pt_lisbon: {
         city: "PORTUGAL &bull; LISBON",
         shows: `&bull; <b>Institutional Anchor:</b> On the Move; Casa Oxente.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Lusophone diaspora narratives, maritime migration, emotional geography, and the untranslatable state of longing (<i>Saudade</i>).<br>
 &bull; <b>Curatorial Focus:</b> Fluid, oceanic canvas works incorporating deep indigo and raw linen textures to capture memory, distance, and Atlantic cultural connections.`
     },
-
-    // --- UKRAINE CITIES ---
     ua_kyiv: {
         city: "UKRAINE &bull; KYIV",
         shows: `&bull; <b>Institutional Anchor:</b> National Museum of the History of Ukraine (<i>Life of a Box</i> Initiative); Cultprojector NGO.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Urgent field inquiry into monument preservation during conflict, civic defense of art, triumph over disruption, and national identity defense.<br>
 &bull; <b>Curatorial Focus:</b> High-intensity monochromatic compositions, reclaimed museum-grade packaging paper, and dramatic color contrasts expressing victory.`
     },
-
-    // --- RUSSIA CITIES ---
     ru_volgograd: {
         city: "RUSSIA &bull; VOLGOGRAD",
         shows: `&bull; <b>Institutional Anchor:</b> Volgograd State University.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Archival literature studies, textual preservation, and language history along the Volga basin.<br>
 &bull; <b>Curatorial Focus:</b> Layered textual and calligraphic paintings probing the weight of archived knowledge, quiet contemplation, and document preservation.`
     },
-
-    // --- LIECHTENSTEIN CITIES ---
     li_vaduz: {
         city: "LIECHTENSTEIN &bull; VADUZ",
         shows: `&bull; <b>Institutional Anchor:</b> The Princely Collections – Art History Library.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Masterwork archival analysis, historical patronage systems, and technical innovation in classical European painting.<br>
 &bull; <b>Curatorial Focus:</b> Intricate visual studies drawing on Renaissance and Baroque material techniques, exploring intellectual ingenuity and fine art collecting.`
     },
-
-    // --- UNITED ARAB EMIRATES CITIES ---
     ae_abudhabi: {
         city: "UNITED ARAB EMIRATES &bull; ABU DHABI",
         shows: `&bull; <b>Institutional Anchor:</b> The Arts Center at NYU Abu Dhabi; Abu Dhabi University.<br>
@@ -607,24 +524,18 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Contemporary Middle Eastern cultural studies, urban development, and humanistic philosophy in modern Gulf hubs.<br>
 &bull; <b>Curatorial Focus:</b> Architectural canvas research probing modern identity, urban topography, and human connection in fast-evolving metropolises.`
     },
-
-    // --- KYRGYZSTAN CITIES ---
     kg_bishkek: {
         city: "KYRGYZSTAN &bull; BISHKEK",
         shows: `&bull; <b>Institutional Anchor:</b> American University of Central Asia.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Nomadic heritage studies, high-altitude environmental adaptability, Silk Road historical preservation, and post-Soviet identity.<br>
 &bull; <b>Curatorial Focus:</b> Earth-pigment paintings and woven-texture studies reflecting mountain topographies, nomadic resilience, and Central Asian cultural history.`
     },
-
-    // --- MONTENEGRO CITIES ---
     me_ljesevici: {
         city: "MONTENEGRO &bull; LJEŠEVIĆI",
         shows: `&bull; <b>Institutional Anchor:</b> ORATIO Foundation.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Mediterranean coastal history, civic gratitude, and the role of quiet reflection in modern Balkan dialogue.<br>
 &bull; <b>Curatorial Focus:</b> Luminous coastal landscapes and meditative abstract canvases reflecting Adriatic light, peace, and human connection.`
     },
-
-    // --- NORTH AMERICA NODES ---
     harvard: {
         city: "USA &bull; CAMBRIDGE &amp; HARVARD ACADEMIC NETWORK",
         shows: `&bull; <b>Institutional Anchor:</b> Harvard University Academic Directorate (Arts + Mind Lab, Dept. of Anthropology, Graduate School of Design, Harvard Divinity School, Law School, Public Health).<br>
@@ -649,8 +560,6 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Post-colonial historiography, geopolitical art interventions, Indigenous ecological medicine, surrealist history, and racial justice reconciliation.<br>
 &bull; <b>Curatorial Focus:</b> Scalable visual systems, desert photography research, and expressive canvases addressing historical reconciliation.`
     },
-
-    // --- OTHER GLOBAL CITIES ---
     au_brisbane_qld: {
         city: "AUSTRALIA &bull; BRISBANE",
         shows: `&bull; <b>Institutional Anchor:</b> University of Queensland Art Museum &amp; Outer Space Directorate.<br>
@@ -765,8 +674,6 @@ const mapCityData = {
 &bull; <b>Field &amp; Conceptual Research:</b> Sub-Arctic ecological material research, Inuit existential philosophy, and prairie landscape scale.<br>
 &bull; <b>Curatorial Focus:</b> Northern recycled packaging research and wide-format prairie landscape compositions.`
     },
-
-    // --- AFRICAN CITIES ---
     af_pretoria: {
         city: "SOUTH AFRICA &bull; PRETORIA",
         shows: `&bull; <b>Institutional Anchor:</b> Centre for Human Rights — University of Pretoria.<br>
@@ -882,7 +789,6 @@ function openMapDetails(key, event) {
     const frame = document.getElementById('mapCanvasFrame');
 
     if (data && popup && frame) {
-        // Isolation effect across map nodes
         allNodes.forEach(n => {
             n.classList.remove('active-node');
             n.style.opacity = '0.25';
@@ -898,14 +804,12 @@ function openMapDetails(key, event) {
 
         popup.classList.add('active');
 
-        // Responsive Map Positioning Engine
         if (nodeElem) {
             const nodeRect = nodeElem.getBoundingClientRect();
             const frameRect = frame.getBoundingClientRect();
             const isMobile = window.innerWidth <= 768;
 
             if (isMobile) {
-                // Fixed docked card at the bottom of the frame on mobile screens
                 popup.style.left = '10px';
                 popup.style.right = '10px';
                 popup.style.top = 'auto';
@@ -919,7 +823,6 @@ function openMapDetails(key, event) {
                 let leftPos = (nodeRect.left - frameRect.left) + 20;
                 let topPos = (nodeRect.top - frameRect.top) - 20;
 
-                // Boundary Calculations for Mobile/Desktop
                 if (leftPos + 320 > frameRect.width) {
                     leftPos = Math.max(10, (nodeRect.left - frameRect.left) - 330);
                 }
@@ -1022,7 +925,7 @@ Rooh-Nawaz (روح‌نواز)—inspired by the classical concept of that which
     }
 };
 
-// --- MOMBASA ARCHIVAL INSCRIPTIONS MATRIX (30 PORTRAIT FIELD RECORDS) ---
+// --- MOMBASA FIELD RECORDS MATRIX ---
 const mombasaInscriptions = {
     "mombasa-01.jpg": {
         code: "FIELD RECORD: MBA-2008-042",
@@ -1206,7 +1109,6 @@ const mombasaInscriptions = {
     }
 };
 
-// --- MASTERWORK MUSEUM PROVENANCE CAPTION MAP ---
 const masterworkProvenance = {
     "rooh-nawaz-1.jpg": "Exhibited at the Museum of Prague West, an institutional repository founded in 1891 by Leopold Čihák.",
     "land-spatial-2.jpg": "Exhibited at the Museum of The Pilgrimage Church of the Visitation of Virgin Mary, a 13th-century landmark and Northern Bohemia's premier Baroque museum.",
@@ -1214,7 +1116,7 @@ const masterworkProvenance = {
     "words-canvas-main.jpg": "Presented as part of the prominent international showcase, Brussels Expo: Empowering Europe’s Creative Industries."
 };
 
-// --- 5. INTERACTIVE MODAL & LIGHTBOX ENGINE ---
+// --- 5. MODAL & LIGHTBOX ENGINE ---
 function openDossier(key) {
     const data = dossierData[key];
     const modal = document.getElementById('dossierModal');
@@ -1242,7 +1144,6 @@ function openLightbox(imageSrc, fallbackTitle) {
     if (!modal) return;
 
     if (item) {
-        // Mombasa Field Record Lightbox
         document.getElementById('modalCode').innerText = item.code;
         document.getElementById('modalTitle').innerText = item.title;
         document.getElementById('modalBody').innerHTML = `
@@ -1255,7 +1156,6 @@ function openLightbox(imageSrc, fallbackTitle) {
             </div>
         `;
     } else {
-        // Masterwork Canvas Lightbox
         const provenanceCaption = masterworkProvenance[filename] || (fallbackTitle ? `Exhibition Record: ${fallbackTitle}` : "Hesham Malik Studio Archive");
 
         document.getElementById('modalCode').innerText = "FULL-SCREEN MASTERWORK VIEW";
@@ -1284,7 +1184,7 @@ function closeDossier() {
     }
 }
 
-// --- 6. MASTERWORK LEDGER CATEGORY FILTER ---
+// --- 6. MASTERWORK LEDGER FILTER ---
 function filterLedger(category, targetBtn) {
     const buttons = document.querySelectorAll('.ledger-btn');
     buttons.forEach(btn => {
@@ -1307,113 +1207,7 @@ function filterLedger(category, targetBtn) {
     });
 }
 
-// --- 7. AUTOMATIC EVENT DELEGATION & INITIALIZATION ---
-document.addEventListener('DOMContentLoaded', function() {
-    // 1. Mombasa Accordion Trigger
-    const mombasaTrigger = document.getElementById('mombasa-trigger');
-    if (mombasaTrigger) {
-        mombasaTrigger.addEventListener('click', toggleMombasaEssay);
-    }
-
-    // 2. Dossier Read Buttons
-    document.querySelectorAll('[data-dossier]').forEach(btn => {
-        btn.addEventListener('click', function() {
-            openDossier(this.getAttribute('data-dossier'));
-        });
-    });
-
-    // 3. Lightbox Images & Mosaic Cards
-    document.querySelectorAll('[data-lightbox-src]').forEach(item => {
-        item.addEventListener('click', function() {
-            const src = this.getAttribute('data-lightbox-src');
-            const caption = this.getAttribute('data-caption') || '';
-            openLightbox(src, caption);
-        });
-    });
-
-    // 4. Map Node Click Handlers
-    document.querySelectorAll('.map-node').forEach(node => {
-        node.addEventListener('click', function(e) {
-            const key = this.getAttribute('data-node');
-            openMapDetails(key, e);
-        });
-    });
-
-    // 5. City Filter Selector
-    const citySelector = document.getElementById('citySelector');
-    if (citySelector) {
-        citySelector.addEventListener('change', function() {
-            selectCityFromDropdown(this.value);
-        });
-    }
-
-    // 6. Map Popup Close Button
-    const closeMapBtn = document.getElementById('closeMapPopupBtn');
-    if (closeMapBtn) {
-        closeMapBtn.addEventListener('click', closeMapDetails);
-    }
-
-    // 7. Dossier Modal Close Buttons
-    const closeDossierBtn = document.getElementById('closeDossierBtn');
-    if (closeDossierBtn) {
-        closeDossierBtn.addEventListener('click', closeDossier);
-    }
-
-    const closeLightboxBtn = document.getElementById('closeLightboxBtn');
-    if (closeLightboxBtn) {
-        closeLightboxBtn.addEventListener('click', closeDossier);
-    }
-
-    // 8. Series Category Filter Buttons
-    document.querySelectorAll('.ledger-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const filter = this.getAttribute('data-filter');
-            filterLedger(filter, this);
-        });
-    });
-
-    // 9. Outside Click Handler for Modal Backdrops
-    const dossierModal = document.getElementById('dossierModal');
-    if (dossierModal) {
-        dossierModal.addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeDossier();
-            }
-        });
-    }
-
-    // 10. Macro Viewer Reset Button Binding
-    const resetMacroBtn = document.getElementById('resetMacroBtn');
-    if (resetMacroBtn) {
-        resetMacroBtn.addEventListener('click', function() {
-            if (typeof window.resetMacroView === 'function') {
-                window.resetMacroView();
-            }
-        });
-    }
-
-    // 11. Initialize Bounded Macro Detail Viewer Engine
-    initMacroViewerEngine();
-});
-
-// --- 8. GLOBAL ACCESSIBILITY & KEYBOARD HANDLERS ---
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closeDossier();
-        closeMapDetails();
-    }
-});
-
-// Close map popup when clicking outside the canvas frame
-document.addEventListener('click', function(e) {
-    const frame = document.getElementById('mapCanvasFrame');
-    const selector = document.getElementById('citySelector');
-    if (frame && !frame.contains(e.target) && selector && !selector.contains(e.target)) {
-        closeMapDetails();
-    }
-});
-
-// --- 9. SURFACE & TEXTURE MACRO DETAIL VIEWER ENGINE (BOUNDED & CLAMPED) ---
+// --- 7. SURFACE & TEXTURE MACRO DETAIL VIEWER ENGINE ---
 function initMacroViewerEngine() {
     const macroWindow = document.getElementById('macroWindow');
     const macroImg = document.getElementById('macroImage');
@@ -1426,41 +1220,38 @@ function initMacroViewerEngine() {
     let startX = 0;
     let startY = 0;
 
-    function clampCoordinates() {
-        const windowRect = macroWindow.getBoundingClientRect();
-        const imgWidth = windowRect.width * scale;
-        const imgHeight = windowRect.height * scale;
-
-        // Compute maximum pan bounds based on current zoom scale
-        const maxX = Math.max(0, (imgWidth - windowRect.width) / 2);
-        const maxY = Math.max(0, (imgHeight - windowRect.height) / 2);
-
-        pointX = Math.min(Math.max(pointX, -maxX), maxX);
-        pointY = Math.min(Math.max(pointY, -maxY), maxY);
-    }
-
     function setTransform() {
-        clampCoordinates();
+        // Compute pan boundaries based on current scale
+        const windowWidth = macroWindow.clientWidth;
+        const windowHeight = macroWindow.clientHeight;
+        const maxX = (windowWidth * (scale - 1)) / 2;
+        const maxY = (windowHeight * (scale - 1)) / 2;
+
+        if (scale > 1) {
+            pointX = Math.min(Math.max(pointX, -maxX), maxX);
+            pointY = Math.min(Math.max(pointY, -maxY), maxY);
+        } else {
+            pointX = 0;
+            pointY = 0;
+        }
+
         macroImg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
     }
 
     macroWindow.addEventListener('mousedown', function(e) {
+        if (scale <= 1) return;
         e.preventDefault();
         startX = e.clientX - pointX;
         startY = e.clientY - pointY;
         panning = true;
-        macroWindow.style.cursor = 'grabbing';
     });
 
     window.addEventListener('mouseup', function() {
-        if (panning) {
-            panning = false;
-            if (macroWindow) macroWindow.style.cursor = 'grab';
-        }
+        panning = false;
     });
 
     window.addEventListener('mousemove', function(e) {
-        if (!panning) return;
+        if (!panning || scale <= 1) return;
         e.preventDefault();
         pointX = e.clientX - startX;
         pointY = e.clientY - startY;
@@ -1477,15 +1268,9 @@ function initMacroViewerEngine() {
             scale = Math.max(scale / 1.2, 1);
         }
 
-        if (scale === 1) {
-            pointX = 0;
-            pointY = 0;
-        }
-
         setTransform();
     }, { passive: false });
 
-    // Expose reset function globally for the UI reset button
     window.resetMacroView = function() {
         scale = 1;
         pointX = 0;
@@ -1497,3 +1282,92 @@ function initMacroViewerEngine() {
         }, 300);
     };
 }
+
+// --- 8. INITIALIZATION & EVENT LISTENERS ---
+document.addEventListener('DOMContentLoaded', function() {
+    const mombasaTrigger = document.getElementById('mombasa-trigger');
+    if (mombasaTrigger) {
+        mombasaTrigger.addEventListener('click', toggleMombasaEssay);
+    }
+
+    document.querySelectorAll('[data-dossier]').forEach(btn => {
+        btn.addEventListener('click', function() {
+            openDossier(this.getAttribute('data-dossier'));
+        });
+    });
+
+    document.querySelectorAll('[data-lightbox-src]').forEach(item => {
+        item.addEventListener('click', function() {
+            const src = this.getAttribute('data-lightbox-src');
+            const caption = this.getAttribute('data-caption') || '';
+            openLightbox(src, caption);
+        });
+    });
+
+    document.querySelectorAll('.map-node').forEach(node => {
+        node.addEventListener('click', function(e) {
+            const key = this.getAttribute('data-node');
+            openMapDetails(key, e);
+        });
+    });
+
+    const citySelector = document.getElementById('citySelector');
+    if (citySelector) {
+        citySelector.addEventListener('change', function() {
+            selectCityFromDropdown(this.value);
+        });
+    }
+
+    const closeMapBtn = document.getElementById('closeMapPopupBtn');
+    if (closeMapBtn) {
+        closeMapBtn.addEventListener('click', closeMapDetails);
+    }
+
+    const closeDossierBtn = document.getElementById('closeDossierBtn');
+    if (closeDossierBtn) {
+        closeDossierBtn.addEventListener('click', closeDossier);
+    }
+
+    document.querySelectorAll('.ledger-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            filterLedger(filter, this);
+        });
+    });
+
+    const dossierModal = document.getElementById('dossierModal');
+    if (dossierModal) {
+        dossierModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeDossier();
+            }
+        });
+    }
+
+    const resetMacroBtn = document.getElementById('resetMacroBtn');
+    if (resetMacroBtn) {
+        resetMacroBtn.addEventListener('click', function() {
+            if (typeof window.resetMacroView === 'function') {
+                window.resetMacroView();
+            }
+        });
+    }
+
+    // Initialize Surface Macro Viewer Engine
+    initMacroViewerEngine();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeDossier();
+        closeMapDetails();
+    }
+});
+
+document.addEventListener('click', function(e) {
+    const frame = document.getElementById('mapCanvasFrame');
+    const selector = document.getElementById('citySelector');
+    if (frame && !frame.contains(e.target) && selector && !selector.contains(e.target)) {
+        closeMapDetails();
+    }
+});
