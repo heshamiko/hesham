@@ -1,6 +1,6 @@
 /* ==========================================================================
    HESHAM MALIK — STUDIO ARCHIVE & CATALOGUE RAISONNÉ
-   Production Stylesheet (style.css) - Fixed Build
+   Production Stylesheet (style.css) - Fixed Production Build
    ========================================================================== */
 
 :root {
@@ -298,6 +298,19 @@ h2.section-heading {
     margin: 0 auto 40px auto;
 }
 
+.mombasa-accordion-trigger {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    outline: none;
+}
+
 .mombasa-title {
     font-family: var(--font-serif);
     font-size: 2.6rem;
@@ -309,8 +322,16 @@ h2.section-heading {
     transition: color 0.3s ease;
 }
 
-.mombasa-title:hover {
+.mombasa-accordion-trigger:hover .mombasa-title {
     color: var(--accent-gold);
+}
+
+.toggle-icon {
+    font-family: var(--font-sans);
+    font-size: 1.8rem;
+    color: var(--accent-gold);
+    transition: transform 0.3s ease;
+    user-select: none;
 }
 
 .mombasa-subtitle {
@@ -582,7 +603,7 @@ h2.section-heading {
     align-items: center;
     gap: 30px;
     padding: 25px;
-    min-height: 280px; /* Establishes a unified base height for all four boxes */
+    min-height: 280px;
     height: 100%;
     transition: all 0.4s ease;
 }
@@ -594,7 +615,7 @@ h2.section-heading {
 
 .ledger-visual {
     width: 100%;
-    height: 220px; /* Fixed height container for uniform artwork framing */
+    height: 220px;
     background: #000000;
     border: 1px solid var(--border-subtle);
     overflow: hidden;
@@ -607,7 +628,7 @@ h2.section-heading {
 .ledger-visual img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Prevents image distortion across varying ratios */
+    object-fit: cover;
     object-position: center;
     opacity: 0.85;
     transition: transform 0.5s ease, opacity 0.5s ease;
@@ -693,6 +714,11 @@ h2.section-heading {
     overflow: hidden;
     position: relative;
     cursor: grab;
+    outline: none;
+}
+
+.macro-view-window:focus {
+    border-color: var(--accent-gold);
 }
 
 .macro-controls-bar {
