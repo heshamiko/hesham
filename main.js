@@ -1381,7 +1381,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 10. Macro Viewer Integration
+    // 10. Macro Viewer Integration Button
     const resetMacroBtn = document.getElementById('resetMacroBtn');
     if (resetMacroBtn && typeof window.resetMacroView === 'function') {
         resetMacroBtn.addEventListener('click', window.resetMacroView);
@@ -1404,3 +1404,78 @@ document.addEventListener('click', function(e) {
         closeMapDetails();
     }
 });
+
+// --- 9. SURFACE & TEXTURE MACRO DETAIL VIEWER ENGINE ---
+(function initMacroViewer() {
+    document.addEventListener('DOMContentLoaded', function() {
+        const macroWindow = document.querySelector('.macro-view-window');
+        const macroImg = document.querySelector('.macro-view-window img');
+        if (!macroWindow || !macroImg) return;
+
+        let scale = 1;
+        let panning = false;
+        let pointX = 0;
+        let pointY = 0;
+        let startX = 0;
+        let startY = 0;
+
+        function setTransform() {
+            macroImg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+        }
+
+        macroWindow.addEventListener('mousedown', function(e) {
+            e.preventDefault();
+            startX = e.clientX - pointX;
+            startY = e.clientY - pointY;
+            panning = true;
+            macroWindow.style.cursor = 'grabbing';
+        });
+
+        window.addEventListener('mouseup', function() {
+            panning = false;
+            if (macroWindow) macroWindow.style.cursor = 'grab';
+        });
+
+        macroWindow.addEventListener('mousemove', function(e) {
+            e.preventDefault();
+            if (!panning) return;
+            pointX = e.clientX - startX;
+            pointY = e.clientY - startY;
+            setTransform();
+        });
+
+        macroWindow.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            const xs = (e.clientX - pointX) / scale;
+            const ys = (e.clientY - pointY) / scale;
+            const delta = -e.deltaY;
+
+            if (delta > 0) {
+                scale = Math.min(scale * 1.2, 5);
+            } else {
+                scale = Math.max(scale / 1.2, 1);
+            }
+
+            if (scale === 1) {
+                pointX = 0;
+                pointY = 0;
+            } else {
+                pointX = e.clientX - xs * scale;
+                pointY = e.clientY - ys * scale;
+            }
+
+            setTransform();
+        }, { passive: false });
+
+        window.resetMacroView = function() {
+            scale = 1;
+            pointX = 0;
+            pointY = 0;
+            macroImg.style.transition = 'transform 0.3s ease';
+            setTransform();
+            setTimeout(() => {
+                macroImg.style.transition = 'none';
+            }, 300);
+        };
+    });
+})();
