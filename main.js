@@ -1206,7 +1206,7 @@ const mombasaInscriptions = {
     }
 };
 
-// --- MASTERWORK MUSEUM PROVENANCE CAPTION MAP (UPDATED FOR BUMBLEBEE) ---
+// --- MASTERWORK MUSEUM PROVENANCE CAPTION MAP ---
 const masterworkProvenance = {
     "rooh-nawaz-1.jpg": "Exhibited at the Museum of Prague West, an institutional repository founded in 1891 by Leopold Čihák.",
     "land-spatial-2.jpg": "Exhibited at the Museum of The Pilgrimage Church of the Visitation of Virgin Mary, a 13th-century landmark and Northern Bohemia's premier Baroque museum.",
@@ -1382,11 +1382,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 10. Macro Viewer Integration Button
+    // 10. Macro Viewer Reset Button Binding
     const resetMacroBtn = document.getElementById('resetMacroBtn');
-    if (resetMacroBtn && typeof window.resetMacroView === 'function') {
-        resetMacroBtn.addEventListener('click', window.resetMacroView);
+    if (resetMacroBtn) {
+        resetMacroBtn.addEventListener('click', function() {
+            if (typeof window.resetMacroView === 'function') {
+                window.resetMacroView();
+            }
+        });
     }
+
+    // 11. Initialize Bounded Macro Detail Viewer Engine
+    initMacroViewerEngine();
 });
 
 // --- 8. GLOBAL ACCESSIBILITY & KEYBOARD HANDLERS ---
@@ -1407,85 +1414,86 @@ document.addEventListener('click', function(e) {
 });
 
 // --- 9. SURFACE & TEXTURE MACRO DETAIL VIEWER ENGINE (BOUNDED & CLAMPED) ---
-(function initMacroViewer() {
-    document.addEventListener('DOMContentLoaded', function() {
-        const macroWindow = document.getElementById('macroWindow');
-        const macroImg = document.getElementById('macroImage');
-        if (!macroWindow || !macroImg) return;
+function initMacroViewerEngine() {
+    const macroWindow = document.getElementById('macroWindow');
+    const macroImg = document.getElementById('macroImage');
+    if (!macroWindow || !macroImg) return;
 
-        let scale = 1;
-        let panning = false;
-        let pointX = 0;
-        let pointY = 0;
-        let startX = 0;
-        let startY = 0;
+    let scale = 1;
+    let panning = false;
+    let pointX = 0;
+    let pointY = 0;
+    let startX = 0;
+    let startY = 0;
 
-        function clampCoordinates() {
-            const windowRect = macroWindow.getBoundingClientRect();
-            const imgWidth = windowRect.width * scale;
-            const imgHeight = windowRect.height * scale;
+    function clampCoordinates() {
+        const windowRect = macroWindow.getBoundingClientRect();
+        const imgWidth = windowRect.width * scale;
+        const imgHeight = windowRect.height * scale;
 
-            // Compute maximum pan bounds based on current zoom scale
-            const maxX = Math.max(0, (imgWidth - windowRect.width) / 2);
-            const maxY = Math.max(0, (imgHeight - windowRect.height) / 2);
+        // Compute maximum pan bounds based on current zoom scale
+        const maxX = Math.max(0, (imgWidth - windowRect.width) / 2);
+        const maxY = Math.max(0, (imgHeight - windowRect.height) / 2);
 
-            pointX = Math.min(Math.max(pointX, -maxX), maxX);
-            pointY = Math.min(Math.max(pointY, -maxY), maxY);
-        }
+        pointX = Math.min(Math.max(pointX, -maxX), maxX);
+        pointY = Math.min(Math.max(pointY, -maxY), maxY);
+    }
 
-        function setTransform() {
-            clampCoordinates();
-            macroImg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
-        }
+    function setTransform() {
+        clampCoordinates();
+        macroImg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+    }
 
-        macroWindow.addEventListener('mousedown', function(e) {
-            e.preventDefault();
-            startX = e.clientX - pointX;
-            startY = e.clientY - pointY;
-            panning = true;
-            macroWindow.style.cursor = 'grabbing';
-        });
+    macroWindow.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        startX = e.clientX - pointX;
+        startY = e.clientY - pointY;
+        panning = true;
+        macroWindow.style.cursor = 'grabbing';
+    });
 
-        window.addEventListener('mouseup', function() {
+    window.addEventListener('mouseup', function() {
+        if (panning) {
             panning = false;
             if (macroWindow) macroWindow.style.cursor = 'grab';
-        });
+        }
+    });
 
-        macroWindow.addEventListener('mousemove', function(e) {
-            if (!panning) return;
-            e.preventDefault();
-            pointX = e.clientX - startX;
-            pointY = e.clientY - startY;
-            setTransform();
-        });
+    window.addEventListener('mousemove', function(e) {
+        if (!panning) return;
+        e.preventDefault();
+        pointX = e.clientX - startX;
+        pointY = e.clientY - startY;
+        setTransform();
+    });
 
-        macroWindow.addEventListener('wheel', function(e) {
-            e.preventDefault();
-            const delta = -e.deltaY;
+    macroWindow.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        const delta = -e.deltaY;
 
-            if (delta > 0) {
-                scale = Math.min(scale * 1.25, 4.5);
-            } else {
-                scale = Math.max(scale / 1.25, 1);
-            }
+        if (delta > 0) {
+            scale = Math.min(scale * 1.2, 4.5);
+        } else {
+            scale = Math.max(scale / 1.2, 1);
+        }
 
-            if (scale === 1) {
-                pointX = 0;
-                pointY = 0;
-            }
-
-            setTransform();
-        }, { passive: false });
-
-        window.resetMacroView = function() {
-            scale = 1;
+        if (scale === 1) {
             pointX = 0;
             pointY = 0;
-            macroImg.style.transition = 'transform 0.3s ease';
-            setTransform();
-            setTimeout(() => {
-                macroImg.style.transition = 'none';
-            }, 300);
-        };
-    });
-})();
+        }
+
+        setTransform();
+    }, { passive: false });
+
+    // Expose reset function globally for the UI reset button
+    window.resetMacroView = function() {
+        scale = 1;
+        pointX = 0;
+        pointY = 0;
+        macroImg.style.transition = 'transform 0.3s ease-out';
+        setTransform();
+        setTimeout(() => {
+            macroImg.style.transition = 'none';
+        }, 300);
+    };
+}
