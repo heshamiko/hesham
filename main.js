@@ -1207,79 +1207,133 @@ function filterLedger(category, targetBtn) {
     });
 }
 
-// --- 7. SURFACE & TEXTURE MACRO DETAIL VIEWER ENGINE ---
+// --- 7. SURFACE & TEXTURE MACRO DETAIL VIEWER ENGINE (ROBUST MULTI-INPUT) ---
 function initMacroViewerEngine() {
     const macroWindow = document.getElementById('macroWindow');
     const macroImg = document.getElementById('macroImage');
     if (!macroWindow || !macroImg) return;
 
     let scale = 1;
-    let panning = false;
     let pointX = 0;
     let pointY = 0;
+
+    let isPanning = false;
     let startX = 0;
     let startY = 0;
 
-    function setTransform() {
-        // Compute pan boundaries based on current scale
-        const windowWidth = macroWindow.clientWidth;
-        const windowHeight = macroWindow.clientHeight;
-        const maxX = (windowWidth * (scale - 1)) / 2;
-        const maxY = (windowHeight * (scale - 1)) / 2;
+    // Mobile touch parameters
+    let initialPinchDistance = null;
+    let initialScale = 1;
+
+    function clampBoundaries() {
+        const rect = macroWindow.getBoundingClientRect();
+        const maxPanX = (rect.width * (scale - 1)) / 2;
+        const maxPanY = (rect.height * (scale - 1)) / 2;
 
         if (scale > 1) {
-            pointX = Math.min(Math.max(pointX, -maxX), maxX);
-            pointY = Math.min(Math.max(pointY, -maxY), maxY);
+            pointX = Math.min(Math.max(pointX, -maxPanX), maxPanX);
+            pointY = Math.min(Math.max(pointY, -maxPanY), maxPanY);
         } else {
             pointX = 0;
             pointY = 0;
         }
-
-        macroImg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
     }
 
+    function renderTransform(animate = false) {
+        clampBoundaries();
+        macroImg.style.transition = animate ? 'transform 0.25s ease-out' : 'none';
+        macroImg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+        macroWindow.style.cursor = scale > 1 ? (isPanning ? 'grabbing' : 'grab') : 'default';
+    }
+
+    // --- MOUSE PAN CONTROLS ---
     macroWindow.addEventListener('mousedown', function(e) {
         if (scale <= 1) return;
         e.preventDefault();
+        isPanning = true;
         startX = e.clientX - pointX;
         startY = e.clientY - pointY;
-        panning = true;
-    });
-
-    window.addEventListener('mouseup', function() {
-        panning = false;
+        renderTransform();
     });
 
     window.addEventListener('mousemove', function(e) {
-        if (!panning || scale <= 1) return;
+        if (!isPanning) return;
         e.preventDefault();
         pointX = e.clientX - startX;
         pointY = e.clientY - startY;
-        setTransform();
+        renderTransform();
     });
 
+    window.addEventListener('mouseup', function() {
+        if (isPanning) {
+            isPanning = false;
+            renderTransform();
+        }
+    });
+
+    // --- MOUSE WHEEL ZOOM CONTROLS ---
     macroWindow.addEventListener('wheel', function(e) {
         e.preventDefault();
-        const delta = -e.deltaY;
 
-        if (delta > 0) {
-            scale = Math.min(scale * 1.2, 4.5);
-        } else {
-            scale = Math.max(scale / 1.2, 1);
+        const rect = macroWindow.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left - rect.width / 2;
+        const mouseY = e.clientY - rect.top - rect.height / 2;
+
+        const zoomFactor = e.deltaY < 0 ? 1.25 : 0.8;
+        const targetScale = Math.min(Math.max(scale * zoomFactor, 1), 4.5);
+
+        if (targetScale !== scale) {
+            pointX += (mouseX - pointX) * (1 - targetScale / scale);
+            pointY += (mouseY - pointY) * (1 - targetScale / scale);
+            scale = targetScale;
+            renderTransform();
         }
-
-        setTransform();
     }, { passive: false });
 
+    // --- TOUCH & PINCH GESTURES (MOBILE/TABLET) ---
+    macroWindow.addEventListener('touchstart', function(e) {
+        if (e.touches.length === 1 && scale > 1) {
+            isPanning = true;
+            startX = e.touches[0].clientX - pointX;
+            startY = e.touches[0].clientY - pointY;
+        } else if (e.touches.length === 2) {
+            isPanning = false;
+            initialPinchDistance = Math.hypot(
+                e.touches[0].clientX - e.touches[1].clientX,
+                e.touches[0].clientY - e.touches[1].clientY
+            );
+            initialScale = scale;
+        }
+    }, { passive: true });
+
+    macroWindow.addEventListener('touchmove', function(e) {
+        if (e.touches.length === 1 && isPanning) {
+            pointX = e.touches[0].clientX - startX;
+            pointY = e.touches[0].clientY - startY;
+            renderTransform();
+        } else if (e.touches.length === 2 && initialPinchDistance) {
+            const currentDistance = Math.hypot(
+                e.touches[0].clientX - e.touches[1].clientX,
+                e.touches[0].clientY - e.touches[1].clientY
+            );
+            scale = Math.min(Math.max(initialScale * (currentDistance / initialPinchDistance), 1), 4.5);
+            renderTransform();
+        }
+    }, { passive: true });
+
+    macroWindow.addEventListener('touchend', function() {
+        isPanning = false;
+        initialPinchDistance = null;
+        renderTransform();
+    });
+
+    // --- RESET VIEW FUNCTION ---
     window.resetMacroView = function() {
         scale = 1;
         pointX = 0;
         pointY = 0;
-        macroImg.style.transition = 'transform 0.3s ease-out';
-        setTransform();
-        setTimeout(() => {
-            macroImg.style.transition = 'none';
-        }, 300);
+        isPanning = false;
+        renderTransform(true);
     };
 }
 
