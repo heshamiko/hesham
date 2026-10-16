@@ -531,10 +531,11 @@ const mapCityData = {
 &bull; <b>Curatorial Focus:</b> Monochromatic void studies, overlapping parallel spatial planes, literary text-based canvas washes, and retrospective box installations.`
     },
     cz_pilsen_regional: {
-        city: "CZECH REPUBLIC &bull; PILSEN &amp; REGIONAL MUSEUMS",
-        shows: `&bull; <b>Institutional Anchor:</b> Bishopric of Pilsen; Museum of West Bohemia (Pilsen); Regional Museum in Most; GAMPA Pardubice; Schubert Center UPOL Olomouc.<br>
-&bull; <b>Field &amp; Conceptual Research:</b> Spiritual struggle, hope, compressed space, domestic nests, and regional Czech museum solos.<br>
-&bull; <b>Curatorial Focus:</b> Sacred light contrasts, nest-like woven paint structures, and compressed multi-layer canvas panels across major regional museum collections.`
+        city: "CZECH REPUBLIC &bull; MARIÁNSKÁ TÝNICE, PILSEN &amp; REGIONAL MUSEUMS",
+        shows: `&bull; <b>Institutional Anchor:</b> Museum and Gallery of the Northern Plzeň Region in Mariánská Týnice; Bishopric of Pilsen; Museum of West Bohemia (Pilsen); Regional Museum in Most; GAMPA Pardubice; Schubert Center UPOL Olomouc.<br>
+&bull; <b>Exhibition History:</b> Solo retrospective featuring masterwork canvas holdings including <i>"Conviviality"</i>.<br>
+&bull; <b>Field &amp; Conceptual Research:</b> Architectural dialogue within monumental Baroque sites, regional Czech heritage, compressed spatial forms, and historical memory.<br>
+&bull; <b>Curatorial Focus:</b> Sacred light contrasts, nest-like woven paint structures, and multi-layered canvas masterworks housed across historic regional museums.`
     },
 
     // --- DENMARK CITIES ---
@@ -1210,7 +1211,7 @@ const masterworkProvenance = {
     "rooh-nawaz-1.jpg": "Exhibited at the Museum of Prague West, an institutional repository founded in 1891 by Leopold Čihák.",
     "land-spatial-2.jpg": "Exhibited at the Museum of The Pilgrimage Church of the Visitation of Virgin Mary, a 13th-century landmark and Northern Bohemia's premier Baroque museum.",
     "box-spatial-1.jpg": "Exhibited at the Museum of Ecclesiastical Art, housed within Plzeň’s 14th-century former Franciscan monastery.",
-    "words-texture-1.jpg": "Exhibited at Brussels Expo as a featured highlight alongside Europe’s leading cultural and creative institutions."
+    "words-canvas-main.jpg": "Exhibited as part of a solo retrospective at the Museum and Gallery of the Northern Plzeň Region in Mariánská Týnice. Housed within a monumental Baroque complex designed by master architect Jan Blažej Santini-Aichl, the foundational stones of the current standing structure were laid in 1711."
 };
 
 // --- 5. INTERACTIVE MODAL & LIGHTBOX ENGINE ---
@@ -1405,7 +1406,7 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// --- 9. SURFACE & TEXTURE MACRO DETAIL VIEWER ENGINE ---
+// --- 9. SURFACE & TEXTURE MACRO DETAIL VIEWER ENGINE (BOUNDED & CLAMPED) ---
 (function initMacroViewer() {
     document.addEventListener('DOMContentLoaded', function() {
         const macroWindow = document.querySelector('.macro-view-window');
@@ -1419,7 +1420,21 @@ document.addEventListener('click', function(e) {
         let startX = 0;
         let startY = 0;
 
+        function clampCoordinates() {
+            const windowRect = macroWindow.getBoundingClientRect();
+            const imgWidth = windowRect.width * scale;
+            const imgHeight = windowRect.height * scale;
+
+            // Compute maximum pan bounds based on current zoom scale
+            const maxX = Math.max(0, (imgWidth - windowRect.width) / 2);
+            const maxY = Math.max(0, (imgHeight - windowRect.height) / 2);
+
+            pointX = Math.min(Math.max(pointX, -maxX), maxX);
+            pointY = Math.min(Math.max(pointY, -maxY), maxY);
+        }
+
         function setTransform() {
+            clampCoordinates();
             macroImg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
         }
 
@@ -1446,22 +1461,17 @@ document.addEventListener('click', function(e) {
 
         macroWindow.addEventListener('wheel', function(e) {
             e.preventDefault();
-            const xs = (e.clientX - pointX) / scale;
-            const ys = (e.clientY - pointY) / scale;
             const delta = -e.deltaY;
 
             if (delta > 0) {
-                scale = Math.min(scale * 1.2, 5);
+                scale = Math.min(scale * 1.25, 4.5);
             } else {
-                scale = Math.max(scale / 1.2, 1);
+                scale = Math.max(scale / 1.25, 1);
             }
 
             if (scale === 1) {
                 pointX = 0;
                 pointY = 0;
-            } else {
-                pointX = e.clientX - xs * scale;
-                pointY = e.clientY - ys * scale;
             }
 
             setTransform();
