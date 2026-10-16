@@ -1,6 +1,6 @@
 /* ==========================================================================
    HESHAM MALIK — STUDIO ARCHIVE & CATALOGUE RAISONNÉ
-   Flagship Interactive Engine (main.js)
+   Flagship Interactive Engine (main.js) - Complete Production Build
    ========================================================================== */
 
 // --- 1. MOMBASA ESSAY ACCORDION TOGGLE ---
@@ -897,26 +897,41 @@ function openMapDetails(key, event) {
 
         popup.classList.add('active');
 
+        // Responsive Map Positioning Engine
         if (nodeElem) {
             const nodeRect = nodeElem.getBoundingClientRect();
             const frameRect = frame.getBoundingClientRect();
+            const isMobile = window.innerWidth <= 768;
 
-            let leftPos = (nodeRect.left - frameRect.left) + 20;
-            let topPos = (nodeRect.top - frameRect.top) - 20;
+            if (isMobile) {
+                // Fixed docked card at the bottom of the frame on mobile screens
+                popup.style.left = '10px';
+                popup.style.right = '10px';
+                popup.style.top = 'auto';
+                popup.style.bottom = '10px';
+                popup.style.width = 'calc(100% - 20px)';
+            } else {
+                popup.style.right = 'auto';
+                popup.style.bottom = 'auto';
+                popup.style.width = '320px';
 
-            // Boundary Calculations for Mobile/Desktop
-            if (leftPos + 300 > frameRect.width) {
-                leftPos = Math.max(10, (nodeRect.left - frameRect.left) - 310);
+                let leftPos = (nodeRect.left - frameRect.left) + 20;
+                let topPos = (nodeRect.top - frameRect.top) - 20;
+
+                // Boundary Calculations for Mobile/Desktop
+                if (leftPos + 320 > frameRect.width) {
+                    leftPos = Math.max(10, (nodeRect.left - frameRect.left) - 330);
+                }
+                if (leftPos < 10) leftPos = 10;
+
+                if (topPos + 240 > frameRect.height) {
+                    topPos = Math.max(10, frameRect.height - 250);
+                }
+                if (topPos < 10) topPos = 10;
+
+                popup.style.left = leftPos + 'px';
+                popup.style.top = topPos + 'px';
             }
-            if (leftPos < 10) leftPos = 10;
-
-            if (topPos + 220 > frameRect.height) {
-                topPos = Math.max(10, frameRect.height - 230);
-            }
-            if (topPos < 10) topPos = 10;
-
-            popup.style.left = leftPos + 'px';
-            popup.style.top = topPos + 'px';
         }
     }
 }
@@ -1231,7 +1246,7 @@ function openLightbox(imageSrc, fallbackTitle) {
         document.getElementById('modalTitle').innerText = item.title;
         document.getElementById('modalBody').innerHTML = `
             <div style="text-align: center; margin-bottom: 20px;">
-                <img src="${imageSrc}" alt="${item.title}" style="max-width: 100%; max-height: 50vh; border: 1px solid var(--accent-gold, #d4af37); margin-bottom: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.8);">
+                <img src="${imageSrc}" alt="${item.title}" style="max-width: 100%; max-height: 50vh; border: 1px solid var(--accent-gold, #d4af37); margin-bottom: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); object-fit: contain;">
             </div>
             <div style="text-align: left; font-size: 0.85rem; line-height: 1.8; color: var(--text-secondary, #888888); background: rgba(255,255,255,0.02); padding: 18px; border-left: 2px solid var(--accent-gold, #d4af37);">
                 <p style="margin-top: 0; margin-bottom: 10px;"><strong style="color: #fff;">Field Observation:</strong> ${item.obs}</p>
