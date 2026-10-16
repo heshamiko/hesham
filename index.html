@@ -74,7 +74,7 @@
     </nav>
 
     <header class="full-bleed-hero">
-        <img src="hero-full-image.jpg" alt="Hesham Malik Masterwork Canvas" class="hero-bg-img" width="1920" height="1080" fetchpriority="high">
+        <img src="hero-full-image.jpg" alt="Hesham Malik Masterwork Canvas" class="hero-bg-img" width="1920" height="1080" fetchpriority="high" loading="eager">
         <div class="hero-overlay-content">
             <h1 class="hero-title-main">Hesham Malik</h1>
             <div class="hero-subtitle-main">Studio Archive &bull; Catalogue Raisonné</div>
@@ -234,17 +234,17 @@
                 <h2 class="section-heading">Surface &amp; Texture Detail</h2>
                 <div class="macro-viewer-container">
                     <span class="benchmark-tag">&bull; SURFACE &amp; TEXTURE &bull; MACRO CANVAS STUDY</span>
-                    <h3 class="macro-heading">Tactile Depth &amp; Pigment Density</h3>
-                    <p class="macro-subtext">Click &amp; drag to pan across the surface texture. Scroll mouse wheel to zoom in/out.</p>
+                    <h3 class="macro-heading" style="font-family: var(--font-serif); font-size: 1.8rem; color: #fff; font-weight: 300; margin: 10px 0;">Tactile Depth &amp; Pigment Density</h3>
+                    <p class="macro-subtext" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 20px;">Click &amp; drag to pan across the surface texture. Scroll mouse wheel to zoom in/out.</p>
 
                     <div class="macro-view-window" id="macroWindow" tabIndex="0" aria-label="Interactive macro detail canvas viewer">
-                        <img src="words-texture-1.jpg" id="macroImage" alt="Hesham Malik High-Resolution Macro Detail View" width="1600" height="1200">
+                        <img src="words-texture-1.jpg" id="macroImage" alt="Hesham Malik High-Resolution Macro Detail View" width="1600" height="1200" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none; user-select: none;">
                     </div>
 
                     <div class="macro-controls-bar">
-                        <span>Click &amp; Drag to Pan Surface • Scroll to Zoom</span>
+                        <span style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.15em;">Click &amp; Drag to Pan Surface • Scroll to Zoom</span>
                         <div>
-                            <button type="button" class="macro-btn" id="resetMacroBtn">Reset View</button>
+                            <button type="button" class="action-btn" id="resetMacroBtn">Reset View</button>
                         </div>
                     </div>
                 </div>
@@ -256,10 +256,10 @@
                 
                 <div class="real-map-wrapper">
                     <span class="benchmark-tag">&bull; 30-YEAR EXHIBITION &amp; ARCHIVAL RECORD &bull; SELECT ANY NODE</span>
-                    <p class="map-subtext">Explore solo retrospectives, linguistic provenance partners, and ecological material patrons worldwide.</p>
+                    <p class="map-subtext" style="font-size: 0.8rem; color: var(--text-secondary); margin: 10px 0 20px 0;">Explore solo retrospectives, linguistic provenance partners, and ecological material patrons worldwide.</p>
 
                     <div class="map-quick-filter">
-                        <label for="citySelector" class="filter-label">Isolate City Node:</label>
+                        <label for="citySelector" class="filter-label" style="font-size: 0.72rem; color: var(--accent-gold); letter-spacing: 0.1em; text-transform: uppercase;">Isolate City Node:</label>
                         <select id="citySelector" class="map-select">
                             <option value="">-- Choose City Node --</option>
                             <option value="uk_london">London (Tate, UCL, SOAS, LSE, Courtauld, UK)</option>
@@ -303,8 +303,6 @@
                             <option value="lv_riga">Riga (Baltic Cultural Heritage Guild, Latvia)</option>
                             <option value="es_madrid">Madrid (Mapfre Foundation, Ecosistema Urbano, Spain)</option>
                             <option value="gr_athens">Athens (Athens School of Fine Arts, Greece)</option>
-                            <option value="no_longyearbyen">Longyearbyen (Svalbard Global Seed Vault, Norway)</option>
-                            <option value="no_oslo">Oslo (Innovation Norway Directorate, Norway)</option>
                             <option value="fi_oulu">Oulu (Capital of Culture 2026, Finland)</option>
                             <option value="fi_helsinki">Helsinki (University of Helsinki, Åland Islands Platform, Finland)</option>
                             <option value="sy_damascus">Damascus (Cultural Representation, Syria)</option>
@@ -398,123 +396,121 @@
                         <img src="world-map.svg" class="world-map-svg" alt="Global Footprint Map" width="1200" height="600">
 
                         <!-- MAP NODES -->
-                        <div class="map-node label-top" id="node_harvard" data-node="harvard"><span class="node-label">Harvard</span></div>
-                        <div class="map-node label-right" id="node_usa_east" data-node="usa_east"><span class="node-label">USA East</span></div>
-                        <div class="map-node label-left" id="node_usa_west" data-node="usa_west"><span class="node-label">USA West</span></div>
-                        <div class="map-node label-top" id="node_usa_midwest_south" data-node="usa_midwest_south"><span class="node-label">USA Midwest</span></div>
-                        <div class="map-node label-left" id="node_bc_vancouver" data-node="bc_vancouver"><span class="node-label">Vancouver</span></div>
-                        <div class="map-node label-top" id="node_alberta_calgary" data-node="alberta_calgary"><span class="node-label">Calgary</span></div>
-                        <div class="map-node label-top" id="node_toronto_waterloo" data-node="toronto_waterloo"><span class="node-label">Toronto</span></div>
-                        <div class="map-node label-right" id="node_ottawa_kingston" data-node="ottawa_kingston"><span class="node-label">Ottawa</span></div>
-                        <div class="map-node label-top" id="node_montreal_qc" data-node="montreal_qc"><span class="node-label">Montreal</span></div>
-                        <div class="map-node label-top" id="node_yukon_atlantic" data-node="yukon_atlantic"><span class="node-label">Yukon</span></div>
-                        <div class="map-node label-top" id="node_uk_london" data-node="uk_london"><span class="node-label">London</span></div>
-                        <div class="map-node label-top" id="node_oxford" data-node="oxford"><span class="node-label">Oxford</span></div>
-                        <div class="map-node label-right" id="node_cambridge" data-node="cambridge"><span class="node-label">Cambridge</span></div>
-                        <div class="map-node label-top" id="node_edinburgh" data-node="edinburgh"><span class="node-label">Edinburgh</span></div>
-                        <div class="map-node label-top" id="node_sa_riyadh" data-node="sa_riyadh"><span class="node-label">Riyadh</span></div>
-                        <div class="map-node label-top" id="node_ch_zurich" data-node="ch_zurich"><span class="node-label">Zurich</span></div>
-                        <div class="map-node label-left" id="node_ch_geneva" data-node="ch_geneva"><span class="node-label">Geneva</span></div>
-                        <div class="map-node label-top" id="node_ch_bern" data-node="ch_bern"><span class="node-label">Bern</span></div>
-                        <div class="map-node label-top" id="node_it_bologna" data-node="it_bologna"><span class="node-label">Bologna</span></div>
-                        <div class="map-node label-top" id="node_it_florence" data-node="it_florence"><span class="node-label">Florence</span></div>
-                        <div class="map-node label-left" id="node_it_fabriano_rome" data-node="it_fabriano_rome"><span class="node-label">Fabriano</span></div>
-                        <div class="map-node label-left" id="node_fr_paris" data-node="fr_paris"><span class="node-label">Paris</span></div>
-                        <div class="map-node label-left" id="node_fr_toulouse" data-node="fr_toulouse"><span class="node-label">Toulouse</span></div>
-                        <div class="map-node label-left" id="node_si_ljubljana" data-node="si_ljubljana"><span class="node-label">Ljubljana</span></div>
-                        <div class="map-node label-right" id="node_si_koper" data-node="si_koper"><span class="node-label">Koper</span></div>
-                        <div class="map-node label-right" id="node_hr_zagreb" data-node="hr_zagreb"><span class="node-label">Zagreb</span></div>
-                        <div class="map-node label-top" id="node_am_yerevan" data-node="am_yerevan"><span class="node-label">Yerevan</span></div>
-                        <div class="map-node label-top" id="node_by_minsk" data-node="by_minsk"><span class="node-label">Minsk</span></div>
-                        <div class="map-node label-right" id="node_bg_sofia" data-node="bg_sofia"><span class="node-label">Sofia</span></div>
-                        <div class="map-node label-top" id="node_lv_riga" data-node="lv_riga"><span class="node-label">Riga</span></div>
-                        <div class="map-node label-left" id="node_es_madrid" data-node="es_madrid"><span class="node-label">Madrid</span></div>
-                        <div class="map-node label-left" id="node_pt_lisbon" data-node="pt_lisbon"><span class="node-label">Lisbon</span></div>
-                        <div class="map-node label-top" id="node_ua_kyiv" data-node="ua_kyiv"><span class="node-label">Kyiv</span></div>
-                        <div class="map-node label-right" id="node_sk_bratislava" data-node="sk_bratislava"><span class="node-label">Bratislava</span></div>
-                        <div class="map-node label-top" id="node_sk_sered" data-node="sk_sered"><span class="node-label">Sereď</span></div>
-                        <div class="map-node label-top" id="node_sk_senec" data-node="sk_senec"><span class="node-label">Senec</span></div>
-                        <div class="map-node label-top" id="node_ru_volgograd" data-node="ru_volgograd"><span class="node-label">Volgograd</span></div>
-                        <div class="map-node label-left" id="node_ee_tartu" data-node="ee_tartu"><span class="node-label">Tartu</span></div>
-                        <div class="map-node label-left" id="node_ee_tallinn" data-node="ee_tallinn"><span class="node-label">Tallinn</span></div>
-                        <div class="map-node label-left" id="node_li_vaduz" data-node="li_vaduz"><span class="node-label">Vaduz</span></div>
-                        <div class="map-node label-right" id="node_hu_budapest" data-node="hu_budapest"><span class="node-label">Budapest</span></div>
-                        <div class="map-node label-right" id="node_lt_vilnius" data-node="lt_vilnius"><span class="node-label">Vilnius</span></div>
-                        <div class="map-node label-top" id="node_no_longyearbyen" data-node="no_longyearbyen"><span class="node-label">Longyearbyen</span></div>
-                        <div class="map-node label-right" id="node_no_oslo" data-node="no_oslo"><span class="node-label">Oslo</span></div>
-                        <div class="map-node label-right" id="node_fi_helsinki" data-node="fi_helsinki"><span class="node-label">Helsinki</span></div>
-                        <div class="map-node label-top" id="node_fi_oulu" data-node="fi_oulu"><span class="node-label">Oulu</span></div>
-                        <div class="map-node label-right" id="node_gl_aalborg" data-node="gl_aalborg"><span class="node-label">Aalborg</span></div>
-                        <div class="map-node label-top" id="node_dk_copenhagen" data-node="dk_copenhagen"><span class="node-label">Copenhagen</span></div>
-                        <div class="map-node label-top" id="node_at_linz" data-node="at_linz"><span class="node-label">Linz</span></div>
-                        <div class="map-node label-top" id="node_at_vienna" data-node="at_vienna"><span class="node-label">Vienna</span></div>
-                        <div class="map-node label-top" id="node_at_innsbruck" data-node="at_innsbruck"><span class="node-label">Innsbruck</span></div>
-                        <div class="map-node label-top" id="node_cz_prague" data-node="cz_prague"><span class="node-label">Prague</span></div>
-                        <div class="map-node label-top" id="node_cz_pilsen_regional" data-node="cz_pilsen_regional"><span class="node-label">Pilsen</span></div>
-                        <div class="map-node label-top" id="node_be_brussels" data-node="be_brussels"><span class="node-label">Brussels</span></div>
-                        <div class="map-node label-top" id="node_be_leuven" data-node="be_leuven"><span class="node-label">Leuven</span></div>
-                        <div class="map-node label-top" id="node_be_ghent_bruges" data-node="be_ghent_bruges"><span class="node-label">Ghent</span></div>
-                        <div class="map-node label-top" id="node_pl_warsaw" data-node="pl_warsaw"><span class="node-label">Warsaw</span></div>
-                        <div class="map-node label-top" id="node_pl_krakow" data-node="pl_krakow"><span class="node-label">Krakow</span></div>
-                        <div class="map-node label-top" id="node_pl_duszniki" data-node="pl_duszniki"><span class="node-label">Duszniki</span></div>
-                        <div class="map-node label-top" id="node_pl_poznan" data-node="pl_poznan"><span class="node-label">Poznań</span></div>
-                        <div class="map-node label-top" id="node_de_hamburg" data-node="de_hamburg"><span class="node-label">Hamburg</span></div>
-                        <div class="map-node label-top" id="node_de_stuttgart" data-node="de_stuttgart"><span class="node-label">Stuttgart</span></div>
-                        <div class="map-node label-top" id="node_de_frankfurt" data-node="de_frankfurt"><span class="node-label">Frankfurt</span></div>
-                        <div class="map-node label-top" id="node_de_leipzig" data-node="de_leipzig"><span class="node-label">Leipzig</span></div>
-                        <div class="map-node label-top" id="node_de_potsdam_berlin" data-node="de_potsdam_berlin"><span class="node-label">Berlin</span></div>
-                        <div class="map-node label-top" id="node_de_gottingen" data-node="de_gottingen"><span class="node-label">Göttingen</span></div>
-                        <div class="map-node label-top" id="node_de_mainz" data-node="de_mainz"><span class="node-label">Mainz</span></div>
-                        <div class="map-node label-top" id="node_de_nuremberg" data-node="de_nuremberg"><span class="node-label">Nuremberg</span></div>
-                        <div class="map-node label-top" id="node_nl_amsterdam" data-node="nl_amsterdam"><span class="node-label">Amsterdam</span></div>
-                        <div class="map-node label-top" id="node_nl_leiden" data-node="nl_leiden"><span class="node-label">Leiden</span></div>
-                        <div class="map-node label-top" id="node_nl_utrecht" data-node="nl_utrecht"><span class="node-label">Utrecht</span></div>
-                        <div class="map-node label-top" id="node_se_stockholm" data-node="se_stockholm"><span class="node-label">Stockholm</span></div>
-                        <div class="map-node label-top" id="node_gr_athens" data-node="gr_athens"><span class="node-label">Athens</span></div>
-                        <div class="map-node label-right" id="node_kw_kuwaitcity" data-node="kw_kuwaitcity"><span class="node-label">Kuwait City</span></div>
-                        <div class="map-node label-right" id="node_ps_gaza" data-node="ps_gaza"><span class="node-label">Gaza</span></div>
-                        <div class="map-node label-right" id="node_ps_jenin" data-node="ps_jenin"><span class="node-label">Jenin</span></div>
-                        <div class="map-node label-left" id="node_jo_amman" data-node="jo_amman"><span class="node-label">Amman</span></div>
-                        <div class="map-node label-right" id="node_il_jerusalem" data-node="il_jerusalem"><span class="node-label">Jerusalem</span></div>
-                        <div class="map-node label-top" id="node_om_muscat" data-node="om_muscat"><span class="node-label">Muscat</span></div>
-                        <div class="map-node label-top" id="node_ae_abudhabi" data-node="ae_abudhabi"><span class="node-label">Abu Dhabi</span></div>
-                        <div class="map-node label-top" id="node_ae_dubai" data-node="ae_dubai"><span class="node-label">Dubai</span></div>
-                        <div class="map-node label-right" id="node_cy_nicosia" data-node="cy_nicosia"><span class="node-label">Nicosia</span></div>
-                        <div class="map-node label-left" id="node_sy_damascus" data-node="sy_damascus"><span class="node-label">Damascus</span></div>
-                        <div class="map-node label-top" id="node_kg_bishkek" data-node="kg_bishkek"><span class="node-label">Bishkek</span></div>
-                        <div class="map-node label-top" id="node_pakistan" data-node="pakistan"><span class="node-label">Peshawar</span></div>
-                        <div class="map-node label-top" id="node_goa" data-node="goa"><span class="node-label">Goa</span></div>
-                        <div class="map-node label-top" id="node_th_bangkok" data-node="th_bangkok"><span class="node-label">Bangkok</span></div>
-                        <div class="map-node label-top" id="node_ph_quezon" data-node="ph_quezon"><span class="node-label">Quezon City</span></div>
-                        <div class="map-node label-top" id="node_cn_changsha" data-node="cn_changsha"><span class="node-label">Changsha</span></div>
-                        <div class="map-node label-top" id="node_vn_hanoi" data-node="vn_hanoi"><span class="node-label">Hanoi</span></div>
-                        <div class="map-node label-top" id="node_malaysia" data-node="malaysia"><span class="node-label">Kuala Lumpur</span></div>
-                        <div class="map-node label-right" id="node_au_brisbane_qld" data-node="au_brisbane_qld"><span class="node-label">Brisbane</span></div>
-                        <div class="map-node label-right" id="node_au_sydney_nsw" data-node="au_sydney_nsw"><span class="node-label">Sydney</span></div>
-                        <div class="map-node label-left" id="node_au_melbourne" data-node="au_melbourne"><span class="node-label">Melbourne</span></div>
-                        <div class="map-node label-left" id="node_au_canberra" data-node="au_canberra"><span class="node-label">Canberra</span></div>
-                        <div class="map-node label-top" id="node_ws_samoa" data-node="ws_samoa"><span class="node-label">Apia</span></div>
-                        <div class="map-node label-top" id="node_fj_suva" data-node="fj_suva"><span class="node-label">Suva</span></div>
-                        <div class="map-node label-top" id="node_vu_vanuatu" data-node="vu_vanuatu"><span class="node-label">Port-Vila</span></div>
-                        <div class="map-node label-top" id="node_nz_auckland" data-node="nz_auckland"><span class="node-label">Auckland</span></div>
-                        <div class="map-node label-left" id="node_gy_georgetown" data-node="gy_georgetown"><span class="node-label">Georgetown</span></div>
-                        <div class="map-node label-top" id="node_mu_reduit" data-node="mu_reduit"><span class="node-label">Réduit</span></div>
-                        <div class="map-node label-left" id="node_ar_buenosaires" data-node="ar_buenosaires"><span class="node-label">Buenos Aires</span></div>
-                        <div class="map-node label-left" id="node_me_ljesevici" data-node="me_ljesevici"><span class="node-label">Lješevići</span></div>
-                        <div class="map-node label-left" id="node_co_bogota" data-node="co_bogota"><span class="node-label">Bogotá</span></div>
-                        <div class="map-node label-left" id="node_cr_sanjose" data-node="cr_sanjose"><span class="node-label">San José</span></div>
-                        <div class="map-node label-top" id="node_af_pretoria" data-node="af_pretoria"><span class="node-label">Pretoria</span></div>
-                        <div class="map-node label-top" id="node_af_johannesburg" data-node="af_johannesburg"><span class="node-label">Johannesburg</span></div>
-                        <div class="map-node label-top" id="node_af_nairobi" data-node="af_nairobi"><span class="node-label">Nairobi</span></div>
-                        <div class="map-node label-top" id="node_af_lagos" data-node="af_lagos"><span class="node-label">Lagos</span></div>
-                        <div class="map-node label-left" id="node_af_naija_vernacular" data-node="af_naija_vernacular"><span class="node-label">West Africa</span></div>
-                        <div class="map-node label-top" id="node_af_gaborone" data-node="af_gaborone"><span class="node-label">Gaborone</span></div>
-                        <div class="map-node label-right" id="node_af_madagascar" data-node="af_madagascar"><span class="node-label">Antananarivo</span></div>
-                        <div class="map-node label-top" id="node_af_congo" data-node="af_congo"><span class="node-label">Kinshasa</span></div>
-                        <div class="map-node label-left" id="node_af_bahamas" data-node="af_bahamas"><span class="node-label">Nassau</span></div>
-                        <div class="map-node label-top" id="node_af_pan_african_research" data-node="af_pan_african_research"><span class="node-label">Pan-Africa</span></div>
-                        <div class="map-node label-left" id="node_gl_nuuk" data-node="gl_nuuk"><span class="node-label">Nuuk</span></div>
-                        <div class="map-node label-top" id="node_gl_ilulissat" data-node="gl_ilulissat"><span class="node-label">Ilulissat</span></div>
+                        <div class="map-node label-top" id="node_harvard" data-node="harvard" style="top: 32%; left: 28%;"><span class="node-label">Harvard</span></div>
+                        <div class="map-node label-right" id="node_usa_east" data-node="usa_east" style="top: 35%; left: 26%;"><span class="node-label">USA East</span></div>
+                        <div class="map-node label-left" id="node_usa_west" data-node="usa_west" style="top: 36%; left: 18%;"><span class="node-label">USA West</span></div>
+                        <div class="map-node label-top" id="node_usa_midwest_south" data-node="usa_midwest_south" style="top: 38%; left: 22%;"><span class="node-label">USA Midwest</span></div>
+                        <div class="map-node label-left" id="node_bc_vancouver" data-node="bc_vancouver" style="top: 28%; left: 17%;"><span class="node-label">Vancouver</span></div>
+                        <div class="map-node label-top" id="node_alberta_calgary" data-node="alberta_calgary" style="top: 27%; left: 21%;"><span class="node-label">Calgary</span></div>
+                        <div class="map-node label-top" id="node_toronto_waterloo" data-node="toronto_waterloo" style="top: 32%; left: 25%;"><span class="node-label">Toronto</span></div>
+                        <div class="map-node label-right" id="node_ottawa_kingston" data-node="ottawa_kingston" style="top: 30%; left: 26%;"><span class="node-label">Ottawa</span></div>
+                        <div class="map-node label-top" id="node_montreal_qc" data-node="montreal_qc" style="top: 29%; left: 27%;"><span class="node-label">Montreal</span></div>
+                        <div class="map-node label-top" id="node_yukon_atlantic" data-node="yukon_atlantic" style="top: 22%; left: 16%;"><span class="node-label">Yukon</span></div>
+                        <div class="map-node label-top" id="node_uk_london" data-node="uk_london" style="top: 24%; left: 47%;"><span class="node-label">London</span></div>
+                        <div class="map-node label-top" id="node_oxford" data-node="oxford" style="top: 23%; left: 46%;"><span class="node-label">Oxford</span></div>
+                        <div class="map-node label-right" id="node_cambridge" data-node="cambridge" style="top: 22%; left: 47%;"><span class="node-label">Cambridge</span></div>
+                        <div class="map-node label-top" id="node_edinburgh" data-node="edinburgh" style="top: 20%; left: 46%;"><span class="node-label">Edinburgh</span></div>
+                        <div class="map-node label-top" id="node_sa_riyadh" data-node="sa_riyadh" style="top: 45%; left: 60%;"><span class="node-label">Riyadh</span></div>
+                        <div class="map-node label-top" id="node_ch_zurich" data-node="ch_zurich" style="top: 27%; left: 51%;"><span class="node-label">Zurich</span></div>
+                        <div class="map-node label-left" id="node_ch_geneva" data-node="ch_geneva" style="top: 28%; left: 50%;"><span class="node-label">Geneva</span></div>
+                        <div class="map-node label-top" id="node_ch_bern" data-node="ch_bern" style="top: 27%; left: 50%;"><span class="node-label">Bern</span></div>
+                        <div class="map-node label-top" id="node_it_bologna" data-node="it_bologna" style="top: 30%; left: 52%;"><span class="node-label">Bologna</span></div>
+                        <div class="map-node label-top" id="node_it_florence" data-node="it_florence" style="top: 31%; left: 52%;"><span class="node-label">Florence</span></div>
+                        <div class="map-node label-left" id="node_it_fabriano_rome" data-node="it_fabriano_rome" style="top: 32%; left: 53%;"><span class="node-label">Fabriano</span></div>
+                        <div class="map-node label-left" id="node_fr_paris" data-node="fr_paris" style="top: 26%; left: 49%;"><span class="node-label">Paris</span></div>
+                        <div class="map-node label-left" id="node_fr_toulouse" data-node="fr_toulouse" style="top: 29%; left: 48%;"><span class="node-label">Toulouse</span></div>
+                        <div class="map-node label-left" id="node_si_ljubljana" data-node="si_ljubljana" style="top: 28%; left: 53%;"><span class="node-label">Ljubljana</span></div>
+                        <div class="map-node label-right" id="node_si_koper" data-node="si_koper" style="top: 29%; left: 53%;"><span class="node-label">Koper</span></div>
+                        <div class="map-node label-right" id="node_hr_zagreb" data-node="hr_zagreb" style="top: 28%; left: 54%;"><span class="node-label">Zagreb</span></div>
+                        <div class="map-node label-top" id="node_am_yerevan" data-node="am_yerevan" style="top: 35%; left: 61%;"><span class="node-label">Yerevan</span></div>
+                        <div class="map-node label-top" id="node_by_minsk" data-node="by_minsk" style="top: 22%; left: 56%;"><span class="node-label">Minsk</span></div>
+                        <div class="map-node label-right" id="node_bg_sofia" data-node="bg_sofia" style="top: 32%; left: 56%;"><span class="node-label">Sofia</span></div>
+                        <div class="map-node label-top" id="node_lv_riga" data-node="lv_riga" style="top: 20%; left: 55%;"><span class="node-label">Riga</span></div>
+                        <div class="map-node label-left" id="node_es_madrid" data-node="es_madrid" style="top: 33%; left: 46%;"><span class="node-label">Madrid</span></div>
+                        <div class="map-node label-left" id="node_pt_lisbon" data-node="pt_lisbon" style="top: 34%; left: 44%;"><span class="node-label">Lisbon</span></div>
+                        <div class="map-node label-top" id="node_ua_kyiv" data-node="ua_kyiv" style="top: 25%; left: 57%;"><span class="node-label">Kyiv</span></div>
+                        <div class="map-node label-right" id="node_sk_bratislava" data-node="sk_bratislava" style="top: 26%; left: 54%;"><span class="node-label">Bratislava</span></div>
+                        <div class="map-node label-top" id="node_sk_sered" data-node="sk_sered" style="top: 26%; left: 55%;"><span class="node-label">Sereď</span></div>
+                        <div class="map-node label-top" id="node_sk_senec" data-node="sk_senec" style="top: 27%; left: 54%;"><span class="node-label">Senec</span></div>
+                        <div class="map-node label-top" id="node_ru_volgograd" data-node="ru_volgograd" style="top: 27%; left: 62%;"><span class="node-label">Volgograd</span></div>
+                        <div class="map-node label-left" id="node_ee_tartu" data-node="ee_tartu" style="top: 19%; left: 56%;"><span class="node-label">Tartu</span></div>
+                        <div class="map-node label-left" id="node_ee_tallinn" data-node="ee_tallinn" style="top: 18%; left: 55%;"><span class="node-label">Tallinn</span></div>
+                        <div class="map-node label-left" id="node_li_vaduz" data-node="li_vaduz" style="top: 27%; left: 51%;"><span class="node-label">Vaduz</span></div>
+                        <div class="map-node label-right" id="node_hu_budapest" data-node="hu_budapest" style="top: 27%; left: 55%;"><span class="node-label">Budapest</span></div>
+                        <div class="map-node label-right" id="node_lt_vilnius" data-node="lt_vilnius" style="top: 21%; left: 56%;"><span class="node-label">Vilnius</span></div>
+                        <div class="map-node label-right" id="node_fi_helsinki" data-node="fi_helsinki" style="top: 17%; left: 55%;"><span class="node-label">Helsinki</span></div>
+                        <div class="map-node label-top" id="node_fi_oulu" data-node="fi_oulu" style="top: 14%; left: 55%;"><span class="node-label">Oulu</span></div>
+                        <div class="map-node label-right" id="node_gl_aalborg" data-node="gl_aalborg" style="top: 20%; left: 50%;"><span class="node-label">Aalborg</span></div>
+                        <div class="map-node label-top" id="node_dk_copenhagen" data-node="dk_copenhagen" style="top: 21%; left: 51%;"><span class="node-label">Copenhagen</span></div>
+                        <div class="map-node label-top" id="node_at_linz" data-node="at_linz" style="top: 26%; left: 52%;"><span class="node-label">Linz</span></div>
+                        <div class="map-node label-top" id="node_at_vienna" data-node="at_vienna" style="top: 26%; left: 53%;"><span class="node-label">Vienna</span></div>
+                        <div class="map-node label-top" id="node_at_innsbruck" data-node="at_innsbruck" style="top: 27%; left: 51%;"><span class="node-label">Innsbruck</span></div>
+                        <div class="map-node label-top" id="node_cz_prague" data-node="cz_prague" style="top: 25%; left: 53%;"><span class="node-label">Prague</span></div>
+                        <div class="map-node label-top" id="node_cz_pilsen_regional" data-node="cz_pilsen_regional" style="top: 25%; left: 52%;"><span class="node-label">Pilsen</span></div>
+                        <div class="map-node label-top" id="node_be_brussels" data-node="be_brussels" style="top: 25%; left: 48%;"><span class="node-label">Brussels</span></div>
+                        <div class="map-node label-top" id="node_be_leuven" data-node="be_leuven" style="top: 25%; left: 49%;"><span class="node-label">Leuven</span></div>
+                        <div class="map-node label-top" id="node_be_ghent_bruges" data-node="be_ghent_bruges" style="top: 24%; left: 48%;"><span class="node-label">Ghent</span></div>
+                        <div class="map-node label-top" id="node_pl_warsaw" data-node="pl_warsaw" style="top: 23%; left: 55%;"><span class="node-label">Warsaw</span></div>
+                        <div class="map-node label-top" id="node_pl_krakow" data-node="pl_krakow" style="top: 25%; left: 55%;"><span class="node-label">Krakow</span></div>
+                        <div class="map-node label-top" id="node_pl_duszniki" data-node="pl_duszniki" style="top: 24%; left: 53%;"><span class="node-label">Duszniki</span></div>
+                        <div class="map-node label-top" id="node_pl_poznan" data-node="pl_poznan" style="top: 23%; left: 53%;"><span class="node-label">Poznań</span></div>
+                        <div class="map-node label-top" id="node_de_hamburg" data-node="de_hamburg" style="top: 22%; left: 51%;"><span class="node-label">Hamburg</span></div>
+                        <div class="map-node label-top" id="node_de_stuttgart" data-node="de_stuttgart" style="top: 26%; left: 50%;"><span class="node-label">Stuttgart</span></div>
+                        <div class="map-node label-top" id="node_de_frankfurt" data-node="de_frankfurt" style="top: 25%; left: 50%;"><span class="node-label">Frankfurt</span></div>
+                        <div class="map-node label-top" id="node_de_leipzig" data-node="de_leipzig" style="top: 24%; left: 52%;"><span class="node-label">Leipzig</span></div>
+                        <div class="map-node label-top" id="node_de_potsdam_berlin" data-node="de_potsdam_berlin" style="top: 23%; left: 52%;"><span class="node-label">Berlin</span></div>
+                        <div class="map-node label-top" id="node_de_gottingen" data-node="de_gottingen" style="top: 24%; left: 51%;"><span class="node-label">Göttingen</span></div>
+                        <div class="map-node label-top" id="node_de_mainz" data-node="de_mainz" style="top: 25%; left: 49%;"><span class="node-label">Mainz</span></div>
+                        <div class="map-node label-top" id="node_de_nuremberg" data-node="de_nuremberg" style="top: 25%; left: 51%;"><span class="node-label">Nuremberg</span></div>
+                        <div class="map-node label-top" id="node_nl_amsterdam" data-node="nl_amsterdam" style="top: 23%; left: 48%;"><span class="node-label">Amsterdam</span></div>
+                        <div class="map-node label-top" id="node_nl_leiden" data-node="nl_leiden" style="top: 23%; left: 48%;"><span class="node-label">Leiden</span></div>
+                        <div class="map-node label-top" id="node_nl_utrecht" data-node="nl_utrecht" style="top: 24%; left: 49%;"><span class="node-label">Utrecht</span></div>
+                        <div class="map-node label-top" id="node_se_stockholm" data-node="se_stockholm" style="top: 17%; left: 53%;"><span class="node-label">Stockholm</span></div>
+                        <div class="map-node label-top" id="node_gr_athens" data-node="gr_athens" style="top: 37%; left: 55%;"><span class="node-label">Athens</span></div>
+                        <div class="map-node label-right" id="node_kw_kuwaitcity" data-node="kw_kuwaitcity" style="top: 42%; left: 61%;"><span class="node-label">Kuwait City</span></div>
+                        <div class="map-node label-right" id="node_ps_gaza" data-node="ps_gaza" style="top: 39%; left: 57%;"><span class="node-label">Gaza</span></div>
+                        <div class="map-node label-right" id="node_ps_jenin" data-node="ps_jenin" style="top: 38%; left: 58%;"><span class="node-label">Jenin</span></div>
+                        <div class="map-node label-left" id="node_jo_amman" data-node="jo_amman" style="top: 39%; left: 58%;"><span class="node-label">Amman</span></div>
+                        <div class="map-node label-right" id="node_il_jerusalem" data-node="il_jerusalem" style="top: 39%; left: 58%;"><span class="node-label">Jerusalem</span></div>
+                        <div class="map-node label-top" id="node_om_muscat" data-node="om_muscat" style="top: 47%; left: 63%;"><span class="node-label">Muscat</span></div>
+                        <div class="map-node label-top" id="node_ae_abudhabi" data-node="ae_abudhabi" style="top: 45%; left: 62%;"><span class="node-label">Abu Dhabi</span></div>
+                        <div class="map-node label-top" id="node_ae_dubai" data-node="ae_dubai" style="top: 44%; left: 62%;"><span class="node-label">Dubai</span></div>
+                        <div class="map-node label-right" id="node_cy_nicosia" data-node="cy_nicosia" style="top: 37%; left: 57%;"><span class="node-label">Nicosia</span></div>
+                        <div class="map-node label-left" id="node_sy_damascus" data-node="sy_damascus" style="top: 38%; left: 58%;"><span class="node-label">Damascus</span></div>
+                        <div class="map-node label-top" id="node_kg_bishkek" data-node="kg_bishkek" style="top: 32%; left: 68%;"><span class="node-label">Bishkek</span></div>
+                        <div class="map-node label-top" id="node_pakistan" data-node="pakistan" style="top: 41%; left: 67%;"><span class="node-label">Peshawar</span></div>
+                        <div class="map-node label-top" id="node_goa" data-node="goa" style="top: 52%; left: 70%;"><span class="node-label">Goa</span></div>
+                        <div class="map-node label-top" id="node_th_bangkok" data-node="th_bangkok" style="top: 53%; left: 78%;"><span class="node-label">Bangkok</span></div>
+                        <div class="map-node label-top" id="node_ph_quezon" data-node="ph_quezon" style="top: 51%; left: 83%;"><span class="node-label">Quezon City</span></div>
+                        <div class="map-node label-top" id="node_cn_changsha" data-node="cn_changsha" style="top: 42%; left: 80%;"><span class="node-label">Changsha</span></div>
+                        <div class="map-node label-top" id="node_vn_hanoi" data-node="vn_hanoi" style="top: 47%; left: 78%;"><span class="node-label">Hanoi</span></div>
+                        <div class="map-node label-top" id="node_malaysia" data-node="malaysia" style="top: 58%; left: 77%;"><span class="node-label">Kuala Lumpur</span></div>
+                        <div class="map-node label-right" id="node_au_brisbane_qld" data-node="au_brisbane_qld" style="top: 76%; left: 91%;"><span class="node-label">Brisbane</span></div>
+                        <div class="map-node label-right" id="node_au_sydney_nsw" data-node="au_sydney_nsw" style="top: 80%; left: 90%;"><span class="node-label">Sydney</span></div>
+                        <div class="map-node label-left" id="node_au_melbourne" data-node="au_melbourne" style="top: 83%; left: 88%;"><span class="node-label">Melbourne</span></div>
+                        <div class="map-node label-left" id="node_au_canberra" data-node="au_canberra" style="top: 81%; left: 89%;"><span class="node-label">Canberra</span></div>
+                        <div class="map-node label-top" id="node_ws_samoa" data-node="ws_samoa" style="top: 68%; left: 97%;"><span class="node-label">Apia</span></div>
+                        <div class="map-node label-top" id="node_fj_suva" data-node="fj_suva" style="top: 70%; left: 95%;"><span class="node-label">Suva</span></div>
+                        <div class="map-node label-top" id="node_vu_vanuatu" data-node="vu_vanuatu" style="top: 70%; left: 93%;"><span class="node-label">Port-Vila</span></div>
+                        <div class="map-node label-top" id="node_nz_auckland" data-node="nz_auckland" style="top: 84%; left: 95%;"><span class="node-label">Auckland</span></div>
+                        <div class="map-node label-left" id="node_gy_georgetown" data-node="gy_georgetown" style="top: 54%; left: 34%;"><span class="node-label">Georgetown</span></div>
+                        <div class="map-node label-top" id="node_mu_reduit" data-node="mu_reduit" style="top: 69%; left: 66%;"><span class="node-label">Réduit</span></div>
+                        <div class="map-node label-left" id="node_ar_buenosaires" data-node="ar_buenosaires" style="top: 81%; left: 33%;"><span class="node-label">Buenos Aires</span></div>
+                        <div class="map-node label-left" id="node_me_ljesevici" data-node="me_ljesevici" style="top: 31%; left: 54%;"><span class="node-label">Lješevići</span></div>
+                        <div class="map-node label-left" id="node_co_bogota" data-node="co_bogota" style="top: 52%; left: 30%;"><span class="node-label">Bogotá</span></div>
+                        <div class="map-node label-left" id="node_cr_sanjose" data-node="cr_sanjose" style="top: 50%; left: 28%;"><span class="node-label">San José</span></div>
+                        <div class="map-node label-top" id="node_af_pretoria" data-node="af_pretoria" style="top: 76%; left: 56%;"><span class="node-label">Pretoria</span></div>
+                        <div class="map-node label-top" id="node_af_johannesburg" data-node="af_johannesburg" style="top: 77%; left: 56%;"><span class="node-label">Johannesburg</span></div>
+                        <div class="map-node label-top" id="node_af_nairobi" data-node="af_nairobi" style="top: 57%; left: 59%;"><span class="node-label">Nairobi</span></div>
+                        <div class="map-node label-top" id="node_af_lagos" data-node="af_lagos" style="top: 53%; left: 49%;"><span class="node-label">Lagos</span></div>
+                        <div class="map-node label-left" id="node_af_naija_vernacular" data-node="af_naija_vernacular" style="top: 52%; left: 47%;"><span class="node-label">West Africa</span></div>
+                        <div class="map-node label-top" id="node_af_gaborone" data-node="af_gaborone" style="top: 75%; left: 55%;"><span class="node-label">Gaborone</span></div>
+                        <div class="map-node label-right" id="node_af_madagascar" data-node="af_madagascar" style="top: 70%; left: 62%;"><span class="node-label">Antananarivo</span></div>
+                        <div class="map-node label-top" id="node_af_congo" data-node="af_congo" style="top: 60%; left: 53%;"><span class="node-label">Kinshasa</span></div>
+                        <div class="map-node label-left" id="node_af_bahamas" data-node="af_bahamas" style="top: 42%; left: 27%;"><span class="node-label">Nassau</span></div>
+                        <div class="map-node label-top" id="node_af_pan_african_research" data-node="af_pan_african_research" style="top: 62%; left: 55%;"><span class="node-label">Pan-Africa</span></div>
+                        <div class="map-node label-left" id="node_gl_nuuk" data-node="gl_nuuk" style="top: 12%; left: 38%;"><span class="node-label">Nuuk</span></div>
+                        <div class="map-node label-top" id="node_gl_ilulissat" data-node="gl_ilulissat" style="top: 9%; left: 39%;"><span class="node-label">Ilulissat</span></div>
 
                         <!-- POPUP TOOLTIP CARD -->
                         <div class="map-popup-card" id="mapPopupCard" aria-live="polite">
@@ -533,24 +529,24 @@
                 <div class="mombasa-header">
                     <span class="benchmark-tag">&bull; Photo Monograph Series &bull; Kenya &bull; 2008</span>
                     <h2>
-                        <button type="button" class="mombasa-accordion-trigger" id="mombasa-trigger" aria-expanded="false" aria-controls="mombasa-essay">
-                            <span>Chronicles of Mombasa</span>
-                            <span class="toggle-icon" id="mombasa-toggle-icon" aria-hidden="true">+</span>
+                        <button type="button" class="mombasa-accordion-trigger" id="mombasa-trigger" aria-expanded="false" aria-controls="mombasa-essay" style="background: none; border: none; color: inherit; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; width: 100%;">
+                            <span class="mombasa-title">Chronicles of Mombasa</span>
+                            <span class="toggle-icon" id="mombasa-toggle-icon" aria-hidden="true" style="font-family: var(--font-sans); font-size: 1.8rem; color: var(--accent-gold); transition: transform 0.3s ease;">+</span>
                         </button>
                     </h2>
                     <div class="mombasa-subtitle">Faces, Moments, and the Unfiltered Spirit of East Africa</div>
                     
-                    <div id="mombasa-essay" class="mombasa-essay-panel" aria-labelledby="mombasa-trigger" hidden>
-                        <p class="essay-lead">
+                    <div id="mombasa-essay" class="mombasa-essay-panel" aria-labelledby="mombasa-trigger" hidden style="background: var(--surface-card); border: 1px solid var(--border-gold); padding: 25px; margin-top: 25px; text-align: left; font-size: 0.88rem; line-height: 1.85; color: var(--text-secondary);">
+                        <p class="essay-lead" style="font-size: 1rem; color: #fff; margin-bottom: 15px; font-weight: 300;">
                             Thirty candid portrait studies capturing the presence, nuance, and unfiltered human expression of youth through the lens of an artist.
                         </p>
-                        <p>
+                        <p style="margin-bottom: 15px;">
                             Recorded in 2008, <i>Chronicles of Mombasa</i> is an intimate investigation into perception, ambition, and the unconditioned mind.
                         </p>
-                        <p>
+                        <p style="margin-bottom: 15px;">
                             During a singular encounter with school children in East Africa, a deceptively simple inquiry—asking each child to define their future aspiration—revealed a remarkable psychological dynamic. When posed with the exact same question shortly thereafter, every child offered an entirely distinct response, unburdened by rigid self-definition or narrative continuity.
                         </p>
-                        <p>
+                        <p style="margin-bottom: 0;">
                             What began as a portrait study evolved into an observation of total cognitive freedom and fluid identity—qualities often lost in the adult experience.
                         </p>
                     </div>
@@ -656,18 +652,9 @@
     <div class="modal-overlay" id="dossierModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
         <div class="modal-box">
             <button type="button" class="modal-close" id="closeDossierBtn" aria-label="Close dossier">&times;</button>
-            <div class="modal-code" id="modalCode">DOSSIER RECORD</div>
-            <h3 class="modal-title" id="modalTitle">Title</h3>
-            <div class="modal-body" id="modalBody">Body content loads here...</div>
-        </div>
-    </div>
-
-    <!-- LIGHTBOX MODAL CONTAINER -->
-    <div id="lightbox" class="modal-overlay" aria-hidden="true" role="dialog" aria-label="Image lightbox view">
-        <button type="button" class="modal-close" id="closeLightboxBtn" aria-label="Close lightbox">&times;</button>
-        <div class="lightbox-content">
-            <img id="lightbox-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="Enlarged Masterwork View">
-            <div id="lightbox-caption" class="lightbox-caption"></div>
+            <div class="modal-code" id="modalCode" style="font-size: 0.65rem; color: var(--accent-gold); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 10px;">DOSSIER RECORD</div>
+            <h3 class="modal-title" id="modalTitle" style="font-family: var(--font-serif); font-size: 1.8rem; color: #ffffff; font-weight: 300; margin-bottom: 20px;">Title</h3>
+            <div class="modal-body" id="modalBody" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.85;">Body content loads here...</div>
         </div>
     </div>
 
