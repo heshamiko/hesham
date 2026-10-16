@@ -397,7 +397,7 @@ h2.section-heading {
     background-color: #000000;
     border: 1px solid var(--border-gold);
     box-shadow: inset 0 0 50px rgba(0,0,0,0.95), 0 0 25px var(--accent-gold-glow);
-    overflow: hidden; /* Restores position anchoring for map nodes */
+    overflow: hidden;
 }
 
 .radar-grid {
@@ -573,13 +573,17 @@ h2.section-heading {
     gap: 30px;
 }
 
+/* --- UNIFORM BOX SIZE OVERRIDES FOR SELECTED SERIES CATALOGUE --- */
 .ledger-row {
     background: var(--surface-card);
     border: 1px solid var(--border-subtle);
     display: grid;
-    grid-template-columns: 280px 1fr 220px;
+    grid-template-columns: 280px 1fr 200px;
+    align-items: center;
     gap: 30px;
     padding: 25px;
+    min-height: 280px; /* Establishes a unified base height for all four boxes */
+    height: 100%;
     transition: all 0.4s ease;
 }
 
@@ -590,18 +594,21 @@ h2.section-heading {
 
 .ledger-visual {
     width: 100%;
-    height: 200px;
+    height: 220px; /* Fixed height container for uniform artwork framing */
     background: #000000;
     border: 1px solid var(--border-subtle);
     overflow: hidden;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .ledger-visual img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    object-fit: cover; /* Prevents image distortion across varying ratios */
+    object-position: center;
     opacity: 0.85;
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
@@ -615,6 +622,7 @@ h2.section-heading {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100%;
 }
 
 .ledger-pillar-tag {
@@ -637,7 +645,7 @@ h2.section-heading {
 .ledger-meta-list {
     font-size: 0.8rem;
     color: var(--text-secondary);
-    line-height: 1.9;
+    line-height: 1.8;
 }
 
 .ledger-meta-list strong { color: var(--text-primary); }
@@ -704,7 +712,7 @@ h2.section-heading {
     background: rgba(3, 3, 3, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    z-index: 20000; /* Elevated above mobile map cards */
+    z-index: 20000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -759,7 +767,7 @@ footer {
     text-transform: uppercase;
 }
 
-/* --- Mowicha (Living Wisdom) Image Centering Overrides --- */
+/* --- Image Centering Utility --- */
 .ledger-row-centered .ledger-visual {
     display: flex;
     justify-content: center;
@@ -785,7 +793,11 @@ footer {
     .nav-links { display: none; }
     h1.hero-title-main { font-size: 3.2rem; letter-spacing: 0.18em; }
     .metrics-bar { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .ledger-row { grid-template-columns: 1fr; gap: 20px; }
+    .ledger-row { 
+        grid-template-columns: 1fr; 
+        gap: 20px; 
+        min-height: auto; 
+    }
     .ledger-visual { height: 240px; }
 }
 
