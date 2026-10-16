@@ -1,3 +1,8 @@
+/* ==========================================================================
+   HESHAM MALIK — STUDIO ARCHIVE & CATALOGUE RAISONNÉ
+   Production Stylesheet (style.css) - Refined Build
+   ========================================================================== */
+
 :root {
     --bg-canvas: #030303;
     --surface-glass: rgba(12, 12, 12, 0.88);
@@ -12,29 +17,35 @@
     --border-gold: rgba(212, 175, 55, 0.35);
     
     --font-serif: 'Cormorant Garamond', Georgia, serif;
-    --font-sans: 'Inter', -apple-system, sans-serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* --- Core Resets & Global Smooth Scroll --- */
+* { 
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
 
 body {
     background-color: var(--bg-canvas);
     color: var(--text-primary);
     font-family: var(--font-sans);
-    margin: 0;
-    padding: 0;
     line-height: 1.8;
     letter-spacing: 0.02em;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
+/* --- Hero Header Engine --- */
 header.full-bleed-hero {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -111,6 +122,7 @@ h1.hero-title-main {
     transform: rotate(45deg);
 }
 
+/* --- Fixed Institutional Navigation Bar --- */
 nav.nav-bar {
     position: fixed;
     top: 0;
@@ -122,6 +134,7 @@ nav.nav-bar {
     align-items: center;
     background: rgba(3, 3, 3, 0.94);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-subtle);
     z-index: 9999;
 }
@@ -193,6 +206,7 @@ nav.nav-bar {
     color: #000000;
 }
 
+/* --- Institutional Metrics & Benchmark Cards --- */
 .benchmark-box {
     background: var(--surface-solid);
     border: 1px solid var(--border-gold);
@@ -256,6 +270,7 @@ nav.nav-bar {
     color: var(--text-secondary);
 }
 
+/* --- Main Layout Sections --- */
 main {
     max-width: 1140px;
     margin: 0 auto;
@@ -342,6 +357,7 @@ h2.section-heading {
     transform: scale(1.06);
 }
 
+/* --- Cartographic Radar Map Engine --- */
 .real-map-wrapper {
     background: var(--surface-card);
     border: 1px solid var(--border-gold);
@@ -472,10 +488,11 @@ h2.section-heading {
 
 .map-popup-card {
     position: absolute;
-    width: 340px;
+    width: 320px;
     max-width: 90vw;
     background: rgba(8, 8, 8, 0.98);
     backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     border: 1px solid var(--border-gold);
     padding: 18px 22px;
     text-align: left;
@@ -523,6 +540,7 @@ h2.section-heading {
     overflow-y: auto;
 }
 
+/* --- Masterwork Ledger Grid --- */
 .ledger-controls {
     display: flex;
     justify-content: center;
@@ -651,6 +669,32 @@ h2.section-heading {
     background: var(--surface-solid);
 }
 
+/* --- Surface & Texture Macro Detail Viewer Base Styles --- */
+.macro-viewer-container {
+    background: var(--surface-card);
+    border: 1px solid var(--border-gold);
+    padding: 25px;
+    margin-top: 40px;
+}
+
+.macro-view-window {
+    width: 100%;
+    height: 500px;
+    background: #000000;
+    border: 1px solid var(--border-subtle);
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+}
+
+.macro-controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+/* --- Modal & Lightbox Overlays --- */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -659,7 +703,8 @@ h2.section-heading {
     height: 100%;
     background: rgba(3, 3, 3, 0.95);
     backdrop-filter: blur(20px);
-    z-index: 10000;
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 20000; /* Elevated above mobile map cards */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -699,6 +744,7 @@ h2.section-heading {
 
 .modal-close:hover { color: var(--accent-gold); }
 
+/* --- Footer --- */
 footer {
     background: var(--surface-solid);
     border-top: 1px solid var(--border-subtle);
@@ -724,7 +770,6 @@ footer {
     object-position: center center;
     margin: 0 auto;
 }
-
 
 /* ==========================================================================
    OPTIMIZED RESPONSIVE BREAKPOINTS (IPHONE & TABLET)
@@ -755,7 +800,7 @@ footer {
     .mombasa-title { font-size: 1.8rem; }
     .mombasa-subtitle { font-size: 0.65rem; letter-spacing: 0.2em; }
 
-    /* Map Touch Handling on iPhone */
+    /* Map Touch Handling on Mobile */
     .real-map-wrapper { padding: 20px 10px; }
     .map-quick-filter { flex-direction: column; width: 100%; }
     .map-select { width: 100%; font-size: 0.78rem; padding: 10px; }
@@ -785,7 +830,6 @@ footer {
     .macro-view-window { height: 380px; }
     .macro-controls-bar { flex-direction: column; gap: 10px; text-align: center; }
 }
-
 
 /* ==========================================================================
    ARCHIVAL PRINT STYLESHEET (OFFICIAL DOSSIER PRINTING)
