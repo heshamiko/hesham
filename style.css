@@ -274,6 +274,79 @@ h2.section-heading {
     text-align: center;
 }
 
+/* --- SELECTED SERIES CATALOGUE — EQUALIZED BOX GRID --- */
+.series-catalogue-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid for 4 items */
+    gap: 30px;
+    align-items: stretch; /* Forces equal heights across all row items */
+    margin-top: 30px;
+}
+
+.series-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border-subtle);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Guarantees box height consistency */
+    transition: all 0.4s ease;
+}
+
+.series-card:hover {
+    border-color: var(--border-gold);
+    box-shadow: 0 15px 40px var(--accent-gold-glow);
+    transform: translateY(-4px);
+}
+
+.series-card-image {
+    width: 100%;
+    height: 320px; /* Fixed frame height for uniform visual presentation */
+    background: #000000;
+    border: 1px solid var(--border-subtle);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.series-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Change to 'contain' if artwork must be 100% uncropped */
+    object-position: center;
+    opacity: 0.88;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.series-card:hover .series-card-image img {
+    opacity: 1;
+    transform: scale(1.04);
+}
+
+.series-card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.series-card-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: #ffffff;
+    font-weight: 300;
+    margin-bottom: 8px;
+    letter-spacing: 0.03em;
+}
+
+.series-card-description {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
 /* --- MASTERWORK LEDGER GRID & EQUALIZED BOX STYLES --- */
 .ledger-controls {
     display: flex;
@@ -312,7 +385,7 @@ h2.section-heading {
     border: 1px solid var(--border-subtle);
     display: grid;
     grid-template-columns: 280px 1fr 180px;
-    align-items: stretch; /* Forces equal height columns across the card */
+    align-items: stretch;
     gap: 30px;
     padding: 30px;
     min-height: 280px;
@@ -805,6 +878,7 @@ footer {
     .nav-links { display: none; }
     h1.hero-title-main { font-size: 3.2rem; letter-spacing: 0.18em; }
     .metrics-bar { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .series-catalogue-grid { grid-template-columns: 1fr; } /* Stacks 1 column on mobile/tablet */
     .ledger-row { 
         grid-template-columns: 1fr; 
         gap: 20px; 
