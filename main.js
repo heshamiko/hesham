@@ -1206,12 +1206,12 @@ const mombasaInscriptions = {
     }
 };
 
-// --- MASTERWORK MUSEUM PROVENANCE CAPTION MAP ---
+// --- MASTERWORK MUSEUM PROVENANCE CAPTION MAP (UPDATED FOR BUMBLEBEE) ---
 const masterworkProvenance = {
     "rooh-nawaz-1.jpg": "Exhibited at the Museum of Prague West, an institutional repository founded in 1891 by Leopold Čihák.",
     "land-spatial-2.jpg": "Exhibited at the Museum of The Pilgrimage Church of the Visitation of Virgin Mary, a 13th-century landmark and Northern Bohemia's premier Baroque museum.",
     "box-spatial-1.jpg": "Exhibited at the Museum of Ecclesiastical Art, housed within Plzeň’s 14th-century former Franciscan monastery.",
-    "words-canvas-main.jpg": "Exhibited as part of a solo retrospective at the Museum and Gallery of the Northern Plzeň Region in Mariánská Týnice. Housed within a monumental Baroque complex designed by master architect Jan Blažej Santini-Aichl, the foundational stones of the current standing structure were laid in 1711."
+    "words-canvas-main.jpg": "Presented as part of the prominent international showcase, Brussels Expo: Empowering Europe’s Creative Industries."
 };
 
 // --- 5. INTERACTIVE MODAL & LIGHTBOX ENGINE ---
@@ -1409,8 +1409,8 @@ document.addEventListener('click', function(e) {
 // --- 9. SURFACE & TEXTURE MACRO DETAIL VIEWER ENGINE (BOUNDED & CLAMPED) ---
 (function initMacroViewer() {
     document.addEventListener('DOMContentLoaded', function() {
-        const macroWindow = document.querySelector('.macro-view-window');
-        const macroImg = document.querySelector('.macro-view-window img');
+        const macroWindow = document.getElementById('macroWindow');
+        const macroImg = document.getElementById('macroImage');
         if (!macroWindow || !macroImg) return;
 
         let scale = 1;
@@ -1452,8 +1452,8 @@ document.addEventListener('click', function(e) {
         });
 
         macroWindow.addEventListener('mousemove', function(e) {
-            e.preventDefault();
             if (!panning) return;
+            e.preventDefault();
             pointX = e.clientX - startX;
             pointY = e.clientY - startY;
             setTransform();
