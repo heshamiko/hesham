@@ -113,7 +113,7 @@
         </section>
 
         <main>
-            <!-- 1. SELECTED SERIES / CATALOGUE SECTION (PRIMARY FINE ART) -->
+            <!-- 1. SELECTED SERIES / CATALOGUE SECTION -->
             <section id="ledger">
                 <h2 class="section-heading">Selected Series Catalogue</h2>
                 
@@ -126,7 +126,7 @@
                 </div>
 
                 <div class="series-catalogue-grid">
-                    <!-- ROOH-NAWAZ (BOX 1) -->
+                    <!-- ROOH-NAWAZ -->
                     <div class="series-card" data-category="rooh">
                         <div class="series-card-image">
                             <img src="rooh-nawaz-1.jpg" 
@@ -149,7 +149,7 @@
                         <button type="button" class="action-btn" data-dossier="rooh_nawaz">Read Dossier</button>
                     </div>
 
-                    <!-- VOICES OF THE LAND (BOX 2) -->
+                    <!-- VOICES OF THE LAND -->
                     <div class="series-card" data-category="voices">
                         <div class="series-card-image">
                             <img src="land-spatial-2.jpg" 
@@ -171,7 +171,7 @@
                         <button type="button" class="action-btn" data-dossier="mowicha">Read Dossier</button>
                     </div>
 
-                    <!-- LIFE OF A BOX (BOX 3) -->
+                    <!-- LIFE OF A BOX -->
                     <div class="series-card" data-category="box">
                         <div class="series-card-image">
                             <img src="box-spatial-1.jpg" 
@@ -195,7 +195,7 @@
                         <button type="button" class="action-btn" data-dossier="box_monograph">Read Dossier</button>
                     </div>
 
-                    <!-- WORDS PROJECT (BOX 4) -->
+                    <!-- WORDS PROJECT -->
                     <div class="series-card" data-category="words">
                         <div class="series-card-image">
                             <img src="words-canvas-main.jpg" 
@@ -227,14 +227,14 @@
                 <div class="macro-viewer-container">
                     <span class="benchmark-tag">&bull; SURFACE &amp; TEXTURE &bull; MACRO CANVAS STUDY</span>
                     <h3 class="macro-heading" style="font-family: var(--font-serif); font-size: 1.8rem; color: #fff; font-weight: 300; margin: 10px 0;">Tactile Depth &amp; Pigment Density</h3>
-                    <p class="macro-subtext" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 20px;">Click &amp; drag to pan across the surface texture. Scroll mouse wheel to zoom in/out.</p>
+                    <p class="macro-subtext" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 20px;">Click &amp; drag to pan across the surface texture. Scroll mouse wheel or double-click to zoom.</p>
 
-                    <div class="macro-view-window" id="macroWindow" tabIndex="0" aria-label="Interactive macro detail canvas viewer" style="position: relative; overflow: hidden; cursor: grab; user-select: none; width: 100%; height: 600px; background: #0a0a0a; border: 1px solid var(--border-gold, #333);">
-                        <img src="words-texture-1.JPG" id="macroImage" alt="Hesham Malik High-Resolution Macro Detail View" width="1600" height="1200" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; pointer-events: none; user-select: none; transform-origin: 0 0; transition: transform 0.05s ease-out;">
+                    <div class="macro-view-window" id="macroWindow" tabIndex="0" aria-label="Interactive macro detail canvas viewer" style="position: relative; overflow: hidden; cursor: grab; user-select: none; width: 100%; height: 600px; background: #0a0a0a; border: 1px solid var(--border-gold, #333); touch-action: none;">
+                        <img src="words-texture-1.JPG" id="macroImage" alt="Hesham Malik High-Resolution Macro Detail View" width="1600" height="1200" style="width: 100%; height: 100%; object-fit: contain; pointer-events: auto; user-select: none;">
                     </div>
 
                     <div class="macro-controls-bar">
-                        <span style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.15em;">Click &amp; Drag to Pan Surface • Scroll to Zoom</span>
+                        <span style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.15em;">Click &amp; Drag to Pan Surface • Scroll / Double Click to Zoom</span>
                         <div>
                             <button type="button" class="action-btn" id="resetMacroBtn">Reset View</button>
                         </div>
@@ -661,6 +661,11 @@
 
     <!-- Main JavaScript Application File -->
     <script src="main.js"></script>
-
+    <script>
+        // Inline fallback initialization trigger
+        if (typeof initMacroViewerEngine === 'function') {
+            initMacroViewerEngine();
+        }
+    </script>
 </body>
 </html>
