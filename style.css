@@ -277,9 +277,9 @@ h2.section-heading {
 /* --- SELECTED SERIES CATALOGUE — EQUALIZED BOX GRID --- */
 .series-catalogue-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2x2 grid for 4 items */
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    align-items: stretch; /* Forces equal heights across all row items */
+    align-items: stretch;
     margin-top: 30px;
 }
 
@@ -290,7 +290,7 @@ h2.section-heading {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%; /* Guarantees box height consistency */
+    height: 100%;
     transition: all 0.4s ease;
 }
 
@@ -302,7 +302,7 @@ h2.section-heading {
 
 .series-card-image {
     width: 100%;
-    height: 320px; /* Fixed frame height for uniform visual presentation */
+    height: 320px;
     background: #000000;
     border: 1px solid var(--border-subtle);
     overflow: hidden;
@@ -319,7 +319,6 @@ h2.section-heading {
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* Option A: Focal Point Alignment Class for Top-Heavy Paintings (e.g., Faces) */
 .series-card-image img.img-pos-top {
     object-position: top center !important;
 }
@@ -508,6 +507,7 @@ h2.section-heading {
     cursor: grab;
     outline: none;
     user-select: none;
+    touch-action: none; /* Prevents mobile scroll while dragging/zooming */
 }
 
 .macro-view-window:active {
@@ -520,10 +520,11 @@ h2.section-heading {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    pointer-events: none;
+    object-fit: contain; /* Allows unconstrained scale and pan transformations */
+    pointer-events: auto; /* Enables mouse/touch events directly on the artwork image */
     user-select: none;
     transform-origin: center center;
+    transform: translate(0px, 0px) scale(1); /* Sets explicit baseline transform */
     will-change: transform;
 }
 
@@ -883,7 +884,7 @@ footer {
     .nav-links { display: none; }
     h1.hero-title-main { font-size: 3.2rem; letter-spacing: 0.18em; }
     .metrics-bar { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .series-catalogue-grid { grid-template-columns: 1fr; } /* Stacks 1 column on mobile/tablet */
+    .series-catalogue-grid { grid-template-columns: 1fr; }
     .ledger-row { 
         grid-template-columns: 1fr; 
         gap: 20px; 
