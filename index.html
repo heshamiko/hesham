@@ -21,6 +21,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
+    <!-- Preconnect & Font Asset Loading Strategy -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -108,7 +109,7 @@
 </head>
 <body>
 
-    <nav class="nav-bar">
+    <nav class="nav-bar" aria-label="Main Navigation">
         <a href="#" class="nav-brand">
             <span class="nav-brand-title">Hesham Malik</span>
             <span class="nav-brand-divider">|</span>
@@ -135,11 +136,11 @@
     </header>
 
     <div id="main-content">
-        <section class="benchmark-box">
+        <section class="benchmark-box" aria-label="Archive Overview">
             <span class="benchmark-tag">&bull; Global Practice &amp; Institutional Archives</span>
-            <div class="benchmark-text">
+            <p class="benchmark-text">
                 A practice defined by large-scale monochromatic works, raw human portraiture, and expansive conceptual series. Held across public state repositories, international museum collections, and private foundations, the studio maintains an active archive spanning public installations, solo monograph projects, and ongoing site-specific research across Europe, Asia, and Africa.
-            </div>
+            </p>
         </section>
 
         <section class="metrics-bar" aria-label="Key Archive Metrics">
@@ -163,8 +164,8 @@
 
         <main>
             <!-- 1. SELECTED SERIES / CATALOGUE SECTION (PRIMARY FINE ART) -->
-            <section id="ledger">
-                <h2 class="section-heading">Selected Series Catalogue</h2>
+            <section id="ledger" aria-labelledby="heading-series">
+                <h2 id="heading-series" class="section-heading">Selected Series Catalogue</h2>
                 
                 <div class="ledger-controls" role="tablist" aria-label="Filter series">
                     <button type="button" class="ledger-btn active" data-filter="all" role="tab" aria-selected="true">All Works</button>
@@ -176,7 +177,7 @@
 
                 <div class="series-catalogue-grid">
                     <!-- ROOH-NAWAZ (BOX 1) -->
-                    <div class="series-card" data-category="rooh">
+                    <article class="series-card" data-category="rooh">
                         <div class="series-card-image">
                             <img src="rooh-nawaz-1.jpg" 
                                  alt="Rooh-Nawaz Persian Heritage Canvas" 
@@ -196,10 +197,10 @@
                             </div>
                         </div>
                         <button type="button" class="action-btn" data-dossier="rooh_nawaz">Read Dossier</button>
-                    </div>
+                    </article>
 
                     <!-- VOICES OF THE LAND (BOX 2) -->
-                    <div class="series-card" data-category="voices">
+                    <article class="series-card" data-category="voices">
                         <div class="series-card-image">
                             <img src="land-spatial-2.jpg" 
                                  alt="Voices of the Land Canvas" 
@@ -218,10 +219,10 @@
                             </div>
                         </div>
                         <button type="button" class="action-btn" data-dossier="mowicha">Read Dossier</button>
-                    </div>
+                    </article>
 
                     <!-- LIFE OF A BOX (BOX 3) -->
-                    <div class="series-card" data-category="box">
+                    <article class="series-card" data-category="box">
                         <div class="series-card-image">
                             <img src="box-spatial-1.jpg" 
                                  class="img-pos-top"
@@ -242,10 +243,10 @@
                             </div>
                         </div>
                         <button type="button" class="action-btn" data-dossier="box_monograph">Read Dossier</button>
-                    </div>
+                    </article>
 
                     <!-- WORDS PROJECT (BOX 4) -->
-                    <div class="series-card" data-category="words">
+                    <article class="series-card" data-category="words">
                         <div class="series-card-image">
                             <img src="words-canvas-main.jpg" 
                                  class="img-pos-top"
@@ -266,13 +267,13 @@
                             </div>
                         </div>
                         <button type="button" class="action-btn" data-dossier="equanimity">Read Dossier</button>
-                    </div>
+                    </article>
                 </div>
             </section>
 
             <!-- 2. SURFACE & TEXTURE DETAIL VIEWER -->
-            <section id="materials">
-                <h2 class="section-heading">Featured Detail</h2>
+            <section id="materials" aria-labelledby="heading-materials">
+                <h2 id="heading-materials" class="section-heading">Featured Detail</h2>
                 <div class="macro-viewer-container" style="max-width: 900px; margin: 0 auto; text-align: center;">
                     <span class="benchmark-tag">&bull; CANVAS STUDY &bull; TEXTURE &amp; FORM</span>
                     <h3 class="macro-heading" style="font-family: var(--font-serif); font-size: 1.8rem; color: #fff; font-weight: 300; margin: 10px 0;">Tactile Layering &amp; Pigment Application</h3>
@@ -283,7 +284,7 @@
                     </div>
 
                     <div class="museum-plaque" style="border-top: 1px solid var(--border-gold, rgba(255,255,255,0.15)); padding-top: 25px; text-align: left; max-width: 800px; margin: 0 auto;">
-                        <h4 style="font-family: var(--font-serif); font-size: 1.3rem; color: #ffffff; letter-spacing: 0.15em; text-transform: uppercase; margin: 0 0 6px 0; font-weight: 400;">CONVIVIALITY</h4>
+                        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: #ffffff; letter-spacing: 0.15em; text-transform: uppercase; margin: 0 0 6px 0; font-weight: 400;">CONVIVIALITY</h3>
                         <p style="font-size: 0.82rem; color: var(--accent-gold, #d4af37); font-style: italic; margin: 0 0 16px 0; letter-spacing: 0.05em;">Hesham Malik | 160 × 120 cm</p>
                         <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.85; margin: 0;">
                             Displayed within the former monastic refectory of Mariánská Týnice—a masterpiece designed by Jan Blažej Santini-Aichl—<em>Conviviality</em> mirrors the enduring themes of gathering and communal spirit that define this historic site. Positioned beneath 18th-century Baroque ceiling frescoes depicting Cistercian fellowship and sacred hospitality, the work’s expansive scale and layered surface establish a dialogue between contemporary expression and the architectural heritage.
@@ -293,8 +294,8 @@
             </section>
 
             <!-- 3. GLOBAL EXHIBITION MAP -->
-            <section id="map-section">
-                <h2 class="section-heading">Global Institutional History</h2>
+            <section id="map-section" aria-labelledby="heading-map">
+                <h2 id="heading-map" class="section-heading">Global Institutional History</h2>
                 
                 <div class="real-map-wrapper">
                     <span class="benchmark-tag">&bull; 30-YEAR EXHIBITION &amp; ARCHIVAL RECORD &bull; SELECT ANY NODE</span>
@@ -324,7 +325,7 @@
                             <option value="it_florence">Florence (European University Institute, Italy)</option>
                             <option value="it_fabriano_rome">Fabriano &amp; Rome (Cotroceni Museum, Paper &amp; Watermark Museum, UNESCO, Italy)</option>
                             <option value="fr_paris">Paris (Sorbonne, Paris Cité, Amnesty International, IDDRI, France)</option>
-                            <option value="fr_toulouse">Toulouse (Musée des Augustins, France)</option>
+                            <option value="fr_toulouse">Musée des Augustins (Toulouse, France)</option>
                             <option value="fr_guadeloupe">Guadeloupe (Arts au Pluriel, France)</option>
                             <option value="ps_gaza">Gaza (Culture &amp; Free Thought Association, Palestine)</option>
                             <option value="ps_jenin">Jenin Camp (The Freedom Theatre, Palestine)</option>
@@ -567,10 +568,10 @@
             </section>
 
             <!-- 4. PHOTO MONOGRAPH SERIES / FIELD RESEARCH -->
-            <section id="mombasa-grid">
+            <section id="mombasa-grid" aria-labelledby="mombasa-trigger">
                 <div class="mombasa-header">
                     <span class="benchmark-tag">&bull; Photo Monograph Series &bull; Kenya &bull; 2008</span>
-                    <h2>
+                    <h2 class="section-heading" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
                         <button type="button" class="mombasa-accordion-trigger" id="mombasa-trigger" aria-expanded="false" aria-controls="mombasa-essay" style="background: none; border: none; color: inherit; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; width: 100%;">
                             <span class="mombasa-title">Chronicles of Mombasa</span>
                             <span class="toggle-icon" id="mombasa-toggle-icon" aria-hidden="true" style="font-family: var(--font-sans); font-size: 1.8rem; color: var(--accent-gold); transition: transform 0.3s ease;">+</span>
