@@ -41,6 +41,17 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Ensure swap behavior for smooth font rendering without FOIT/FOUT */
+@font-face {
+    font-family: 'Cormorant Garamond';
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-display: swap;
+}
+
 /* --- Hero Header Engine --- */
 header.full-bleed-hero {
     position: relative;
@@ -510,7 +521,7 @@ h2.section-heading {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center; /* Focuses frame on the top/face of the subject */
+    object-position: top center;
     display: block;
 }
 
