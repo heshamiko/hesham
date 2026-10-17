@@ -927,181 +927,181 @@ Rooh-Nawaz (روح‌نواز)—inspired by the classical concept of that which
 
 // --- MOMBASA FIELD RECORDS MATRIX ---
 const mombasaInscriptions = {
-    "mombasa-01.jpg": {
+    "mombasa-01.webp": {
         code: "FIELD RECORD: MBA-2008-042",
         title: "Chronicles of Mombasa · The Transport Pilot / The Jet Aviator",
         obs: "Close crop on a quiet, direct expression with soft, wide eyes looking straight ahead.",
         cog: "He began by declaring he wanted to drive big transport trucks. Moments later, looking at a bird landing nearby, his expression shifted to total wonder as he announced he would fly passenger jets around the world instead."
     },
-    "mombasa-02.jpg": {
+    "mombasa-02.webp": {
         code: "FIELD RECORD: MBA-2008-118",
         title: "Chronicles of Mombasa · The Shopkeeper / The Boatbuilder",
         obs: "Wide-eyed and attentive posture, caught in a moment of bright curiosity.",
         cog: "He initially said he wanted to work in a shop like his uncle. When asked what he loved doing most on weekends, his face lit up and he immediately decided he wanted to build big wooden boats for fishermen."
     },
-    "mombasa-03.jpg": {
+    "mombasa-03.webp": {
         code: "FIELD RECORD: MBA-2008-204",
         title: "Chronicles of Mombasa · The Teacher / The Stage Actor",
         obs: "Caught in motion, with a sleeve or scarf pulled loosely across his face in a spontaneous gesture.",
         cog: "Shy at first, he whispered that he wanted to be a teacher. After giggling behind his sweater, he pulled it down and announced boldly that he was going to be a stage actor and make people laugh."
     },
-    "mombasa-04.jpg": {
+    "mombasa-04.webp": {
         code: "FIELD RECORD: MBA-2008-083",
         title: "Chronicles of Mombasa · The Gardener / The Children's Poet",
         obs: "Gentle, downward glance with a calm and deeply thoughtful expression.",
         cog: "She spoke quietly about helping her mother in the garden. After a brief silence, she looked up and added with complete confidence that she also wanted to write books of poetry for children."
     },
-    "mombasa-05.jpg": {
+    "mombasa-05.webp": {
         code: "FIELD RECORD: MBA-2008-167",
         title: "Chronicles of Mombasa · The Doctor / The Football Captain",
         obs: "Composed, formal stance in a school sweater, looking straight into the lens with quiet pride.",
         cog: "He stated very formally that he was going to be a doctor. Re-interviewed five minutes later, he smiled and admitted he'd actually prefer to be a football captain who leads his team to victory."
     },
-    "mombasa-06.jpg": {
+    "mombasa-06.webp": {
         code: "FIELD RECORD: MBA-2008-289",
         title: "Chronicles of Mombasa · The Auto Mechanic / The Rocket Engineer",
         obs: "Profile view looking upward alongside classmates, caught mid-smile with genuine excitement.",
         cog: "He originally said he wanted to fix cars. Watching a plane pass overhead with his friends, he pointed up and decided on the spot that he was going to build rockets that travel to the moon."
     },
-    "mombasa-07.jpg": {
+    "mombasa-07.webp": {
         code: "FIELD RECORD: MBA-2008-312",
         title: "Chronicles of Mombasa · The Wildlife Protector / The Lead Guitarist",
         obs: "Close-up showing an inquisitive glance to the side, wearing a beaded neckpiece.",
         cog: "He said his dream was to protect wild animals in the forest. A moment later, hearing music from a nearby radio, he grinned and said he might also play the guitar in a famous band."
     },
-    "mombasa-08.jpg": {
+    "mombasa-08.webp": {
         code: "FIELD RECORD: MBA-2008-056",
         title: "Chronicles of Mombasa · The Champion Runner / The Village Baker",
         obs: "A big, joyful smile showing teeth, full of infectious warmth and energy.",
         cog: "He laughed and said he was going to be a famous runner. When asked what he'd do after winning his races, he grinned even wider and said, 'I'll open a bakery and give free cakes to everyone!'"
     },
-    "mombasa-09.jpg": {
+    "mombasa-09.webp": {
         code: "FIELD RECORD: MBA-2008-391",
         title: "Chronicles of Mombasa · The Grain Farmer / The Ocean Diver",
         obs: "Soft profile against a natural backdrop, looking calmly toward the horizon.",
         cog: "He spoke about wanting to work on a farm growing corn. After looking out at the open landscape for a moment, he turned back and said he wanted to study the ocean and dive deep under water."
     },
-    "mombasa-10.jpg": {
+    "mombasa-10.webp": {
         code: "FIELD RECORD: MBA-2008-472",
         title: "Chronicles of Mombasa · The Medical Researcher / The Mural Artist",
         obs: "High-contrast, cinematic close-up with light highlighting one side of the face in intense focus.",
         cog: "She spoke with deep seriousness about wanting to study medicine to cure illnesses. Re-engaged a few minutes later, her face softened and she added that she also wanted to paint large color murals on city walls."
     },
-    "mombasa-11.jpg": {
+    "mombasa-11.webp": {
         code: "FIELD RECORD: MBA-2008-143",
         title: "Chronicles of Mombasa · The School Principal / The Transoceanic Pilot",
         obs: "Direct, attentive portrait in a crisp collared shirt, holding a steady expression.",
         cog: "He started by saying he was going to be a school principal. Moments later, after watching a bird soar over the trees, he turned back with a smile and decided he would rather pilot airplanes across the ocean."
     },
-    "mombasa-12.jpg": {
+    "mombasa-12.webp": {
         code: "FIELD RECORD: MBA-2008-225",
         title: "Chronicles of Mombasa · The Motorbike Mechanic / The Bridge Architect",
         obs: "Close-up portrait with eyes looking slightly downward in deep concentration.",
         cog: "He spoke first about repairing motorbikes in his town. After thinking quietly for a moment, he looked up and said he wanted to design giant bridges that connect islands."
     },
-    "mombasa-13.jpg": {
+    "mombasa-13.webp": {
         code: "FIELD RECORD: MBA-2008-097",
         title: "Chronicles of Mombasa · The Sprinter / The Bicycle Craftsman",
         obs: "Profile view in soft outdoor light, looking toward the side with an open posture.",
         cog: "He announced he was going to be a competitive runner. Re-interviewed shortly after, he laughed and said he would rather open a shop that builds bicycles for everyone in his village."
     },
-    "mombasa-14.jpg": {
+    "mombasa-14.webp": {
         code: "FIELD RECORD: MBA-2008-331",
         title: "Chronicles of Mombasa · The Structural Engineer / The Band Drummer",
         obs: "Sharp, direct gaze toward the camera with an open collar and a confident expression.",
         cog: "He declared he was going to be a structural engineer. Within minutes, hearing music nearby, he grinned and added that he also wanted to learn the drums and play in a band."
     },
-    "mombasa-15.jpg": {
+    "mombasa-15.webp": {
         code: "FIELD RECORD: MBA-2008-182",
         title: "Chronicles of Mombasa · The Home Gardener / The City Muralist",
         obs: "High-contrast, moody close-up in deep shadow, showing a quiet expression.",
         cog: "She spoke softly about growing a flower garden behind her house. Re-engaged a few moments later, her face brightened as she decided she actually wanted to paint giant murals on city buildings."
     },
-    "mombasa-16.jpg": {
+    "mombasa-16.webp": {
         code: "FIELD RECORD: MBA-2008-415",
         title: "Chronicles of Mombasa · The Farm Hand / The Astronomer",
         obs: "Gentle portrait in a dark sweater, looking down with a contemplative expression.",
         cog: "He originally thought about working on a farm. After a brief silence, he looked up and said with total enthusiasm that he wanted to study the stars and become an astronomer."
     },
-    "mombasa-17.jpg": {
+    "mombasa-17.webp": {
         code: "FIELD RECORD: MBA-2008-264",
         title: "Chronicles of Mombasa · The Footballer / The Radio Broadcaster",
         obs: "Side profile caught mid-motion, hands raised as if explaining an idea with excitement.",
         cog: "He spoke animatedly about playing professional football. Mid-sentence, he paused, laughed, and said, 'Actually, I want to be the announcer on the radio who shouts when someone scores!'"
     },
-    "mombasa-18.jpg": {
+    "mombasa-18.webp": {
         code: "FIELD RECORD: MBA-2008-109",
         title: "Chronicles of Mombasa · The Apprentice Carpenter / The Author",
         obs: "Frontal portrait against a textured grassy background, with an open expression.",
         cog: "He mentioned wanting to be a carpenter like his uncle. Moments later, seeing someone writing in a journal, he decided he wanted to write stories and publish books instead."
     },
-    "mombasa-19.jpg": {
+    "mombasa-19.webp": {
         code: "FIELD RECORD: MBA-2008-378",
         title: "Chronicles of Mombasa · The Physician / The Solar Boat Designer",
         obs: "Composed, formal portrait wearing a school emblem, looking directly at the camera.",
         cog: "He stated clearly that he was going to be a doctor. Re-interviewed five minutes later, he smiled and said he might also like to build solar-powered boats for fishermen."
     },
-    "mombasa-20.jpg": {
+    "mombasa-20.webp": {
         code: "FIELD RECORD: MBA-2008-451",
         title: "Chronicles of Mombasa · The Courtroom Judge / The Sanctuary Founder",
         obs: "Profile view with braided hair, looking intently with a focused expression.",
         cog: "She initially said she wanted to be a judge in a courtroom. After looking out across the schoolyard, her expression softened and she said she would rather run a sanctuary to care for wild animals."
     },
-    "mombasa-21.jpg": {
+    "mombasa-21.webp": {
         code: "FIELD RECORD: MBA-2008-418",
         title: "Chronicles of Mombasa · The Educator / The Naval Architect",
         obs: "Over-the-shoulder glance with an intense, questioning expression caught in a crowd.",
         cog: "He initially stated he wanted to be a school teacher. Moments later, turning back toward the photographer, he reconsidered and said he wanted to design large ocean ships instead."
     },
-    "mombasa-22.jpg": {
+    "mombasa-22.webp": {
         code: "FIELD RECORD: MBA-2008-088",
         title: "Chronicles of Mombasa · The Radio Host / The Comedian",
         obs: "Soft, joyful grin caught slightly out of focus, radiating warmth and spontaneous energy.",
         cog: "He laughed and said he was going to be a radio host. When asked what music he would play, he grinned even wider and said he would just tell jokes between songs to make everyone happy."
     },
-    "mombasa-23.jpg": {
+    "mombasa-23.webp": {
         code: "FIELD RECORD: MBA-2008-042 (SECONDARY FRAME)",
         title: "Chronicles of Mombasa · The Jet Aviator / The Silent Engine Inventor",
         obs: "Downward-angled portrait showing a quiet expression (a second study of the child in Photo 01).",
         cog: "In this second recording taken shortly after his first answer, he looked down in thought. Having previously mentioned piloting jets, he quietly added that he also wanted to invent engines that don't make noise."
     },
-    "mombasa-24.jpg": {
+    "mombasa-24.webp": {
         code: "FIELD RECORD: MBA-2008-362",
         title: "Chronicles of Mombasa · The Librarian / The Adventure Writer",
         obs: "Cropped profile view highlighting an ear and patterned collar, caught in a serene moment.",
         cog: "He spoke softly about working in a library. Re-interviewed moments later, he smiled and said he’d actually rather write the adventure stories that go on the shelves."
     },
-    "mombasa-25.jpg": {
+    "mombasa-25.webp": {
         code: "FIELD RECORD: MBA-2008-209",
         title: "Chronicles of Mombasa · The Builder / The Tire Technician",
         obs: "Direct gaze from a young child standing in a group, holding a serious, steady expression.",
         cog: "He declared he was going to be a builder. A few minutes later, seeing a passing bicycle, he decided he would rather own a shop that repairs tires for his friends."
     },
-    "mombasa-26.jpg": {
+    "mombasa-26.webp": {
         code: "FIELD RECORD: MBA-2008-485",
         title: "Chronicles of Mombasa · The Pediatrician / The Oil Painter",
         obs: "Close portrait of a young girl wearing a hooded sweater, with wide eyes peering out from beneath.",
         cog: "She said she wanted to be a doctor to care for sick children. Looking out from her hood moments later, she added with equal conviction that she also wanted to learn how to paint large oil canvases."
     },
-    "mombasa-27.jpg": {
+    "mombasa-27.webp": {
         code: "FIELD RECORD: MBA-2008-161",
         title: "Chronicles of Mombasa · The Crop Farmer / The Meteorologist",
         obs: "Inquisitive face looking upward, with wide eyes and a curious posture.",
         cog: "He started out saying he wanted to grow vegetables on a farm. Looking up at the open sky, he shifted his dream to studying weather patterns and predicting rain."
     },
-    "mombasa-28.jpg": {
+    "mombasa-28.webp": {
         code: "FIELD RECORD: MBA-2008-298",
         title: "Chronicles of Mombasa · The Electrician / The Software Programmer",
         obs: "Soft portrait with another child visible in the background, showing a quiet face.",
         cog: "He initially whispered that he wanted to be an electrician. After seeing his classmate smile behind him, he turned and said he'd rather learn how to program computers."
     },
-    "mombasa-29.jpg": {
+    "mombasa-29.webp": {
         code: "FIELD RECORD: MBA-2008-327",
         title: "Chronicles of Mombasa · The Coastal Captain / The Marine Biologist",
         obs: "Open, expressive face set against outdoor foliage, caught mid-phrase.",
         cog: "He spoke passionately about becoming a boat captain along the coast. Re-interviewed five minutes later, he decided he would rather study marine life and protect sea turtles."
     },
-    "mombasa-30.jpg": {
+    "mombasa-30.webp": {
         code: "FIELD RECORD: MBA-2008-264 (INVERTED PERSPECTIVE)",
         title: "Chronicles of Mombasa · The Footballer-Broadcaster Dualist",
         obs: "Horizontally mirrored study of Photo 17, capturing the child's expressive hand gesture.",
@@ -1137,10 +1137,19 @@ function openDossier(key) {
 }
 
 function openLightbox(imageSrc, fallbackTitle) {
-    const filename = imageSrc.split('/').pop();
-    const item = mombasaInscriptions[filename];
-    const modal = document.getElementById('dossierModal');
+    const filename = imageSrc.split('/').pop().split('?')[0]; // Strip query parameters if present
+    const baseFilename = filename.replace(/\.[^/.]+$/, ""); // Get name without extension
+    
+    // Find matching inscription by exact filename or base name match
+    let item = mombasaInscriptions[filename];
+    if (!item) {
+        const matchingKey = Object.keys(mombasaInscriptions).find(key => key.replace(/\.[^/.]+$/, "") === baseFilename);
+        if (matchingKey) {
+            item = mombasaInscriptions[matchingKey];
+        }
+    }
 
+    const modal = document.getElementById('dossierModal');
     if (!modal) return;
 
     if (item) {
@@ -1156,7 +1165,7 @@ function openLightbox(imageSrc, fallbackTitle) {
             </div>
         `;
     } else {
-        const provenanceCaption = masterworkProvenance[filename] || (fallbackTitle ? `Exhibition Record: ${fallbackTitle}` : "Hesham Malik Studio Archive");
+        const provenanceCaption = masterworkProvenance[filename] || masterworkProvenance[baseFilename + ".jpg"] || (fallbackTitle ? `Exhibition Record: ${fallbackTitle}` : "Hesham Malik Studio Archive");
 
         document.getElementById('modalCode').innerText = "FULL-SCREEN MASTERWORK VIEW";
         document.getElementById('modalTitle').innerText = fallbackTitle || "Hesham Malik Studio Archive";
