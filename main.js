@@ -1197,7 +1197,6 @@ function filterLedger(category, targetBtn) {
         targetBtn.setAttribute('aria-selected', 'true');
     }
 
-    // Updated selector to target .series-card elements from index.html
     const cards = document.querySelectorAll('.series-card');
     cards.forEach(card => {
         if (category === 'all' || card.dataset.category === category) {
@@ -1210,8 +1209,10 @@ function filterLedger(category, targetBtn) {
 
 // --- 7. SURFACE & TEXTURE MACRO DETAIL VIEWER ENGINE ---
 function initMacroViewerEngine() {
-    const macroWindow = document.getElementById('macroWindow');
-    const macroImg = document.getElementById('macroImage');
+    const macroWindow = document.getElementById('macroWindow') || document.querySelector('.macro-view-window');
+    const macroImg = document.getElementById('macroImage') || (macroWindow ? macroWindow.querySelector('img') : null);
+    
+    // Guard clause to prevent errors if elements don't exist
     if (!macroWindow || !macroImg) return;
 
     let scale = 1;
@@ -1222,14 +1223,12 @@ function initMacroViewerEngine() {
     let startX = 0;
     let startY = 0;
 
-    // Touch parameters
     let initialPinchDistance = null;
     let initialScale = 1;
 
     function clampBoundaries() {
         const windowRect = macroWindow.getBoundingClientRect();
         
-        // Calculate dynamic bounds to keep canvas full bleed inside container
         const maxPanX = Math.max(0, ((windowRect.width * scale) - windowRect.width) / 2);
         const maxPanY = Math.max(0, ((windowRect.height * scale) - windowRect.height) / 2);
 
@@ -1249,7 +1248,7 @@ function initMacroViewerEngine() {
         macroWindow.style.cursor = isPanning ? 'grabbing' : 'grab';
     }
 
-    // --- MOUSE PAN CONTROLS ---
+    // Mouse Pan Controls
     macroWindow.addEventListener('mousedown', function(e) {
         e.preventDefault();
         isPanning = true;
@@ -1273,7 +1272,7 @@ function initMacroViewerEngine() {
         }
     });
 
-    // --- DOUBLE CLICK / DOUBLE TAP TO ZOOM ---
+    // Double Click Zoom
     macroWindow.addEventListener('dblclick', function(e) {
         e.preventDefault();
         if (scale > 1) {
@@ -1291,7 +1290,7 @@ function initMacroViewerEngine() {
         renderTransform(true);
     });
 
-    // --- MOUSE WHEEL ZOOM CONTROLS ---
+    // Wheel Zoom Controls
     macroWindow.addEventListener('wheel', function(e) {
         e.preventDefault();
 
@@ -1310,7 +1309,7 @@ function initMacroViewerEngine() {
         }
     }, { passive: false });
 
-    // --- TOUCH & PINCH GESTURES (MOBILE / TABLET) ---
+    // Touch & Pinch Gestures
     macroWindow.addEventListener('touchstart', function(e) {
         if (e.touches.length === 1) {
             isPanning = true;
@@ -1347,7 +1346,6 @@ function initMacroViewerEngine() {
         renderTransform(true);
     });
 
-    // --- RESET VIEW FUNCTION ---
     window.resetMacroView = function() {
         scale = 1;
         pointX = 0;
