@@ -821,16 +821,26 @@ function openMapDetails(key, event) {
                 popup.style.width = '320px';
 
                 let leftPos = (nodeRect.left - frameRect.left) + 20;
-                let topPos = (nodeRect.top - frameRect.top) - 20;
+                
+                // Estimate or measure popup height dynamically if possible, default to ~240px
+                const popupHeight = popup.offsetHeight || 240;
+                const nodeTopInFrame = nodeRect.top - frameRect.top;
+                
+                let topPos;
+                // Check if there is enough space below the node inside the frame
+                if (nodeTopInFrame + popupHeight + 30 > frameRect.height) {
+                    // Flip ABOVE the node if it's near the bottom
+                    topPos = nodeTopInFrame - popupHeight - 15;
+                } else {
+                    // Open below by default
+                    topPos = nodeTopInFrame - 20;
+                }
 
                 if (leftPos + 320 > frameRect.width) {
                     leftPos = Math.max(10, (nodeRect.left - frameRect.left) - 330);
                 }
                 if (leftPos < 10) leftPos = 10;
 
-                if (topPos + 240 > frameRect.height) {
-                    topPos = Math.max(10, frameRect.height - 250);
-                }
                 if (topPos < 10) topPos = 10;
 
                 popup.style.left = leftPos + 'px';
