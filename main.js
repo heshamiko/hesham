@@ -622,7 +622,7 @@ const mapCityData = {
     },
     goa: {
         city: "INDIA &bull; GOA, MUMBAI &amp; NEW DELHI",
-        shows: `&bull; <b>Institutional Anchor:</b> Sala de Arte (Goa); Chatterjee &amp; Lal (Mumbai); Judah Hyam Synagogue (New Delhi); Sethu Centre.<br>
+        shows: `&bull; <b>Institutional Anchor:</b> Carpe Diem, Sala de Arte (Goa); Chatterjee &amp; Lal (Mumbai); Judah Hyam Synagogue (New Delhi); Sethu Centre.<br>
 &bull; <b>Field &amp; Conceptual Research:</b> Sacred beauty, interfaith theological inquiry, pediatrics neurodevelopment benefit series, and Indian visual traditions.<br>
 &bull; <b>Curatorial Focus:</b> Archival solo series (<i>Mukha</i>, <i>Samay</i>, <i>Aliferous</i>) and benefit canvases addressing pediatric neurodevelopment.`
     },
@@ -822,17 +822,13 @@ function openMapDetails(key, event) {
 
                 let leftPos = (nodeRect.left - frameRect.left) + 20;
                 
-                // Estimate or measure popup height dynamically if possible, default to ~240px
                 const popupHeight = popup.offsetHeight || 240;
                 const nodeTopInFrame = nodeRect.top - frameRect.top;
                 
                 let topPos;
-                // Check if there is enough space below the node inside the frame
                 if (nodeTopInFrame + popupHeight + 30 > frameRect.height) {
-                    // Flip ABOVE the node if it's near the bottom
                     topPos = nodeTopInFrame - popupHeight - 15;
                 } else {
-                    // Open below by default
                     topPos = nodeTopInFrame - 20;
                 }
 
